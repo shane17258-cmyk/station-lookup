@@ -138,6 +138,94 @@
     margin: 20px 0;
   }
   .center-hint { text-align: center; color: #9ab0c4; padding: 10px 0; }
+  .detail {
+    display: none;
+    margin-top: 14px;
+    padding: 14px;
+    background: #f7fafc;
+    border: 1px solid #dbe6f0;
+    border-radius: 10px;
+  }
+  .detail.show { display: block; }
+  .detail-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1a3a5c;
+    margin-bottom: 10px;
+  }
+  .cell-sec {
+    margin-bottom: 12px;
+  }
+  .cell-sec:last-child { margin-bottom: 0; }
+  .cell-sec-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #2f6fad;
+    margin-bottom: 6px;
+  }
+  .cell-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .cell-card {
+    background: #fff;
+    border: 1px solid #d4e2f0;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 13px;
+    color: #1a3a5c;
+    min-width: 120px;
+  }
+  .cell-card .c-id { font-weight: 700; font-size: 14px; color: #1a3a5c; }
+  .cell-card .c-rmod {
+    display: inline-block;
+    background: #2f6fad;
+    color: #fff;
+    border-radius: 4px;
+    padding: 1px 8px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-top: 4px;
+  }
+  .cell-card .c-meta { font-size: 11px; color: #6b8aa8; margin-top: 4px; line-height: 1.5; }
+  .cell-card .c-map a { color: #c0392b; text-decoration: none; font-size: 11px; font-weight: 600; }
+  .cell-card .c-map a:hover { text-decoration: underline; }
+  .station-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background: #e8f1fa;
+    border: 1px solid #c6d9ec;
+    border-radius: 8px;
+    padding: 8px 12px;
+    gap: 6px;
+    font-size: 15px;
+    color: #1a3a5c;
+  }
+  .station-bar .s-name-inline { font-weight: 700; }
+  .station-bar .coord2 { font-size: 11px; color: #6b8aa8; margin-left: 4px; }
+  .station-bar .toggle {
+    cursor: pointer;
+    color: #2f6fad;
+    font-weight: 700;
+    font-size: 13px;
+    margin-left: auto;
+    user-select: none;
+  }
+  .station-bar .toggle:hover { text-decoration: underline; }
+  .station-bar .mapbtn {
+    display: inline-block;
+    background: #fff;
+    color: #c0392b;
+    border: 1px solid #e8c4bc;
+    border-radius: 12px;
+    padding: 2px 10px;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .station-bar .mapbtn:hover { background: #fdf0ee; }
 </style>
 </head>
 <body>
@@ -265,6 +353,36 @@
       return item;
     }
 
+    function buildCellDetail(item, station, coord) {
+      const groups = item.cells[station] || [];
+      let html = '<div class="detail-title">細胞詳細資料（lnCelId / rmod_cell）</div>';
+      if (!groups.length) {
+        html += '<div class="placeholder">無細胞資料</div>';
+        return html;
+      }
+      groups.forEach(g => {
+        html += '<div class="cell-sec">';
+        html += '<div class="cell-sec-title">扇區 S' + g.sec + '</div>';
+        html += '<div class="cell-row">';
+        g.cells.forEach(c => {
+          html += '<div class="cell-card">' +
+            '<div class="c-id">lnCelId ' + c.cel + '</div>' +
+            '<div class="c-rmod">' + (c.rmod || '-') + '</div>' +
+            '<div class="c-meta">' +
+            '天線：' + (c.ant || '-') + '<br>' +
+            '方位角：' + (c.az || '-') + '°　下傾角：' + (c.et || '-') + '°' +
+            '</div>';
+          if (coord) {
+            html += '<div class="c-map"><a target="_blank" rel="noopener" href="https://www.google.com/maps?q=' +
+              coord.lat + ',' + coord.lon + '">Google 地圖</a></div>';
+          }
+          html += '</div>';
+        });
+        html += '</div></div>';
+      });
+      return html;
+    }
+
     function render(item) {
       outName.textContent = item.siteNameCV || item.siteName || '-';
       outName.innerHTML = (item.siteNameCV || item.siteName || '-') +
@@ -276,25 +394,48 @@
       if (item.stations && item.stations.length) {
         item.stations.forEach((s, i) => {
           const coord = (item.coords && item.coords[i]) ? item.coords[i] : null;
-          const chip = document.createElement('a');
-          chip.className = 'chip';
-          chip.target = '_blank';
-          chip.rel = 'noopener';
-          const sec = (i < secs.length) ? secs[i] : '';
-          let body = '<span class="num">' + (i + 1) + '</span>' + s +
-            (sec ? '<span class="sec">' + sec + '</span>' : '');
-          if (coord) {
-            body += '<span class="mapicon">Google 地圖</span>' +
-              '<span class="coord">' + coord.lat + ', ' + coord.lon + '</span>';
-            chip.href = 'https://www.google.com/maps?q=' + coord.lat + ',' + coord.lon;
+          const cells = (item.cells && item.cells[s]) ? item.cells[s] : [];
+
+          const wrap = document.createElement('div');
+          wrap.style.marginBottom = '6px';
+
+          const bar = document.createElement('div');
+          bar.className = 'station-bar';
+          bar.innerHTML =
+            '<span class="num">' + (i + 1) + '</span>' +
+            '<span class="s-name-inline">' + s + '</span>' +
+            (secs[i] ? '<span class="sec">' + secs[i] + '</span>' : '') +
+            (coord ? '<span class="coord2">' + coord.lat + ', ' + coord.lon + '</span>' : '') +
+            (cells.length ? '<span class="toggle" data-idx="' + i + '">檢視細胞詳情 ▸</span>' : '') +
+            (coord ? '<a class="mapbtn" target="_blank" rel="noopener" href="https://www.google.com/maps?q=' +
+              coord.lat + ',' + coord.lon + '">📍 Google 地圖</a>' : '');
+          wrap.appendChild(bar);
+
+          if (cells.length) {
+            const detail = document.createElement('div');
+            detail.className = 'detail';
+            detail.id = 'detail-' + i;
+            detail.innerHTML = buildCellDetail(item, s, coord);
+            wrap.appendChild(detail);
           }
-          chip.innerHTML = body;
-          outStations.appendChild(chip);
+
+          outStations.appendChild(wrap);
         });
+
         const note = document.createElement('div');
         note.className = 'note';
-        note.textContent = '點擊站台可在 Google 地圖中檢視位置';
+        note.textContent = '點擊「檢視細胞詳情」可展開細胞資訊；「Google 地圖」可開啟位置';
         outStations.appendChild(note);
+
+        outStations.querySelectorAll('.toggle').forEach(tgl => {
+          tgl.addEventListener('click', () => {
+            const d = document.getElementById('detail-' + tgl.dataset.idx);
+            if (d) {
+              const shown = d.classList.toggle('show');
+              tgl.textContent = shown ? '收合細胞詳情 ▾' : '檢視細胞詳情 ▸';
+            }
+          });
+        });
       } else {
         outStations.innerHTML = '<div class="placeholder">無站台資料</div>';
       }
