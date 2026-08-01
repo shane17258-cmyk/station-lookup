@@ -26,7 +26,7 @@
     padding: 24px;
   }
   label { display: block; font-weight: 700; color: #1a3a5c; margin-bottom: 8px; font-size: 15px; }
-  select {
+  input {
     width: 100%;
     padding: 12px 14px;
     font-size: 16px;
@@ -37,7 +37,8 @@
     outline: none;
     transition: border-color .2s;
   }
-  select:focus { border-color: #2f6fad; }
+  input:focus { border-color: #2f6fad; }
+  .hint { font-size: 12px; color: #8aa4bd; margin-top: 6px; }
   .result {
     margin-top: 24px;
     border-top: 1px solid #e2eaf2;
@@ -50,11 +51,12 @@
   .field .value { font-size: 17px; color: #1a3a5c; font-weight: 700; }
   .field .value small { font-weight: 400; color: #7893ad; }
   .chip {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     background: #e8f1fa;
     color: #1a3a5c;
-    border-radius: 20px;
-    padding: 6px 14px;
+    border-radius: 8px;
+    padding: 6px 12px;
     margin: 4px 4px 4px 0;
     font-size: 15px;
     border: 1px solid #c6d9ec;
@@ -69,6 +71,18 @@
     text-align: center;
     font-size: 12px;
     margin-right: 8px;
+    flex-shrink: 0;
+  }
+  .chip .sec {
+    background: #fff;
+    color: #2f6fad;
+    border: 1px solid #b6d0e8;
+    border-radius: 12px;
+    padding: 1px 8px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-left: 10px;
+    flex-shrink: 0;
   }
   .meta { font-size: 13px; color: #5a7a9a; line-height: 1.8; }
   .placeholder { text-align: center; color: #9ab0c4; padding: 12px 0; }
@@ -79,10 +93,10 @@
   <div class="subtitle">依 lnBtsId（4G 台號）查詢台名與站台</div>
 
   <div class="card">
-    <label for="idSelect">4G 台號 (lnBtsId)</label>
-    <select id="idSelect">
-      <option value="">請選擇 4G 台號</option>
-    </select>
+    <label for="idInput">4G 台號 (lnBtsId)</label>
+    <input id="idInput" list="idList" placeholder="輸入或選擇 4G 台號" autocomplete="off">
+    <datalist id="idList"></datalist>
+    <div class="hint">可直接輸入 lnBtsId，或從下拉清單中選擇</div>
 
     <div id="result" class="result">
       <div class="field">
@@ -101,7 +115,8 @@
 
   <script src="data.js"></script>
   <script>
-    const idSelect = document.getElementById('idSelect');
+    const idInput = document.getElementById('idInput');
+    const idList = document.getElementById('idList');
     const result = document.getElementById('result');
     const outName = document.getElementById('outName');
     const outStations = document.getElementById('outStations');
@@ -110,27 +125,41 @@
     STATION_DATA.forEach(item => {
       const opt = document.createElement('option');
       opt.value = item.id;
-      opt.textContent = item.id;
-      idSelect.appendChild(opt);
+      opt.textContent = item.id + ' - ' + (item.siteNameCV || '');
+      idList.appendChild(opt);
     });
 
-    idSelect.addEventListener('change', () => {
-      const id = idSelect.value;
-      if (!id) { result.classList.remove('show'); return; }
+    function findItem() {
+      const id = idInput.value.trim();
+      if (!id) { result.classList.remove('show'); return null; }
       const item = STATION_DATA.find(d => d.id === id);
-      if (!item) return;
+      if (!item) {
+        outName.textContent = '查無此 4G 台號';
+        outName.style.color = '#c0392b';
+        outStations.innerHTML = '';
+        outMeta.innerHTML = '';
+        result.classList.add('show');
+        return null;
+      }
+      outName.style.color = '';
+      return item;
+    }
 
+    function render(item) {
       outName.textContent = item.siteNameCV || item.siteName || '-';
       outName.innerHTML = (item.siteNameCV || item.siteName || '-') +
         (item.siteNameCV && item.siteName && item.siteNameCV !== item.siteName
           ? ' <small>(' + item.siteName + ')</small>' : '');
 
       outStations.innerHTML = '';
+      const secs = item.sec ? item.sec.split('_') : [];
       if (item.stations && item.stations.length) {
         item.stations.forEach((s, i) => {
           const chip = document.createElement('span');
           chip.className = 'chip';
-          chip.innerHTML = '<span class="num">' + (i + 1) + '</span>' + s;
+          const sec = (i < secs.length) ? secs[i] : '';
+          chip.innerHTML = '<span class="num">' + (i + 1) + '</span>' + s +
+            (sec ? '<span class="sec">' + sec + '</span>' : '');
           outStations.appendChild(chip);
         });
       } else {
@@ -139,10 +168,20 @@
 
       outMeta.innerHTML =
         'RAN 型態：' + (item.ranType || '-') +
-        (item.sec ? '　｜　扇區：' + item.sec : '') +
-        (item.nrBtsId ? '　｜　nrBtsId：' + item.nrBtsId : '');
+        (item.nrBtsId ? '　｜　nrBtsId：' + item.nrBtsId : '') +
+        (item.sec ? '　｜　扇區全貌：' + item.sec : '');
 
       result.classList.add('show');
+    }
+
+    idInput.addEventListener('input', () => {
+      const item = findItem();
+      if (item) render(item);
+    });
+
+    idInput.addEventListener('change', () => {
+      const item = findItem();
+      if (item) render(item);
     });
   </script>
 </body>
