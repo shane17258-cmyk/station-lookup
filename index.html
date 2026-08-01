@@ -60,7 +60,11 @@
     margin: 4px 4px 4px 0;
     font-size: 15px;
     border: 1px solid #c6d9ec;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background .2s, border-color .2s, transform .1s;
   }
+  .chip:hover { background: #d6e6f6; border-color: #2f6fad; transform: translateY(-1px); }
   .chip .num {
     display: inline-block;
     background: #2f6fad;
@@ -84,6 +88,26 @@
     margin-left: 10px;
     flex-shrink: 0;
   }
+  .chip .coord {
+    display: block;
+    font-size: 11px;
+    color: #6b8aa8;
+    margin-left: 28px;
+    font-weight: 400;
+    line-height: 1.3;
+  }
+  .chip .mapicon {
+    background: #fff;
+    color: #c0392b;
+    border: 1px solid #e8c4bc;
+    border-radius: 12px;
+    padding: 1px 8px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-left: 10px;
+    flex-shrink: 0;
+  }
+  .note { font-size: 12px; color: #8aa4bd; margin-top: 10px; }
   .meta { font-size: 13px; color: #5a7a9a; line-height: 1.8; }
   .placeholder { text-align: center; color: #9ab0c4; padding: 12px 0; }
 </style>
@@ -155,13 +179,26 @@
       const secs = item.sec ? item.sec.split('_') : [];
       if (item.stations && item.stations.length) {
         item.stations.forEach((s, i) => {
-          const chip = document.createElement('span');
+          const coord = (item.coords && item.coords[i]) ? item.coords[i] : null;
+          const chip = document.createElement('a');
           chip.className = 'chip';
+          chip.target = '_blank';
+          chip.rel = 'noopener';
           const sec = (i < secs.length) ? secs[i] : '';
-          chip.innerHTML = '<span class="num">' + (i + 1) + '</span>' + s +
+          let body = '<span class="num">' + (i + 1) + '</span>' + s +
             (sec ? '<span class="sec">' + sec + '</span>' : '');
+          if (coord) {
+            body += '<span class="mapicon">Google 地圖</span>' +
+              '<span class="coord">' + coord.lat + ', ' + coord.lon + '</span>';
+            chip.href = 'https://www.google.com/maps?q=' + coord.lat + ',' + coord.lon;
+          }
+          chip.innerHTML = body;
           outStations.appendChild(chip);
         });
+        const note = document.createElement('div');
+        note.className = 'note';
+        note.textContent = '點擊站台可在 Google 地圖中檢視位置';
+        outStations.appendChild(note);
       } else {
         outStations.innerHTML = '<div class="placeholder">無站台資料</div>';
       }
