@@ -21,6 +21,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "34",
+       "cov": "Outdoor",
        "rmod": "FWHN",
        "ant": "80010664",
        "az": "340",
@@ -56,6 +57,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "13",
+       "cov": "Indoor",
        "rmod": "FW2EHB",
        "ant": "CELLMAX-O-25",
        "az": "0",
@@ -64,6 +66,7 @@ const STATION_DATA = [
       },
       {
        "cel": "14",
+       "cov": "Indoor",
        "rmod": "FW2EHB",
        "ant": "CELLMAX-O-25",
        "az": "0",
@@ -113,6 +116,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "11",
+       "cov": "Outdoor",
        "rmod": "FXDB",
        "ant": "RVVPX303.6F12R2",
        "az": "90",
@@ -121,6 +125,7 @@ const STATION_DATA = [
       },
       {
        "cel": "13",
+       "cov": "Outdoor",
        "rmod": "FXEB",
        "ant": "RVVPX303.6F12R2",
        "az": "90",
@@ -129,6 +134,7 @@ const STATION_DATA = [
       },
       {
        "cel": "14",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "RVVPX303.6F12R2",
        "az": "90",
@@ -142,6 +148,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "21",
+       "cov": "Outdoor",
        "rmod": "FXDB",
        "ant": "DBXLH-6565A-VTM",
        "az": "190",
@@ -150,6 +157,7 @@ const STATION_DATA = [
       },
       {
        "cel": "23",
+       "cov": "Outdoor",
        "rmod": "FXEB",
        "ant": "DBXLH-6565A-VTM",
        "az": "190",
@@ -163,6 +171,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "31",
+       "cov": "Outdoor",
        "rmod": "FXDB",
        "ant": "80010864",
        "az": "320",
@@ -171,6 +180,7 @@ const STATION_DATA = [
       },
       {
        "cel": "32",
+       "cov": "Outdoor",
        "rmod": "FXEB",
        "ant": "80010864",
        "az": "320",
@@ -179,6 +189,7 @@ const STATION_DATA = [
       },
       {
        "cel": "33",
+       "cov": "Outdoor",
        "rmod": "FXEB",
        "ant": "80010864",
        "az": "320",
@@ -187,6 +198,7 @@ const STATION_DATA = [
       },
       {
        "cel": "34",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "320",
@@ -202,6 +214,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "41",
+       "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "6827300",
        "az": "90",
@@ -210,6 +223,7 @@ const STATION_DATA = [
       },
       {
        "cel": "43",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "6827300",
        "az": "90",
@@ -225,6 +239,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "53",
+       "cov": "Indoor",
        "rmod": "FHEB",
        "ant": "CELLMAX-O-25",
        "az": "0",
@@ -268,6 +283,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "11",
+       "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "RVV-65A-R3",
        "az": "90",
@@ -276,6 +292,7 @@ const STATION_DATA = [
       },
       {
        "cel": "13",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "RVV-65A-R3",
        "az": "90",
@@ -284,6 +301,7 @@ const STATION_DATA = [
       },
       {
        "cel": "17",
+       "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "RVV-65A-R3",
        "az": "90",
@@ -297,6 +315,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "31",
+       "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "RVV-65A-R3",
        "az": "320",
@@ -305,6 +324,7 @@ const STATION_DATA = [
       },
       {
        "cel": "33",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "RVV-65A-R3",
        "az": "320",
@@ -313,6 +333,7 @@ const STATION_DATA = [
       },
       {
        "cel": "37",
+       "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "RVV-65A-R3",
        "az": "320",
@@ -328,6 +349,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "41",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "70",
@@ -336,6 +358,7 @@ const STATION_DATA = [
       },
       {
        "cel": "42",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "70",
@@ -344,6 +367,7 @@ const STATION_DATA = [
       },
       {
        "cel": "43",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "70",
@@ -352,6 +376,7 @@ const STATION_DATA = [
       },
       {
        "cel": "44",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "80010864",
        "az": "70",
@@ -360,6 +385,7 @@ const STATION_DATA = [
       },
       {
        "cel": "47",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "70",
@@ -373,6 +399,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "61",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "340",
@@ -381,6 +408,7 @@ const STATION_DATA = [
       },
       {
        "cel": "63",
+       "cov": "Outdoor",
        "rmod": "FHEB",
        "ant": "80010864",
        "az": "340",
@@ -389,6 +417,7 @@ const STATION_DATA = [
       },
       {
        "cel": "64",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "80010864",
        "az": "340",
@@ -397,6 +426,7 @@ const STATION_DATA = [
       },
       {
        "cel": "67",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "340",
@@ -429,6 +459,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "17",
+       "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "RVV-65A-R3",
        "az": "295",
@@ -472,6 +503,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "11",
+       "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "RV4S4-65A-R6",
        "az": "60",
@@ -480,6 +512,7 @@ const STATION_DATA = [
       },
       {
        "cel": "13",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "RV4S4-65A-R6",
        "az": "60",
@@ -493,6 +526,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "21",
+       "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "RV4S4-65A-R6",
        "az": "150",
@@ -501,6 +535,7 @@ const STATION_DATA = [
       },
       {
        "cel": "23",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "RV4S4-65A-R6",
        "az": "150",
@@ -514,6 +549,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "31",
+       "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "RV4S4-65A-R6",
        "az": "210",
@@ -522,6 +558,7 @@ const STATION_DATA = [
       },
       {
        "cel": "33",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "RV4S4-65A-R6",
        "az": "210",
@@ -535,6 +572,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "71",
+       "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "80010864",
        "az": "330",
@@ -543,6 +581,7 @@ const STATION_DATA = [
       },
       {
        "cel": "72",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "80010864",
        "az": "330",
@@ -551,6 +590,7 @@ const STATION_DATA = [
       },
       {
        "cel": "73",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "80010864",
        "az": "330",
@@ -566,6 +606,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "41",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010664",
        "az": "60",
@@ -574,6 +615,7 @@ const STATION_DATA = [
       },
       {
        "cel": "42",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010664",
        "az": "60",
@@ -582,6 +624,7 @@ const STATION_DATA = [
       },
       {
        "cel": "43",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010664",
        "az": "60",
@@ -590,6 +633,7 @@ const STATION_DATA = [
       },
       {
        "cel": "44",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010664",
        "az": "60",
@@ -598,6 +642,7 @@ const STATION_DATA = [
       },
       {
        "cel": "45",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010664",
        "az": "60",
@@ -611,6 +656,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "51",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010664",
        "az": "160",
@@ -619,6 +665,7 @@ const STATION_DATA = [
       },
       {
        "cel": "52",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010664",
        "az": "160",
@@ -627,6 +674,7 @@ const STATION_DATA = [
       },
       {
        "cel": "53",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010664",
        "az": "160",
@@ -635,6 +683,7 @@ const STATION_DATA = [
       },
       {
        "cel": "54",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010664",
        "az": "160",
@@ -643,6 +692,7 @@ const STATION_DATA = [
       },
       {
        "cel": "55",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010664",
        "az": "160",
@@ -656,6 +706,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "61",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010664",
        "az": "260",
@@ -664,6 +715,7 @@ const STATION_DATA = [
       },
       {
        "cel": "62",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010664",
        "az": "260",
@@ -672,6 +724,7 @@ const STATION_DATA = [
       },
       {
        "cel": "63",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010664",
        "az": "260",
@@ -680,6 +733,7 @@ const STATION_DATA = [
       },
       {
        "cel": "64",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010664",
        "az": "260",
@@ -688,6 +742,7 @@ const STATION_DATA = [
       },
       {
        "cel": "65",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010664",
        "az": "260",
@@ -731,6 +786,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "11",
+       "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "RVV-65A-R3",
        "az": "80",
@@ -739,6 +795,7 @@ const STATION_DATA = [
       },
       {
        "cel": "12",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "RVV-65A-R3",
        "az": "80",
@@ -747,6 +804,7 @@ const STATION_DATA = [
       },
       {
        "cel": "13",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "RVV-65A-R3",
        "az": "80",
@@ -760,6 +818,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "21",
+       "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "RVV-65A-R3",
        "az": "170",
@@ -768,6 +827,7 @@ const STATION_DATA = [
       },
       {
        "cel": "22",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "RVV-65A-R3",
        "az": "170",
@@ -776,6 +836,7 @@ const STATION_DATA = [
       },
       {
        "cel": "23",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "RVV-65A-R3",
        "az": "170",
@@ -791,6 +852,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "41",
+       "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "RVV-65A-R3",
        "az": "130",
@@ -799,6 +861,7 @@ const STATION_DATA = [
       },
       {
        "cel": "42",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "RVV-65A-R3",
        "az": "130",
@@ -807,6 +870,7 @@ const STATION_DATA = [
       },
       {
        "cel": "43",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "RVV-65A-R3",
        "az": "130",
@@ -820,6 +884,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "51",
+       "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "RVV-65A-R3",
        "az": "220",
@@ -828,6 +893,7 @@ const STATION_DATA = [
       },
       {
        "cel": "52",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "RVV-65A-R3",
        "az": "220",
@@ -836,6 +902,7 @@ const STATION_DATA = [
       },
       {
        "cel": "53",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "RVV-65A-R3",
        "az": "220",
@@ -849,6 +916,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "61",
+       "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "RVV-65A-R3",
        "az": "310",
@@ -857,6 +925,7 @@ const STATION_DATA = [
       },
       {
        "cel": "62",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "RVV-65A-R3",
        "az": "310",
@@ -865,6 +934,7 @@ const STATION_DATA = [
       },
       {
        "cel": "63",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "RVV-65A-R3",
        "az": "310",
@@ -914,6 +984,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "11",
+       "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "RVVPX305.10R3",
        "az": "40",
@@ -922,6 +993,7 @@ const STATION_DATA = [
       },
       {
        "cel": "12",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "RVVPX305.10R3",
        "az": "40",
@@ -930,6 +1002,7 @@ const STATION_DATA = [
       },
       {
        "cel": "13",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "RVVPX305.10R3",
        "az": "40",
@@ -943,6 +1016,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "21",
+       "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "RVVPX305.10R3",
        "az": "170",
@@ -951,6 +1025,7 @@ const STATION_DATA = [
       },
       {
        "cel": "22",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "RVVPX305.10R3",
        "az": "170",
@@ -959,6 +1034,7 @@ const STATION_DATA = [
       },
       {
        "cel": "23",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "RVVPX305.10R3",
        "az": "170",
@@ -972,6 +1048,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "31",
+       "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "RVVPX305.10R3",
        "az": "250",
@@ -980,6 +1057,7 @@ const STATION_DATA = [
       },
       {
        "cel": "32",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "RVVPX305.10R3",
        "az": "250",
@@ -988,6 +1066,7 @@ const STATION_DATA = [
       },
       {
        "cel": "33",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "RVVPX305.10R3",
        "az": "250",
@@ -1003,6 +1082,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "43",
+       "cov": "Indoor",
        "rmod": "FHEB",
        "ant": "CELLMAX-O-25",
        "az": "0",
@@ -1016,6 +1096,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "51",
+       "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "RVV-65M-R3VB",
        "az": "150",
@@ -1024,6 +1105,7 @@ const STATION_DATA = [
       },
       {
        "cel": "52",
+       "cov": "Outdoor",
        "rmod": "AHEGG",
        "ant": "RVV-65M-R3VB",
        "az": "150",
@@ -1032,6 +1114,7 @@ const STATION_DATA = [
       },
       {
        "cel": "53",
+       "cov": "Outdoor",
        "rmod": "AHEGG",
        "ant": "RVV-65M-R3VB",
        "az": "150",
@@ -1045,6 +1128,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "61",
+       "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "RVV-65M-R3VB",
        "az": "240",
@@ -1053,6 +1137,7 @@ const STATION_DATA = [
       },
       {
        "cel": "62",
+       "cov": "Outdoor",
        "rmod": "AHEGG",
        "ant": "RVV-65M-R3VB",
        "az": "240",
@@ -1061,6 +1146,7 @@ const STATION_DATA = [
       },
       {
        "cel": "63",
+       "cov": "Outdoor",
        "rmod": "AHEGG",
        "ant": "RVV-65M-R3VB",
        "az": "240",
@@ -1076,6 +1162,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "72",
+       "cov": "Indoor",
        "rmod": "AHEGB",
        "ant": "CELLMAX-O-25",
        "az": "0",
@@ -1084,6 +1171,7 @@ const STATION_DATA = [
       },
       {
        "cel": "73",
+       "cov": "Indoor",
        "rmod": "AHEGB",
        "ant": "CELLMAX-O-25",
        "az": "0",
@@ -1140,6 +1228,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "41",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "DBXLH-6565A-VTM",
        "az": "70",
@@ -1148,6 +1237,7 @@ const STATION_DATA = [
       },
       {
        "cel": "42",
+       "cov": "Outdoor",
        "rmod": "AHEGG",
        "ant": "DBXLH-6565A-VTM",
        "az": "70",
@@ -1156,6 +1246,7 @@ const STATION_DATA = [
       },
       {
        "cel": "43",
+       "cov": "Outdoor",
        "rmod": "AHEGG",
        "ant": "DBXLH-6565A-VTM",
        "az": "70",
@@ -1171,6 +1262,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "52",
+       "cov": "Outdoor",
        "rmod": "AHEGG",
        "ant": "DBXLH-6565A-VTM",
        "az": "230",
@@ -1179,6 +1271,7 @@ const STATION_DATA = [
       },
       {
        "cel": "53",
+       "cov": "Outdoor",
        "rmod": "AHEGG",
        "ant": "DBXLH-6565A-VTM",
        "az": "230",
@@ -1194,6 +1287,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "61",
+       "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "80010664",
        "az": "180",
@@ -1202,6 +1296,7 @@ const STATION_DATA = [
       },
       {
        "cel": "62",
+       "cov": "Outdoor",
        "rmod": "AHEGG",
        "ant": "80010664",
        "az": "180",
@@ -1210,6 +1305,7 @@ const STATION_DATA = [
       },
       {
        "cel": "63",
+       "cov": "Outdoor",
        "rmod": "AHEGG",
        "ant": "80010664",
        "az": "180",
@@ -1253,6 +1349,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "11",
+       "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "RVV-65A-R3",
        "az": "50",
@@ -1261,6 +1358,7 @@ const STATION_DATA = [
       },
       {
        "cel": "12",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "RVV-65M-R3VB",
        "az": "50",
@@ -1269,6 +1367,7 @@ const STATION_DATA = [
       },
       {
        "cel": "13",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "RVV-65M-R3VB",
        "az": "50",
@@ -1277,6 +1376,7 @@ const STATION_DATA = [
       },
       {
        "cel": "17",
+       "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "RVV-65A-R3",
        "az": "50",
@@ -1290,6 +1390,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "21",
+       "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "RVV-65A-R3",
        "az": "140",
@@ -1298,6 +1399,7 @@ const STATION_DATA = [
       },
       {
        "cel": "23",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "RVV-65M-R3VB",
        "az": "140",
@@ -1306,6 +1408,7 @@ const STATION_DATA = [
       },
       {
        "cel": "27",
+       "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "RVV-65A-R3",
        "az": "140",
@@ -1319,6 +1422,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "31",
+       "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "RVV-65A-R3",
        "az": "320",
@@ -1327,6 +1431,7 @@ const STATION_DATA = [
       },
       {
        "cel": "32",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "RVV-65M-R3VB",
        "az": "320",
@@ -1335,6 +1440,7 @@ const STATION_DATA = [
       },
       {
        "cel": "33",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "RVV-65M-R3VB",
        "az": "320",
@@ -1343,6 +1449,7 @@ const STATION_DATA = [
       },
       {
        "cel": "37",
+       "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "RVV-65A-R3",
        "az": "320",
@@ -1358,6 +1465,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "41",
+       "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "RVV-65A-R3",
        "az": "30",
@@ -1366,6 +1474,7 @@ const STATION_DATA = [
       },
       {
        "cel": "42",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "RVV-65A-R3",
        "az": "30",
@@ -1374,6 +1483,7 @@ const STATION_DATA = [
       },
       {
        "cel": "43",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "RVV-65A-R3",
        "az": "30",
@@ -1382,6 +1492,7 @@ const STATION_DATA = [
       },
       {
        "cel": "44",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "RVV-65A-R3",
        "az": "30",
@@ -1395,6 +1506,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "51",
+       "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "RVV-65A-R3",
        "az": "140",
@@ -1403,6 +1515,7 @@ const STATION_DATA = [
       },
       {
        "cel": "52",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "RVV-65A-R3",
        "az": "140",
@@ -1411,6 +1524,7 @@ const STATION_DATA = [
       },
       {
        "cel": "53",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "RVV-65A-R3",
        "az": "140",
@@ -1419,6 +1533,7 @@ const STATION_DATA = [
       },
       {
        "cel": "54",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "RVV-65A-R3",
        "az": "140",
@@ -1432,6 +1547,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "61",
+       "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "RVV-65A-R3",
        "az": "300",
@@ -1440,6 +1556,7 @@ const STATION_DATA = [
       },
       {
        "cel": "62",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "RVV-65A-R3",
        "az": "300",
@@ -1448,6 +1565,7 @@ const STATION_DATA = [
       },
       {
        "cel": "63",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "RVV-65A-R3",
        "az": "300",
@@ -1456,6 +1574,7 @@ const STATION_DATA = [
       },
       {
        "cel": "64",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "RVV-65A-R3",
        "az": "300",
@@ -1493,6 +1612,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "12",
+       "cov": "Indoor",
        "rmod": "AHEB",
        "ant": "I-ATP1-698/2700",
        "az": "0",
@@ -1501,6 +1621,7 @@ const STATION_DATA = [
       },
       {
        "cel": "13",
+       "cov": "Indoor",
        "rmod": "AHEB",
        "ant": "I-ATP1-698/2700",
        "az": "0",
@@ -1538,6 +1659,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "13",
+       "cov": "Indoor",
        "rmod": "FHEB",
        "ant": "RRV4-65A-R6",
        "az": "0",
@@ -1551,6 +1673,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "21",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "RRV4-65A-R6",
        "az": "220",
@@ -1559,6 +1682,7 @@ const STATION_DATA = [
       },
       {
        "cel": "23",
+       "cov": "Outdoor",
        "rmod": "FHEB",
        "ant": "RRV4-65A-R6",
        "az": "220",
@@ -1572,6 +1696,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "31",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "RRV4-65A-R6",
        "az": "330",
@@ -1580,6 +1705,7 @@ const STATION_DATA = [
       },
       {
        "cel": "33",
+       "cov": "Outdoor",
        "rmod": "FHEB",
        "ant": "RRV4-65A-R6",
        "az": "330",
@@ -1623,6 +1749,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "11",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "150",
@@ -1631,6 +1758,7 @@ const STATION_DATA = [
       },
       {
        "cel": "13",
+       "cov": "Outdoor",
        "rmod": "FHEB",
        "ant": "80010864",
        "az": "150",
@@ -1639,6 +1767,7 @@ const STATION_DATA = [
       },
       {
        "cel": "14",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "150",
@@ -1652,6 +1781,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "21",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "240",
@@ -1660,6 +1790,7 @@ const STATION_DATA = [
       },
       {
        "cel": "23",
+       "cov": "Outdoor",
        "rmod": "FHEB",
        "ant": "80010864",
        "az": "240",
@@ -1668,6 +1799,7 @@ const STATION_DATA = [
       },
       {
        "cel": "24",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "240",
@@ -1681,6 +1813,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "31",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "330",
@@ -1689,6 +1822,7 @@ const STATION_DATA = [
       },
       {
        "cel": "33",
+       "cov": "Outdoor",
        "rmod": "FHEB",
        "ant": "80010864",
        "az": "330",
@@ -1697,6 +1831,7 @@ const STATION_DATA = [
       },
       {
        "cel": "34",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "330",
@@ -1712,6 +1847,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "41",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "DBXLH-6565A-VTM",
        "az": "30",
@@ -1720,6 +1856,7 @@ const STATION_DATA = [
       },
       {
        "cel": "43",
+       "cov": "Outdoor",
        "rmod": "FHEB",
        "ant": "DBXLH-6565B-VTM",
        "az": "30",
@@ -1733,6 +1870,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "51",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "DBXLH-6565A-VTM",
        "az": "180",
@@ -1741,6 +1879,7 @@ const STATION_DATA = [
       },
       {
        "cel": "53",
+       "cov": "Outdoor",
        "rmod": "FHEB",
        "ant": "DBXLH-6565B-VTM",
        "az": "180",
@@ -1754,6 +1893,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "61",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "DBXLH-6565A-VTM",
        "az": "290",
@@ -1762,6 +1902,7 @@ const STATION_DATA = [
       },
       {
        "cel": "63",
+       "cov": "Outdoor",
        "rmod": "FHEB",
        "ant": "DBXLH-6565B-VTM",
        "az": "290",
@@ -1811,6 +1952,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "11",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "50",
@@ -1819,6 +1961,7 @@ const STATION_DATA = [
       },
       {
        "cel": "12",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "50",
@@ -1827,6 +1970,7 @@ const STATION_DATA = [
       },
       {
        "cel": "13",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "50",
@@ -1835,6 +1979,7 @@ const STATION_DATA = [
       },
       {
        "cel": "14",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "80010864",
        "az": "50",
@@ -1843,6 +1988,7 @@ const STATION_DATA = [
       },
       {
        "cel": "15",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "80010864",
        "az": "50",
@@ -1856,6 +2002,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "21",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "190",
@@ -1864,6 +2011,7 @@ const STATION_DATA = [
       },
       {
        "cel": "22",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010682",
        "az": "100",
@@ -1872,6 +2020,7 @@ const STATION_DATA = [
       },
       {
        "cel": "23",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010682",
        "az": "100",
@@ -1880,6 +2029,7 @@ const STATION_DATA = [
       },
       {
        "cel": "24",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "80010682",
        "az": "100",
@@ -1888,6 +2038,7 @@ const STATION_DATA = [
       },
       {
        "cel": "25",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "80010682",
        "az": "100",
@@ -1901,6 +2052,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "31",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "315",
@@ -1909,6 +2061,7 @@ const STATION_DATA = [
       },
       {
        "cel": "32",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "315",
@@ -1917,6 +2070,7 @@ const STATION_DATA = [
       },
       {
        "cel": "33",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "315",
@@ -1925,6 +2079,7 @@ const STATION_DATA = [
       },
       {
        "cel": "34",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "80010864",
        "az": "315",
@@ -1933,6 +2088,7 @@ const STATION_DATA = [
       },
       {
        "cel": "35",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "80010864",
        "az": "315",
@@ -1948,6 +2104,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "41",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "50",
@@ -1956,6 +2113,7 @@ const STATION_DATA = [
       },
       {
        "cel": "42",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "80010864",
        "az": "50",
@@ -1964,6 +2122,7 @@ const STATION_DATA = [
       },
       {
        "cel": "43",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "80010864",
        "az": "50",
@@ -1972,6 +2131,7 @@ const STATION_DATA = [
       },
       {
        "cel": "44",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "80010864",
        "az": "50",
@@ -1980,6 +2140,7 @@ const STATION_DATA = [
       },
       {
        "cel": "45",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "80010864",
        "az": "50",
@@ -1993,6 +2154,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "51",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "140",
@@ -2001,6 +2163,7 @@ const STATION_DATA = [
       },
       {
        "cel": "52",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "80010864",
        "az": "140",
@@ -2009,6 +2172,7 @@ const STATION_DATA = [
       },
       {
        "cel": "53",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "80010864",
        "az": "140",
@@ -2017,6 +2181,7 @@ const STATION_DATA = [
       },
       {
        "cel": "54",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "80010864",
        "az": "140",
@@ -2025,6 +2190,7 @@ const STATION_DATA = [
       },
       {
        "cel": "55",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "80010864",
        "az": "140",
@@ -2040,6 +2206,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "61",
+       "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "RVV-65A-R3",
        "az": "330",
@@ -2048,6 +2215,7 @@ const STATION_DATA = [
       },
       {
        "cel": "62",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "RVV-65A-R3",
        "az": "330",
@@ -2056,6 +2224,7 @@ const STATION_DATA = [
       },
       {
        "cel": "63",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "RVV-65A-R3",
        "az": "330",
@@ -2099,6 +2268,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "11",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "DBXLH-6565A-VTM",
        "az": "30",
@@ -2107,6 +2277,7 @@ const STATION_DATA = [
       },
       {
        "cel": "12",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "DBXLH-6565A-VTM",
        "az": "30",
@@ -2115,6 +2286,7 @@ const STATION_DATA = [
       },
       {
        "cel": "13",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "DBXLH-6565A-VTM",
        "az": "30",
@@ -2123,6 +2295,7 @@ const STATION_DATA = [
       },
       {
        "cel": "14",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010664",
        "az": "30",
@@ -2136,6 +2309,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "21",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "150",
@@ -2144,6 +2318,7 @@ const STATION_DATA = [
       },
       {
        "cel": "22",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "150",
@@ -2152,6 +2327,7 @@ const STATION_DATA = [
       },
       {
        "cel": "23",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "150",
@@ -2160,6 +2336,7 @@ const STATION_DATA = [
       },
       {
        "cel": "24",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "150",
@@ -2173,6 +2350,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "31",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "DBXLH-6565A-VTM",
        "az": "270",
@@ -2181,6 +2359,7 @@ const STATION_DATA = [
       },
       {
        "cel": "32",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "DBXLH-6565A-VTM",
        "az": "270",
@@ -2189,6 +2368,7 @@ const STATION_DATA = [
       },
       {
        "cel": "33",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "DBXLH-6565A-VTM",
        "az": "270",
@@ -2197,6 +2377,7 @@ const STATION_DATA = [
       },
       {
        "cel": "34",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010664",
        "az": "270",
@@ -2210,6 +2391,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "81",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "DBXLH-6565A-VTM",
        "az": "330",
@@ -2218,6 +2400,7 @@ const STATION_DATA = [
       },
       {
        "cel": "83",
+       "cov": "Outdoor",
        "rmod": "FHEB",
        "ant": "DBXLH-6565A-VTM",
        "az": "330",
@@ -2226,6 +2409,7 @@ const STATION_DATA = [
       },
       {
        "cel": "84",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "DBXLH-6565A-VTM",
        "az": "330",
@@ -2241,6 +2425,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "41",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "0",
@@ -2249,6 +2434,7 @@ const STATION_DATA = [
       },
       {
        "cel": "42",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "0",
@@ -2257,6 +2443,7 @@ const STATION_DATA = [
       },
       {
        "cel": "43",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "0",
@@ -2265,6 +2452,7 @@ const STATION_DATA = [
       },
       {
        "cel": "44",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "0",
@@ -2273,6 +2461,7 @@ const STATION_DATA = [
       },
       {
        "cel": "45",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "0",
@@ -2286,6 +2475,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "51",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "140",
@@ -2294,6 +2484,7 @@ const STATION_DATA = [
       },
       {
        "cel": "52",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "140",
@@ -2302,6 +2493,7 @@ const STATION_DATA = [
       },
       {
        "cel": "53",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "140",
@@ -2310,6 +2502,7 @@ const STATION_DATA = [
       },
       {
        "cel": "54",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "140",
@@ -2318,6 +2511,7 @@ const STATION_DATA = [
       },
       {
        "cel": "55",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "140",
@@ -2331,6 +2525,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "61",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "230",
@@ -2339,6 +2534,7 @@ const STATION_DATA = [
       },
       {
        "cel": "62",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "230",
@@ -2347,6 +2543,7 @@ const STATION_DATA = [
       },
       {
        "cel": "63",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "230",
@@ -2355,6 +2552,7 @@ const STATION_DATA = [
       },
       {
        "cel": "64",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "230",
@@ -2363,6 +2561,7 @@ const STATION_DATA = [
       },
       {
        "cel": "65",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "230",
@@ -2376,6 +2575,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "71",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010664",
        "az": "280",
@@ -2384,6 +2584,7 @@ const STATION_DATA = [
       },
       {
        "cel": "73",
+       "cov": "Outdoor",
        "rmod": "FHEB",
        "ant": "80010664",
        "az": "280",
@@ -2392,6 +2593,7 @@ const STATION_DATA = [
       },
       {
        "cel": "74",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010664",
        "az": "280",
@@ -2435,6 +2637,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "11",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "0",
@@ -2443,6 +2646,7 @@ const STATION_DATA = [
       },
       {
        "cel": "12",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "0",
@@ -2451,6 +2655,7 @@ const STATION_DATA = [
       },
       {
        "cel": "13",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "0",
@@ -2459,6 +2664,7 @@ const STATION_DATA = [
       },
       {
        "cel": "14",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "0",
@@ -2467,6 +2673,7 @@ const STATION_DATA = [
       },
       {
        "cel": "15",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "0",
@@ -2480,6 +2687,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "21",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "140",
@@ -2488,6 +2696,7 @@ const STATION_DATA = [
       },
       {
        "cel": "22",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "140",
@@ -2496,6 +2705,7 @@ const STATION_DATA = [
       },
       {
        "cel": "23",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "140",
@@ -2504,6 +2714,7 @@ const STATION_DATA = [
       },
       {
        "cel": "24",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "140",
@@ -2512,6 +2723,7 @@ const STATION_DATA = [
       },
       {
        "cel": "25",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "140",
@@ -2525,6 +2737,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "31",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "240",
@@ -2533,6 +2746,7 @@ const STATION_DATA = [
       },
       {
        "cel": "32",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "240",
@@ -2541,6 +2755,7 @@ const STATION_DATA = [
       },
       {
        "cel": "33",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "240",
@@ -2549,6 +2764,7 @@ const STATION_DATA = [
       },
       {
        "cel": "34",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "240",
@@ -2557,6 +2773,7 @@ const STATION_DATA = [
       },
       {
        "cel": "35",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "240",
@@ -2572,6 +2789,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "41",
+       "cov": "Outdoor",
        "rmod": "FXDB",
        "ant": "80010864",
        "az": "0",
@@ -2580,6 +2798,7 @@ const STATION_DATA = [
       },
       {
        "cel": "42",
+       "cov": "Outdoor",
        "rmod": "FXEB",
        "ant": "80010864",
        "az": "0",
@@ -2588,6 +2807,7 @@ const STATION_DATA = [
       },
       {
        "cel": "43",
+       "cov": "Outdoor",
        "rmod": "FXEB",
        "ant": "80010864",
        "az": "0",
@@ -2596,6 +2816,7 @@ const STATION_DATA = [
       },
       {
        "cel": "44",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "80010864",
        "az": "0",
@@ -2604,6 +2825,7 @@ const STATION_DATA = [
       },
       {
        "cel": "45",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "80010864",
        "az": "0",
@@ -2617,6 +2839,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "51",
+       "cov": "Outdoor",
        "rmod": "FXDB",
        "ant": "80010864",
        "az": "120",
@@ -2625,6 +2848,7 @@ const STATION_DATA = [
       },
       {
        "cel": "52",
+       "cov": "Outdoor",
        "rmod": "FXEB",
        "ant": "80010864",
        "az": "120",
@@ -2633,6 +2857,7 @@ const STATION_DATA = [
       },
       {
        "cel": "53",
+       "cov": "Outdoor",
        "rmod": "FXEB",
        "ant": "80010864",
        "az": "120",
@@ -2641,6 +2866,7 @@ const STATION_DATA = [
       },
       {
        "cel": "54",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "80010864",
        "az": "120",
@@ -2649,6 +2875,7 @@ const STATION_DATA = [
       },
       {
        "cel": "55",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "80010864",
        "az": "120",
@@ -2662,6 +2889,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "61",
+       "cov": "Outdoor",
        "rmod": "FXDB",
        "ant": "80010864",
        "az": "210",
@@ -2670,6 +2898,7 @@ const STATION_DATA = [
       },
       {
        "cel": "62",
+       "cov": "Outdoor",
        "rmod": "FXEB",
        "ant": "80010864",
        "az": "210",
@@ -2678,6 +2907,7 @@ const STATION_DATA = [
       },
       {
        "cel": "63",
+       "cov": "Outdoor",
        "rmod": "FXEB",
        "ant": "80010864",
        "az": "210",
@@ -2686,6 +2916,7 @@ const STATION_DATA = [
       },
       {
        "cel": "64",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "80010864",
        "az": "210",
@@ -2694,6 +2925,7 @@ const STATION_DATA = [
       },
       {
        "cel": "65",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "80010864",
        "az": "210",
@@ -2737,6 +2969,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "11",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "DBXLH-6565A-VTM",
        "az": "100",
@@ -2745,6 +2978,7 @@ const STATION_DATA = [
       },
       {
        "cel": "13",
+       "cov": "Outdoor",
        "rmod": "FXED",
        "ant": "DBXLH-6565A-VTM",
        "az": "100",
@@ -2758,6 +2992,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "21",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "DBXLH-6565A-VTM",
        "az": "210",
@@ -2766,6 +3001,7 @@ const STATION_DATA = [
       },
       {
        "cel": "23",
+       "cov": "Outdoor",
        "rmod": "FXED",
        "ant": "DBXLH-6565A-VTM",
        "az": "210",
@@ -2779,6 +3015,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "31",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "DBXLH-6565A-VTM",
        "az": "320",
@@ -2787,6 +3024,7 @@ const STATION_DATA = [
       },
       {
        "cel": "33",
+       "cov": "Outdoor",
        "rmod": "FXED",
        "ant": "DBXLH-6565A-VTM",
        "az": "320",
@@ -2802,6 +3040,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "41",
+       "cov": "Outdoor",
        "rmod": "FXDB",
        "ant": "RVVPX305.10R3",
        "az": "90",
@@ -2810,6 +3049,7 @@ const STATION_DATA = [
       },
       {
        "cel": "42",
+       "cov": "Outdoor",
        "rmod": "FXEB",
        "ant": "RVVPX305.10R3",
        "az": "90",
@@ -2818,6 +3058,7 @@ const STATION_DATA = [
       },
       {
        "cel": "43",
+       "cov": "Outdoor",
        "rmod": "FXEB",
        "ant": "RVVPX305.10R3",
        "az": "90",
@@ -2826,6 +3067,7 @@ const STATION_DATA = [
       },
       {
        "cel": "44",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "RVVPX305.10R3",
        "az": "90",
@@ -2839,6 +3081,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "51",
+       "cov": "Outdoor",
        "rmod": "FXDB",
        "ant": "RVVPX305.10R3",
        "az": "210",
@@ -2847,6 +3090,7 @@ const STATION_DATA = [
       },
       {
        "cel": "52",
+       "cov": "Outdoor",
        "rmod": "FXEB",
        "ant": "RVVPX305.10R3",
        "az": "210",
@@ -2855,6 +3099,7 @@ const STATION_DATA = [
       },
       {
        "cel": "53",
+       "cov": "Outdoor",
        "rmod": "FXEB",
        "ant": "RVVPX305.10R3",
        "az": "210",
@@ -2863,6 +3108,7 @@ const STATION_DATA = [
       },
       {
        "cel": "54",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "RVVPX305.10R3",
        "az": "210",
@@ -2876,6 +3122,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "61",
+       "cov": "Outdoor",
        "rmod": "FXDB",
        "ant": "RVVPX305.10R3",
        "az": "320",
@@ -2884,6 +3131,7 @@ const STATION_DATA = [
       },
       {
        "cel": "62",
+       "cov": "Outdoor",
        "rmod": "FXEB",
        "ant": "RVVPX305.10R3",
        "az": "330",
@@ -2892,6 +3140,7 @@ const STATION_DATA = [
       },
       {
        "cel": "63",
+       "cov": "Outdoor",
        "rmod": "FXEB",
        "ant": "RVVPX305.10R3",
        "az": "330",
@@ -2900,6 +3149,7 @@ const STATION_DATA = [
       },
       {
        "cel": "64",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "RVVPX305.10R3",
        "az": "330",
@@ -2943,6 +3193,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "11",
+       "cov": "Outdoor",
        "rmod": "FXDB",
        "ant": "80010864",
        "az": "40",
@@ -2951,6 +3202,7 @@ const STATION_DATA = [
       },
       {
        "cel": "12",
+       "cov": "Outdoor",
        "rmod": "FXEB",
        "ant": "80010864",
        "az": "40",
@@ -2959,6 +3211,7 @@ const STATION_DATA = [
       },
       {
        "cel": "13",
+       "cov": "Outdoor",
        "rmod": "FXEB",
        "ant": "80010864",
        "az": "40",
@@ -2967,6 +3220,7 @@ const STATION_DATA = [
       },
       {
        "cel": "14",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "40",
@@ -2975,6 +3229,7 @@ const STATION_DATA = [
       },
       {
        "cel": "15",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "40",
@@ -2983,6 +3238,7 @@ const STATION_DATA = [
       },
       {
        "cel": "17",
+       "cov": "Outdoor",
        "rmod": "FXDB",
        "ant": "80010864",
        "az": "40",
@@ -2996,6 +3252,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "21",
+       "cov": "Outdoor",
        "rmod": "FXDB",
        "ant": "80010864",
        "az": "190",
@@ -3004,6 +3261,7 @@ const STATION_DATA = [
       },
       {
        "cel": "22",
+       "cov": "Outdoor",
        "rmod": "FXEB",
        "ant": "80010864",
        "az": "190",
@@ -3012,6 +3270,7 @@ const STATION_DATA = [
       },
       {
        "cel": "23",
+       "cov": "Outdoor",
        "rmod": "FXEB",
        "ant": "80010864",
        "az": "190",
@@ -3020,6 +3279,7 @@ const STATION_DATA = [
       },
       {
        "cel": "24",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "190",
@@ -3028,6 +3288,7 @@ const STATION_DATA = [
       },
       {
        "cel": "25",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "190",
@@ -3036,6 +3297,7 @@ const STATION_DATA = [
       },
       {
        "cel": "27",
+       "cov": "Outdoor",
        "rmod": "FXDB",
        "ant": "80010864",
        "az": "190",
@@ -3049,6 +3311,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "31",
+       "cov": "Outdoor",
        "rmod": "FXDB",
        "ant": "80010864",
        "az": "300",
@@ -3057,6 +3320,7 @@ const STATION_DATA = [
       },
       {
        "cel": "32",
+       "cov": "Outdoor",
        "rmod": "FXEB",
        "ant": "80010864",
        "az": "300",
@@ -3065,6 +3329,7 @@ const STATION_DATA = [
       },
       {
        "cel": "33",
+       "cov": "Outdoor",
        "rmod": "FXEB",
        "ant": "80010864",
        "az": "300",
@@ -3073,6 +3338,7 @@ const STATION_DATA = [
       },
       {
        "cel": "34",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "300",
@@ -3081,6 +3347,7 @@ const STATION_DATA = [
       },
       {
        "cel": "35",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "300",
@@ -3096,6 +3363,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "41",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "160",
@@ -3104,6 +3372,7 @@ const STATION_DATA = [
       },
       {
        "cel": "42",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "160",
@@ -3112,6 +3381,7 @@ const STATION_DATA = [
       },
       {
        "cel": "43",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "160",
@@ -3120,6 +3390,7 @@ const STATION_DATA = [
       },
       {
        "cel": "44",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "80010864",
        "az": "160",
@@ -3128,6 +3399,7 @@ const STATION_DATA = [
       },
       {
        "cel": "45",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "80010864",
        "az": "160",
@@ -3141,6 +3413,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "51",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "270",
@@ -3149,6 +3422,7 @@ const STATION_DATA = [
       },
       {
        "cel": "53",
+       "cov": "Outdoor",
        "rmod": "FHEB",
        "ant": "80010864",
        "az": "270",
@@ -3157,6 +3431,7 @@ const STATION_DATA = [
       },
       {
        "cel": "54",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "80010864",
        "az": "270",
@@ -3170,6 +3445,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "61",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "350",
@@ -3178,6 +3454,7 @@ const STATION_DATA = [
       },
       {
        "cel": "62",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "350",
@@ -3186,6 +3463,7 @@ const STATION_DATA = [
       },
       {
        "cel": "63",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "350",
@@ -3194,6 +3472,7 @@ const STATION_DATA = [
       },
       {
        "cel": "64",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "80010864",
        "az": "350",
@@ -3202,6 +3481,7 @@ const STATION_DATA = [
       },
       {
        "cel": "65",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "80010864",
        "az": "350",
@@ -3215,6 +3495,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "73",
+       "cov": "Indoor",
        "rmod": "FHEB",
        "ant": "CELLMAX-O-25",
        "az": "0",
@@ -3252,6 +3533,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "11",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "30",
@@ -3260,6 +3542,7 @@ const STATION_DATA = [
       },
       {
        "cel": "12",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "30",
@@ -3268,6 +3551,7 @@ const STATION_DATA = [
       },
       {
        "cel": "13",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "30",
@@ -3276,6 +3560,7 @@ const STATION_DATA = [
       },
       {
        "cel": "14",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "30",
@@ -3284,6 +3569,7 @@ const STATION_DATA = [
       },
       {
        "cel": "15",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "30",
@@ -3292,6 +3578,7 @@ const STATION_DATA = [
       },
       {
        "cel": "17",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "30",
@@ -3305,6 +3592,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "21",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "110",
@@ -3313,6 +3601,7 @@ const STATION_DATA = [
       },
       {
        "cel": "22",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "110",
@@ -3321,6 +3610,7 @@ const STATION_DATA = [
       },
       {
        "cel": "23",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "110",
@@ -3329,6 +3619,7 @@ const STATION_DATA = [
       },
       {
        "cel": "24",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "110",
@@ -3337,6 +3628,7 @@ const STATION_DATA = [
       },
       {
        "cel": "25",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "110",
@@ -3345,6 +3637,7 @@ const STATION_DATA = [
       },
       {
        "cel": "27",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "110",
@@ -3358,6 +3651,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "31",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "190",
@@ -3366,6 +3660,7 @@ const STATION_DATA = [
       },
       {
        "cel": "32",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "190",
@@ -3374,6 +3669,7 @@ const STATION_DATA = [
       },
       {
        "cel": "33",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "190",
@@ -3382,6 +3678,7 @@ const STATION_DATA = [
       },
       {
        "cel": "34",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "190",
@@ -3390,6 +3687,7 @@ const STATION_DATA = [
       },
       {
        "cel": "35",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "190",
@@ -3398,6 +3696,7 @@ const STATION_DATA = [
       },
       {
        "cel": "37",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "190",
@@ -3411,6 +3710,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "41",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "RVVPX303.6F12R2",
        "az": "300",
@@ -3419,6 +3719,7 @@ const STATION_DATA = [
       },
       {
        "cel": "42",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "RVVPX303.6F12R2",
        "az": "300",
@@ -3427,6 +3728,7 @@ const STATION_DATA = [
       },
       {
        "cel": "43",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "RVVPX303.6F12R2",
        "az": "300",
@@ -3435,6 +3737,7 @@ const STATION_DATA = [
       },
       {
        "cel": "44",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "RVVPX303.6F12R2",
        "az": "300",
@@ -3443,6 +3746,7 @@ const STATION_DATA = [
       },
       {
        "cel": "45",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "RVVPX303.6F12R2",
        "az": "300",
@@ -3451,6 +3755,7 @@ const STATION_DATA = [
       },
       {
        "cel": "47",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "RVVPX303.6F12R2",
        "az": "300",
@@ -3494,6 +3799,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "11",
+       "cov": "Outdoor",
        "rmod": "FXDB",
        "ant": "80010290",
        "az": "50",
@@ -3502,6 +3808,7 @@ const STATION_DATA = [
       },
       {
        "cel": "13",
+       "cov": "Outdoor",
        "rmod": "FXED",
        "ant": "80010290",
        "az": "50",
@@ -3510,6 +3817,7 @@ const STATION_DATA = [
       },
       {
        "cel": "17",
+       "cov": "Outdoor",
        "rmod": "FXDB",
        "ant": "80010290",
        "az": "50",
@@ -3523,6 +3831,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "21",
+       "cov": "Outdoor",
        "rmod": "FXDB",
        "ant": "80010864",
        "az": "200",
@@ -3531,6 +3840,7 @@ const STATION_DATA = [
       },
       {
        "cel": "22",
+       "cov": "Outdoor",
        "rmod": "FXED",
        "ant": "80010864",
        "az": "200",
@@ -3539,6 +3849,7 @@ const STATION_DATA = [
       },
       {
        "cel": "23",
+       "cov": "Outdoor",
        "rmod": "FXED",
        "ant": "80010864",
        "az": "200",
@@ -3547,6 +3858,7 @@ const STATION_DATA = [
       },
       {
        "cel": "24",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "200",
@@ -3555,6 +3867,7 @@ const STATION_DATA = [
       },
       {
        "cel": "25",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "200",
@@ -3563,6 +3876,7 @@ const STATION_DATA = [
       },
       {
        "cel": "27",
+       "cov": "Outdoor",
        "rmod": "FXDB",
        "ant": "80010864",
        "az": "200",
@@ -3576,6 +3890,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "31",
+       "cov": "Outdoor",
        "rmod": "FXDB",
        "ant": "80010290",
        "az": "300",
@@ -3584,6 +3899,7 @@ const STATION_DATA = [
       },
       {
        "cel": "33",
+       "cov": "Outdoor",
        "rmod": "FXED",
        "ant": "80010290",
        "az": "300",
@@ -3592,6 +3908,7 @@ const STATION_DATA = [
       },
       {
        "cel": "37",
+       "cov": "Outdoor",
        "rmod": "FXDB",
        "ant": "80010290",
        "az": "300",
@@ -3607,6 +3924,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "41",
+       "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "80010864",
        "az": "25",
@@ -3615,6 +3933,7 @@ const STATION_DATA = [
       },
       {
        "cel": "43",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "80010864",
        "az": "25",
@@ -3623,6 +3942,7 @@ const STATION_DATA = [
       },
       {
        "cel": "44",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "80010864",
        "az": "25",
@@ -3631,6 +3951,7 @@ const STATION_DATA = [
       },
       {
        "cel": "47",
+       "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "80010864",
        "az": "25",
@@ -3644,6 +3965,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "51",
+       "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "80010864",
        "az": "140",
@@ -3652,6 +3974,7 @@ const STATION_DATA = [
       },
       {
        "cel": "53",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "80010864",
        "az": "140",
@@ -3660,6 +3983,7 @@ const STATION_DATA = [
       },
       {
        "cel": "54",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "80010864",
        "az": "140",
@@ -3668,6 +3992,7 @@ const STATION_DATA = [
       },
       {
        "cel": "57",
+       "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "80010864",
        "az": "140",
@@ -3681,6 +4006,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "61",
+       "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "80010864",
        "az": "230",
@@ -3689,6 +4015,7 @@ const STATION_DATA = [
       },
       {
        "cel": "63",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "80010864",
        "az": "230",
@@ -3697,6 +4024,7 @@ const STATION_DATA = [
       },
       {
        "cel": "64",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "80010864",
        "az": "230",
@@ -3705,6 +4033,7 @@ const STATION_DATA = [
       },
       {
        "cel": "67",
+       "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "80010864",
        "az": "230",
@@ -3748,6 +4077,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "11",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "60",
@@ -3756,6 +4086,7 @@ const STATION_DATA = [
       },
       {
        "cel": "13",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "60",
@@ -3764,6 +4095,7 @@ const STATION_DATA = [
       },
       {
        "cel": "14",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "60",
@@ -3777,6 +4109,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "21",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "DBXLH-6565A-VTM",
        "az": "180",
@@ -3785,6 +4118,7 @@ const STATION_DATA = [
       },
       {
        "cel": "23",
+       "cov": "Outdoor",
        "rmod": "FHEB",
        "ant": "742237",
        "az": "180",
@@ -3798,6 +4132,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "31",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "DBXLH-6565A-VTM",
        "az": "300",
@@ -3806,6 +4141,7 @@ const STATION_DATA = [
       },
       {
        "cel": "33",
+       "cov": "Outdoor",
        "rmod": "FHEB",
        "ant": "DBXLH-6565A-VTM",
        "az": "300",
@@ -3850,6 +4186,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "11",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "10",
@@ -3858,6 +4195,7 @@ const STATION_DATA = [
       },
       {
        "cel": "13",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "742237",
        "az": "10",
@@ -3866,6 +4204,7 @@ const STATION_DATA = [
       },
       {
        "cel": "14",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "742237",
        "az": "10",
@@ -3879,6 +4218,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "21",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "120",
@@ -3887,6 +4227,7 @@ const STATION_DATA = [
       },
       {
        "cel": "22",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "120",
@@ -3895,6 +4236,7 @@ const STATION_DATA = [
       },
       {
        "cel": "23",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "120",
@@ -3903,6 +4245,7 @@ const STATION_DATA = [
       },
       {
        "cel": "24",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "120",
@@ -3911,6 +4254,7 @@ const STATION_DATA = [
       },
       {
        "cel": "25",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "120",
@@ -3924,6 +4268,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "31",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "250",
@@ -3932,6 +4277,7 @@ const STATION_DATA = [
       },
       {
        "cel": "32",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "250",
@@ -3940,6 +4286,7 @@ const STATION_DATA = [
       },
       {
        "cel": "33",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "250",
@@ -3948,6 +4295,7 @@ const STATION_DATA = [
       },
       {
        "cel": "34",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "250",
@@ -3961,6 +4309,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "71",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "330",
@@ -3969,6 +4318,7 @@ const STATION_DATA = [
       },
       {
        "cel": "72",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "330",
@@ -3977,6 +4327,7 @@ const STATION_DATA = [
       },
       {
        "cel": "73",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "330",
@@ -3985,6 +4336,7 @@ const STATION_DATA = [
       },
       {
        "cel": "74",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "330",
@@ -4000,6 +4352,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "41",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "30",
@@ -4008,6 +4361,7 @@ const STATION_DATA = [
       },
       {
        "cel": "42",
+       "cov": "Outdoor",
        "rmod": "FXED",
        "ant": "80010864",
        "az": "30",
@@ -4016,6 +4370,7 @@ const STATION_DATA = [
       },
       {
        "cel": "43",
+       "cov": "Outdoor",
        "rmod": "FXED",
        "ant": "80010864",
        "az": "30",
@@ -4029,6 +4384,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "51",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "110",
@@ -4037,6 +4393,7 @@ const STATION_DATA = [
       },
       {
        "cel": "52",
+       "cov": "Outdoor",
        "rmod": "FXED",
        "ant": "80010864",
        "az": "110",
@@ -4045,6 +4402,7 @@ const STATION_DATA = [
       },
       {
        "cel": "53",
+       "cov": "Outdoor",
        "rmod": "FXED",
        "ant": "80010864",
        "az": "110",
@@ -4053,6 +4411,7 @@ const STATION_DATA = [
       },
       {
        "cel": "54",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "80010864",
        "az": "110",
@@ -4066,6 +4425,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "61",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "300",
@@ -4074,6 +4434,7 @@ const STATION_DATA = [
       },
       {
        "cel": "62",
+       "cov": "Outdoor",
        "rmod": "FXED",
        "ant": "80010864",
        "az": "300",
@@ -4082,6 +4443,7 @@ const STATION_DATA = [
       },
       {
        "cel": "63",
+       "cov": "Outdoor",
        "rmod": "FXED",
        "ant": "80010864",
        "az": "300",
@@ -4090,6 +4452,7 @@ const STATION_DATA = [
       },
       {
        "cel": "64",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "80010864",
        "az": "270",
@@ -4139,6 +4502,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "11",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "55",
@@ -4147,6 +4511,7 @@ const STATION_DATA = [
       },
       {
        "cel": "12",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "55",
@@ -4155,6 +4520,7 @@ const STATION_DATA = [
       },
       {
        "cel": "13",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "55",
@@ -4163,6 +4529,7 @@ const STATION_DATA = [
       },
       {
        "cel": "14",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "55",
@@ -4171,6 +4538,7 @@ const STATION_DATA = [
       },
       {
        "cel": "15",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "55",
@@ -4186,6 +4554,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "21",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "220",
@@ -4194,6 +4563,7 @@ const STATION_DATA = [
       },
       {
        "cel": "22",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "220",
@@ -4202,6 +4572,7 @@ const STATION_DATA = [
       },
       {
        "cel": "23",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "220",
@@ -4210,6 +4581,7 @@ const STATION_DATA = [
       },
       {
        "cel": "24",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "220",
@@ -4218,6 +4590,7 @@ const STATION_DATA = [
       },
       {
        "cel": "25",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "220",
@@ -4233,6 +4606,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "31",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "350",
@@ -4241,6 +4615,7 @@ const STATION_DATA = [
       },
       {
        "cel": "32",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "350",
@@ -4249,6 +4624,7 @@ const STATION_DATA = [
       },
       {
        "cel": "33",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "350",
@@ -4257,6 +4633,7 @@ const STATION_DATA = [
       },
       {
        "cel": "34",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "350",
@@ -4265,6 +4642,7 @@ const STATION_DATA = [
       },
       {
        "cel": "35",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "350",
@@ -4308,6 +4686,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "11",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "80",
@@ -4316,6 +4695,7 @@ const STATION_DATA = [
       },
       {
        "cel": "13",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "80",
@@ -4324,6 +4704,7 @@ const STATION_DATA = [
       },
       {
        "cel": "14",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "80",
@@ -4337,6 +4718,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "21",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "230",
@@ -4345,6 +4727,7 @@ const STATION_DATA = [
       },
       {
        "cel": "23",
+       "cov": "Outdoor",
        "rmod": "FHEB",
        "ant": "80010864",
        "az": "230",
@@ -4358,6 +4741,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "31",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "DBXLH-6565A-VTM",
        "az": "340",
@@ -4366,6 +4750,7 @@ const STATION_DATA = [
       },
       {
        "cel": "33",
+       "cov": "Outdoor",
        "rmod": "FHEB",
        "ant": "DBXLH-6565A-VTM",
        "az": "340",
@@ -4381,6 +4766,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "42",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "3X-V65S-C3-3XR",
        "az": "230",
@@ -4389,6 +4775,7 @@ const STATION_DATA = [
       },
       {
        "cel": "43",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "3X-V65S-C3-3XR",
        "az": "230",
@@ -4397,6 +4784,7 @@ const STATION_DATA = [
       },
       {
        "cel": "44",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "3X-V65S-C3-3XR",
        "az": "230",
@@ -4405,6 +4793,7 @@ const STATION_DATA = [
       },
       {
        "cel": "45",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "3X-V65S-C3-3XR",
        "az": "230",
@@ -4448,6 +4837,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "11",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "100",
@@ -4456,6 +4846,7 @@ const STATION_DATA = [
       },
       {
        "cel": "13",
+       "cov": "Outdoor",
        "rmod": "FHEB",
        "ant": "80010864",
        "az": "100",
@@ -4469,6 +4860,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "31",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "200",
@@ -4477,6 +4869,7 @@ const STATION_DATA = [
       },
       {
        "cel": "33",
+       "cov": "Outdoor",
        "rmod": "FHEB",
        "ant": "80010864",
        "az": "200",
@@ -4492,6 +4885,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "41",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "110",
@@ -4500,6 +4894,7 @@ const STATION_DATA = [
       },
       {
        "cel": "43",
+       "cov": "Outdoor",
        "rmod": "FHEB",
        "ant": "80010864",
        "az": "110",
@@ -4508,6 +4903,7 @@ const STATION_DATA = [
       },
       {
        "cel": "44",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "110",
@@ -4516,6 +4912,7 @@ const STATION_DATA = [
       },
       {
        "cel": "45",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "110",
@@ -4529,6 +4926,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "51",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "230",
@@ -4537,6 +4935,7 @@ const STATION_DATA = [
       },
       {
        "cel": "53",
+       "cov": "Outdoor",
        "rmod": "FHEB",
        "ant": "80010864",
        "az": "230",
@@ -4545,6 +4944,7 @@ const STATION_DATA = [
       },
       {
        "cel": "54",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "230",
@@ -4553,6 +4953,7 @@ const STATION_DATA = [
       },
       {
        "cel": "55",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "230",
@@ -4566,6 +4967,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "61",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "360",
@@ -4574,6 +4976,7 @@ const STATION_DATA = [
       },
       {
        "cel": "62",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "360",
@@ -4582,6 +4985,7 @@ const STATION_DATA = [
       },
       {
        "cel": "63",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "360",
@@ -4590,6 +4994,7 @@ const STATION_DATA = [
       },
       {
        "cel": "64",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "360",
@@ -4598,6 +5003,7 @@ const STATION_DATA = [
       },
       {
        "cel": "65",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "360",
@@ -4641,6 +5047,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "11",
+       "cov": "Outdoor",
        "rmod": "FXDB",
        "ant": "DBXDH-6565B-VTM",
        "az": "10",
@@ -4649,6 +5056,7 @@ const STATION_DATA = [
       },
       {
        "cel": "13",
+       "cov": "Outdoor",
        "rmod": "FXED",
        "ant": "DBXDH-6565B-VTM",
        "az": "10",
@@ -4662,6 +5070,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "21",
+       "cov": "Outdoor",
        "rmod": "FXDB",
        "ant": "DBXDH-6565B-VTM",
        "az": "130",
@@ -4670,6 +5079,7 @@ const STATION_DATA = [
       },
       {
        "cel": "23",
+       "cov": "Outdoor",
        "rmod": "FXED",
        "ant": "DBXDH-6565B-VTM",
        "az": "120",
@@ -4683,6 +5093,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "31",
+       "cov": "Outdoor",
        "rmod": "FXDB",
        "ant": "DBXDH-6565B-VTM",
        "az": "240",
@@ -4691,6 +5102,7 @@ const STATION_DATA = [
       },
       {
        "cel": "33",
+       "cov": "Outdoor",
        "rmod": "FXED",
        "ant": "DBXDH-6565B-VTM",
        "az": "240",
@@ -4706,6 +5118,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "41",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "10",
@@ -4714,6 +5127,7 @@ const STATION_DATA = [
       },
       {
        "cel": "42",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "10",
@@ -4722,6 +5136,7 @@ const STATION_DATA = [
       },
       {
        "cel": "43",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "10",
@@ -4730,6 +5145,7 @@ const STATION_DATA = [
       },
       {
        "cel": "44",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "80010864",
        "az": "10",
@@ -4738,6 +5154,7 @@ const STATION_DATA = [
       },
       {
        "cel": "45",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "80010864",
        "az": "10",
@@ -4751,6 +5168,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "61",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "240",
@@ -4759,6 +5177,7 @@ const STATION_DATA = [
       },
       {
        "cel": "63",
+       "cov": "Outdoor",
        "rmod": "FHEB",
        "ant": "742264",
        "az": "240",
@@ -4802,6 +5221,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "11",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "RV4S4-65A-R6",
        "az": "0",
@@ -4810,6 +5230,7 @@ const STATION_DATA = [
       },
       {
        "cel": "12",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "RV4S4-65A-R6",
        "az": "0",
@@ -4818,6 +5239,7 @@ const STATION_DATA = [
       },
       {
        "cel": "13",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "RV4S4-65A-R6",
        "az": "0",
@@ -4826,6 +5248,7 @@ const STATION_DATA = [
       },
       {
        "cel": "14",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "RV4S4-65A-R6",
        "az": "0",
@@ -4839,6 +5262,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "21",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010664",
        "az": "90",
@@ -4847,6 +5271,7 @@ const STATION_DATA = [
       },
       {
        "cel": "22",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010664",
        "az": "90",
@@ -4855,6 +5280,7 @@ const STATION_DATA = [
       },
       {
        "cel": "23",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010664",
        "az": "90",
@@ -4863,6 +5289,7 @@ const STATION_DATA = [
       },
       {
        "cel": "24",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010664",
        "az": "90",
@@ -4876,6 +5303,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "31",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010664",
        "az": "270",
@@ -4884,6 +5312,7 @@ const STATION_DATA = [
       },
       {
        "cel": "32",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010664",
        "az": "270",
@@ -4892,6 +5321,7 @@ const STATION_DATA = [
       },
       {
        "cel": "33",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010664",
        "az": "270",
@@ -4900,6 +5330,7 @@ const STATION_DATA = [
       },
       {
        "cel": "34",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010664",
        "az": "270",
@@ -4915,6 +5346,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "41",
+       "cov": "Outdoor",
        "rmod": "FXDB",
        "ant": "RVVS4-65M-R4",
        "az": "60",
@@ -4923,6 +5355,7 @@ const STATION_DATA = [
       },
       {
        "cel": "43",
+       "cov": "Outdoor",
        "rmod": "FXED",
        "ant": "RVVS4-65M-R4",
        "az": "60",
@@ -4936,6 +5369,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "51",
+       "cov": "Outdoor",
        "rmod": "FXDB",
        "ant": "RVVS4-65M-R4",
        "az": "150",
@@ -4944,6 +5378,7 @@ const STATION_DATA = [
       },
       {
        "cel": "52",
+       "cov": "Outdoor",
        "rmod": "FXED",
        "ant": "RVVS4-65M-R4",
        "az": "150",
@@ -4952,6 +5387,7 @@ const STATION_DATA = [
       },
       {
        "cel": "53",
+       "cov": "Outdoor",
        "rmod": "FXED",
        "ant": "RVVS4-65M-R4",
        "az": "150",
@@ -4965,6 +5401,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "61",
+       "cov": "Outdoor",
        "rmod": "FXDB",
        "ant": "RVVS4-65M-R4",
        "az": "340",
@@ -4973,6 +5410,7 @@ const STATION_DATA = [
       },
       {
        "cel": "62",
+       "cov": "Outdoor",
        "rmod": "FXED",
        "ant": "RVVS4-65M-R4",
        "az": "340",
@@ -4981,6 +5419,7 @@ const STATION_DATA = [
       },
       {
        "cel": "63",
+       "cov": "Outdoor",
        "rmod": "FXED",
        "ant": "RVVS4-65M-R4",
        "az": "340",
@@ -5018,6 +5457,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "11",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "80",
@@ -5026,6 +5466,7 @@ const STATION_DATA = [
       },
       {
        "cel": "12",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "80010864",
        "az": "80",
@@ -5034,6 +5475,7 @@ const STATION_DATA = [
       },
       {
        "cel": "13",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "80010864",
        "az": "80",
@@ -5042,6 +5484,7 @@ const STATION_DATA = [
       },
       {
        "cel": "14",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "80010864",
        "az": "80",
@@ -5050,6 +5493,7 @@ const STATION_DATA = [
       },
       {
        "cel": "15",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "80010864",
        "az": "80",
@@ -5063,6 +5507,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "21",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "RVVPX305.10R3",
        "az": "180",
@@ -5071,6 +5516,7 @@ const STATION_DATA = [
       },
       {
        "cel": "22",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "RVVPX305.10R3",
        "az": "180",
@@ -5079,6 +5525,7 @@ const STATION_DATA = [
       },
       {
        "cel": "23",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "RVVPX305.10R3",
        "az": "180",
@@ -5087,6 +5534,7 @@ const STATION_DATA = [
       },
       {
        "cel": "24",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "RVVPX305.10R3",
        "az": "180",
@@ -5095,6 +5543,7 @@ const STATION_DATA = [
       },
       {
        "cel": "25",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "RVVPX305.10R3",
        "az": "180",
@@ -5108,6 +5557,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "31",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "330",
@@ -5116,6 +5566,7 @@ const STATION_DATA = [
       },
       {
        "cel": "32",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "320",
@@ -5124,6 +5575,7 @@ const STATION_DATA = [
       },
       {
        "cel": "33",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "330",
@@ -5132,6 +5584,7 @@ const STATION_DATA = [
       },
       {
        "cel": "34",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "330",
@@ -5140,6 +5593,7 @@ const STATION_DATA = [
       },
       {
        "cel": "35",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "330",
@@ -5183,6 +5637,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "11",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "10",
@@ -5191,6 +5646,7 @@ const STATION_DATA = [
       },
       {
        "cel": "12",
+       "cov": "Outdoor",
        "rmod": "FXEB",
        "ant": "80010864",
        "az": "10",
@@ -5199,6 +5655,7 @@ const STATION_DATA = [
       },
       {
        "cel": "13",
+       "cov": "Outdoor",
        "rmod": "FXEB",
        "ant": "80010864",
        "az": "10",
@@ -5207,6 +5664,7 @@ const STATION_DATA = [
       },
       {
        "cel": "14",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "10",
@@ -5215,6 +5673,7 @@ const STATION_DATA = [
       },
       {
        "cel": "15",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "10",
@@ -5228,6 +5687,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "21",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "140",
@@ -5236,6 +5696,7 @@ const STATION_DATA = [
       },
       {
        "cel": "22",
+       "cov": "Outdoor",
        "rmod": "FXEB",
        "ant": "80010864",
        "az": "140",
@@ -5244,6 +5705,7 @@ const STATION_DATA = [
       },
       {
        "cel": "23",
+       "cov": "Outdoor",
        "rmod": "FXEB",
        "ant": "80010864",
        "az": "140",
@@ -5252,6 +5714,7 @@ const STATION_DATA = [
       },
       {
        "cel": "24",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "140",
@@ -5260,6 +5723,7 @@ const STATION_DATA = [
       },
       {
        "cel": "25",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "140",
@@ -5273,6 +5737,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "31",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "220",
@@ -5281,6 +5746,7 @@ const STATION_DATA = [
       },
       {
        "cel": "32",
+       "cov": "Outdoor",
        "rmod": "FXEB",
        "ant": "80010864",
        "az": "220",
@@ -5289,6 +5755,7 @@ const STATION_DATA = [
       },
       {
        "cel": "33",
+       "cov": "Outdoor",
        "rmod": "FXEB",
        "ant": "80010864",
        "az": "220",
@@ -5297,6 +5764,7 @@ const STATION_DATA = [
       },
       {
        "cel": "34",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "220",
@@ -5305,6 +5773,7 @@ const STATION_DATA = [
       },
       {
        "cel": "35",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "220",
@@ -5320,6 +5789,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "41",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "120",
@@ -5328,6 +5798,7 @@ const STATION_DATA = [
       },
       {
        "cel": "43",
+       "cov": "Outdoor",
        "rmod": "FHEB",
        "ant": "80010864",
        "az": "120",
@@ -5336,6 +5807,7 @@ const STATION_DATA = [
       },
       {
        "cel": "44",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "120",
@@ -5349,6 +5821,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "51",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "210",
@@ -5357,6 +5830,7 @@ const STATION_DATA = [
       },
       {
        "cel": "53",
+       "cov": "Outdoor",
        "rmod": "FHEB",
        "ant": "80010864",
        "az": "210",
@@ -5365,6 +5839,7 @@ const STATION_DATA = [
       },
       {
        "cel": "54",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "210",
@@ -5378,6 +5853,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "61",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "340",
@@ -5386,6 +5862,7 @@ const STATION_DATA = [
       },
       {
        "cel": "63",
+       "cov": "Outdoor",
        "rmod": "FHEB",
        "ant": "80010864",
        "az": "340",
@@ -5394,6 +5871,7 @@ const STATION_DATA = [
       },
       {
        "cel": "64",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "340",
@@ -5437,6 +5915,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "22",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "DBXLH-6565A-VTM",
        "az": "130",
@@ -5445,6 +5924,7 @@ const STATION_DATA = [
       },
       {
        "cel": "23",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "DBXLH-6565A-VTM",
        "az": "130",
@@ -5458,6 +5938,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "33",
+       "cov": "Outdoor",
        "rmod": "FHEB",
        "ant": "DBXLH-6565A-VTM",
        "az": "230",
@@ -5473,6 +5954,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "41",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "84510864",
        "az": "100",
@@ -5481,6 +5963,7 @@ const STATION_DATA = [
       },
       {
        "cel": "42",
+       "cov": "Outdoor",
        "rmod": "AHEGG",
        "ant": "84510864",
        "az": "100",
@@ -5489,6 +5972,7 @@ const STATION_DATA = [
       },
       {
        "cel": "43",
+       "cov": "Outdoor",
        "rmod": "AHEGG",
        "ant": "84510864",
        "az": "100",
@@ -5502,6 +5986,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "51",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "240",
@@ -5510,6 +5995,7 @@ const STATION_DATA = [
       },
       {
        "cel": "53",
+       "cov": "Outdoor",
        "rmod": "AHEGG",
        "ant": "80010864",
        "az": "240",
@@ -5518,6 +6004,7 @@ const STATION_DATA = [
       },
       {
        "cel": "54",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "240",
@@ -5526,6 +6013,7 @@ const STATION_DATA = [
       },
       {
        "cel": "55",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "240",
@@ -5539,6 +6027,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "61",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "340",
@@ -5547,6 +6036,7 @@ const STATION_DATA = [
       },
       {
        "cel": "62",
+       "cov": "Outdoor",
        "rmod": "AHEGG",
        "ant": "80010622V01",
        "az": "340",
@@ -5555,6 +6045,7 @@ const STATION_DATA = [
       },
       {
        "cel": "63",
+       "cov": "Outdoor",
        "rmod": "AHEGG",
        "ant": "80010864",
        "az": "340",
@@ -5563,6 +6054,7 @@ const STATION_DATA = [
       },
       {
        "cel": "64",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010622V01",
        "az": "340",
@@ -5571,6 +6063,7 @@ const STATION_DATA = [
       },
       {
        "cel": "65",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010622V01",
        "az": "340",
@@ -5608,6 +6101,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "11",
+       "cov": "Outdoor",
        "rmod": "FXDB",
        "ant": "DBXLH-6565A-VTM",
        "az": "0",
@@ -5616,6 +6110,7 @@ const STATION_DATA = [
       },
       {
        "cel": "13",
+       "cov": "Outdoor",
        "rmod": "FXEB",
        "ant": "DBXLH-6565A-VTM",
        "az": "0",
@@ -5624,6 +6119,7 @@ const STATION_DATA = [
       },
       {
        "cel": "17",
+       "cov": "Outdoor",
        "rmod": "FXDB",
        "ant": "DBXLH-6565A-VTM",
        "az": "0",
@@ -5637,6 +6133,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "21",
+       "cov": "Outdoor",
        "rmod": "FXDB",
        "ant": "80010864",
        "az": "120",
@@ -5645,6 +6142,7 @@ const STATION_DATA = [
       },
       {
        "cel": "23",
+       "cov": "Outdoor",
        "rmod": "FXEB",
        "ant": "80010864",
        "az": "120",
@@ -5653,6 +6151,7 @@ const STATION_DATA = [
       },
       {
        "cel": "24",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "80010864",
        "az": "120",
@@ -5661,6 +6160,7 @@ const STATION_DATA = [
       },
       {
        "cel": "25",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "80010864",
        "az": "120",
@@ -5669,6 +6169,7 @@ const STATION_DATA = [
       },
       {
        "cel": "27",
+       "cov": "Outdoor",
        "rmod": "FXDB",
        "ant": "80010864",
        "az": "120",
@@ -5682,6 +6183,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "31",
+       "cov": "Outdoor",
        "rmod": "FXDB",
        "ant": "DBXLH-6565A-VTM",
        "az": "220",
@@ -5690,6 +6192,7 @@ const STATION_DATA = [
       },
       {
        "cel": "32",
+       "cov": "Outdoor",
        "rmod": "FXEB",
        "ant": "80010864",
        "az": "220",
@@ -5698,6 +6201,7 @@ const STATION_DATA = [
       },
       {
        "cel": "33",
+       "cov": "Outdoor",
        "rmod": "FXEB",
        "ant": "80010864",
        "az": "220",
@@ -5706,6 +6210,7 @@ const STATION_DATA = [
       },
       {
        "cel": "34",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "220",
@@ -5714,6 +6219,7 @@ const STATION_DATA = [
       },
       {
        "cel": "35",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "220",
@@ -5722,6 +6228,7 @@ const STATION_DATA = [
       },
       {
        "cel": "37",
+       "cov": "Outdoor",
        "rmod": "FXDB",
        "ant": "DBXLH-6565A-VTM",
        "az": "220",
@@ -5765,6 +6272,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "11",
+       "cov": "Indoor",
        "rmod": "FHDB",
        "ant": "80010622",
        "az": "55",
@@ -5773,6 +6281,7 @@ const STATION_DATA = [
       },
       {
        "cel": "12",
+       "cov": "Indoor",
        "rmod": "FHEL",
        "ant": "80010622",
        "az": "55",
@@ -5781,6 +6290,7 @@ const STATION_DATA = [
       },
       {
        "cel": "13",
+       "cov": "Indoor",
        "rmod": "FHEL",
        "ant": "80010622",
        "az": "55",
@@ -5789,6 +6299,7 @@ const STATION_DATA = [
       },
       {
        "cel": "14",
+       "cov": "Indoor",
        "rmod": "FRHG",
        "ant": "80010622",
        "az": "55",
@@ -5797,6 +6308,7 @@ const STATION_DATA = [
       },
       {
        "cel": "15",
+       "cov": "Indoor",
        "rmod": "FRHG",
        "ant": "80010622",
        "az": "55",
@@ -5810,6 +6322,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "21",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010622",
        "az": "160",
@@ -5818,6 +6331,7 @@ const STATION_DATA = [
       },
       {
        "cel": "23",
+       "cov": "Outdoor",
        "rmod": "FHEB",
        "ant": "80010622",
        "az": "160",
@@ -5826,6 +6340,7 @@ const STATION_DATA = [
       },
       {
        "cel": "24",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "80010622",
        "az": "160",
@@ -5834,6 +6349,7 @@ const STATION_DATA = [
       },
       {
        "cel": "25",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "80010622",
        "az": "160",
@@ -5847,6 +6363,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "31",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010622",
        "az": "250",
@@ -5855,6 +6372,7 @@ const STATION_DATA = [
       },
       {
        "cel": "33",
+       "cov": "Outdoor",
        "rmod": "FHEB",
        "ant": "80010622",
        "az": "250",
@@ -5870,6 +6388,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "51",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "240",
@@ -5878,6 +6397,7 @@ const STATION_DATA = [
       },
       {
        "cel": "52",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "240",
@@ -5886,6 +6406,7 @@ const STATION_DATA = [
       },
       {
        "cel": "53",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "240",
@@ -5894,6 +6415,7 @@ const STATION_DATA = [
       },
       {
        "cel": "54",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "240",
@@ -5902,6 +6424,7 @@ const STATION_DATA = [
       },
       {
        "cel": "55",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "240",
@@ -5915,6 +6438,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "61",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "330",
@@ -5923,6 +6447,7 @@ const STATION_DATA = [
       },
       {
        "cel": "62",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "330",
@@ -5931,6 +6456,7 @@ const STATION_DATA = [
       },
       {
        "cel": "63",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "330",
@@ -5939,6 +6465,7 @@ const STATION_DATA = [
       },
       {
        "cel": "64",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "330",
@@ -5947,6 +6474,7 @@ const STATION_DATA = [
       },
       {
        "cel": "65",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "330",
@@ -5984,6 +6512,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "21",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "230",
@@ -5992,6 +6521,7 @@ const STATION_DATA = [
       },
       {
        "cel": "22",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "230",
@@ -6000,6 +6530,7 @@ const STATION_DATA = [
       },
       {
        "cel": "23",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "230",
@@ -6008,6 +6539,7 @@ const STATION_DATA = [
       },
       {
        "cel": "24",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "230",
@@ -6016,6 +6548,7 @@ const STATION_DATA = [
       },
       {
        "cel": "25",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "230",
@@ -6029,6 +6562,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "31",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "320",
@@ -6037,6 +6571,7 @@ const STATION_DATA = [
       },
       {
        "cel": "32",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "320",
@@ -6045,6 +6580,7 @@ const STATION_DATA = [
       },
       {
        "cel": "33",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "320",
@@ -6053,6 +6589,7 @@ const STATION_DATA = [
       },
       {
        "cel": "34",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "320",
@@ -6061,6 +6598,7 @@ const STATION_DATA = [
       },
       {
        "cel": "35",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "320",
@@ -6110,6 +6648,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "11",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "DBXLH-6565A-VTM",
        "az": "10",
@@ -6118,6 +6657,7 @@ const STATION_DATA = [
       },
       {
        "cel": "13",
+       "cov": "Outdoor",
        "rmod": "FHEB",
        "ant": "DBXLH-6565A-VTM",
        "az": "10",
@@ -6133,6 +6673,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "21",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "DBXLH-6565A-VTM",
        "az": "10",
@@ -6141,6 +6682,7 @@ const STATION_DATA = [
       },
       {
        "cel": "23",
+       "cov": "Outdoor",
        "rmod": "FHEB",
        "ant": "DBXLH-6565A-VTM",
        "az": "10",
@@ -6156,6 +6698,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "32",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "V360QS-C3-3XR",
        "az": "360",
@@ -6164,6 +6707,7 @@ const STATION_DATA = [
       },
       {
        "cel": "33",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "V360QS-C3-3XR",
        "az": "360",
@@ -6207,6 +6751,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "11",
+       "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "RRV4-65A-R6N43",
        "az": "30",
@@ -6215,6 +6760,7 @@ const STATION_DATA = [
       },
       {
        "cel": "12",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "RRV4-65A-R6N43",
        "az": "30",
@@ -6223,6 +6769,7 @@ const STATION_DATA = [
       },
       {
        "cel": "13",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "RRV4-65A-R6N43",
        "az": "30",
@@ -6231,6 +6778,7 @@ const STATION_DATA = [
       },
       {
        "cel": "14",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "RRV4-65A-R6N43",
        "az": "30",
@@ -6239,6 +6787,7 @@ const STATION_DATA = [
       },
       {
        "cel": "15",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "RRV4-65A-R6N43",
        "az": "30",
@@ -6252,6 +6801,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "21",
+       "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "RRV4-65A-R6N43",
        "az": "120",
@@ -6260,6 +6810,7 @@ const STATION_DATA = [
       },
       {
        "cel": "23",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "RRV4-65A-R6N43",
        "az": "120",
@@ -6268,6 +6819,7 @@ const STATION_DATA = [
       },
       {
        "cel": "24",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "RRV4-65A-R6N43",
        "az": "120",
@@ -6276,6 +6828,7 @@ const STATION_DATA = [
       },
       {
        "cel": "25",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "RRV4-65A-R6N43",
        "az": "120",
@@ -6289,6 +6842,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "31",
+       "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "RRV4-65A-R6N43",
        "az": "250",
@@ -6297,6 +6851,7 @@ const STATION_DATA = [
       },
       {
        "cel": "33",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "RRV4-65A-R6N43",
        "az": "250",
@@ -6305,6 +6860,7 @@ const STATION_DATA = [
       },
       {
        "cel": "34",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "RRV4-65A-R6N43",
        "az": "250",
@@ -6313,6 +6869,7 @@ const STATION_DATA = [
       },
       {
        "cel": "35",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "RRV4-65A-R6N43",
        "az": "250",
@@ -6328,6 +6885,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "41",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "RVVS4-65M-R4",
        "az": "20",
@@ -6336,6 +6894,7 @@ const STATION_DATA = [
       },
       {
        "cel": "43",
+       "cov": "Outdoor",
        "rmod": "FXED",
        "ant": "RVVS4-65M-R4",
        "az": "20",
@@ -6349,6 +6908,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "51",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "RVVS4-65M-R4",
        "az": "130",
@@ -6357,6 +6917,7 @@ const STATION_DATA = [
       },
       {
        "cel": "53",
+       "cov": "Outdoor",
        "rmod": "FXED",
        "ant": "RVVS4-65M-R4",
        "az": "130",
@@ -6365,6 +6926,7 @@ const STATION_DATA = [
       },
       {
        "cel": "54",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "RVVS4-65M-R4",
        "az": "130",
@@ -6378,6 +6940,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "61",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "RVVS4-65M-R4",
        "az": "240",
@@ -6386,6 +6949,7 @@ const STATION_DATA = [
       },
       {
        "cel": "63",
+       "cov": "Outdoor",
        "rmod": "FXED",
        "ant": "RVVS4-65M-R4",
        "az": "240",
@@ -6459,6 +7023,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "11",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "DBXLH-6565A-VTM",
        "az": "40",
@@ -6467,6 +7032,7 @@ const STATION_DATA = [
       },
       {
        "cel": "13",
+       "cov": "Outdoor",
        "rmod": "AHEGG",
        "ant": "DBXLH-6565A-VTM",
        "az": "40",
@@ -6482,6 +7048,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "21",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "6827300",
        "az": "40",
@@ -6490,6 +7057,7 @@ const STATION_DATA = [
       },
       {
        "cel": "22",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "6827300",
        "az": "40",
@@ -6498,6 +7066,7 @@ const STATION_DATA = [
       },
       {
        "cel": "23",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "6827300",
        "az": "40",
@@ -6513,6 +7082,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "32",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "V360QS-C3-3XR",
        "az": "0",
@@ -6521,6 +7091,7 @@ const STATION_DATA = [
       },
       {
        "cel": "33",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "V360QS-C3-3XR",
        "az": "0",
@@ -6529,6 +7100,7 @@ const STATION_DATA = [
       },
       {
        "cel": "34",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "V360QS-C3-3XR",
        "az": "0",
@@ -6544,6 +7116,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "43",
+       "cov": "Outdoor",
        "rmod": "FHEB",
        "ant": "80020126",
        "az": "0",
@@ -6559,6 +7132,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "51",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010664",
        "az": "220",
@@ -6567,6 +7141,7 @@ const STATION_DATA = [
       },
       {
        "cel": "53",
+       "cov": "Outdoor",
        "rmod": "FHEB",
        "ant": "80010664",
        "az": "220",
@@ -6582,6 +7157,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "61",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "DBXLH-6565A-VTM",
        "az": "40",
@@ -6590,6 +7166,7 @@ const STATION_DATA = [
       },
       {
        "cel": "63",
+       "cov": "Outdoor",
        "rmod": "FHEB",
        "ant": "DBXLH-6565A-VTM",
        "az": "40",
@@ -6605,6 +7182,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "71",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "330",
@@ -6613,6 +7191,7 @@ const STATION_DATA = [
       },
       {
        "cel": "73",
+       "cov": "Outdoor",
        "rmod": "AHEGG",
        "ant": "80010864",
        "az": "330",
@@ -6656,6 +7235,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "11",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "90",
@@ -6664,6 +7244,7 @@ const STATION_DATA = [
       },
       {
        "cel": "13",
+       "cov": "Outdoor",
        "rmod": "FHEB",
        "ant": "80010864",
        "az": "90",
@@ -6672,6 +7253,7 @@ const STATION_DATA = [
       },
       {
        "cel": "14",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "80010864",
        "az": "90",
@@ -6680,6 +7262,7 @@ const STATION_DATA = [
       },
       {
        "cel": "15",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "80010864",
        "az": "90",
@@ -6688,6 +7271,7 @@ const STATION_DATA = [
       },
       {
        "cel": "17",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "90",
@@ -6703,6 +7287,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "31",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "120",
@@ -6711,6 +7296,7 @@ const STATION_DATA = [
       },
       {
        "cel": "32",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "120",
@@ -6719,6 +7305,7 @@ const STATION_DATA = [
       },
       {
        "cel": "33",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "120",
@@ -6727,6 +7314,7 @@ const STATION_DATA = [
       },
       {
        "cel": "34",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "80010864",
        "az": "120",
@@ -6735,6 +7323,7 @@ const STATION_DATA = [
       },
       {
        "cel": "35",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "80010864",
        "az": "120",
@@ -6778,6 +7367,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "11",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "RVVPX303.6F12R2",
        "az": "50",
@@ -6786,6 +7376,7 @@ const STATION_DATA = [
       },
       {
        "cel": "13",
+       "cov": "Outdoor",
        "rmod": "FHEB",
        "ant": "RVVPX303.6F12R2",
        "az": "50",
@@ -6799,6 +7390,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "21",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "RVVPX303.6F12R2",
        "az": "150",
@@ -6807,6 +7399,7 @@ const STATION_DATA = [
       },
       {
        "cel": "23",
+       "cov": "Outdoor",
        "rmod": "FHEB",
        "ant": "RVVPX303.6F12R2",
        "az": "150",
@@ -6820,6 +7413,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "31",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "RVVPX303.6F12R2",
        "az": "250",
@@ -6828,6 +7422,7 @@ const STATION_DATA = [
       },
       {
        "cel": "33",
+       "cov": "Outdoor",
        "rmod": "FHEB",
        "ant": "RVVPX303.6F12R2",
        "az": "250",
@@ -6843,6 +7438,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "41",
+       "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "84510864",
        "az": "120",
@@ -6851,6 +7447,7 @@ const STATION_DATA = [
       },
       {
        "cel": "43",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "84510864",
        "az": "120",
@@ -6859,6 +7456,7 @@ const STATION_DATA = [
       },
       {
        "cel": "44",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "84510864",
        "az": "120",
@@ -6872,6 +7470,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "51",
+       "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "84510864",
        "az": "240",
@@ -6880,6 +7479,7 @@ const STATION_DATA = [
       },
       {
        "cel": "52",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "84510864",
        "az": "240",
@@ -6888,6 +7488,7 @@ const STATION_DATA = [
       },
       {
        "cel": "53",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "84510864",
        "az": "240",
@@ -6896,6 +7497,7 @@ const STATION_DATA = [
       },
       {
        "cel": "54",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "84510864",
        "az": "240",
@@ -6904,6 +7506,7 @@ const STATION_DATA = [
       },
       {
        "cel": "55",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "84510864",
        "az": "240",
@@ -6917,6 +7520,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "61",
+       "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "84510864",
        "az": "330",
@@ -6925,6 +7529,7 @@ const STATION_DATA = [
       },
       {
        "cel": "63",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "84510864",
        "az": "330",
@@ -6933,6 +7538,7 @@ const STATION_DATA = [
       },
       {
        "cel": "64",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "84510864",
        "az": "330",
@@ -6988,6 +7594,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "11",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "40",
@@ -6996,6 +7603,7 @@ const STATION_DATA = [
       },
       {
        "cel": "13",
+       "cov": "Outdoor",
        "rmod": "FHEB",
        "ant": "DBXLH-6565A-VTM",
        "az": "40",
@@ -7009,6 +7617,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "24",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010664",
        "az": "160",
@@ -7022,6 +7631,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "31",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "DBXLH-6565A-VTM",
        "az": "320",
@@ -7030,6 +7640,7 @@ const STATION_DATA = [
       },
       {
        "cel": "33",
+       "cov": "Outdoor",
        "rmod": "FHEB",
        "ant": "80010864",
        "az": "320",
@@ -7038,6 +7649,7 @@ const STATION_DATA = [
       },
       {
        "cel": "34",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "320",
@@ -7053,6 +7665,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "53",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010360",
        "az": "210",
@@ -7061,6 +7674,7 @@ const STATION_DATA = [
       },
       {
        "cel": "54",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010622",
        "az": "210",
@@ -7069,6 +7683,7 @@ const STATION_DATA = [
       },
       {
        "cel": "55",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010622",
        "az": "210",
@@ -7084,6 +7699,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "61",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "DBXLH-6565A-VTM",
        "az": "0",
@@ -7092,6 +7708,7 @@ const STATION_DATA = [
       },
       {
        "cel": "63",
+       "cov": "Outdoor",
        "rmod": "FHEB",
        "ant": "DBXLH-6565A-VTM",
        "az": "0",
@@ -7107,6 +7724,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "71",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "DBXLH-6565A-VTM",
        "az": "90",
@@ -7115,6 +7733,7 @@ const STATION_DATA = [
       },
       {
        "cel": "73",
+       "cov": "Outdoor",
        "rmod": "FHEB",
        "ant": "DBXLH-6565A-VTM",
        "az": "90",
@@ -7152,6 +7771,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "11",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "50",
@@ -7160,6 +7780,7 @@ const STATION_DATA = [
       },
       {
        "cel": "12",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "50",
@@ -7168,6 +7789,7 @@ const STATION_DATA = [
       },
       {
        "cel": "13",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "50",
@@ -7176,6 +7798,7 @@ const STATION_DATA = [
       },
       {
        "cel": "14",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "50",
@@ -7184,6 +7807,7 @@ const STATION_DATA = [
       },
       {
        "cel": "15",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "50",
@@ -7197,6 +7821,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "21",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "170",
@@ -7205,6 +7830,7 @@ const STATION_DATA = [
       },
       {
        "cel": "22",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "170",
@@ -7213,6 +7839,7 @@ const STATION_DATA = [
       },
       {
        "cel": "23",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "170",
@@ -7221,6 +7848,7 @@ const STATION_DATA = [
       },
       {
        "cel": "24",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "170",
@@ -7229,6 +7857,7 @@ const STATION_DATA = [
       },
       {
        "cel": "25",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "170",
@@ -7242,6 +7871,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "31",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "270",
@@ -7250,6 +7880,7 @@ const STATION_DATA = [
       },
       {
        "cel": "32",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "270",
@@ -7258,6 +7889,7 @@ const STATION_DATA = [
       },
       {
        "cel": "33",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "270",
@@ -7266,6 +7898,7 @@ const STATION_DATA = [
       },
       {
        "cel": "34",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "270",
@@ -7274,6 +7907,7 @@ const STATION_DATA = [
       },
       {
        "cel": "35",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "270",
@@ -7317,6 +7951,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "11",
+       "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "RRV4-65A-R6N43",
        "az": "90",
@@ -7325,6 +7960,7 @@ const STATION_DATA = [
       },
       {
        "cel": "12",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "RRV4-65A-R6N43",
        "az": "90",
@@ -7333,6 +7969,7 @@ const STATION_DATA = [
       },
       {
        "cel": "13",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "RRV4-65A-R6N43",
        "az": "90",
@@ -7341,6 +7978,7 @@ const STATION_DATA = [
       },
       {
        "cel": "14",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "RRV4-65A-R6N43",
        "az": "90",
@@ -7354,6 +7992,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "21",
+       "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "RRV4-65A-R6N43",
        "az": "230",
@@ -7362,6 +8001,7 @@ const STATION_DATA = [
       },
       {
        "cel": "22",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "RRV4-65A-R6N43",
        "az": "230",
@@ -7370,6 +8010,7 @@ const STATION_DATA = [
       },
       {
        "cel": "23",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "RRV4-65A-R6N43",
        "az": "230",
@@ -7383,6 +8024,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "31",
+       "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "RRV4-65A-R6N43",
        "az": "330",
@@ -7391,6 +8033,7 @@ const STATION_DATA = [
       },
       {
        "cel": "32",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "RRV4-65A-R6N43",
        "az": "330",
@@ -7399,6 +8042,7 @@ const STATION_DATA = [
       },
       {
        "cel": "33",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "RRV4-65A-R6N43",
        "az": "330",
@@ -7414,6 +8058,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "41",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "742265",
        "az": "30",
@@ -7422,6 +8067,7 @@ const STATION_DATA = [
       },
       {
        "cel": "43",
+       "cov": "Outdoor",
        "rmod": "FXED",
        "ant": "742265",
        "az": "30",
@@ -7435,6 +8081,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "51",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "742265",
        "az": "170",
@@ -7443,6 +8090,7 @@ const STATION_DATA = [
       },
       {
        "cel": "53",
+       "cov": "Outdoor",
        "rmod": "FXED",
        "ant": "742265",
        "az": "170",
@@ -7456,6 +8104,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "61",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "742265",
        "az": "270",
@@ -7464,6 +8113,7 @@ const STATION_DATA = [
       },
       {
        "cel": "63",
+       "cov": "Outdoor",
        "rmod": "FXED",
        "ant": "742265",
        "az": "270",
@@ -7501,6 +8151,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "11",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "70",
@@ -7509,6 +8160,7 @@ const STATION_DATA = [
       },
       {
        "cel": "13",
+       "cov": "Outdoor",
        "rmod": "FHEB",
        "ant": "80010864",
        "az": "70",
@@ -7517,6 +8169,7 @@ const STATION_DATA = [
       },
       {
        "cel": "14",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "80010864",
        "az": "70",
@@ -7530,6 +8183,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "21",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "190",
@@ -7538,6 +8192,7 @@ const STATION_DATA = [
       },
       {
        "cel": "23",
+       "cov": "Outdoor",
        "rmod": "FHEB",
        "ant": "80010864",
        "az": "190",
@@ -7551,6 +8206,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "31",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "320",
@@ -7559,6 +8215,7 @@ const STATION_DATA = [
       },
       {
        "cel": "32",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "320",
@@ -7567,6 +8224,7 @@ const STATION_DATA = [
       },
       {
        "cel": "33",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "320",
@@ -7575,6 +8233,7 @@ const STATION_DATA = [
       },
       {
        "cel": "34",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "80010864",
        "az": "320",
@@ -7624,6 +8283,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "12",
+       "cov": "Outdoor",
        "rmod": "AHEJ",
        "ant": "AAFA",
        "az": "115",
@@ -7632,6 +8292,7 @@ const STATION_DATA = [
       },
       {
        "cel": "13",
+       "cov": "Outdoor",
        "rmod": "AHEJ",
        "ant": "AAFA",
        "az": "115",
@@ -7647,6 +8308,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "22",
+       "cov": "Indoor",
        "rmod": "AHEJ",
        "ant": "AAFA",
        "az": "0",
@@ -7655,6 +8317,7 @@ const STATION_DATA = [
       },
       {
        "cel": "23",
+       "cov": "Indoor",
        "rmod": "AHEJ",
        "ant": "AAFA",
        "az": "0",
@@ -7670,6 +8333,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "32",
+       "cov": "Indoor",
        "rmod": "AHEJ",
        "ant": "AAFA",
        "az": "0",
@@ -7678,6 +8342,7 @@ const STATION_DATA = [
       },
       {
        "cel": "33",
+       "cov": "Indoor",
        "rmod": "AHEJ",
        "ant": "AAFA",
        "az": "0",
@@ -7721,6 +8386,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "11",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "10",
@@ -7729,6 +8395,7 @@ const STATION_DATA = [
       },
       {
        "cel": "12",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "10",
@@ -7737,6 +8404,7 @@ const STATION_DATA = [
       },
       {
        "cel": "13",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "10",
@@ -7745,6 +8413,7 @@ const STATION_DATA = [
       },
       {
        "cel": "14",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "10",
@@ -7753,6 +8422,7 @@ const STATION_DATA = [
       },
       {
        "cel": "15",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "10",
@@ -7766,6 +8436,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "21",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "180",
@@ -7774,6 +8445,7 @@ const STATION_DATA = [
       },
       {
        "cel": "22",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "180",
@@ -7782,6 +8454,7 @@ const STATION_DATA = [
       },
       {
        "cel": "23",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "180",
@@ -7790,6 +8463,7 @@ const STATION_DATA = [
       },
       {
        "cel": "24",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "180",
@@ -7798,6 +8472,7 @@ const STATION_DATA = [
       },
       {
        "cel": "25",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "180",
@@ -7811,6 +8486,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "31",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "280",
@@ -7819,6 +8495,7 @@ const STATION_DATA = [
       },
       {
        "cel": "32",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "280",
@@ -7827,6 +8504,7 @@ const STATION_DATA = [
       },
       {
        "cel": "33",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "280",
@@ -7835,6 +8513,7 @@ const STATION_DATA = [
       },
       {
        "cel": "34",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "280",
@@ -7843,6 +8522,7 @@ const STATION_DATA = [
       },
       {
        "cel": "35",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "280",
@@ -7858,6 +8538,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "41",
+       "cov": "Outdoor",
        "rmod": "FXDB",
        "ant": "80010864",
        "az": "40",
@@ -7866,6 +8547,7 @@ const STATION_DATA = [
       },
       {
        "cel": "42",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "40",
@@ -7874,6 +8556,7 @@ const STATION_DATA = [
       },
       {
        "cel": "43",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "40",
@@ -7882,6 +8565,7 @@ const STATION_DATA = [
       },
       {
        "cel": "44",
+       "cov": "Outdoor",
        "rmod": "FRHF",
        "ant": "80010864",
        "az": "40",
@@ -7895,6 +8579,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "51",
+       "cov": "Outdoor",
        "rmod": "FXDB",
        "ant": "80010864",
        "az": "150",
@@ -7903,6 +8588,7 @@ const STATION_DATA = [
       },
       {
        "cel": "52",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "150",
@@ -7911,6 +8597,7 @@ const STATION_DATA = [
       },
       {
        "cel": "53",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "150",
@@ -7919,6 +8606,7 @@ const STATION_DATA = [
       },
       {
        "cel": "54",
+       "cov": "Outdoor",
        "rmod": "FRHF",
        "ant": "80010864",
        "az": "150",
@@ -7932,6 +8620,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "61",
+       "cov": "Outdoor",
        "rmod": "FXDB",
        "ant": "80010864",
        "az": "260",
@@ -7940,6 +8629,7 @@ const STATION_DATA = [
       },
       {
        "cel": "62",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "260",
@@ -7948,6 +8638,7 @@ const STATION_DATA = [
       },
       {
        "cel": "63",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "260",
@@ -7956,6 +8647,7 @@ const STATION_DATA = [
       },
       {
        "cel": "64",
+       "cov": "Outdoor",
        "rmod": "FRHF",
        "ant": "80010864",
        "az": "260",
@@ -7969,6 +8661,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "71",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "90",
@@ -7977,6 +8670,7 @@ const STATION_DATA = [
       },
       {
        "cel": "73",
+       "cov": "Outdoor",
        "rmod": "FHEB",
        "ant": "80010864",
        "az": "90",
@@ -8020,6 +8714,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "21",
+       "cov": "Outdoor",
        "rmod": "FXDB",
        "ant": "RV4S4-65A-R6",
        "az": "220",
@@ -8028,6 +8723,7 @@ const STATION_DATA = [
       },
       {
        "cel": "23",
+       "cov": "Outdoor",
        "rmod": "FXED",
        "ant": "RV4S4-65A-R6",
        "az": "220",
@@ -8036,6 +8732,7 @@ const STATION_DATA = [
       },
       {
        "cel": "24",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "RV4S4-65A-R6",
        "az": "220",
@@ -8049,6 +8746,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "31",
+       "cov": "Outdoor",
        "rmod": "FXDB",
        "ant": "RV4S4-65A-R6",
        "az": "330",
@@ -8057,6 +8755,7 @@ const STATION_DATA = [
       },
       {
        "cel": "33",
+       "cov": "Outdoor",
        "rmod": "FXED",
        "ant": "RV4S4-65A-R6",
        "az": "330",
@@ -8065,6 +8764,7 @@ const STATION_DATA = [
       },
       {
        "cel": "34",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "RV4S4-65A-R6",
        "az": "330",
@@ -8080,6 +8780,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "41",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "3X-KVVSS-65A-R9",
        "az": "0",
@@ -8088,6 +8789,7 @@ const STATION_DATA = [
       },
       {
        "cel": "43",
+       "cov": "Outdoor",
        "rmod": "FHEB",
        "ant": "3X-KVVSS-65A-R9",
        "az": "0",
@@ -8101,6 +8803,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "51",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "3X-KVVSS-65A-R9",
        "az": "120",
@@ -8109,6 +8812,7 @@ const STATION_DATA = [
       },
       {
        "cel": "53",
+       "cov": "Outdoor",
        "rmod": "FHEB",
        "ant": "3X-KVVSS-65A-R9",
        "az": "120",
@@ -8122,6 +8826,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "61",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "3X-KVVSS-65A-R9",
        "az": "240",
@@ -8130,6 +8835,7 @@ const STATION_DATA = [
       },
       {
        "cel": "63",
+       "cov": "Outdoor",
        "rmod": "FHEB",
        "ant": "3X-KVVSS-65A-R9",
        "az": "240",
@@ -8173,6 +8879,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "11",
+       "cov": "Outdoor & Indoor",
        "rmod": "FHDB",
        "ant": "CMAX-DM30-CPUSEi53",
        "az": "0",
@@ -8181,6 +8888,7 @@ const STATION_DATA = [
       },
       {
        "cel": "12",
+       "cov": "Outdoor & Indoor",
        "rmod": "FHEL",
        "ant": "CMAX-DM30-CPUSEi53",
        "az": "0",
@@ -8189,6 +8897,7 @@ const STATION_DATA = [
       },
       {
        "cel": "13",
+       "cov": "Outdoor & Indoor",
        "rmod": "FHEL",
        "ant": "CMAX-DM30-CPUSEi53",
        "az": "0",
@@ -8204,6 +8913,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "41",
+       "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "RVV-65A-R3",
        "az": "10",
@@ -8212,6 +8922,7 @@ const STATION_DATA = [
       },
       {
        "cel": "42",
+       "cov": "Outdoor",
        "rmod": "AHEGG",
        "ant": "RVV-65A-R3",
        "az": "10",
@@ -8220,6 +8931,7 @@ const STATION_DATA = [
       },
       {
        "cel": "43",
+       "cov": "Outdoor",
        "rmod": "AHEGG",
        "ant": "RVV-65A-R3",
        "az": "10",
@@ -8257,6 +8969,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "11",
+       "cov": "Outdoor",
        "rmod": "FXDB",
        "ant": "DBXLH-6565A-VTM",
        "az": "0",
@@ -8265,6 +8978,7 @@ const STATION_DATA = [
       },
       {
        "cel": "12",
+       "cov": "Outdoor",
        "rmod": "FXED",
        "ant": "DBXLH-6565A-VTM",
        "az": "0",
@@ -8273,6 +8987,7 @@ const STATION_DATA = [
       },
       {
        "cel": "13",
+       "cov": "Outdoor",
        "rmod": "FXED",
        "ant": "DBXLH-6565A-VTM",
        "az": "0",
@@ -8281,6 +8996,7 @@ const STATION_DATA = [
       },
       {
        "cel": "14",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "80010864",
        "az": "0",
@@ -8294,6 +9010,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "21",
+       "cov": "Outdoor",
        "rmod": "FXDB",
        "ant": "DBXLH-6565A-VTM",
        "az": "110",
@@ -8302,6 +9019,7 @@ const STATION_DATA = [
       },
       {
        "cel": "22",
+       "cov": "Outdoor",
        "rmod": "FXED",
        "ant": "DBXLH-6565A-VTM",
        "az": "110",
@@ -8310,6 +9028,7 @@ const STATION_DATA = [
       },
       {
        "cel": "23",
+       "cov": "Outdoor",
        "rmod": "FXED",
        "ant": "DBXLH-6565A-VTM",
        "az": "110",
@@ -8318,6 +9037,7 @@ const STATION_DATA = [
       },
       {
        "cel": "24",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "80010682",
        "az": "110",
@@ -8331,6 +9051,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "31",
+       "cov": "Outdoor",
        "rmod": "FXDB",
        "ant": "DBXLH-6565A-VTM",
        "az": "210",
@@ -8339,6 +9060,7 @@ const STATION_DATA = [
       },
       {
        "cel": "32",
+       "cov": "Outdoor",
        "rmod": "FXED",
        "ant": "DBXLH-6565A-VTM",
        "az": "210",
@@ -8347,6 +9069,7 @@ const STATION_DATA = [
       },
       {
        "cel": "33",
+       "cov": "Outdoor",
        "rmod": "FXED",
        "ant": "DBXLH-6565A-VTM",
        "az": "210",
@@ -8390,6 +9113,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "11",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "DBXLH-6565A-VTM",
        "az": "110",
@@ -8398,6 +9122,7 @@ const STATION_DATA = [
       },
       {
        "cel": "13",
+       "cov": "Outdoor",
        "rmod": "FXEB",
        "ant": "DBXLH-6565A-VTM",
        "az": "110",
@@ -8411,6 +9136,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "21",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "210",
@@ -8419,6 +9145,7 @@ const STATION_DATA = [
       },
       {
        "cel": "23",
+       "cov": "Outdoor",
        "rmod": "FXEB",
        "ant": "80010864",
        "az": "210",
@@ -8427,6 +9154,7 @@ const STATION_DATA = [
       },
       {
        "cel": "24",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "80010864",
        "az": "210",
@@ -8440,6 +9168,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "31",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "330",
@@ -8448,6 +9177,7 @@ const STATION_DATA = [
       },
       {
        "cel": "33",
+       "cov": "Outdoor",
        "rmod": "FXEB",
        "ant": "80010864",
        "az": "330",
@@ -8456,6 +9186,7 @@ const STATION_DATA = [
       },
       {
        "cel": "34",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "80010864",
        "az": "330",
@@ -8471,6 +9202,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "41",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "DBXLH-6565A-VTM",
        "az": "0",
@@ -8479,6 +9211,7 @@ const STATION_DATA = [
       },
       {
        "cel": "43",
+       "cov": "Outdoor",
        "rmod": "FHEB",
        "ant": "DBXLH-6565A-VTM",
        "az": "0",
@@ -8487,6 +9220,7 @@ const STATION_DATA = [
       },
       {
        "cel": "44",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "80010622",
        "az": "0",
@@ -8495,6 +9229,7 @@ const STATION_DATA = [
       },
       {
        "cel": "45",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "80010622",
        "az": "0",
@@ -8508,6 +9243,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "51",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "DBXLH-6565A-VTM",
        "az": "140",
@@ -8516,6 +9252,7 @@ const STATION_DATA = [
       },
       {
        "cel": "53",
+       "cov": "Outdoor",
        "rmod": "FHEB",
        "ant": "DBXLH-6565A-VTM",
        "az": "140",
@@ -8529,6 +9266,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "61",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "DBXLH-6565A-VTM",
        "az": "270",
@@ -8537,6 +9275,7 @@ const STATION_DATA = [
       },
       {
        "cel": "62",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "270",
@@ -8545,6 +9284,7 @@ const STATION_DATA = [
       },
       {
        "cel": "63",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "270",
@@ -8553,6 +9293,7 @@ const STATION_DATA = [
       },
       {
        "cel": "64",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "270",
@@ -8561,6 +9302,7 @@ const STATION_DATA = [
       },
       {
        "cel": "65",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "270",
@@ -8574,6 +9316,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "73",
+       "cov": "Indoor",
        "rmod": "FHEB",
        "ant": "CELLMAX-O-25",
        "az": "0",
@@ -8617,6 +9360,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "11",
+       "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "RRV4-65A-R6N43",
        "az": "30",
@@ -8625,6 +9369,7 @@ const STATION_DATA = [
       },
       {
        "cel": "12",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "RRV4-65A-R6N43",
        "az": "30",
@@ -8633,6 +9378,7 @@ const STATION_DATA = [
       },
       {
        "cel": "13",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "RRV4-65A-R6N43",
        "az": "30",
@@ -8641,6 +9387,7 @@ const STATION_DATA = [
       },
       {
        "cel": "14",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "RRV4-65A-R6N43",
        "az": "30",
@@ -8649,6 +9396,7 @@ const STATION_DATA = [
       },
       {
        "cel": "15",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "RRV4-65A-R6N43",
        "az": "30",
@@ -8662,6 +9410,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "21",
+       "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "RRV4-65A-R6N43",
        "az": "150",
@@ -8670,6 +9419,7 @@ const STATION_DATA = [
       },
       {
        "cel": "22",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "RRV4-65A-R6N43",
        "az": "150",
@@ -8678,6 +9428,7 @@ const STATION_DATA = [
       },
       {
        "cel": "23",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "RRV4-65A-R6N43",
        "az": "150",
@@ -8686,6 +9437,7 @@ const STATION_DATA = [
       },
       {
        "cel": "24",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "RRV4-65A-R6N43",
        "az": "150",
@@ -8694,6 +9446,7 @@ const STATION_DATA = [
       },
       {
        "cel": "25",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "RRV4-65A-R6N43",
        "az": "150",
@@ -8707,6 +9460,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "31",
+       "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "RRV4-65A-R6N43",
        "az": "300",
@@ -8715,6 +9469,7 @@ const STATION_DATA = [
       },
       {
        "cel": "33",
+       "cov": "Outdoor",
        "rmod": "FHEB",
        "ant": "RRV4-65A-R6N43",
        "az": "300",
@@ -8730,6 +9485,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "41",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "DBXLH-6565A-VTM",
        "az": "40",
@@ -8738,6 +9494,7 @@ const STATION_DATA = [
       },
       {
        "cel": "43",
+       "cov": "Outdoor",
        "rmod": "FHEB",
        "ant": "DBXLH-6565A-VTM",
        "az": "40",
@@ -8751,6 +9508,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "51",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "DBXLH-6565A-VTM",
        "az": "150",
@@ -8759,6 +9517,7 @@ const STATION_DATA = [
       },
       {
        "cel": "53",
+       "cov": "Outdoor",
        "rmod": "FHEB",
        "ant": "DBXLH-6565A-VTM",
        "az": "150",
@@ -8772,6 +9531,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "61",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "DBXLH-6565A-VTM",
        "az": "290",
@@ -8780,6 +9540,7 @@ const STATION_DATA = [
       },
       {
        "cel": "63",
+       "cov": "Outdoor",
        "rmod": "FHEB",
        "ant": "DBXLH-6565A-VTM",
        "az": "290",
@@ -8823,6 +9584,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "11",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "30",
@@ -8831,6 +9593,7 @@ const STATION_DATA = [
       },
       {
        "cel": "12",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "30",
@@ -8839,6 +9602,7 @@ const STATION_DATA = [
       },
       {
        "cel": "13",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "30",
@@ -8847,6 +9611,7 @@ const STATION_DATA = [
       },
       {
        "cel": "14",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "80010864",
        "az": "30",
@@ -8860,6 +9625,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "21",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "120",
@@ -8868,6 +9634,7 @@ const STATION_DATA = [
       },
       {
        "cel": "23",
+       "cov": "Outdoor",
        "rmod": "FHEB",
        "ant": "80010864",
        "az": "120",
@@ -8881,6 +9648,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "31",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "240",
@@ -8889,6 +9657,7 @@ const STATION_DATA = [
       },
       {
        "cel": "32",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "240",
@@ -8897,6 +9666,7 @@ const STATION_DATA = [
       },
       {
        "cel": "33",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "240",
@@ -8905,6 +9675,7 @@ const STATION_DATA = [
       },
       {
        "cel": "34",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "80010864",
        "az": "240",
@@ -8920,6 +9691,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "42",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "CVVPX306R3",
        "az": "30",
@@ -8928,6 +9700,7 @@ const STATION_DATA = [
       },
       {
        "cel": "43",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "CVVPX306R3",
        "az": "30",
@@ -8941,6 +9714,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "51",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "CVVPX306R3",
        "az": "120",
@@ -8949,6 +9723,7 @@ const STATION_DATA = [
       },
       {
        "cel": "53",
+       "cov": "Outdoor",
        "rmod": "FHEB",
        "ant": "CVVPX306R3",
        "az": "120",
@@ -8957,6 +9732,7 @@ const STATION_DATA = [
       },
       {
        "cel": "54",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "CVVPX306R3",
        "az": "120",
@@ -8970,6 +9746,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "61",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "CVVPX306R3",
        "az": "270",
@@ -8978,6 +9755,7 @@ const STATION_DATA = [
       },
       {
        "cel": "62",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "CVVPX306R3",
        "az": "270",
@@ -8986,6 +9764,7 @@ const STATION_DATA = [
       },
       {
        "cel": "63",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "CVVPX306R3",
        "az": "270",
@@ -8994,6 +9773,7 @@ const STATION_DATA = [
       },
       {
        "cel": "64",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "CVVPX306R3",
        "az": "270",
@@ -9043,6 +9823,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "11",
+       "cov": "Indoor",
        "rmod": "FHDB",
        "ant": "CELLMAX-O-25",
        "az": "0",
@@ -9051,6 +9832,7 @@ const STATION_DATA = [
       },
       {
        "cel": "13",
+       "cov": "Indoor",
        "rmod": "FHEB",
        "ant": "CELLMAX-O-25",
        "az": "0",
@@ -9066,6 +9848,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "23",
+       "cov": "Indoor",
        "rmod": "FHEB",
        "ant": "CELLMAX-O-25",
        "az": "0",
@@ -9081,6 +9864,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "41",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "CELLMAX-O-25",
        "az": "0",
@@ -9089,6 +9873,7 @@ const STATION_DATA = [
       },
       {
        "cel": "43",
+       "cov": "Outdoor",
        "rmod": "FHEB",
        "ant": "CELLMAX-O-25",
        "az": "0",
@@ -9150,6 +9935,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "12",
+       "cov": "Outdoor",
        "rmod": "AHEJ",
        "ant": "AAFA",
        "az": "20",
@@ -9158,6 +9944,7 @@ const STATION_DATA = [
       },
       {
        "cel": "13",
+       "cov": "Outdoor",
        "rmod": "AHEJ",
        "ant": "AAFA",
        "az": "20",
@@ -9173,6 +9960,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "23",
+       "cov": "Outdoor",
        "rmod": "FHEB",
        "ant": "742215",
        "az": "10",
@@ -9188,6 +9976,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "33",
+       "cov": "Outdoor",
        "rmod": "FHEB",
        "ant": "3X-V65S-C3-3XR",
        "az": "0",
@@ -9203,6 +9992,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "42",
+       "cov": "Indoor",
        "rmod": "AHEB",
        "ant": "AYO-W09-0727",
        "az": "0",
@@ -9211,6 +10001,7 @@ const STATION_DATA = [
       },
       {
        "cel": "43",
+       "cov": "Indoor",
        "rmod": "AHEB",
        "ant": "AYO-W09-0727",
        "az": "0",
@@ -9226,6 +10017,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "61",
+       "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "RVV-65A-R3",
        "az": "10",
@@ -9234,6 +10026,7 @@ const STATION_DATA = [
       },
       {
        "cel": "62",
+       "cov": "Outdoor",
        "rmod": "AHEGG",
        "ant": "RVV-65A-R3",
        "az": "10",
@@ -9242,6 +10035,7 @@ const STATION_DATA = [
       },
       {
        "cel": "63",
+       "cov": "Outdoor",
        "rmod": "AHEGG",
        "ant": "RVV-65A-R3",
        "az": "10",
@@ -9285,6 +10079,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "11",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "90",
@@ -9293,6 +10088,7 @@ const STATION_DATA = [
       },
       {
        "cel": "12",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "90",
@@ -9301,6 +10097,7 @@ const STATION_DATA = [
       },
       {
        "cel": "13",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "90",
@@ -9309,6 +10106,7 @@ const STATION_DATA = [
       },
       {
        "cel": "14",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "90",
@@ -9317,6 +10115,7 @@ const STATION_DATA = [
       },
       {
        "cel": "15",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "90",
@@ -9330,6 +10129,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "21",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "240",
@@ -9338,6 +10138,7 @@ const STATION_DATA = [
       },
       {
        "cel": "22",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "240",
@@ -9346,6 +10147,7 @@ const STATION_DATA = [
       },
       {
        "cel": "23",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "240",
@@ -9354,6 +10156,7 @@ const STATION_DATA = [
       },
       {
        "cel": "24",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "240",
@@ -9362,6 +10165,7 @@ const STATION_DATA = [
       },
       {
        "cel": "25",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "240",
@@ -9375,6 +10179,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "31",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "330",
@@ -9383,6 +10188,7 @@ const STATION_DATA = [
       },
       {
        "cel": "32",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "330",
@@ -9391,6 +10197,7 @@ const STATION_DATA = [
       },
       {
        "cel": "33",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "330",
@@ -9399,6 +10206,7 @@ const STATION_DATA = [
       },
       {
        "cel": "34",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "330",
@@ -9407,6 +10215,7 @@ const STATION_DATA = [
       },
       {
        "cel": "35",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "330",
@@ -9422,6 +10231,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "41",
+       "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "RVV-65A-R3",
        "az": "30",
@@ -9430,6 +10240,7 @@ const STATION_DATA = [
       },
       {
        "cel": "42",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "RVV-65A-R3",
        "az": "30",
@@ -9438,6 +10249,7 @@ const STATION_DATA = [
       },
       {
        "cel": "43",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "RVV-65A-R3",
        "az": "30",
@@ -9446,6 +10258,7 @@ const STATION_DATA = [
       },
       {
        "cel": "44",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "RVV-65A-R3",
        "az": "30",
@@ -9454,6 +10267,7 @@ const STATION_DATA = [
       },
       {
        "cel": "45",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "RVV-65A-R3",
        "az": "30",
@@ -9467,6 +10281,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "51",
+       "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "RVV-65A-R3",
        "az": "130",
@@ -9475,6 +10290,7 @@ const STATION_DATA = [
       },
       {
        "cel": "52",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "RVV-65A-R3",
        "az": "130",
@@ -9483,6 +10299,7 @@ const STATION_DATA = [
       },
       {
        "cel": "53",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "RVV-65A-R3",
        "az": "130",
@@ -9491,6 +10308,7 @@ const STATION_DATA = [
       },
       {
        "cel": "54",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "RVV-65A-R3",
        "az": "130",
@@ -9499,6 +10317,7 @@ const STATION_DATA = [
       },
       {
        "cel": "55",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "RVV-65A-R3",
        "az": "130",
@@ -9512,6 +10331,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "61",
+       "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "RVV-65A-R3",
        "az": "295",
@@ -9520,6 +10340,7 @@ const STATION_DATA = [
       },
       {
        "cel": "62",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "RVV-65A-R3",
        "az": "295",
@@ -9528,6 +10349,7 @@ const STATION_DATA = [
       },
       {
        "cel": "63",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "RVV-65A-R3",
        "az": "295",
@@ -9571,6 +10393,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "11",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "115",
@@ -9579,6 +10402,7 @@ const STATION_DATA = [
       },
       {
        "cel": "12",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "115",
@@ -9587,6 +10411,7 @@ const STATION_DATA = [
       },
       {
        "cel": "13",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "115",
@@ -9595,6 +10420,7 @@ const STATION_DATA = [
       },
       {
        "cel": "14",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "115",
@@ -9603,6 +10429,7 @@ const STATION_DATA = [
       },
       {
        "cel": "15",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "115",
@@ -9616,6 +10443,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "21",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "240",
@@ -9624,6 +10452,7 @@ const STATION_DATA = [
       },
       {
        "cel": "22",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "240",
@@ -9632,6 +10461,7 @@ const STATION_DATA = [
       },
       {
        "cel": "23",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "240",
@@ -9640,6 +10470,7 @@ const STATION_DATA = [
       },
       {
        "cel": "24",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "240",
@@ -9648,6 +10479,7 @@ const STATION_DATA = [
       },
       {
        "cel": "25",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "240",
@@ -9661,6 +10493,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "31",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "MB-G52W52W7X65V-00",
        "az": "340",
@@ -9669,6 +10502,7 @@ const STATION_DATA = [
       },
       {
        "cel": "32",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "MB-G52W52W7X65V-00",
        "az": "340",
@@ -9677,6 +10511,7 @@ const STATION_DATA = [
       },
       {
        "cel": "33",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "MB-G52W52W7X65V-00",
        "az": "340",
@@ -9685,6 +10520,7 @@ const STATION_DATA = [
       },
       {
        "cel": "34",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "MB-G52W52W7X65V-00",
        "az": "340",
@@ -9693,6 +10529,7 @@ const STATION_DATA = [
       },
       {
        "cel": "35",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "MB-G52W52W7X65V-00",
        "az": "340",
@@ -9706,6 +10543,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "41",
+       "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "80010864",
        "az": "60",
@@ -9714,6 +10552,7 @@ const STATION_DATA = [
       },
       {
        "cel": "42",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "MB-G52W52W7X65V-00",
        "az": "20",
@@ -9722,6 +10561,7 @@ const STATION_DATA = [
       },
       {
        "cel": "43",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "MB-G52W52W7X65V-00",
        "az": "20",
@@ -9730,6 +10570,7 @@ const STATION_DATA = [
       },
       {
        "cel": "44",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "MB-G52W52W7X65V-00",
        "az": "20",
@@ -9738,6 +10579,7 @@ const STATION_DATA = [
       },
       {
        "cel": "45",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "MB-G52W52W7X65V-00",
        "az": "20",
@@ -9746,6 +10588,7 @@ const STATION_DATA = [
       },
       {
        "cel": "47",
+       "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "80010864",
        "az": "60",
@@ -9761,6 +10604,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "51",
+       "cov": "Indoor",
        "rmod": "FHDB",
        "ant": "CELLMAX-O-25",
        "az": "0",
@@ -9769,6 +10613,7 @@ const STATION_DATA = [
       },
       {
        "cel": "53",
+       "cov": "Indoor",
        "rmod": "FHEB",
        "ant": "CELLMAX-O-25",
        "az": "0",
@@ -9812,6 +10657,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "11",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "30",
@@ -9820,6 +10666,7 @@ const STATION_DATA = [
       },
       {
        "cel": "12",
+       "cov": "Outdoor",
        "rmod": "FXEB",
        "ant": "80010864",
        "az": "30",
@@ -9828,6 +10675,7 @@ const STATION_DATA = [
       },
       {
        "cel": "13",
+       "cov": "Outdoor",
        "rmod": "FXEB",
        "ant": "80010864",
        "az": "30",
@@ -9836,6 +10684,7 @@ const STATION_DATA = [
       },
       {
        "cel": "14",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "30",
@@ -9844,6 +10693,7 @@ const STATION_DATA = [
       },
       {
        "cel": "15",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "30",
@@ -9857,6 +10707,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "21",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "160",
@@ -9865,6 +10716,7 @@ const STATION_DATA = [
       },
       {
        "cel": "22",
+       "cov": "Outdoor",
        "rmod": "FXEB",
        "ant": "80010864",
        "az": "160",
@@ -9873,6 +10725,7 @@ const STATION_DATA = [
       },
       {
        "cel": "23",
+       "cov": "Outdoor",
        "rmod": "FXEB",
        "ant": "80010864",
        "az": "160",
@@ -9881,6 +10734,7 @@ const STATION_DATA = [
       },
       {
        "cel": "24",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "160",
@@ -9889,6 +10743,7 @@ const STATION_DATA = [
       },
       {
        "cel": "25",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "160",
@@ -9902,6 +10757,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "31",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "240",
@@ -9910,6 +10766,7 @@ const STATION_DATA = [
       },
       {
        "cel": "32",
+       "cov": "Outdoor",
        "rmod": "FXEB",
        "ant": "80010864",
        "az": "260",
@@ -9918,6 +10775,7 @@ const STATION_DATA = [
       },
       {
        "cel": "33",
+       "cov": "Outdoor",
        "rmod": "FXEB",
        "ant": "80010864",
        "az": "260",
@@ -9926,6 +10784,7 @@ const STATION_DATA = [
       },
       {
        "cel": "34",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "260",
@@ -9934,6 +10793,7 @@ const STATION_DATA = [
       },
       {
        "cel": "35",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "260",
@@ -9949,6 +10809,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "51",
+       "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "RVV-65A-R3",
        "az": "140",
@@ -9957,6 +10818,7 @@ const STATION_DATA = [
       },
       {
        "cel": "53",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "RVV-65A-R3",
        "az": "140",
@@ -9965,6 +10827,7 @@ const STATION_DATA = [
       },
       {
        "cel": "54",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "RVV-65A-R3",
        "az": "140",
@@ -9978,6 +10841,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "61",
+       "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "RVV-65A-R3",
        "az": "310",
@@ -9986,6 +10850,7 @@ const STATION_DATA = [
       },
       {
        "cel": "63",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "RVV-65A-R3",
        "az": "310",
@@ -9994,6 +10859,7 @@ const STATION_DATA = [
       },
       {
        "cel": "64",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "RVV-65A-R3",
        "az": "310",
@@ -10037,6 +10903,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "11",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "140",
@@ -10045,6 +10912,7 @@ const STATION_DATA = [
       },
       {
        "cel": "12",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "140",
@@ -10053,6 +10921,7 @@ const STATION_DATA = [
       },
       {
        "cel": "13",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "140",
@@ -10061,6 +10930,7 @@ const STATION_DATA = [
       },
       {
        "cel": "14",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "140",
@@ -10069,6 +10939,7 @@ const STATION_DATA = [
       },
       {
        "cel": "15",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "140",
@@ -10082,6 +10953,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "21",
+       "cov": "Indoor",
        "rmod": "FHDB",
        "ant": "I-ATO1-698/2700",
        "az": "0",
@@ -10090,6 +10962,7 @@ const STATION_DATA = [
       },
       {
        "cel": "22",
+       "cov": "Indoor",
        "rmod": "FHEL",
        "ant": "I-ATO1-698/2700",
        "az": "0",
@@ -10098,6 +10971,7 @@ const STATION_DATA = [
       },
       {
        "cel": "23",
+       "cov": "Indoor",
        "rmod": "FHEL",
        "ant": "I-ATO1-698/2700",
        "az": "0",
@@ -10106,6 +10980,7 @@ const STATION_DATA = [
       },
       {
        "cel": "24",
+       "cov": "Indoor",
        "rmod": "FRHG",
        "ant": "I-ATO1-698/2700",
        "az": "0",
@@ -10114,6 +10989,7 @@ const STATION_DATA = [
       },
       {
        "cel": "25",
+       "cov": "Indoor",
        "rmod": "FRHG",
        "ant": "I-ATO1-698/2700",
        "az": "0",
@@ -10127,6 +11003,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "31",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "260",
@@ -10135,6 +11012,7 @@ const STATION_DATA = [
       },
       {
        "cel": "32",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "260",
@@ -10143,6 +11021,7 @@ const STATION_DATA = [
       },
       {
        "cel": "33",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "260",
@@ -10151,6 +11030,7 @@ const STATION_DATA = [
       },
       {
        "cel": "34",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "260",
@@ -10159,6 +11039,7 @@ const STATION_DATA = [
       },
       {
        "cel": "35",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "260",
@@ -10174,6 +11055,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "41",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "10",
@@ -10182,6 +11064,7 @@ const STATION_DATA = [
       },
       {
        "cel": "42",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "10",
@@ -10190,6 +11073,7 @@ const STATION_DATA = [
       },
       {
        "cel": "43",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "10",
@@ -10198,6 +11082,7 @@ const STATION_DATA = [
       },
       {
        "cel": "44",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "10",
@@ -10206,6 +11091,7 @@ const STATION_DATA = [
       },
       {
        "cel": "45",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "10",
@@ -10219,6 +11105,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "51",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "140",
@@ -10227,6 +11114,7 @@ const STATION_DATA = [
       },
       {
        "cel": "52",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "140",
@@ -10235,6 +11123,7 @@ const STATION_DATA = [
       },
       {
        "cel": "53",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "140",
@@ -10243,6 +11132,7 @@ const STATION_DATA = [
       },
       {
        "cel": "54",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "140",
@@ -10251,6 +11141,7 @@ const STATION_DATA = [
       },
       {
        "cel": "55",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "140",
@@ -10264,6 +11155,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "61",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "280",
@@ -10272,6 +11164,7 @@ const STATION_DATA = [
       },
       {
        "cel": "62",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "280",
@@ -10280,6 +11173,7 @@ const STATION_DATA = [
       },
       {
        "cel": "63",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "280",
@@ -10288,6 +11182,7 @@ const STATION_DATA = [
       },
       {
        "cel": "64",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "280",
@@ -10296,6 +11191,7 @@ const STATION_DATA = [
       },
       {
        "cel": "65",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "280",
@@ -10309,6 +11205,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "71",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "90",
@@ -10317,6 +11214,7 @@ const STATION_DATA = [
       },
       {
        "cel": "72",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "90",
@@ -10325,6 +11223,7 @@ const STATION_DATA = [
       },
       {
        "cel": "73",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "90",
@@ -10368,6 +11267,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "11",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "RV4S4-65A-R6",
        "az": "80",
@@ -10376,6 +11276,7 @@ const STATION_DATA = [
       },
       {
        "cel": "13",
+       "cov": "Outdoor",
        "rmod": "FHEB",
        "ant": "RV4S4-65A-R6",
        "az": "80",
@@ -10389,6 +11290,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "21",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "RV4S4-65A-R6",
        "az": "180",
@@ -10397,6 +11299,7 @@ const STATION_DATA = [
       },
       {
        "cel": "23",
+       "cov": "Outdoor",
        "rmod": "FHEB",
        "ant": "RV4S4-65A-R6",
        "az": "180",
@@ -10412,6 +11315,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "41",
+       "cov": "Outdoor",
        "rmod": "FXDB",
        "ant": "RV4S4-65A-R6",
        "az": "90",
@@ -10420,6 +11324,7 @@ const STATION_DATA = [
       },
       {
        "cel": "42",
+       "cov": "Outdoor",
        "rmod": "FXEB",
        "ant": "RV4S4-65A-R6",
        "az": "90",
@@ -10428,6 +11333,7 @@ const STATION_DATA = [
       },
       {
        "cel": "43",
+       "cov": "Outdoor",
        "rmod": "FXEB",
        "ant": "RV4S4-65A-R6",
        "az": "90",
@@ -10441,6 +11347,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "51",
+       "cov": "Outdoor",
        "rmod": "FXDB",
        "ant": "RV4S4-65A-R6",
        "az": "180",
@@ -10449,6 +11356,7 @@ const STATION_DATA = [
       },
       {
        "cel": "53",
+       "cov": "Outdoor",
        "rmod": "FXEB",
        "ant": "RV4S4-65A-R6",
        "az": "180",
@@ -10492,6 +11400,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "11",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "30",
@@ -10500,6 +11409,7 @@ const STATION_DATA = [
       },
       {
        "cel": "13",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "30",
@@ -10508,6 +11418,7 @@ const STATION_DATA = [
       },
       {
        "cel": "14",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "80010864",
        "az": "30",
@@ -10521,6 +11432,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "21",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "210",
@@ -10529,6 +11441,7 @@ const STATION_DATA = [
       },
       {
        "cel": "23",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "210",
@@ -10537,6 +11450,7 @@ const STATION_DATA = [
       },
       {
        "cel": "24",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "80010864",
        "az": "210",
@@ -10550,6 +11464,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "31",
+       "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "320",
@@ -10558,6 +11473,7 @@ const STATION_DATA = [
       },
       {
        "cel": "32",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "320",
@@ -10566,6 +11482,7 @@ const STATION_DATA = [
       },
       {
        "cel": "33",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "320",
@@ -10574,6 +11491,7 @@ const STATION_DATA = [
       },
       {
        "cel": "34",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "80010864",
        "az": "320",
@@ -10582,6 +11500,7 @@ const STATION_DATA = [
       },
       {
        "cel": "35",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "80010864",
        "az": "320",
@@ -10597,6 +11516,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "41",
+       "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "RVV-65A-R3",
        "az": "60",
@@ -10605,6 +11525,7 @@ const STATION_DATA = [
       },
       {
        "cel": "42",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "RVV-65A-R3",
        "az": "60",
@@ -10613,6 +11534,7 @@ const STATION_DATA = [
       },
       {
        "cel": "43",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "RVV-65A-R3",
        "az": "60",
@@ -10626,6 +11548,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "51",
+       "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "RVV-65A-R3",
        "az": "160",
@@ -10634,6 +11557,7 @@ const STATION_DATA = [
       },
       {
        "cel": "52",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "RVV-65A-R3",
        "az": "160",
@@ -10642,6 +11566,7 @@ const STATION_DATA = [
       },
       {
        "cel": "53",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "RVV-65A-R3",
        "az": "160",
@@ -10655,6 +11580,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "61",
+       "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "RVV-65A-R3",
        "az": "160",
@@ -10663,6 +11589,7 @@ const STATION_DATA = [
       },
       {
        "cel": "62",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "RVV-65A-R3",
        "az": "160",
@@ -10671,6 +11598,7 @@ const STATION_DATA = [
       },
       {
        "cel": "63",
+       "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "RVV-65A-R3",
        "az": "160",
