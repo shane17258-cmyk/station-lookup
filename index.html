@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>4G 台號站台查詢</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+    background: #f0f4f8;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 16px;
+  }
+  h1 { color: #1a3a5c; margin-bottom: 8px; font-size: 26px; }
+  .subtitle { color: #5a7a9a; margin-bottom: 24px; font-size: 14px; }
+  .card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(26,58,92,.12);
+    width: 100%;
+    max-width: 640px;
+    padding: 24px;
+  }
+  label { display: block; font-weight: 700; color: #1a3a5c; margin-bottom: 8px; font-size: 15px; }
+  select {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 16px;
+    border: 2px solid #c8d6e4;
+    border-radius: 8px;
+    background: #fafcfe;
+    color: #1a3a5c;
+    outline: none;
+    transition: border-color .2s;
+  }
+  select:focus { border-color: #2f6fad; }
+  .result {
+    margin-top: 24px;
+    border-top: 1px solid #e2eaf2;
+    padding-top: 20px;
+    display: none;
+  }
+  .result.show { display: block; }
+  .field { margin-bottom: 18px; }
+  .field .key { font-size: 13px; color: #6b8aa8; font-weight: 600; margin-bottom: 6px; }
+  .field .value { font-size: 17px; color: #1a3a5c; font-weight: 700; }
+  .field .value small { font-weight: 400; color: #7893ad; }
+  .chip {
+    display: inline-block;
+    background: #e8f1fa;
+    color: #1a3a5c;
+    border-radius: 20px;
+    padding: 6px 14px;
+    margin: 4px 4px 4px 0;
+    font-size: 15px;
+    border: 1px solid #c6d9ec;
+  }
+  .chip .num {
+    display: inline-block;
+    background: #2f6fad;
+    color: #fff;
+    border-radius: 50%;
+    width: 20px; height: 20px;
+    line-height: 20px;
+    text-align: center;
+    font-size: 12px;
+    margin-right: 8px;
+  }
+  .meta { font-size: 13px; color: #5a7a9a; line-height: 1.8; }
+  .placeholder { text-align: center; color: #9ab0c4; padding: 12px 0; }
+</style>
+</head>
+<body>
+  <h1>4G 台號站台查詢</h1>
+  <div class="subtitle">依 lnBtsId（4G 台號）查詢台名與站台</div>
+
+  <div class="card">
+    <label for="idSelect">4G 台號 (lnBtsId)</label>
+    <select id="idSelect">
+      <option value="">請選擇 4G 台號</option>
+    </select>
+
+    <div id="result" class="result">
+      <div class="field">
+        <div class="key">台名 (SiteNameCV)</div>
+        <div class="value" id="outName"></div>
+      </div>
+
+      <div class="field">
+        <div class="key">站台 (lnBtsIdLL_NameChs)</div>
+        <div id="outStations"></div>
+      </div>
+
+      <div class="field meta" id="outMeta"></div>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script>
+    const idSelect = document.getElementById('idSelect');
+    const result = document.getElementById('result');
+    const outName = document.getElementById('outName');
+    const outStations = document.getElementById('outStations');
+    const outMeta = document.getElementById('outMeta');
+
+    STATION_DATA.forEach(item => {
+      const opt = document.createElement('option');
+      opt.value = item.id;
+      opt.textContent = item.id;
+      idSelect.appendChild(opt);
+    });
+
+    idSelect.addEventListener('change', () => {
+      const id = idSelect.value;
+      if (!id) { result.classList.remove('show'); return; }
+      const item = STATION_DATA.find(d => d.id === id);
+      if (!item) return;
+
+      outName.textContent = item.siteNameCV || item.siteName || '-';
+      outName.innerHTML = (item.siteNameCV || item.siteName || '-') +
+        (item.siteNameCV && item.siteName && item.siteNameCV !== item.siteName
+          ? ' <small>(' + item.siteName + ')</small>' : '');
+
+      outStations.innerHTML = '';
+      if (item.stations && item.stations.length) {
+        item.stations.forEach((s, i) => {
+          const chip = document.createElement('span');
+          chip.className = 'chip';
+          chip.innerHTML = '<span class="num">' + (i + 1) + '</span>' + s;
+          outStations.appendChild(chip);
+        });
+      } else {
+        outStations.innerHTML = '<div class="placeholder">無站台資料</div>';
+      }
+
+      outMeta.innerHTML =
+        'RAN 型態：' + (item.ranType || '-') +
+        (item.sec ? '　｜　扇區：' + item.sec : '') +
+        (item.nrBtsId ? '　｜　nrBtsId：' + item.nrBtsId : '');
+
+      result.classList.add('show');
+    });
+  </script>
+</body>
+</html>
