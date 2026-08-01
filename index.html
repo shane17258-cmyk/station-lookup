@@ -110,6 +110,34 @@
   .note { font-size: 12px; color: #8aa4bd; margin-top: 10px; }
   .meta { font-size: 13px; color: #5a7a9a; line-height: 1.8; }
   .placeholder { text-align: center; color: #9ab0c4; padding: 12px 0; }
+  .search-results {
+    background: #fff;
+    border: 2px solid #c8d6e4;
+    border-radius: 8px;
+    margin-top: 6px;
+    max-height: 260px;
+    overflow-y: auto;
+    display: none;
+  }
+  .search-results.show { display: block; }
+  .search-item {
+    padding: 10px 14px;
+    cursor: pointer;
+    border-bottom: 1px solid #eef3f8;
+    transition: background .15s;
+  }
+  .search-item:last-child { border-bottom: none; }
+  .search-item:hover { background: #e8f1fa; }
+  .search-item .s-name { font-size: 14px; color: #1a3a5c; font-weight: 700; }
+  .search-item .s-meta { font-size: 12px; color: #6b8aa8; margin-top: 2px; }
+  .search-item .s-arrow { float: right; color: #2f6fad; font-weight: 700; }
+  .search-count { font-size: 12px; color: #8aa4bd; margin-top: 6px; }
+  .divider {
+    height: 1px;
+    background: #e2eaf2;
+    margin: 20px 0;
+  }
+  .center-hint { text-align: center; color: #9ab0c4; padding: 10px 0; }
 </style>
 </head>
 <body>
@@ -137,6 +165,14 @@
     </div>
   </div>
 
+  <div class="card" style="margin-top: 16px;">
+    <label for="searchInput">站台名稱搜尋 (lnBtsIdLL_NameChs)</label>
+    <input id="searchInput" placeholder="輸入站台名稱關鍵字，例如：三角公園、L17" autocomplete="off">
+    <div class="search-count" id="searchCount"></div>
+    <div class="search-results" id="searchResults"></div>
+    <div class="hint">輸入站台名稱可找到對應的 4G 台號，點擊結果即顯示該站台詳情</div>
+  </div>
+
   <script src="data.js"></script>
   <script>
     const idInput = document.getElementById('idInput');
@@ -145,6 +181,66 @@
     const outName = document.getElementById('outName');
     const outStations = document.getElementById('outStations');
     const outMeta = document.getElementById('outMeta');
+    const searchInput = document.getElementById('searchInput');
+    const searchResults = document.getElementById('searchResults');
+    const searchCount = document.getElementById('searchCount');
+
+    // 建立站台名稱索引：每個站台名稱對應到所屬 4G 台號
+    const stationIndex = [];
+    STATION_DATA.forEach(item => {
+      item.stations.forEach((s, i) => {
+        stationIndex.push({
+          name: s,
+          id: item.id,
+          siteNameCV: item.siteNameCV,
+          sec: (item.sec && item.sec.split('_')[i]) || '',
+          coord: (item.coords && item.coords[i]) || null
+        });
+      });
+    });
+
+    function selectById(id) {
+      idInput.value = id;
+      idInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      idInput.focus();
+      const item = STATION_DATA.find(d => d.id === id);
+      if (item) render(item);
+    }
+
+    function renderSearch(q) {
+      const keyword = q.trim();
+      if (!keyword) {
+        searchResults.classList.remove('show');
+        searchResults.innerHTML = '';
+        searchCount.textContent = '';
+        return;
+      }
+      const matches = stationIndex.filter(s =>
+        s.name.indexOf(keyword) !== -1 || s.siteNameCV.indexOf(keyword) !== -1
+      );
+      if (matches.length === 0) {
+        searchResults.classList.add('show');
+        searchResults.innerHTML = '<div class="center-hint">找不到符合的站台</div>';
+        searchCount.textContent = '找到 0 筆';
+        return;
+      }
+      searchCount.textContent = '找到 ' + matches.length + ' 筆站台';
+      searchResults.innerHTML = '';
+      matches.forEach(m => {
+        const div = document.createElement('div');
+        div.className = 'search-item';
+        div.innerHTML =
+          '<span class="s-arrow">›</span>' +
+          '<div class="s-name">' + m.name + '</div>' +
+          '<div class="s-meta">4G 台號 ' + m.id + (m.sec ? '　｜　扇區 ' + m.sec : '') +
+            '　｜　' + (m.siteNameCV || '') + '</div>';
+        div.addEventListener('click', () => selectById(m.id));
+        searchResults.appendChild(div);
+      });
+      searchResults.classList.add('show');
+    }
+
+    searchInput.addEventListener('input', () => renderSearch(searchInput.value));
 
     STATION_DATA.forEach(item => {
       const opt = document.createElement('option');
