@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>4G 台號站台查詢</title>
+<title>4G / 5G 台號站台查詢</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
@@ -17,9 +17,37 @@
   }
   h1 { color: #1a3a5c; margin-bottom: 8px; font-size: 26px; }
   .subtitle { color: #5a7a9a; margin-bottom: 24px; font-size: 14px; }
+
+  .tabs {
+    display: flex;
+    background: #fff;
+    border-radius: 12px 12px 0 0;
+    box-shadow: 0 4px 16px rgba(26,58,92,.12);
+    width: 100%;
+    max-width: 640px;
+    overflow: hidden;
+  }
+  .tab {
+    flex: 1;
+    padding: 14px 16px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    color: #6b8aa8;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: color .2s, border-color .2s, background .2s;
+    user-select: none;
+  }
+  .tab:hover { color: #2f6fad; }
+  .tab.active { color: #1a3a5c; border-bottom-color: #2f6fad; background: #f7fafc; }
+
+  .panel { display: none; }
+  .panel.active { display: block; }
+
   .card {
     background: #fff;
-    border-radius: 12px;
+    border-radius: 0 0 12px 12px;
     box-shadow: 0 4px 16px rgba(26,58,92,.12);
     width: 100%;
     max-width: 640px;
@@ -50,66 +78,11 @@
   .field .key { font-size: 13px; color: #6b8aa8; font-weight: 600; margin-bottom: 6px; }
   .field .value { font-size: 17px; color: #1a3a5c; font-weight: 700; }
   .field .value small { font-weight: 400; color: #7893ad; }
-  .chip {
-    display: inline-flex;
-    align-items: center;
-    background: #e8f1fa;
-    color: #1a3a5c;
-    border-radius: 8px;
-    padding: 6px 12px;
-    margin: 4px 4px 4px 0;
-    font-size: 15px;
-    border: 1px solid #c6d9ec;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background .2s, border-color .2s, transform .1s;
-  }
-  .chip:hover { background: #d6e6f6; border-color: #2f6fad; transform: translateY(-1px); }
-  .chip .num {
-    display: inline-block;
-    background: #2f6fad;
-    color: #fff;
-    border-radius: 50%;
-    width: 20px; height: 20px;
-    line-height: 20px;
-    text-align: center;
-    font-size: 12px;
-    margin-right: 8px;
-    flex-shrink: 0;
-  }
-  .chip .sec {
-    background: #fff;
-    color: #2f6fad;
-    border: 1px solid #b6d0e8;
-    border-radius: 12px;
-    padding: 1px 8px;
-    font-size: 12px;
-    font-weight: 700;
-    margin-left: 10px;
-    flex-shrink: 0;
-  }
-  .chip .coord {
-    display: block;
-    font-size: 11px;
-    color: #6b8aa8;
-    margin-left: 28px;
-    font-weight: 400;
-    line-height: 1.3;
-  }
-  .chip .mapicon {
-    background: #fff;
-    color: #c0392b;
-    border: 1px solid #e8c4bc;
-    border-radius: 12px;
-    padding: 1px 8px;
-    font-size: 12px;
-    font-weight: 700;
-    margin-left: 10px;
-    flex-shrink: 0;
-  }
   .note { font-size: 12px; color: #8aa4bd; margin-top: 10px; }
   .meta { font-size: 13px; color: #5a7a9a; line-height: 1.8; }
   .placeholder { text-align: center; color: #9ab0c4; padding: 12px 0; }
+  .center-hint { text-align: center; color: #9ab0c4; padding: 10px 0; }
+
   .search-results {
     background: #fff;
     border: 2px solid #c8d6e4;
@@ -132,42 +105,79 @@
   .search-item .s-meta { font-size: 12px; color: #6b8aa8; margin-top: 2px; }
   .search-item .s-arrow { float: right; color: #2f6fad; font-weight: 700; }
   .search-count { font-size: 12px; color: #8aa4bd; margin-top: 6px; }
-  .divider {
-    height: 1px;
-    background: #e2eaf2;
-    margin: 20px 0;
+
+  .station-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background: #e8f1fa;
+    border: 1px solid #c6d9ec;
+    border-radius: 8px;
+    padding: 8px 12px;
+    gap: 6px;
+    font-size: 15px;
+    color: #1a3a5c;
   }
-  .center-hint { text-align: center; color: #9ab0c4; padding: 10px 0; }
+  .station-bar .num {
+    display: inline-block;
+    background: #2f6fad;
+    color: #fff;
+    border-radius: 50%;
+    width: 20px; height: 20px;
+    line-height: 20px;
+    text-align: center;
+    font-size: 12px;
+    margin-right: 4px;
+    flex-shrink: 0;
+  }
+  .station-bar .s-name-inline { font-weight: 700; }
+  .station-bar .sec {
+    background: #fff;
+    color: #2f6fad;
+    border: 1px solid #b6d0e8;
+    border-radius: 12px;
+    padding: 1px 8px;
+    font-size: 12px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .station-bar .coord2 { font-size: 11px; color: #6b8aa8; margin-left: 4px; }
+  .station-bar .toggle {
+    cursor: pointer;
+    color: #2f6fad;
+    font-weight: 700;
+    font-size: 13px;
+    margin-left: auto;
+    user-select: none;
+  }
+  .station-bar .toggle:hover { text-decoration: underline; }
+  .station-bar .mapbtn {
+    display: inline-block;
+    background: #fff;
+    color: #c0392b;
+    border: 1px solid #e8c4bc;
+    border-radius: 12px;
+    padding: 2px 10px;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .station-bar .mapbtn:hover { background: #fdf0ee; }
+
   .detail {
     display: none;
-    margin-top: 14px;
+    margin-top: 6px;
     padding: 14px;
     background: #f7fafc;
     border: 1px solid #dbe6f0;
     border-radius: 10px;
   }
   .detail.show { display: block; }
-  .detail-title {
-    font-size: 14px;
-    font-weight: 700;
-    color: #1a3a5c;
-    margin-bottom: 10px;
-  }
-  .cell-sec {
-    margin-bottom: 12px;
-  }
+  .detail-title { font-size: 14px; font-weight: 700; color: #1a3a5c; margin-bottom: 10px; }
+  .cell-sec { margin-bottom: 12px; }
   .cell-sec:last-child { margin-bottom: 0; }
-  .cell-sec-title {
-    font-size: 13px;
-    font-weight: 700;
-    color: #2f6fad;
-    margin-bottom: 6px;
-  }
-  .cell-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-  }
+  .cell-sec-title { font-size: 13px; font-weight: 700; color: #2f6fad; margin-bottom: 6px; }
+  .cell-row { display: flex; flex-wrap: wrap; gap: 6px; }
   .cell-card {
     background: #fff;
     border: 1px solid #d4e2f0;
@@ -201,278 +211,304 @@
   .cell-card .c-meta { font-size: 11px; color: #6b8aa8; margin-top: 4px; line-height: 1.5; }
   .cell-card .c-map a { color: #c0392b; text-decoration: none; font-size: 11px; font-weight: 600; }
   .cell-card .c-map a:hover { text-decoration: underline; }
-  .station-bar {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    background: #e8f1fa;
-    border: 1px solid #c6d9ec;
-    border-radius: 8px;
-    padding: 8px 12px;
-    gap: 6px;
-    font-size: 15px;
-    color: #1a3a5c;
-  }
-  .station-bar .s-name-inline { font-weight: 700; }
-  .station-bar .coord2 { font-size: 11px; color: #6b8aa8; margin-left: 4px; }
-  .station-bar .toggle {
-    cursor: pointer;
-    color: #2f6fad;
-    font-weight: 700;
-    font-size: 13px;
-    margin-left: auto;
-    user-select: none;
-  }
-  .station-bar .toggle:hover { text-decoration: underline; }
-  .station-bar .mapbtn {
-    display: inline-block;
-    background: #fff;
-    color: #c0392b;
-    border: 1px solid #e8c4bc;
-    border-radius: 12px;
-    padding: 2px 10px;
-    font-size: 12px;
-    font-weight: 700;
-    text-decoration: none;
-  }
-  .station-bar .mapbtn:hover { background: #fdf0ee; }
 </style>
 </head>
 <body>
-  <h1>4G 台號站台查詢</h1>
-  <div class="subtitle">依 lnBtsId（4G 台號）查詢台名與站台</div>
+  <h1>4G / 5G 台號站台查詢</h1>
+  <div class="subtitle">依台號查詢台名、站台與細胞詳細資料</div>
 
-  <div class="card">
-    <label for="idInput">4G 台號 (lnBtsId)</label>
-    <input id="idInput" list="idList" placeholder="輸入或選擇 4G 台號" autocomplete="off">
-    <datalist id="idList"></datalist>
-    <div class="hint">可直接輸入 lnBtsId，或從下拉清單中選擇</div>
+  <div class="tabs">
+    <div class="tab active" data-net="4g" id="tab4g">4G</div>
+    <div class="tab" data-net="5g" id="tab5g">5G</div>
+  </div>
 
-    <div id="result" class="result">
-      <div class="field">
-        <div class="key">台名 (SiteNameCV)</div>
-        <div class="value" id="outName"></div>
+  <div class="panel active" id="panel-4g">
+    <div class="card">
+      <label for="idInput4g">4G 台號 (lnBtsId)</label>
+      <input id="idInput4g" list="idList4g" placeholder="輸入或選擇 4G 台號" autocomplete="off">
+      <datalist id="idList4g"></datalist>
+      <div class="hint">可直接輸入 lnBtsId，或從下拉清單中選擇</div>
+
+      <div id="result4g" class="result">
+        <div class="field">
+          <div class="key">台名 (SiteNameCV)</div>
+          <div class="value" id="outName4g"></div>
+        </div>
+        <div class="field">
+          <div class="key">站台 (lnBtsIdLL_NameChs)</div>
+          <div id="outStations4g"></div>
+        </div>
+        <div class="field meta" id="outMeta4g"></div>
       </div>
+    </div>
 
-      <div class="field">
-        <div class="key">站台 (lnBtsIdLL_NameChs)</div>
-        <div id="outStations"></div>
-      </div>
-
-      <div class="field meta" id="outMeta"></div>
+    <div class="card" style="margin-top: 16px;">
+      <label for="searchInput4g">站台名稱搜尋 (lnBtsIdLL_NameChs)</label>
+      <input id="searchInput4g" placeholder="輸入站台名稱關鍵字" autocomplete="off">
+      <div class="search-count" id="searchCount4g"></div>
+      <div class="search-results" id="searchResults4g"></div>
+      <div class="hint">輸入站台名稱可找到對應的 4G 台號，點擊結果即顯示該站台詳情</div>
     </div>
   </div>
 
-  <div class="card" style="margin-top: 16px;">
-    <label for="searchInput">站台名稱搜尋 (lnBtsIdLL_NameChs)</label>
-    <input id="searchInput" placeholder="輸入站台名稱關鍵字，例如：三角公園、L17" autocomplete="off">
-    <div class="search-count" id="searchCount"></div>
-    <div class="search-results" id="searchResults"></div>
-    <div class="hint">輸入站台名稱可找到對應的 4G 台號，點擊結果即顯示該站台詳情</div>
+  <div class="panel" id="panel-5g">
+    <div class="card">
+      <label for="idInput5g">5G 台號 (nrBtsId)</label>
+      <input id="idInput5g" list="idList5g" placeholder="輸入或選擇 5G 台號" autocomplete="off">
+      <datalist id="idList5g"></datalist>
+      <div class="hint">可直接輸入 nrBtsId，或從下拉清單中選擇</div>
+
+      <div id="result5g" class="result">
+        <div class="field">
+          <div class="key">台名 (SiteName)</div>
+          <div class="value" id="outName5g"></div>
+        </div>
+        <div class="field">
+          <div class="key">站台 (nrBtsIdNN_NameChs)</div>
+          <div id="outStations5g"></div>
+        </div>
+        <div class="field meta" id="outMeta5g"></div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top: 16px;">
+      <label for="searchInput5g">站台名稱搜尋 (nrBtsIdNN_NameChs)</label>
+      <input id="searchInput5g" placeholder="輸入站台名稱關鍵字" autocomplete="off">
+      <div class="search-count" id="searchCount5g"></div>
+      <div class="search-results" id="searchResults5g"></div>
+      <div class="hint">輸入站台名稱可找到對應的 5G 台號，點擊結果即顯示該站台詳情</div>
+    </div>
   </div>
 
   <script src="data.js"></script>
+  <script src="data5g.js"></script>
   <script>
-    const idInput = document.getElementById('idInput');
-    const idList = document.getElementById('idList');
-    const result = document.getElementById('result');
-    const outName = document.getElementById('outName');
-    const outStations = document.getElementById('outStations');
-    const outMeta = document.getElementById('outMeta');
-    const searchInput = document.getElementById('searchInput');
-    const searchResults = document.getElementById('searchResults');
-    const searchCount = document.getElementById('searchCount');
+    function createNetController(cfg) {
+      const {
+        data, idInput, idList, result, outName, outStations, outMeta,
+        searchInput, searchResults, searchCount, idLabel
+      } = cfg;
 
-    // 建立站台名稱索引：每個站台名稱對應到所屬 4G 台號
-    const stationIndex = [];
-    STATION_DATA.forEach(item => {
-      item.stations.forEach((s, i) => {
-        stationIndex.push({
-          name: s,
-          id: item.id,
-          siteNameCV: item.siteNameCV,
-          sec: (item.sec && item.sec.split('_')[i]) || '',
-          coord: (item.coords && item.coords[i]) || null
-        });
-      });
-    });
-
-    function selectById(id) {
-      idInput.value = id;
-      idInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      idInput.focus();
-      const item = STATION_DATA.find(d => d.id === id);
-      if (item) render(item);
-    }
-
-    function renderSearch(q) {
-      const keyword = q.trim();
-      if (!keyword) {
-        searchResults.classList.remove('show');
-        searchResults.innerHTML = '';
-        searchCount.textContent = '';
-        return;
-      }
-      const matches = stationIndex.filter(s =>
-        s.name.indexOf(keyword) !== -1 || s.siteNameCV.indexOf(keyword) !== -1
-      );
-      if (matches.length === 0) {
-        searchResults.classList.add('show');
-        searchResults.innerHTML = '<div class="center-hint">找不到符合的站台</div>';
-        searchCount.textContent = '找到 0 筆';
-        return;
-      }
-      searchCount.textContent = '找到 ' + matches.length + ' 筆站台';
-      searchResults.innerHTML = '';
-      matches.forEach(m => {
-        const div = document.createElement('div');
-        div.className = 'search-item';
-        div.innerHTML =
-          '<span class="s-arrow">›</span>' +
-          '<div class="s-name">' + m.name + '</div>' +
-          '<div class="s-meta">4G 台號 ' + m.id + (m.sec ? '　｜　扇區 ' + m.sec : '') +
-            '　｜　' + (m.siteNameCV || '') + '</div>';
-        div.addEventListener('click', () => selectById(m.id));
-        searchResults.appendChild(div);
-      });
-      searchResults.classList.add('show');
-    }
-
-    searchInput.addEventListener('input', () => renderSearch(searchInput.value));
-
-    STATION_DATA.forEach(item => {
-      const opt = document.createElement('option');
-      opt.value = item.id;
-      opt.textContent = item.id + ' - ' + (item.siteNameCV || '');
-      idList.appendChild(opt);
-    });
-
-    function findItem() {
-      const id = idInput.value.trim();
-      if (!id) { result.classList.remove('show'); return null; }
-      const item = STATION_DATA.find(d => d.id === id);
-      if (!item) {
-        outName.textContent = '查無此 4G 台號';
-        outName.style.color = '#c0392b';
-        outStations.innerHTML = '';
-        outMeta.innerHTML = '';
-        result.classList.add('show');
-        return null;
-      }
-      outName.style.color = '';
-      return item;
-    }
-
-    function buildCellDetail(item, station, coord) {
-      const groups = item.cells[station] || [];
-      let html = '<div class="detail-title">細胞詳細資料（lnCelId / rmod_cell）</div>';
-      if (!groups.length) {
-        html += '<div class="placeholder">無細胞資料</div>';
-        return html;
-      }
-      groups.forEach(g => {
-        html += '<div class="cell-sec">';
-        html += '<div class="cell-sec-title">扇區 S' + g.sec + '</div>';
-        html += '<div class="cell-row">';
-        g.cells.forEach(c => {
-          const cov = (c.cov || '');
-          const covClass = cov.indexOf('Indoor') !== -1 ? 'indoor' : 'outdoor';
-          const hasCellCoord = c.lat && c.lon;
-          const mapHref = hasCellCoord
-            ? 'https://www.google.com/maps?q=' + c.lat + ',' + c.lon
-            : (coord ? 'https://www.google.com/maps?q=' + coord.lat + ',' + coord.lon : '');
-          html += '<div class="cell-card">' +
-            '<div class="c-id">lnCelId ' + c.cel + '</div>' +
-            '<div class="c-rmod">' + (c.rmod || '-') + '</div>' +
-            '<div class="c-cov ' + covClass + '">' + cov + '</div>' +
-            '<div class="c-meta">' +
-            '天線：' + (c.ant || '-') + '<br>' +
-            '方位角：' + (c.az || '-') + '°　下傾角：' + (c.et || '-') + '°' +
-            (hasCellCoord ? '<br>座標：' + c.lat + ', ' + c.lon : '') +
-            '</div>';
-          if (mapHref) {
-            html += '<div class="c-map"><a target="_blank" rel="noopener" href="' + mapHref + '">Google 地圖</a></div>';
-          }
-          html += '</div>';
-        });
-        html += '</div></div>';
-      });
-      return html;
-    }
-
-    function render(item) {
-      outName.textContent = item.siteNameCV || item.siteName || '-';
-      outName.innerHTML = (item.siteNameCV || item.siteName || '-') +
-        (item.siteNameCV && item.siteName && item.siteNameCV !== item.siteName
-          ? ' <small>(' + item.siteName + ')</small>' : '');
-
-      outStations.innerHTML = '';
-      const secs = item.sec ? item.sec.split('_') : [];
-      if (item.stations && item.stations.length) {
+      const stationIndex = [];
+      data.forEach(item => {
         item.stations.forEach((s, i) => {
-          const coord = (item.coords && item.coords[i]) ? item.coords[i] : null;
-          const cells = (item.cells && item.cells[s]) ? item.cells[s] : [];
-
-          const wrap = document.createElement('div');
-          wrap.style.marginBottom = '6px';
-
-          const bar = document.createElement('div');
-          bar.className = 'station-bar';
-          bar.innerHTML =
-            '<span class="num">' + (i + 1) + '</span>' +
-            '<span class="s-name-inline">' + s + '</span>' +
-            (secs[i] ? '<span class="sec">' + secs[i] + '</span>' : '') +
-            (coord ? '<span class="coord2">' + coord.lat + ', ' + coord.lon + '</span>' : '') +
-            (cells.length ? '<span class="toggle" data-idx="' + i + '">檢視細胞詳情 ▸</span>' : '') +
-            (coord ? '<a class="mapbtn" target="_blank" rel="noopener" href="https://www.google.com/maps?q=' +
-              coord.lat + ',' + coord.lon + '">📍 Google 地圖</a>' : '');
-          wrap.appendChild(bar);
-
-          if (cells.length) {
-            const detail = document.createElement('div');
-            detail.className = 'detail';
-            detail.id = 'detail-' + i;
-            detail.innerHTML = buildCellDetail(item, s, coord);
-            wrap.appendChild(detail);
-          }
-
-          outStations.appendChild(wrap);
-        });
-
-        const note = document.createElement('div');
-        note.className = 'note';
-        note.textContent = '點擊「檢視細胞詳情」可展開細胞資訊；「Google 地圖」可開啟位置';
-        outStations.appendChild(note);
-
-        outStations.querySelectorAll('.toggle').forEach(tgl => {
-          tgl.addEventListener('click', () => {
-            const d = document.getElementById('detail-' + tgl.dataset.idx);
-            if (d) {
-              const shown = d.classList.toggle('show');
-              tgl.textContent = shown ? '收合細胞詳情 ▾' : '檢視細胞詳情 ▸';
-            }
+          stationIndex.push({
+            name: s,
+            id: item.id,
+            siteNameCV: item.siteNameCV,
+            sec: (item.sec && item.sec.split('_')[i]) || '',
+            coord: (item.coords && item.coords[i]) || null
           });
         });
-      } else {
-        outStations.innerHTML = '<div class="placeholder">無站台資料</div>';
+      });
+
+      data.forEach(item => {
+        const opt = document.createElement('option');
+        opt.value = item.id;
+        opt.textContent = item.id + ' - ' + (item.siteNameCV || '');
+        idList.appendChild(opt);
+      });
+
+      function buildCellDetail(item, station, coord) {
+        const groups = item.cells[station] || [];
+        let html = '<div class="detail-title">細胞詳細資料</div>';
+        if (!groups.length) {
+          html += '<div class="placeholder">無細胞資料</div>';
+          return html;
+        }
+        groups.forEach(g => {
+          html += '<div class="cell-sec">';
+          html += '<div class="cell-sec-title">扇區 S' + g.sec + '</div>';
+          html += '<div class="cell-row">';
+          g.cells.forEach(c => {
+            const cov = (c.cov || '');
+            const covClass = cov.indexOf('Indoor') !== -1 ? 'indoor' : 'outdoor';
+            const hasCellCoord = c.lat && c.lon;
+            const mapHref = hasCellCoord
+              ? 'https://www.google.com/maps?q=' + c.lat + ',' + c.lon
+              : (coord ? 'https://www.google.com/maps?q=' + coord.lat + ',' + coord.lon : '');
+            html += '<div class="cell-card">' +
+              '<div class="c-id">' + idLabel + ' ' + c.cel + '</div>' +
+              '<div class="c-rmod">' + (c.rmod || '-') + '</div>' +
+              '<div class="c-cov ' + covClass + '">' + cov + '</div>' +
+              '<div class="c-meta">' +
+              '方位角：' + (c.az || '-') + '°　上傾角：' + (c.mt || '-') + '°　下傾角：' + (c.et || '-') + '°' +
+              (c.toff ? '<br>傾斜補償：' + c.toff + '°' : '') +
+              (hasCellCoord ? '<br>座標：' + c.lat + ', ' + c.lon : '') +
+              '</div>';
+            if (mapHref) {
+              html += '<div class="c-map"><a target="_blank" rel="noopener" href="' + mapHref + '">Google 地圖</a></div>';
+            }
+            html += '</div>';
+          });
+          html += '</div></div>';
+        });
+        return html;
       }
 
-      outMeta.innerHTML =
-        'RAN 型態：' + (item.ranType || '-') +
-        (item.nrBtsId ? '　｜　nrBtsId：' + item.nrBtsId : '') +
-        (item.sec ? '　｜　扇區全貌：' + item.sec : '');
+      function render(item) {
+        outName.textContent = item.siteNameCV || item.siteName || '-';
+        outName.innerHTML = (item.siteNameCV || item.siteName || '-') +
+          (item.siteNameCV && item.siteName && item.siteNameCV !== item.siteName
+            ? ' <small>(' + item.siteName + ')</small>' : '');
 
-      result.classList.add('show');
+        outStations.innerHTML = '';
+        const secs = item.sec ? item.sec.split('_') : [];
+        if (item.stations && item.stations.length) {
+          item.stations.forEach((s, i) => {
+            const coord = (item.coords && item.coords[i]) ? item.coords[i] : null;
+            const cells = (item.cells && item.cells[s]) ? item.cells[s] : [];
+
+            const wrap = document.createElement('div');
+            wrap.style.marginBottom = '6px';
+
+            const bar = document.createElement('div');
+            bar.className = 'station-bar';
+            bar.innerHTML =
+              '<span class="num">' + (i + 1) + '</span>' +
+              '<span class="s-name-inline">' + s + '</span>' +
+              (secs[i] ? '<span class="sec">' + secs[i] + '</span>' : '') +
+              (coord ? '<span class="coord2">' + coord.lat + ', ' + coord.lon + '</span>' : '') +
+              (cells.length ? '<span class="toggle" data-idx="' + i + '">檢視細胞詳情 ▸</span>' : '') +
+              (coord ? '<a class="mapbtn" target="_blank" rel="noopener" href="https://www.google.com/maps?q=' +
+                coord.lat + ',' + coord.lon + '">Google 地圖</a>' : '');
+            wrap.appendChild(bar);
+
+            if (cells.length) {
+              const detail = document.createElement('div');
+              detail.className = 'detail';
+              detail.id = 'detail-' + i;
+              detail.innerHTML = buildCellDetail(item, s, coord);
+              wrap.appendChild(detail);
+            }
+
+            outStations.appendChild(wrap);
+          });
+
+          const note = document.createElement('div');
+          note.className = 'note';
+          note.textContent = '點擊「檢視細胞詳情」可展開細胞資訊；「Google 地圖」可開啟位置';
+          outStations.appendChild(note);
+
+          outStations.querySelectorAll('.toggle').forEach(tgl => {
+            tgl.addEventListener('click', () => {
+              const d = document.getElementById('detail-' + tgl.dataset.idx);
+              if (d) {
+                const shown = d.classList.toggle('show');
+                tgl.textContent = shown ? '收合細胞詳情 ▾' : '檢視細胞詳情 ▸';
+              }
+            });
+          });
+        } else {
+          outStations.innerHTML = '<div class="placeholder">無站台資料</div>';
+        }
+
+        outMeta.innerHTML =
+          'RAN 型態：' + (item.ranType || '-') +
+          (item.sec ? '　｜　扇區全貌：' + item.sec : '');
+
+        result.classList.add('show');
+      }
+
+      function findItem() {
+        const id = idInput.value.trim();
+        if (!id) { result.classList.remove('show'); return null; }
+        const item = data.find(d => d.id === id);
+        if (!item) {
+          outName.textContent = '查無此台號';
+          outName.style.color = '#c0392b';
+          outStations.innerHTML = '';
+          outMeta.innerHTML = '';
+          result.classList.add('show');
+          return null;
+        }
+        outName.style.color = '';
+        return item;
+      }
+
+      function selectById(id) {
+        idInput.value = id;
+        idInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        idInput.focus();
+        const item = data.find(d => d.id === id);
+        if (item) render(item);
+      }
+
+      function renderSearch(q) {
+        const keyword = q.trim();
+        if (!keyword) {
+          searchResults.classList.remove('show');
+          searchResults.innerHTML = '';
+          searchCount.textContent = '';
+          return;
+        }
+        const matches = stationIndex.filter(s =>
+          s.name.indexOf(keyword) !== -1 || s.siteNameCV.indexOf(keyword) !== -1
+        );
+        if (matches.length === 0) {
+          searchResults.classList.add('show');
+          searchResults.innerHTML = '<div class="center-hint">找不到符合的站台</div>';
+          searchCount.textContent = '找到 0 筆';
+          return;
+        }
+        searchCount.textContent = '找到 ' + matches.length + ' 筆站台';
+        searchResults.innerHTML = '';
+        matches.forEach(m => {
+          const div = document.createElement('div');
+          div.className = 'search-item';
+          div.innerHTML =
+            '<span class="s-arrow">›</span>' +
+            '<div class="s-name">' + m.name + '</div>' +
+            '<div class="s-meta">台號 ' + m.id + (m.sec ? '　｜　扇區 ' + m.sec : '') +
+              '　｜　' + (m.siteNameCV || '') + '</div>';
+          div.addEventListener('click', () => selectById(m.id));
+          searchResults.appendChild(div);
+        });
+        searchResults.classList.add('show');
+      }
+
+      idInput.addEventListener('input', () => { const it = findItem(); if (it) render(it); });
+      idInput.addEventListener('change', () => { const it = findItem(); if (it) render(it); });
+      searchInput.addEventListener('input', () => renderSearch(searchInput.value));
     }
 
-    idInput.addEventListener('input', () => {
-      const item = findItem();
-      if (item) render(item);
+    // 頁籤切換
+    const tabs = document.querySelectorAll('.tab');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+        document.getElementById('panel-' + tab.dataset.net).classList.add('active');
+      });
     });
 
-    idInput.addEventListener('change', () => {
-      const item = findItem();
-      if (item) render(item);
+    createNetController({
+      data: STATION_DATA,
+      idInput: document.getElementById('idInput4g'),
+      idList: document.getElementById('idList4g'),
+      result: document.getElementById('result4g'),
+      outName: document.getElementById('outName4g'),
+      outStations: document.getElementById('outStations4g'),
+      outMeta: document.getElementById('outMeta4g'),
+      searchInput: document.getElementById('searchInput4g'),
+      searchResults: document.getElementById('searchResults4g'),
+      searchCount: document.getElementById('searchCount4g'),
+      idLabel: 'lnCelId'
+    });
+
+    createNetController({
+      data: STATION_DATA_5G,
+      idInput: document.getElementById('idInput5g'),
+      idList: document.getElementById('idList5g'),
+      result: document.getElementById('result5g'),
+      outName: document.getElementById('outName5g'),
+      outStations: document.getElementById('outStations5g'),
+      outMeta: document.getElementById('outMeta5g'),
+      searchInput: document.getElementById('searchInput5g'),
+      searchResults: document.getElementById('searchResults5g'),
+      searchCount: document.getElementById('searchCount5g'),
+      idLabel: 'nrCelId'
     });
   </script>
 </body>
