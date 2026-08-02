@@ -377,6 +377,10 @@
         g.cells.forEach(c => {
           const cov = (c.cov || '');
           const covClass = cov.indexOf('Indoor') !== -1 ? 'indoor' : 'outdoor';
+          const hasCellCoord = c.lat && c.lon;
+          const mapHref = hasCellCoord
+            ? 'https://www.google.com/maps?q=' + c.lat + ',' + c.lon
+            : (coord ? 'https://www.google.com/maps?q=' + coord.lat + ',' + coord.lon : '');
           html += '<div class="cell-card">' +
             '<div class="c-id">lnCelId ' + c.cel + '</div>' +
             '<div class="c-rmod">' + (c.rmod || '-') + '</div>' +
@@ -384,10 +388,10 @@
             '<div class="c-meta">' +
             '天線：' + (c.ant || '-') + '<br>' +
             '方位角：' + (c.az || '-') + '°　下傾角：' + (c.et || '-') + '°' +
+            (hasCellCoord ? '<br>座標：' + c.lat + ', ' + c.lon : '') +
             '</div>';
-          if (coord) {
-            html += '<div class="c-map"><a target="_blank" rel="noopener" href="https://www.google.com/maps?q=' +
-              coord.lat + ',' + coord.lon + '">Google 地圖</a></div>';
+          if (mapHref) {
+            html += '<div class="c-map"><a target="_blank" rel="noopener" href="' + mapHref + '">Google 地圖</a></div>';
           }
           html += '</div>';
         });
