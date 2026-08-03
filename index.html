@@ -141,6 +141,17 @@
     font-weight: 700;
     flex-shrink: 0;
   }
+  .station-bar .meter {
+    display: inline-block;
+    background: #fff8e6;
+    color: #b7791f;
+    border: 1px solid #ecd7a0;
+    border-radius: 12px;
+    padding: 1px 10px;
+    font-size: 12px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
   .station-bar .coord2 { font-size: 11px; color: #6b8aa8; margin-left: 4px; }
   .station-bar .toggle {
     cursor: pointer;
@@ -358,6 +369,7 @@
           item.stations.forEach((s, i) => {
             const coord = (item.coords && item.coords[i]) ? item.coords[i] : null;
             const cells = (item.cells && item.cells[s]) ? item.cells[s] : [];
+            const meters = (item.meters && item.meters[s]) ? item.meters[s] : [];
 
             const wrap = document.createElement('div');
             wrap.style.marginBottom = '6px';
@@ -367,6 +379,7 @@
             bar.innerHTML =
               '<span class="num">' + (i + 1) + '</span>' +
               '<span class="s-name-inline">' + s + '</span>' +
+              (meters.length ? '<span class="meter">電號 ' + meters.join('、') + '</span>' : '') +
               (secs[i] ? '<span class="sec">' + secs[i] + '</span>' : '') +
               (coord ? '<span class="coord2">' + coord.lat + ', ' + coord.lon + '</span>' : '') +
               (cells.length ? '<span class="toggle" data-idx="' + i + '">檢視細胞詳情 ▸</span>' : '') +

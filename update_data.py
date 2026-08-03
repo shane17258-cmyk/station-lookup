@@ -66,6 +66,78 @@ def group_cells(cells, key_fn, field_map):
         out.append({"sec": sec, "cells": sec_cells})
     return out
 
+def normalize(s):
+    return s.replace(" ", "").replace("　", "").replace("-", "").replace("_", "")
+
+def build_meter_map(meter_rows, id2x):
+    """
+    電號檔：欄位 電號▲/台號/台名（dict 形式，key 為欄位名）
+    回傳 { lnBtsId: { 站台名: [電號, ...] } }
+    比對順序：
+      1. 台號去尾綴(L/U/S/l)後精確等於 lnBtsId → 命中該基地台
+      2. 否則以台名對站台名做模糊(雙向包含)比對
+    """
+    ids4 = set(id2x.keys())
+    meter_map = {}
+    for r in meter_rows:
+        def g(k):
+            return str(r.get(k, "")).strip() if r.get(k) else ""
+        meter_no = g("電號▲") or g("電號")
+        th = g("台號")
+        tn = g("台名")
+        if not meter_no or not th:
+            continue
+
+        hit_id = None
+        # 台號精確比對（去尾綴）
+        if th in ids4:
+            hit_id = th
+        else:
+            for suf in ["L", "U", "S", "l"]:
+                base = th[:-1] if th.endswith(suf) else th
+                if base in ids4:
+                    hit_id = base
+                    break
+
+        station_hit = None
+        if hit_id:
+            x = id2x[hit_id]
+            cands = x["stations"] or []
+            # 台名精確匹配站台
+            if tn:
+                for st in cands:
+                    if st == tn:
+                        station_hit = st
+                        break
+                if station_hit is None:
+                    for st in cands:
+                        if normalize(st) == normalize(tn):
+                            station_hit = st
+                            break
+                # 台名模糊匹配站台
+                if station_hit is None:
+                    for st in cands:
+                        if tn and (normalize(tn) in normalize(st) or normalize(st) in normalize(tn)):
+                            station_hit = st
+                            break
+            # 找不到具體站台 → 掛到第一個站台
+            if station_hit is None:
+                station_hit = cands[0] if cands else ""
+        else:
+            # 台名全域模糊比對
+            for x in id2x.values():
+                for st in x["stations"] or []:
+                    if tn and (normalize(tn) in normalize(st) or normalize(st) in normalize(tn)):
+                        hit_id = x["id"]
+                        station_hit = st
+                        break
+                if hit_id:
+                    break
+
+        if hit_id and station_hit is not None:
+            meter_map.setdefault(hit_id, {}).setdefault(station_hit, []).append(meter_no)
+    return meter_map
+
 # ============ 4G ============
 print("== 4G ==")
 co_bts = find_file("*LTE_CoBTS_CHT.xlsx")
@@ -85,6 +157,16 @@ for r in cell_rows:
     if not lnbts or not st:
         continue
     cell_map.setdefault(lnbts, {}).setdefault(st, []).append(r)
+
+# 電號檔（可選，找不到就跳過）
+meter_rows = []
+meter_files = glob.glob(os.path.join(BASE, "*電號*.xlsx"))
+if meter_files:
+    mf = sorted(meter_files)[-1]
+    _, meter_rows = load_rows(mf, "工作表1")
+    print(f"  電號檔: {os.path.basename(mf)} ({len(meter_rows)} 筆)")
+else:
+    print("  電號檔: 未找到，略過")
 
 lat_cols, lon_cols = latlon_pairs(hdr_bts, "Lat", "Lon")
 items4 = []
@@ -132,6 +214,18 @@ for r in bts:
         "nrBtsId": get(r, hdr_bts, "nrBtsId"),
         "ranType": get(r, hdr_bts, "RANtype"),
     })
+
+# 電號比對（僅 4G）
+if meter_rows:
+    id2x = {x["id"]: x for x in items4}
+    meter_map = build_meter_map(meter_rows, id2x)
+    matched = 0
+    for it in items4:
+        m = meter_map.get(it["id"])
+        if m:
+            it["meters"] = m
+            matched += 1
+    print(f"  電號比對完成: {matched} 個站台有電號")
 
 js4 = "const STATION_DATA = " + json.dumps(items4, ensure_ascii=False, indent=1) + ";\n"
 with open(os.path.join(BASE, "data.js"), "w", encoding="utf-8") as f:

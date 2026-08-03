@@ -35,7 +35,12 @@ const STATION_DATA = [
    ]
   },
   "nrBtsId": "",
-  "ranType": "D-RAN"
+  "ranType": "D-RAN",
+  "meters": {
+   "苗栗雲水瑤S": [
+    "21-16-2052-38-4"
+   ]
+  }
  },
  {
   "id": "407785",
@@ -281,7 +286,12 @@ const STATION_DATA = [
    ]
   },
   "nrBtsId": "4611480",
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "meters": {
+   "苗栗中央L17苗栗三角公園": [
+    "21-05-0672-26-3"
+   ]
+  }
  },
  {
   "id": "412606",
@@ -498,7 +508,15 @@ const STATION_DATA = [
    ]
   },
   "nrBtsId": "4612606",
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "meters": {
+   "苗栗中央L27苗栗國馨": [
+    "21-07-7911-35-0"
+   ],
+   "苗栗中央L27苗栗南勢揚升": [
+    "21-07-7224-93-9"
+   ]
+  }
  },
  {
   "id": "412636",
@@ -864,7 +882,12 @@ const STATION_DATA = [
    ]
   },
   "nrBtsId": "4612760",
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "meters": {
+   "苗栗中央L26苗栗聯合學院": [
+    "21-06-4126-28-2"
+   ]
+  }
  },
  {
   "id": "412782",
@@ -1086,7 +1109,12 @@ const STATION_DATA = [
    ]
   },
   "nrBtsId": "4612782",
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "meters": {
+   "苗栗中央L14苗栗民族": [
+    "21-14-0735-95-3"
+   ]
+  }
  },
  {
   "id": "413009",
@@ -1359,7 +1387,12 @@ const STATION_DATA = [
    ]
   },
   "nrBtsId": "4613009",
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "meters": {
+   "苗栗中央L28苗栗三山社區": [
+    "21-05-3229-92-2"
+   ]
+  }
  },
  {
   "id": "413010",
@@ -1608,7 +1641,12 @@ const STATION_DATA = [
    ]
   },
   "nrBtsId": "4613010",
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "meters": {
+   "苗栗中央L29苗栗山海樂活": [
+    "21-17-2409-41-0"
+   ]
+  }
  },
  {
   "id": "413015",
@@ -2295,7 +2333,15 @@ const STATION_DATA = [
    ]
   },
   "nrBtsId": "4613487",
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "meters": {
+   "苗栗嘉盛L08苗栗嘉惠新村": [
+    "21-11-5108-10-0"
+   ],
+   "苗栗嘉盛L08苗栗嘉福": [
+    "21-12-5299-29-3"
+   ]
+  }
  },
  {
   "id": "413713",
@@ -3108,7 +3154,12 @@ const STATION_DATA = [
    ]
   },
   "nrBtsId": "4613731",
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "meters": {
+   "苗栗嘉盛L01苗栗為公": [
+    "21-12-5488-45-2"
+   ]
+  }
  },
  {
   "id": "413736",
@@ -3500,7 +3551,15 @@ const STATION_DATA = [
    ]
   },
   "nrBtsId": "4613736",
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "meters": {
+   "苗栗中央L04苗栗南苗": [
+    "21-04-0974-99-5"
+   ],
+   "苗栗中央L04苗栗新東": [
+    "21-05-7530-58-5"
+   ]
+  }
  },
  {
   "id": "413738",
@@ -3760,7 +3819,12 @@ const STATION_DATA = [
    ]
   },
   "nrBtsId": "4613738",
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "meters": {
+   "苗栗中央L10苗栗西山": [
+    "21-15-1675-08-8"
+   ]
+  }
  },
  {
   "id": "413766",
@@ -4476,7 +4540,12 @@ const STATION_DATA = [
    ]
   },
   "nrBtsId": "4613799",
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "meters": {
+   "苗栗嘉盛L10苗栗栗華": [
+    "21-09-3213-11-0"
+   ]
+  }
  },
  {
   "id": "413802",
@@ -4802,7 +4871,15 @@ const STATION_DATA = [
    ]
   },
   "nrBtsId": "4613802",
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "meters": {
+   "苗栗中央L20苗栗坪頂西": [
+    "21-06-7051-06-4"
+   ],
+   "苗栗中央L20苗栗新勝": [
+    "21-07-7765-05-7"
+   ]
+  }
  },
  {
   "id": "413820",
@@ -4975,7 +5052,16 @@ const STATION_DATA = [
    ]
   },
   "nrBtsId": "4613820",
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "meters": {
+   "苗栗中央L13苗栗鳳形": [
+    "21-14-0803-51-4"
+   ],
+   "苗栗中央L13西湖半天寮RH1": [
+    "21-14-2527-56-8",
+    "21-14-2527-61-5"
+   ]
+  }
  },
  {
   "id": "413821",
@@ -5339,7 +5425,15 @@ const STATION_DATA = [
    ]
   },
   "nrBtsId": "4613821",
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "meters": {
+   "苗栗中央L05苗栗金華": [
+    "21-04-5693-46-2"
+   ],
+   "苗栗中央L05苗栗新東橋": [
+    "21-05-6109-12-7"
+   ]
+  }
  },
  {
   "id": "413835",
@@ -5732,7 +5826,13 @@ const STATION_DATA = [
    ]
   },
   "nrBtsId": "4613840",
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "meters": {
+   "苗栗嘉盛L06苗栗嘉新福樂": [
+    "21-12-5296-71-3",
+    "21-12-5613-68-2"
+   ]
+  }
  },
  {
   "id": "413970",
@@ -5976,7 +6076,15 @@ const STATION_DATA = [
    ]
   },
   "nrBtsId": "4613970",
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "meters": {
+   "苗栗嘉盛L05苗栗社寮": [
+    "21-02-0150-06-5"
+   ],
+   "苗栗嘉盛L05苗栗中華": [
+    "21-10-3615-09-5"
+   ]
+  }
  },
  {
   "id": "414006",
@@ -6176,7 +6284,15 @@ const STATION_DATA = [
    ]
   },
   "nrBtsId": "4614006",
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "meters": {
+   "苗栗中央L06苗栗松園": [
+    "21-06-5972-40-6"
+   ],
+   "苗栗中央L06苗栗南勢坑": [
+    "21-14-2565-95-2"
+   ]
+  }
  },
  {
   "id": "415411",
@@ -6458,7 +6574,15 @@ const STATION_DATA = [
    ]
   },
   "nrBtsId": "4615411",
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "meters": {
+   "苗栗嘉盛L09苗栗香榭": [
+    "21-08-2691-81-1"
+   ],
+   "苗栗嘉盛L09苗栗福安": [
+    "21-10-3716-94-1"
+   ]
+  }
  },
  {
   "id": "415421",
@@ -7210,7 +7334,12 @@ const STATION_DATA = [
    ]
   },
   "nrBtsId": "4615427",
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "meters": {
+   "苗栗中央L40苗栗新亞拌合": [
+    "21-16-1780-41-8"
+   ]
+  }
  },
  {
   "id": "415428",
@@ -7403,7 +7532,12 @@ const STATION_DATA = [
    ]
   },
   "nrBtsId": "4615428",
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "meters": {
+   "苗栗嘉盛L04苗栗福星": [
+    "21-10-4079-18-9"
+   ]
+  }
  },
  {
   "id": "415429",
@@ -7691,7 +7825,12 @@ const STATION_DATA = [
    ]
   },
   "nrBtsId": "4615429",
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "meters": {
+   "苗栗中央L18苗栗龍岡二": [
+    "21-15-1479-65-0"
+   ]
+  }
  },
  {
   "id": "415448",
@@ -7835,7 +7974,12 @@ const STATION_DATA = [
    ]
   },
   "nrBtsId": "4615448",
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "meters": {
+   "苗栗嘉盛L03苗栗上苗": [
+    "21-01-0132-30-1"
+   ]
+  }
  },
  {
   "id": "416914",
@@ -7956,7 +8100,12 @@ const STATION_DATA = [
    ]
   },
   "nrBtsId": "",
-  "ranType": "D-RAN"
+  "ranType": "D-RAN",
+  "meters": {
+   "苗栗育民RH1": [
+    "21-06-4820-94-4"
+   ]
+  }
  },
  {
   "id": "416922",
@@ -8238,7 +8387,15 @@ const STATION_DATA = [
    ]
   },
   "nrBtsId": "4616922",
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "meters": {
+   "苗栗中央L07苗栗西勢美北": [
+    "21-02-6156-22-4"
+   ],
+   "苗栗中央L07苗栗維祥": [
+    "21-08-0171-12-4"
+   ]
+  }
  },
  {
   "id": "416935",
@@ -8510,7 +8667,15 @@ const STATION_DATA = [
    ]
   },
   "nrBtsId": "4616935",
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "meters": {
+   "苗栗中央L22苗栗南勢忠愛": [
+    "21-07-7962-60-4"
+   ],
+   "苗栗中央L22苗龍幹32-1": [
+    "21-17-2115-35-7"
+   ]
+  }
  },
  {
   "id": "416938",
@@ -9574,7 +9739,15 @@ const STATION_DATA = [
    ]
   },
   "nrBtsId": "4617146",
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "meters": {
+   "苗栗中央L02苗栗水源": [
+    "21-06-4535-64-2"
+   ],
+   "苗栗中央L02苗栗吉祥": [
+    "21-14-2623-17-7"
+   ]
+  }
  },
  {
   "id": "417221",
@@ -9712,7 +9885,12 @@ const STATION_DATA = [
    ]
   },
   "nrBtsId": "4617221",
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "meters": {
+   "苗栗中央L08苗栗玉華玉清": [
+    "21-11-1096-27-6"
+   ]
+  }
  },
  {
   "id": "417630",
@@ -10219,7 +10397,15 @@ const STATION_DATA = [
    ]
   },
   "nrBtsId": "4617735",
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "meters": {
+   "苗栗中央L12苗栗英明": [
+    "21-14-3135-56-6"
+   ],
+   "苗栗中央L12苗栗文發": [
+    "21-15-1419-05-4"
+   ]
+  }
  },
  {
   "id": "417773",
@@ -10408,7 +10594,15 @@ const STATION_DATA = [
    ]
   },
   "nrBtsId": "4617773",
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "meters": {
+   "苗栗中央L37苗栗大明寺": [
+    "21-11-1026-20-4"
+   ],
+   "苗栗中央L37苗栗僑育": [
+    "21-05-8090-01-7"
+   ]
+  }
  },
  {
   "id": "417777",
@@ -10516,7 +10710,12 @@ const STATION_DATA = [
    ]
   },
   "nrBtsId": "4617777",
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "meters": {
+   "苗栗中央L32苗栗台隧苗南": [
+    "21-14-2490-60-1"
+   ]
+  }
  },
  {
   "id": "417785",
@@ -10676,7 +10875,12 @@ const STATION_DATA = [
    ]
   },
   "nrBtsId": "4617785",
-  "ranType": "D-RAN"
+  "ranType": "D-RAN",
+  "meters": {
+   "苗栗正發": [
+    "21-15-5440-87-9"
+   ]
+  }
  },
  {
   "id": "417786",
@@ -10963,7 +11167,12 @@ const STATION_DATA = [
    ]
   },
   "nrBtsId": "4617786",
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "meters": {
+   "苗栗中央L11苗栗國華": [
+    "21-15-5391-47-1"
+   ]
+  }
  },
  {
   "id": "417823",
@@ -11494,7 +11703,12 @@ const STATION_DATA = [
    ]
   },
   "nrBtsId": "4617966",
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "meters": {
+   "苗栗中央L19苗栗玉清台銀": [
+    "21-11-1151-14-9"
+   ]
+  }
  },
  {
   "id": "417969",
@@ -12154,7 +12368,12 @@ const STATION_DATA = [
    ]
   },
   "nrBtsId": "4619548",
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "meters": {
+   "苗栗嘉盛L07苗栗台肥": [
+    "21-10-4112-00-0"
+   ]
+  }
  },
  {
   "id": "423730",
@@ -12752,7 +12971,12 @@ const STATION_DATA = [
    ]
   },
   "nrBtsId": "4624000",
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "meters": {
+   "苗栗中央L34苗栗福麗": [
+    "21-16-6577-98-0"
+   ]
+  }
  },
  {
   "id": "424060",
@@ -13182,7 +13406,12 @@ const STATION_DATA = [
    ]
   },
   "nrBtsId": "4617630_4624060",
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "meters": {
+   "苗栗中央L33苗栗建功": [
+    "21-03-0182-99-6"
+   ]
+  }
  },
  {
   "id": "425367",
@@ -13337,7 +13566,12 @@ const STATION_DATA = [
    ]
   },
   "nrBtsId": "4625367",
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "meters": {
+   "苗栗中央30後龍高隧南新南": [
+    "21-17-2282-50-0"
+   ]
+  }
  },
  {
   "id": "427202",
@@ -13488,7 +13722,12 @@ const STATION_DATA = [
    ]
   },
   "nrBtsId": "4627202",
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "meters": {
+   "苗栗中央L39苗栗電台": [
+    "21-14-2633-39-5"
+   ]
+  }
  },
  {
   "id": "427678",
@@ -13770,6 +14009,11 @@ const STATION_DATA = [
    ]
   },
   "nrBtsId": "4627678",
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "meters": {
+   "苗栗中央L35苗栗國稅局": [
+    "21-11-1057-99-6"
+   ]
+  }
  }
 ];
