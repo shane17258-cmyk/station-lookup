@@ -347,10 +347,10 @@
       }
 
       function render(item) {
-        outName.textContent = item.siteNameCV || item.siteName || '-';
-        outName.innerHTML = (item.siteNameCV || item.siteName || '-') +
+        outName.textContent = item.siteName || '-';
+        outName.innerHTML = (item.siteName || '-') +
           (item.siteNameCV && item.siteName && item.siteNameCV !== item.siteName
-            ? ' <small>(' + item.siteName + ')</small>' : '');
+            ? ' <small>(' + item.siteNameCV + ')</small>' : '');
 
         outStations.innerHTML = '';
         const secs = item.sec ? item.sec.split('_') : [];
