@@ -2,58 +2,76 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>4G / 5G 台號站台查詢</title>
+<meta name="description" content="依台號查詢台名、站台與細胞詳細資料">
+<meta name="theme-color" content="#2f6fad">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="mobile-web-app-capable" content="yes">
 <style>
+  :root {
+    --bg: #f0f4f8;
+    --primary: #2f6fad;
+    --primary-dark: #1a3a5c;
+    --card-bg: #fff;
+    --max-w: 680px;
+  }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
     font-family: "Microsoft JhengHei", "Noto Sans TC", sans-serif;
-    background: #f0f4f8;
+    background: var(--bg);
     min-height: 100vh;
+    min-height: 100dvh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 24px 16px;
+    padding: clamp(12px, 3vw, 32px) 16px;
+    padding-top: calc(clamp(12px, 3vw, 32px) + env(safe-area-inset-top));
   }
-  h1 { color: #1a3a5c; margin-bottom: 8px; font-size: 26px; }
-  .subtitle { color: #5a7a9a; margin-bottom: 24px; font-size: 14px; }
+  h1 { color: var(--primary-dark); margin-bottom: 8px; font-size: clamp(20px, 4.5vw, 28px); text-align: center; }
+  .subtitle { color: #5a7a9a; margin-bottom: clamp(12px, 3vw, 24px); font-size: 14px; text-align: center; }
 
   .tabs {
     display: flex;
-    background: #fff;
+    background: var(--card-bg);
     border-radius: 12px 12px 0 0;
     box-shadow: 0 4px 16px rgba(26,58,92,.12);
     width: 100%;
-    max-width: 640px;
+    max-width: var(--max-w);
     overflow: hidden;
   }
   .tab {
     flex: 1;
     padding: 14px 16px;
     text-align: center;
-    font-size: 16px;
+    font-size: clamp(15px, 4vw, 17px);
     font-weight: 700;
     color: #6b8aa8;
     cursor: pointer;
     border-bottom: 3px solid transparent;
     transition: color .2s, border-color .2s, background .2s;
     user-select: none;
+    -webkit-tap-highlight-color: transparent;
   }
-  .tab:hover { color: #2f6fad; }
-  .tab.active { color: #1a3a5c; border-bottom-color: #2f6fad; background: #f7fafc; }
+  .tab:hover { color: var(--primary); }
+  .tab.active { color: var(--primary-dark); border-bottom-color: var(--primary); background: #f7fafc; }
 
   .panel { display: none; }
   .panel.active { display: block; }
 
   .card {
-    background: #fff;
+    background: var(--card-bg);
     border-radius: 0 0 12px 12px;
     box-shadow: 0 4px 16px rgba(26,58,92,.12);
     width: 100%;
-    max-width: 640px;
-    padding: 24px;
+    max-width: var(--max-w);
+    padding: clamp(16px, 3.5vw, 28px);
   }
-  label { display: block; font-weight: 700; color: #1a3a5c; margin-bottom: 8px; font-size: 15px; }
+  label { display: block; font-weight: 700; color: var(--primary-dark); margin-bottom: 8px; font-size: 15px; }
   input {
     width: 100%;
     padding: 12px 14px;
@@ -61,11 +79,11 @@
     border: 2px solid #c8d6e4;
     border-radius: 8px;
     background: #fafcfe;
-    color: #1a3a5c;
+    color: var(--primary-dark);
     outline: none;
     transition: border-color .2s;
   }
-  input:focus { border-color: #2f6fad; }
+  input:focus { border-color: var(--primary); }
   .hint { font-size: 12px; color: #8aa4bd; margin-top: 6px; }
   .result {
     margin-top: 24px;
@@ -76,7 +94,7 @@
   .result.show { display: block; }
   .field { margin-bottom: 18px; }
   .field .key { font-size: 13px; color: #6b8aa8; font-weight: 600; margin-bottom: 6px; }
-  .field .value { font-size: 17px; color: #1a3a5c; font-weight: 700; }
+  .field .value { font-size: clamp(16px, 3.5vw, 18px); color: var(--primary-dark); font-weight: 700; }
   .field .value small { font-weight: 400; color: #7893ad; }
   .note { font-size: 12px; color: #8aa4bd; margin-top: 10px; }
   .meta { font-size: 13px; color: #5a7a9a; line-height: 1.8; }
@@ -84,26 +102,27 @@
   .center-hint { text-align: center; color: #9ab0c4; padding: 10px 0; }
 
   .search-results {
-    background: #fff;
+    background: var(--card-bg);
     border: 2px solid #c8d6e4;
     border-radius: 8px;
     margin-top: 6px;
-    max-height: 260px;
+    max-height: min(260px, 45vh);
     overflow-y: auto;
     display: none;
+    -webkit-overflow-scrolling: touch;
   }
   .search-results.show { display: block; }
   .search-item {
-    padding: 10px 14px;
+    padding: 12px 14px;
     cursor: pointer;
     border-bottom: 1px solid #eef3f8;
     transition: background .15s;
   }
   .search-item:last-child { border-bottom: none; }
-  .search-item:hover { background: #e8f1fa; }
-  .search-item .s-name { font-size: 14px; color: #1a3a5c; font-weight: 700; }
+  .search-item:hover, .search-item:active { background: #e8f1fa; }
+  .search-item .s-name { font-size: 14px; color: var(--primary-dark); font-weight: 700; }
   .search-item .s-meta { font-size: 12px; color: #6b8aa8; margin-top: 2px; }
-  .search-item .s-arrow { float: right; color: #2f6fad; font-weight: 700; }
+  .search-item .s-arrow { float: right; color: var(--primary); font-weight: 700; }
   .search-count { font-size: 12px; color: #8aa4bd; margin-top: 6px; }
 
   .station-bar {
@@ -115,12 +134,12 @@
     border-radius: 8px;
     padding: 8px 12px;
     gap: 6px;
-    font-size: 15px;
-    color: #1a3a5c;
+    font-size: clamp(13px, 3.2vw, 15px);
+    color: var(--primary-dark);
   }
   .station-bar .num {
     display: inline-block;
-    background: #2f6fad;
+    background: var(--primary);
     color: #fff;
     border-radius: 50%;
     width: 20px; height: 20px;
@@ -130,10 +149,10 @@
     margin-right: 4px;
     flex-shrink: 0;
   }
-  .station-bar .s-name-inline { font-weight: 700; }
+  .station-bar .s-name-inline { font-weight: 700; word-break: break-all; }
   .station-bar .sec {
     background: #fff;
-    color: #2f6fad;
+    color: var(--primary);
     border: 1px solid #b6d0e8;
     border-radius: 12px;
     padding: 1px 8px;
@@ -151,15 +170,18 @@
     font-size: 12px;
     font-weight: 700;
     flex-shrink: 0;
+    max-width: 100%;
+    overflow-wrap: anywhere;
   }
   .station-bar .coord2 { font-size: 11px; color: #6b8aa8; margin-left: 4px; }
   .station-bar .toggle {
     cursor: pointer;
-    color: #2f6fad;
+    color: var(--primary);
     font-weight: 700;
     font-size: 13px;
     margin-left: auto;
     user-select: none;
+    -webkit-tap-highlight-color: transparent;
   }
   .station-bar .toggle:hover { text-decoration: underline; }
   .station-bar .mapbtn {
@@ -184,10 +206,10 @@
     border-radius: 10px;
   }
   .detail.show { display: block; }
-  .detail-title { font-size: 14px; font-weight: 700; color: #1a3a5c; margin-bottom: 10px; }
+  .detail-title { font-size: 14px; font-weight: 700; color: var(--primary-dark); margin-bottom: 10px; }
   .cell-sec { margin-bottom: 12px; }
   .cell-sec:last-child { margin-bottom: 0; }
-  .cell-sec-title { font-size: 13px; font-weight: 700; color: #2f6fad; margin-bottom: 6px; }
+  .cell-sec-title { font-size: 13px; font-weight: 700; color: var(--primary); margin-bottom: 6px; }
   .cell-row { display: flex; flex-wrap: wrap; gap: 6px; }
   .cell-card {
     background: #fff;
@@ -195,13 +217,14 @@
     border-radius: 8px;
     padding: 8px 12px;
     font-size: 13px;
-    color: #1a3a5c;
+    color: var(--primary-dark);
     min-width: 120px;
+    flex: 1 1 auto;
   }
-  .cell-card .c-id { font-weight: 700; font-size: 14px; color: #1a3a5c; }
+  .cell-card .c-id { font-weight: 700; font-size: 14px; color: var(--primary-dark); }
   .cell-card .c-rmod {
     display: inline-block;
-    background: #2f6fad;
+    background: var(--primary);
     color: #fff;
     border-radius: 4px;
     padding: 1px 8px;
@@ -222,6 +245,18 @@
   .cell-card .c-meta { font-size: 11px; color: #6b8aa8; margin-top: 4px; line-height: 1.5; }
   .cell-card .c-map a { color: #c0392b; text-decoration: none; font-size: 11px; font-weight: 600; }
   .cell-card .c-map a:hover { text-decoration: underline; }
+
+  @media (min-width: 760px) {
+    :root { --max-w: 720px; }
+    .card, .tabs { max-width: 720px; }
+    .cell-card { min-width: 200px; }
+  }
+
+  @media (max-width: 480px) {
+    .station-bar .mapbtn { width: 100%; text-align: center; }
+    .station-bar .toggle { margin-left: 0; }
+    .station-bar { gap: 4px; }
+  }
 </style>
 </head>
 <body>
@@ -523,6 +558,15 @@
       searchCount: document.getElementById('searchCount5g'),
       idLabel: 'nrCelId'
     });
+
+    // PWA 離線支援
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js').catch(err => {
+          console.log('SW registration failed:', err);
+        });
+      });
+    }
   </script>
 </body>
 </html>
