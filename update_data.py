@@ -32,6 +32,22 @@ def load_rows(path, sheet):
     wb.close()
     return hdr, rows
 
+def load_rows_safe(path, sheet):
+    """
+    讀取 xlsx。若檔案被 Excel/OneDrive 鎖住（PermissionError），
+    複製到暫存目錄再讀取。
+    """
+    try:
+        return load_rows(path, sheet)
+    except PermissionError:
+        import tempfile, shutil
+        tmp = os.path.join(tempfile.gettempdir(), "station_tmp",
+                           os.path.basename(path))
+        os.makedirs(os.path.dirname(tmp), exist_ok=True)
+        shutil.copy2(path, tmp)
+        _, rows = load_rows(tmp, sheet)
+        return None, rows
+
 def get(r, hdr, name):
     for i, h in enumerate(hdr):
         if h == name:
@@ -68,6 +84,120 @@ def group_cells(cells, key_fn, field_map):
 
 def normalize(s):
     return s.replace(" ", "").replace("　", "").replace("-", "").replace("_", "")
+
+import re as _re
+def normalize_fold(s):
+    """去空白/連字號，並將 'L<數字>' 與 'N<數字>' 視為相同（4G/5G 扇區字母不同）"""
+    return _re.sub(r"[LN]\d{1,2}", "S", normalize(s))
+
+def build_site_info(site_rows):
+    """
+    站台.xlsx：欄位 4G台號/5G台號/台名/4G EAC/5G EAC/地址
+    回傳 { "4g": { id: {站台名: {address, eac_cells, eac_smod}} }, "5g": { ... } }
+    """
+    info = {"4g": {}, "5g": {}}
+    for r in site_rows:
+        def g(k):
+            v = r.get(k)
+            return str(v).strip() if v is not None else ""
+        g4 = g("4G台號")
+        g5 = g("5G台號")
+        tn = g("台名")
+        addr = g("地址")
+        eac4 = g("4G EAC")
+        eac5 = g("5G EAC")
+        if not tn:
+            continue
+        # 4G
+        if g4:
+            base4 = g4.rstrip("LUSl")
+            bucket = info["4g"].setdefault(base4, {})
+            entry = bucket.setdefault(tn, {"address": "", "eac_cells": [], "eac_smod": False})
+            if addr and not entry["address"]:
+                entry["address"] = addr
+            if eac4 and eac4 != "N/A":
+                if eac4.upper() == "SMOD":
+                    entry["eac_smod"] = True
+                else:
+                    entry["eac_cells"].append(eac4)
+        # 5G
+        if g5:
+            base5 = g5.rstrip("LUSl")
+            bucket = info["5g"].setdefault(base5, {})
+            entry = bucket.setdefault(tn, {"address": "", "eac_cells": [], "eac_smod": False})
+            if addr and not entry["address"]:
+                entry["address"] = addr
+            if eac5 and eac5 != "N/A":
+                if eac5.upper() == "SMOD":
+                    entry["eac_smod"] = True
+                else:
+                    entry["eac_cells"].append(eac5)
+    return info
+
+def match_station(st, info_bucket):
+    """在 info_bucket({站台名: entry}) 中模糊比對站台名 st，回傳 entry 或 None"""
+    if st in info_bucket:
+        return info_bucket[st]
+    norm_st = normalize(st)
+    fold_st = normalize_fold(st)
+    for tn, entry in info_bucket.items():
+        if normalize(tn) == norm_st:
+            return entry
+        if fold_st and (fold_st in normalize_fold(tn) or normalize_fold(tn) in fold_st):
+            return entry
+        if norm_st and (norm_st in normalize(tn) or normalize(tn) in norm_st):
+            return entry
+    return None
+
+def enrich_items(items, site_info, id_key):
+    """
+    將站台地址/EAC 資訊合併到 items（4G 或 5G）。
+    每個站台(item)可含多個實體站(stations)，各站可能有各自的 EAC 細胞與地址。
+    輸出：
+      it["address"]  -> 第一個有地址的站之地址
+      it["eac"]      -> { 站台名: { "cells": [...], "smod": bool } }（僅有 EAC 的站）
+    """
+    matched = 0
+    for it in items:
+        bid = it["id"]
+        info_bucket = site_info.get(id_key, {}).get(bid, {})
+        if not info_bucket:
+            continue
+        eac_map = {}
+        addr_map = {}
+        addr = ""
+        for st in (it.get("stations") or []):
+            entry = match_station(st, info_bucket)
+            if entry is None:
+                continue
+            if entry.get("address"):
+                addr_map[st] = entry["address"]
+                if not addr:
+                    addr = entry["address"]
+            cells = entry.get("eac_cells") or []
+            smod = entry.get("eac_smod")
+            if cells or smod:
+                eac_map[st] = {"cells": list(dict.fromkeys(cells)), "smod": bool(smod)}
+        # 若站名對不上，但該 BTS 只有一筆資訊，則套用其地址/EAC(全站)
+        if not eac_map and not addr and len(info_bucket) == 1:
+            only = list(info_bucket.values())[0]
+            if only.get("address"):
+                addr = only["address"]
+                for st in (it.get("stations") or []):
+                    addr_map[st] = only["address"]
+            if only.get("eac_cells") or only.get("eac_smod"):
+                # 套用到所有站
+                for st in (it.get("stations") or []):
+                    eac_map[st] = {"cells": list(dict.fromkeys(only.get("eac_cells") or [])),
+                                   "smod": bool(only.get("eac_smod"))}
+        if addr:
+            it["address"] = addr
+        if addr_map:
+            it["addr"] = addr_map
+        if eac_map:
+            it["eac"] = eac_map
+            matched += 1
+    return matched
 
 def build_meter_map(meter_rows, id2x):
     """
@@ -227,6 +357,15 @@ if meter_rows:
             matched += 1
     print(f"  電號比對完成: {matched} 個站台有電號")
 
+# 站台.xlsx（地址 + EAC）
+site_info = None
+site_files = glob.glob(os.path.join(BASE, "站台.xlsx"))
+if site_files:
+    _, site_rows = load_rows_safe(site_files[0], "苗栗站台")
+    site_info = build_site_info(site_rows)
+    m4 = enrich_items(items4, site_info, "4g")
+    print(f"  站台.xlsx EAC 比對(4G): {m4} 個站台")
+
 js4 = "const STATION_DATA = " + json.dumps(items4, ensure_ascii=False, indent=1) + ";\n"
 with open(os.path.join(BASE, "data.js"), "w", encoding="utf-8") as f:
     f.write(js4)
@@ -297,6 +436,10 @@ for r in bts5:
         "cells": cells_by_station,
         "ranType": get(r, hdr5, "RANtype"),
     })
+
+if site_info:
+    m5 = enrich_items(items5, site_info, "5g")
+    print(f"  站台.xlsx EAC 比對(5G): {m5} 個站台")
 
 js5 = "const STATION_DATA_5G = " + json.dumps(items5, ensure_ascii=False, indent=1) + ";\n"
 with open(os.path.join(BASE, "data5g.js"), "w", encoding="utf-8") as f:
