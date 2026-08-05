@@ -11,8 +11,8 @@ import openpyxl, json, os, glob, sys, io
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 
 BASE = os.path.dirname(os.path.abspath(__file__))
-COUNTY = "苗栗縣"
-TOWN = "苗栗市"
+# 過濾條件：以「基維股」欄位為準（苗栗基維股），不再限定單一鄉鎮
+JIWEI = "苗栗基維股"
 
 def find_file(pattern):
     files = glob.glob(os.path.join(BASE, pattern))
@@ -277,7 +277,7 @@ hdr_cell, cell_rows = load_rows(co_cell, "LTE_CoCell_CHT")
 print("  stations file:", os.path.basename(co_bts))
 print("  cells file  :", os.path.basename(co_cell))
 
-bts = [r for r in bts_rows if get(r, hdr_bts, "縣市") == COUNTY and get(r, hdr_bts, "鄉鎮") == TOWN]
+bts = [r for r in bts_rows if get(r, hdr_bts, "基維股") == JIWEI]
 print(f"  過濾後站台數: {len(bts)}")
 
 cell_map = {}
@@ -380,7 +380,7 @@ hdr5c, cell5_rows = load_rows(nr_cell, "nrCell_DB_CHT")
 print("  stations file:", os.path.basename(nr_bts))
 print("  cells file  :", os.path.basename(nr_cell))
 
-bts5 = [r for r in bts5_rows if get(r, hdr5, "縣市") == COUNTY and get(r, hdr5, "鄉鎮") == TOWN]
+bts5 = [r for r in bts5_rows if get(r, hdr5, "基維股") == JIWEI]
 print(f"  過濾後站台數: {len(bts5)}")
 
 cell5_map = {}
