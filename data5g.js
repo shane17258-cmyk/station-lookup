@@ -96,6 +96,15 @@ const STATION_DATA_5G = [
   "address": "苗栗市新苗里中正路855號5樓頂",
   "addr": {
    "苗栗中央N17苗栗三角公園": "苗栗市新苗里中正路855號5樓頂"
+  },
+  "eac": {
+   "苗栗中央N17苗栗三角公園": {
+    "rmod": {
+     "311": [
+      "AC Power"
+     ]
+    }
+   }
   }
  },
  {
@@ -197,7 +206,16 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南造橋N01造橋亞東外環": {
+    "rmod": {
+     "411": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4611487",
@@ -324,7 +342,29 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南頭份N02頭份山下": {
+    "rmod": {
+     "211": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   },
+   "竹南頭份N02頭份成功大亨": {
+    "rmod": {
+     "611": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4611489",
@@ -390,7 +430,15 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "D-RAN"
+  "ranType": "D-RAN",
+  "smod": {
+   "頭份信德": [
+    "ACPower",
+    "Fire",
+    "Temperature",
+    "Door"
+   ]
+  }
  },
  {
   "id": "4611660",
@@ -501,7 +549,26 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南大埔N21竹南大埔六": {
+    "rmod": {
+     "211": [
+      "AC Power"
+     ]
+    }
+   },
+   "竹南大埔N21竹南大埔": {
+    "rmod": {
+     "411": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4611662",
@@ -612,7 +679,26 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "苗栗公館N25公館蘭庭餐廳": {
+    "rmod": {
+     "111": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   },
+   "苗栗公館N25公館無界創新": {
+    "rmod": {
+     "506": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4611666",
@@ -705,7 +791,16 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "苗栗後龍N11後龍校椅二路": {
+    "rmod": {
+     "111": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4611669",
@@ -865,7 +960,26 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南復興N16竹南營盤": {
+    "rmod": {
+     "111": [
+      "AC Power"
+     ]
+    }
+   },
+   "竹南復興N16竹南中美": {
+    "rmod": {
+     "406": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4612604",
@@ -920,7 +1034,16 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南復興N14竹南毅和": {
+    "rmod": {
+     "211": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4612605",
@@ -1131,6 +1254,17 @@ const STATION_DATA_5G = [
   "addr": {
    "苗栗中央N27苗栗南勢揚升": "苗栗市南勢里坪頂東55巷2號2樓頂",
    "苗栗中央N27苗栗國馨": "苗栗市新英里國馨50號4樓"
+  },
+  "eac": {
+   "苗栗中央N27苗栗國馨": {
+    "rmod": {
+     "411": [
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
   }
  },
  {
@@ -1291,7 +1425,26 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南復興N10竹南自由123": {
+    "rmod": {
+     "111": [
+      "AC Power"
+     ]
+    }
+   },
+   "竹南復興N10竹南海口保福": {
+    "rmod": {
+     "411": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4612622",
@@ -1362,7 +1515,16 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南頭份N26頭份上庄": {
+    "rmod": {
+     "106": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4612623",
@@ -1489,7 +1651,23 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南頭份N10頭份文化八德": {
+    "rmod": {
+     "111": [
+      "AC Power"
+     ]
+    }
+   },
+   "竹南頭份N10頭份復興": {
+    "rmod": {
+     "411": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4612633",
@@ -1560,7 +1738,19 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南頭份N36頭份斗煥": {
+    "rmod": {
+     "106": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4612639",
@@ -1742,7 +1932,16 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "苗栗後龍N12後龍捲煙廠": {
+    "rmod": {
+     "211": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4612648",
@@ -1933,7 +2132,50 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南大埔N15竹南農科院": {
+    "rmod": {
+     "206": [
+      "Temperture",
+      "AC Power",
+      "Fire"
+     ]
+    }
+   },
+   "竹南大埔N15竹南群聯五": {
+    "rmod": {
+     "406": [
+      "Fire",
+      "Temperture",
+      "AC Power"
+     ]
+    }
+   },
+   "竹南大埔N15竹南群聯": {
+    "rmod": {
+     "506": [
+      "Fire",
+      "Temperture",
+      "AC Power"
+     ]
+    }
+   },
+   "竹南大埔N15竹南群豐": {
+    "rmod": {
+     "706": [
+      "Fire",
+      "Temperture",
+      "AC Power"
+     ],
+     "906": [
+      "AC Power",
+      "Temperture",
+      "Fire"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4612651",
@@ -2076,7 +2318,16 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "苗栗後龍N18後龍民族": {
+    "rmod": {
+     "211": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4612760",
@@ -2230,6 +2481,18 @@ const STATION_DATA_5G = [
   "addr": {
    "苗栗中央N26苗栗台糖宿舍": "苗栗市水源里中正路1297巷1號5樓",
    "苗栗中央N26苗栗聯合學院": "苗栗市恭敬里華岡92號2樓頂"
+  },
+  "eac": {
+   "苗栗中央N26苗栗台糖宿舍": {
+    "rmod": {
+     "211": [
+      "Fire",
+      "Temperature",
+      "AC Power",
+      "Door"
+     ]
+    }
+   }
   }
  },
  {
@@ -2345,6 +2608,24 @@ const STATION_DATA_5G = [
   "address": "苗栗市文山里至公路640巷7號2樓",
   "addr": {
    "苗栗中央N14苗栗魚市場": "苗栗市文山里至公路640巷7號2樓"
+  },
+  "eac": {
+   "苗栗中央N14苗栗魚市場": {
+    "rmod": {
+     "111": [
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   },
+   "苗栗中央N14苗栗民族": {
+    "rmod": {
+     "411": [
+      "AC Power"
+     ]
+    }
+   }
   }
  },
  {
@@ -2472,7 +2753,16 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南復興N18竹南中美升藝達": {
+    "rmod": {
+     "111": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4612939",
@@ -2615,7 +2905,23 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南復興N19竹南聖福成功": {
+    "rmod": {
+     "311": [
+      "AC Power"
+     ]
+    }
+   },
+   "竹南復興N19竹南龍山龍昇": {
+    "rmod": {
+     "711": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4613003",
@@ -2742,7 +3048,23 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南竹南N18竹南佳興永貞": {
+    "rmod": {
+     "111": [
+      "AC Power"
+     ]
+    }
+   },
+   "竹南竹南N18頭份東庄八德": {
+    "rmod": {
+     "411": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4613004",
@@ -2869,7 +3191,19 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南頭份N25頭份中興": {
+    "rmod": {
+     "111": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4613005",
@@ -3080,6 +3414,15 @@ const STATION_DATA_5G = [
   "addr": {
    "苗栗中央N28苗栗三山社區": "苗栗市高苗里三山151號5樓",
    "苗栗中央N28苗栗高苗大千": "苗栗市高苗里大同路133號7樓"
+  },
+  "eac": {
+   "苗栗中央N28苗栗三山社區": {
+    "rmod": {
+     "111": [
+      "AC Power"
+     ]
+    }
+   }
   }
  },
  {
@@ -3229,7 +3572,19 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "苗栗中央N29後龍禽宰場": {
+    "rmod": {
+     "111": [
+      "AC Power",
+      "Temperture",
+      "Fire",
+      "Door"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4613011",
@@ -3356,7 +3711,26 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南頭份N27頭份上埔吉佑": {
+    "rmod": {
+     "111": [
+      "AC Power",
+      "Door",
+      "Fire",
+      "Temperature"
+     ]
+    }
+   },
+   "竹南頭份N27頭份建國永安": {
+    "rmod": {
+     "611": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4613015",
@@ -3483,7 +3857,23 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "苗栗中央N36苗栗文峰": {
+    "rmod": {
+     "111": [
+      "AC Power"
+     ]
+    }
+   },
+   "苗栗中央N36苗栗府前至公": {
+    "rmod": {
+     "411": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4613016",
@@ -3578,7 +3968,23 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南頭份N29竹南京元宿舍": {
+    "rmod": {
+     "111": [
+      "AC Power"
+     ]
+    }
+   },
+   "竹南頭份N29頭份上坪": {
+    "rmod": {
+     "506": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4613060",
@@ -3649,7 +4055,16 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南復興N21竹南建國": {
+    "rmod": {
+     "111": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4613064",
@@ -3720,7 +4135,16 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南大埔N25竹南北戶": {
+    "rmod": {
+     "311": [
+      "AC"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4613070",
@@ -3791,7 +4215,16 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "苗栗公館N27公館玉泉二": {
+    "rmod": {
+     "106": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4613075",
@@ -3894,7 +4327,16 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南竹南N20頭份京元": {
+    "rmod": {
+     "406": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4613077",
@@ -3981,7 +4423,16 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南大埔N26竹南聯合環球": {
+    "rmod": {
+     "106": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4613100",
@@ -4291,7 +4742,16 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "苗栗後龍N09後龍武德": {
+    "rmod": {
+     "406": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4613468",
@@ -4395,7 +4855,19 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "苗栗公館N13公館大同": {
+    "rmod": {
+     "111": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4613481",
@@ -4466,7 +4938,19 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南大埔N19竹南和仁新": {
+    "rmod": {
+     "111": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4613485",
@@ -4593,7 +5077,26 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "苗栗後龍N07後龍埔頂": {
+    "rmod": {
+     "111": [
+      "AC Power"
+     ]
+    }
+   },
+   "苗栗後龍N07後龍北龍": {
+    "rmod": {
+     "411": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4613486",
@@ -4786,7 +5289,26 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南竹南N02竹南山佳": {
+    "rmod": {
+     "611": [
+      "AC Power"
+     ]
+    }
+   },
+   "竹南竹南N02竹南正義": {
+    "rmod": {
+     "106": [
+      "Door",
+      "AC",
+      "Temperture",
+      "Fire"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4613487",
@@ -5029,7 +5551,23 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南大西N05頭份新市鎮": {
+    "rmod": {
+     "311": [
+      "AC Power"
+     ]
+    }
+   },
+   "竹南大西N05造橋木博館": {
+    "rmod": {
+     "506": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4613706",
@@ -5140,7 +5678,29 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南南庄N02南庄南富": {
+    "rmod": {
+     "311": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   },
+   "竹南南庄N02南庄東河": {
+    "rmod": {
+     "611": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4613711",
@@ -5267,7 +5827,29 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "苗栗西湖N04後龍中和": {
+    "rmod": {
+     "111": [
+      "AC Power",
+      "Temperature",
+      "Fire",
+      "Door"
+     ]
+    }
+   },
+   "苗栗西湖N04後龍南港": {
+    "rmod": {
+     "411": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4613712",
@@ -5322,7 +5904,15 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "D-RAN"
+  "ranType": "D-RAN",
+  "smod": {
+   "頭份珊瑚": [
+    "Fire",
+    "ACPower",
+    "Door",
+    "Temperature"
+   ]
+  }
  },
  {
   "id": "4613713",
@@ -5494,6 +6084,18 @@ const STATION_DATA_5G = [
   "address": "苗栗市水源里愛國路1號12樓",
   "addr": {
    "苗栗中央N03苗栗線路中心": "苗栗市水源里愛國路1號12樓"
+  },
+  "eac": {
+   "苗栗中央N03苗栗線路中心": {
+    "rmod": {
+     "311": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
   }
  },
  {
@@ -5549,7 +6151,22 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南復興N13竹南龍鳳漁港": {
+    "rmod": {
+     "211": [
+      "AC Power",
+      "Temperature",
+      "Fire",
+      "Door"
+     ],
+     "411": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4613721",
@@ -5709,7 +6326,28 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "smod": {
+   "苗栗公館N01公館公館": [
+    "AC Power",
+    "Fire",
+    "Temperature"
+   ],
+   "苗栗公館N01公館館南一": [
+    "AC Power",
+    "Fire",
+    "Temperature"
+   ]
+  },
+  "eac": {
+   "苗栗公館N01公館館南一": {
+    "rmod": {
+     "411": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4613725",
@@ -5804,7 +6442,29 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南南庄N05南庄蓬萊": {
+    "rmod": {
+     "111": [
+      "Door",
+      "Fire",
+      "Temperture",
+      "AC Power"
+     ]
+    }
+   },
+   "竹南南庄N05南庄鹿場": {
+    "rmod": {
+     "411": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4613726",
@@ -5931,7 +6591,28 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "苗栗公館N17公館石墻": {
+    "rmod": {
+     "111": [
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   },
+   "苗栗公館N17公館福星": {
+    "rmod": {
+     "511": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4613731",
@@ -6096,6 +6777,25 @@ const STATION_DATA_5G = [
   "addr": {
    "苗栗嘉盛N01苗栗嘉盛": "苗栗市嘉盛里復興路5段233號",
    "苗栗嘉盛N01苗栗為公": "苗栗市嘉盛里為路309號12樓"
+  },
+  "eac": {
+   "苗栗嘉盛N01苗栗嘉盛": {
+    "rmod": {
+     "111": [
+      "AC Power"
+     ]
+    }
+   },
+   "苗栗嘉盛N01苗栗為公": {
+    "rmod": {
+     "511": [
+      "AC Power",
+      "Temperature",
+      "Door",
+      "Fire"
+     ]
+    }
+   }
   }
  },
  {
@@ -6223,7 +6923,19 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "苗栗公館N06公館仁安": {
+    "rmod": {
+     "111": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4613736",
@@ -6388,6 +7100,25 @@ const STATION_DATA_5G = [
   "addr": {
    "苗栗中央N04苗栗南苗": "苗栗市博愛街103號9樓頂",
    "苗栗中央N04苗栗新東": "苗栗市維新里新東街141巷11號5樓"
+  },
+  "eac": {
+   "苗栗中央N04苗栗南苗": {
+    "rmod": {
+     "211": [
+      "AC Power"
+     ]
+    }
+   },
+   "苗栗中央N04苗栗新東": {
+    "rmod": {
+     "611": [
+      "AC Power",
+      "Fire",
+      "Temperature",
+      "SMR Alarm"
+     ]
+    }
+   }
   }
  },
  {
@@ -6520,6 +7251,18 @@ const STATION_DATA_5G = [
   "addr": {
    "苗栗中央N10苗栗龍岡": "苗栗市新川里大坑12之4號3樓",
    "苗栗中央N10苗栗西山": "苗栗市文聖里文發路378巷13弄40號5樓"
+  },
+  "eac": {
+   "苗栗中央N10苗栗西山": {
+    "rmod": {
+     "611": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
   }
  },
  {
@@ -6680,7 +7423,26 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "苗栗後龍N01後龍後龍": {
+    "rmod": {
+     "111": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   },
+   "苗栗後龍N01後龍仁德": {
+    "rmod": {
+     "611": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4613741",
@@ -6823,7 +7585,30 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "smod": {
+   "苗栗大山N01後龍大山": [
+    "AC Power",
+    "Fire",
+    "Temperature",
+    "Door"
+   ],
+   "苗栗大山N01後龍東明": [
+    "AC Power",
+    "Fire",
+    "Temperature",
+    "Door"
+   ]
+  },
+  "eac": {
+   "苗栗大山N01後龍東明": {
+    "rmod": {
+     "811": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4613745",
@@ -7016,7 +7801,23 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "苗栗後龍N02後龍大庄": {
+    "rmod": {
+     "311": [
+      "AC Power"
+     ]
+    }
+   },
+   "苗栗後龍N02後龍十班坑": {
+    "rmod": {
+     "511": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4613753",
@@ -7111,7 +7912,19 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南大埔N10竹南國三111": {
+    "rmod": {
+     "111": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4613755",
@@ -7271,7 +8084,32 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南大西N01造橋大西": {
+    "rmod": {
+     "111": [
+      "AC Power"
+     ]
+    }
+   },
+   "竹南大西N01頭份崇佛寺": {
+    "rmod": {
+     "611": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ],
+     "606": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4613756",
@@ -7398,7 +8236,24 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南竹南N04竹南佳興公義": {
+    "rmod": {
+     "311": [
+      "AC Power",
+      "Temperature",
+      "Fire"
+     ],
+     "411": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4613757",
@@ -7531,7 +8386,28 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南大西N03造橋平興": {
+    "rmod": {
+     "211": [
+      "Fire",
+      "Temperature",
+      "ACpower"
+     ]
+    }
+   },
+   "竹南大西N03頭份高隧五南": {
+    "rmod": {
+     "611": [
+      "Door",
+      "Fire",
+      "Temprature",
+      "AC power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4613761",
@@ -7642,7 +8518,23 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南頭份N20頭份統帥": {
+    "rmod": {
+     "311": [
+      "AC Power"
+     ]
+    }
+   },
+   "竹南頭份N20頭份立德": {
+    "rmod": {
+     "411": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4613762",
@@ -7769,7 +8661,29 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南竹南N15頭份中港溪": {
+    "rmod": {
+     "111": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   },
+   "竹南竹南N03頭份尖下": {
+    "rmod": {
+     "411": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4613763",
@@ -7880,7 +8794,25 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南頭份N24頭份興隆": {
+    "rmod": {
+     "111": [
+      "Door",
+      "Temperature",
+      "Fire"
+     ]
+    }
+   },
+   "竹南頭份N24頭份億家具": {
+    "rmod": {
+     "411": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4613766",
@@ -8045,6 +8977,27 @@ const STATION_DATA_5G = [
   "addr": {
    "苗栗中央N01苗栗南勢大千": "苗栗市南勢里南勢52號4樓",
    "苗栗中央N01苗栗恭敬": "苗栗市恭敬里恭敬路36號12樓"
+  },
+  "eac": {
+   "苗栗中央N01苗栗南勢大千": {
+    "rmod": {
+     "111": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   },
+   "苗栗中央N01苗栗恭敬": {
+    "rmod": {
+     "411": [
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
   }
  },
  {
@@ -8172,7 +9125,26 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南大埔N03竹南科專六": {
+    "rmod": {
+     "24": [
+      "Door",
+      "Temperture",
+      "Ac",
+      "Fire"
+     ]
+    }
+   },
+   "竹南大埔N03竹南大埔九": {
+    "rmod": {
+     "611": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4613775",
@@ -8243,7 +9215,16 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南竹南N12造橋東陶": {
+    "rmod": {
+     "211": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4613780",
@@ -8403,7 +9384,18 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南三灣N01三灣大河": {
+    "rmod": {
+     "411": [
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4613799",
@@ -8516,6 +9508,15 @@ const STATION_DATA_5G = [
   "address": "苗栗市北苗里中華路83號",
   "addr": {
    "苗栗嘉盛N10苗栗栗華": "苗栗市北苗里中華路83號"
+  },
+  "eac": {
+   "苗栗嘉盛N10苗栗栗華": {
+    "rmod": {
+     "311": [
+      "AC Power"
+     ]
+    }
+   }
   }
  },
  {
@@ -8659,6 +9660,18 @@ const STATION_DATA_5G = [
   "addr": {
    "苗栗中央N20苗栗坪頂西": "苗栗市南勢里坪頂西7號3樓",
    "苗栗中央N20苗栗新勝": "苗栗市南勢里新勝11號3樓"
+  },
+  "eac": {
+   "苗栗中央N20苗栗新勝": {
+    "rmod": {
+     "411": [
+      "Fire",
+      "Temperature",
+      "AC Power",
+      "Door"
+     ]
+    }
+   }
   }
  },
  {
@@ -8763,7 +9776,19 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南竹南N07頭份蘆竹": {
+    "rmod": {
+     "211": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4613817",
@@ -8890,7 +9915,26 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南頭份N05頭份文化翠亨": {
+    "rmod": {
+     "311": [
+      "AC Power"
+     ]
+    }
+   },
+   "竹南頭份N05頭份合興": {
+    "rmod": {
+     "411": [
+      "AC Power",
+      "Door",
+      "Fire",
+      "Temperature"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4613818",
@@ -8975,7 +10019,21 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "D-RAN"
+  "ranType": "D-RAN",
+  "smod": {
+   "後龍公司寮": [
+    "AC Power",
+    "Fire",
+    "Door",
+    "Temperature"
+   ],
+   "後龍海巡署RH2": [
+    "AC Power",
+    "Fire",
+    "Door",
+    "Temperature"
+   ]
+  }
  },
  {
   "id": "4613821",
@@ -9107,6 +10165,15 @@ const STATION_DATA_5G = [
   "addr": {
    "苗栗中央N05苗栗新東橋": "苗栗市勝利里新東街452巷11號3樓",
    "苗栗中央N05苗栗金華": "苗栗市水源里金華街18巷20號5樓"
+  },
+  "eac": {
+   "苗栗中央N05苗栗新東橋": {
+    "rmod": {
+     "111": [
+      "AC Power"
+     ]
+    }
+   }
   }
  },
  {
@@ -9218,7 +10285,26 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "苗栗後龍N06後龍恩德": {
+    "rmod": {
+     "211": [
+      "AC Power"
+     ]
+    }
+   },
+   "苗栗後龍N06後龍新港一路": {
+    "rmod": {
+     "411": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4613835",
@@ -9476,7 +10562,29 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南復興N05竹南竹興鍵豪": {
+    "rmod": {
+     "411": [
+      "Fire",
+      "Temperature",
+      "AC Power",
+      "Door"
+     ]
+    }
+   },
+   "竹南復興N05竹南崎頂天祥": {
+    "rmod": {
+     "511": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4613840",
@@ -9575,6 +10683,18 @@ const STATION_DATA_5G = [
   "address": "苗栗市嘉新里福樂76號3樓",
   "addr": {
    "苗栗嘉盛N06苗栗嘉新福樂": "苗栗市嘉新里福樂76號3樓"
+  },
+  "eac": {
+   "苗栗嘉盛N06苗栗嘉新福樂": {
+    "rmod": {
+     "111": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
   }
  },
  {
@@ -9768,7 +10888,19 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南造橋N04造橋八十尺橋": {
+    "rmod": {
+     "111": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4613953",
@@ -9912,7 +11044,29 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南復興N15竹南佳興環市": {
+    "rmod": {
+     "211": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   },
+   "竹南復興N15竹南龍泉": {
+    "rmod": {
+     "411": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4613962",
@@ -9983,7 +11137,18 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南復興N02竹南聖福建國": {
+    "rmod": {
+     "411": [
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4613969",
@@ -10110,7 +11275,19 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南頭份N21頭份福金新村": {
+    "rmod": {
+     "411": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4613970",
@@ -10210,6 +11387,27 @@ const STATION_DATA_5G = [
   "addr": {
    "苗栗嘉盛N05苗栗社寮": "苗栗市上苗里社寮街9號4樓",
    "苗栗嘉盛N05苗栗中華": "苗栗市福星里中華路326號4樓"
+  },
+  "eac": {
+   "苗栗嘉盛N05苗栗社寮": {
+    "rmod": {
+     "111": [
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   },
+   "苗栗嘉盛N05苗栗中華": {
+    "rmod": {
+     "411": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
   }
  },
  {
@@ -10344,7 +11542,19 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南竹南N08頭份尖山下": {
+    "rmod": {
+     "111": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4613983",
@@ -10526,7 +11736,23 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "苗栗頭屋N05頭屋印天宮": {
+    "rmod": {
+     "111": [
+      "AC Power"
+     ]
+    }
+   },
+   "苗栗頭屋N05頭屋中華": {
+    "rmod": {
+     "411": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4613996",
@@ -10597,7 +11823,16 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "苗栗大山N06後龍灣寶庄": {
+    "rmod": {
+     "111": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4614006",
@@ -10713,6 +11948,15 @@ const STATION_DATA_5G = [
   "addr": {
    "苗栗中央N06苗栗南勢坑": "苗栗市新英里南勢坑段上南勢坑小段1112地號",
    "苗栗中央N06苗栗松園": "苗栗市高苗里松園456號5樓"
+  },
+  "eac": {
+   "苗栗中央N06苗栗松園": {
+    "rmod": {
+     "411": [
+      "AC Power"
+     ]
+    }
+   }
   }
  },
  {
@@ -10873,7 +12117,16 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "苗栗大山N02後龍海寶": {
+    "rmod": {
+     "211": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4614010",
@@ -10944,7 +12197,15 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "D-RAN"
+  "ranType": "D-RAN",
+  "smod": {
+   "後龍龍港": [
+    "AC Power",
+    "Fire",
+    "Temperature",
+    "Door"
+   ]
+  }
  },
  {
   "id": "4614020",
@@ -10999,7 +12260,19 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "苗栗公館N18頭屋鳴鳳": {
+    "rmod": {
+     "111": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4614021",
@@ -11126,7 +12399,26 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "苗栗頭屋N01頭屋頭屋": {
+    "rmod": {
+     "111": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   },
+   "苗栗頭屋N01頭屋明德水庫": {
+    "rmod": {
+     "611": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4614037",
@@ -11181,7 +12473,19 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南三灣N05三灣大河底": {
+    "rmod": {
+     "211": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4614038",
@@ -11341,7 +12645,23 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "苗栗公館N05公館館東": {
+    "rmod": {
+     "211": [
+      "AC Power"
+     ]
+    }
+   },
+   "苗栗公館N05公館五谷": {
+    "rmod": {
+     "611": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4614048",
@@ -11452,7 +12772,23 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南大埔N08竹南友旺": {
+    "rmod": {
+     "311": [
+      "AC Power"
+     ]
+    }
+   },
+   "竹南大埔N08竹南公義公館": {
+    "rmod": {
+     "411": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4614050",
@@ -11596,7 +12932,26 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南復興N09竹南崎頂南": {
+    "rmod": {
+     "111": [
+      "Fire",
+      "Temperature",
+      "AC Power",
+      "Door"
+     ]
+    }
+   },
+   "竹南復興N09竹南綠屯新": {
+    "rmod": {
+     "511": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4614051",
@@ -11756,7 +13111,26 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南大埔N04竹南煙波": {
+    "rmod": {
+     "111": [
+      "AC Power",
+      "Door",
+      "Fire",
+      "Temperature"
+     ]
+    }
+   },
+   "竹南大埔N04竹南仁愛": {
+    "rmod": {
+     "411": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4614052",
@@ -11827,7 +13201,15 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "D-RAN"
+  "ranType": "D-RAN",
+  "smod": {
+   "竹南龍鳳": [
+    "AC Power",
+    "Fire",
+    "Temperature",
+    "Door"
+   ]
+  }
  },
  {
   "id": "4614058",
@@ -11898,7 +13280,18 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南三灣N06南庄員林": {
+    "rmod": {
+     "111": [
+      "AC Power",
+      "Door",
+      "Temperature"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4614059",
@@ -11975,7 +13368,15 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "D-RAN"
+  "ranType": "D-RAN",
+  "smod": {
+   "後龍清海宮": [
+    "AC Power",
+    "Fire",
+    "Temperature",
+    "Door"
+   ]
+  }
  },
  {
   "id": "4614066",
@@ -12127,7 +13528,19 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "苗栗後龍N03後龍福寧": {
+    "rmod": {
+     "311": [
+      "Door",
+      "Temperature",
+      "AC Power",
+      "Fire"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4614068",
@@ -12287,7 +13700,19 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南復興N08竹南中華": {
+    "rmod": {
+     "111": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4614076",
@@ -12414,7 +13839,26 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南豐湖N02造橋育達學院": {
+    "rmod": {
+     "111": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   },
+   "竹南豐湖N02造橋流星花園": {
+    "rmod": {
+     "511": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4614087",
@@ -12485,7 +13929,15 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "D-RAN"
+  "ranType": "D-RAN",
+  "smod": {
+   "頭份親民段": [
+    "AC Power",
+    "Fire",
+    "Temperature",
+    "Door"
+   ]
+  }
  },
  {
   "id": "4614088",
@@ -12540,7 +13992,19 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南頭份N09頭份四季會館": {
+    "rmod": {
+     "411": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4614096",
@@ -12689,7 +14153,23 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "苗栗公館N03銅鑼億光": {
+    "rmod": {
+     "111": [
+      "AC Power"
+     ]
+    }
+   },
+   "苗栗公館N03公館南河": {
+    "rmod": {
+     "711": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4614097",
@@ -12833,7 +14313,26 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "苗栗後龍N04後龍國寶": {
+    "rmod": {
+     "211": [
+      "AC Power"
+     ]
+    }
+   },
+   "苗栗後龍N04造橋大潭": {
+    "rmod": {
+     "511": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4614098",
@@ -12955,7 +14454,23 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南南庄N01南庄七星宮": {
+    "rmod": {
+     "111": [
+      "AC Power"
+     ]
+    }
+   },
+   "竹南南庄N01南庄北獅": {
+    "rmod": {
+     "411": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4614099",
@@ -13026,7 +14541,19 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "苗栗頭屋N07造橋皇家": {
+    "rmod": {
+     "111": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4615369",
@@ -13276,7 +14803,28 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南造橋N02造橋北興": {
+    "rmod": {
+     "211": [
+      "Door",
+      "Fire",
+      "Temperature"
+     ]
+    }
+   },
+   "竹南造橋N02造橋德泰鋼鐵": {
+    "rmod": {
+     "611": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4615408",
@@ -13436,7 +14984,25 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "苗栗頭屋N02頭屋機房": {
+    "rmod": {
+     "211": [
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   },
+   "苗栗頭屋N02頭屋象山": {
+    "rmod": {
+     "611": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4615410",
@@ -13618,7 +15184,23 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南大西N02造橋大地南": {
+    "rmod": {
+     "311": [
+      "AC Power"
+     ]
+    }
+   },
+   "竹南大西N02造橋平興鐵塔": {
+    "rmod": {
+     "411": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4615411",
@@ -13718,6 +15300,23 @@ const STATION_DATA_5G = [
   "addr": {
    "苗栗嘉盛N09苗栗香榭": "苗栗市福星里國華路301號17樓之2",
    "苗栗嘉盛N09苗栗福安": "苗栗市福安里福星127之37號2樓"
+  },
+  "eac": {
+   "苗栗嘉盛N09苗栗香榭": {
+    "rmod": {
+     "111": [
+      "temperature",
+      "AC Power"
+     ]
+    }
+   },
+   "苗栗嘉盛N09苗栗福安": {
+    "rmod": {
+     "411": [
+      "AC Power"
+     ]
+    }
+   }
   }
  },
  {
@@ -13789,7 +15388,18 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南竹南N17造橋談文": {
+    "rmod": {
+     "111": [
+      "Door",
+      "Temperature",
+      "Fire"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4615419",
@@ -13884,7 +15494,29 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南頭份N15竹南京元三": {
+    "rmod": {
+     "106": [
+      "AC Power",
+      "Temperature",
+      "Door",
+      "Fire"
+     ]
+    }
+   },
+   "竹南頭份N15竹南京元": {
+    "rmod": {
+     "406": [
+      "AC Power",
+      "Door",
+      "Fire",
+      "Temperature"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4615420",
@@ -14011,7 +15643,26 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "苗栗頭屋N04頭屋飛鳳": {
+    "rmod": {
+     "311": [
+      "Fire",
+      "Temperature",
+      "AC Power",
+      "Door"
+     ]
+    }
+   },
+   "苗栗頭屋N04公館墨硯山": {
+    "rmod": {
+     "411": [
+      "AC  Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4615421",
@@ -14066,7 +15717,15 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "D-RAN"
+  "ranType": "D-RAN",
+  "smod": {
+   "苗栗聯合大學": [
+    "Temperture",
+    "Fire",
+    "AC",
+    "Door"
+   ]
+  }
  },
  {
   "id": "4615422",
@@ -14226,7 +15885,25 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "苗栗後龍N16後龍仁德醫校": {
+    "rmod": {
+     "111": [
+      "AC Power",
+      "Temperature",
+      "Fire"
+     ]
+    }
+   },
+   "苗栗後龍N16後龍仁德新園": {
+    "rmod": {
+     "611": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4615426",
@@ -14357,6 +16034,25 @@ const STATION_DATA_5G = [
   "address": "苗栗市嘉盛里五谷路7之10號3樓",
   "addr": {
    "苗栗嘉盛N02苗栗五谷": "苗栗市嘉盛里五谷路7之10號3樓"
+  },
+  "eac": {
+   "苗栗嘉盛N02苗栗衛署醫院": {
+    "rmod": {
+     "311": [
+      "AC Power"
+     ]
+    }
+   },
+   "苗栗嘉盛N02苗栗五谷": {
+    "rmod": {
+     "411": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
   }
  },
  {
@@ -14473,6 +16169,16 @@ const STATION_DATA_5G = [
   "addr": {
    "苗栗中央N40苗栗長春": "苗栗市福星段997地號",
    "苗栗中央N40苗栗新亞拌合": "苗栗市文山段229地號"
+  },
+  "eac": {
+   "苗栗中央N40苗栗長春": {
+    "rmod": {
+     "211": [
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
   }
  },
  {
@@ -14548,6 +16254,18 @@ const STATION_DATA_5G = [
   "address": "苗栗市福安里中華路642之1號3樓",
   "addr": {
    "苗栗嘉盛N04苗栗福星": "苗栗市福安里中華路642之1號3樓"
+  },
+  "eac": {
+   "苗栗嘉盛N04苗栗福星": {
+    "rmod": {
+     "211": [
+      "Fire",
+      "Temperture",
+      "AC Power",
+      "Door"
+     ]
+    }
+   }
   }
  },
  {
@@ -14648,6 +16366,15 @@ const STATION_DATA_5G = [
   "addr": {
    "苗栗中央N18苗栗巨蛋": "苗栗市福麗里國華路1121號2樓",
    "苗栗中央N18苗栗龍岡二": "苗栗市新川里龍岡19之10號2樓"
+  },
+  "eac": {
+   "苗栗中央N18苗栗龍岡二": {
+    "rmod": {
+     "611": [
+      "AC Power"
+     ]
+    }
+   }
   }
  },
  {
@@ -14775,7 +16502,29 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "苗栗公館N02公館玉泉": {
+    "rmod": {
+     "211": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   },
+   "苗栗公館N02公館中義二": {
+    "rmod": {
+     "511": [
+      "AC Power",
+      "Door",
+      "Fire",
+      "Temperature"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4615431",
@@ -14830,7 +16579,16 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "苗栗公館N26公館福德": {
+    "rmod": {
+     "111": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4615433",
@@ -14941,7 +16699,26 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南頭份N19頭份土牛新": {
+    "rmod": {
+     "311": [
+      "AC Power"
+     ]
+    }
+   },
+   "竹南頭份N19頭份為恭東興": {
+    "rmod": {
+     "511": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4615437",
@@ -15068,7 +16845,19 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南南庄N06南庄八卦力": {
+    "rmod": {
+     "106": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4615439",
@@ -15270,7 +17059,19 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南竹南N06造橋談文北": {
+    "rmod": {
+     "311": [
+      "Fire",
+      "Temperature",
+      "AC Power",
+      "Door"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4615448",
@@ -15351,6 +17152,18 @@ const STATION_DATA_5G = [
   "address": "苗栗市上苗里中山路82號3樓",
   "addr": {
    "苗栗嘉盛N03苗栗上苗": "苗栗市上苗里中山路82號3樓"
+  },
+  "eac": {
+   "苗栗嘉盛N03苗栗上苗": {
+    "rmod": {
+     "306": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
   }
  },
  {
@@ -15468,7 +17281,23 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南大埔N05竹南公義科專": {
+    "rmod": {
+     "111": [
+      "AC"
+     ]
+    }
+   },
+   "竹南大埔N05竹南亨福": {
+    "rmod": {
+     "411": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4616303",
@@ -15563,7 +17392,19 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南竹南N01竹南新南五谷": {
+    "rmod": {
+     "411": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4616915",
@@ -15723,7 +17564,28 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南三灣N02三灣內灣": {
+    "rmod": {
+     "111": [
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   },
+   "竹南三灣N02三灣銅鏡": {
+    "rmod": {
+     "411": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4616922",
@@ -15888,6 +17750,24 @@ const STATION_DATA_5G = [
   "addr": {
    "苗栗中央N07苗栗西勢美北": "苗栗市玉苗里西勢美北68號4樓頂",
    "苗栗中央N07苗栗維祥": "苗栗市維祥街120巷13號3樓"
+  },
+  "eac": {
+   "苗栗中央N07苗栗西勢美北": {
+    "rmod": {
+     "311": [
+      "Door",
+      "AC Power",
+      "Temperature"
+     ]
+    }
+   },
+   "苗栗中央N07苗栗維祥": {
+    "rmod": {
+     "411": [
+      "AC Power"
+     ]
+    }
+   }
   }
  },
  {
@@ -15959,7 +17839,15 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "D-RAN"
+  "ranType": "D-RAN",
+  "smod": {
+   "後龍坤龍紡織": [
+    "AC Power",
+    "Fire",
+    "Temperature",
+    "Door"
+   ]
+  }
  },
  {
   "id": "4616926",
@@ -16054,7 +17942,19 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "苗栗大山N05後龍海口": {
+    "rmod": {
+     "611": [
+      "Door",
+      "Temperature",
+      "AC Power",
+      "Fire"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4616930",
@@ -16268,7 +18168,16 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "苗栗後龍N05後龍新港": {
+    "rmod": {
+     "611": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4616935",
@@ -16506,7 +18415,26 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南頭份N28頭份斗煥新訓": {
+    "rmod": {
+     "111": [
+      "AC Power"
+     ]
+    }
+   },
+   "竹南頭份N28頭份雙喜新": {
+    "rmod": {
+     "611": [
+      "AC Power",
+      "Door",
+      "Fire",
+      "Temperature"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4616937",
@@ -16679,7 +18607,12 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "D-RAN"
+  "ranType": "D-RAN",
+  "smod": {
+   "竹南昱晶B": [
+    "AC"
+   ]
+  }
  },
  {
   "id": "4617108",
@@ -16810,6 +18743,22 @@ const STATION_DATA_5G = [
   "address": "苗栗市維祥里復興路2段337巷37弄8號3樓",
   "addr": {
    "苗栗中央N38苗栗復興": "苗栗市維祥里復興路2段337巷37弄8號3樓"
+  },
+  "eac": {
+   "苗栗中央N38苗栗復興": {
+    "rmod": {
+     "111": [
+      "AC Power"
+     ]
+    }
+   },
+   "苗栗中央N38苗栗市農會": {
+    "rmod": {
+     "411": [
+      "AC Power"
+     ]
+    }
+   }
   }
  },
  {
@@ -16938,7 +18887,29 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南復興N06竹南自由": {
+    "rmod": {
+     "111": [
+      "Door",
+      "Temperature",
+      "AC Power",
+      "Fire"
+     ]
+    }
+   },
+   "竹南復興N06竹南環市": {
+    "rmod": {
+     "411": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4617112",
@@ -17098,7 +19069,19 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南大埔N07竹南康華": {
+    "rmod": {
+     "111": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4617115",
@@ -17209,7 +19192,16 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南頭份N06頭份崎仔頭": {
+    "rmod": {
+     "311": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4617122",
@@ -17292,6 +19284,18 @@ const STATION_DATA_5G = [
   "address": "苗栗市玉華里玉維街285號2樓頂",
   "addr": {
    "苗栗中央N24苗栗玉維": "苗栗市玉華里玉維街285號2樓頂"
+  },
+  "eac": {
+   "苗栗中央N24苗栗玉維": {
+    "rmod": {
+     "311": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
   }
  },
  {
@@ -17363,7 +19367,12 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "D-RAN"
+  "ranType": "D-RAN",
+  "smod": {
+   "苗栗南勢聯大": [
+    "AC Power"
+   ]
+  }
  },
  {
   "id": "4617129",
@@ -17490,7 +19499,26 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南大埔N01竹南大埔機房": {
+    "rmod": {
+     "311": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   },
+   "竹南大埔N01竹南仁愛二": {
+    "rmod": {
+     "511": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4617135",
@@ -17601,7 +19629,29 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南頭份N07頭份自強": {
+    "rmod": {
+     "211": [
+      "AC Power",
+      "Door",
+      "Fire",
+      "Temperature"
+     ]
+    }
+   },
+   "竹南頭份N07頭份愛伊堡": {
+    "rmod": {
+     "411": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4617136",
@@ -17723,7 +19773,16 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南大埔N23竹南和仁": {
+    "rmod": {
+     "511": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4617140",
@@ -17883,7 +19942,23 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南復興N01竹南福德": {
+    "rmod": {
+     "311": [
+      "AC Power"
+     ]
+    }
+   },
+   "竹南復興N01竹南獅山": {
+    "rmod": {
+     "611": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4617143",
@@ -18002,7 +20077,19 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南豐湖N03造橋談文西": {
+    "rmod": {
+     "111": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4617145",
@@ -18129,7 +20216,26 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "苗栗頭屋N06頭屋農會": {
+    "rmod": {
+     "111": [
+      "Door",
+      "Temperature",
+      "AC Power",
+      "Fire"
+     ]
+    }
+   },
+   "苗栗頭屋N06頭屋尖豐": {
+    "rmod": {
+     "511": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4617146",
@@ -18261,6 +20367,28 @@ const STATION_DATA_5G = [
   "addr": {
    "苗栗中央N02苗栗水源": "苗栗市水源里陽明138號3樓",
    "苗栗中央N02苗栗吉祥": "苗栗市新英里新英70之1號3樓"
+  },
+  "eac": {
+   "苗栗中央N02苗栗水源": {
+    "rmod": {
+     "311": [
+      "AC Power",
+      "Door",
+      "Fire",
+      "Temperature"
+     ]
+    }
+   },
+   "苗栗中央N02苗栗吉祥": {
+    "rmod": {
+     "411": [
+      "AC Power",
+      "Temperature",
+      "Fire",
+      "Door"
+     ]
+    }
+   }
   }
  },
  {
@@ -18388,7 +20516,26 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南大埔N06竹南公義": {
+    "rmod": {
+     "211": [
+      "AC Power"
+     ]
+    }
+   },
+   "竹南大埔N06竹南台元紡織": {
+    "rmod": {
+     "411": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4617201",
@@ -18499,7 +20646,26 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南造橋N03造橋朝陽新": {
+    "rmod": {
+     "311": [
+      "AC Power"
+     ]
+    }
+   },
+   "竹南造橋N03造橋隧道口": {
+    "rmod": {
+     "511": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4617203",
@@ -18659,7 +20825,26 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南頭份N22竹南頂埔天仁": {
+    "rmod": {
+     "311": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   },
+   "竹南頭份N22竹南京元外": {
+    "rmod": {
+     "611": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4617204",
@@ -18787,7 +20972,16 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南頭份N01頭份新光": {
+    "rmod": {
+     "606": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4617208",
@@ -18898,7 +21092,23 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南大埔N22頭份科專八": {
+    "rmod": {
+     "111": [
+      "AC Power"
+     ]
+    }
+   },
+   "竹南大埔N22竹南旳蔓": {
+    "rmod": {
+     "411": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4617219",
@@ -18953,7 +21163,16 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南造橋N06造橋長安新村": {
+    "rmod": {
+     "111": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4617221",
@@ -19028,6 +21247,18 @@ const STATION_DATA_5G = [
   "address": "苗栗市玉華里玉清路162巷3號2樓",
   "addr": {
    "苗栗中央N08苗栗玉華玉清": "苗栗市玉華里玉清路162巷3號2樓"
+  },
+  "eac": {
+   "苗栗中央N08苗栗玉華玉清": {
+    "rmod": {
+     "111": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
   }
  },
  {
@@ -19139,7 +21370,23 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南頭份N04頭份山下八德": {
+    "rmod": {
+     "211": [
+      "AC Power"
+     ]
+    }
+   },
+   "竹南頭份N04頭份大勇": {
+    "rmod": {
+     "411": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4617234",
@@ -19210,7 +21457,16 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南竹南N16頭份後庄文林": {
+    "rmod": {
+     "111": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4617248",
@@ -19281,7 +21537,16 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南三灣N03三灣坡頭背": {
+    "rmod": {
+     "211": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4617606",
@@ -19408,7 +21673,28 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南復興N11竹南龍富": {
+    "rmod": {
+     "111": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   },
+   "竹南復興N11竹南博愛": {
+    "rmod": {
+     "611": [
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4617608",
@@ -19514,7 +21800,31 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南大埔N02竹南旺能": {
+    "rmod": {
+     "311": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   },
+   "竹南大埔N02竹南隆達": {
+    "rmod": {
+     "411": [
+      "Door",
+      "Fire",
+      "Temperature"
+     ],
+     "311": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4617610",
@@ -19641,7 +21951,16 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "苗栗大山N03後龍海埔": {
+    "rmod": {
+     "411": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4617612",
@@ -19736,7 +22055,26 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南復興N20竹南龍山": {
+    "rmod": {
+     "111": [
+      "AC Power"
+     ]
+    }
+   },
+   "竹南復興N20竹南開元明勝": {
+    "rmod": {
+     "611": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4617614",
@@ -19989,7 +22327,14 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "D-RAN"
+  "ranType": "D-RAN",
+  "smod": {
+   "後龍高鐵站": [
+    "AC Power",
+    "Fire",
+    "Temperature"
+   ]
+  }
  },
  {
   "id": "4617657",
@@ -20116,7 +22461,29 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "苗栗公館N08公館開礦": {
+    "rmod": {
+     "111": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   },
+   "苗栗公館N08公館福基": {
+    "rmod": {
+     "411": [
+      "Door",
+      "Temperature",
+      "Fire",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4617658",
@@ -20276,7 +22643,23 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "苗栗頭屋N03頭屋二崗坪": {
+    "rmod": {
+     "611": [
+      "AC Power"
+     ]
+    }
+   },
+   "苗栗頭屋N03頭屋文德宮": {
+    "rmod": {
+     "311": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4617667",
@@ -20387,7 +22770,19 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南南庄N04南庄春谷": {
+    "rmod": {
+     "511": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4617696",
@@ -20514,7 +22909,23 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南復興N07竹南交流道": {
+    "rmod": {
+     "111": [
+      "AC Power"
+     ]
+    }
+   },
+   "竹南復興N07竹南大厝鹽館": {
+    "rmod": {
+     "411": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4617706",
@@ -20674,7 +23085,29 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南頭份N08頭份新華中一": {
+    "rmod": {
+     "311": [
+      "AC Power",
+      "Door",
+      "Fire",
+      "Temperature"
+     ]
+    }
+   },
+   "竹南頭份N08頭份興隆觀音": {
+    "rmod": {
+     "411": [
+      "Door",
+      "Temperature",
+      "AC Power",
+      "Fire"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4617707",
@@ -20856,7 +23289,23 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "苗栗公館N11公館五谷二": {
+    "rmod": {
+     "111": [
+      "AC Power"
+     ]
+    }
+   },
+   "苗栗公館N11公館鶴山飯店": {
+    "rmod": {
+     "611": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4617716",
@@ -21071,7 +23520,26 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南頭份N17頭份後庄信義": {
+    "rmod": {
+     "211": [
+      "AC Power"
+     ]
+    }
+   },
+   "竹南頭份N17頭份為恭信義": {
+    "rmod": {
+     "411": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4617726",
@@ -21198,7 +23666,26 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "苗栗公館N10公館玉谷": {
+    "rmod": {
+     "111": [
+      "AC Power"
+     ]
+    }
+   },
+   "苗栗公館N10公館中義社區": {
+    "rmod": {
+     "611": [
+      "Fire",
+      "Temperature",
+      "AC Power",
+      "Door"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4617735",
@@ -21330,6 +23817,22 @@ const STATION_DATA_5G = [
   "addr": {
    "苗栗中央N12苗栗文發": "苗栗市文山里文發路47號6樓",
    "苗栗中央N12苗栗英明": "苗栗市北苗里英明街66號5樓"
+  },
+  "eac": {
+   "苗栗中央N12苗栗文發": {
+    "rmod": {
+     "211": [
+      "AC Power"
+     ]
+    }
+   },
+   "苗栗中央N12苗栗英明": {
+    "rmod": {
+     "411": [
+      "AC Power"
+     ]
+    }
+   }
   }
  },
  {
@@ -21490,7 +23993,26 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南復興N04竹南海口尾": {
+    "rmod": {
+     "311": [
+      "AC"
+     ]
+    }
+   },
+   "竹南復興N04竹南塭內": {
+    "rmod": {
+     "611": [
+      "Door",
+      "Fire",
+      "Temperture",
+      "AC"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4617744",
@@ -21650,7 +24172,29 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南竹南N05竹南公館二": {
+    "rmod": {
+     "211": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   },
+   "竹南竹南N05頭份蘆竹碾米新": {
+    "rmod": {
+     "411": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4617746",
@@ -21721,7 +24265,18 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "苗栗公館N09公館近光": {
+    "rmod": {
+     "411": [
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4617755",
@@ -21792,7 +24347,16 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南豐湖N04造橋中潭": {
+    "rmod": {
+     "211": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4617756",
@@ -21863,7 +24427,17 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南南庄N03南庄米堤園": {
+    "rmod": {
+     "311": [
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4617769",
@@ -21990,7 +24564,26 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "苗栗後龍N10後龍水尾": {
+    "rmod": {
+     "111": [
+      "AC Power"
+     ]
+    }
+   },
+   "苗栗後龍N10後龍溪洲": {
+    "rmod": {
+     "411": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4617773",
@@ -22106,6 +24699,22 @@ const STATION_DATA_5G = [
   "addr": {
    "苗栗中央N37苗栗大明寺": "苗栗市經國路二段485號5樓",
    "苗栗中央N37苗栗僑育": "苗栗市維新里僑育街25巷4號3樓"
+  },
+  "eac": {
+   "苗栗中央N37苗栗大明寺": {
+    "rmod": {
+     "211": [
+      "AC Power"
+     ]
+    }
+   },
+   "苗栗中央N37苗栗僑育": {
+    "rmod": {
+     "411": [
+      "AC Power"
+     ]
+    }
+   }
   }
  },
  {
@@ -22296,7 +24905,16 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "苗栗公館N23公館仁安社區": {
+    "rmod": {
+     "111": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4617783",
@@ -22419,6 +25037,26 @@ const STATION_DATA_5G = [
   "address": "苗栗市新英里天祥100號4樓頂",
   "addr": {
    "苗栗中央N21苗栗天祥": "苗栗市新英里天祥100號4樓頂"
+  },
+  "eac": {
+   "苗栗中央N21苗栗天祥": {
+    "rmod": {
+     "311": [
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   },
+   "苗栗中央N21苗栗麻園坑41": {
+    "rmod": {
+     "511": [
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
   }
  },
  {
@@ -22494,6 +25132,11 @@ const STATION_DATA_5G = [
   "address": "苗栗市文山里正發路196號5樓",
   "addr": {
    "苗栗正發": "苗栗市文山里正發路196號5樓"
+  },
+  "smod": {
+   "苗栗正發": [
+    "AC Power"
+   ]
   }
  },
  {
@@ -22610,6 +25253,25 @@ const STATION_DATA_5G = [
   "addr": {
    "苗栗中央N11苗栗國華": "苗栗市文山里國華路889號5樓",
    "苗栗中央N11苗栗家樂福": "苗栗市文聖里國華路599號3樓"
+  },
+  "eac": {
+   "苗栗中央N11苗栗國華": {
+    "rmod": {
+     "311": [
+      "AC Power"
+     ]
+    }
+   },
+   "苗栗中央N11苗栗家樂福": {
+    "rmod": {
+     "411": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
   }
  },
  {
@@ -22737,7 +25399,26 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "苗栗公館N20公館渡船頭": {
+    "rmod": {
+     "311": [
+      "AC Power"
+     ]
+    }
+   },
+   "苗栗公館N20公館高公局": {
+    "rmod": {
+     "611": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4617793",
@@ -22848,7 +25529,26 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "苗栗後龍N08後龍年興B": {
+    "rmod": {
+     "111": [
+      "AC Power"
+     ]
+    }
+   },
+   "苗栗後龍N08後龍年興": {
+    "rmod": {
+     "411": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4617794",
@@ -22991,7 +25691,16 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南大埔N09竹南科管局": {
+    "rmod": {
+     "111": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4617820",
@@ -23110,7 +25819,16 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "苗栗頭屋N08頭屋錦水": {
+    "rmod": {
+     "811": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4617823",
@@ -23275,6 +25993,25 @@ const STATION_DATA_5G = [
   "addr": {
    "苗栗中央N09苗栗中油探採": "苗栗市文聖里文發路達園1號5樓",
    "苗栗中央N09苗栗長春二廠": "苗栗市文聖里文山245號2樓"
+  },
+  "eac": {
+   "苗栗中央N09苗栗中油探採": {
+    "rmod": {
+     "211": [
+      "AC Power"
+     ]
+    }
+   },
+   "苗栗中央N09苗栗長春二廠": {
+    "rmod": {
+     "411": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
   }
  },
  {
@@ -23370,7 +26107,19 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "苗栗大山N04後龍大山交流道": {
+    "rmod": {
+     "411": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4617828",
@@ -23497,7 +26246,18 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "苗栗公館N12公館棗莊南": {
+    "rmod": {
+     "411": [
+      "AC Power",
+      "Fire",
+      "Temperature"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4617966",
@@ -23597,6 +26357,27 @@ const STATION_DATA_5G = [
   "addr": {
    "苗栗中央N19苗栗玉清台銀": "苗栗市玉清里玉清街73號",
    "苗栗中央N19苗栗府前新": "苗栗市建功里府前路151號4樓"
+  },
+  "eac": {
+   "苗栗中央N19苗栗玉清台銀": {
+    "rmod": {
+     "311": [
+      "AC Power",
+      "Temperature",
+      "Fire"
+     ]
+    }
+   },
+   "苗栗中央N19苗栗府前新": {
+    "rmod": {
+     "511": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
   }
  },
  {
@@ -24498,7 +27279,17 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南竹南N09竹南大厝": {
+    "rmod": {
+     "106": [
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4619548",
@@ -24630,6 +27421,25 @@ const STATION_DATA_5G = [
   "addr": {
    "苗栗嘉盛N07苗栗台肥": "苗栗市福星里福星段252-7地號",
    "苗栗嘉盛N07苗栗消防局": "苗栗市嘉新里經國路4段201號4樓"
+  },
+  "eac": {
+   "苗栗嘉盛N07苗栗台肥": {
+    "rmod": {
+     "111": [
+      "AC Power",
+      "Door",
+      "Fire",
+      "Temperature"
+     ]
+    }
+   },
+   "苗栗嘉盛N07苗栗消防局": {
+    "rmod": {
+     "411": [
+      "AC Power"
+     ]
+    }
+   }
   }
  },
  {
@@ -24757,7 +27567,23 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "苗栗公館N04銅鑼中興": {
+    "rmod": {
+     "311": [
+      "AC Power"
+     ]
+    }
+   },
+   "苗栗公館N04公館皇家": {
+    "rmod": {
+     "411": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4619553",
@@ -24884,7 +27710,26 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "苗栗公館N07公館中義": {
+    "rmod": {
+     "211": [
+      "Door",
+      "Fire",
+      "Temperatur",
+      "AC power"
+     ]
+    }
+   },
+   "苗栗公館N07公館民生": {
+    "rmod": {
+     "611": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4622614",
@@ -24963,7 +27808,16 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南頭份N38頭份建國": {
+    "rmod": {
+     "811": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4623709",
@@ -25090,7 +27944,19 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南豐湖N01造橋後龍收費": {
+    "rmod": {
+     "411": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4623719",
@@ -25415,7 +28281,23 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南竹南N10竹南兆品": {
+    "rmod": {
+     "311": [
+      "AC Power"
+     ]
+    }
+   },
+   "竹南竹南N10竹南崁頂": {
+    "rmod": {
+     "511": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4623730",
@@ -25547,6 +28429,25 @@ const STATION_DATA_5G = [
   "address": "苗栗市中苗里中正路415號5樓",
   "addr": {
    "苗栗中央N25苗栗苗栗": "苗栗市中苗里中正路415號5樓"
+  },
+  "eac": {
+   "苗栗中央N25苗栗苗栗": {
+    "rmod": {
+     "111": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   },
+   "苗栗中央N25線路中心內": {
+    "rmod": {
+     "406": [
+      "AC Power"
+     ]
+    }
+   }
   }
  },
  {
@@ -25842,7 +28743,26 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南竹南N11竹南營業中心": {
+    "rmod": {
+     "211": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   },
+   "竹南竹南N11竹南松茂米粉": {
+    "rmod": {
+     "411": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4623751",
@@ -25969,7 +28889,23 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南復興N17竹南復興": {
+    "rmod": {
+     "211": [
+      "AC Power"
+     ]
+    }
+   },
+   "竹南復興N17竹南大千": {
+    "rmod": {
+     "511": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4623759",
@@ -26096,7 +29032,26 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南頭份N34頭份後庄": {
+    "rmod": {
+     "111": [
+      "AC Power"
+     ]
+    }
+   },
+   "竹南頭份N34頭份幼英": {
+    "rmod": {
+     "411": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4623760",
@@ -26248,7 +29203,26 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南頭份N11頭份頭份": {
+    "rmod": {
+     "211": [
+      "AC Power"
+     ]
+    }
+   },
+   "竹南頭份N11頭份中山": {
+    "rmod": {
+     "511": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4623762",
@@ -26383,7 +29357,26 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南竹南N15頭份良安宮": {
+    "rmod": {
+     "406": [
+      "AC Power"
+     ]
+    }
+   },
+   "竹南竹南N15頭份芝山莊": {
+    "rmod": {
+     "406": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4623764",
@@ -26549,7 +29542,26 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南頭份N12頭份新華": {
+    "rmod": {
+     "111": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   },
+   "竹南頭份N12頭份上埔": {
+    "rmod": {
+     "611": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4623768",
@@ -26676,7 +29688,26 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南復興N23竹南民權": {
+    "rmod": {
+     "211": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   },
+   "竹南復興N23竹南中正": {
+    "rmod": {
+     "411": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4623776",
@@ -26795,7 +29826,29 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南南庄N08南庄向天湖": {
+    "rmod": {
+     "511": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   },
+   "竹南南庄N08南庄水尾": {
+    "rmod": {
+     "211": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4623781",
@@ -26874,7 +29927,25 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南大埔N17竹南晶電新": {
+    "rmod": {
+     "211": [
+      "AC Power"
+     ]
+    }
+   },
+   "竹南大埔N17竹南昱晶": {
+    "rmod": {
+     "406": [
+      "AC Power",
+      "Fire",
+      "Temperture"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4623788",
@@ -27001,7 +30072,33 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "smod": {
+   "竹南南庄N09南庄南庄": [
+    "AC Power",
+    "Fire",
+    "Door",
+    "Temperature"
+   ],
+   "竹南南庄N09南庄西村": [
+    "AC Power",
+    "Fire",
+    "Door",
+    "Temperature"
+   ]
+  },
+  "eac": {
+   "竹南南庄N09南庄西村": {
+    "rmod": {
+     "511": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4623836",
@@ -27128,7 +30225,28 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南復興N22竹南大厝四方": {
+    "rmod": {
+     "111": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   },
+   "竹南復興N22竹南開元迎薰": {
+    "rmod": {
+     "411": [
+      "Door",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4623839",
@@ -27528,6 +30646,22 @@ const STATION_DATA_5G = [
   "addr": {
    "苗栗中央N34苗栗福麗": "苗栗市福麗里北安街150號12樓",
    "苗栗中央N34苗栗宏苗大樓": "苗栗市中苗里中正路460號11樓"
+  },
+  "eac": {
+   "苗栗中央N34苗栗福麗": {
+    "rmod": {
+     "111": [
+      "AC Power"
+     ]
+    }
+   },
+   "苗栗中央N34苗栗宏苗大樓": {
+    "rmod": {
+     "511": [
+      "AC Power"
+     ]
+    }
+   }
   }
  },
  {
@@ -27632,7 +30766,16 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南復興N34竹南山寮": {
+    "rmod": {
+     "106": [
+      "AC"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4624011",
@@ -27803,7 +30946,26 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "苗栗後龍N17後龍豐富": {
+    "rmod": {
+     "311": [
+      "AC Power"
+     ]
+    }
+   },
+   "苗栗後龍N17後龍高鐵號誌": {
+    "rmod": {
+     "406": [
+      "Door",
+      "SMR",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4624043",
@@ -27946,7 +31108,19 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南三灣N04三灣永和山": {
+    "rmod": {
+     "211": [
+      "Door",
+      "Fire",
+      "AC Power",
+      "Temperature"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4624059",
@@ -28001,7 +31175,16 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "苗栗西湖N08後龍赤土崎": {
+    "rmod": {
+     "506": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4624060",
@@ -28177,6 +31360,28 @@ const STATION_DATA_5G = [
   "addr": {
    "苗栗中央N33苗栗營業中心": "苗栗市中苗里中正路560號4樓",
    "苗栗中央N33苗栗建功": "苗栗市建功里中正路204號10樓"
+  },
+  "eac": {
+   "苗栗中央N33苗栗營業中心": {
+    "rmod": {
+     "111": [
+      "SMR",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ],
+     "311": [
+      "SMR"
+     ]
+    }
+   },
+   "苗栗中央N33苗栗建功": {
+    "rmod": {
+     "511": [
+      "AC Power"
+     ]
+    }
+   }
   }
  },
  {
@@ -28248,7 +31453,17 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南復興N33竹南港墘": {
+    "rmod": {
+     "311": [
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4625363",
@@ -28365,7 +31580,29 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南頭份N40頭份高隧新苗南內": {
+    "rmod": {
+     "106": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   },
+   "竹南頭份N40頭份高隧一北內": {
+    "rmod": {
+     "606": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4625365",
@@ -28444,7 +31681,19 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南大西N07造橋高隧二北內": {
+    "rmod": {
+     "106": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4625367",
@@ -28499,7 +31748,16 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "苗栗中央N30後龍高隧南新南": {
+    "rmod": {
+     "106": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4625409",
@@ -28610,7 +31868,27 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南大埔N12竹南奇美車塔外": {
+    "rmod": {
+     "311": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   },
+   "竹南大埔N12竹南奇美外": {
+    "rmod": {
+     "611": [
+      "Fire",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4626920",
@@ -28753,7 +32031,19 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "苗栗頭屋N16頭屋枋寮坑": {
+    "rmod": {
+     "706": [
+      "AC Power"
+     ],
+     "806": [
+      "SMR"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4627101",
@@ -28880,7 +32170,26 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南頭份N49頭份民權": {
+    "rmod": {
+     "411": [
+      "AC Power"
+     ]
+    }
+   },
+   "竹南頭份N49頭份銀河": {
+    "rmod": {
+     "311": [
+      "AC PAOWER",
+      "Temperature",
+      "Fire",
+      "Door"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4627111",
@@ -29023,7 +32332,27 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南大埔N14竹南奇美內": {
+    "rmod": {
+     "106": [
+      "Fire",
+      "Temp",
+      "AC"
+     ]
+    }
+   },
+   "竹南大埔N14竹南國衛院": {
+    "rmod": {
+     "906": [
+      "Fire",
+      "Teperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4627125",
@@ -29183,7 +32512,29 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南大埔N11竹南晶電": {
+    "rmod": {
+     "111": [
+      "Door",
+      "Temperature",
+      "AC Power",
+      "Fire"
+     ]
+    }
+   },
+   "竹南大埔N11竹南國衛院新": {
+    "rmod": {
+     "711": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4627144",
@@ -29310,7 +32661,25 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南頭份N37頭份民生": {
+    "rmod": {
+     "106": [
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   },
+   "竹南頭份N37頭份民族": {
+    "rmod": {
+     "411": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4627202",
@@ -29410,6 +32779,22 @@ const STATION_DATA_5G = [
   "addr": {
    "苗栗中央N39苗栗電台": "苗栗市福麗里電台79號3樓",
    "苗栗中央N39苗栗中龍岡": "苗栗市中龍岡108號3樓"
+  },
+  "eac": {
+   "苗栗中央N39苗栗中龍岡": {
+    "rmod": {
+     "411": [
+      "AC Power"
+     ]
+    }
+   },
+   "苗栗中央N39苗栗電台": {
+    "rmod": {
+     "211": [
+      "AC Power"
+     ]
+    }
+   }
   }
  },
  {
@@ -29537,7 +32922,25 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南大埔N24竹南大埔仁愛": {
+    "rmod": {
+     "111": [
+      "Temperature",
+      "AC Power",
+      "Door"
+     ]
+    }
+   },
+   "竹南大埔N24竹南仁愛837": {
+    "rmod": {
+     "406": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4627249",
@@ -29608,7 +33011,19 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南南庄N10三灣崁頂寮": {
+    "rmod": {
+     "311": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4627634",
@@ -29768,7 +33183,23 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南頭份N30頭份尚順二": {
+    "rmod": {
+     "306": [
+      "AC Power"
+     ]
+    }
+   },
+   "竹南頭份N30頭份信東": {
+    "rmod": {
+     "611": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4627678",
@@ -29899,6 +33330,25 @@ const STATION_DATA_5G = [
   "address": "苗栗市玉華里玉清路386號4樓",
   "addr": {
    "苗栗中央N35苗栗國稅局": "苗栗市玉華里玉清路386號4樓"
+  },
+  "eac": {
+   "苗栗中央N35苗栗國稅局": {
+    "rmod": {
+     "211": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   },
+   "苗栗中央N35苗栗皇家豪門": {
+    "rmod": {
+     "411": [
+      "AC Power"
+     ]
+    }
+   }
   }
  },
  {
@@ -30009,7 +33459,18 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "苗栗頭屋N09頭屋濫坑社區": {
+    "rmod": {
+     "106": [
+      "Door",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4627784",
@@ -30136,7 +33597,16 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南頭份N35頭份沙埔": {
+    "rmod": {
+     "111": [
+      "AC"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4627787",
@@ -30280,7 +33750,25 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南頭份N33頭份仁愛二": {
+    "rmod": {
+     "211": [
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   },
+   "竹南頭份N33頭份仁愛新": {
+    "rmod": {
+     "411": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4627825",
@@ -30351,7 +33839,16 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南頭份N41竹南天仁大院": {
+    "rmod": {
+     "106": [
+      "AC Power"
+     ]
+    }
+   }
+  }
  },
  {
   "id": "4627896",

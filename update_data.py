@@ -92,8 +92,8 @@ def normalize_fold(s):
 
 def build_site_info(site_rows):
     """
-    站台.xlsx：欄位 4G台號/5G台號/台名/4G EAC/5G EAC/地址
-    回傳 { "4g": { id: {站台名: {address, eac_cells, eac_smod}} }, "5g": { ... } }
+    站台.xlsx：欄位 4G台號/5G台號/台名/地址（EAC 已改由 4 個 RMOD/SMOD 檔案提供）
+    回傳 { "4g": { id: {站台名: {address} } }, "5g": { ... } }
     """
     info = {"4g": {}, "5g": {}}
     for r in site_rows:
@@ -104,34 +104,22 @@ def build_site_info(site_rows):
         g5 = g("5G台號")
         tn = g("台名")
         addr = g("地址")
-        eac4 = g("4G EAC")
-        eac5 = g("5G EAC")
         if not tn:
             continue
         # 4G
         if g4:
             base4 = g4.rstrip("LUSl")
             bucket = info["4g"].setdefault(base4, {})
-            entry = bucket.setdefault(tn, {"address": "", "eac_cells": [], "eac_smod": False})
+            entry = bucket.setdefault(tn, {"address": ""})
             if addr and not entry["address"]:
                 entry["address"] = addr
-            if eac4 and eac4 != "N/A":
-                if eac4.upper() == "SMOD":
-                    entry["eac_smod"] = True
-                else:
-                    entry["eac_cells"].append(eac4)
         # 5G
         if g5:
             base5 = g5.rstrip("LUSl")
             bucket = info["5g"].setdefault(base5, {})
-            entry = bucket.setdefault(tn, {"address": "", "eac_cells": [], "eac_smod": False})
+            entry = bucket.setdefault(tn, {"address": ""})
             if addr and not entry["address"]:
                 entry["address"] = addr
-            if eac5 and eac5 != "N/A":
-                if eac5.upper() == "SMOD":
-                    entry["eac_smod"] = True
-                else:
-                    entry["eac_cells"].append(eac5)
     return info
 
 def match_station(st, info_bucket):
@@ -149,13 +137,145 @@ def match_station(st, info_bucket):
             return entry
     return None
 
+def parse_cell_desc(desc):
+    """
+    解析 RMOD 的 Description，格式如：
+      Cell_013_Door / Cell_013_AC Power / Cell_013_ AC Power
+    回傳 (cell_num, alarm)；若無 Cell_ 開頭回傳 (None, desc)
+    """
+    desc = (desc or "").strip()
+    m = _re.match(r"[Cc]ell[_ ]*(\d+)[_ ]+(.*)$", desc)
+    if m:
+        return m.group(1).lstrip("0") or "0", m.group(2).strip()
+    return None, desc
+
+def build_eac_maps(cfg):
+    """
+    cfg: 指定 4 個 RMOD/SMOD 檔案的載入與解析
+    每個檔案回傳 { id: { 名稱: {cell或"": [告警,...]} } }
+    """
+    maps = {}
+    for key, path, sheet, id_col, name_col, is_rmod in cfg:
+        files = glob.glob(os.path.join(BASE, path))
+        if not files:
+            raise FileNotFoundError(f"找不到 {path}")
+        fpath = sorted(files)[-1]
+        hdr, rows = load_rows_safe(fpath, sheet)
+        bucket = {}
+        for r in rows:
+            def g(k):
+                v = r.get(k)
+                return str(v).strip() if v is not None else ""
+            bid = g(id_col)
+            name = g(name_col)
+            desc = g("Description")
+            if not bid or not name or not desc:
+                continue
+            if is_rmod:
+                cell, alarm = parse_cell_desc(desc)
+                if cell is None:
+                    continue  # RM 描述無 Cell 編號則略過
+                d = bucket.setdefault(bid, {}).setdefault(name, {}).setdefault("rmod", {})
+                d.setdefault(cell, []).append(alarm)
+            else:
+                d = bucket.setdefault(bid, {}).setdefault(name, {}).setdefault("smod", [])
+                d.append(desc)
+        maps[key] = bucket
+    return maps
+
+EAC_FILES = [
+    # (key, glob_pattern, sheet, id_col, name_col, is_rmod)
+    ("rmod4", "*LTE_RMOD_EAC_CHT.xlsx", "LTE_RMOD_EAC_CHT", "mrbtsId", "CellName_chs", True),
+    ("smod4", "*LTE_SMOD_EAC_CHT.xlsx", "LTE_SMOD_EAC_CHT", "mrbtsId", "SiteName", False),
+    ("rmod5", "*NR_RMOD_EAC_CHT.xlsx", "NR_RMOD_EAC_CHT", "mrbtsId", "SiteName", True),
+    ("smod5", "*NR_SMOD_EAC_CHT.xlsx", "NR_SMOD_EAC_CHT", "mrbtsId", "SiteName", False),
+]
+
+def apply_eac(items, eac_maps, key_rmod, key_smod):
+    """
+    將 RMOD/SMOD 外部告警資訊合併到 items。
+    輸出：
+      it["eac"]     -> { 站台名: { "rmod": {cell_num: [告警...]} } }（RMOD，細胞階層）
+      it["smod"]    -> { 站台名: [告警...] }（SMOD，站台階層）
+    比對：以 id 精確 + 名稱模糊包含。
+    """
+    rmod = eac_maps.get(key_rmod, {})
+    smod = eac_maps.get(key_smod, {})
+    matched_cell = 0
+    matched_smod = 0
+    for it in items:
+        bid = it["id"]
+        # SMOD：以站台名(含 siteName/stations) 比對
+        smod_bucket = smod.get(bid, {})
+        if smod_bucket:
+            # SMOD 為站台階層：任一欄位比對成功即套用到整個 item 的所有站
+            hit_all = set()
+            site_hit = False
+            for name_key, listed in smod_bucket.items():
+                target = match_any_name(name_key, it)
+                if target is None:
+                    continue
+                alarm_list = list(dict.fromkeys(listed.get("smod", [])))
+                if target == (it.get("siteName")):
+                    site_hit = True
+                else:
+                    hit_all.add(target)
+            site_alarms = set()
+            for name_key, listed in smod_bucket.items():
+                site_alarms.update(listed.get("smod", []))
+            site_alarms = list(dict.fromkeys(site_alarms))
+            # SMOD 站台層級：套用至 item 的所有 station
+            for st in (it.get("stations") or []):
+                it.setdefault("smod", {})[st] = site_alarms
+        # RMOD：以 CellName/SiteName 比對站台
+        rmod_bucket = rmod.get(bid, {})
+        for name_key, sub in rmod_bucket.items():
+            target = match_any_name(name_key, it)
+            if target is None:
+                continue
+            rmod_cells = sub.get("rmod", {})
+            it.setdefault("eac", {}).setdefault(target, {})["rmod"] = {k: list(dict.fromkeys(v)) for k, v in rmod_cells.items()}
+            matched_cell += 1
+        if smod_bucket and it.get("stations"):
+            matched_smod += 1
+    return matched_cell, matched_smod
+
+def match_any_name(name, it):
+    """
+    名稱 name 對 item 的站台做比對，回傳對應站台名或 None。
+    優先匹配 stations 清單（cell 渲染用），其次 siteName。
+    依序：精確、normalize 相等、normalize_fold 相等、雙向包含。
+    """
+    stations = it.get("stations") or []
+    site = it.get("siteName")
+    def _find(cands):
+        if name in cands:
+            return name
+        norm = normalize(name)
+        fold = normalize_fold(name)
+        for c in cands:
+            if normalize(c) == norm:
+                return c
+            if fold and fold == normalize_fold(c):
+                return c
+            if norm and (norm in normalize(c) or normalize(c) in norm):
+                return c
+        return None
+    hit = _find(stations)
+    if hit is not None:
+        return hit
+    if site:
+        hit = _find([site])
+        if hit is not None:
+            return site
+    return None
+
 def enrich_items(items, site_info, id_key):
     """
-    將站台地址/EAC 資訊合併到 items（4G 或 5G）。
-    每個站台(item)可含多個實體站(stations)，各站可能有各自的 EAC 細胞與地址。
+    將站台地址資訊合併到 items（4G 或 5G）。（EAC 由 RMOD/SMOD 檔案另行處理）
     輸出：
       it["address"]  -> 第一個有地址的站之地址
-      it["eac"]      -> { 站台名: { "cells": [...], "smod": bool } }（僅有 EAC 的站）
+      it["addr"]     -> { 站台名: 地址 }
     """
     matched = 0
     for it in items:
@@ -163,7 +283,6 @@ def enrich_items(items, site_info, id_key):
         info_bucket = site_info.get(id_key, {}).get(bid, {})
         if not info_bucket:
             continue
-        eac_map = {}
         addr_map = {}
         addr = ""
         for st in (it.get("stations") or []):
@@ -174,28 +293,17 @@ def enrich_items(items, site_info, id_key):
                 addr_map[st] = entry["address"]
                 if not addr:
                     addr = entry["address"]
-            cells = entry.get("eac_cells") or []
-            smod = entry.get("eac_smod")
-            if cells or smod:
-                eac_map[st] = {"cells": list(dict.fromkeys(cells)), "smod": bool(smod)}
-        # 若站名對不上，但該 BTS 只有一筆資訊，則套用其地址/EAC(全站)
-        if not eac_map and not addr and len(info_bucket) == 1:
+        # 若站名對不上，但該 BTS 只有一筆資訊，則套用其地址(全站)
+        if not addr and len(info_bucket) == 1:
             only = list(info_bucket.values())[0]
             if only.get("address"):
                 addr = only["address"]
                 for st in (it.get("stations") or []):
                     addr_map[st] = only["address"]
-            if only.get("eac_cells") or only.get("eac_smod"):
-                # 套用到所有站
-                for st in (it.get("stations") or []):
-                    eac_map[st] = {"cells": list(dict.fromkeys(only.get("eac_cells") or [])),
-                                   "smod": bool(only.get("eac_smod"))}
         if addr:
             it["address"] = addr
         if addr_map:
             it["addr"] = addr_map
-        if eac_map:
-            it["eac"] = eac_map
             matched += 1
     return matched
 
@@ -357,14 +465,27 @@ if meter_rows:
             matched += 1
     print(f"  電號比對完成: {matched} 個站台有電號")
 
-# 站台.xlsx（地址 + EAC）
+# 站台.xlsx（地址）
 site_info = None
 site_files = glob.glob(os.path.join(BASE, "站台.xlsx"))
 if site_files:
     _, site_rows = load_rows_safe(site_files[0], "苗栗站台")
     site_info = build_site_info(site_rows)
     m4 = enrich_items(items4, site_info, "4g")
-    print(f"  站台.xlsx EAC 比對(4G): {m4} 個站台")
+    print(f"  站台.xlsx 地址比對(4G): {m4} 個站台")
+
+# RMOD/SMOD 外部告警
+eac_maps = None
+try:
+    eac_maps = build_eac_maps(EAC_FILES)
+    for k in ["rmod4", "smod4", "rmod5", "smod5"]:
+        print(f"  EAC 檔 {k}: {len(eac_maps[k])} 個基地台")
+except FileNotFoundError as e:
+    print("  EAC 檔: 未完整找到，略過", e)
+
+if eac_maps:
+    c4, s4 = apply_eac(items4, eac_maps, "rmod4", "smod4")
+    print(f"  RMOD 細胞標註(4G): {c4} 筆, SMOD 標註(4G): {s4} 個站台")
 
 js4 = "const STATION_DATA = " + json.dumps(items4, ensure_ascii=False, indent=1) + ";\n"
 with open(os.path.join(BASE, "data.js"), "w", encoding="utf-8") as f:
@@ -439,7 +560,11 @@ for r in bts5:
 
 if site_info:
     m5 = enrich_items(items5, site_info, "5g")
-    print(f"  站台.xlsx EAC 比對(5G): {m5} 個站台")
+    print(f"  站台.xlsx 地址比對(5G): {m5} 個站台")
+
+if eac_maps:
+    c5, s5 = apply_eac(items5, eac_maps, "rmod5", "smod5")
+    print(f"  RMOD 細胞標註(5G): {c5} 筆, SMOD 標註(5G): {s5} 個站台")
 
 js5 = "const STATION_DATA_5G = " + json.dumps(items5, ensure_ascii=False, indent=1) + ";\n"
 with open(os.path.join(BASE, "data5g.js"), "w", encoding="utf-8") as f:

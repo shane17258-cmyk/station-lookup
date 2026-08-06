@@ -196,6 +196,8 @@
     font-size: 12px;
     font-weight: 700;
     flex-shrink: 0;
+    max-width: 100%;
+    overflow-wrap: anywhere;
   }
   .station-bar .coord2 { font-size: 11px; color: #6b8aa8; margin-left: 4px; }
   .station-bar .toggle {
@@ -398,7 +400,7 @@
           return html;
         }
         const eacInfo = (item.eac && item.eac[station]) || null;
-        const eacCells = eacInfo ? (eacInfo.cells || []) : [];
+        const rmodCells = (eacInfo && eacInfo.rmod) ? eacInfo.rmod : {};
         groups.forEach(g => {
           html += '<div class="cell-sec">';
           html += '<div class="cell-sec-title">扇區 S' + g.sec + '</div>';
@@ -410,10 +412,11 @@
             const mapHref = hasCellCoord
               ? 'https://www.google.com/maps?q=' + c.lat + ',' + c.lon
               : (coord ? 'https://www.google.com/maps?q=' + coord.lat + ',' + coord.lon : '');
-            const isEac = eacCells.indexOf(String(c.cel)) !== -1;
+            const rAlarms = rmodCells[String(c.cel)];
+            const isEac = !!rAlarms;
             html += '<div class="cell-card"' + (isEac ? ' style="border-color:#efc1b8;background:#fff7f6;"' : '') + '>' +
               '<div class="c-id">' + idLabel + ' ' + c.cel + '</div>' +
-              (isEac ? '<div class="c-eac">外部告警</div>' : '') +
+              (isEac ? '<div class="c-eac">外部告警：' + rAlarms.join('、') + '</div>' : '') +
               '<div class="c-rmod">' + (c.rmod || '-') + '</div>' +
               '<div class="c-cov ' + covClass + '">' + cov + '</div>' +
               '<div class="c-meta">' +
@@ -449,7 +452,7 @@
             wrap.style.marginBottom = '6px';
 
             const addr = (item.addr && item.addr[s]) || '';
-            const eacSmod = (item.eac && item.eac[s] && item.eac[s].smod) ? true : false;
+            const smodAlarms = (item.smod && item.smod[s]) ? item.smod[s] : [];
 
             const bar = document.createElement('div');
             bar.className = 'station-bar';
@@ -457,7 +460,7 @@
               '<span class="num">' + (i + 1) + '</span>' +
               '<span class="s-name-inline">' + s + '</span>' +
               (addr ? '<span class="addr">' + addr + '</span>' : '') +
-              (eacSmod ? '<span class="eac-smod">外部告警設定於 SMOD</span>' : '') +
+              (smodAlarms.length ? '<span class="eac-smod">SMOD 外部告警：' + smodAlarms.join('、') + '</span>' : '') +
               (meters.length ? '<span class="meter">電號 ' + meters.join('、') + '</span>' : '') +
               (secs[i] ? '<span class="sec">' + secs[i] + '</span>' : '') +
               (coord ? '<span class="coord2">' + coord.lat + ', ' + coord.lon + '</span>' : '') +
