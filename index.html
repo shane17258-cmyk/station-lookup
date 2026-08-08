@@ -150,6 +150,19 @@
     flex-shrink: 0;
   }
   .station-bar .s-name-inline { font-weight: 700; word-break: break-all; }
+  .station-bar .lid {
+    display: inline-block;
+    background: #eef7ee;
+    color: #2e7d32;
+    border: 1px solid #b8dcc0;
+    border-radius: 12px;
+    padding: 1px 10px;
+    font-size: 12px;
+    font-weight: 700;
+    flex-shrink: 0;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
   .station-bar .sec {
     background: #fff;
     color: var(--primary);
@@ -453,12 +466,14 @@
 
             const addr = (item.addr && item.addr[s]) || '';
             const smodAlarms = (item.smod && item.smod[s]) ? item.smod[s] : [];
+            const lids = (item.lid && item.lid[s]) ? item.lid[s] : [];
 
             const bar = document.createElement('div');
             bar.className = 'station-bar';
             bar.innerHTML =
               '<span class="num">' + (i + 1) + '</span>' +
               '<span class="s-name-inline">' + s + '</span>' +
+              (lids.length ? '<span class="lid">LID ' + lids.join('、') + '</span>' : '') +
               (addr ? '<span class="addr">' + addr + '</span>' : '') +
               (smodAlarms.length ? '<span class="eac-smod">SMOD 外部告警：' + smodAlarms.join('、') + '</span>' : '') +
               (meters.length ? '<span class="meter">電號 ' + meters.join('、') + '</span>' : '') +

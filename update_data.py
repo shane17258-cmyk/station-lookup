@@ -169,16 +169,20 @@ def build_eac_maps(cfg):
             bid = g(id_col)
             name = g(name_col)
             desc = g("Description")
+            lid = g("Cell_LID")
             if not bid or not name or not desc:
                 continue
+            entry = bucket.setdefault(bid, {}).setdefault(name, {})
+            if lid:
+                entry.setdefault("lids", []).append(lid)
             if is_rmod:
                 cell, alarm = parse_cell_desc(desc)
                 if cell is None:
                     continue  # RM 描述無 Cell 編號則略過
-                d = bucket.setdefault(bid, {}).setdefault(name, {}).setdefault("rmod", {})
+                d = entry.setdefault("rmod", {})
                 d.setdefault(cell, []).append(alarm)
             else:
-                d = bucket.setdefault(bid, {}).setdefault(name, {}).setdefault("smod", [])
+                d = entry.setdefault("smod", [])
                 d.append(desc)
         maps[key] = bucket
     return maps
@@ -197,6 +201,7 @@ def apply_eac(items, eac_maps, key_rmod, key_smod):
     輸出：
       it["eac"]     -> { 站台名: { "rmod": {cell_num: [告警...]} } }（RMOD，細胞階層）
       it["smod"]    -> { 站台名: [告警...] }（SMOD，站台階層）
+      it["lid"]     -> { 站台名: [Cell_LID, ...] }（LID，站台階層）
     比對：以 id 精確 + 名稱模糊包含。
     """
     rmod = eac_maps.get(key_rmod, {})
@@ -209,24 +214,28 @@ def apply_eac(items, eac_maps, key_rmod, key_smod):
         smod_bucket = smod.get(bid, {})
         if smod_bucket:
             # SMOD 為站台階層：任一欄位比對成功即套用到整個 item 的所有站
-            hit_all = set()
             site_hit = False
+            hit_all = set()
             for name_key, listed in smod_bucket.items():
                 target = match_any_name(name_key, it)
                 if target is None:
                     continue
-                alarm_list = list(dict.fromkeys(listed.get("smod", [])))
                 if target == (it.get("siteName")):
                     site_hit = True
                 else:
                     hit_all.add(target)
             site_alarms = set()
+            site_lids = set()
             for name_key, listed in smod_bucket.items():
                 site_alarms.update(listed.get("smod", []))
+                site_lids.update(listed.get("lids", []))
             site_alarms = list(dict.fromkeys(site_alarms))
+            site_lids = list(dict.fromkeys(site_lids))
             # SMOD 站台層級：套用至 item 的所有 station
             for st in (it.get("stations") or []):
-                it.setdefault("smod", {})[st] = site_alarms
+                it.setdefault("smod", {})[st] = list(site_alarms)
+                if site_lids:
+                    it.setdefault("lid", {}).setdefault(st, []).extend(site_lids)
         # RMOD：以 CellName/SiteName 比對站台
         rmod_bucket = rmod.get(bid, {})
         for name_key, sub in rmod_bucket.items():
@@ -235,7 +244,14 @@ def apply_eac(items, eac_maps, key_rmod, key_smod):
                 continue
             rmod_cells = sub.get("rmod", {})
             it.setdefault("eac", {}).setdefault(target, {})["rmod"] = {k: list(dict.fromkeys(v)) for k, v in rmod_cells.items()}
+            lid_list = sub.get("lids", [])
+            if lid_list:
+                it.setdefault("lid", {}).setdefault(target, []).extend(lid_list)
             matched_cell += 1
+        # 去重 LID
+        if it.get("lid"):
+            for st, lids in it["lid"].items():
+                it["lid"][st] = list(dict.fromkeys(lids))
         if smod_bucket and it.get("stations"):
             matched_smod += 1
     return matched_cell, matched_smod
