@@ -526,13 +526,19 @@
         '<div class="photo-title">站台照片</div>' +
         '<div class="photo-grid"></div>' +
         '<div class="photo-actions">' +
-        '<span class="upload-btn">📷 上傳照片<input type="file" accept="image/*" multiple hidden></span>' +
+        '<label class="upload-btn">📷 上傳照片<input type="file" accept="image/*" multiple hidden></label>' +
         '<span class="photo-hint">照片將存入 OneDrive「站台照片/' + escapeHtml(station) + '/」</span>' +
         '<span class="photo-status"></span>' +
         '</div>';
       const gridEl = el.querySelector('.photo-grid');
       const statusEl = el.querySelector('.photo-status');
       const inputEl = el.querySelector('input[type=file]');
+      const btnEl = el.querySelector('.upload-btn');
+      if (btnEl) {
+        btnEl.addEventListener('click', (ev) => {
+          if (ev.target !== inputEl) { ev.preventDefault(); inputEl.click(); }
+        });
+      }
       attachPhotoUpload(station, inputEl, gridEl, statusEl);
       loadPhotos(station, gridEl, statusEl);
       return el;
