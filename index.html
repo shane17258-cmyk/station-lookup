@@ -236,6 +236,68 @@
   }
   .station-bar .mapbtn:hover { background: #fdf0ee; }
 
+  .photo-area {
+    margin-top: 6px;
+    margin-left: 30px;
+    background: #fbfcfd;
+    border: 1px solid #e2ecf4;
+    border-radius: 12px;
+    padding: 10px;
+  }
+  .photo-area .photo-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin-bottom: 8px;
+  }
+  .photo-area .photo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .photo-area .photo-grid img {
+    width: 76px;
+    height: 76px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #d5e2ee;
+    background: #eef4f9;
+  }
+  .photo-area .photo-grid a.photo-more {
+    width: 76px;
+    height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px dashed #b9cfe3;
+    border-radius: 8px;
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .photo-area .photo-empty {
+    font-size: 12px;
+    color: #8ba0b4;
+  }
+  .photo-area .photo-actions { margin-top: 8px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+  .photo-area .upload-btn {
+    display: inline-block;
+    background: #eaf3fb;
+    color: var(--primary);
+    border: 1px solid #bfd8ec;
+    border-radius: 12px;
+    padding: 3px 12px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    user-select: none;
+  }
+  .photo-area .upload-btn:hover { background: #dcebf8; }
+  .photo-area .photo-hint { font-size: 11px; color: #8ba0b4; }
+  .photo-area .photo-status { font-size: 12px; color: #2e7d32; font-weight: 700; }
+  .photo-area .photo-status.err { color: #c0392b; }
+
   .detail {
     display: none;
     margin-top: 6px;
@@ -379,6 +441,108 @@
   <script src="data.js"></script>
   <script src="data5g.js"></script>
   <script>
+    // ============ 站台照片（本機照片伺服器） ============
+    // 照片伺服器網址。改用自己的網址（如之後改 Graph 代理）時可在這裡設定。
+    const PHOTO_SERVER = window.PHOTO_SERVER || 'http://localhost:8000';
+
+    function photoApi(station, path) {
+      return PHOTO_SERVER + path + '?station=' + encodeURIComponent(station);
+    }
+
+    async function loadPhotos(station, gridEl, statusEl) {
+      try {
+        const res = await fetch(photoApi(station, '/api/photos'));
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const data = await res.json();
+        renderPhotos(station, data.photos || [], gridEl);
+        if (statusEl) { statusEl.textContent = ''; statusEl.className = 'photo-status'; }
+      } catch (e) {
+        gridEl.innerHTML = '';
+        if (statusEl) {
+          statusEl.textContent = '⚠ 無法連線照片伺服器（請在本機執行 照片伺服器.bat）';
+          statusEl.className = 'photo-status err';
+        }
+      }
+    }
+
+    function renderPhotos(station, photos, gridEl) {
+      if (!photos.length) {
+        gridEl.innerHTML = '<div class="photo-empty">尚無照片</div>';
+        return;
+      }
+      const shown = photos.slice(0, 12);
+      const rest = photos.length - shown.length;
+      gridEl.innerHTML = '';
+      shown.forEach(p => {
+        const a = document.createElement('a');
+        a.href = PHOTO_SERVER + p.url;
+        a.target = '_blank';
+        a.rel = 'noopener';
+        const img = document.createElement('img');
+        img.src = PHOTO_SERVER + p.url;
+        img.alt = p.name;
+        img.loading = 'lazy';
+        a.appendChild(img);
+        gridEl.appendChild(a);
+      });
+      if (rest > 0) {
+        const a = document.createElement('a');
+        a.className = 'photo-more';
+        a.href = PHOTO_SERVER + '/api/photos?station=' + encodeURIComponent(station);
+        a.target = '_blank';
+        a.rel = 'noopener';
+        a.textContent = '+' + rest;
+        gridEl.appendChild(a);
+      }
+    }
+
+    function attachPhotoUpload(station, inputEl, gridEl, statusEl) {
+      inputEl.addEventListener('change', async () => {
+        const files = Array.from(inputEl.files || []);
+        if (!files.length) return;
+        statusEl.textContent = '上傳中…';
+        statusEl.className = 'photo-status';
+        const fd = new FormData();
+        files.forEach(f => fd.append('files', f));
+        try {
+          const res = await fetch(photoApi(station, '/api/upload'), { method: 'POST', body: fd });
+          const data = await res.json();
+          if (!data.ok) throw new Error(data.error || '上傳失敗');
+          statusEl.textContent = '已上傳 ' + data.saved.length + ' 張';
+          statusEl.className = 'photo-status';
+          inputEl.value = '';
+          loadPhotos(station, gridEl, statusEl);
+        } catch (e) {
+          statusEl.textContent = '⚠ 上傳失敗：' + e.message;
+          statusEl.className = 'photo-status err';
+        }
+      });
+    }
+
+    function createPhotoArea(station) {
+      const el = document.createElement('div');
+      el.className = 'photo-area';
+      el.innerHTML =
+        '<div class="photo-title">站台照片</div>' +
+        '<div class="photo-grid"></div>' +
+        '<div class="photo-actions">' +
+        '<span class="upload-btn">📷 上傳照片<input type="file" accept="image/*" multiple hidden></span>' +
+        '<span class="photo-hint">照片將存入 OneDrive「站台照片/' + escapeHtml(station) + '/」</span>' +
+        '<span class="photo-status"></span>' +
+        '</div>';
+      const gridEl = el.querySelector('.photo-grid');
+      const statusEl = el.querySelector('.photo-status');
+      const inputEl = el.querySelector('input[type=file]');
+      attachPhotoUpload(station, inputEl, gridEl, statusEl);
+      loadPhotos(station, gridEl, statusEl);
+      return el;
+    }
+
+    function escapeHtml(s) {
+      return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
     function createNetController(cfg) {
       const {
         data, idInput, idList, result, outName, outStations, outMeta,
@@ -483,6 +647,8 @@
               (coord ? '<a class="mapbtn" target="_blank" rel="noopener" href="https://www.google.com/maps?q=' +
                 coord.lat + ',' + coord.lon + '">Google 地圖</a>' : '');
             wrap.appendChild(bar);
+
+            wrap.appendChild(createPhotoArea(s));
 
             if (cells.length) {
               const detail = document.createElement('div');
