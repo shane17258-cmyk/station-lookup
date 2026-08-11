@@ -654,7 +654,9 @@
                 coord.lat + ',' + coord.lon + '">Google 地圖</a>' : '');
             wrap.appendChild(bar);
 
-            wrap.appendChild(createPhotoArea(s));
+            if (item.town === '苗栗市') {
+              wrap.appendChild(createPhotoArea(s));
+            }
 
             if (cells.length) {
               const detail = document.createElement('div');

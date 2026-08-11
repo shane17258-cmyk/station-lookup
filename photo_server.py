@@ -302,6 +302,46 @@ def drive_file_thumbnail(file_id):
 
 # ── 站台照片邏輯 ──────────────────────────────────────────────
 
+ALLOWED_TOWN = "苗栗市"  # 僅此鄉鎮的站台可使用照片功能
+
+
+def load_allowed_stations():
+    """從 data.js / data5g.js 收集「苗栗市」的站台名集合。"""
+    allowed = set()
+    for name in ("data.js", "data5g.js"):
+        path = os.path.join(BASE, name)
+        if not os.path.isfile(path):
+            continue
+        try:
+            with open(path, "r", encoding="utf-8") as f:
+                text = f.read()
+            marker = "="
+            raw = text.split(marker, 1)[1].strip()
+            data = json.loads(raw.rstrip(";").strip())
+            for item in data:
+                if (item.get("town") or "").strip() == ALLOWED_TOWN:
+                    for st in (item.get("stations") or []):
+                        allowed.add(sanitize_station(st))
+        except Exception:
+            continue
+    return allowed
+
+
+_ALLOWED_STATIONS = None
+
+
+def refresh_allowed_stations():
+    global _ALLOWED_STATIONS
+    _ALLOWED_STATIONS = load_allowed_stations()
+
+
+def is_allowed_station(station):
+    """站台是否允許照片功能（僅苗栗市）。"""
+    if _ALLOWED_STATIONS is None:
+        refresh_allowed_stations()
+    return sanitize_station(station) in _ALLOWED_STATIONS
+
+
 def sanitize_station(name):
     name = (name or "").strip()
     cleaned = re.sub(r'[\\/:*?"<>|\x00-\x1f]', "_", name)
@@ -327,6 +367,8 @@ def get_station_folder_id(station):
 
 def list_photos(station):
     """回傳 [{name, url, id}]，依檔名排序。"""
+    if not is_allowed_station(station):
+        return []
     try:
         folder_id = get_station_folder_id(station)
     except Exception:
@@ -346,12 +388,16 @@ def list_photos(station):
 
 def upload_photo(station, filename, data):
     """上傳照片到 Drive，回傳檔名。"""
+    if not is_allowed_station(station):
+        raise PermissionError("此站台不開放照片功能（僅苗栗市站台可用）")
     folder_id = get_station_folder_id(station)
     return drive_upload_file(folder_id, filename, data)
 
 
 def download_photo(station, filename):
     """從 Drive 下載照片 bytes，回傳 bytes 或 None。"""
+    if not is_allowed_station(station):
+        return None
     try:
         folder_id = get_station_folder_id(station)
     except Exception:
@@ -512,6 +558,9 @@ class Handler(BaseHTTPRequestHandler):
         token = get_valid_token()
         if not token:
             self._send_json({"ok": False, "error": "未授權，請先執行授權流程"}, 401)
+            return
+        if not is_allowed_station(station):
+            self._send_json({"ok": False, "error": "此站台不開放照片功能（僅苗栗市站台可用）"}, 403)
             return
 
         ctype = self.headers.get("Content-Type", "")

@@ -3,6 +3,7 @@ const STATION_DATA_5G = [
   "id": "4611480",
   "siteName": "苗栗中央N17苗栗忠孝龍岡",
   "siteNameCV": "苗栗中央N17苗栗忠孝龍岡",
+  "town": "苗栗市",
   "sec": "s1/2/3_s4",
   "secs": [
    "s1/2/3",
@@ -116,6 +117,7 @@ const STATION_DATA_5G = [
   "id": "4611481",
   "siteName": "竹南造橋N01造橋亞東外環",
   "siteNameCV": "竹南造橋N01造橋亞東外環",
+  "town": "造橋鄉",
   "sec": "s1_s4/5",
   "secs": [
    "s1",
@@ -231,6 +233,7 @@ const STATION_DATA_5G = [
   "id": "4611487",
   "siteName": "竹南頭份N02頭份成功大亨",
   "siteNameCV": "竹南頭份N02頭份成功大亨",
+  "town": "頭份市",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -388,6 +391,7 @@ const STATION_DATA_5G = [
   "id": "4611489",
   "siteName": "頭份信德",
   "siteNameCV": "頭份信德",
+  "town": "頭份市",
   "sec": "s1/3",
   "secs": [
    "s1/3"
@@ -451,10 +455,10 @@ const STATION_DATA_5G = [
   "ranType": "D-RAN",
   "smod": {
    "頭份信德": [
+    "ACPower",
     "Door",
     "Fire",
-    "Temperature",
-    "ACPower"
+    "Temperature"
    ]
   },
   "lid": {
@@ -467,6 +471,7 @@ const STATION_DATA_5G = [
   "id": "4611660",
   "siteName": "竹南大埔N21竹南大埔",
   "siteNameCV": "竹南大埔N21竹南大埔",
+  "town": "竹南鎮",
   "sec": "s2/3_s4/5/6",
   "secs": [
    "s2/3",
@@ -605,6 +610,7 @@ const STATION_DATA_5G = [
   "id": "4611662",
   "siteName": "苗栗公館N25公館無界創新",
   "siteNameCV": "苗栗公館N25公館無界創新",
+  "town": "公館鄉",
   "sec": "s1/2/3_s5/6",
   "secs": [
    "s1/2/3",
@@ -743,6 +749,7 @@ const STATION_DATA_5G = [
   "id": "4611666",
   "siteName": "苗栗後龍N11後龍校椅二路",
   "siteNameCV": "苗栗後龍N11後龍校椅二路",
+  "town": "後龍鎮",
   "sec": "s1/2/3",
   "secs": [
    "s1/2/3"
@@ -850,6 +857,7 @@ const STATION_DATA_5G = [
   "id": "4611669",
   "siteName": "竹南復興N16竹南中美",
   "siteNameCV": "竹南復興N16竹南中美",
+  "town": "竹南鎮",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -1037,6 +1045,7 @@ const STATION_DATA_5G = [
   "id": "4612604",
   "siteName": "竹南復興N14竹南毅和",
   "siteNameCV": "竹南復興N14竹南毅和",
+  "town": "竹南鎮",
   "sec": "s2/3",
   "secs": [
    "s2/3"
@@ -1106,6 +1115,7 @@ const STATION_DATA_5G = [
   "id": "4612605",
   "siteName": "竹南大埔N18竹南羅門哈斯",
   "siteNameCV": "竹南大埔N18竹南羅門哈斯",
+  "town": "竹南鎮",
   "sec": "s1/2/3_s5/6",
   "secs": [
    "s1/2/3",
@@ -1233,6 +1243,7 @@ const STATION_DATA_5G = [
   "id": "4612606",
   "siteName": "苗栗中央N27苗栗國馨",
   "siteNameCV": "苗栗中央N27苗栗國馨",
+  "town": "苗栗市",
   "sec": "s1/3_s4/6",
   "secs": [
    "s1/3",
@@ -1349,6 +1360,7 @@ const STATION_DATA_5G = [
   "id": "4612616",
   "siteName": "竹南復興N10竹南海口保福",
   "siteNameCV": "竹南復興N10竹南海口保福",
+  "town": "竹南鎮",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -1536,6 +1548,7 @@ const STATION_DATA_5G = [
   "id": "4612622",
   "siteName": "竹南頭份N26頭份上庄",
   "siteNameCV": "竹南頭份N26頭份上庄",
+  "town": "頭份市",
   "sec": "s1/2/3",
   "secs": [
    "s1/2/3"
@@ -1621,6 +1634,7 @@ const STATION_DATA_5G = [
   "id": "4612623",
   "siteName": "竹南頭份N10頭份復興",
   "siteNameCV": "竹南頭份N10頭份復興",
+  "town": "頭份市",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -1772,6 +1786,7 @@ const STATION_DATA_5G = [
   "id": "4612633",
   "siteName": "竹南頭份N36頭份斗煥",
   "siteNameCV": "竹南頭份N36頭份斗煥",
+  "town": "頭份市",
   "sec": "s4/5/6",
   "secs": [
    "s4/5/6"
@@ -1860,6 +1875,7 @@ const STATION_DATA_5G = [
   "id": "4612639",
   "siteName": "苗栗公館N31公館出礦枝RH9",
   "siteNameCV": "苗栗公館N31公館出礦枝RH9",
+  "town": "公館鄉",
   "sec": "s6_s7_s8_s9",
   "secs": [
    "s6",
@@ -1971,6 +1987,7 @@ const STATION_DATA_5G = [
   "id": "4612646",
   "siteName": "苗栗後龍N12後龍捲煙廠",
   "siteNameCV": "苗栗後龍N12後龍捲煙廠",
+  "town": "後龍鎮",
   "sec": "s1/2/3",
   "secs": [
    "s1/2/3"
@@ -2056,6 +2073,7 @@ const STATION_DATA_5G = [
   "id": "4612648",
   "siteName": "竹南大埔N15竹南群豐",
   "siteNameCV": "竹南大埔N15竹南群豐",
+  "town": "竹南鎮",
   "sec": "s1/2_s3_s4/5/6_s7/8/9",
   "secs": [
    "s1/2",
@@ -2304,6 +2322,7 @@ const STATION_DATA_5G = [
   "id": "4612651",
   "siteName": "苗栗後龍N18後龍柳樹灣RH3",
   "siteNameCV": "苗栗後龍N18後龍柳樹灣RH3",
+  "town": "後龍鎮",
   "sec": "s1/2/3_s4_s5_s6",
   "secs": [
    "s1/2/3",
@@ -2461,6 +2480,7 @@ const STATION_DATA_5G = [
   "id": "4612760",
   "siteName": "苗栗中央N26苗栗台糖宿舍",
   "siteNameCV": "苗栗中央N26苗栗台糖宿舍",
+  "town": "苗栗市",
   "sec": "s1/2/3_s4/5/6_s7",
   "secs": [
    "s1/2/3",
@@ -2632,6 +2652,7 @@ const STATION_DATA_5G = [
   "id": "4612782",
   "siteName": "苗栗中央N14苗栗民族",
   "siteNameCV": "苗栗中央N14苗栗民族",
+  "town": "苗栗市",
   "sec": "s1/2_s4/5/6",
   "secs": [
    "s1/2",
@@ -2773,6 +2794,7 @@ const STATION_DATA_5G = [
   "id": "4612938",
   "siteName": "竹南復興N18竹南新生",
   "siteNameCV": "竹南復興N18竹南新生",
+  "town": "竹南鎮",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -2914,6 +2936,7 @@ const STATION_DATA_5G = [
   "id": "4612939",
   "siteName": "竹南復興N19竹南龍山龍昇",
   "siteNameCV": "竹南復興N19竹南龍山龍昇",
+  "town": "竹南鎮",
   "sec": "s1/2/3/4_s7/8/9",
   "secs": [
    "s1/2/3/4",
@@ -3081,6 +3104,7 @@ const STATION_DATA_5G = [
   "id": "4613003",
   "siteName": "竹南竹南N18頭份東庄八德",
   "siteNameCV": "竹南竹南N18頭份東庄八德",
+  "town": "頭份市",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -3232,6 +3256,7 @@ const STATION_DATA_5G = [
   "id": "4613004",
   "siteName": "竹南頭份N25頭份尚順",
   "siteNameCV": "竹南頭份N25頭份尚順",
+  "town": "頭份市",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -3376,6 +3401,7 @@ const STATION_DATA_5G = [
   "id": "4613005",
   "siteName": "竹南竹南N19頭份東田",
   "siteNameCV": "竹南竹南N19頭份東田",
+  "town": "頭份市",
   "sec": "s4/5/6",
   "secs": [
    "s4/5/6"
@@ -3447,6 +3473,7 @@ const STATION_DATA_5G = [
   "id": "4613009",
   "siteName": "苗栗中央N28苗栗大千碧英",
   "siteNameCV": "苗栗中央N28苗栗大千碧英",
+  "town": "苗栗市",
   "sec": "s1/2/3_s5/6_s7",
   "secs": [
    "s1/2/3",
@@ -3601,6 +3628,7 @@ const STATION_DATA_5G = [
   "id": "4613010",
   "siteName": "苗栗中央N29苗栗山海樂活",
   "siteNameCV": "苗栗中央N29苗栗山海樂活",
+  "town": "苗栗市",
   "sec": "s1/2_s4_s5_s6",
   "secs": [
    "s1/2",
@@ -3767,6 +3795,7 @@ const STATION_DATA_5G = [
   "id": "4613011",
   "siteName": "竹南頭份N27頭份建國永安",
   "siteNameCV": "竹南頭份N27頭份建國永安",
+  "town": "頭份市",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -3921,6 +3950,7 @@ const STATION_DATA_5G = [
   "id": "4613015",
   "siteName": "苗栗中央N36苗栗府前至公",
   "siteNameCV": "苗栗中央N36苗栗府前至公",
+  "town": "苗栗市",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -4072,6 +4102,7 @@ const STATION_DATA_5G = [
   "id": "4613016",
   "siteName": "竹南頭份N29頭份上坪",
   "siteNameCV": "竹南頭份N29頭份上坪",
+  "town": "頭份市",
   "sec": "s1/2_s5/6",
   "secs": [
    "s1/2",
@@ -4191,6 +4222,7 @@ const STATION_DATA_5G = [
   "id": "4613060",
   "siteName": "竹南復興N21竹南建國",
   "siteNameCV": "竹南復興N21竹南建國",
+  "town": "竹南鎮",
   "sec": "s1/2/3",
   "secs": [
    "s1/2/3"
@@ -4276,6 +4308,7 @@ const STATION_DATA_5G = [
   "id": "4613064",
   "siteName": "竹南大埔N25竹南北戶",
   "siteNameCV": "竹南大埔N25竹南北戶",
+  "town": "竹南鎮",
   "sec": "s1/2/3",
   "secs": [
    "s1/2/3"
@@ -4361,6 +4394,7 @@ const STATION_DATA_5G = [
   "id": "4613070",
   "siteName": "苗栗公館N27公館玉泉二",
   "siteNameCV": "苗栗公館N27公館玉泉二",
+  "town": "公館鄉",
   "sec": "s1/2/3",
   "secs": [
    "s1/2/3"
@@ -4446,6 +4480,7 @@ const STATION_DATA_5G = [
   "id": "4613075",
   "siteName": "竹南竹南N20頭份京元",
   "siteNameCV": "竹南竹南N20頭份京元",
+  "town": "頭份市",
   "sec": "s1/4/5/6/7",
   "secs": [
    "s1/4/5/6/7"
@@ -4563,6 +4598,7 @@ const STATION_DATA_5G = [
   "id": "4613077",
   "siteName": "竹南大埔N26竹南聯合環球",
   "siteNameCV": "竹南大埔N26竹南聯合環球",
+  "town": "竹南鎮",
   "sec": "s1/2/3/4",
   "secs": [
    "s1/2/3/4"
@@ -4664,6 +4700,7 @@ const STATION_DATA_5G = [
   "id": "4613100",
   "siteName": "苗栗中央N41苗栗文觀局",
   "siteNameCV": "苗栗中央N41苗栗文觀局",
+  "town": "苗栗市",
   "sec": "s2/3",
   "secs": [
    "s2/3"
@@ -4719,6 +4756,7 @@ const STATION_DATA_5G = [
   "id": "4613463",
   "siteName": "竹南頭份N03頭份東庄",
   "siteNameCV": "竹南頭份N03頭份東庄",
+  "town": "頭份市",
   "sec": "s1/2_s4/5",
   "secs": [
    "s1/2",
@@ -4814,6 +4852,7 @@ const STATION_DATA_5G = [
   "id": "4613465",
   "siteName": "苗栗後龍N09後龍武德",
   "siteNameCV": "苗栗後龍N09後龍武德",
+  "town": "後龍鎮",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -4988,6 +5027,7 @@ const STATION_DATA_5G = [
   "id": "4613468",
   "siteName": "苗栗公館N13公館大同",
   "siteNameCV": "苗栗公館N13公館大同",
+  "town": "公館鄉",
   "sec": "s1/2/3",
   "secs": [
    "s1/2/3"
@@ -5109,6 +5149,7 @@ const STATION_DATA_5G = [
   "id": "4613481",
   "siteName": "竹南大埔N19竹南和仁新",
   "siteNameCV": "竹南大埔N19竹南和仁新",
+  "town": "竹南鎮",
   "sec": "s1/2/3",
   "secs": [
    "s1/2/3"
@@ -5197,6 +5238,7 @@ const STATION_DATA_5G = [
   "id": "4613485",
   "siteName": "苗栗後龍N07後龍北龍",
   "siteNameCV": "苗栗後龍N07後龍北龍",
+  "town": "後龍鎮",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -5351,6 +5393,7 @@ const STATION_DATA_5G = [
   "id": "4613486",
   "siteName": "竹南竹南N02竹南山佳",
   "siteNameCV": "竹南竹南N02竹南山佳",
+  "town": "竹南鎮",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -5571,6 +5614,7 @@ const STATION_DATA_5G = [
   "id": "4613487",
   "siteName": "苗栗嘉盛N08苗栗嘉惠新村",
   "siteNameCV": "苗栗嘉盛N08苗栗嘉惠新村",
+  "town": "苗栗市",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -5703,6 +5747,7 @@ const STATION_DATA_5G = [
   "id": "4613704",
   "siteName": "竹南大西N05造橋木博館",
   "siteNameCV": "竹南大西N05造橋木博館",
+  "town": "造橋鄉",
   "sec": "s2/3_s4/5/6",
   "secs": [
    "s2/3",
@@ -5838,6 +5883,7 @@ const STATION_DATA_5G = [
   "id": "4613706",
   "siteName": "竹南南庄N02南庄東河",
   "siteNameCV": "竹南南庄N02南庄東河",
+  "town": "南庄鄉",
   "sec": "s1/2/3_s5/6",
   "secs": [
    "s1/2/3",
@@ -5979,6 +6025,7 @@ const STATION_DATA_5G = [
   "id": "4613711",
   "siteName": "苗栗西湖N04後龍南港",
   "siteNameCV": "苗栗西湖N04後龍南港",
+  "town": "後龍鎮",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -6136,6 +6183,7 @@ const STATION_DATA_5G = [
   "id": "4613712",
   "siteName": "頭份珊瑚",
   "siteNameCV": "頭份珊瑚",
+  "town": "頭份市",
   "sec": "s1/3",
   "secs": [
    "s1/3"
@@ -6188,10 +6236,10 @@ const STATION_DATA_5G = [
   "ranType": "D-RAN",
   "smod": {
    "頭份珊瑚": [
-    "Door",
+    "ACPower",
     "Fire",
-    "Temperature",
-    "ACPower"
+    "Door",
+    "Temperature"
    ]
   },
   "lid": {
@@ -6204,6 +6252,7 @@ const STATION_DATA_5G = [
   "id": "4613713",
   "siteName": "苗栗中央N03苗栗地檢署",
   "siteNameCV": "苗栗中央N03苗栗地檢署",
+  "town": "苗栗市",
   "sec": "s1/2/3_s4/5_s6",
   "secs": [
    "s1/2/3",
@@ -6393,6 +6442,7 @@ const STATION_DATA_5G = [
   "id": "4613717",
   "siteName": "竹南復興N13竹南龍鳳漁港",
   "siteNameCV": "竹南復興N13竹南龍鳳漁港",
+  "town": "竹南鎮",
   "sec": "s4/5",
   "secs": [
    "s4/5"
@@ -6468,6 +6518,7 @@ const STATION_DATA_5G = [
   "id": "4613721",
   "siteName": "苗栗公館N01公館館南一",
   "siteNameCV": "苗栗公館N01公館館南一",
+  "town": "公館鄉",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -6625,13 +6676,13 @@ const STATION_DATA_5G = [
   "ranType": "C-RAN",
   "smod": {
    "苗栗公館N01公館公館": [
-    "Fire",
     "AC Power",
+    "Fire",
     "Temperature"
    ],
    "苗栗公館N01公館館南一": [
-    "Fire",
     "AC Power",
+    "Fire",
     "Temperature"
    ]
   },
@@ -6657,6 +6708,7 @@ const STATION_DATA_5G = [
   "id": "4613725",
   "siteName": "竹南南庄N05南庄鹿場",
   "siteNameCV": "竹南南庄N05南庄鹿場",
+  "town": "南庄鄉",
   "sec": "s1/2_s4/5",
   "secs": [
    "s1/2",
@@ -6782,6 +6834,7 @@ const STATION_DATA_5G = [
   "id": "4613726",
   "siteName": "苗栗公館N17公館福星",
   "siteNameCV": "苗栗公館N17公館福星",
+  "town": "公館鄉",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -6938,6 +6991,7 @@ const STATION_DATA_5G = [
   "id": "4613731",
   "siteName": "苗栗嘉盛N01苗栗為公",
   "siteNameCV": "苗栗嘉盛N01苗栗為公",
+  "town": "苗栗市",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -7130,6 +7184,7 @@ const STATION_DATA_5G = [
   "id": "4613735",
   "siteName": "苗栗公館N06公館竹巷",
   "siteNameCV": "苗栗公館N06公館竹巷",
+  "town": "公館鄉",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -7274,6 +7329,7 @@ const STATION_DATA_5G = [
   "id": "4613736",
   "siteName": "苗栗中央N04苗栗新東",
   "siteNameCV": "苗栗中央N04苗栗新東",
+  "town": "苗栗市",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -7466,6 +7522,7 @@ const STATION_DATA_5G = [
   "id": "4613738",
   "siteName": "苗栗中央N10苗栗西山",
   "siteNameCV": "苗栗中央N10苗栗西山",
+  "town": "苗栗市",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -7615,6 +7672,7 @@ const STATION_DATA_5G = [
   "id": "4613740",
   "siteName": "苗栗後龍N01後龍仁德",
   "siteNameCV": "苗栗後龍N01後龍仁德",
+  "town": "後龍鎮",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -7802,6 +7860,7 @@ const STATION_DATA_5G = [
   "id": "4613741",
   "siteName": "苗栗大山N01後龍東明",
   "siteNameCV": "苗栗大山N01後龍東明",
+  "town": "後龍鎮",
   "sec": "s1/2/3/4_s7/8/9",
   "secs": [
    "s1/2/3/4",
@@ -7942,15 +8001,15 @@ const STATION_DATA_5G = [
   "ranType": "C-RAN",
   "smod": {
    "苗栗大山N01後龍大山": [
+    "AC Power",
     "Door",
     "Fire",
-    "AC Power",
     "Temperature"
    ],
    "苗栗大山N01後龍東明": [
+    "AC Power",
     "Door",
     "Fire",
-    "AC Power",
     "Temperature"
    ]
   },
@@ -7976,6 +8035,7 @@ const STATION_DATA_5G = [
   "id": "4613745",
   "siteName": "苗栗後龍N02後龍十班坑",
   "siteNameCV": "苗栗後龍N02後龍十班坑",
+  "town": "後龍鎮",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -8193,6 +8253,7 @@ const STATION_DATA_5G = [
   "id": "4613753",
   "siteName": "竹南大埔N10竹南擎雷RH",
   "siteNameCV": "竹南大埔N10竹南擎雷RH",
+  "town": "竹南鎮",
   "sec": "s1/2_s6/7",
   "secs": [
    "s1/2",
@@ -8305,6 +8366,7 @@ const STATION_DATA_5G = [
   "id": "4613755",
   "siteName": "竹南大西N01頭份崇佛寺",
   "siteNameCV": "竹南大西N01頭份崇佛寺",
+  "town": "頭份市",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -8498,6 +8560,7 @@ const STATION_DATA_5G = [
   "id": "4613756",
   "siteName": "竹南竹南N04竹南佳興公義",
   "siteNameCV": "竹南竹南N04竹南佳興公義",
+  "town": "竹南鎮",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -8647,6 +8710,7 @@ const STATION_DATA_5G = [
   "id": "4613757",
   "siteName": "竹南大西N03頭份高隧五南",
   "siteNameCV": "竹南大西N03頭份高隧五南",
+  "town": "頭份市",
   "sec": "s1/2/3_s5/6",
   "secs": [
    "s1/2/3",
@@ -8809,6 +8873,7 @@ const STATION_DATA_5G = [
   "id": "4613761",
   "siteName": "竹南頭份N20頭份立德",
   "siteNameCV": "竹南頭份N20頭份立德",
+  "town": "頭份市",
   "sec": "s2/3_s4/5/6",
   "secs": [
    "s2/3",
@@ -8944,6 +9009,7 @@ const STATION_DATA_5G = [
   "id": "4613762",
   "siteName": "竹南竹南N03頭份尖下",
   "siteNameCV": "竹南竹南N03頭份尖下",
+  "town": "頭份市",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -9101,6 +9167,7 @@ const STATION_DATA_5G = [
   "id": "4613763",
   "siteName": "竹南頭份N24頭份億家具",
   "siteNameCV": "竹南頭份N24頭份億家具",
+  "town": "頭份市",
   "sec": "s1/3_s4/5/6",
   "secs": [
    "s1/3",
@@ -9238,6 +9305,7 @@ const STATION_DATA_5G = [
   "id": "4613766",
   "siteName": "苗栗中央N01苗栗恭敬",
   "siteNameCV": "苗栗中央N01苗栗恭敬",
+  "town": "苗栗市",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -9432,6 +9500,7 @@ const STATION_DATA_5G = [
   "id": "4613767",
   "siteName": "竹南大埔N03竹南大埔九",
   "siteNameCV": "竹南大埔N03竹南大埔九",
+  "town": "竹南鎮",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -9586,6 +9655,7 @@ const STATION_DATA_5G = [
   "id": "4613775",
   "siteName": "竹南竹南N12造橋東陶",
   "siteNameCV": "竹南竹南N12造橋東陶",
+  "town": "造橋鄉",
   "sec": "s1/2/3",
   "secs": [
    "s1/2/3"
@@ -9671,6 +9741,7 @@ const STATION_DATA_5G = [
   "id": "4613780",
   "siteName": "竹南三灣N01三灣大河",
   "siteNameCV": "竹南三灣N01三灣大河",
+  "town": "三灣鄉",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -9847,6 +9918,7 @@ const STATION_DATA_5G = [
   "id": "4613799",
   "siteName": "苗栗嘉盛N10苗栗栗華",
   "siteNameCV": "苗栗嘉盛N10苗栗栗華",
+  "town": "苗栗市",
   "sec": "s1/2/3/4",
   "secs": [
    "s1/2/3/4"
@@ -9974,6 +10046,7 @@ const STATION_DATA_5G = [
   "id": "4613802",
   "siteName": "苗栗中央N20苗栗新勝",
   "siteNameCV": "苗栗中央N20苗栗新勝",
+  "town": "苗栗市",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -10134,6 +10207,7 @@ const STATION_DATA_5G = [
   "id": "4613810",
   "siteName": "竹南竹南N07頭份蘆竹",
   "siteNameCV": "竹南竹南N07頭份蘆竹",
+  "town": "頭份市",
   "sec": "s1/2/3",
   "secs": [
    "s1/2/3"
@@ -10255,6 +10329,7 @@ const STATION_DATA_5G = [
   "id": "4613817",
   "siteName": "竹南頭份N05頭份合興",
   "siteNameCV": "竹南頭份N05頭份合興",
+  "town": "頭份市",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -10409,6 +10484,7 @@ const STATION_DATA_5G = [
   "id": "4613818",
   "siteName": "後龍公司寮",
   "siteNameCV": "後龍公司寮",
+  "town": "後龍鎮",
   "sec": "s1_s2_s3",
   "secs": [
    "s1",
@@ -10491,15 +10567,15 @@ const STATION_DATA_5G = [
   "ranType": "D-RAN",
   "smod": {
    "後龍公司寮": [
+    "AC Power",
     "Door",
     "Fire",
-    "AC Power",
     "Temperature"
    ],
    "後龍海巡署RH2": [
+    "AC Power",
     "Door",
     "Fire",
-    "AC Power",
     "Temperature"
    ]
   },
@@ -10516,6 +10592,7 @@ const STATION_DATA_5G = [
   "id": "4613821",
   "siteName": "苗栗中央N05苗栗金華",
   "siteNameCV": "苗栗中央N05苗栗金華",
+  "town": "苗栗市",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -10662,6 +10739,7 @@ const STATION_DATA_5G = [
   "id": "4613827",
   "siteName": "苗栗後龍N06後龍新港一路",
   "siteNameCV": "苗栗後龍N06後龍新港一路",
+  "town": "後龍鎮",
   "sec": "s1/2_s4/5/6",
   "secs": [
    "s1/2",
@@ -10800,6 +10878,7 @@ const STATION_DATA_5G = [
   "id": "4613837",
   "siteName": "竹南復興N05竹南崎頂天祥",
   "siteNameCV": "竹南復興N05竹南崎頂天祥",
+  "town": "竹南鎮",
   "sec": "s1/2/3/4_s5/6",
   "secs": [
    "s1/2/3/4",
@@ -11001,6 +11080,7 @@ const STATION_DATA_5G = [
   "id": "4613840",
   "siteName": "苗栗嘉盛N06苗栗經國河濱",
   "siteNameCV": "苗栗嘉盛N06苗栗經國河濱",
+  "town": "苗栗市",
   "sec": "s1/2/3_s4",
   "secs": [
    "s1/2/3",
@@ -11117,6 +11197,7 @@ const STATION_DATA_5G = [
   "id": "4613952",
   "siteName": "竹南造橋L04造橋上彎",
   "siteNameCV": "竹南造橋L04造橋上彎",
+  "town": "造橋鄉",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -11327,6 +11408,7 @@ const STATION_DATA_5G = [
   "id": "4613953",
   "siteName": "竹南復興N15竹南龍泉",
   "siteNameCV": "竹南復興N15竹南龍泉",
+  "town": "竹南鎮",
   "sec": "s1/2/3_s4/5",
   "secs": [
    "s1/2/3",
@@ -11501,6 +11583,7 @@ const STATION_DATA_5G = [
   "id": "4613962",
   "siteName": "竹南復興N02竹南聖福建國",
   "siteNameCV": "竹南復興N02竹南聖福建國",
+  "town": "竹南鎮",
   "sec": "s4/5/6",
   "secs": [
    "s4/5/6"
@@ -11588,6 +11671,7 @@ const STATION_DATA_5G = [
   "id": "4613969",
   "siteName": "竹南頭份N21頭份福金新村",
   "siteNameCV": "竹南頭份N21頭份福金新村",
+  "town": "頭份市",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -11732,6 +11816,7 @@ const STATION_DATA_5G = [
   "id": "4613970",
   "siteName": "苗栗嘉盛N05苗栗中華",
   "siteNameCV": "苗栗嘉盛N05苗栗中華",
+  "town": "苗栗市",
   "sec": "s1_s4/5/6",
   "secs": [
    "s1",
@@ -11861,6 +11946,7 @@ const STATION_DATA_5G = [
   "id": "4613975",
   "siteName": "竹南中美晶RH2",
   "siteNameCV": "竹南中美晶RH2",
+  "town": "竹南鎮",
   "sec": "s1_s2",
   "secs": [
    "s1",
@@ -11924,6 +12010,7 @@ const STATION_DATA_5G = [
   "id": "4613980",
   "siteName": "竹南竹南N08頭份尖山下",
   "siteNameCV": "竹南竹南N08頭份尖山下",
+  "town": "頭份市",
   "sec": "s1/2/3",
   "secs": [
    "s1/2/3"
@@ -12012,6 +12099,7 @@ const STATION_DATA_5G = [
   "id": "4613983",
   "siteName": "竹南復興N03竹南大厝開元",
   "siteNameCV": "竹南復興N03竹南大厝開元",
+  "town": "竹南鎮",
   "sec": "s1/2/3",
   "secs": [
    "s1/2/3"
@@ -12093,6 +12181,7 @@ const STATION_DATA_5G = [
   "id": "4613995",
   "siteName": "苗栗頭屋N05頭屋中華",
   "siteNameCV": "苗栗頭屋N05頭屋中華",
+  "town": "頭屋鄉",
   "sec": "s1/2/3_s4/6",
   "secs": [
    "s1/2/3",
@@ -12228,6 +12317,7 @@ const STATION_DATA_5G = [
   "id": "4613996",
   "siteName": "苗栗大山N06後龍灣寶庄",
   "siteNameCV": "苗栗大山N06後龍灣寶庄",
+  "town": "後龍鎮",
   "sec": "s1/2/3",
   "secs": [
    "s1/2/3"
@@ -12313,6 +12403,7 @@ const STATION_DATA_5G = [
   "id": "4614006",
   "siteName": "苗栗中央N06苗栗松園",
   "siteNameCV": "苗栗中央N06苗栗松園",
+  "town": "苗栗市",
   "sec": "s1/2/3_s4/6",
   "secs": [
    "s1/2/3",
@@ -12443,6 +12534,7 @@ const STATION_DATA_5G = [
   "id": "4614009",
   "siteName": "苗栗大山N02後龍大山火車站",
   "siteNameCV": "苗栗大山N02後龍大山火車站",
+  "town": "後龍鎮",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -12617,6 +12709,7 @@ const STATION_DATA_5G = [
   "id": "4614010",
   "siteName": "後龍龍港",
   "siteNameCV": "後龍龍港",
+  "town": "後龍鎮",
   "sec": "s1/2/3",
   "secs": [
    "s1/2/3"
@@ -12685,9 +12778,9 @@ const STATION_DATA_5G = [
   "ranType": "D-RAN",
   "smod": {
    "後龍龍港": [
+    "AC Power",
     "Door",
     "Fire",
-    "AC Power",
     "Temperature"
    ]
   },
@@ -12701,6 +12794,7 @@ const STATION_DATA_5G = [
   "id": "4614020",
   "siteName": "苗栗公館N18頭屋鳴鳳",
   "siteNameCV": "苗栗公館N18頭屋鳴鳳",
+  "town": "頭屋鄉",
   "sec": "s1/3",
   "secs": [
    "s1/3"
@@ -12773,6 +12867,7 @@ const STATION_DATA_5G = [
   "id": "4614021",
   "siteName": "苗栗頭屋N01頭屋明德水庫",
   "siteNameCV": "苗栗頭屋N01頭屋明德水庫",
+  "town": "頭屋鄉",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -12927,6 +13022,7 @@ const STATION_DATA_5G = [
   "id": "4614037",
   "siteName": "竹南三灣N05三灣大河底",
   "siteNameCV": "竹南三灣N05三灣大河底",
+  "town": "三灣鄉",
   "sec": "s2/3",
   "secs": [
    "s2/3"
@@ -12999,6 +13095,7 @@ const STATION_DATA_5G = [
   "id": "4614038",
   "siteName": "苗栗公館N05公館五谷",
   "siteNameCV": "苗栗公館N05公館五谷",
+  "town": "公館鄉",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -13183,6 +13280,7 @@ const STATION_DATA_5G = [
   "id": "4614048",
   "siteName": "竹南大埔N08竹南公義公館",
   "siteNameCV": "竹南大埔N08竹南公義公館",
+  "town": "竹南鎮",
   "sec": "s1/2/3_s4/5",
   "secs": [
    "s1/2/3",
@@ -13318,6 +13416,7 @@ const STATION_DATA_5G = [
   "id": "4614050",
   "siteName": "竹南復興N09竹南綠屯新",
   "siteNameCV": "竹南復興N09竹南綠屯新",
+  "town": "竹南鎮",
   "sec": "s1/2/3_s5/6",
   "secs": [
    "s1/2/3",
@@ -13489,6 +13588,7 @@ const STATION_DATA_5G = [
   "id": "4614051",
   "siteName": "竹南大埔N04竹南仁愛",
   "siteNameCV": "竹南大埔N04竹南仁愛",
+  "town": "竹南鎮",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -13676,6 +13776,7 @@ const STATION_DATA_5G = [
   "id": "4614052",
   "siteName": "竹南龍鳳",
   "siteNameCV": "竹南龍鳳",
+  "town": "竹南鎮",
   "sec": "s1/2/3",
   "secs": [
    "s1/2/3"
@@ -13744,9 +13845,9 @@ const STATION_DATA_5G = [
   "ranType": "D-RAN",
   "smod": {
    "竹南龍鳳": [
+    "AC Power",
     "Door",
     "Fire",
-    "AC Power",
     "Temperature"
    ]
   },
@@ -13760,6 +13861,7 @@ const STATION_DATA_5G = [
   "id": "4614058",
   "siteName": "竹南三灣N06南庄員林",
   "siteNameCV": "竹南三灣N06南庄員林",
+  "town": "南庄鄉",
   "sec": "s1/2/3",
   "secs": [
    "s1/2/3"
@@ -13847,6 +13949,7 @@ const STATION_DATA_5G = [
   "id": "4614059",
   "siteName": "後龍清海宮",
   "siteNameCV": "後龍清海宮",
+  "town": "後龍鎮",
   "sec": "s1/2",
   "secs": [
    "s1/2"
@@ -13921,9 +14024,9 @@ const STATION_DATA_5G = [
   "ranType": "D-RAN",
   "smod": {
    "後龍清海宮": [
+    "AC Power",
     "Door",
     "Fire",
-    "AC Power",
     "Temperature"
    ]
   },
@@ -13937,6 +14040,7 @@ const STATION_DATA_5G = [
   "id": "4614066",
   "siteName": "苗栗後龍N03後龍好望角RH3",
   "siteNameCV": "苗栗後龍N03後龍好望角RH3",
+  "town": "後龍鎮",
   "sec": "s1/2/3_s4_s5",
   "secs": [
    "s1/2/3",
@@ -14106,6 +14210,7 @@ const STATION_DATA_5G = [
   "id": "4614068",
   "siteName": "竹南復興N08竹南中英功明",
   "siteNameCV": "竹南復興N08竹南中英功明",
+  "town": "竹南鎮",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -14283,6 +14388,7 @@ const STATION_DATA_5G = [
   "id": "4614076",
   "siteName": "竹南豐湖N02造橋流星花園",
   "siteNameCV": "竹南豐湖N02造橋流星花園",
+  "town": "造橋鄉",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -14437,6 +14543,7 @@ const STATION_DATA_5G = [
   "id": "4614087",
   "siteName": "頭份親民段",
   "siteNameCV": "頭份親民段",
+  "town": "頭份市",
   "sec": "s1/2/3",
   "secs": [
    "s1/2/3"
@@ -14505,9 +14612,9 @@ const STATION_DATA_5G = [
   "ranType": "D-RAN",
   "smod": {
    "頭份親民段": [
+    "AC Power",
     "Door",
     "Fire",
-    "AC Power",
     "Temperature"
    ]
   },
@@ -14521,6 +14628,7 @@ const STATION_DATA_5G = [
   "id": "4614088",
   "siteName": "竹南頭份N09頭份四季會館",
   "siteNameCV": "竹南頭份N09頭份四季會館",
+  "town": "頭份市",
   "sec": "s4/5",
   "secs": [
    "s4/5"
@@ -14593,6 +14701,7 @@ const STATION_DATA_5G = [
   "id": "4614096",
   "siteName": "苗栗公館N03公館南河",
   "siteNameCV": "苗栗公館N03公館南河",
+  "town": "公館鄉",
   "sec": "s1/2/3_s7/8/9",
   "secs": [
    "s1/2/3",
@@ -14766,6 +14875,7 @@ const STATION_DATA_5G = [
   "id": "4614097",
   "siteName": "苗栗後龍N04造橋大潭",
   "siteNameCV": "苗栗後龍N04造橋大潭",
+  "town": "造橋鄉",
   "sec": "s1/2/3_s4/5",
   "secs": [
    "s1/2/3",
@@ -14937,6 +15047,7 @@ const STATION_DATA_5G = [
   "id": "4614098",
   "siteName": "竹南南庄N01南庄北獅",
   "siteNameCV": "竹南南庄N01南庄北獅",
+  "town": "南庄鄉",
   "sec": "s1/2_s4/5/6",
   "secs": [
    "s1/2",
@@ -15083,6 +15194,7 @@ const STATION_DATA_5G = [
   "id": "4614099",
   "siteName": "苗栗頭屋N07造橋皇家",
   "siteNameCV": "苗栗頭屋N07造橋皇家",
+  "town": "造橋鄉",
   "sec": "s1/2/3",
   "secs": [
    "s1/2/3"
@@ -15171,6 +15283,7 @@ const STATION_DATA_5G = [
   "id": "4615369",
   "siteName": "竹南造橋N05造橋台隧豐富",
   "siteNameCV": "竹南造橋N05造橋台隧豐富",
+  "town": "造橋鄉",
   "sec": "s2/3_s4/5",
   "secs": [
    "s2/3",
@@ -15288,6 +15401,7 @@ const STATION_DATA_5G = [
   "id": "4615401",
   "siteName": "竹南造橋N02造橋德泰鋼鐵",
   "siteNameCV": "竹南造橋N02造橋德泰鋼鐵",
+  "town": "造橋鄉",
   "sec": "s1/2_s4/5/6",
   "secs": [
    "s1/2",
@@ -15450,6 +15564,7 @@ const STATION_DATA_5G = [
   "id": "4615408",
   "siteName": "苗栗頭屋N02頭屋象山",
   "siteNameCV": "苗栗頭屋N02頭屋象山",
+  "town": "頭屋鄉",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -15636,6 +15751,7 @@ const STATION_DATA_5G = [
   "id": "4615410",
   "siteName": "竹南大西N02造橋平興鐵塔",
   "siteNameCV": "竹南大西N02造橋平興鐵塔",
+  "town": "造橋鄉",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -15842,6 +15958,7 @@ const STATION_DATA_5G = [
   "id": "4615411",
   "siteName": "苗栗嘉盛N09苗栗福安",
   "siteNameCV": "苗栗嘉盛N09苗栗福安",
+  "town": "苗栗市",
   "sec": "s1_s4/5/6",
   "secs": [
    "s1",
@@ -15967,6 +16084,7 @@ const STATION_DATA_5G = [
   "id": "4615416",
   "siteName": "竹南竹南N17造橋談文",
   "siteNameCV": "竹南竹南N17造橋談文",
+  "town": "造橋鄉",
   "sec": "s1/2/3",
   "secs": [
    "s1/2/3"
@@ -16054,6 +16172,7 @@ const STATION_DATA_5G = [
   "id": "4615419",
   "siteName": "竹南頭份N15竹南京元",
   "siteNameCV": "竹南頭份N15竹南京元",
+  "town": "竹南鎮",
   "sec": "s1/2/3_s4",
   "secs": [
    "s1/2/3",
@@ -16179,6 +16298,7 @@ const STATION_DATA_5G = [
   "id": "4615420",
   "siteName": "苗栗頭屋N04公館墨硯山",
   "siteNameCV": "苗栗頭屋N04公館墨硯山",
+  "town": "公館鄉",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -16333,6 +16453,7 @@ const STATION_DATA_5G = [
   "id": "4615422",
   "siteName": "苗栗後龍N16後龍仁德新園",
   "siteNameCV": "苗栗後龍N16後龍仁德新園",
+  "town": "後龍鎮",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -16519,6 +16640,7 @@ const STATION_DATA_5G = [
   "id": "4615426",
   "siteName": "苗栗嘉盛N02苗栗五谷",
   "siteNameCV": "苗栗嘉盛N02苗栗五谷",
+  "town": "苗栗市",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -16677,6 +16799,7 @@ const STATION_DATA_5G = [
   "id": "4615427",
   "siteName": "苗栗中央N40苗栗新亞拌合",
   "siteNameCV": "苗栗中央N40苗栗新亞拌合",
+  "town": "苗栗市",
   "sec": "s2/3_s4/5/6",
   "secs": [
    "s2/3",
@@ -16808,6 +16931,7 @@ const STATION_DATA_5G = [
   "id": "4615428",
   "siteName": "苗栗嘉盛N04苗栗福星",
   "siteNameCV": "苗栗嘉盛N04苗栗福星",
+  "town": "苗栗市",
   "sec": "s1/2/3",
   "secs": [
    "s1/2/3"
@@ -16900,6 +17024,7 @@ const STATION_DATA_5G = [
   "id": "4615429",
   "siteName": "苗栗中央N18苗栗龍岡二",
   "siteNameCV": "苗栗中央N18苗栗龍岡二",
+  "town": "苗栗市",
   "sec": "s1/2/3_s6",
   "secs": [
    "s1/2/3",
@@ -17014,6 +17139,7 @@ const STATION_DATA_5G = [
   "id": "4615430",
   "siteName": "苗栗公館N02公館中義二",
   "siteNameCV": "苗栗公館N02公館中義二",
+  "town": "公館鄉",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -17171,6 +17297,7 @@ const STATION_DATA_5G = [
   "id": "4615431",
   "siteName": "苗栗公館N26公館福德",
   "siteNameCV": "苗栗公館N26公館福德",
+  "town": "公館鄉",
   "sec": "s1/2",
   "secs": [
    "s1/2"
@@ -17240,6 +17367,7 @@ const STATION_DATA_5G = [
   "id": "4615433",
   "siteName": "竹南頭份N19頭份為恭東興",
   "siteNameCV": "竹南頭份N19頭份為恭東興",
+  "town": "頭份市",
   "sec": "s1/2/3_s5/6",
   "secs": [
    "s1/2/3",
@@ -17378,6 +17506,7 @@ const STATION_DATA_5G = [
   "id": "4615437",
   "siteName": "竹南南庄N06南庄八卦力RH3",
   "siteNameCV": "竹南南庄N06南庄八卦力RH3",
+  "town": "南庄鄉",
   "sec": "s1/2_s4_s5_s6",
   "secs": [
    "s1/2",
@@ -17522,6 +17651,7 @@ const STATION_DATA_5G = [
   "id": "4615439",
   "siteName": "竹南頭份N23頭份上興永愛",
   "siteNameCV": "竹南頭份N23頭份上興永愛",
+  "town": "頭份市",
   "sec": "s1/3",
   "secs": [
    "s1/3"
@@ -17577,6 +17707,7 @@ const STATION_DATA_5G = [
   "id": "4615446",
   "siteName": "竹南竹南N06造橋潭內",
   "siteNameCV": "竹南竹南N06造橋潭內",
+  "town": "造橋鄉",
   "sec": "s1_s2_s3_s4/6",
   "secs": [
    "s1",
@@ -17741,6 +17872,7 @@ const STATION_DATA_5G = [
   "id": "4615448",
   "siteName": "苗栗嘉盛N03苗栗上苗",
   "siteNameCV": "苗栗嘉盛N03苗栗上苗",
+  "town": "苗栗市",
   "sec": "s2/3",
   "secs": [
    "s2/3"
@@ -17839,6 +17971,7 @@ const STATION_DATA_5G = [
   "id": "4616302",
   "siteName": "竹南大埔N05竹南亨福",
   "siteNameCV": "竹南大埔N05竹南亨福",
+  "town": "竹南鎮",
   "sec": "s1/3_s4/6",
   "secs": [
    "s1/3",
@@ -17980,6 +18113,7 @@ const STATION_DATA_5G = [
   "id": "4616303",
   "siteName": "竹南竹南N01竹南新南五谷",
   "siteNameCV": "竹南竹南N01竹南新南五谷",
+  "town": "竹南鎮",
   "sec": "s1_s4/5/6",
   "secs": [
    "s1",
@@ -18092,6 +18226,7 @@ const STATION_DATA_5G = [
   "id": "4616915",
   "siteName": "竹南三灣N02三灣銅鏡",
   "siteNameCV": "竹南三灣N02三灣銅鏡",
+  "town": "三灣鄉",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -18281,6 +18416,7 @@ const STATION_DATA_5G = [
   "id": "4616922",
   "siteName": "苗栗中央N07苗栗維祥",
   "siteNameCV": "苗栗中央N07苗栗維祥",
+  "town": "苗栗市",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -18472,6 +18608,7 @@ const STATION_DATA_5G = [
   "id": "4616923",
   "siteName": "後龍坤龍紡織",
   "siteNameCV": "後龍坤龍紡織",
+  "town": "後龍鎮",
   "sec": "s1/2/3",
   "secs": [
    "s1/2/3"
@@ -18540,9 +18677,9 @@ const STATION_DATA_5G = [
   "ranType": "D-RAN",
   "smod": {
    "後龍坤龍紡織": [
+    "AC Power",
     "Door",
     "Fire",
-    "AC Power",
     "Temperature"
    ]
   },
@@ -18556,6 +18693,7 @@ const STATION_DATA_5G = [
   "id": "4616926",
   "siteName": "苗栗大山N05後龍海口",
   "siteNameCV": "苗栗大山N05後龍海口",
+  "town": "後龍鎮",
   "sec": "s2_s4/5/6",
   "secs": [
    "s2",
@@ -18668,6 +18806,7 @@ const STATION_DATA_5G = [
   "id": "4616930",
   "siteName": "竹南造橋N07造橋豐湖RH",
   "siteNameCV": "竹南造橋N07造橋豐湖RH",
+  "town": "造橋鄉",
   "sec": "s2_s3_s4",
   "secs": [
    "s2",
@@ -18755,6 +18894,7 @@ const STATION_DATA_5G = [
   "id": "4616932",
   "siteName": "苗栗後龍N05後龍新港",
   "siteNameCV": "苗栗後龍N05後龍新港",
+  "town": "後龍鎮",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -18896,6 +19036,7 @@ const STATION_DATA_5G = [
   "id": "4616935",
   "siteName": "苗栗中央N22苗龍幹32-1",
   "siteNameCV": "苗栗中央N22苗龍幹32-1",
+  "town": "苗栗市",
   "sec": "s1_s2_s3_s7",
   "secs": [
    "s1",
@@ -19007,6 +19148,7 @@ const STATION_DATA_5G = [
   "id": "4616936",
   "siteName": "竹南頭份N28頭份雙喜新",
   "siteNameCV": "竹南頭份N28頭份雙喜新",
+  "town": "頭份市",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -19161,6 +19303,7 @@ const STATION_DATA_5G = [
   "id": "4616937",
   "siteName": "竹南鉅晶",
   "siteNameCV": "竹南鉅晶",
+  "town": "竹南鎮",
   "sec": "s1/2",
   "secs": [
    "s1/2"
@@ -19216,6 +19359,7 @@ const STATION_DATA_5G = [
   "id": "4617106",
   "siteName": "竹南昱晶B",
   "siteNameCV": "竹南昱晶B",
+  "town": "竹南鎮",
   "sec": "s1/2",
   "secs": [
    "s1/2"
@@ -19281,6 +19425,7 @@ const STATION_DATA_5G = [
   "id": "4617108",
   "siteName": "苗栗中央N38苗栗市農會",
   "siteNameCV": "苗栗中央N38苗栗市農會",
+  "town": "苗栗市",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -19437,6 +19582,7 @@ const STATION_DATA_5G = [
   "id": "4617109",
   "siteName": "竹南復興N06竹南環市",
   "siteNameCV": "竹南復興N06竹南環市",
+  "town": "竹南鎮",
   "sec": "s1/2/3_s4",
   "secs": [
    "s1/2/3",
@@ -19595,6 +19741,7 @@ const STATION_DATA_5G = [
   "id": "4617112",
   "siteName": "竹南大埔N07竹南冠軍",
   "siteNameCV": "竹南大埔N07竹南冠軍",
+  "town": "竹南鎮",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -19778,6 +19925,7 @@ const STATION_DATA_5G = [
   "id": "4617115",
   "siteName": "竹南頭份N06頭份上興",
   "siteNameCV": "竹南頭份N06頭份上興",
+  "town": "頭份市",
   "sec": "s1/2/3_s5/6",
   "secs": [
    "s1/2/3",
@@ -19903,6 +20051,7 @@ const STATION_DATA_5G = [
   "id": "4617122",
   "siteName": "苗栗中央N24苗栗市廣",
   "siteNameCV": "苗栗中央N24苗栗市廣",
+  "town": "苗栗市",
   "sec": "s2/3_s5",
   "secs": [
    "s2/3",
@@ -20003,6 +20152,7 @@ const STATION_DATA_5G = [
   "id": "4617129",
   "siteName": "竹南大埔N01竹南仁愛二",
   "siteNameCV": "竹南大埔N01竹南仁愛二",
+  "town": "竹南鎮",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -20157,6 +20307,7 @@ const STATION_DATA_5G = [
   "id": "4617135",
   "siteName": "竹南頭份N07頭份愛伊堡",
   "siteNameCV": "竹南頭份N07頭份愛伊堡",
+  "town": "頭份市",
   "sec": "s2/3_s4/5/6",
   "secs": [
    "s2/3",
@@ -20298,6 +20449,7 @@ const STATION_DATA_5G = [
   "id": "4617136",
   "siteName": "竹南大埔N23竹南和仁",
   "siteNameCV": "竹南大埔N23竹南和仁",
+  "town": "竹南鎮",
   "sec": "s1/2/3_s5/6",
   "secs": [
    "s1/2/3",
@@ -20434,6 +20586,7 @@ const STATION_DATA_5G = [
   "id": "4617140",
   "siteName": "竹南復興N01竹南獅山",
   "siteNameCV": "竹南復興N01竹南獅山",
+  "town": "竹南鎮",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -20618,6 +20771,7 @@ const STATION_DATA_5G = [
   "id": "4617143",
   "siteName": "竹南豐湖N03造橋天賜RH3",
   "siteNameCV": "竹南豐湖N03造橋天賜RH3",
+  "town": "造橋鄉",
   "sec": "s1/2/3_s4_s6",
   "secs": [
    "s1/2/3",
@@ -20754,6 +20908,7 @@ const STATION_DATA_5G = [
   "id": "4617145",
   "siteName": "苗栗頭屋N06頭屋尖豐",
   "siteNameCV": "苗栗頭屋N06頭屋尖豐",
+  "town": "頭屋鄉",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -20908,6 +21063,7 @@ const STATION_DATA_5G = [
   "id": "4617146",
   "siteName": "苗栗中央N02苗栗吉祥",
   "siteNameCV": "苗栗中央N02苗栗吉祥",
+  "town": "苗栗市",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -21070,6 +21226,7 @@ const STATION_DATA_5G = [
   "id": "4617149",
   "siteName": "竹南大埔N06竹南台元紡織",
   "siteNameCV": "竹南大埔N06竹南台元紡織",
+  "town": "竹南鎮",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -21224,6 +21381,7 @@ const STATION_DATA_5G = [
   "id": "4617201",
   "siteName": "竹南造橋N03造橋隧道口",
   "siteNameCV": "竹南造橋N03造橋隧道口",
+  "town": "造橋鄉",
   "sec": "s1/2/3_s4/5",
   "secs": [
    "s1/2/3",
@@ -21362,6 +21520,7 @@ const STATION_DATA_5G = [
   "id": "4617203",
   "siteName": "竹南頭份N22竹南京元外",
   "siteNameCV": "竹南頭份N22竹南京元外",
+  "town": "竹南鎮",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -21549,6 +21708,7 @@ const STATION_DATA_5G = [
   "id": "4617204",
   "siteName": "竹南頭份N01頭份新光",
   "siteNameCV": "竹南頭份N01頭份新光",
+  "town": "頭份市",
   "sec": "s1_s4/5/6",
   "secs": [
    "s1",
@@ -21691,6 +21851,7 @@ const STATION_DATA_5G = [
   "id": "4617208",
   "siteName": "竹南大埔N22竹南旳蔓",
   "siteNameCV": "竹南大埔N22竹南旳蔓",
+  "town": "竹南鎮",
   "sec": "s1/2/3_s4/6",
   "secs": [
    "s1/2/3",
@@ -21826,6 +21987,7 @@ const STATION_DATA_5G = [
   "id": "4617219",
   "siteName": "竹南造橋N06造橋長安新村",
   "siteNameCV": "竹南造橋N06造橋長安新村",
+  "town": "造橋鄉",
   "sec": "s1/2",
   "secs": [
    "s1/2"
@@ -21895,6 +22057,7 @@ const STATION_DATA_5G = [
   "id": "4617221",
   "siteName": "苗栗中央N08苗栗玉華玉清",
   "siteNameCV": "苗栗中央N08苗栗玉華玉清",
+  "town": "苗栗市",
   "sec": "s1/2/3",
   "secs": [
    "s1/2/3"
@@ -21987,6 +22150,7 @@ const STATION_DATA_5G = [
   "id": "4617224",
   "siteName": "竹南頭份N04頭份大勇",
   "siteNameCV": "竹南頭份N04頭份大勇",
+  "town": "頭份市",
   "sec": "s1/2/3_s4/5",
   "secs": [
    "s1/2/3",
@@ -22122,6 +22286,7 @@ const STATION_DATA_5G = [
   "id": "4617234",
   "siteName": "竹南竹南N16頭份後庄文林",
   "siteNameCV": "竹南竹南N16頭份後庄文林",
+  "town": "頭份市",
   "sec": "s1/2/3",
   "secs": [
    "s1/2/3"
@@ -22207,6 +22372,7 @@ const STATION_DATA_5G = [
   "id": "4617248",
   "siteName": "竹南三灣N03三灣坡頭背",
   "siteNameCV": "竹南三灣N03三灣坡頭背",
+  "town": "三灣鄉",
   "sec": "s1/2/3",
   "secs": [
    "s1/2/3"
@@ -22292,6 +22458,7 @@ const STATION_DATA_5G = [
   "id": "4617606",
   "siteName": "竹南復興N11竹南博愛",
   "siteNameCV": "竹南復興N11竹南博愛",
+  "town": "竹南鎮",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -22448,6 +22615,7 @@ const STATION_DATA_5G = [
   "id": "4617608",
   "siteName": "竹南大埔N02竹南隆達",
   "siteNameCV": "竹南大埔N02竹南隆達",
+  "town": "竹南鎮",
   "sec": "s1/2/3_s4",
   "secs": [
    "s1/2/3",
@@ -22586,6 +22754,7 @@ const STATION_DATA_5G = [
   "id": "4617610",
   "siteName": "苗栗大山N03後龍海埔",
   "siteNameCV": "苗栗大山N03後龍海埔",
+  "town": "後龍鎮",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -22727,6 +22896,7 @@ const STATION_DATA_5G = [
   "id": "4617612",
   "siteName": "竹南復興N20竹南開元明勝",
   "siteNameCV": "竹南復興N20竹南開元明勝",
+  "town": "竹南鎮",
   "sec": "s1/3_s4/6",
   "secs": [
    "s1/3",
@@ -22849,6 +23019,7 @@ const STATION_DATA_5G = [
   "id": "4617614",
   "siteName": "竹南頭份N18頭份大潤發",
   "siteNameCV": "竹南頭份N18頭份大潤發",
+  "town": "頭份市",
   "sec": "s1/2/3",
   "secs": [
    "s1/2/3"
@@ -22920,6 +23091,7 @@ const STATION_DATA_5G = [
   "id": "4617630",
   "siteName": "苗栗中央N31苗栗營業中心",
   "siteNameCV": "苗栗中央N31苗栗營業中心",
+  "town": "苗栗市",
   "sec": "s1_s2_s3_s4",
   "secs": [
    "s1",
@@ -23031,6 +23203,7 @@ const STATION_DATA_5G = [
   "id": "4617647",
   "siteName": "後龍高鐵站",
   "siteNameCV": "後龍高鐵站",
+  "town": "後龍鎮",
   "sec": "s1/2/3",
   "secs": [
    "s1/2/3"
@@ -23099,8 +23272,8 @@ const STATION_DATA_5G = [
   "ranType": "D-RAN",
   "smod": {
    "後龍高鐵站": [
-    "Fire",
     "AC Power",
+    "Fire",
     "Temperature"
    ]
   },
@@ -23114,6 +23287,7 @@ const STATION_DATA_5G = [
   "id": "4617657",
   "siteName": "苗栗公館N08公館福基",
   "siteNameCV": "苗栗公館N08公館福基",
+  "town": "公館鄉",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -23271,6 +23445,7 @@ const STATION_DATA_5G = [
   "id": "4617658",
   "siteName": "苗栗頭屋N03頭屋二崗坪",
   "siteNameCV": "苗栗頭屋N03頭屋二崗坪",
+  "town": "頭屋鄉",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -23455,6 +23630,7 @@ const STATION_DATA_5G = [
   "id": "4617667",
   "siteName": "竹南南庄N04南庄春谷",
   "siteNameCV": "竹南南庄N04南庄春谷",
+  "town": "南庄鄉",
   "sec": "s1/2/3_s5/6",
   "secs": [
    "s1/2/3",
@@ -23583,6 +23759,7 @@ const STATION_DATA_5G = [
   "id": "4617696",
   "siteName": "竹南復興N07竹南大厝鹽館",
   "siteNameCV": "竹南復興N07竹南大厝鹽館",
+  "town": "竹南鎮",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -23734,6 +23911,7 @@ const STATION_DATA_5G = [
   "id": "4617706",
   "siteName": "竹南頭份N08頭份興隆觀音",
   "siteNameCV": "竹南頭份N08頭份興隆觀音",
+  "town": "頭份市",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -23924,6 +24102,7 @@ const STATION_DATA_5G = [
   "id": "4617707",
   "siteName": "竹南大埔N13竹南群創內",
   "siteNameCV": "竹南大埔N13竹南群創內",
+  "town": "竹南鎮",
   "sec": "s1/2/4/5",
   "secs": [
    "s1/2/4/5"
@@ -23979,6 +24158,7 @@ const STATION_DATA_5G = [
   "id": "4617714",
   "siteName": "苗栗公館N11公館鶴山飯店",
   "siteNameCV": "苗栗公館N11公館鶴山飯店",
+  "town": "公館鄉",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -24130,6 +24310,7 @@ const STATION_DATA_5G = [
   "id": "4617716",
   "siteName": "頭份流東苗二",
   "siteNameCV": "頭份流東苗二",
+  "town": "頭份市",
   "sec": "s1/2",
   "secs": [
    "s1/2"
@@ -24185,6 +24366,7 @@ const STATION_DATA_5G = [
   "id": "4617721",
   "siteName": "竹南頭份N17頭份為恭信義",
   "siteNameCV": "竹南頭份N17頭份為恭信義",
+  "town": "頭份市",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -24372,6 +24554,7 @@ const STATION_DATA_5G = [
   "id": "4617726",
   "siteName": "苗栗公館N10公館中義社區",
   "siteNameCV": "苗栗公館N10公館中義社區",
+  "town": "公館鄉",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -24526,6 +24709,7 @@ const STATION_DATA_5G = [
   "id": "4617735",
   "siteName": "苗栗中央N12苗栗英明",
   "siteNameCV": "苗栗中央N12苗栗英明",
+  "town": "苗栗市",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -24682,6 +24866,7 @@ const STATION_DATA_5G = [
   "id": "4617738",
   "siteName": "竹南復興N04竹南塭內",
   "siteNameCV": "竹南復興N04竹南塭內",
+  "town": "竹南鎮",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -24869,6 +25054,7 @@ const STATION_DATA_5G = [
   "id": "4617744",
   "siteName": "竹南竹南N05頭份蘆竹碾米新",
   "siteNameCV": "竹南竹南N05頭份蘆竹碾米新",
+  "town": "頭份市",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -25059,6 +25245,7 @@ const STATION_DATA_5G = [
   "id": "4617746",
   "siteName": "苗栗公館N09公館近光",
   "siteNameCV": "苗栗公館N09公館近光",
+  "town": "公館鄉",
   "sec": "s4/5/6",
   "secs": [
    "s4/5/6"
@@ -25146,6 +25333,7 @@ const STATION_DATA_5G = [
   "id": "4617755",
   "siteName": "竹南豐湖N04造橋中潭",
   "siteNameCV": "竹南豐湖N04造橋中潭",
+  "town": "造橋鄉",
   "sec": "s1/2/3",
   "secs": [
    "s1/2/3"
@@ -25231,6 +25419,7 @@ const STATION_DATA_5G = [
   "id": "4617756",
   "siteName": "竹南南庄N03南庄米堤園",
   "siteNameCV": "竹南南庄N03南庄米堤園",
+  "town": "南庄鄉",
   "sec": "s1/2/3",
   "secs": [
    "s1/2/3"
@@ -25317,6 +25506,7 @@ const STATION_DATA_5G = [
   "id": "4617769",
   "siteName": "苗栗後龍N10後龍溪洲",
   "siteNameCV": "苗栗後龍N10後龍溪洲",
+  "town": "後龍鎮",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -25471,6 +25661,7 @@ const STATION_DATA_5G = [
   "id": "4617773",
   "siteName": "苗栗中央N37苗栗僑育",
   "siteNameCV": "苗栗中央N37苗栗僑育",
+  "town": "苗栗市",
   "sec": "s2/3_s4/5/6",
   "secs": [
    "s2/3",
@@ -25611,6 +25802,7 @@ const STATION_DATA_5G = [
   "id": "4617777",
   "siteName": "苗栗中央N32南勢車站",
   "siteNameCV": "苗栗中央N32南勢車站",
+  "town": "苗栗市",
   "sec": "s1_s4",
   "secs": [
    "s1",
@@ -25674,6 +25866,7 @@ const STATION_DATA_5G = [
   "id": "4617778",
   "siteName": "苗栗公館N23公館何屋",
   "siteNameCV": "苗栗公館N23公館何屋",
+  "town": "公館鄉",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -25815,6 +26008,7 @@ const STATION_DATA_5G = [
   "id": "4617783",
   "siteName": "苗栗中央N21苗栗麻園坑41",
   "siteNameCV": "苗栗中央N21苗栗麻園坑41",
+  "town": "苗栗市",
   "sec": "s2/3_s4/5_s8",
   "secs": [
    "s2/3",
@@ -25966,6 +26160,7 @@ const STATION_DATA_5G = [
   "id": "4617785",
   "siteName": "苗栗正發",
   "siteNameCV": "苗栗正發",
+  "town": "苗栗市",
   "sec": "s1/2/3",
   "secs": [
    "s1/2/3"
@@ -26051,6 +26246,7 @@ const STATION_DATA_5G = [
   "id": "4617786",
   "siteName": "苗栗中央N11苗栗家樂福",
   "siteNameCV": "苗栗中央N11苗栗家樂福",
+  "town": "苗栗市",
   "sec": "s2/3_s4/5/6",
   "secs": [
    "s2/3",
@@ -26194,6 +26390,7 @@ const STATION_DATA_5G = [
   "id": "4617788",
   "siteName": "苗栗公館N20公館高公局",
   "siteNameCV": "苗栗公館N20公館高公局",
+  "town": "公館鄉",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -26348,6 +26545,7 @@ const STATION_DATA_5G = [
   "id": "4617793",
   "siteName": "苗栗後龍N08後龍年興",
   "siteNameCV": "苗栗後龍N08後龍年興",
+  "town": "後龍鎮",
   "sec": "s1/3_s4/5/6",
   "secs": [
    "s1/3",
@@ -26486,6 +26684,7 @@ const STATION_DATA_5G = [
   "id": "4617794",
   "siteName": "竹南大西N06造橋禮蘭",
   "siteNameCV": "竹南大西N06造橋禮蘭",
+  "town": "造橋鄉",
   "sec": "s3",
   "secs": [
    "s3"
@@ -26525,6 +26724,7 @@ const STATION_DATA_5G = [
   "id": "4617799",
   "siteName": "竹南大埔N09竹南科管局",
   "siteNameCV": "竹南大埔N09竹南科管局",
+  "town": "竹南鎮",
   "sec": "s1/2/3",
   "secs": [
    "s1/2/3"
@@ -26643,6 +26843,7 @@ const STATION_DATA_5G = [
   "id": "4617820",
   "siteName": "苗栗頭屋N08頭屋錦水",
   "siteNameCV": "苗栗頭屋N08頭屋錦水",
+  "town": "頭屋鄉",
   "sec": "s1_s2_s7/8/9",
   "secs": [
    "s1",
@@ -26776,6 +26977,7 @@ const STATION_DATA_5G = [
   "id": "4617823",
   "siteName": "苗栗中央N09苗栗長春二廠",
   "siteNameCV": "苗栗中央N09苗栗長春二廠",
+  "town": "苗栗市",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -26968,6 +27170,7 @@ const STATION_DATA_5G = [
   "id": "4617826",
   "siteName": "苗栗大山N04後龍大山交流道",
   "siteNameCV": "苗栗大山N04後龍大山交流道",
+  "town": "後龍鎮",
   "sec": "s2_s4/5/6",
   "secs": [
    "s2",
@@ -27080,6 +27283,7 @@ const STATION_DATA_5G = [
   "id": "4617828",
   "siteName": "苗栗公館N12公館棗莊南",
   "siteNameCV": "苗栗公館N12公館棗莊南",
+  "town": "公館鄉",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -27223,6 +27427,7 @@ const STATION_DATA_5G = [
   "id": "4617966",
   "siteName": "苗栗中央N19苗栗府前新",
   "siteNameCV": "苗栗中央N19苗栗府前新",
+  "town": "苗栗市",
   "sec": "s1/2/3_s5",
   "secs": [
    "s1/2/3",
@@ -27352,6 +27557,7 @@ const STATION_DATA_5G = [
   "id": "4617969",
   "siteName": "苗栗縣府一RH1",
   "siteNameCV": "苗栗縣府一RH1",
+  "town": "苗栗市",
   "sec": "s1",
   "secs": [
    "s1"
@@ -27391,6 +27597,7 @@ const STATION_DATA_5G = [
   "id": "4618903",
   "siteName": "竹南竹南N13竹南營業內",
   "siteNameCV": "竹南竹南N13竹南營業內",
+  "town": "頭份市",
   "sec": "s2",
   "secs": [
    "s2"
@@ -27430,6 +27637,7 @@ const STATION_DATA_5G = [
   "id": "4618915",
   "siteName": "竹南大埔N16竹南公義里S",
   "siteNameCV": "竹南大埔N16竹南公義里S",
+  "town": "竹南鎮",
   "sec": "s1",
   "secs": [
    "s1"
@@ -27479,6 +27687,7 @@ const STATION_DATA_5G = [
   "id": "4618920",
   "siteName": "苗栗大山N15後龍海埔里S",
   "siteNameCV": "苗栗大山N15後龍海埔里S",
+  "town": "後龍鎮",
   "sec": "s1_s2_s3",
   "secs": [
    "s1",
@@ -27566,6 +27775,7 @@ const STATION_DATA_5G = [
   "id": "4618923",
   "siteName": "苗栗後龍N13後龍福寧里S",
   "siteNameCV": "苗栗後龍N13後龍福寧里S",
+  "town": "後龍鎮",
   "sec": "s1",
   "secs": [
    "s1"
@@ -27605,6 +27815,7 @@ const STATION_DATA_5G = [
   "id": "4618928",
   "siteName": "竹南南庄N15南庄獅山村MR",
   "siteNameCV": "竹南南庄N15南庄獅山村MR",
+  "town": "南庄鄉",
   "sec": "s1_s2_s3",
   "secs": [
    "s1",
@@ -27692,6 +27903,7 @@ const STATION_DATA_5G = [
   "id": "4618932",
   "siteName": "苗栗頭屋N15頭屋象山村S",
   "siteNameCV": "苗栗頭屋N15頭屋象山村S",
+  "town": "頭屋鄉",
   "sec": "s1_s2_s3",
   "secs": [
    "s1",
@@ -27779,6 +27991,7 @@ const STATION_DATA_5G = [
   "id": "4618937",
   "siteName": "竹南大西N16造橋錦水村S",
   "siteNameCV": "竹南大西N16造橋錦水村S",
+  "town": "造橋鄉",
   "sec": "s2_s3",
   "secs": [
    "s2",
@@ -27842,6 +28055,7 @@ const STATION_DATA_5G = [
   "id": "4618938",
   "siteName": "竹南三灣N15南庄小南埔",
   "siteNameCV": "竹南三灣N15南庄小南埔",
+  "town": "南庄鄉",
   "sec": "s2_s3_s4_s5_s7",
   "secs": [
    "s2",
@@ -27977,6 +28191,7 @@ const STATION_DATA_5G = [
   "id": "4618940",
   "siteName": "竹南大西N15三灣大坪村S",
   "siteNameCV": "竹南大西N15三灣大坪村S",
+  "town": "三灣鄉",
   "sec": "s1",
   "secs": [
    "s1"
@@ -28016,6 +28231,7 @@ const STATION_DATA_5G = [
   "id": "4618965",
   "siteName": "苗栗嘉盛N15苗栗宜春路",
   "siteNameCV": "苗栗嘉盛N15苗栗宜春路",
+  "town": "苗栗市",
   "sec": "s1_s2_s6",
   "secs": [
    "s1",
@@ -28103,6 +28319,7 @@ const STATION_DATA_5G = [
   "id": "4619543",
   "siteName": "竹南竹南N09竹南公館大埔頂",
   "siteNameCV": "竹南竹南N09竹南公館大埔頂",
+  "town": "竹南鎮",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -28278,6 +28495,7 @@ const STATION_DATA_5G = [
   "id": "4619548",
   "siteName": "苗栗嘉盛N07苗栗消防局",
   "siteNameCV": "苗栗嘉盛N07苗栗消防局",
+  "town": "苗栗市",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -28437,6 +28655,7 @@ const STATION_DATA_5G = [
   "id": "4619552",
   "siteName": "苗栗公館N04公館皇家",
   "siteNameCV": "苗栗公館N04公館皇家",
+  "town": "公館鄉",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -28588,6 +28807,7 @@ const STATION_DATA_5G = [
   "id": "4619553",
   "siteName": "苗栗公館N07公館民生",
   "siteNameCV": "苗栗公館N07公館民生",
+  "town": "公館鄉",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -28742,6 +28962,7 @@ const STATION_DATA_5G = [
   "id": "4622614",
   "siteName": "竹南頭份L38頭份建國",
   "siteNameCV": "竹南頭份L38頭份建國",
+  "town": "頭份市",
   "sec": "s1/4_s7/8/9",
   "secs": [
    "s1/4",
@@ -28835,6 +29056,7 @@ const STATION_DATA_5G = [
   "id": "4623709",
   "siteName": "竹南豐湖N01造橋後龍收費",
   "siteNameCV": "竹南豐湖N01造橋後龍收費",
+  "town": "造橋鄉",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -28979,6 +29201,7 @@ const STATION_DATA_5G = [
   "id": "4623719",
   "siteName": "竹南造橋N08造橋香格里拉",
   "siteNameCV": "竹南造橋N08造橋香格里拉",
+  "town": "造橋鄉",
   "sec": "s1/2/3",
   "secs": [
    "s1/2/3"
@@ -29050,6 +29273,7 @@ const STATION_DATA_5G = [
   "id": "4623721",
   "siteName": "苗栗公館N15公館石墻路RH3",
   "siteNameCV": "苗栗公館N15公館石墻路RH3",
+  "town": "公館鄉",
   "sec": "s1_s2_s5_s6",
   "secs": [
    "s1",
@@ -29161,6 +29385,7 @@ const STATION_DATA_5G = [
   "id": "4623722",
   "siteName": "竹南竹南N10竹南崁頂",
   "siteNameCV": "竹南竹南N10竹南崁頂",
+  "town": "竹南鎮",
   "sec": "s1/2/3/4_s5/6/7",
   "secs": [
    "s1/2/3/4",
@@ -29328,6 +29553,7 @@ const STATION_DATA_5G = [
   "id": "4623730",
   "siteName": "苗栗中央N25線路中心內",
   "siteNameCV": "苗栗中央N25線路中心內",
+  "town": "苗栗市",
   "sec": "s1/2/3_s4",
   "secs": [
    "s1/2/3",
@@ -29487,6 +29713,7 @@ const STATION_DATA_5G = [
   "id": "4623740",
   "siteName": "苗栗後龍N15後龍龍坑里S",
   "siteNameCV": "苗栗後龍N15後龍龍坑里S",
+  "town": "後龍鎮",
   "sec": "s1_s2_s4_s5_s6",
   "secs": [
    "s1",
@@ -29622,6 +29849,7 @@ const STATION_DATA_5G = [
   "id": "4623750",
   "siteName": "竹南竹南N11竹南松茂米粉",
   "siteNameCV": "竹南竹南N11竹南松茂米粉",
+  "town": "竹南鎮",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -29809,6 +30037,7 @@ const STATION_DATA_5G = [
   "id": "4623751",
   "siteName": "竹南復興N17竹南大千",
   "siteNameCV": "竹南復興N17竹南大千",
+  "town": "竹南鎮",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -29960,6 +30189,7 @@ const STATION_DATA_5G = [
   "id": "4623759",
   "siteName": "竹南頭份N34頭份幼英",
   "siteNameCV": "竹南頭份N34頭份幼英",
+  "town": "頭份市",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -30114,6 +30344,7 @@ const STATION_DATA_5G = [
   "id": "4623760",
   "siteName": "竹南頭份N11頭份中山",
   "siteNameCV": "竹南頭份N11頭份中山",
+  "town": "頭份市",
   "sec": "s1/2/3_s4_s5",
   "secs": [
    "s1/2/3",
@@ -30293,6 +30524,7 @@ const STATION_DATA_5G = [
   "id": "4623762",
   "siteName": "竹南竹南N15頭份廣興羅RH4",
   "siteNameCV": "竹南竹南N15頭份廣興羅RH4",
+  "town": "頭份市",
   "sec": "s1_s4_s5_s6_s7",
   "secs": [
    "s1",
@@ -30455,6 +30687,7 @@ const STATION_DATA_5G = [
   "id": "4623764",
   "siteName": "竹南頭份N12頭份上埔",
   "siteNameCV": "竹南頭份N12頭份上埔",
+  "town": "頭份市",
   "sec": "s1/2_s4/5/6",
   "secs": [
    "s1/2",
@@ -30648,6 +30881,7 @@ const STATION_DATA_5G = [
   "id": "4623768",
   "siteName": "竹南復興N23竹南中正",
   "siteNameCV": "竹南復興N23竹南中正",
+  "town": "竹南鎮",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -30802,6 +31036,7 @@ const STATION_DATA_5G = [
   "id": "4623776",
   "siteName": "竹南南庄N08南庄向天湖",
   "siteNameCV": "竹南南庄N08南庄向天湖",
+  "town": "南庄鄉",
   "sec": "s1/2/3_s4_s5",
   "secs": [
    "s1/2/3",
@@ -30951,6 +31186,7 @@ const STATION_DATA_5G = [
   "id": "4623781",
   "siteName": "竹南大埔N17竹南昱晶",
   "siteNameCV": "竹南大埔N17竹南昱晶",
+  "town": "竹南鎮",
   "sec": "s2/3_s4",
   "secs": [
    "s2/3",
@@ -31056,6 +31292,7 @@ const STATION_DATA_5G = [
   "id": "4623788",
   "siteName": "竹南南庄N09南庄西村",
   "siteNameCV": "竹南南庄N09南庄西村",
+  "town": "南庄鄉",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -31180,15 +31417,15 @@ const STATION_DATA_5G = [
   "ranType": "C-RAN",
   "smod": {
    "竹南南庄N09南庄南庄": [
+    "AC Power",
     "Door",
     "Fire",
-    "AC Power",
     "Temperature"
    ],
    "竹南南庄N09南庄西村": [
+    "AC Power",
     "Door",
     "Fire",
-    "AC Power",
     "Temperature"
    ]
   },
@@ -31217,6 +31454,7 @@ const STATION_DATA_5G = [
   "id": "4623836",
   "siteName": "竹南復興N22竹南開元迎薰",
   "siteNameCV": "竹南復興N22竹南開元迎薰",
+  "town": "竹南鎮",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -31373,6 +31611,7 @@ const STATION_DATA_5G = [
   "id": "4623839",
   "siteName": "竹南南庄N07南庄和平橋RH3",
   "siteNameCV": "竹南南庄N07南庄和平橋RH3",
+  "town": "南庄鄉",
   "sec": "s1_s2_s3_s4_s7_s8_s9",
   "secs": [
    "s1",
@@ -31553,6 +31792,7 @@ const STATION_DATA_5G = [
   "id": "4623950",
   "siteName": "後龍頭湖",
   "siteNameCV": "後龍頭湖",
+  "town": "後龍鎮",
   "sec": "s1/2/3",
   "secs": [
    "s1/2/3"
@@ -31624,6 +31864,7 @@ const STATION_DATA_5G = [
   "id": "4624000",
   "siteName": "苗栗中央N34苗栗宏苗大樓",
   "siteNameCV": "苗栗中央N34苗栗宏苗大樓",
+  "town": "苗栗市",
   "sec": "s1/2/3_s5/6",
   "secs": [
    "s1/2/3",
@@ -31797,6 +32038,7 @@ const STATION_DATA_5G = [
   "id": "4624005",
   "siteName": "竹南復興N34竹南山寮",
   "siteNameCV": "竹南復興N34竹南山寮",
+  "town": "竹南鎮",
   "sec": "s1/2/3",
   "secs": [
    "s1/2/3"
@@ -31915,6 +32157,7 @@ const STATION_DATA_5G = [
   "id": "4624011",
   "siteName": "苗栗後龍N17後龍高鐵號誌",
   "siteNameCV": "苗栗後龍N17後龍高鐵號誌",
+  "town": "後龍鎮",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -32113,6 +32356,7 @@ const STATION_DATA_5G = [
   "id": "4624043",
   "siteName": "竹南三灣L04三灣楠樹窩RH",
   "siteNameCV": "竹南三灣L04三灣楠樹窩RH",
+  "town": "三灣鄉",
   "sec": "s1/2/3_s7_s8_s9",
   "secs": [
    "s1/2/3",
@@ -32273,6 +32517,7 @@ const STATION_DATA_5G = [
   "id": "4624059",
   "siteName": "苗栗西湖N08後龍赤土崎",
   "siteNameCV": "苗栗西湖N08後龍赤土崎",
+  "town": "後龍鎮",
   "sec": "s5/6",
   "secs": [
    "s5/6"
@@ -32342,6 +32587,7 @@ const STATION_DATA_5G = [
   "id": "4624060",
   "siteName": "苗栗中央N33苗栗建功",
   "siteNameCV": "苗栗中央N33苗栗建功",
+  "town": "苗栗市",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -32548,6 +32794,7 @@ const STATION_DATA_5G = [
   "id": "4624089",
   "siteName": "竹南復興N33竹南港墘",
   "siteNameCV": "竹南復興N33竹南港墘",
+  "town": "竹南鎮",
   "sec": "s1/2/3",
   "secs": [
    "s1/2/3"
@@ -32634,6 +32881,7 @@ const STATION_DATA_5G = [
   "id": "4625363",
   "siteName": "竹南頭份N40頭份高隧一北內",
   "siteNameCV": "竹南頭份N40頭份高隧一北內",
+  "town": "頭份市",
   "sec": "s1_s4/5/6",
   "secs": [
    "s1",
@@ -32781,6 +33029,7 @@ const STATION_DATA_5G = [
   "id": "4625365",
   "siteName": "竹南大西N07造橋考崎RH6",
   "siteNameCV": "竹南大西N07造橋考崎RH6",
+  "town": "造橋鄉",
   "sec": "s1/2/4/5_s6",
   "secs": [
    "s1/2/4/5",
@@ -32877,6 +33126,7 @@ const STATION_DATA_5G = [
   "id": "4625367",
   "siteName": "苗栗中央N30後龍高隧南新南",
   "siteNameCV": "苗栗中央N30後龍高隧南新南",
+  "town": "後龍鎮",
   "sec": "s1/2",
   "secs": [
    "s1/2"
@@ -32946,6 +33196,7 @@ const STATION_DATA_5G = [
   "id": "4625409",
   "siteName": "竹南大埔N12竹南奇美外",
   "siteNameCV": "竹南大埔N12竹南奇美外",
+  "town": "竹南鎮",
   "sec": "s1/3_s4/5/6",
   "secs": [
    "s1/3",
@@ -33085,6 +33336,7 @@ const STATION_DATA_5G = [
   "id": "4626920",
   "siteName": "苗栗頭屋N16頭屋枋寮坑",
   "siteNameCV": "苗栗頭屋N16頭屋枋寮坑",
+  "town": "頭屋鄉",
   "sec": "s1_s2_s3_s7/8/9",
   "secs": [
    "s1",
@@ -33245,6 +33497,7 @@ const STATION_DATA_5G = [
   "id": "4627101",
   "siteName": "竹南頭份N49頭份民權",
   "siteNameCV": "竹南頭份N49頭份民權",
+  "town": "頭份市",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -33399,6 +33652,7 @@ const STATION_DATA_5G = [
   "id": "4627111",
   "siteName": "竹南大埔N14竹南國衛院",
   "siteNameCV": "竹南大埔N14竹南國衛院",
+  "town": "竹南鎮",
   "sec": "s1/2/3/4_s7/8/9",
   "secs": [
    "s1/2/3/4",
@@ -33570,6 +33824,7 @@ const STATION_DATA_5G = [
   "id": "4627125",
   "siteName": "竹南大埔N11竹南國衛院新",
   "siteNameCV": "竹南大埔N11竹南國衛院新",
+  "town": "竹南鎮",
   "sec": "s1/2/3_s7/8/9",
   "secs": [
    "s1/2/3",
@@ -33760,6 +34015,7 @@ const STATION_DATA_5G = [
   "id": "4627144",
   "siteName": "竹南頭份N37頭份民族",
   "siteNameCV": "竹南頭份N37頭份民族",
+  "town": "頭份市",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -33913,6 +34169,7 @@ const STATION_DATA_5G = [
   "id": "4627202",
   "siteName": "苗栗中央N39苗栗中龍岡",
   "siteNameCV": "苗栗中央N39苗栗中龍岡",
+  "town": "苗栗市",
   "sec": "s1/2_s4/5",
   "secs": [
    "s1/2",
@@ -34037,6 +34294,7 @@ const STATION_DATA_5G = [
   "id": "4627237",
   "siteName": "竹南大埔N24竹南仁愛837",
   "siteNameCV": "竹南大埔N24竹南仁愛837",
+  "town": "竹南鎮",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -34190,6 +34448,7 @@ const STATION_DATA_5G = [
   "id": "4627249",
   "siteName": "竹南南庄N10三灣崁頂寮",
   "siteNameCV": "竹南南庄N10三灣崁頂寮",
+  "town": "三灣鄉",
   "sec": "s1/2/3",
   "secs": [
    "s1/2/3"
@@ -34278,6 +34537,7 @@ const STATION_DATA_5G = [
   "id": "4627634",
   "siteName": "竹南頭份N30頭份信東",
   "siteNameCV": "竹南頭份N30頭份信東",
+  "town": "頭份市",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -34462,6 +34722,7 @@ const STATION_DATA_5G = [
   "id": "4627678",
   "siteName": "苗栗中央N35苗栗皇家豪門",
   "siteNameCV": "苗栗中央N35苗栗皇家豪門",
+  "town": "苗栗市",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -34620,6 +34881,7 @@ const STATION_DATA_5G = [
   "id": "4627681",
   "siteName": "竹南復興N31竹南和平",
   "siteNameCV": "竹南復興N31竹南和平",
+  "town": "竹南鎮",
   "sec": "s1",
   "secs": [
    "s1"
@@ -34659,6 +34921,7 @@ const STATION_DATA_5G = [
   "id": "4627720",
   "siteName": "苗栗頭屋N09頭屋濫坑社區",
   "siteNameCV": "苗栗頭屋N09頭屋濫坑社區",
+  "town": "頭屋鄉",
   "sec": "s1/2/3",
   "secs": [
    "s1/2/3"
@@ -34746,6 +35009,7 @@ const STATION_DATA_5G = [
   "id": "4627784",
   "siteName": "竹南頭份N35頭份上埔興隆",
   "siteNameCV": "竹南頭份N35頭份上埔興隆",
+  "town": "頭份市",
   "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
@@ -34887,6 +35151,7 @@ const STATION_DATA_5G = [
   "id": "4627787",
   "siteName": "竹南頭份N33頭份仁愛新",
   "siteNameCV": "竹南頭份N33頭份仁愛新",
+  "town": "頭份市",
   "sec": "s2/3_s4/5/6",
   "secs": [
    "s2/3",
@@ -35057,6 +35322,7 @@ const STATION_DATA_5G = [
   "id": "4627825",
   "siteName": "竹南頭份N41竹南天仁大院",
   "siteNameCV": "竹南頭份N41竹南天仁大院",
+  "town": "竹南鎮",
   "sec": "s1/2/3",
   "secs": [
    "s1/2/3"
@@ -35142,6 +35408,7 @@ const STATION_DATA_5G = [
   "id": "4627896",
   "siteName": "竹南頭份N31頭份營業中心",
   "siteNameCV": "竹南頭份N31頭份營業中心",
+  "town": "頭份市",
   "sec": "s1_s3_s4_s5_s7",
   "secs": [
    "s1",
