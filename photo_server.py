@@ -30,6 +30,26 @@ if sys.stdout and hasattr(sys.stdout, "reconfigure"):
     except Exception:
         pass
 
+
+def _load_dotenv(path=None):
+    """若照片伺服器同層有 .env 檔，自動載入環境變數（純 Python，不依賴批次檔）。"""
+    path = path or os.path.join(os.path.dirname(os.path.abspath(__file__)), ".env")
+    if not os.path.isfile(path):
+        return
+    with open(path, "r", encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if not line or line.startswith("#") or "=" not in line:
+                continue
+            key, _, val = line.partition("=")
+            key = key.strip()
+            val = val.strip()
+            if key and key not in os.environ:
+                os.environ[key] = val
+
+
+_load_dotenv()
+
 BASE = os.path.dirname(os.path.abspath(__file__))
 DEFAULT_PORT = 8000
 
