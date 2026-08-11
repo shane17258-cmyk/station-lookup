@@ -459,7 +459,7 @@
       } catch (e) {
         gridEl.innerHTML = '';
         if (statusEl) {
-          statusEl.textContent = '⚠ 無法連線照片伺服器（請在本機執行 照片伺服器.bat）';
+          statusEl.textContent = '⚠ 無法連線照片伺服器（請執行 照片伺服器.bat 並完成 Google Drive 授權）';
           statusEl.className = 'photo-status err';
         }
       }
@@ -527,7 +527,7 @@
         '<div class="photo-grid"></div>' +
         '<div class="photo-actions">' +
         '<label class="upload-btn">📷 上傳照片<input type="file" accept="image/*" multiple hidden></label>' +
-        '<span class="photo-hint">照片將存入 OneDrive「站台照片/' + escapeHtml(station) + '/」</span>' +
+        '<span class="photo-hint">照片將存入 Google Drive「' + escapeHtml(station) + '/」資料夾</span>' +
         '<span class="photo-status"></span>' +
         '</div>';
       const gridEl = el.querySelector('.photo-grid');

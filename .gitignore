@@ -2,3 +2,5 @@
 *.pyc
 __pycache__/
 站台照片/
+.env
+.gdrive_tokens.json
