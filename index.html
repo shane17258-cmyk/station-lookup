@@ -441,9 +441,9 @@
   <script src="data.js"></script>
   <script src="data5g.js"></script>
   <script>
-    // ============ 站台照片（本機照片伺服器） ============
-    // 照片伺服器網址。改用自己的網址（如之後改 Graph 代理）時可在這裡設定。
-    const PHOTO_SERVER = window.PHOTO_SERVER || 'http://localhost:8000';
+    // ============ 站台照片（Cloudflare Worker） ============
+    // 照片透過 Cloudflare Worker 存取 Google Drive，電腦關機也能看。
+    const PHOTO_SERVER = window.PHOTO_SERVER || 'https://station-photo.shane17258.workers.dev';
 
     function photoApi(station, path) {
       return PHOTO_SERVER + path + '?station=' + encodeURIComponent(station);
@@ -459,7 +459,7 @@
       } catch (e) {
         gridEl.innerHTML = '';
         if (statusEl) {
-          statusEl.textContent = '⚠ 無法連線照片伺服器（請執行 照片伺服器.bat 並完成 Google Drive 授權）';
+          statusEl.textContent = '⚠ 無法連線照片伺服器（請確認網路可連至 Cloudflare Worker）';
           statusEl.className = 'photo-status err';
         }
       }
