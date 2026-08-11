@@ -23,6 +23,13 @@ import urllib.parse
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import requests
 
+# 確保 stdout 能正確輸出中文（避免 cp950 編碼錯誤）
+if sys.stdout and hasattr(sys.stdout, "reconfigure"):
+    try:
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        pass
+
 BASE = os.path.dirname(os.path.abspath(__file__))
 DEFAULT_PORT = 8000
 
@@ -399,7 +406,7 @@ class Handler(BaseHTTPRequestHandler):
                     self.send_header("Content-Length", str(len(body)))
                     self.end_headers()
                     self.wfile.write(body)
-                    print("  ✓ Google Drive 授權成功！")
+                    print("  [OK] Google Drive 授權成功！")
                 except Exception as e:
                     body = ("<html><body><h2>授權失敗</h2><p>" + str(e) + "</p></body></html>").encode("utf-8")
                     self.send_response(500)
@@ -584,7 +591,7 @@ def main():
         webbrowser.open(auth_url)
         print("  等待授權完成（在瀏覽器中按「允許」）...")
     else:
-        print("  ✓ Google Drive 已授權")
+        print("  [OK] Google Drive 已授權")
 
     print("")
     print("站台照片伺服器已啟動 (Google Drive 模式)")
