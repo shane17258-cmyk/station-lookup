@@ -250,11 +250,20 @@
     color: var(--primary-dark);
     margin-bottom: 8px;
   }
+  .photo-area .photo-title.photo-toggle {
+    cursor: pointer;
+    color: var(--primary);
+    margin-bottom: 0;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .photo-area .photo-title.photo-toggle:hover { text-decoration: underline; }
   .photo-area .photo-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
   }
+  .photo-area .photo-content .photo-grid { margin-top: 8px; }
   .photo-area .photo-grid img {
     width: 76px;
     height: 76px;
@@ -522,25 +531,43 @@
     function createPhotoArea(station) {
       const el = document.createElement('div');
       el.className = 'photo-area';
-      el.innerHTML =
-        '<div class="photo-title">站台照片</div>' +
-        '<div class="photo-grid"></div>' +
-        '<div class="photo-actions">' +
-        '<label class="upload-btn">📷 上傳照片<input type="file" accept="image/*" multiple hidden></label>' +
-        '<span class="photo-hint">照片將存入 Google Drive「' + escapeHtml(station) + '/」資料夾</span>' +
-        '<span class="photo-status"></span>' +
-        '</div>';
-      const gridEl = el.querySelector('.photo-grid');
-      const statusEl = el.querySelector('.photo-status');
-      const inputEl = el.querySelector('input[type=file]');
-      const btnEl = el.querySelector('.upload-btn');
-      if (btnEl) {
-        btnEl.addEventListener('click', (ev) => {
-          if (ev.target !== inputEl) { ev.preventDefault(); inputEl.click(); }
-        });
-      }
-      attachPhotoUpload(station, inputEl, gridEl, statusEl);
-      loadPhotos(station, gridEl, statusEl);
+      const head = document.createElement('div');
+      head.className = 'photo-title photo-toggle';
+      head.textContent = '檢視照片 ▸';
+      el.appendChild(head);
+      const opened = () => {
+        head.textContent = '收合照片 ▾';
+        const content = document.createElement('div');
+        content.className = 'photo-content';
+        content.innerHTML =
+          '<div class="photo-grid"></div>' +
+          '<div class="photo-actions">' +
+          '<label class="upload-btn">📷 上傳照片<input type="file" accept="image/*" multiple hidden></label>' +
+          '<span class="photo-hint">照片將存入 Google Drive「' + escapeHtml(station) + '/」資料夾</span>' +
+          '<span class="photo-status"></span>' +
+          '</div>';
+        el.insertBefore(content, head.nextSibling);
+        const gridEl = content.querySelector('.photo-grid');
+        const statusEl = content.querySelector('.photo-status');
+        const inputEl = content.querySelector('input[type=file]');
+        const btnEl = content.querySelector('.upload-btn');
+        if (btnEl) {
+          btnEl.addEventListener('click', (ev) => {
+            if (ev.target !== inputEl) { ev.preventDefault(); inputEl.click(); }
+          });
+        }
+        attachPhotoUpload(station, inputEl, gridEl, statusEl);
+        loadPhotos(station, gridEl, statusEl);
+      };
+      head.addEventListener('click', () => {
+        const c = el.querySelector('.photo-content');
+        if (c) {
+          c.remove();
+          head.textContent = '檢視照片 ▸';
+        } else {
+          opened();
+        }
+      });
       return el;
     }
 
