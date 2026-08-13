@@ -1,4 +1,5 @@
 @echo off
+setlocal enabledelayedexpansion
 chcp 65001 >nul
 cd /d "%~dp0"
 echo ============================================
@@ -6,12 +7,18 @@ echo   苗栗市站台資料更新
 echo ============================================
 echo.
 
-REM 檢查必要檔案是否存在
+REM 自動偵測最新日期的資料檔
 set MISSING=0
-for %%F in (20260730_LTE_CoBTS_CHT.xlsx 20260730_LTE_CoCell_CHT.xlsx 20260730_nrBts_DB_CHT.xlsx 20260730_nrCell_DB_CHT.xlsx) do (
-    if not exist "%%F" (
-        echo [錯誤] 缺少檔案: %%F
+for %%P in ("*LTE_CoBTS_CHT.xlsx" "*LTE_CoCell_CHT.xlsx" "*nrBts_DB_CHT.xlsx" "*nrCell_DB_CHT.xlsx") do (
+    set "LATEST="
+    for /f "delims=" %%F in ('dir /b /o:-d "%%~P" 2^>nul') do (
+        if not defined LATEST set "LATEST=%%F"
+    )
+    if not defined LATEST (
+        echo [錯誤] 缺少檔案: %%~P
         set MISSING=1
+    ) else (
+        echo 使用最新檔案: !LATEST!
     )
 )
 if "%MISSING%"=="1" (
