@@ -477,10 +477,10 @@ const STATION_DATA_5G = [
   "ranType": "D-RAN",
   "smod": {
    "頭份信德": [
-    "Door",
-    "Temperature",
     "ACPower",
-    "Fire"
+    "Temperature",
+    "Fire",
+    "Door"
    ]
   },
   "lid": {
@@ -6438,10 +6438,10 @@ const STATION_DATA_5G = [
   "ranType": "D-RAN",
   "smod": {
    "頭份珊瑚": [
-    "Door",
-    "Temperature",
     "ACPower",
-    "Fire"
+    "Temperature",
+    "Fire",
+    "Door"
    ]
   },
   "lid": {
@@ -6890,13 +6890,13 @@ const STATION_DATA_5G = [
   "ranType": "C-RAN",
   "smod": {
    "苗栗公館N01公館公館": [
-    "Temperature",
     "AC Power",
+    "Temperature",
     "Fire"
    ],
    "苗栗公館N01公館館南一": [
-    "Temperature",
     "AC Power",
+    "Temperature",
     "Fire"
    ]
   },
@@ -8247,16 +8247,16 @@ const STATION_DATA_5G = [
   "ranType": "C-RAN",
   "smod": {
    "苗栗大山N01後龍大山": [
-    "Door",
-    "Temperature",
     "AC Power",
-    "Fire"
+    "Temperature",
+    "Fire",
+    "Door"
    ],
    "苗栗大山N01後龍東明": [
-    "Door",
-    "Temperature",
     "AC Power",
-    "Fire"
+    "Temperature",
+    "Fire",
+    "Door"
    ]
   },
   "lid": {
@@ -10879,16 +10879,16 @@ const STATION_DATA_5G = [
   "ranType": "D-RAN",
   "smod": {
    "後龍公司寮": [
-    "Door",
-    "Temperature",
     "AC Power",
-    "Fire"
+    "Temperature",
+    "Fire",
+    "Door"
    ],
    "後龍海巡署RH2": [
-    "Door",
-    "Temperature",
     "AC Power",
-    "Fire"
+    "Temperature",
+    "Fire",
+    "Door"
    ]
   },
   "lid": {
@@ -13153,10 +13153,10 @@ const STATION_DATA_5G = [
   "ranType": "D-RAN",
   "smod": {
    "後龍龍港": [
-    "Door",
-    "Temperature",
     "AC Power",
-    "Fire"
+    "Temperature",
+    "Fire",
+    "Door"
    ]
   },
   "lid": {
@@ -14249,10 +14249,10 @@ const STATION_DATA_5G = [
   "ranType": "D-RAN",
   "smod": {
    "竹南龍鳳": [
-    "Door",
-    "Temperature",
     "AC Power",
-    "Fire"
+    "Temperature",
+    "Fire",
+    "Door"
    ]
   },
   "lid": {
@@ -14434,10 +14434,10 @@ const STATION_DATA_5G = [
   "ranType": "D-RAN",
   "smod": {
    "後龍清海宮": [
-    "Door",
-    "Temperature",
     "AC Power",
-    "Fire"
+    "Temperature",
+    "Fire",
+    "Door"
    ]
   },
   "lid": {
@@ -15038,9 +15038,9 @@ const STATION_DATA_5G = [
   "ranType": "D-RAN",
   "smod": {
    "頭份親民段": [
-    "Door",
-    "AC Power",
     "Temperature",
+    "AC Power",
+    "Door",
     "Fire"
    ]
   },
@@ -19219,10 +19219,10 @@ const STATION_DATA_5G = [
   "ranType": "D-RAN",
   "smod": {
    "後龍坤龍紡織": [
-    "Door",
-    "Temperature",
     "AC Power",
-    "Fire"
+    "Temperature",
+    "Fire",
+    "Door"
    ]
   },
   "lid": {
@@ -23970,8 +23970,8 @@ const STATION_DATA_5G = [
   "ranType": "D-RAN",
   "smod": {
    "後龍高鐵站": [
-    "AC Power",
     "Temperature",
+    "AC Power",
     "Fire"
    ]
   },
@@ -32376,16 +32376,16 @@ const STATION_DATA_5G = [
   "ranType": "C-RAN",
   "smod": {
    "竹南南庄N09南庄南庄": [
-    "Door",
-    "Temperature",
     "AC Power",
-    "Fire"
+    "Temperature",
+    "Fire",
+    "Door"
    ],
    "竹南南庄N09南庄西村": [
-    "Door",
-    "Temperature",
     "AC Power",
-    "Fire"
+    "Temperature",
+    "Fire",
+    "Door"
    ]
   },
   "lid": {
