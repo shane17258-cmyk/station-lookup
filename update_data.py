@@ -164,6 +164,7 @@ def build_eac_maps(cfg):
     每個檔案回傳 { id: { 名稱: {cell或"": [告警,...]} } }
     """
     maps = {}
+    maps_used = {}
     for key, path, sheet, id_col, name_col, is_rmod in cfg:
         files = glob.glob(os.path.join(BASE, path))
         if not files:
@@ -171,6 +172,7 @@ def build_eac_maps(cfg):
         fpath = sorted(files)[-1]
         hdr, rows = load_rows_safe(fpath, sheet)
         bucket = {}
+        maps_used[key] = os.path.basename(fpath)
         for r in rows:
             def g(k):
                 v = r.get(k)
@@ -194,6 +196,7 @@ def build_eac_maps(cfg):
                 d = entry.setdefault("smod", [])
                 d.append(desc)
         maps[key] = bucket
+    print("  EAC 使用檔案:", ", ".join(f"{k}={v}" for k, v in maps_used.items()))
     return maps
 
 EAC_FILES = [

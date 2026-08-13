@@ -9,7 +9,7 @@ echo.
 
 REM 自動偵測最新日期的資料檔
 set MISSING=0
-for %%P in ("*LTE_CoBTS_CHT.xlsx" "*LTE_CoCell_CHT.xlsx" "*nrBts_DB_CHT.xlsx" "*nrCell_DB_CHT.xlsx") do (
+for %%P in ("*LTE_CoBTS_CHT.xlsx" "*LTE_CoCell_CHT.xlsx" "*nrBts_DB_CHT.xlsx" "*nrCell_DB_CHT.xlsx" "*LTE_RMOD_EAC_CHT.xlsx" "*LTE_SMOD_EAC_CHT.xlsx" "*NR_RMOD_EAC_CHT.xlsx" "*NR_SMOD_EAC_CHT.xlsx") do (
     set "LATEST="
     for /f "delims=" %%F in ('dir /b /o:-d "%%~P" 2^>nul') do (
         if not defined LATEST set "LATEST=%%F"
@@ -23,7 +23,7 @@ for %%P in ("*LTE_CoBTS_CHT.xlsx" "*LTE_CoCell_CHT.xlsx" "*nrBts_DB_CHT.xlsx" "*
 )
 if "%MISSING%"=="1" (
     echo.
-    echo 請將四個 xlsx 檔案放入本資料夾後再執行本腳本。
+    echo 請將八個 xlsx 檔案放入本資料夾後再執行本腳本。
     pause
     exit /b 1
 )
