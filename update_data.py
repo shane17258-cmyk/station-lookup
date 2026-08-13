@@ -82,6 +82,15 @@ def group_cells(cells, key_fn, field_map):
         out.append({"sec": sec, "cells": sec_cells})
     return out
 
+
+def station_town(cell_rows, hdr_cell, fallback):
+    """站台鄉鎮：優先取該站台 cell 的鄉鎮（取多數），找不到就回傳 BTS 層級。"""
+    towns = [str(get(c, hdr_cell, "鄉鎮")).strip() for c in cell_rows if get(c, hdr_cell, "鄉鎮")]
+    towns = [t for t in towns if t]
+    if towns:
+        return max(set(towns), key=towns.count)
+    return fallback or ""
+
 def normalize(s):
     return s.replace(" ", "").replace("　", "").replace("-", "").replace("_", "")
 
@@ -431,8 +440,10 @@ for r in bts:
     secs = get(r, hdr_bts, "lnBtsIdLL_Sec").split("_") if get(r, hdr_bts, "lnBtsIdLL_Sec") else []
     coords = build_coords(r, hdr_bts, lat_cols, lon_cols, len(stations))
     cells_by_station = {}
+    towns = []
     for s in stations:
         cell_rows_s = cell_map.get(lnbts, {}).get(s, [])
+        towns.append(station_town(cell_rows_s, hdr_cell, get(r, hdr_bts, "鄉鎮")))
         def key_fn(c):
             try:
                 return int(get(c, hdr_cell, "lnCelId")) // 10
@@ -461,6 +472,7 @@ for r in bts:
         "siteName": get(r, hdr_bts, "SiteName"),
         "siteNameCV": get(r, hdr_bts, "SiteNameCV"),
         "town": get(r, hdr_bts, "鄉鎮"),
+        "towns": towns,
         "sec": get(r, hdr_bts, "lnBtsIdLL_Sec"),
         "secs": secs,
         "stations": stations,
@@ -538,8 +550,10 @@ for r in bts5:
     secs = get(r, hdr5, "nrBtsIdNN_Sec").split("_") if get(r, hdr5, "nrBtsIdNN_Sec") else []
     coords = build_coords(r, hdr5, lat5_cols, lon5_cols, len(stations))
     cells_by_station = {}
+    towns = []
     for s in stations:
         cell_rows_s = cell5_map.get(nrbts, {}).get(s, [])
+        towns.append(station_town(cell_rows_s, hdr5c, get(r, hdr5, "鄉鎮")))
         def key_fn5(c):
             try:
                 return int(get(c, hdr5c, "nrCellId")) // 100
@@ -568,6 +582,7 @@ for r in bts5:
         "siteName": get(r, hdr5, "SiteName"),
         "siteNameCV": get(r, hdr5, "SiteName"),
         "town": get(r, hdr5, "鄉鎮"),
+        "towns": towns,
         "sec": get(r, hdr5, "nrBtsIdNN_Sec"),
         "secs": secs,
         "stations": stations,

@@ -119,11 +119,14 @@ async function loadAllowedStations() {
       if (start < 0 || end <= start) continue;
       const arr = JSON.parse(text.slice(start, end + 1));
       for (const item of arr) {
-        if ((item.town || '').trim() === ALLOWED_TOWN) {
-          for (const st of item.stations || []) {
+        const stations = item.stations || [];
+        const towns = item.towns || [];
+        stations.forEach((st, i) => {
+          const town = towns[i] || item.town || '';
+          if (town.trim() === ALLOWED_TOWN) {
             allowed.add(sanitizeStation(st));
           }
-        }
+        });
       }
     } catch (e) {
       // 單一來源失敗時跳過

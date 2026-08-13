@@ -630,6 +630,7 @@
             const coord = (item.coords && item.coords[i]) ? item.coords[i] : null;
             const cells = (item.cells && item.cells[s]) ? item.cells[s] : [];
             const meters = (item.meters && item.meters[s]) ? item.meters[s] : [];
+            const stationTown = (item.towns && item.towns[i]) ? item.towns[i] : (item.town || '');
 
             const wrap = document.createElement('div');
             wrap.style.marginBottom = '6px';
@@ -654,7 +655,7 @@
                 coord.lat + ',' + coord.lon + '">Google 地圖</a>' : '');
             wrap.appendChild(bar);
 
-            if (item.town === '苗栗市') {
+            if (stationTown === '苗栗市') {
               wrap.appendChild(createPhotoArea(s));
             }
 
