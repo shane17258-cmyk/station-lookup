@@ -108,28 +108,51 @@ async function loadAllowedStations() {
   if (stationCache && (Date.now() - stationCache.at) < 60 * 60 * 1000) {
     return stationCache.set;
   }
-  const allowed = new Set();
-  for (const url of DATA_URLS) {
+  // 先試 Cache API（跨 isolate 共享），避免每次呼叫都抓 GitHub
+  const cacheKey = 'station-allowed-v3';
+  let allowed = null;
+  try {
+    const cached = await caches.default.match(cacheKey);
+    if (cached) {
+      const arr = await cached.json();
+      if (arr && arr.length) allowed = new Set(arr);
+    }
+  } catch (e) {
+    // 忽略快取錯誤
+  }
+  if (!allowed) {
+    allowed = new Set();
+    for (const url of DATA_URLS) {
+      try {
+        const resp = await fetch(url);
+        if (!resp.ok) continue;
+        const text = await resp.text();
+        const start = text.indexOf('[');
+        const end = text.lastIndexOf(']');
+        if (start < 0 || end <= start) continue;
+        const arr = JSON.parse(text.slice(start, end + 1));
+        for (const item of arr) {
+          const stations = item.stations || [];
+          const towns = item.towns || [];
+          stations.forEach((st, i) => {
+            const town = towns[i] || item.town || '';
+            if (town.trim() === ALLOWED_TOWN) {
+              allowed.add(sanitizeStation(st));
+            }
+          });
+        }
+      } catch (e) {
+        // 單一來源失敗時跳過
+      }
+    }
     try {
-      const resp = await fetch(url);
-      if (!resp.ok) continue;
-      const text = await resp.text();
-      const start = text.indexOf('[');
-      const end = text.lastIndexOf(']');
-      if (start < 0 || end <= start) continue;
-      const arr = JSON.parse(text.slice(start, end + 1));
-      for (const item of arr) {
-        const stations = item.stations || [];
-        const towns = item.towns || [];
-        stations.forEach((st, i) => {
-          const town = towns[i] || item.town || '';
-          if (town.trim() === ALLOWED_TOWN) {
-            allowed.add(sanitizeStation(st));
-          }
-        });
+      if (allowed.size) {
+        await caches.default.put(cacheKey, new Response(JSON.stringify([...allowed]), {
+          headers: { 'Cache-Control': 'public, max-age=3600' },
+        }));
       }
     } catch (e) {
-      // 單一來源失敗時跳過
+      // 快取失敗不影響功能
     }
   }
   stationCache = { at: Date.now(), set: allowed };
@@ -174,11 +197,33 @@ async function driveGetOrCreateFolder(token, name, parentId) {
 }
 
 async function getStationFolderId(env, token, station) {
-  const key = station + '|' + token.slice(0, 8);
+  const st = sanitizeStation(station);
+  const key = st + '|' + token.slice(0, 8);
   if (folderCache[key]) return folderCache[key];
+  // 先試 Cache API（folder ID 是穩定的，可跨 isolate 共享）
+  const cacheKey = 'station-folder-' + st;
+  try {
+    const cached = await caches.default.match(cacheKey);
+    if (cached) {
+      const id = await cached.text();
+      if (id) {
+        folderCache[key] = id;
+        return id;
+      }
+    }
+  } catch (e) {
+    // 忽略快取錯誤
+  }
   const root = await driveGetOrCreateFolder(token, DRIVE_FOLDER_NAME, 'root');
-  const folder = await driveGetOrCreateFolder(token, sanitizeStation(station), root);
+  const folder = await driveGetOrCreateFolder(token, st, root);
   folderCache[key] = folder;
+  try {
+    await caches.default.put(cacheKey, new Response(folder, {
+      headers: { 'Cache-Control': 'public, max-age=86400' },
+    }));
+  } catch (e) {
+    // 快取失敗不影響功能
+  }
   return folder;
 }
 
@@ -252,28 +297,37 @@ async function uploadPhotos(env, station, files) {
       n += 1;
     }
     existing.add(final);
-    const finalName = await uploadOne(token, folderId, final, arr);
+    const ext2 = /(\.[^.]*)$/.exec(final) ? /(\.[^.]*)$/.exec(final)[1].toLowerCase() : '';
+    const ctype = CONTENT_TYPES[ext2] || entry.type || 'application/octet-stream';
+    const finalName = await uploadOne(token, folderId, final, arr, ctype);
     saved.push(finalName);
   }
   return { saved };
 }
 
-async function uploadOne(token, folderId, name, bytes) {
-  const init = await driveFetch(token, DRIVE_UPLOAD_API +
-    '?uploadType=resumable&fields=id,name', {
+async function uploadOne(token, folderId, name, bytes, contentType) {
+  // multipart 上傳：單一請求即可（減少 subrequest 數量）
+  const boundary = 'x' + Date.now().toString(36) + Math.random().toString(36).slice(2);
+  const enc = new TextEncoder();
+  const meta = JSON.stringify({ name, parents: [folderId] });
+  const head = '--' + boundary + '\r\n' +
+    'Content-Type: application/json; charset=UTF-8\r\n\r\n' +
+    meta + '\r\n--' + boundary + '\r\n' +
+    'Content-Type: ' + contentType + '\r\n\r\n';
+  const tail = '\r\n--' + boundary + '--\r\n';
+  const headBytes = enc.encode(head);
+  const tailBytes = enc.encode(tail);
+  const body = new Uint8Array(headBytes.length + bytes.length + tailBytes.length);
+  body.set(headBytes, 0);
+  body.set(bytes, headBytes.length);
+  body.set(tailBytes, headBytes.length + bytes.length);
+  const resp = await driveFetch(token, DRIVE_UPLOAD_API +
+    '?uploadType=multipart&fields=id,name', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ name, parents: [folderId] }),
+    headers: { 'Content-Type': 'multipart/related; boundary=' + boundary },
+    body,
   });
-  const uploadUrl = init.headers.get('Location');
-  if (!uploadUrl) throw new Error('上傳初始化失敗');
-  const put = await fetch(uploadUrl, {
-    method: 'PUT',
-    headers: { 'Content-Type': 'application/octet-stream' },
-    body: bytes,
-  });
-  if (!put.ok) throw new Error('上傳失敗: ' + put.status);
-  const data = await put.json();
+  const data = await resp.json();
   return data.name || name;
 }
 
