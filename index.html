@@ -461,6 +461,33 @@
     height: 10px;
     border-radius: 50%;
   }
+  .locate-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 14px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+    background: var(--primary);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: background .2s;
+  }
+  .locate-btn:hover { background: var(--primary-dark); }
+  .locate-btn:disabled { background: #9ab0c4; cursor: wait; }
+  .locate-status {
+    font-size: 12px;
+    color: #8aa4bd;
+    min-height: 16px;
+    margin-bottom: 6px;
+    line-height: 1.5;
+  }
+  .locate-status.err { color: #c0392b; }
+  .locate-status.ok { color: #2e7d32; }
   .map-loading {
     text-align: center;
     color: #8aa4bd;
@@ -560,7 +587,11 @@
             <option value="5g">僅 5G</option>
           </select>
         </div>
+        <div class="mt-group" style="margin-left:auto;">
+          <button type="button" id="btnLocate" class="locate-btn" title="回到我的位置">📌 我的位置</button>
+        </div>
       </div>
+      <div id="locateStatus" class="locate-status"></div>
       <div id="mapLoading" class="map-loading">資料載入中…</div>
       <div id="coverageMap"></div>
       <div class="map-legend">
@@ -924,10 +955,14 @@
     });
 
     // ============ 涵蓋地圖（Leaflet + GeoJSON） ============
-    let covMap = null, covLayers = {}, covLoaded = false;
+    let covMap = null, covLayers = {}, covLoaded = false, requestLocateRef = null;
 
     function initCoverageMap() {
-      if (covLoaded) { if (covMap) setTimeout(() => covMap.invalidateSize(), 50); return; }
+      if (covLoaded) {
+        if (covMap) setTimeout(() => covMap.invalidateSize(), 50);
+        if (requestLocateRef) requestLocateRef();
+        return;
+      }
       covLoaded = true;
       if (typeof L === 'undefined') { console.log('Leaflet 未載入'); return; }
 
@@ -941,6 +976,67 @@
         maxZoom: 19,
         attribution: '&copy; OpenStreetMap contributors'
       }).addTo(covMap);
+
+      // ============ GPS 定位 ============
+      let locateMarker = null, locateCircle = null, hasLocated = false;
+      const locBtn = document.getElementById('btnLocate');
+      const locStatus = document.getElementById('locateStatus');
+
+      function setLocStatus(msg, cls) {
+        locStatus.textContent = msg || '';
+        locStatus.className = 'locate-status' + (cls ? ' ' + cls : '');
+      }
+      function placeLocate(lat, lng, acc) {
+        if (locateMarker) covMap.removeLayer(locateMarker);
+        if (locateCircle) covMap.removeLayer(locateCircle);
+        locateCircle = L.circle([lat, lng], {
+          radius: acc || 30,
+          color: '#c0392b', weight: 1.5,
+          fillColor: '#c0392b', fillOpacity: 0.08,
+          interactive: false
+        }).addTo(covMap);
+        locateMarker = L.circleMarker([lat, lng], {
+          radius: 7,
+          color: '#fff', weight: 2,
+          fillColor: '#c0392b', fillOpacity: 1
+        }).addTo(covMap);
+        if (!hasLocated) {
+          covMap.setView([lat, lng], Math.max(14, covMap.getZoom()), { animate: false });
+          hasLocated = true;
+        } else {
+          covMap.setView([lat, lng], Math.max(14, covMap.getZoom()), { animate: true });
+        }
+      }
+      function requestLocate(autofit) {
+        if (!('geolocation' in navigator)) {
+          setLocStatus('此裝置不支援 GPS 定位', 'err');
+          return;
+        }
+        locBtn.disabled = true;
+        setLocStatus('正在取得 GPS 位置…');
+        navigator.geolocation.getCurrentPosition(
+          (pos) => {
+            locBtn.disabled = false;
+            const lat = pos.coords.latitude, lng = pos.coords.longitude;
+            placeLocate(lat, lng, pos.coords.accuracy);
+            setLocStatus('📍 已定位：' + lat.toFixed(5) + ', ' + lng.toFixed(5) +
+              '（誤差約 ' + Math.round(pos.coords.accuracy) + ' 公尺）', 'ok');
+          },
+          (err) => {
+            locBtn.disabled = false;
+            const msg = {
+              1: '定位權限被拒絕，請允許存取位置',
+              2: '無法取得位置（GPS 訊號不佳）',
+              3: '定位逾時'
+            }[err.code] || '定位失敗：' + err.message;
+            setLocStatus(msg, 'err');
+          },
+          { enableHighAccuracy: true, timeout: 10000, maximumAge: 30000 }
+        );
+      }
+      locBtn.addEventListener('click', () => requestLocate());
+      requestLocateRef = requestLocate;
+      requestLocate(); // 進入地圖時自動定位
 
       const style4g = {
         color: '#2f6fad', weight: 1, opacity: 0.9,
@@ -1009,7 +1105,7 @@
         loadPoints('5g', 'geo/geo_5g_points.json', 'p5g')
       ]).then(() => {
         document.getElementById('mapLoading').style.display = 'none';
-        if (covLayers['4g']) covMap.fitBounds(covLayers['4g'].layer.getBounds().pad(0.05));
+        if (covLayers['4g'] && !hasLocated) covMap.fitBounds(covLayers['4g'].layer.getBounds().pad(0.05));
       });
 
       const toggle = (name, on) => {
