@@ -575,9 +575,21 @@
             <option value="orig">原始半徑</option>
             <option value="ue">UE 距離</option>
           </select>
+          <select id="sel4gBand">
+            <option value="all">全部頻段</option>
+            <option value="L900">L900</option>
+            <option value="L1800">L1800</option>
+            <option value="L2600">L2600</option>
+            <option value="L2100">L2100</option>
+          </select>
         </div>
         <div class="mt-group">
           <label class="mt-label"><input type="checkbox" id="chk5g" checked> 5G 扇形</label>
+          <select id="sel5gBand">
+            <option value="all">全部頻段</option>
+            <option value="N2100">N2100</option>
+            <option value="N3500">N3500</option>
+          </select>
         </div>
         <div class="mt-group">
           <label class="mt-label"><input type="checkbox" id="chkPoints" checked> 站台點位</label>
@@ -1068,14 +1080,40 @@
           '</div>';
       }
 
-      const loadSectors = (kind, mode, url, style, name) => new Promise((resolve) => {
+      // 頻段判斷規則（依 CellName 結尾）
+      const BAND_RULES = {
+        '4g': {
+          L900:  c => /[17]$/.test(c),
+          L1800: c => /[23]$/.test(c),
+          L2600: c => /[45]$/.test(c),
+          L2100: c => /6$/.test(c)
+        },
+        '5g': {
+          N2100: c => /06$/.test(c),
+          N3500: c => /11$/.test(c)
+        }
+      };
+
+      const loadSectors = (kind, url, style, name) => new Promise((resolve) => {
         fetch(url).then(r => r.json()).then(geo => {
-          const layer = L.geoJSON(geo, {
-            style,
-            onEachFeature: (feat, l) => l.bindPopup(sectorPopup(feat))
+          const rules = BAND_RULES[kind];
+          const byBand = {};
+          Object.keys(rules).forEach(b => byBand[b] = []);
+          geo.features.forEach(f => {
+            const c = f.properties.cell || '';
+            Object.keys(rules).forEach(b => { if (rules[b](c)) byBand[b].push(f); });
           });
-          covLayers[name] = { layer, style };
-          layer.addTo(covMap);
+          const bands = {};
+          Object.keys(byBand).forEach(b => {
+            bands[b] = L.geoJSON({
+              type: 'FeatureCollection',
+              features: byBand[b]
+            }, {
+              style,
+              onEachFeature: (feat, l) => l.bindPopup(sectorPopup(feat))
+            });
+          });
+          covLayers[name] = { kind, bands, style };
           resolve();
         }).catch(() => resolve());
       });
@@ -1097,15 +1135,35 @@
         }).catch(() => resolve());
       });
 
+      // 依 checkbox + 頻段下拉顯示/隱藏扇形子圖層
+      function applySectorVisibility() {
+        ['4g', '5g'].forEach(net => {
+          const g = covLayers[net];
+          if (!g) return;
+          const chk = document.getElementById('chk' + net).checked;
+          const band = document.getElementById('sel' + net + 'Band').value;
+          Object.keys(g.bands).forEach(b => {
+            const layer = g.bands[b];
+            const show = chk && (band === 'all' || band === b);
+            if (show && !covMap.hasLayer(layer)) layer.addTo(covMap);
+            if (!show && covMap.hasLayer(layer)) covMap.removeLayer(layer);
+          });
+        });
+      }
+
       document.getElementById('mapLoading').style.display = 'block';
       Promise.all([
-        loadSectors('4g', 'orig', 'geo/geo_4g_sectors.json', style4g, '4g'),
-        loadSectors('5g', 'orig', 'geo/geo_5g_sectors.json', style5g, '5g'),
+        loadSectors('4g', 'geo/geo_4g_sectors.json', style4g, '4g'),
+        loadSectors('5g', 'geo/geo_5g_sectors.json', style5g, '5g'),
         loadPoints('4g', 'geo/geo_4g_points.json', 'p4g'),
         loadPoints('5g', 'geo/geo_5g_points.json', 'p5g')
       ]).then(() => {
+        applySectorVisibility();
         document.getElementById('mapLoading').style.display = 'none';
-        if (covLayers['4g'] && !hasLocated) covMap.fitBounds(covLayers['4g'].layer.getBounds().pad(0.05));
+        if (covLayers['4g'] && !hasLocated) {
+          const first = covLayers['4g'].bands['L900'];
+          if (first) covMap.fitBounds(first.getBounds().pad(0.05));
+        }
       });
 
       const toggle = (name, on) => {
@@ -1115,32 +1173,34 @@
         if (!on && covMap.hasLayer(layer)) covMap.removeLayer(layer);
       };
 
-      document.getElementById('chk4g').addEventListener('change', e => toggle('4g', e.target.checked));
-      document.getElementById('chk5g').addEventListener('change', e => toggle('5g', e.target.checked));
-      document.getElementById('chkPoints').addEventListener('change', e => {
-        const sel = document.getElementById('selPointNet').value;
-        toggle('p4g', e.target.checked && (sel === 'both' || sel === '4g'));
-        toggle('p5g', e.target.checked && (sel === 'both' || sel === '5g'));
-      });
-      document.getElementById('selPointNet').addEventListener('change', () => {
-        const on = document.getElementById('chkPoints').checked;
+      const togglePoints = (on) => {
         const sel = document.getElementById('selPointNet').value;
         toggle('p4g', on && (sel === 'both' || sel === '4g'));
         toggle('p5g', on && (sel === 'both' || sel === '5g'));
-      });
+      };
+
+      document.getElementById('chk4g').addEventListener('change', applySectorVisibility);
+      document.getElementById('chk5g').addEventListener('change', applySectorVisibility);
+      document.getElementById('sel4gBand').addEventListener('change', applySectorVisibility);
+      document.getElementById('sel5gBand').addEventListener('change', applySectorVisibility);
+      document.getElementById('chkPoints').addEventListener('change', e => togglePoints(e.target.checked));
+      document.getElementById('selPointNet').addEventListener('change', () => togglePoints(document.getElementById('chkPoints').checked));
       document.getElementById('sel4gMode').addEventListener('change', e => {
         const on = document.getElementById('chk4g').checked;
         const newUrl = e.target.value === 'ue'
           ? 'geo/geo_4g_ue_sectors.json' : 'geo/geo_4g_sectors.json';
         const old = covLayers['4g'];
-        if (old && covMap.hasLayer(old.layer)) covMap.removeLayer(old.layer);
-        delete covLayers['4g'];
-        if (on) {
-          const st = old ? old.style : style4g;
-          loadSectors('4g', e.target.value, newUrl, st, '4g').then(() => {
-            if (on) toggle('4g', true);
+        if (old) {
+          Object.keys(old.bands || {}).forEach(b => {
+            const layer = old.bands[b];
+            if (covMap.hasLayer(layer)) covMap.removeLayer(layer);
           });
+          delete covLayers['4g'];
         }
+        const st = (old && old.style) || style4g;
+        loadSectors('4g', newUrl, st, '4g').then(() => {
+          applySectorVisibility();
+        });
       });
     }
 
