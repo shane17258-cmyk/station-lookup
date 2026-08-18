@@ -392,7 +392,7 @@ const STATION_DATA = [
  {
   "id": "411480",
   "siteName": "苗栗三角公園",
-  "siteNameCV": "苗栗中央L17苗栗三角公園",
+  "siteNameCV": "苗栗中央L17苗栗忠孝龍岡",
   "town": "苗栗市",
   "towns": [
    "苗栗市",
@@ -931,13 +931,13 @@ const STATION_DATA = [
   },
   "smod": {
    "竹南造橋L01造橋老庄": [
-    "Temperature",
     "AC Power",
+    "Temperature",
     "Fire"
    ],
    "竹南造橋L01造橋亞東外環": [
-    "Temperature",
     "AC Power",
+    "Temperature",
     "Fire"
    ]
   },
@@ -1482,10 +1482,10 @@ const STATION_DATA = [
   },
   "smod": {
    "頭份信德": [
+    "Door",
     "AC Power",
     "Temperature",
-    "Fire",
-    "Door"
+    "Fire"
    ]
   },
   "lid": {
@@ -2014,7 +2014,7 @@ const STATION_DATA = [
  {
   "id": "411665",
   "siteName": "公館公館BBU5",
-  "siteNameCV": "公館同善寺RH1",
+  "siteNameCV": "公館大坑支RH3",
   "town": "公館鄉",
   "towns": [
    "公館鄉",
@@ -2153,46 +2153,46 @@ const STATION_DATA = [
   "smod": {
    "公館同善寺RH1": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ],
    "公館北寮枝RH2": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ],
    "公館大坑支RH3": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ],
    "公館玉谷村RH4": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ]
   },
@@ -2763,7 +2763,7 @@ const STATION_DATA = [
  {
   "id": "412604",
   "siteName": "竹南毅和",
-  "siteNameCV": "竹南復興L14竹南毅和",
+  "siteNameCV": "竹南復興L14竹南明勝",
   "town": "竹南鎮",
   "towns": [
    "竹南鎮",
@@ -3259,7 +3259,7 @@ const STATION_DATA = [
  {
   "id": "412606",
   "siteName": "苗栗南勢揚升",
-  "siteNameCV": "苗栗中央L27苗栗南勢揚升",
+  "siteNameCV": "苗栗中央L27苗栗國馨",
   "town": "苗栗市",
   "towns": [
    "苗栗市",
@@ -4154,13 +4154,13 @@ const STATION_DATA = [
   "smod": {
    "竹南群創T3FAB": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ]
   },
@@ -4329,7 +4329,7 @@ const STATION_DATA = [
  {
   "id": "412623",
   "siteName": "頭份文化八德",
-  "siteNameCV": "竹南頭份L10頭份復興",
+  "siteNameCV": "竹南頭份L10頭份文化八德",
   "town": "頭份市",
   "towns": [
    "頭份市",
@@ -4596,17 +4596,6 @@ const STATION_DATA = [
        "lon": 120.89357
       },
       {
-       "cel": "62",
-       "cov": "Outdoor",
-       "rmod": "FXEB",
-       "ant": "DBXLH-6565A-VTM",
-       "az": "290",
-       "mt": "1",
-       "et": "7",
-       "lat": 24.69567,
-       "lon": 120.89357
-      },
-      {
        "cel": "63",
        "cov": "Outdoor",
        "rmod": "FXEB",
@@ -4643,7 +4632,6 @@ const STATION_DATA = [
     "rmod": {
      "43": [
       "Door",
-      "Fire",
       "Temperature",
       "AC Power"
      ]
@@ -4821,13 +4809,13 @@ const STATION_DATA = [
   "smod": {
    "苗栗衛星消防": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ]
   },
@@ -4840,7 +4828,7 @@ const STATION_DATA = [
  {
   "id": "412639",
   "siteName": "苗栗公館L16",
-  "siteNameCV": "苗栗公館L16公館南幹支RH8",
+  "siteNameCV": "苗栗公館L16公館苗27RH3",
   "town": "公館鄉",
   "towns": [
    "公館鄉",
@@ -5303,7 +5291,7 @@ const STATION_DATA = [
  {
   "id": "412648",
   "siteName": "竹南農科院",
-  "siteNameCV": "竹南大埔L15竹南群聯",
+  "siteNameCV": "竹南大埔L15竹南農科院",
   "town": "竹南鎮",
   "towns": [
    "竹南鎮",
@@ -5709,7 +5697,7 @@ const STATION_DATA = [
  {
   "id": "412650",
   "siteName": "南庄高山青",
-  "siteNameCV": "南庄高山青露營區RH2",
+  "siteNameCV": "南庄高山青",
   "town": "南庄鄉",
   "towns": [
    "南庄鄉",
@@ -5834,22 +5822,22 @@ const STATION_DATA = [
   "smod": {
    "南庄高山青": [
     "Door",
-    "Temperature",
+    "Low DC Voltage",
     "SMR Alarm",
     "Power module failure",
-    "Low DC Voltage",
-    "Mains power break",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ],
    "南庄高山青露營區RH2": [
     "Door",
-    "Temperature",
+    "Low DC Voltage",
     "SMR Alarm",
     "Power module failure",
-    "Low DC Voltage",
-    "Mains power break",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ]
   },
@@ -6122,46 +6110,46 @@ const STATION_DATA = [
   "smod": {
    "苗栗後龍L18後龍民族": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ],
    "苗栗後龍L18後龍柳樹灣RH1": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ],
    "苗栗後龍L18後龍柳樹灣RH2": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ],
    "苗栗後龍L18後龍柳樹灣RH3": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ]
   },
@@ -6192,7 +6180,7 @@ const STATION_DATA = [
  {
   "id": "412760",
   "siteName": "苗栗台糖宿舍",
-  "siteNameCV": "苗栗中央L26苗栗台糖宿舍",
+  "siteNameCV": "苗栗中央L26苗栗聯合學院",
   "town": "苗栗市",
   "towns": [
    "苗栗市",
@@ -6627,24 +6615,24 @@ const STATION_DATA = [
   "smod": {
    "公館五穀國小RH1": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ],
    "公館德善堂RH3": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ]
   },
@@ -6836,75 +6824,75 @@ const STATION_DATA = [
   "smod": {
    "竹南漢民科技RH1": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ],
    "竹南佳邦科技RH2": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ],
    "竹南京鼎科技RH3": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ],
    "竹南微矽電子RH4": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ],
    "竹南迪恩士RH6": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ]
   },
   "lid": {
    "竹南漢民科技RH1": [
-    "L412779L33"
+    "L412779L43"
    ],
    "竹南佳邦科技RH2": [
-    "L412779L33"
+    "L412779L43"
    ],
    "竹南京鼎科技RH3": [
-    "L412779L33"
+    "L412779L43"
    ],
    "竹南微矽電子RH4": [
-    "L412779L33"
+    "L412779L43"
    ],
    "竹南迪恩士RH6": [
-    "L412779L33"
+    "L412779L43"
    ]
   }
  },
@@ -9024,7 +9012,7 @@ const STATION_DATA = [
        "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "RVV-65A-R3",
-       "az": "90",
+       "az": "80",
        "mt": "0",
        "et": "6",
        "lat": 24.598866,
@@ -9035,7 +9023,7 @@ const STATION_DATA = [
        "cov": "Outdoor",
        "rmod": "AHEGG",
        "ant": "RVV-65A-R3",
-       "az": "90",
+       "az": "80",
        "mt": "0",
        "et": "3",
        "lat": 24.598866,
@@ -9046,7 +9034,7 @@ const STATION_DATA = [
        "cov": "Outdoor",
        "rmod": "AHEGG",
        "ant": "RVV-65A-R3",
-       "az": "90",
+       "az": "80",
        "mt": "0",
        "et": "3",
        "lat": 24.598866,
@@ -9057,7 +9045,7 @@ const STATION_DATA = [
        "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "80010864",
-       "az": "90",
+       "az": "80",
        "mt": "0",
        "et": "3",
        "lat": 24.598866,
@@ -9068,7 +9056,7 @@ const STATION_DATA = [
        "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "80010864",
-       "az": "90",
+       "az": "80",
        "mt": "0",
        "et": "3",
        "lat": 24.598866,
@@ -9829,24 +9817,24 @@ const STATION_DATA = [
   "smod": {
    "苗栗中央L36苗栗文峰": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ],
    "苗栗中央L36苗栗府前至公": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ]
   },
@@ -9880,7 +9868,7 @@ const STATION_DATA = [
   "id": "413016",
   "siteName": "竹南京元宿舍",
   "siteNameCV": "竹南頭份L29竹南京元宿舍",
-  "town": "竹南鎮",
+  "town": "頭份市",
   "towns": [
    "竹南鎮",
    "頭份市"
@@ -10097,7 +10085,7 @@ const STATION_DATA = [
  {
   "id": "413019",
   "siteName": "頭份勝懋RH1",
-  "siteNameCV": "竹南頭份L16頭份派德",
+  "siteNameCV": "竹南頭份L16頭份勝懋RH1",
   "town": "頭份市",
   "towns": [
    "頭份市",
@@ -12029,13 +12017,13 @@ const STATION_DATA = [
   "smod": {
    "三灣北埔": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ]
   },
@@ -12262,13 +12250,13 @@ const STATION_DATA = [
   "smod": {
    "竹南聖福": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ]
   },
@@ -12646,47 +12634,47 @@ const STATION_DATA = [
   "smod": {
    "南庄BBU5南庄九武RH1": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ],
    "南庄BBU5南庄悅園民宿RH2": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ],
    "南庄BBU5南庄南富口RH3": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ]
   },
   "lid": {
    "南庄BBU5南庄九武RH1": [
-    "L413482L33"
+    "L413482L23"
    ],
    "南庄BBU5南庄悅園民宿RH2": [
-    "L413482L33"
+    "L413482L23"
    ],
    "南庄BBU5南庄南富口RH3": [
-    "L413482L33"
+    "L413482L23"
    ]
   }
  },
@@ -13860,7 +13848,7 @@ const STATION_DATA = [
   "id": "413704",
   "siteName": "頭份新市鎮",
   "siteNameCV": "竹南大西L05頭份新市鎮",
-  "town": "造橋鄉",
+  "town": "頭份市",
   "towns": [
    "頭份市",
    "造橋鄉"
@@ -14810,10 +14798,10 @@ const STATION_DATA = [
   },
   "smod": {
    "頭份珊瑚": [
+    "Door",
     "ACPower",
     "Temperature",
-    "Fire",
-    "Door"
+    "Fire"
    ]
   },
   "lid": {
@@ -14939,7 +14927,7 @@ const STATION_DATA = [
        "rmod": "FHEL",
        "ant": "80010682",
        "az": "100",
-       "mt": "0",
+       "mt": "1",
        "et": "4",
        "lat": 24.53892,
        "lon": 120.81748
@@ -14950,7 +14938,7 @@ const STATION_DATA = [
        "rmod": "FHEL",
        "ant": "80010682",
        "az": "100",
-       "mt": "0",
+       "mt": "1",
        "et": "4",
        "lat": 24.53892,
        "lon": 120.81748
@@ -14961,7 +14949,7 @@ const STATION_DATA = [
        "rmod": "AHHB",
        "ant": "80010682",
        "az": "100",
-       "mt": "0",
+       "mt": "1",
        "et": "4",
        "lat": 24.53892,
        "lon": 120.81748
@@ -14972,7 +14960,7 @@ const STATION_DATA = [
        "rmod": "AHHB",
        "ant": "80010682",
        "az": "100",
-       "mt": "0",
+       "mt": "1",
        "et": "4",
        "lat": 24.53892,
        "lon": 120.81748
@@ -15755,26 +15743,26 @@ const STATION_DATA = [
   "smod": {
    "苗栗公館L01公館公館": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
     "water",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ],
    "苗栗公館L01公館館南一": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
     "water",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ]
   },
@@ -16787,34 +16775,33 @@ const STATION_DATA = [
   "smod": {
    "苗栗嘉盛L01苗栗嘉盛": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ],
    "苗栗嘉盛L01苗栗為公": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ]
   },
   "lid": {
    "苗栗嘉盛L01苗栗嘉盛": [
-    "L7642",
     "L3731"
    ],
    "苗栗嘉盛L01苗栗為公": [
-    "L7642"
+    "L3731"
    ]
   },
   "eac": {
@@ -17943,13 +17930,13 @@ const STATION_DATA = [
   "smod": {
    "南庄田美": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ]
   },
@@ -18406,13 +18393,13 @@ const STATION_DATA = [
   "ranType": "C-RAN",
   "smod": {
    "苗栗後龍L01後龍後龍": [
-    "Temperature",
     "AC Power",
+    "Temperature",
     "Fire"
    ],
    "苗栗後龍L01後龍仁德": [
-    "Temperature",
     "AC Power",
+    "Temperature",
     "Fire"
    ]
   },
@@ -18759,24 +18746,24 @@ const STATION_DATA = [
   "smod": {
    "苗栗大山L01後龍大山": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ],
    "苗栗大山L01後龍東明": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ]
   },
@@ -18953,7 +18940,7 @@ const STATION_DATA = [
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "140",
-       "mt": "3",
+       "mt": "0",
        "et": "6",
        "lat": 24.61287,
        "lon": 120.79342
@@ -22849,14 +22836,14 @@ const STATION_DATA = [
   },
   "smod": {
    "竹南三灣L01三灣三灣": [
+    "AC Power",
     "Firer",
-    "Temperature",
-    "AC Power"
+    "Temperature"
    ],
    "竹南三灣L01三灣大河": [
+    "AC Power",
     "Firer",
-    "Temperature",
-    "AC Power"
+    "Temperature"
    ]
   },
   "lid": {
@@ -24343,24 +24330,24 @@ const STATION_DATA = [
   "smod": {
    "後龍公司寮": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ],
    "後龍海巡署RH2": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ]
   },
@@ -25870,10 +25857,10 @@ const STATION_DATA = [
    "造橋鄉",
    "造橋鄉"
   ],
-  "sec": "s1/2/3_s4/5/6",
+  "sec": "s1/2/3_s5",
   "secs": [
    "s1/2/3",
-   "s4/5/6"
+   "s5"
   ],
   "stations": [
    "竹南造橋L04造橋八十尺橋",
@@ -25983,7 +25970,7 @@ const STATION_DATA = [
        "ant": "80010864",
        "az": "130",
        "mt": "0",
-       "et": "6",
+       "et": "4",
        "lat": 24.61431,
        "lon": 120.84028
       },
@@ -25994,7 +25981,7 @@ const STATION_DATA = [
        "ant": "80010864",
        "az": "130",
        "mt": "0",
-       "et": "4",
+       "et": "6",
        "lat": 24.61431,
        "lon": 120.84028
       },
@@ -26026,8 +26013,8 @@ const STATION_DATA = [
        "rmod": "FXDB",
        "ant": "80010864",
        "az": "130",
-       "mt": "0",
-       "et": "9",
+       "mt": "1",
+       "et": "8",
        "lat": 24.61431,
        "lon": 120.84028
       }
@@ -27191,7 +27178,7 @@ const STATION_DATA = [
        "rmod": "FHEB",
        "ant": "80010864",
        "az": "100",
-       "mt": "2",
+       "mt": "0",
        "et": "2.5",
        "lat": 24.569925,
        "lon": 120.825059
@@ -27584,35 +27571,35 @@ const STATION_DATA = [
   "smod": {
    "竹南中美晶RH1": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ],
    "竹南中美晶RH2": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ],
    "竹南環球晶圓RH3": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ]
   },
@@ -29241,13 +29228,13 @@ const STATION_DATA = [
   "smod": {
    "後龍龍港": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ]
   },
@@ -29373,13 +29360,13 @@ const STATION_DATA = [
   "smod": {
    "頭屋曲洞": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ]
   },
@@ -31401,13 +31388,13 @@ const STATION_DATA = [
   "smod": {
    "竹南龍鳳": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ]
   },
@@ -31703,13 +31690,13 @@ const STATION_DATA = [
   "smod": {
    "後龍清海宮": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ]
   },
@@ -32757,13 +32744,13 @@ const STATION_DATA = [
   "smod": {
    "頭份水流東": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ]
   },
@@ -32932,10 +32919,10 @@ const STATION_DATA = [
   },
   "smod": {
    "頭份親民段": [
+    "Door",
     "AC Power",
     "Temperature",
-    "Fire",
-    "Door"
+    "Fire"
    ]
   },
   "lid": {
@@ -33166,13 +33153,13 @@ const STATION_DATA = [
   "smod": {
    "公館大坑": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ]
   },
@@ -33915,7 +33902,7 @@ const STATION_DATA = [
   "id": "415362",
   "siteName": "竹南大西L04",
   "siteNameCV": "竹南大西L04頭份新市鎮RH",
-  "town": "造橋鄉",
+  "town": "頭份市",
   "towns": [
    "造橋鄉",
    "造橋鄉",
@@ -34118,7 +34105,7 @@ const STATION_DATA = [
  {
   "id": "415368",
   "siteName": "頭份頭份BBU3",
-  "siteNameCV": "頭份陽明RH3",
+  "siteNameCV": "頭份斗煥RH1",
   "town": "頭份市",
   "towns": [
    "頭份市",
@@ -34198,7 +34185,7 @@ const STATION_DATA = [
        "ant": "DBXLH-6565A-VTM",
        "az": "0",
        "mt": "0",
-       "et": "9",
+       "et": "10",
        "lat": 24.6636,
        "lon": 120.92177
       },
@@ -34209,7 +34196,7 @@ const STATION_DATA = [
        "ant": "DBXLH-6565A-VTM",
        "az": "0",
        "mt": "0",
-       "et": "6",
+       "et": "5",
        "lat": 24.6636,
        "lon": 120.92177
       }
@@ -34269,70 +34256,70 @@ const STATION_DATA = [
   },
   "smod": {
    "頭份斗煥RH1": [
-    "Generator",
+    "Low DC Voltage",
+    "Fire Alarm",
+    "AC Power Alarm",
+    "SMR Alarm",
+    "Low Temperature",
     "Air Con.",
+    "Device Abnormal",
+    "Door Alarm",
     "Electricity Supply Abnormality",
     "Temperature",
-    "SMR Alarm",
-    "Low DC Voltage",
-    "Low Temperature",
-    "Door Alarm",
-    "Device Abnormal",
-    "AC Power Alarm",
-    "Fire Alarm"
+    "Generator"
    ],
    "頭份牛欄窩RH2": [
-    "Generator",
+    "Low DC Voltage",
+    "Fire Alarm",
+    "AC Power Alarm",
+    "SMR Alarm",
+    "Low Temperature",
     "Air Con.",
+    "Device Abnormal",
+    "Door Alarm",
     "Electricity Supply Abnormality",
     "Temperature",
-    "SMR Alarm",
-    "Low DC Voltage",
-    "Low Temperature",
-    "Door Alarm",
-    "Device Abnormal",
-    "AC Power Alarm",
-    "Fire Alarm"
+    "Generator"
    ],
    "頭份陽明RH3": [
-    "Generator",
+    "Low DC Voltage",
+    "Fire Alarm",
+    "AC Power Alarm",
+    "SMR Alarm",
+    "Low Temperature",
     "Air Con.",
+    "Device Abnormal",
+    "Door Alarm",
     "Electricity Supply Abnormality",
     "Temperature",
-    "SMR Alarm",
-    "Low DC Voltage",
-    "Low Temperature",
-    "Door Alarm",
-    "Device Abnormal",
-    "AC Power Alarm",
-    "Fire Alarm"
+    "Generator"
    ],
    "頭份民族RH4": [
-    "Generator",
+    "Low DC Voltage",
+    "Fire Alarm",
+    "AC Power Alarm",
+    "SMR Alarm",
+    "Low Temperature",
     "Air Con.",
+    "Device Abnormal",
+    "Door Alarm",
     "Electricity Supply Abnormality",
     "Temperature",
-    "SMR Alarm",
-    "Low DC Voltage",
-    "Low Temperature",
-    "Door Alarm",
-    "Device Abnormal",
-    "AC Power Alarm",
-    "Fire Alarm"
+    "Generator"
    ]
   },
   "lid": {
    "頭份斗煥RH1": [
-    "L415368L43"
+    "L415368L33"
    ],
    "頭份牛欄窩RH2": [
-    "L415368L43"
+    "L415368L33"
    ],
    "頭份陽明RH3": [
-    "L415368L43"
+    "L415368L33"
    ],
    "頭份民族RH4": [
-    "L415368L43"
+    "L415368L33"
    ]
   }
  },
@@ -34427,22 +34414,22 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "41",
-       "cov": "Outdoor",
+       "cov": "Indoor",
        "rmod": "FHDB",
        "ant": "內建天線",
        "az": "0",
-       "mt": "0",
+       "mt": "",
        "et": "4",
        "lat": 24.62416,
        "lon": 120.848225
       },
       {
        "cel": "42",
-       "cov": "Outdoor",
+       "cov": "Indoor",
        "rmod": "AHEGG",
        "ant": "內建天線",
        "az": "0",
-       "mt": "0",
+       "mt": "",
        "et": "2",
        "lat": 24.62416,
        "lon": 120.8482
@@ -34538,7 +34525,7 @@ const STATION_DATA = [
  {
   "id": "415401",
   "siteName": "造橋北興",
-  "siteNameCV": "竹南造橋L02造橋德泰鋼鐵",
+  "siteNameCV": "竹南造橋L02造橋北興",
   "town": "造橋鄉",
   "towns": [
    "造橋鄉",
@@ -35129,16 +35116,16 @@ const STATION_DATA = [
   },
   "smod": {
    "苗栗頭屋L02頭屋機房": [
+    "Door",
     "AC Power",
     "Temperature",
-    "Fire",
-    "Door"
+    "Fire"
    ],
    "苗栗頭屋L02頭屋象山": [
+    "Door",
     "AC Power",
     "Temperature",
-    "Fire",
-    "Door"
+    "Fire"
    ]
   },
   "lid": {
@@ -35546,17 +35533,17 @@ const STATION_DATA = [
   },
   "smod": {
    "竹南大西L02造橋大地南": [
-    "SMR Alarm",
-    "Temperature",
     "Low DC Voltage",
+    "SMR Alarm",
     "AC Power",
+    "Temperature",
     "Fire"
    ],
    "竹南大西L02造橋平興鐵塔": [
-    "SMR Alarm",
-    "Temperature",
     "Low DC Voltage",
+    "SMR Alarm",
     "AC Power",
+    "Temperature",
     "Fire"
    ]
   },
@@ -36048,7 +36035,7 @@ const STATION_DATA = [
  {
   "id": "415419",
   "siteName": "竹南京元三",
-  "siteNameCV": "竹南頭份L15竹南京元三",
+  "siteNameCV": "竹南頭份L15竹南京元",
   "town": "竹南鎮",
   "towns": [
    "竹南鎮",
@@ -36262,7 +36249,7 @@ const STATION_DATA = [
   "id": "415420",
   "siteName": "頭屋飛鳳",
   "siteNameCV": "苗栗頭屋L04頭屋飛鳳",
-  "town": "頭屋鄉",
+  "town": "公館鄉",
   "towns": [
    "頭屋鄉",
    "公館鄉"
@@ -37001,13 +36988,13 @@ const STATION_DATA = [
   "smod": {
    "南庄福美": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ]
   },
@@ -37020,7 +37007,7 @@ const STATION_DATA = [
  {
   "id": "415426",
   "siteName": "苗栗衛署醫院",
-  "siteNameCV": "苗栗嘉盛L02苗栗五谷",
+  "siteNameCV": "苗栗嘉盛L02苗栗衛署醫院",
   "town": "苗栗市",
   "towns": [
    "苗栗市",
@@ -37382,7 +37369,7 @@ const STATION_DATA = [
  {
   "id": "415427",
   "siteName": "苗栗長春",
-  "siteNameCV": "苗栗中央L40苗栗新亞拌合",
+  "siteNameCV": "苗栗中央L40苗栗長春",
   "town": "苗栗市",
   "towns": [
    "苗栗市",
@@ -37861,7 +37848,7 @@ const STATION_DATA = [
  {
   "id": "415429",
   "siteName": "苗栗巨蛋",
-  "siteNameCV": "苗栗中央L18苗栗龍岡二",
+  "siteNameCV": "苗栗中央L18苗栗巨蛋",
   "town": "苗栗市",
   "towns": [
    "苗栗市",
@@ -38658,7 +38645,7 @@ const STATION_DATA = [
  {
   "id": "415433",
   "siteName": "頭份土牛新",
-  "siteNameCV": "竹南頭份L19頭份土牛新",
+  "siteNameCV": "竹南頭份L19頭份為恭東興",
   "town": "頭份市",
   "towns": [
    "頭份市",
@@ -39356,13 +39343,13 @@ const STATION_DATA = [
   "smod": {
    "南庄杉林松境": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ]
   },
@@ -39375,7 +39362,7 @@ const STATION_DATA = [
  {
   "id": "415446",
   "siteName": "造橋談文北",
-  "siteNameCV": "竹南竹南L06造橋談文北",
+  "siteNameCV": "竹南竹南L06造橋潭內",
   "town": "造橋鄉",
   "towns": [
    "造橋鄉",
@@ -40088,8 +40075,8 @@ const STATION_DATA = [
  {
   "id": "416303",
   "siteName": "竹南營業BBU2",
-  "siteNameCV": "竹南竹南L01竹南新南五谷",
-  "town": "竹南鎮",
+  "siteNameCV": "竹南竹南L01頭份尖豐RH1",
+  "town": "頭份市",
   "towns": [
    "頭份市",
    "竹南鎮"
@@ -40292,9 +40279,10 @@ const STATION_DATA = [
   },
   "lid": {
    "竹南竹南L01頭份尖豐RH1": [
-    "L3982"
+    "L416303L13"
    ],
    "竹南竹南L01竹南新南五谷": [
+    "L416303L13",
     "L3982"
    ]
   },
@@ -40306,6 +40294,171 @@ const STATION_DATA = [
      ]
     }
    }
+  }
+ },
+ {
+  "id": "416901",
+  "siteName": "公館公館BBU1",
+  "siteNameCV": "獅潭協雲宮RH1",
+  "town": "公館鄉",
+  "towns": [
+   "獅潭鄉",
+   "公館鄉",
+   "獅潭鄉"
+  ],
+  "sec": "s1_s2_s3",
+  "secs": [
+   "s1",
+   "s2",
+   "s3"
+  ],
+  "stations": [
+   "獅潭協雲宮RH1",
+   "公館金滿山RH2",
+   "獅潭東坑RH3"
+  ],
+  "coords": [
+   {
+    "lat": 24.495922,
+    "lon": 120.876173
+   },
+   {
+    "lat": 24.506317,
+    "lon": 120.861108
+   },
+   {
+    "lat": 24.473179,
+    "lon": 120.869862
+   }
+  ],
+  "cells": {
+   "獅潭協雲宮RH1": [
+    {
+     "sec": 1,
+     "cells": [
+      {
+       "cel": "13",
+       "cov": "Outdoor",
+       "rmod": "FHEB",
+       "ant": "742215",
+       "az": "50",
+       "mt": "2",
+       "et": "3",
+       "lat": 24.495922,
+       "lon": 120.876173
+      }
+     ]
+    }
+   ],
+   "公館金滿山RH2": [
+    {
+     "sec": 2,
+     "cells": [
+      {
+       "cel": "21",
+       "cov": "Outdoor",
+       "rmod": "FHDB",
+       "ant": "DBXLH-6565A-VTM",
+       "az": "200",
+       "mt": "0",
+       "et": "3",
+       "lat": 24.506317,
+       "lon": 120.861108
+      },
+      {
+       "cel": "23",
+       "cov": "Outdoor",
+       "rmod": "FHEB",
+       "ant": "DBXLH-6565A-VTM",
+       "az": "200",
+       "mt": "0",
+       "et": "3",
+       "lat": 24.506317,
+       "lon": 120.861108
+      }
+     ]
+    }
+   ],
+   "獅潭東坑RH3": [
+    {
+     "sec": 3,
+     "cells": [
+      {
+       "cel": "33",
+       "cov": "Outdoor",
+       "rmod": "FHEB",
+       "ant": "80010761",
+       "az": "220",
+       "mt": "-2",
+       "et": "3",
+       "lat": 24.473179,
+       "lon": 120.869862
+      }
+     ]
+    }
+   ]
+  },
+  "nrBtsId": "",
+  "ranType": "D-RAN",
+  "meters": {
+   "獅潭協雲宮RH1": [
+    "21-58-8165-03-3"
+   ],
+   "獅潭東坑RH3": [
+    "21-58-8876-60-3"
+   ]
+  },
+  "smod": {
+   "獅潭協雲宮RH1": [
+    "Low DC Voltage",
+    "Fire Alarm",
+    "AC Power Alarm",
+    "SMR Alarm",
+    "Low Temperature",
+    "Air Con.",
+    "Device Abnormal",
+    "Door Alarm",
+    "Electricity Supply Abnormality",
+    "Temperature",
+    "Generator"
+   ],
+   "公館金滿山RH2": [
+    "Low DC Voltage",
+    "Fire Alarm",
+    "AC Power Alarm",
+    "SMR Alarm",
+    "Low Temperature",
+    "Air Con.",
+    "Device Abnormal",
+    "Door Alarm",
+    "Electricity Supply Abnormality",
+    "Temperature",
+    "Generator"
+   ],
+   "獅潭東坑RH3": [
+    "Low DC Voltage",
+    "Fire Alarm",
+    "AC Power Alarm",
+    "SMR Alarm",
+    "Low Temperature",
+    "Air Con.",
+    "Device Abnormal",
+    "Door Alarm",
+    "Electricity Supply Abnormality",
+    "Temperature",
+    "Generator"
+   ]
+  },
+  "lid": {
+   "獅潭協雲宮RH1": [
+    "L416901L23"
+   ],
+   "公館金滿山RH2": [
+    "L416901L23"
+   ],
+   "獅潭東坑RH3": [
+    "L416901L23"
+   ]
   }
  },
  {
@@ -40441,54 +40594,54 @@ const STATION_DATA = [
   },
   "smod": {
    "苗栗育民RH1": [
-    "Generator",
+    "Low DC Voltage",
+    "Fire Alarm",
+    "AC Power Alarm",
+    "SMR Alarm",
+    "Low Temperature",
     "Air Con.",
+    "Device Abnormal",
+    "Door Alarm",
     "Electricity Supply Abnormality",
     "Temperature",
-    "SMR Alarm",
-    "Low DC Voltage",
-    "Low Temperature",
-    "Door Alarm",
-    "Device Abnormal",
-    "AC Power Alarm",
-    "Fire Alarm"
+    "Generator"
    ],
    "苗栗育民RH2": [
-    "Generator",
+    "Low DC Voltage",
+    "Fire Alarm",
+    "AC Power Alarm",
+    "SMR Alarm",
+    "Low Temperature",
     "Air Con.",
+    "Device Abnormal",
+    "Door Alarm",
     "Electricity Supply Abnormality",
     "Temperature",
-    "SMR Alarm",
-    "Low DC Voltage",
-    "Low Temperature",
-    "Door Alarm",
-    "Device Abnormal",
-    "AC Power Alarm",
-    "Fire Alarm"
+    "Generator"
    ],
    "輝生加油站RH3": [
-    "Generator",
+    "Low DC Voltage",
+    "Fire Alarm",
+    "AC Power Alarm",
+    "SMR Alarm",
+    "Low Temperature",
     "Air Con.",
+    "Device Abnormal",
+    "Door Alarm",
     "Electricity Supply Abnormality",
     "Temperature",
-    "SMR Alarm",
-    "Low DC Voltage",
-    "Low Temperature",
-    "Door Alarm",
-    "Device Abnormal",
-    "AC Power Alarm",
-    "Fire Alarm"
+    "Generator"
    ]
   },
   "lid": {
    "苗栗育民RH1": [
-    "L416914L23"
+    "L416914L33"
    ],
    "苗栗育民RH2": [
-    "L416914L23"
+    "L416914L33"
    ],
    "輝生加油站RH3": [
-    "L416914L23"
+    "L416914L33"
    ]
   }
  },
@@ -40801,13 +40954,13 @@ const STATION_DATA = [
   "smod": {
    "後龍水尾RH3": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ]
   },
@@ -40820,7 +40973,7 @@ const STATION_DATA = [
  {
   "id": "416920",
   "siteName": "頭屋機房BBU1",
-  "siteNameCV": "頭屋明德路RH1",
+  "siteNameCV": "頭屋孔廟RH3",
   "town": "頭屋鄉",
   "towns": [
    "頭屋鄉",
@@ -40935,35 +41088,35 @@ const STATION_DATA = [
   "smod": {
    "頭屋明德路RH1": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ],
    "頭屋湳坑RH2": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ],
    "頭屋孔廟RH3": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ]
   },
@@ -40982,7 +41135,7 @@ const STATION_DATA = [
  {
   "id": "416922",
   "siteName": "苗栗西勢美北",
-  "siteNameCV": "苗栗中央L07苗栗西勢美北",
+  "siteNameCV": "苗栗中央L07苗栗維祥",
   "town": "苗栗市",
   "towns": [
    "苗栗市",
@@ -41455,10 +41608,10 @@ const STATION_DATA = [
   "smod": {
    "後龍坤龍紡織": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Low DC Voltage",
+    "SMR Alarm",
     "AC Power",
+    "Temperature",
     "Fire"
    ]
   },
@@ -41735,7 +41888,7 @@ const STATION_DATA = [
  {
   "id": "416930",
   "siteName": "造橋大西BBU3",
-  "siteNameCV": "竹南造橋L07造橋鴿舍RH",
+  "siteNameCV": "竹南造橋L07造橋牛欄湖RH5",
   "town": "造橋鄉",
   "towns": [
    "造橋鄉",
@@ -42536,7 +42689,7 @@ const STATION_DATA = [
  {
   "id": "416935",
   "siteName": "苗栗苗栗BBU6",
-  "siteNameCV": "苗栗中央L22苗栗大將軍",
+  "siteNameCV": "苗栗中央L22苗龍幹32-1",
   "town": "苗栗市",
   "towns": [
    "苗栗市",
@@ -43243,13 +43396,13 @@ const STATION_DATA = [
   "smod": {
    "竹南鉅晶": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ]
   },
@@ -43342,17 +43495,17 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "竹南昱晶B": [
-    "Generator",
+    "Low DC Voltage",
+    "Fire Alarm",
+    "AC Power Alarm",
+    "SMR Alarm",
+    "Low Temperature",
     "Air Con.",
+    "Device Abnormal",
+    "Door Alarm",
     "Electricity Supply Abnormality",
     "Temperature",
-    "SMR Alarm",
-    "Low DC Voltage",
-    "Low Temperature",
-    "Door Alarm",
-    "Device Abnormal",
-    "AC Power Alarm",
-    "Fire Alarm"
+    "Generator"
    ]
   },
   "lid": {
@@ -43364,7 +43517,7 @@ const STATION_DATA = [
  {
   "id": "417108",
   "siteName": "苗栗復興",
-  "siteNameCV": "苗栗中央L38苗栗市農會",
+  "siteNameCV": "苗栗中央L38苗栗復興",
   "town": "苗栗市",
   "towns": [
    "苗栗市",
@@ -43643,7 +43796,7 @@ const STATION_DATA = [
  {
   "id": "417109",
   "siteName": "竹南自由",
-  "siteNameCV": "竹南復興L06竹南環市",
+  "siteNameCV": "竹南復興L06竹南自由",
   "town": "竹南鎮",
   "towns": [
    "竹南鎮",
@@ -44251,7 +44404,7 @@ const STATION_DATA = [
  {
   "id": "417115",
   "siteName": "頭份崎仔頭",
-  "siteNameCV": "竹南頭份L06頭份上興",
+  "siteNameCV": "竹南頭份L06頭份崎仔頭",
   "town": "頭份市",
   "towns": [
    "頭份市",
@@ -44522,7 +44675,7 @@ const STATION_DATA = [
  {
   "id": "417122",
   "siteName": "苗栗玉維",
-  "siteNameCV": "苗栗中央L24苗栗雲水瑤",
+  "siteNameCV": "苗栗中央L24苗栗垃圾場",
   "town": "苗栗市",
   "towns": [
    "苗栗市",
@@ -44768,7 +44921,7 @@ const STATION_DATA = [
  {
   "id": "417129",
   "siteName": "竹南大埔機房",
-  "siteNameCV": "竹南大埔L01竹南大埔機房",
+  "siteNameCV": "竹南大埔L01竹南仁愛二",
   "town": "竹南鎮",
   "towns": [
    "竹南鎮",
@@ -45058,13 +45211,13 @@ const STATION_DATA = [
   },
   "smod": {
    "竹南大埔L01竹南大埔機房": [
-    "Temperature",
     "AC Power",
+    "Temperature",
     "Fire"
    ],
    "竹南大埔L01竹南仁愛二": [
-    "Temperature",
     "AC Power",
+    "Temperature",
     "Fire"
    ]
   },
@@ -45611,7 +45764,7 @@ const STATION_DATA = [
  {
   "id": "417140",
   "siteName": "竹南福德",
-  "siteNameCV": "竹南復興L01竹南福德",
+  "siteNameCV": "竹南復興L01竹南獅山",
   "town": "竹南鎮",
   "towns": [
    "竹南鎮",
@@ -46008,13 +46161,13 @@ const STATION_DATA = [
   },
   "smod": {
    "竹南復興L01竹南福德": [
-    "Temperature",
     "AC Power",
+    "Temperature",
     "Fire"
    ],
    "竹南復興L01竹南獅山": [
-    "Temperature",
     "AC Power",
+    "Temperature",
     "Fire"
    ]
   },
@@ -46048,7 +46201,7 @@ const STATION_DATA = [
  {
   "id": "417143",
   "siteName": "造橋談文西",
-  "siteNameCV": "竹南豐湖L03造橋九車籠RH2",
+  "siteNameCV": "竹南豐湖L03造橋天賜RH3",
   "town": "造橋鄉",
   "towns": [
    "造橋鄉",
@@ -46298,7 +46451,7 @@ const STATION_DATA = [
        "rmod": "FHDB",
        "ant": "RRV4-65A-R6N43",
        "az": "50",
-       "mt": "0",
+       "mt": "2",
        "et": "7",
        "lat": 24.6342,
        "lon": 120.83922
@@ -46309,7 +46462,7 @@ const STATION_DATA = [
        "rmod": "FHEB",
        "ant": "RRV4-65A-R6N43",
        "az": "50",
-       "mt": "0",
+       "mt": "2",
        "et": "3",
        "lat": 24.6342,
        "lon": 120.83922
@@ -46327,8 +46480,8 @@ const STATION_DATA = [
        "rmod": "AHDB",
        "ant": "RRV4-65A-R6N43",
        "az": "60",
-       "mt": "1",
-       "et": "4",
+       "mt": "0",
+       "et": "2",
        "lat": 24.622,
        "lon": 120.83342
       },
@@ -46379,7 +46532,7 @@ const STATION_DATA = [
  {
   "id": "417145",
   "siteName": "頭屋農會",
-  "siteNameCV": "苗栗頭屋L06頭屋尖豐",
+  "siteNameCV": "苗栗頭屋L06頭屋農會",
   "town": "頭屋鄉",
   "towns": [
    "頭屋鄉",
@@ -47315,7 +47468,7 @@ const STATION_DATA = [
  {
   "id": "417201",
   "siteName": "造橋朝陽新",
-  "siteNameCV": "竹南造橋L03造橋隧道口",
+  "siteNameCV": "竹南造橋L03造橋朝陽新",
   "town": "造橋鄉",
   "towns": [
    "造橋鄉",
@@ -47552,7 +47705,7 @@ const STATION_DATA = [
  {
   "id": "417203",
   "siteName": "竹南頂埔天仁",
-  "siteNameCV": "竹南頭份L22竹南京元外",
+  "siteNameCV": "竹南頭份L22竹南頂埔天仁",
   "town": "竹南鎮",
   "towns": [
    "竹南鎮",
@@ -47839,7 +47992,7 @@ const STATION_DATA = [
  {
   "id": "417204",
   "siteName": "頭份頭份BBU2",
-  "siteNameCV": "竹南頭份L01頭份新光",
+  "siteNameCV": "竹南頭份L01頭份水管站RH2",
   "town": "頭份市",
   "towns": [
    "頭份市",
@@ -48266,49 +48419,48 @@ const STATION_DATA = [
   "smod": {
    "竹南頭份L01頭份長榮RH1": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Low DC Voltage",
+    "SMR Alarm",
     "AC Power",
+    "Temperature",
     "Fire"
    ],
    "竹南頭份L01頭份水管站RH2": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Low DC Voltage",
+    "SMR Alarm",
     "AC Power",
+    "Temperature",
     "Fire"
    ],
    "竹南頭份L01頭份豁然RH3": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Low DC Voltage",
+    "SMR Alarm",
     "AC Power",
+    "Temperature",
     "Fire"
    ],
    "竹南頭份L01頭份新光": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Low DC Voltage",
+    "SMR Alarm",
     "AC Power",
+    "Temperature",
     "Fire"
    ]
   },
   "lid": {
    "竹南頭份L01頭份長榮RH1": [
-    "L417204L13"
+    "L7766"
    ],
    "竹南頭份L01頭份水管站RH2": [
-    "L417204L13"
+    "L7766"
    ],
    "竹南頭份L01頭份豁然RH3": [
-    "L417204L13"
+    "L7766"
    ],
    "竹南頭份L01頭份新光": [
-    "L417204L13",
     "L7766"
    ]
   },
@@ -48328,8 +48480,8 @@ const STATION_DATA = [
  {
   "id": "417208",
   "siteName": "頭份科專八",
-  "siteNameCV": "竹南大埔L22頭份科專八",
-  "town": "頭份市",
+  "siteNameCV": "竹南大埔L22竹南旳蔓",
+  "town": "竹南鎮",
   "towns": [
    "頭份市",
    "竹南鎮"
@@ -48691,13 +48843,13 @@ const STATION_DATA = [
   },
   "smod": {
    "頭份高隧一北": [
-    "Air con",
     "Door",
-    "SMR Alarm",
-    "Temperature",
     "Power Generator",
     "Low DC Voltage",
+    "SMR Alarm",
     "AC Power",
+    "Air con",
+    "Temperature",
     "Fire"
    ]
   },
@@ -49493,13 +49645,13 @@ const STATION_DATA = [
   "smod": {
    "公館三聖宮": [
     "Door",
-    "SMR Alarm",
-    "Temperature",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "Power module failure",
+    "SMR Alarm",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ]
   },
@@ -49801,13 +49953,13 @@ const STATION_DATA = [
   "smod": {
    "南庄松伯山莊": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ]
   },
@@ -49992,7 +50144,7 @@ const STATION_DATA = [
  {
   "id": "417606",
   "siteName": "竹南龍富",
-  "siteNameCV": "竹南復興L11竹南龍富",
+  "siteNameCV": "竹南復興L11竹南博愛",
   "town": "竹南鎮",
   "towns": [
    "竹南鎮",
@@ -50261,7 +50413,7 @@ const STATION_DATA = [
  {
   "id": "417608",
   "siteName": "竹南旺能",
-  "siteNameCV": "竹南大埔L02竹南旺能",
+  "siteNameCV": "竹南大埔L02竹南隆達",
   "town": "竹南鎮",
   "towns": [
    "竹南鎮",
@@ -50587,7 +50739,7 @@ const STATION_DATA = [
  {
   "id": "417610",
   "siteName": "後龍海埔二",
-  "siteNameCV": "苗栗大山L03後龍海埔二",
+  "siteNameCV": "苗栗大山L03後龍海埔",
   "town": "後龍鎮",
   "towns": [
    "後龍鎮",
@@ -51471,7 +51623,7 @@ const STATION_DATA = [
  {
   "id": "417630",
   "siteName": "苗栗中央L31",
-  "siteNameCV": "苗栗中央L31苗栗維新里S",
+  "siteNameCV": "苗栗中央L31苗栗府前門市MR",
   "town": "苗栗市",
   "towns": [
    "苗栗市",
@@ -51623,7 +51775,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "11",
-       "cov": "Indoor",
+       "cov": "Outdoor",
        "rmod": "FXDB",
        "ant": "CELLMAX-O-25",
        "az": "0",
@@ -51634,7 +51786,7 @@ const STATION_DATA = [
       },
       {
        "cel": "12",
-       "cov": "Indoor",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "CELLMAX-O-25",
        "az": "0",
@@ -51645,7 +51797,7 @@ const STATION_DATA = [
       },
       {
        "cel": "13",
-       "cov": "Indoor",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "CELLMAX-O-25",
        "az": "0",
@@ -51656,7 +51808,7 @@ const STATION_DATA = [
       },
       {
        "cel": "14",
-       "cov": "Indoor",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "CELLMAX-O-25",
        "az": "0",
@@ -51667,7 +51819,7 @@ const STATION_DATA = [
       },
       {
        "cel": "15",
-       "cov": "Indoor",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "CELLMAX-O-25",
        "az": "0",
@@ -51683,7 +51835,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "21",
-       "cov": "Indoor",
+       "cov": "Outdoor",
        "rmod": "FXDB",
        "ant": "CELLMAX-D-25",
        "az": "90",
@@ -51694,7 +51846,7 @@ const STATION_DATA = [
       },
       {
        "cel": "22",
-       "cov": "Indoor",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "CELLMAX-D-25",
        "az": "90",
@@ -51705,7 +51857,7 @@ const STATION_DATA = [
       },
       {
        "cel": "23",
-       "cov": "Indoor",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "CELLMAX-D-25",
        "az": "90",
@@ -51716,7 +51868,7 @@ const STATION_DATA = [
       },
       {
        "cel": "24",
-       "cov": "Indoor",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "CELLMAX-D-25",
        "az": "90",
@@ -51727,7 +51879,7 @@ const STATION_DATA = [
       },
       {
        "cel": "25",
-       "cov": "Indoor",
+       "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "CELLMAX-D-25",
        "az": "90",
@@ -51743,34 +51895,34 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "31",
-       "cov": "",
+       "cov": "Outdoor",
        "rmod": "FXDB",
        "ant": "CELLMAX-D-25",
        "az": "270",
-       "mt": "",
-       "et": "",
+       "mt": "0",
+       "et": "0",
        "lat": 24.6048,
        "lon": 120.82517
       },
       {
        "cel": "32",
-       "cov": "",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "CELLMAX-D-25",
        "az": "270",
-       "mt": "",
-       "et": "",
+       "mt": "0",
+       "et": "0",
        "lat": 24.6048,
        "lon": 120.82517
       },
       {
        "cel": "33",
-       "cov": "",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "CELLMAX-D-25",
        "az": "270",
-       "mt": "",
-       "et": "",
+       "mt": "0",
+       "et": "0",
        "lat": 24.6048,
        "lon": 120.82517
       }
@@ -51783,8 +51935,8 @@ const STATION_DATA = [
   "smod": {
    "後龍高鐵站": [
     "TEMP",
-    "AC",
-    "Fire"
+    "Fire",
+    "AC"
    ]
   },
   "lid": {
@@ -51796,7 +51948,7 @@ const STATION_DATA = [
  {
   "id": "417657",
   "siteName": "公館開礦",
-  "siteNameCV": "苗栗公館L08公館福基",
+  "siteNameCV": "苗栗公館L08公館開礦",
   "town": "公館鄉",
   "towns": [
    "公館鄉",
@@ -52608,17 +52760,17 @@ const STATION_DATA = [
   },
   "smod": {
    "後龍秀水新": [
-    "Generator",
+    "Low DC Voltage",
+    "Fire Alarm",
+    "AC Power Alarm",
+    "SMR Alarm",
+    "Low Temperature",
     "Air Con.",
+    "Device Abnormal",
+    "Door Alarm",
     "Electricity Supply Abnormality",
     "Temperature",
-    "SMR Alarm",
-    "Low DC Voltage",
-    "Low Temperature",
-    "Door Alarm",
-    "Device Abnormal",
-    "AC Power Alarm",
-    "Fire Alarm"
+    "Generator"
    ]
   },
   "lid": {
@@ -52630,7 +52782,7 @@ const STATION_DATA = [
  {
   "id": "417667",
   "siteName": "南庄南江",
-  "siteNameCV": "竹南南庄L04栗田庄RH1",
+  "siteNameCV": "竹南南庄L04南庄春谷",
   "town": "南庄鄉",
   "towns": [
    "南庄鄉",
@@ -52865,7 +53017,7 @@ const STATION_DATA = [
  {
   "id": "417696",
   "siteName": "竹南交流道",
-  "siteNameCV": "竹南復興L07竹南大厝鹽館",
+  "siteNameCV": "竹南復興L07竹南交流道",
   "town": "竹南鎮",
   "towns": [
    "竹南鎮",
@@ -53449,7 +53601,7 @@ const STATION_DATA = [
  {
   "id": "417707",
   "siteName": "竹南奇美車塔二",
-  "siteNameCV": "竹南大埔L13竹南群創內",
+  "siteNameCV": "竹南大埔L13竹南奇美車塔內",
   "town": "竹南鎮",
   "towns": [
    "竹南鎮"
@@ -53616,7 +53768,7 @@ const STATION_DATA = [
  {
   "id": "417714",
   "siteName": "公館五谷二",
-  "siteNameCV": "苗栗公館L11公館五谷二",
+  "siteNameCV": "苗栗公館L11公館鶴山飯店",
   "town": "公館鄉",
   "towns": [
    "公館鄉",
@@ -54022,7 +54174,7 @@ const STATION_DATA = [
  {
   "id": "417721",
   "siteName": "頭份後庄信義",
-  "siteNameCV": "竹南頭份L17頭份為恭信義",
+  "siteNameCV": "竹南頭份L17頭份後庄信義",
   "town": "頭份市",
   "towns": [
    "頭份市",
@@ -54704,7 +54856,7 @@ const STATION_DATA = [
  {
   "id": "417726",
   "siteName": "公館玉谷",
-  "siteNameCV": "苗栗公館L10公館玉谷",
+  "siteNameCV": "苗栗公館L10公館中義社區",
   "town": "公館鄉",
   "towns": [
    "公館鄉",
@@ -54935,7 +55087,7 @@ const STATION_DATA = [
  {
   "id": "417735",
   "siteName": "苗栗文發",
-  "siteNameCV": "苗栗中央L12苗栗英明",
+  "siteNameCV": "苗栗中央L12苗栗文發",
   "town": "苗栗市",
   "towns": [
    "苗栗市",
@@ -56258,7 +56410,7 @@ const STATION_DATA = [
  {
   "id": "417755",
   "siteName": "造橋中潭",
-  "siteNameCV": "竹南豐湖L04造橋中潭",
+  "siteNameCV": "竹南豐湖L04造橋九車籠RH2",
   "town": "造橋鄉",
   "towns": [
    "造橋鄉",
@@ -56680,13 +56832,13 @@ const STATION_DATA = [
   "smod": {
    "頭屋傳家堡": [
     "Door",
-    "SMR Alarm",
-    "Temperature",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ]
   },
@@ -57021,13 +57173,13 @@ const STATION_DATA = [
   "smod": {
    "三灣彌陀寺": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ]
   },
@@ -57392,24 +57544,24 @@ const STATION_DATA = [
   "smod": {
    "苗栗中央L32苗栗台隧苗南": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ],
    "苗栗中央L32南勢車站": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ]
   },
@@ -57438,7 +57590,7 @@ const STATION_DATA = [
  {
   "id": "417778",
   "siteName": "公館仁安社區",
-  "siteNameCV": "苗栗公館L23公館何屋",
+  "siteNameCV": "苗栗公館L23公館仁安社區",
   "town": "公館鄉",
   "towns": [
    "公館鄉",
@@ -57700,7 +57852,7 @@ const STATION_DATA = [
   "id": "417783",
   "siteName": "苗栗天祥",
   "siteNameCV": "苗栗中央L21麻園坑25",
-  "town": "後龍鎮",
+  "town": "苗栗市",
   "towns": [
    "苗栗市",
    "後龍鎮",
@@ -58163,13 +58315,13 @@ const STATION_DATA = [
   "smod": {
    "苗栗正發": [
     "Door",
-    "SMR Alarm",
-    "Temperature",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "Power module failure",
+    "SMR Alarm",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ]
   },
@@ -59971,43 +60123,43 @@ const STATION_DATA = [
   },
   "smod": {
    "南庄春谷餐廳RH1": [
-    "Generator",
+    "Low DC Voltage",
+    "Fire Alarm",
+    "AC Power Alarm",
+    "SMR Alarm",
+    "Low Temperature",
     "Air Con.",
+    "Device Abnormal",
+    "Door Alarm",
     "Electricity Supply Abnormality",
     "Temperature",
-    "SMR Alarm",
-    "Low DC Voltage",
-    "Low Temperature",
-    "Door Alarm",
-    "Device Abnormal",
-    "AC Power Alarm",
-    "Fire Alarm"
+    "Generator"
    ],
    "南庄蘇維拉莊園RH2": [
-    "Generator",
+    "Low DC Voltage",
+    "Fire Alarm",
+    "AC Power Alarm",
+    "SMR Alarm",
+    "Low Temperature",
     "Air Con.",
+    "Device Abnormal",
+    "Door Alarm",
     "Electricity Supply Abnormality",
     "Temperature",
-    "SMR Alarm",
-    "Low DC Voltage",
-    "Low Temperature",
-    "Door Alarm",
-    "Device Abnormal",
-    "AC Power Alarm",
-    "Fire Alarm"
+    "Generator"
    ],
    "南庄松濤意境RH3": [
-    "Generator",
+    "Low DC Voltage",
+    "Fire Alarm",
+    "AC Power Alarm",
+    "SMR Alarm",
+    "Low Temperature",
     "Air Con.",
+    "Device Abnormal",
+    "Door Alarm",
     "Electricity Supply Abnormality",
     "Temperature",
-    "SMR Alarm",
-    "Low DC Voltage",
-    "Low Temperature",
-    "Door Alarm",
-    "Device Abnormal",
-    "AC Power Alarm",
-    "Fire Alarm"
+    "Generator"
    ]
   },
   "lid": {
@@ -60054,7 +60206,7 @@ const STATION_DATA = [
        "rmod": "FHDB",
        "ant": "DBXLH-6565A-VTM",
        "az": "240",
-       "mt": "3",
+       "mt": "4",
        "et": "9",
        "lat": 24.64767,
        "lon": 120.88635
@@ -60065,7 +60217,7 @@ const STATION_DATA = [
        "rmod": "FHEL",
        "ant": "DBXLH-6565A-VTM",
        "az": "240",
-       "mt": "3",
+       "mt": "4",
        "et": "5",
        "lat": 24.64767,
        "lon": 120.88635
@@ -60083,19 +60235,19 @@ const STATION_DATA = [
   },
   "smod": {
    "頭份鹿橋山莊": [
-    "Generator",
-    "Air Con.",
-    "Electricity Supply Abnormality",
-    "Temperature",
+    "Low DC Voltage",
+    "Fire Alarm",
+    "AC Power Alarm",
     "SMR Alarm",
     "Power module failure",
-    "Low DC Voltage",
     "Low Temperature",
-    "Door Alarm",
+    "Air Con.",
     "Device Abnormal",
-    "AC Power Alarm",
     "Mains power break",
-    "Fire Alarm"
+    "Door Alarm",
+    "Electricity Supply Abnormality",
+    "Temperature",
+    "Generator"
    ]
   },
   "lid": {
@@ -60403,7 +60555,7 @@ const STATION_DATA = [
  {
   "id": "417826",
   "siteName": "後龍大山BBU2",
-  "siteNameCV": "苗栗大山L04後龍大山交流道",
+  "siteNameCV": "苗栗大山L04後龍渡船頭RH1",
   "town": "後龍鎮",
   "towns": [
    "後龍鎮",
@@ -61069,7 +61221,7 @@ const STATION_DATA = [
  {
   "id": "417893",
   "siteName": "頭份頭份BBU6",
-  "siteNameCV": "頭份下興一RH1",
+  "siteNameCV": "竹南京元五RH2",
   "town": "頭份市",
   "towns": [
    "頭份市",
@@ -61163,42 +61315,42 @@ const STATION_DATA = [
   },
   "smod": {
    "頭份下興一RH1": [
-    "Generator",
-    "Air Con.",
-    "Electricity Supply Abnormality",
-    "Temperature",
+    "Low DC Voltage",
+    "Fire Alarm",
+    "AC Power Alarm",
     "SMR Alarm",
     "Power module failure",
-    "Low DC Voltage",
     "Low Temperature",
-    "Door Alarm",
+    "Air Con.",
     "Device Abnormal",
-    "AC Power Alarm",
     "Mains power break",
-    "Fire Alarm"
+    "Door Alarm",
+    "Electricity Supply Abnormality",
+    "Temperature",
+    "Generator"
    ],
    "竹南京元五RH2": [
-    "Generator",
-    "Air Con.",
-    "Electricity Supply Abnormality",
-    "Temperature",
+    "Low DC Voltage",
+    "Fire Alarm",
+    "AC Power Alarm",
     "SMR Alarm",
     "Power module failure",
-    "Low DC Voltage",
     "Low Temperature",
-    "Door Alarm",
+    "Air Con.",
     "Device Abnormal",
-    "AC Power Alarm",
     "Mains power break",
-    "Fire Alarm"
+    "Door Alarm",
+    "Electricity Supply Abnormality",
+    "Temperature",
+    "Generator"
    ]
   },
   "lid": {
    "頭份下興一RH1": [
-    "L417893L13"
+    "L417893L23"
    ],
    "竹南京元五RH2": [
-    "L417893L13"
+    "L417893L23"
    ]
   }
  },
@@ -61335,46 +61487,46 @@ const STATION_DATA = [
   },
   "smod": {
    "頭屋雙龍社區RH1": [
-    "Temperature",
-    "SMR Alarm",
     "Low DC Voltage",
-    "Door Alarm",
+    "Fire Alarm",
     "AC Power Alarm",
-    "Fire Alarm"
+    "SMR Alarm",
+    "Door Alarm",
+    "Temperature"
    ],
    "頭屋奮萁窩社區RH2": [
-    "Temperature",
-    "SMR Alarm",
     "Low DC Voltage",
-    "Door Alarm",
+    "Fire Alarm",
     "AC Power Alarm",
-    "Fire Alarm"
+    "SMR Alarm",
+    "Door Alarm",
+    "Temperature"
    ],
    "頭屋永春宮RH3": [
-    "Temperature",
-    "SMR Alarm",
     "Low DC Voltage",
-    "Door Alarm",
+    "Fire Alarm",
     "AC Power Alarm",
-    "Fire Alarm"
+    "SMR Alarm",
+    "Door Alarm",
+    "Temperature"
    ]
   },
   "lid": {
    "頭屋雙龍社區RH1": [
-    "L417897L33"
+    "L417897L23"
    ],
    "頭屋奮萁窩社區RH2": [
-    "L417897L33"
+    "L417897L23"
    ],
    "頭屋永春宮RH3": [
-    "L417897L33"
+    "L417897L23"
    ]
   }
  },
  {
   "id": "417898",
   "siteName": "頭份頭份BBU4",
-  "siteNameCV": "頭份味全RH3",
+  "siteNameCV": "頭份福梅露營RH4",
   "town": "頭份市",
   "towns": [
    "頭份市",
@@ -61449,34 +61601,34 @@ const STATION_DATA = [
   },
   "smod": {
    "頭份味全RH3": [
-    "Generator",
-    "Air Con.",
-    "Electricity Supply Abnormality",
-    "Temperature",
+    "Low DC Voltage",
+    "Fire Alarm",
+    "AC Power Alarm",
     "SMR Alarm",
     "Power module failure",
-    "Low DC Voltage",
     "Low Temperature",
-    "Door Alarm",
+    "Air Con.",
     "Device Abnormal",
-    "AC Power Alarm",
     "Mains power break",
-    "Fire Alarm"
+    "Door Alarm",
+    "Electricity Supply Abnormality",
+    "Temperature",
+    "Generator"
    ],
    "頭份福梅露營RH4": [
-    "Generator",
-    "Air Con.",
-    "Electricity Supply Abnormality",
-    "Temperature",
+    "Low DC Voltage",
+    "Fire Alarm",
+    "AC Power Alarm",
     "SMR Alarm",
     "Power module failure",
-    "Low DC Voltage",
     "Low Temperature",
-    "Door Alarm",
+    "Air Con.",
     "Device Abnormal",
-    "AC Power Alarm",
     "Mains power break",
-    "Fire Alarm"
+    "Door Alarm",
+    "Electricity Supply Abnormality",
+    "Temperature",
+    "Generator"
    ]
   },
   "lid": {
@@ -61588,30 +61740,30 @@ const STATION_DATA = [
   },
   "smod": {
    "後龍南北坑RH1": [
-    "Generator",
+    "Low DC Voltage",
+    "Fire Alarm",
+    "AC Power Alarm",
+    "SMR Alarm",
+    "Low Temperature",
     "Air Con.",
+    "Device Abnormal",
+    "Door Alarm",
     "Electricity Supply Abnormality",
     "Temperature",
-    "SMR Alarm",
-    "Low DC Voltage",
-    "Low Temperature",
-    "Door Alarm",
-    "Device Abnormal",
-    "AC Power Alarm",
-    "Fire Alarm"
+    "Generator"
    ],
    "後龍南北坑RH2": [
-    "Generator",
+    "Low DC Voltage",
+    "Fire Alarm",
+    "AC Power Alarm",
+    "SMR Alarm",
+    "Low Temperature",
     "Air Con.",
+    "Device Abnormal",
+    "Door Alarm",
     "Electricity Supply Abnormality",
     "Temperature",
-    "SMR Alarm",
-    "Low DC Voltage",
-    "Low Temperature",
-    "Door Alarm",
-    "Device Abnormal",
-    "AC Power Alarm",
-    "Fire Alarm"
+    "Generator"
    ]
   },
   "lid": {
@@ -61732,24 +61884,24 @@ const STATION_DATA = [
   "smod": {
    "造橋車站RH1": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ],
    "造橋陽明山莊RH3": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ]
   },
@@ -61899,17 +62051,17 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "竹南群創內CS棟": [
-    "Generator",
+    "Low DC Voltage",
+    "Fire Alarm",
+    "AC Power Alarm",
+    "SMR Alarm",
+    "Low Temperature",
     "Air Con.",
+    "Device Abnormal",
+    "Door Alarm",
     "Electricity Supply Abnormality",
     "Temperature",
-    "SMR Alarm",
-    "Low DC Voltage",
-    "Low Temperature",
-    "Door Alarm",
-    "Device Abnormal",
-    "AC Power Alarm",
-    "Fire Alarm"
+    "Generator"
    ]
   },
   "lid": {
@@ -62494,35 +62646,35 @@ const STATION_DATA = [
   "smod": {
    "苗栗府前一RH1": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ],
    "苗栗府前二RH1": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ],
    "苗栗府前三RH": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ]
   },
@@ -63540,7 +63692,7 @@ const STATION_DATA = [
  {
   "id": "418932",
   "siteName": "苗栗頭屋L15",
-  "siteNameCV": "苗栗頭屋L15頭屋象山村S",
+  "siteNameCV": "苗栗頭屋L15頭屋四方石RH",
   "town": "頭屋鄉",
   "towns": [
    "頭屋鄉",
@@ -64328,7 +64480,7 @@ const STATION_DATA = [
  {
   "id": "418965",
   "siteName": "苗栗嘉盛L15",
-  "siteNameCV": "苗栗嘉盛L15苗栗玉清里S",
+  "siteNameCV": "苗栗嘉盛L15苗栗坡塘巷",
   "town": "苗栗市",
   "towns": [
    "苗栗市",
@@ -64515,57 +64667,57 @@ const STATION_DATA = [
   "smod": {
    "苗栗嘉盛L15苗栗玉清里S": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ],
    "苗栗嘉盛L15苗栗福星里S": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ],
    "苗栗嘉盛L15苗栗坡塘巷": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ],
    "苗栗嘉盛L15苗栗信邦電子": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ],
    "苗栗嘉盛L15苗栗宜春路": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ]
   },
@@ -64590,7 +64742,7 @@ const STATION_DATA = [
  {
   "id": "418966",
   "siteName": "苗栗公館L15",
-  "siteNameCV": "苗栗公館L15公館全聯RH6",
+  "siteNameCV": "苗栗公館L15公館福基村S",
   "town": "公館鄉",
   "towns": [
    "公館鄉",
@@ -66957,7 +67109,7 @@ const STATION_DATA = [
  {
   "id": "423730",
   "siteName": "苗栗中央L25",
-  "siteNameCV": "苗栗中央L25線路中心內",
+  "siteNameCV": "苗栗中央L25設備測試台",
   "town": "苗栗市",
   "towns": [
    "苗栗市",
@@ -67275,18 +67427,18 @@ const STATION_DATA = [
   "smod": {
    "苗栗中央L25苗栗苗栗": [
     "Door",
-    "Temperture",
-    "SMR Alarm",
     "Low DC Voltage",
+    "SMR Alarm",
     "AC Power",
+    "Temperture",
     "Fire"
    ],
    "苗栗中央L25線路中心內": [
     "Door",
-    "Temperture",
-    "SMR Alarm",
     "Low DC Voltage",
+    "SMR Alarm",
     "AC Power",
+    "Temperture",
     "Fire"
    ]
   },
@@ -67324,7 +67476,7 @@ const STATION_DATA = [
  {
   "id": "423750",
   "siteName": "竹南竹南L11",
-  "siteNameCV": "竹南竹南L11竹南松茂米粉",
+  "siteNameCV": "竹南竹南L11竹南營業中心",
   "town": "頭份市",
   "towns": [
    "頭份市",
@@ -68461,7 +68613,7 @@ const STATION_DATA = [
  {
   "id": "423760",
   "siteName": "竹南頭份L11",
-  "siteNameCV": "竹南頭份L11頭份頭份",
+  "siteNameCV": "竹南頭份L11頭份中山",
   "town": "頭份市",
   "towns": [
    "頭份市",
@@ -68831,7 +68983,7 @@ const STATION_DATA = [
  {
   "id": "423764",
   "siteName": "竹南頭份L12",
-  "siteNameCV": "竹南頭份L12頭份新華",
+  "siteNameCV": "竹南頭份L12頭份上埔",
   "town": "頭份市",
   "towns": [
    "頭份市",
@@ -70167,7 +70319,7 @@ const STATION_DATA = [
  {
   "id": "423788",
   "siteName": "竹南南庄L09",
-  "siteNameCV": "竹南南庄L09南庄南庄",
+  "siteNameCV": "竹南南庄L09南庄西村",
   "town": "南庄鄉",
   "towns": [
    "南庄鄉",
@@ -70848,7 +71000,7 @@ const STATION_DATA = [
  {
   "id": "423839",
   "siteName": "竹南南庄L07",
-  "siteNameCV": "竹南南庄L07南庄石壁RH1",
+  "siteNameCV": "竹南南庄L07南庄向天湖RH3",
   "town": "南庄鄉",
   "towns": [
    "南庄鄉",
@@ -72252,7 +72404,7 @@ const STATION_DATA = [
  {
   "id": "424043",
   "siteName": "竹南三灣L04",
-  "siteNameCV": "竹南三灣L04三灣永和山",
+  "siteNameCV": "竹南三灣L04三灣永和幹RH",
   "town": "三灣鄉",
   "towns": [
    "三灣鄉",
@@ -72652,7 +72804,7 @@ const STATION_DATA = [
  {
   "id": "424060",
   "siteName": "苗栗中央L33",
-  "siteNameCV": "苗栗中央L33苗栗營業中心",
+  "siteNameCV": "苗栗中央L33苗栗建功",
   "town": "苗栗市",
   "towns": [
    "苗栗市",
@@ -73359,7 +73511,7 @@ const STATION_DATA = [
  {
   "id": "425363",
   "siteName": "竹南頭份L40",
-  "siteNameCV": "竹南頭份L40頭份高隧一北內",
+  "siteNameCV": "竹南頭份L40頭份高隧新苗南內",
   "town": "頭份市",
   "towns": [
    "頭份市",
@@ -73729,7 +73881,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "11",
-       "cov": "Outdoor",
+       "cov": "Indoor",
        "rmod": "FHDB",
        "ant": "SLI2-06360",
        "az": "40",
@@ -73751,12 +73903,12 @@ const STATION_DATA = [
       },
       {
        "cel": "13",
-       "cov": "Indoor",
+       "cov": "Outdoor",
        "rmod": "FHEL",
        "ant": "SLI2-06360",
        "az": "40",
-       "mt": "0",
-       "et": "0",
+       "mt": "2",
+       "et": "2",
        "lat": 24.61955,
        "lon": 120.85747
       },
@@ -73814,7 +73966,7 @@ const STATION_DATA = [
  {
   "id": "425367",
   "siteName": "苗栗中央L30",
-  "siteNameCV": "苗栗中央30後龍高隧南新南",
+  "siteNameCV": "苗栗中央L29苗栗樂活山莊",
   "town": "後龍鎮",
   "towns": [
    "後龍鎮"
@@ -74313,7 +74465,7 @@ const STATION_DATA = [
  {
   "id": "425421",
   "siteName": "苗栗聯合大學",
-  "siteNameCV": "苗栗中央L49苗栗聯合大學",
+  "siteNameCV": "苗栗中央L49苗栗聯大餐廳",
   "town": "苗栗市",
   "towns": [
    "苗栗市",
@@ -74739,7 +74891,7 @@ const STATION_DATA = [
  {
   "id": "426916",
   "siteName": "苗栗後龍L15",
-  "siteNameCV": "苗栗後龍L15後龍水尾RH2",
+  "siteNameCV": "苗栗後龍L15後龍東明里S",
   "town": "後龍鎮",
   "towns": [
    "後龍鎮",
@@ -74949,7 +75101,7 @@ const STATION_DATA = [
  {
   "id": "426920",
   "siteName": "苗栗頭屋L16",
-  "siteNameCV": "苗栗頭屋L16頭屋尖豐路RH2",
+  "siteNameCV": "苗栗頭屋L16頭屋枋寮坑",
   "town": "後龍鎮",
   "towns": [
    "後龍鎮",
@@ -75213,7 +75365,7 @@ const STATION_DATA = [
  {
   "id": "427101",
   "siteName": "竹南頭份L49",
-  "siteNameCV": "竹南頭份L49頭份銀河",
+  "siteNameCV": "竹南頭份L49頭份民權",
   "town": "頭份市",
   "towns": [
    "頭份市",
@@ -75797,7 +75949,7 @@ const STATION_DATA = [
        "rmod": "AHDB",
        "ant": "I-ATP1-698/2700",
        "az": "140",
-       "mt": "5",
+       "mt": "3",
        "et": "2",
        "lat": 24.705857,
        "lon": 120.913104
@@ -75824,7 +75976,7 @@ const STATION_DATA = [
        "rmod": "AHEGG",
        "ant": "I-ATP1-698/2700",
        "az": "290",
-       "mt": "0",
+       "mt": "2",
        "et": "0",
        "lat": 24.705857,
        "lon": 120.913104
@@ -75835,7 +75987,7 @@ const STATION_DATA = [
        "rmod": "AHDB",
        "ant": "I-ATP1-698/2700",
        "az": "290",
-       "mt": "2",
+       "mt": "0",
        "et": "0",
        "lat": 24.705857,
        "lon": 120.913104
@@ -76472,7 +76624,7 @@ const STATION_DATA = [
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "160",
-       "mt": "0",
+       "mt": "5",
        "et": "10",
        "lat": 24.54456,
        "lon": 120.81361
@@ -76516,7 +76668,7 @@ const STATION_DATA = [
        "rmod": "AHHB",
        "ant": "80010864",
        "az": "160",
-       "mt": "5",
+       "mt": "0",
        "et": "5",
        "lat": 24.54456,
        "lon": 120.81361
@@ -76622,7 +76774,7 @@ const STATION_DATA = [
  {
   "id": "427144",
   "siteName": "竹南頭份L37",
-  "siteNameCV": "竹南頭份L37頭份民生",
+  "siteNameCV": "竹南頭份L37頭份民族",
   "town": "頭份市",
   "towns": [
    "頭份市",
@@ -76984,7 +77136,7 @@ const STATION_DATA = [
  {
   "id": "427202",
   "siteName": "苗栗中央L39",
-  "siteNameCV": "苗栗中央L39苗栗電台",
+  "siteNameCV": "苗栗中央L39苗栗中龍岡",
   "town": "苗栗市",
   "towns": [
    "苗栗市",
@@ -77165,7 +77317,7 @@ const STATION_DATA = [
  {
   "id": "427237",
   "siteName": "竹南大埔L24",
-  "siteNameCV": "竹南大埔L24竹南仁愛837",
+  "siteNameCV": "竹南大埔L24竹南大埔仁愛",
   "town": "竹南鎮",
   "towns": [
    "竹南鎮",
@@ -78131,24 +78283,24 @@ const STATION_DATA = [
   "smod": {
    "苗栗中央L35苗栗國稅局": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ],
    "苗栗中央L35苗栗皇家豪門": [
     "Door",
-    "Temperature",
-    "SMR Alarm",
     "Power Generator",
-    "Power module failure",
     "Low DC Voltage",
-    "Mains power break",
+    "SMR Alarm",
+    "Power module failure",
     "AC Power",
+    "Mains power break",
+    "Temperature",
     "Fire"
    ]
   },
@@ -79150,7 +79302,7 @@ const STATION_DATA = [
  {
   "id": "427896",
   "siteName": "竹南頭份L31",
-  "siteNameCV": "竹南頭份L31大成街RH4",
+  "siteNameCV": "竹南頭份L31頭份營業中心",
   "town": "頭份市",
   "towns": [
    "頭份市",
@@ -79279,8 +79431,8 @@ const STATION_DATA = [
        "rmod": "FHDB",
        "ant": "DBXLH-6565A-VTM",
        "az": "0",
-       "mt": "4",
-       "et": "9",
+       "mt": "0",
+       "et": "6",
        "lat": 24.6948,
        "lon": 120.9492
       },
@@ -79290,7 +79442,7 @@ const STATION_DATA = [
        "rmod": "AHEGG",
        "ant": "DBXLH-6565A-VTM",
        "az": "0",
-       "mt": "0",
+       "mt": "4",
        "et": "5",
        "lat": 24.6948,
        "lon": 120.9492
