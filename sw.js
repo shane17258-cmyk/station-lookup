@@ -1,4 +1,4 @@
-const CACHE_NAME = 'station-lookup-v1';
+const CACHE_NAME = 'station-lookup-v2';
 const CORE_ASSETS = [
   './',
   './index.html',

@@ -12,6 +12,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="mobile-web-app-capable" content="yes">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <style>
   :root {
     --bg: #f0f4f8;
@@ -378,6 +379,95 @@
     .station-bar .toggle { margin-left: 0; }
     .station-bar { gap: 4px; }
   }
+
+  /* ============ 涵蓋地圖 ============ */
+  .map-card {
+    background: var(--card-bg);
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 4px 16px rgba(26,58,92,.12);
+    width: 100%;
+    max-width: var(--max-w);
+    padding: clamp(16px, 3.5vw, 28px);
+  }
+  #coverageMap {
+    width: 100%;
+    height: 62vh;
+    min-height: 380px;
+    border-radius: 10px;
+    border: 1px solid #d5e2ee;
+    z-index: 1;
+  }
+  .map-tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 14px;
+    margin-bottom: 14px;
+    font-size: 14px;
+    color: var(--primary-dark);
+  }
+  .map-tools .mt-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .map-tools label.mt-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin: 0;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    color: var(--primary-dark);
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .map-tools input[type=checkbox] {
+    width: auto;
+    padding: 0;
+    accent-color: var(--primary);
+    cursor: pointer;
+  }
+  .map-tools select {
+    padding: 6px 10px;
+    font-size: 14px;
+    border: 2px solid #c8d6e4;
+    border-radius: 8px;
+    background: #fafcfe;
+    color: var(--primary-dark);
+    outline: none;
+    cursor: pointer;
+  }
+  .map-legend {
+    margin-top: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 16px;
+    font-size: 12px;
+    color: #5a7a9a;
+    line-height: 1.6;
+  }
+  .map-legend .lg-item { display: inline-flex; align-items: center; gap: 5px; }
+  .map-legend .lg-swatch {
+    display: inline-block;
+    width: 16px;
+    height: 10px;
+    border-radius: 3px;
+    border: 1px solid rgba(0,0,0,.15);
+  }
+  .map-legend .lg-swatch.point {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+  .map-loading {
+    text-align: center;
+    color: #8aa4bd;
+    padding: 18px 0;
+    font-size: 13px;
+    display: none;
+  }
 </style>
 </head>
 <body>
@@ -387,6 +477,7 @@
   <div class="tabs">
     <div class="tab active" data-net="4g" id="tab4g">4G</div>
     <div class="tab" data-net="5g" id="tab5g">5G</div>
+    <div class="tab" data-net="map" id="tabmap">涵蓋地圖</div>
   </div>
 
   <div class="panel active" id="panel-4g">
@@ -447,8 +538,44 @@
     </div>
   </div>
 
+  <div class="panel" id="panel-map">
+    <div class="map-card">
+      <div class="map-tools">
+        <div class="mt-group">
+          <span style="font-weight:700; font-size:14px;">顯示：</span>
+          <label class="mt-label"><input type="checkbox" id="chk4g" checked> 4G 扇形</label>
+          <select id="sel4gMode">
+            <option value="orig">原始半徑</option>
+            <option value="ue">UE 距離</option>
+          </select>
+        </div>
+        <div class="mt-group">
+          <label class="mt-label"><input type="checkbox" id="chk5g" checked> 5G 扇形</label>
+        </div>
+        <div class="mt-group">
+          <label class="mt-label"><input type="checkbox" id="chkPoints" checked> 站台點位</label>
+          <select id="selPointNet">
+            <option value="both">4G + 5G</option>
+            <option value="4g">僅 4G</option>
+            <option value="5g">僅 5G</option>
+          </select>
+        </div>
+      </div>
+      <div id="mapLoading" class="map-loading">資料載入中…</div>
+      <div id="coverageMap"></div>
+      <div class="map-legend">
+        <span class="lg-item"><span class="lg-swatch" style="background:#2f6fad;opacity:.45;"></span>4G 扇形</span>
+        <span class="lg-item"><span class="lg-swatch" style="background:#2e7d32;opacity:.4;"></span>5G 扇形</span>
+        <span class="lg-item"><span class="lg-swatch point" style="background:#1a3a5c;"></span>4G 站台</span>
+        <span class="lg-item"><span class="lg-swatch point" style="background:#e65100;"></span>5G 站台</span>
+        <span class="lg-item" style="color:#8aa4bd;">點扇形或點位可查看詳情</span>
+      </div>
+    </div>
+  </div>
+
   <script src="data.js"></script>
   <script src="data5g.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
     // ============ 站台照片（Cloudflare Worker） ============
     // 照片透過 Cloudflare Worker 存取 Google Drive，電腦關機也能看。
@@ -792,9 +919,136 @@
         tab.classList.add('active');
         document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
         document.getElementById('panel-' + tab.dataset.net).classList.add('active');
+        if (tab.dataset.net === 'map') { initCoverageMap(); }
       });
     });
 
+    // ============ 涵蓋地圖（Leaflet + GeoJSON） ============
+    let covMap = null, covLayers = {}, covLoaded = false;
+
+    function initCoverageMap() {
+      if (covLoaded) { if (covMap) setTimeout(() => covMap.invalidateSize(), 50); return; }
+      covLoaded = true;
+      if (typeof L === 'undefined') { console.log('Leaflet 未載入'); return; }
+
+      covMap = L.map('coverageMap', {
+        center: [24.54, 120.90],
+        zoom: 11,
+        zoomControl: true,
+        attributionControl: true
+      });
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; OpenStreetMap contributors'
+      }).addTo(covMap);
+
+      const style4g = {
+        color: '#2f6fad', weight: 1, opacity: 0.9,
+        fillColor: '#2f6fad', fillOpacity: 0.45
+      };
+      const style5g = {
+        color: '#2e7d32', weight: 1, opacity: 0.9,
+        fillColor: '#2e7d32', fillOpacity: 0.4
+      };
+
+      function sectorPopup(p) {
+        const t = p.properties;
+        return '<div style="font-size:13px; line-height:1.7;">' +
+          '<b>' + escapeHtml(t.cell || '') + '</b>（' + escapeHtml(t.kind) + '）<br>' +
+          '站台：' + escapeHtml(t.site || '-') + '<br>' +
+          '方位角：' + escapeHtml(t.az || '-') + '°　涵蓋：' + escapeHtml((t.cov || '-').split(';')[0]) + '<br>' +
+          (t.freq ? '頻段：' + escapeHtml(t.freq) + '<br>' : '') +
+          (t.rmod ? '模組：' + escapeHtml(t.rmod) + '<br>' : '') +
+          (t.tilt ? '傾角：' + escapeHtml(t.tilt) : '') +
+          '</div>';
+      }
+      function pointPopup(p) {
+        const t = p.properties;
+        return '<div style="font-size:13px; line-height:1.7;">' +
+          '<b>' + escapeHtml(t.site || t.bts || '') + '</b><br>' +
+          '台號：' + escapeHtml(t.bts || '-') + '（' + escapeHtml(t.kind) + '）<br>' +
+          (t.namechs ? '名稱：' + escapeHtml(t.namechs) + '<br>' : '') +
+          (t.region ? '區域：' + escapeHtml(t.region) : '') +
+          '</div>';
+      }
+
+      const loadSectors = (kind, mode, url, style, name) => new Promise((resolve) => {
+        fetch(url).then(r => r.json()).then(geo => {
+          const layer = L.geoJSON(geo, {
+            style,
+            onEachFeature: (feat, l) => l.bindPopup(sectorPopup(feat))
+          });
+          covLayers[name] = { layer, style };
+          layer.addTo(covMap);
+          resolve();
+        }).catch(() => resolve());
+      });
+      const loadPoints = (kind, url, name) => new Promise((resolve) => {
+        fetch(url).then(r => r.json()).then(geo => {
+          const layer = L.geoJSON(geo, {
+            pointToLayer: (feat, latlng) =>
+              L.circleMarker(latlng, {
+                radius: 4,
+                color: '#fff', weight: 1,
+                fillColor: kind === '4g' ? '#1a3a5c' : '#e65100',
+                fillOpacity: 0.9
+              }),
+            onEachFeature: (feat, l) => l.bindPopup(pointPopup(feat))
+          });
+          covLayers[name] = { layer };
+          layer.addTo(covMap);
+          resolve();
+        }).catch(() => resolve());
+      });
+
+      document.getElementById('mapLoading').style.display = 'block';
+      Promise.all([
+        loadSectors('4g', 'orig', 'geo/geo_4g_sectors.json', style4g, '4g'),
+        loadSectors('5g', 'orig', 'geo/geo_5g_sectors.json', style5g, '5g'),
+        loadPoints('4g', 'geo/geo_4g_points.json', 'p4g'),
+        loadPoints('5g', 'geo/geo_5g_points.json', 'p5g')
+      ]).then(() => {
+        document.getElementById('mapLoading').style.display = 'none';
+        if (covLayers['4g']) covMap.fitBounds(covLayers['4g'].layer.getBounds().pad(0.05));
+      });
+
+      const toggle = (name, on) => {
+        if (!covLayers[name]) return;
+        const layer = covLayers[name].layer;
+        if (on && !covMap.hasLayer(layer)) layer.addTo(covMap);
+        if (!on && covMap.hasLayer(layer)) covMap.removeLayer(layer);
+      };
+
+      document.getElementById('chk4g').addEventListener('change', e => toggle('4g', e.target.checked));
+      document.getElementById('chk5g').addEventListener('change', e => toggle('5g', e.target.checked));
+      document.getElementById('chkPoints').addEventListener('change', e => {
+        const sel = document.getElementById('selPointNet').value;
+        toggle('p4g', e.target.checked && (sel === 'both' || sel === '4g'));
+        toggle('p5g', e.target.checked && (sel === 'both' || sel === '5g'));
+      });
+      document.getElementById('selPointNet').addEventListener('change', () => {
+        const on = document.getElementById('chkPoints').checked;
+        const sel = document.getElementById('selPointNet').value;
+        toggle('p4g', on && (sel === 'both' || sel === '4g'));
+        toggle('p5g', on && (sel === 'both' || sel === '5g'));
+      });
+      document.getElementById('sel4gMode').addEventListener('change', e => {
+        const on = document.getElementById('chk4g').checked;
+        const newUrl = e.target.value === 'ue'
+          ? 'geo/geo_4g_ue_sectors.json' : 'geo/geo_4g_sectors.json';
+        const old = covLayers['4g'];
+        if (old && covMap.hasLayer(old.layer)) covMap.removeLayer(old.layer);
+        delete covLayers['4g'];
+        if (on) {
+          const st = old ? old.style : style4g;
+          loadSectors('4g', e.target.value, newUrl, st, '4g').then(() => {
+            if (on) toggle('4g', true);
+          });
+        }
+      });
+    }
+
+    // PWA 離線支援
     createNetController({
       data: STATION_DATA,
       idInput: document.getElementById('idInput4g'),
