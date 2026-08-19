@@ -126,6 +126,20 @@
   .search-item .s-arrow { float: right; color: var(--primary); font-weight: 700; }
   .search-count { font-size: 12px; color: #8aa4bd; margin-top: 6px; }
 
+  .search-row { display: flex; gap: 8px; }
+  .search-row .search-town {
+    flex: 0 0 auto;
+    width: 110px;
+    padding: 10px 8px;
+    font-size: 14px;
+    border: 2px solid #c8d6e4;
+    border-radius: 8px;
+    background: var(--card-bg);
+    color: var(--text);
+  }
+  .search-row .search-town:focus { outline: none; border-color: var(--primary); }
+  .search-row input { flex: 1; min-width: 0; }
+
   .station-bar {
     display: flex;
     flex-wrap: wrap;
@@ -528,11 +542,14 @@
     </div>
 
     <div class="card" style="margin-top: 16px;">
-      <label for="searchInput4g">站台名稱搜尋 (lnBtsIdLL_NameChs)</label>
-      <input id="searchInput4g" placeholder="輸入站台名稱關鍵字" autocomplete="off">
+      <label>站台名稱搜尋 (lnBtsIdLL_NameChs)</label>
+      <div class="search-row">
+        <select id="searchTown4g" class="search-town"></select>
+        <input id="searchInput4g" placeholder="輸入站台名稱關鍵字" autocomplete="off">
+      </div>
       <div class="search-count" id="searchCount4g"></div>
       <div class="search-results" id="searchResults4g"></div>
-      <div class="hint">輸入站台名稱可找到對應的 4G 台號，點擊結果即顯示該站台詳情</div>
+      <div class="hint">先選擇鄉鎮（或全部），再輸入站台名稱關鍵字，點擊結果即顯示該站台詳情</div>
     </div>
   </div>
 
@@ -557,11 +574,14 @@
     </div>
 
     <div class="card" style="margin-top: 16px;">
-      <label for="searchInput5g">站台名稱搜尋 (nrBtsIdNN_NameChs)</label>
-      <input id="searchInput5g" placeholder="輸入站台名稱關鍵字" autocomplete="off">
+      <label>站台名稱搜尋 (nrBtsIdNN_NameChs)</label>
+      <div class="search-row">
+        <select id="searchTown5g" class="search-town"></select>
+        <input id="searchInput5g" placeholder="輸入站台名稱關鍵字" autocomplete="off">
+      </div>
       <div class="search-count" id="searchCount5g"></div>
       <div class="search-results" id="searchResults5g"></div>
-      <div class="hint">輸入站台名稱可找到對應的 5G 台號，點擊結果即顯示該站台詳情</div>
+      <div class="hint">先選擇鄉鎮（或全部），再輸入站台名稱關鍵字，點擊結果即顯示該站台詳情</div>
     </div>
   </div>
 
@@ -749,7 +769,7 @@
     function createNetController(cfg) {
       const {
         data, idInput, idList, result, outName, outStations, outMeta,
-        searchInput, searchResults, searchCount, idLabel
+        searchTown, searchInput, searchResults, searchCount, idLabel
       } = cfg;
 
       const stationIndex = [];
@@ -759,10 +779,27 @@
             name: s,
             id: item.id,
             siteNameCV: item.siteNameCV,
+            town: (item.towns && item.towns[i]) || item.town || '',
             sec: (item.sec && item.sec.split('_')[i]) || '',
             coord: (item.coords && item.coords[i]) || null
           });
         });
+      });
+
+      const allOpt = document.createElement('option');
+      allOpt.value = '';
+      allOpt.textContent = '全部鄉鎮';
+      searchTown.appendChild(allOpt);
+      const towns = [];
+      stationIndex.forEach(s => {
+        if (s.town && towns.indexOf(s.town) === -1) towns.push(s.town);
+      });
+      towns.sort((a, b) => a.localeCompare(b, 'zh-Hant-TW'));
+      towns.forEach(t => {
+        const opt = document.createElement('option');
+        opt.value = t;
+        opt.textContent = t;
+        searchTown.appendChild(opt);
       });
 
       data.forEach(item => {
@@ -918,6 +955,7 @@
 
       function renderSearch(q) {
         const keyword = q.trim();
+        const town = searchTown.value;
         if (!keyword) {
           searchResults.classList.remove('show');
           searchResults.innerHTML = '';
@@ -925,7 +963,8 @@
           return;
         }
         const matches = stationIndex.filter(s =>
-          s.name.indexOf(keyword) !== -1 || s.siteNameCV.indexOf(keyword) !== -1
+          (s.name.indexOf(keyword) !== -1 || s.siteNameCV.indexOf(keyword) !== -1) &&
+          (!town || s.town === town)
         );
         if (matches.length === 0) {
           searchResults.classList.add('show');
@@ -942,6 +981,7 @@
             '<span class="s-arrow">›</span>' +
             '<div class="s-name">' + m.name + '</div>' +
             '<div class="s-meta">台號 ' + m.id + (m.sec ? '　｜　扇區 ' + m.sec : '') +
+              '　｜　' + (m.town || '') +
               '　｜　' + (m.siteNameCV || '') + '</div>';
           div.addEventListener('click', () => selectById(m.id));
           searchResults.appendChild(div);
@@ -952,6 +992,7 @@
       idInput.addEventListener('input', () => { const it = findItem(); if (it) render(it); });
       idInput.addEventListener('change', () => { const it = findItem(); if (it) render(it); });
       searchInput.addEventListener('input', () => renderSearch(searchInput.value));
+      searchTown.addEventListener('change', () => renderSearch(searchInput.value));
     }
 
     // 頁籤切換
@@ -1214,6 +1255,7 @@
       outStations: document.getElementById('outStations4g'),
       outMeta: document.getElementById('outMeta4g'),
       searchInput: document.getElementById('searchInput4g'),
+      searchTown: document.getElementById('searchTown4g'),
       searchResults: document.getElementById('searchResults4g'),
       searchCount: document.getElementById('searchCount4g'),
       idLabel: 'lnCelId'
@@ -1228,6 +1270,7 @@
       outStations: document.getElementById('outStations5g'),
       outMeta: document.getElementById('outMeta5g'),
       searchInput: document.getElementById('searchInput5g'),
+      searchTown: document.getElementById('searchTown5g'),
       searchResults: document.getElementById('searchResults5g'),
       searchCount: document.getElementById('searchCount5g'),
       idLabel: 'nrCelId'
