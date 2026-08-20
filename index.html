@@ -1184,7 +1184,7 @@
         return [lat, lng];
       };
 
-      // 扇形尖端內側位置：沿方位角方向，從中心往弧點 60% 處
+      // 扇形尖端外圍位置：沿方位角方向，從中心往弧點 85% 處
       const tipPos = (ring, center) => {
         const [clat, clng] = center;
         let far = null, farD = -1;
@@ -1192,12 +1192,12 @@
           const d = (pt[1] - clat) * (pt[1] - clat) + (pt[0] - clng) * (pt[0] - clng);
           if (d > farD) { farD = d; far = pt; }
         });
-        const lat = clat + (far[1] - clat) * 0.6;
-        const lng = clng + (far[0] - clng) * 0.6;
+        const lat = clat + (far[1] - clat) * 0.85;
+        const lng = clng + (far[0] - clng) * 0.85;
         return [lat, lng];
       };
 
-      // 4G：每站台中心放台號、每個射向放 PCI 標籤（以射向為單位去重）
+      // 4G：每站台中心放台號、每個射向放 PCI 標籤（以射向為單位去重，INDOOR 不顯示）
       const build4gLabels = (features) => {
         const sites = {};
         const pcis = {};
@@ -1217,7 +1217,7 @@
               interactive: false
             }));
           }
-          if (p.pci != null) {
+          if (p.pci != null && (p.celltype || '').indexOf('INDOOR') === -1) {
             const sec = sectorOf(p.cell);
             const key = p.bts + '|' + sec;
             if (!pcis[key]) {
