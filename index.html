@@ -1192,15 +1192,15 @@
         return [lat, lng];
       };
 
-      // 射向中心線位置：沿方位角方向，離中心 85% 半徑處（PCI 重疊顯示在射向上）
+      // 射向中心線位置：沿方位角方向，貼在扇形最外側（PCI 顯示在扇形外緣）
       const tipPos = (ring, center, az) => {
         const [clat, clng] = center;
         const arc = ring.slice(0, 8);
         const r = arc.reduce((s, pt) =>
           s + Math.hypot(pt[1] - clat, pt[0] - clng), 0) / arc.length;
         const rad = az * Math.PI / 180;
-        const lat = clat + Math.cos(rad) * r * 0.85;
-        const lng = clng + Math.sin(rad) * r * 0.85;
+        const lat = clat + Math.cos(rad) * r * 1.0;
+        const lng = clng + Math.sin(rad) * r * 1.0;
         return [lat, lng];
       };
 
