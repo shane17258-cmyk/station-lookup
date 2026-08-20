@@ -1349,10 +1349,10 @@
           const chk = document.getElementById('chk' + net).checked;
           const band = document.getElementById('sel' + net + 'Band').value;
           Object.keys(g.byTown).forEach(t => {
-            if (town !== 'all' && t !== town) return;
             Object.keys(g.byTown[t]).forEach(b => {
               const layer = g.byTown[t][b];
-              const show = chk && (band === 'all' || band === b);
+              const show = chk && (band === 'all' || band === b)
+                && (town === 'all' || t === town);
               if (show && !covMap.hasLayer(layer)) layer.addTo(covMap);
               if (!show && covMap.hasLayer(layer)) covMap.removeLayer(layer);
             });
@@ -1364,9 +1364,9 @@
           const g = covLayers[name];
           if (!g) return;
           Object.keys(g.byTown).forEach(t => {
-            if (town !== 'all' && t !== town) return;
             const layer = g.byTown[t];
-            const show = chkPoints && (sel === 'both' || sel === net);
+            const show = chkPoints && (sel === 'both' || sel === net)
+              && (town === 'all' || t === town);
             if (show && !covMap.hasLayer(layer)) layer.addTo(covMap);
             if (!show && covMap.hasLayer(layer)) covMap.removeLayer(layer);
           });
@@ -1400,9 +1400,9 @@
           const g = covLayers[name];
           if (!g) return;
           Object.keys(g.byTown).forEach(t => {
-            if (town !== 'all' && t !== town) return;
             const layer = g.byTown[t];
-            const show = on && (sel === 'both' || sel === net);
+            const show = on && (sel === 'both' || sel === net)
+              && (town === 'all' || t === town);
             if (show && !covMap.hasLayer(layer)) layer.addTo(covMap);
             if (!show && covMap.hasLayer(layer)) covMap.removeLayer(layer);
           });
