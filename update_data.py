@@ -2,7 +2,7 @@
 """
 一鍵更新腳本
 從本資料夾內的四個 xlsx 檔重新產生 data.js (4G) 與 data5g.js (5G)。
-過濾條件：縣市=苗栗縣 且 鄉鎮=苗栗市
+過濾條件：營運中心=苗栗營運中心（涵蓋苗栗基維股與三義基維股）
 檔名會自動以 *LTE_CoBTS_CHT.xlsx / *LTE_CoCell_CHT.xlsx / *nrBts_DB_CHT.xlsx / *nrCell_DB_CHT.xlsx 匹配，
 未來新 dump 直接放進來即可（支援不同日期前綴）。
 """
@@ -11,8 +11,8 @@ import openpyxl, json, os, glob, sys, io
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 
 BASE = os.path.dirname(os.path.abspath(__file__))
-# 過濾條件：以「基維股」欄位為準（苗栗基維股），不再限定單一鄉鎮
-JIWEI = "苗栗基維股"
+# 過濾條件：以「營運中心」欄位為準（苗栗營運中心，涵蓋苗栗基維股+三義基維股）
+CENTER = "苗栗營運中心"
 
 def find_file(pattern):
     files = glob.glob(os.path.join(BASE, pattern))
@@ -413,7 +413,7 @@ hdr_cell, cell_rows = load_rows(co_cell, "LTE_CoCell_CHT")
 print("  stations file:", os.path.basename(co_bts))
 print("  cells file  :", os.path.basename(co_cell))
 
-bts = [r for r in bts_rows if get(r, hdr_bts, "基維股") == JIWEI]
+bts = [r for r in bts_rows if get(r, hdr_bts, "營運中心") == CENTER]
 print(f"  過濾後站台數: {len(bts)}")
 
 cell_map = {}
@@ -533,7 +533,7 @@ hdr5c, cell5_rows = load_rows(nr_cell, "nrCell_DB_CHT")
 print("  stations file:", os.path.basename(nr_bts))
 print("  cells file  :", os.path.basename(nr_cell))
 
-bts5 = [r for r in bts5_rows if get(r, hdr5, "基維股") == JIWEI]
+bts5 = [r for r in bts5_rows if get(r, hdr5, "營運中心") == CENTER]
 print(f"  過濾後站台數: {len(bts5)}")
 
 cell5_map = {}
