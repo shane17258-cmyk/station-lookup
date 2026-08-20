@@ -1184,16 +1184,15 @@
         return [lat, lng];
       };
 
-      // 扇形尖端外圍位置：沿方位角方向，從中心往弧點 85% 處
-      const tipPos = (ring, center) => {
+      // 射向中心線位置：沿方位角方向，離中心 85% 半徑處（PCI 重疊顯示在射向上）
+      const tipPos = (ring, center, az) => {
         const [clat, clng] = center;
-        let far = null, farD = -1;
-        ring.forEach(pt => {
-          const d = (pt[1] - clat) * (pt[1] - clat) + (pt[0] - clng) * (pt[0] - clng);
-          if (d > farD) { farD = d; far = pt; }
-        });
-        const lat = clat + (far[1] - clat) * 0.85;
-        const lng = clng + (far[0] - clng) * 0.85;
+        const arc = ring.slice(0, 8);
+        const r = arc.reduce((s, pt) =>
+          s + Math.hypot(pt[1] - clat, pt[0] - clng), 0) / arc.length;
+        const rad = az * Math.PI / 180;
+        const lat = clat + Math.cos(rad) * r * 0.85;
+        const lng = clng + Math.sin(rad) * r * 0.85;
         return [lat, lng];
       };
 
@@ -1224,7 +1223,7 @@
             const key = p.bts + '|' + centerKey + '|' + sec;
             if (!pcis[key]) {
               pcis[key] = true;
-              const pos = tipPos(ring, center);
+              const pos = tipPos(ring, center, parseFloat(p.az) || 0);
               mk.push(L.marker(pos, {
                 icon: L.divIcon({
                   className: 'cov-pci-label',
