@@ -963,7 +963,8 @@
           return;
         }
         const matches = stationIndex.filter(s =>
-          (s.name.indexOf(keyword) !== -1 || s.siteNameCV.indexOf(keyword) !== -1) &&
+          (s.name.toLowerCase().indexOf(keyword.toLowerCase()) !== -1 ||
+           s.siteNameCV.toLowerCase().indexOf(keyword.toLowerCase()) !== -1) &&
           (!town || s.town === town)
         );
         if (matches.length === 0) {
