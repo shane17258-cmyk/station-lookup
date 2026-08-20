@@ -613,6 +613,12 @@
     <div class="map-card">
       <div class="map-tools">
         <div class="mt-group">
+          <label class="mt-label" for="selTown" style="font-weight:700; font-size:14px;">鄉鎮：</label>
+          <select id="selTown">
+            <option value="all">全部鄉鎮</option>
+          </select>
+        </div>
+        <div class="mt-group">
           <span style="font-weight:700; font-size:14px;">顯示：</span>
           <label class="mt-label"><input type="checkbox" id="chk4g" checked> 4G 扇形</label>
           <select id="sel4gMode">
@@ -1252,56 +1258,115 @@
       const loadSectors = (kind, url, style, name) => new Promise((resolve) => {
         fetch(url).then(r => r.json()).then(geo => {
           const rules = BAND_RULES[kind];
-          const byBand = {};
-          Object.keys(rules).forEach(b => byBand[b] = []);
+          const towns = {};
           geo.features.forEach(f => {
+            const t = f.properties.town || '其他';
+            if (!towns[t]) towns[t] = {};
             const c = f.properties.cell || '';
-            Object.keys(rules).forEach(b => { if (rules[b](c)) byBand[b].push(f); });
-          });
-          const bands = {};
-          Object.keys(byBand).forEach(b => {
-            bands[b] = L.geoJSON({
-              type: 'FeatureCollection',
-              features: byBand[b]
-            }, {
-              style,
-              onEachFeature: (feat, l) => l.bindPopup(sectorPopup(feat))
+            Object.keys(rules).forEach(b => {
+              if (rules[b](c)) {
+                if (!towns[t][b]) towns[t][b] = [];
+                towns[t][b].push(f);
+              }
             });
           });
-          const extra = { kind, bands, style };
+          const byTown = {};
+          Object.keys(towns).forEach(t => {
+            byTown[t] = {};
+            Object.keys(towns[t]).forEach(b => {
+              byTown[t][b] = L.geoJSON({
+                type: 'FeatureCollection',
+                features: towns[t][b]
+              }, {
+                style,
+                onEachFeature: (feat, l) => l.bindPopup(sectorPopup(feat))
+              });
+            });
+          });
+          const extra = { kind, byTown, style };
           if (name === '4g') extra.labels = build4gLabels(geo.features);
           covLayers[name] = extra;
+          fillTownOptions(geo.features);
           resolve();
         }).catch(() => resolve());
       });
       const loadPoints = (kind, url, name) => new Promise((resolve) => {
         fetch(url).then(r => r.json()).then(geo => {
-          const layer = L.geoJSON(geo, {
-            pointToLayer: (feat, latlng) =>
-              L.circleMarker(latlng, {
-                radius: 4,
-                color: '#fff', weight: 1,
-                fillColor: kind === '4g' ? '#1a3a5c' : '#e65100',
-                fillOpacity: 0.9
-              }),
-            onEachFeature: (feat, l) => l.bindPopup(pointPopup(feat))
+          const byTown = {};
+          geo.features.forEach(f => {
+            const t = f.properties.town || '其他';
+            if (!byTown[t]) byTown[t] = [];
+            byTown[t].push(f);
           });
-          covLayers[name] = { layer };
-          layer.addTo(covMap);
+          const layers = {};
+          Object.keys(byTown).forEach(t => {
+            layers[t] = L.geoJSON({
+              type: 'FeatureCollection',
+              features: byTown[t]
+            }, {
+              pointToLayer: (feat, latlng) =>
+                L.circleMarker(latlng, {
+                  radius: 4,
+                  color: '#fff', weight: 1,
+                  fillColor: kind === '4g' ? '#1a3a5c' : '#e65100',
+                  fillOpacity: 0.9
+                }),
+              onEachFeature: (feat, l) => l.bindPopup(pointPopup(feat))
+            });
+          });
+          covLayers[name] = { byTown: layers };
+          fillTownOptions(geo.features);
           resolve();
         }).catch(() => resolve());
       });
 
-      // 依 checkbox + 頻段下拉顯示/隱藏扇形子圖層
+      // 收集鄉鎮清單填入下拉
+      function fillTownOptions(features) {
+        const sel = document.getElementById('selTown');
+        if (!sel || sel.dataset.filled) return;
+        const towns = new Set();
+        features.forEach(f => {
+          const t = f.properties.town;
+          if (t) towns.add(t);
+        });
+        if (!towns.size) return;
+        const order = [...towns].sort((a, b) => a.localeCompare(b, 'zh-Hant'));
+        order.forEach(t => {
+          const opt = document.createElement('option');
+          opt.value = t;
+          opt.textContent = t;
+          sel.appendChild(opt);
+        });
+        sel.dataset.filled = '1';
+      }
+
+      // 依 checkbox + 頻段 + 鄉鎮顯示/隱藏扇形與點位
       function applySectorVisibility() {
+        const town = document.getElementById('selTown').value;
         ['4g', '5g'].forEach(net => {
           const g = covLayers[net];
           if (!g) return;
           const chk = document.getElementById('chk' + net).checked;
           const band = document.getElementById('sel' + net + 'Band').value;
-          Object.keys(g.bands).forEach(b => {
-            const layer = g.bands[b];
-            const show = chk && (band === 'all' || band === b);
+          Object.keys(g.byTown).forEach(t => {
+            if (town !== 'all' && t !== town) return;
+            Object.keys(g.byTown[t]).forEach(b => {
+              const layer = g.byTown[t][b];
+              const show = chk && (band === 'all' || band === b);
+              if (show && !covMap.hasLayer(layer)) layer.addTo(covMap);
+              if (!show && covMap.hasLayer(layer)) covMap.removeLayer(layer);
+            });
+          });
+        });
+        const chkPoints = document.getElementById('chkPoints').checked;
+        const sel = document.getElementById('selPointNet').value;
+        [['p4g', '4g'], ['p5g', '5g']].forEach(([name, net]) => {
+          const g = covLayers[name];
+          if (!g) return;
+          Object.keys(g.byTown).forEach(t => {
+            if (town !== 'all' && t !== town) return;
+            const layer = g.byTown[t];
+            const show = chkPoints && (sel === 'both' || sel === net);
             if (show && !covMap.hasLayer(layer)) layer.addTo(covMap);
             if (!show && covMap.hasLayer(layer)) covMap.removeLayer(layer);
           });
@@ -1319,28 +1384,36 @@
         applySectorVisibility();
         document.getElementById('mapLoading').style.display = 'none';
         if (covLayers['4g'] && !hasLocated) {
-          const first = covLayers['4g'].bands['L900'];
+          const firstTown = covLayers['4g'].byTown;
+          let first = null;
+          Object.keys(firstTown).forEach(t => {
+            if (!first && firstTown[t]['L900']) first = firstTown[t]['L900'];
+          });
           if (first) covMap.fitBounds(first.getBounds().pad(0.05));
         }
       });
 
-      const toggle = (name, on) => {
-        if (!covLayers[name]) return;
-        const layer = covLayers[name].layer;
-        if (on && !covMap.hasLayer(layer)) layer.addTo(covMap);
-        if (!on && covMap.hasLayer(layer)) covMap.removeLayer(layer);
-      };
-
       const togglePoints = (on) => {
         const sel = document.getElementById('selPointNet').value;
-        toggle('p4g', on && (sel === 'both' || sel === '4g'));
-        toggle('p5g', on && (sel === 'both' || sel === '5g'));
+        const town = document.getElementById('selTown').value;
+        [['p4g', '4g'], ['p5g', '5g']].forEach(([name, net]) => {
+          const g = covLayers[name];
+          if (!g) return;
+          Object.keys(g.byTown).forEach(t => {
+            if (town !== 'all' && t !== town) return;
+            const layer = g.byTown[t];
+            const show = on && (sel === 'both' || sel === net);
+            if (show && !covMap.hasLayer(layer)) layer.addTo(covMap);
+            if (!show && covMap.hasLayer(layer)) covMap.removeLayer(layer);
+          });
+        });
       };
 
       document.getElementById('chk4g').addEventListener('change', applySectorVisibility);
       document.getElementById('chk5g').addEventListener('change', applySectorVisibility);
       document.getElementById('sel4gBand').addEventListener('change', applySectorVisibility);
       document.getElementById('sel5gBand').addEventListener('change', applySectorVisibility);
+      document.getElementById('selTown').addEventListener('change', applySectorVisibility);
       document.getElementById('chkPoints').addEventListener('change', e => togglePoints(e.target.checked));
       document.getElementById('selPointNet').addEventListener('change', () => togglePoints(document.getElementById('chkPoints').checked));
       document.getElementById('sel4gMode').addEventListener('change', e => {
@@ -1349,9 +1422,11 @@
           ? 'geo/geo_4g_ue_sectors.json' : 'geo/geo_4g_sectors.json';
         const old = covLayers['4g'];
         if (old) {
-          Object.keys(old.bands || {}).forEach(b => {
-            const layer = old.bands[b];
-            if (covMap.hasLayer(layer)) covMap.removeLayer(layer);
+          Object.keys(old.byTown || {}).forEach(t => {
+            Object.keys(old.byTown[t]).forEach(b => {
+              const layer = old.byTown[t][b];
+              if (covMap.hasLayer(layer)) covMap.removeLayer(layer);
+            });
           });
           if (old.labels && covMap.hasLayer(old.labels)) covMap.removeLayer(old.labels);
           delete covLayers['4g'];
