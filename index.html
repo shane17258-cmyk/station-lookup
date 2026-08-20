@@ -1197,7 +1197,7 @@
         return [lat, lng];
       };
 
-      // 4G：每站台中心放台號、每個射向放 PCI 標籤（以射向為單位去重，INDOOR 不顯示）
+      // 4G：每個站台位置放台號、每個射向放 PCI 標籤（以位置+射向去重，INDOOR 不顯示）
       const build4gLabels = (features) => {
         const sites = {};
         const pcis = {};
@@ -1206,8 +1206,10 @@
           const p = f.properties;
           const ring = f.geometry.coordinates[0];
           const center = ringCenter(ring);
-          if (!sites[p.bts]) {
-            sites[p.bts] = true;
+          const centerKey = center[0].toFixed(5) + ',' + center[1].toFixed(5);
+          const siteKey = p.bts + '|' + centerKey;
+          if (!sites[siteKey]) {
+            sites[siteKey] = true;
             mk.push(L.marker(center, {
               icon: L.divIcon({
                 className: 'cov-bts-label',
@@ -1219,7 +1221,7 @@
           }
           if (p.pci != null && (p.celltype || '').indexOf('INDOOR') === -1) {
             const sec = sectorOf(p.cell);
-            const key = p.bts + '|' + sec;
+            const key = p.bts + '|' + centerKey + '|' + sec;
             if (!pcis[key]) {
               pcis[key] = true;
               const pos = tipPos(ring, center);
