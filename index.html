@@ -475,6 +475,30 @@
     height: 10px;
     border-radius: 50%;
   }
+  .cov-bts-label {
+    background: #fff;
+    border: 1px solid #2f6fad;
+    color: #2f6fad;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1;
+    padding: 2px 4px;
+    border-radius: 3px;
+    white-space: nowrap;
+    box-shadow: 0 1px 2px rgba(0,0,0,.3);
+  }
+  .cov-pci-label {
+    background: #fff;
+    border: 1px solid #888;
+    color: #111;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1;
+    padding: 2px 4px;
+    border-radius: 3px;
+    white-space: nowrap;
+    box-shadow: 0 1px 2px rgba(0,0,0,.3);
+  }
   .locate-btn {
     display: inline-flex;
     align-items: center;
@@ -1136,6 +1160,94 @@
         }
       };
 
+      const LABEL_ZOOM = 13;
+      let pciLabels = null;
+
+      // 依 cell 名稱解析射向（4G: cell = bts + 射向 + 頻段，如 41778611 => 射向1）
+      const sectorOf = (cell) => {
+        const s = String(cell || '');
+        return s.length >= 2 ? s[s.length - 2] : s;
+      };
+
+      // 計算扇形中心（ring 中重複最多的點即站台中心）
+      const ringCenter = (ring) => {
+        const counts = {};
+        ring.forEach(pt => {
+          const k = pt[0].toFixed(5) + ',' + pt[1].toFixed(5);
+          counts[k] = (counts[k] || 0) + 1;
+        });
+        let best = null, bestN = 0;
+        Object.keys(counts).forEach(k => {
+          if (counts[k] > bestN) { bestN = counts[k]; best = k; }
+        });
+        const [lng, lat] = best.split(',').map(Number);
+        return [lat, lng];
+      };
+
+      // 扇形尖端內側位置：沿方位角方向，從中心往弧點 60% 處
+      const tipPos = (ring, center) => {
+        const [clat, clng] = center;
+        let far = null, farD = -1;
+        ring.forEach(pt => {
+          const d = (pt[1] - clat) * (pt[1] - clat) + (pt[0] - clng) * (pt[0] - clng);
+          if (d > farD) { farD = d; far = pt; }
+        });
+        const lat = clat + (far[1] - clat) * 0.6;
+        const lng = clng + (far[0] - clng) * 0.6;
+        return [lat, lng];
+      };
+
+      // 4G：每站台中心放台號、每個射向放 PCI 標籤（以射向為單位去重）
+      const build4gLabels = (features) => {
+        const sites = {};
+        const pcis = {};
+        const mk = [];
+        features.forEach(f => {
+          const p = f.properties;
+          const ring = f.geometry.coordinates[0];
+          const center = ringCenter(ring);
+          if (!sites[p.bts]) {
+            sites[p.bts] = true;
+            mk.push(L.marker(center, {
+              icon: L.divIcon({
+                className: 'cov-bts-label',
+                html: escapeHtml(p.bts),
+                iconSize: null
+              }),
+              interactive: false
+            }));
+          }
+          if (p.pci != null) {
+            const sec = sectorOf(p.cell);
+            const key = p.bts + '|' + sec;
+            if (!pcis[key]) {
+              pcis[key] = true;
+              const pos = tipPos(ring, center);
+              mk.push(L.marker(pos, {
+                icon: L.divIcon({
+                  className: 'cov-pci-label',
+                  html: escapeHtml(p.pci),
+                  iconSize: null
+                }),
+                interactive: false
+              }));
+            }
+          }
+        });
+        pciLabels = L.layerGroup(mk);
+        return pciLabels;
+      };
+
+      // 依縮放級別顯示/隱藏台號與 PCI 標籤
+      function applyLabelVisibility() {
+        if (!pciLabels) return;
+        const show = covMap.getZoom() >= LABEL_ZOOM &&
+          document.getElementById('chk4g').checked;
+        if (show && !covMap.hasLayer(pciLabels)) pciLabels.addTo(covMap);
+        if (!show && covMap.hasLayer(pciLabels)) covMap.removeLayer(pciLabels);
+      }
+      covMap.on('zoomend', applyLabelVisibility);
+
       const loadSectors = (kind, url, style, name) => new Promise((resolve) => {
         fetch(url).then(r => r.json()).then(geo => {
           const rules = BAND_RULES[kind];
@@ -1155,7 +1267,9 @@
               onEachFeature: (feat, l) => l.bindPopup(sectorPopup(feat))
             });
           });
-          covLayers[name] = { kind, bands, style };
+          const extra = { kind, bands, style };
+          if (name === '4g') extra.labels = build4gLabels(geo.features);
+          covLayers[name] = extra;
           resolve();
         }).catch(() => resolve());
       });
@@ -1191,6 +1305,7 @@
             if (!show && covMap.hasLayer(layer)) covMap.removeLayer(layer);
           });
         });
+        applyLabelVisibility();
       }
 
       document.getElementById('mapLoading').style.display = 'block';
@@ -1237,6 +1352,7 @@
             const layer = old.bands[b];
             if (covMap.hasLayer(layer)) covMap.removeLayer(layer);
           });
+          if (old.labels && covMap.hasLayer(old.labels)) covMap.removeLayer(old.labels);
           delete covLayers['4g'];
         }
         const st = (old && old.style) || style4g;
