@@ -1,0 +1,33 @@
+name: Daily Taipower Outage Check (4G only)
+
+on:
+  schedule:
+    - cron: '0 23 * * *' # 07:00 Taipei (23:00 UTC)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  check-outage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: |
+          pip install requests beautifulsoup4 ddddocr pillow
+      - name: Run outage check (4G meters only)
+        run: |
+          python scripts/taipower_check.py
+      - name: Commit outage.json if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add outage.json || true
+          git diff --cached --quiet || git commit -m "chore: update outage.json $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          git push || echo "no changes to push"
