@@ -232,7 +232,7 @@ async function getStationFolderId(env, token, station) {
 async function driveListPhotos(token, folderId) {
   const url = DRIVE_API + '/files?q=' + encodeURIComponent(
     "'" + folderId + "' in parents and trashed=false and mimeType contains 'image/'"
-  ) + '&pageSize=1000&orderBy=name&fields=files(id,name)';
+  ) + '&pageSize=1000&orderBy=name&fields=files(id,name,thumbnailLink)';
   const resp = await driveFetch(token, url);
   const data = await resp.json();
   return data.files || [];
@@ -240,6 +240,15 @@ async function driveListPhotos(token, folderId) {
 
 async function listPhotos(env, station) {
   if (!(await isAllowedStation(station))) return [];
+  // Cache photo list for 5 minutes (avoid Drive API on every click)
+  const cacheKey = 'photos-list-' + sanitizeStation(station);
+  try {
+    const cached = await caches.default.match(cacheKey);
+    if (cached) {
+      const arr = await cached.json();
+      if (Array.isArray(arr)) return arr;
+    }
+  } catch (e) {}
   const token = await getAccessToken(env);
   const folderId = await getStationFolderId(env, token, station);
   const files = await driveListPhotos(token, folderId);
@@ -251,10 +260,16 @@ async function listPhotos(env, station) {
     result.push({
       name: f.name,
       url: '/photos/' + encodeURIComponent(st) + '/' + encodeURIComponent(f.name),
+      thumb: f.thumbnailLink || null,
       id: f.id,
     });
   }
   result.sort((a, b) => a.name.localeCompare(b.name));
+  try {
+    await caches.default.put(cacheKey, new Response(JSON.stringify(result), {
+      headers: { 'Content-Type': 'application/json', 'Cache-Control': 'public, max-age=300' }
+    }));
+  } catch (e) {}
   return result;
 }
 
@@ -350,7 +365,7 @@ async function handleRequest(request, env) {
       const station = url.searchParams.get('station') || '';
       if (!sanitizeStation(station)) return json({ ok: false, error: '站台名稱無效' }, 400, cors);
       const photos = await listPhotos(env, station);
-      return json({ ok: true, station: sanitizeStation(station), photos }, 200, cors);
+      return json({ ok: true, station: sanitizeStation(station), photos }, 200, { ...cors, 'Cache-Control': 'public, max-age=60' });
     }
 
     // 下載照片

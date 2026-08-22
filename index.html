@@ -760,12 +760,22 @@
       return PHOTO_SERVER + path + '?station=' + encodeURIComponent(station);
     }
 
+    const photoCache = new Map();
     async function loadPhotos(station, gridEl, statusEl) {
       try {
+        if (photoCache.has(station)) {
+          renderPhotos(station, photoCache.get(station), gridEl);
+          if (statusEl) { statusEl.textContent = ''; statusEl.className = 'photo-status'; }
+          return;
+        }
+        if (statusEl) { statusEl.textContent = '載入中…'; statusEl.className = 'photo-status'; }
+        gridEl.innerHTML = '<div class="photo-empty">載入中…</div>';
         const res = await fetch(photoApi(station, '/api/photos'));
         if (!res.ok) throw new Error('HTTP ' + res.status);
         const data = await res.json();
-        renderPhotos(station, data.photos || [], gridEl);
+        const photos = data.photos || [];
+        photoCache.set(station, photos);
+        renderPhotos(station, photos, gridEl);
         if (statusEl) { statusEl.textContent = ''; statusEl.className = 'photo-status'; }
       } catch (e) {
         gridEl.innerHTML = '';
@@ -791,7 +801,7 @@
         a.rel = 'noopener';
         a.addEventListener('click', (e)=>{ e.preventDefault(); openLightbox(photos, photos.indexOf(p)); });
         const img = document.createElement('img');
-        img.src = PHOTO_SERVER + p.url;
+        img.src = p.thumb || (PHOTO_SERVER + p.url);
         img.alt = p.name;
         img.loading = 'lazy';
         a.appendChild(img);
@@ -1612,6 +1622,25 @@
           lbStep(dx<0?1:-1);
         }
       }, {passive:true});
+      // 桌機滑鼠拖曳（左右滑動）
+      lb.addEventListener('mousedown', (e)=>{
+        lbStartX=e.clientX; lbStartY=e.clientY;
+        lb._dragging = true;
+        lb.style.cursor='grabbing';
+        e.preventDefault();
+      });
+      lb.addEventListener('mouseup', (e)=>{
+        if(!lb._dragging) return;
+        lb._dragging = false;
+        lb.style.cursor='grab';
+        const dx=e.clientX - lbStartX;
+        const dy=e.clientY - lbStartY;
+        if(Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)){
+          lbStep(dx<0?1:-1);
+        }
+      });
+      lb.addEventListener('mouseleave', ()=>{ lb._dragging=false; lb.style.cursor='grab'; });
+      lb.style.cursor='grab';
     }
     function openLightbox(list, index){
       ensureLb();
