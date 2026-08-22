@@ -60863,4 +60863,4 @@ const STATION_DATA_5G = [
    ]
   }
  }
-]];
+];
