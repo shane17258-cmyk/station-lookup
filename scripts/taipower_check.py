@@ -10,19 +10,21 @@ DATA_JS = os.path.join(os.path.dirname(__file__), "..", "data.js")
 OUT_JSON = os.path.join(os.path.dirname(__file__), "..", "outage.json")
 
 def get_4g_meters():
-    # Parse data.js: const STATION_DATA = [...]
+    # Parse data.js: const STATION_DATA = [...] - 每一個有電號的 4G 子站台都要查（無電號不查）
     t = open(DATA_JS, encoding="utf-8").read()
     s = t.find("[")
     e = t.rfind("]") + 1
     arr = json.loads(t[s:e])
+    # 每子站台統計
+    sub_count = 0
     meters = set()
     for it in arr:
         for ms in it.get("meters", {}).values():
             for m in ms:
-                # normalize: remove hyphens for Taipower query (21162052384)
+                sub_count += 1
                 meters.add(re.sub(r"[^0-9]", "", m))
-    # Filter to 11-digit (valid Taipower format) and sort
     meters = sorted([m for m in meters if len(m) >= 10])
+    print(f"4G 子站台有電號數: {sub_count}, 去重後 distinct 電號: {len(meters)}（僅查 distinct，結果同步顯示至 4G/5G）")
     return meters
 
 def query_single(meter, retries=3):
