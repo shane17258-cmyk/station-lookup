@@ -111,8 +111,45 @@ def query_single(meter):
 
 def main():
     meters=get_4g_meters()
-    print(f"4G distinct {len(meters)} 筆，全部查詢（無 OUTAGE_LIMIT）")
-    result={}
+    # 當日複核：優先檢查今日有排程停電的電號
+    try:
+        if os.path.exists(OUT_JSON):
+            with open(OUT_JSON, encoding="utf-8") as f:
+                old = json.load(f)
+            today = time.strftime("%Y-%m-%d")
+            due = [m for m, info in old.items() if info.get("start","").startswith(today)]
+            if due:
+                print(f"當日複核優先 {len(due)} 筆: {due[:5]}")
+                # 將當日排程移至最前
+                meters = due + [m for m in meters if m not in due]
+    except Exception as e:
+        print(f"當日複核載入失敗: {e}", file=sys.stderr)
+    # 每日 300 筆輪詢（輪替覆蓋全部）
+    limit = int(os.environ.get("OUTAGE_LIMIT", "0"))
+    if limit and limit < len(meters):
+        import datetime
+        day_of_year = datetime.datetime.utcnow().timetuple().tm_yday
+        offset = (day_of_year * limit) % len(meters)
+        # 保留當日複核優先，再輪替其餘
+        meters = meters[:limit] if len(meters) <= limit else (meters[offset:] + meters[:offset])[:limit]
+        print(f"輪詢限制 {limit} 筆（offset {offset}）")
+    print(f"本次查詢 {len(meters)} 筆")
+    # 載入舊檔以合併（保留未輪詢到的未來排程）
+    old_result = {}
+    try:
+        if os.path.exists(OUT_JSON):
+            with open(OUT_JSON, encoding="utf-8") as f:
+                old_result = json.load(f)
+    except: pass
+    result = dict(old_result)
+    # 移除已過期的排程（end < now）
+    now = time.time()
+    for k in list(result.keys()):
+        try:
+            end = result[k].get("end","")
+            if end and time.mktime(time.strptime(end, "%Y-%m-%dT%H:%M:%S")) < now:
+                del result[k]
+        except: pass
     for idx,m in enumerate(meters,1):
         print(f"[{idx}/{len(meters)}] {m} ...")
         try:
@@ -122,6 +159,9 @@ def main():
         if info.get("found"):
             result[m]=info
             print(f"  -> {info.get('start')}~{info.get('end')}")
+        elif m in result:
+            del result[m]
+            print(f"  -> cleared")
         time.sleep(0.8)
         if idx%50==0:
             with open(OUT_JSON,"w",encoding="utf-8") as f: json.dump(result,f,ensure_ascii=False,indent=2)
