@@ -11,9 +11,7 @@ permissions:
 jobs:
   check-outage:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
-    env:
-      OUTAGE_LIMIT: '80' # 每日僅查 80 筆 distinct 電號（輪詢，避免 2.5 小時逾時；完整 597 筆可分批或改每小時批次）
+    timeout-minutes: 360
     steps:
       - uses: actions/checkout@v4
         with:

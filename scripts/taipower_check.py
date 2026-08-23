@@ -1,178 +1,132 @@
 #!/usr/bin/env python3
-# 4G-only daily outage check via https://service.taipower.com.tw/nds/ndsWeb/ndft112.aspx
-# Uses ddddocr for captcha (4-digit numeric)
 import json, re, time, os, sys
 import requests
 from bs4 import BeautifulSoup
-
-BASE = "https://service.taipower.com.tw/nds/ndsWeb/ndft112.aspx"
-DATA_JS = os.path.join(os.path.dirname(__file__), "..", "data.js")
-OUT_JSON = os.path.join(os.path.dirname(__file__), "..", "outage.json")
+BASE="https://service.taipower.com.tw/nds/ndsWeb/ndft112.aspx"
+DATA_JS=os.path.join(os.path.dirname(__file__),"..","data.js")
+OUT_JSON=os.path.join(os.path.dirname(__file__),"..","outage.json")
 
 def get_4g_meters():
-    # Parse data.js: const STATION_DATA = [...] - 每一個有電號的 4G 子站台都要查（無電號不查）
-    t = open(DATA_JS, encoding="utf-8").read()
-    s = t.find("[")
-    e = t.rfind("]") + 1
-    arr = json.loads(t[s:e])
-    # 每子站台統計
-    sub_count = 0
-    meters = set()
+    t=open(DATA_JS,encoding="utf-8").read()
+    arr=json.loads(t[t.find("["):t.rfind("]")+1])
+    # 每子站台有電號都查（ distinct 已涵蓋全部子站台，去重後仍為全部 distinct 電號）
+    meters=set()
+    cnt=0
     for it in arr:
-        for ms in it.get("meters", {}).values():
+        for ms in it.get("meters",{}).values():
             for m in ms:
-                sub_count += 1
-                meters.add(re.sub(r"[^0-9]", "", m))
-    meters = sorted([m for m in meters if len(m) >= 10])
-    print(f"4G 子站台有電號數: {sub_count}, 去重後 distinct 電號: {len(meters)}（僅查 distinct，結果同步顯示至 4G/5G）")
+                cnt+=1
+                meters.add(re.sub(r"[^0-9]","",m))
+    meters=sorted([m for m in meters if len(m)>=10])
+    print(f"4G 子站台有電號 {cnt} 筆，去重 {len(meters)} 筆（全部查詢）")
     return meters
 
-def query_single(meter, retries=3):
-    # ddddocr setup (lazy import)
-    try:
-        import ddddocr
-        ocr = ddddocr.DdddOcr(show_ad=False)
-        use_ocr = True
-    except Exception as e:
-        print(f"ddddocr not available: {e}", file=sys.stderr)
-        use_ocr = False
-        ocr = None
+def solve_captcha(session, soup):
+    import re, ddddocr
+    ocr=ddddocr.DdddOcr(show_ad=False)
+    img=soup.find("img", src=re.compile(r"captcha\.ashx"))
+    if not img: return None, None
+    src=img.get("src")
+    url=src if src.startswith("http") else "https://service.taipower.com.tw/nds/ndsWeb/"+src.lstrip("./")
+    r=session.get(url, timeout=30)
+    txt=ocr.classification(r.content).strip()
+    return re.sub(r"[^0-9A-Za-z]","",txt), r.content
 
-    for attempt in range(retries):
-        s = requests.Session()
-        s.headers.update({"User-Agent": "Mozilla/5.0", "Referer": BASE})
+def query_single(meter):
+    import ddddocr
+    ocr=ddddocr.DdddOcr(show_ad=False)
+    for attempt in range(4):
+        s=requests.Session()
+        s.headers.update({"User-Agent":"Mozilla/5.0","Referer":BASE})
         try:
-            # GET page
-            r = s.get(BASE, timeout=30)
-            r.encoding = "utf-8"
-            soup = BeautifulSoup(r.text, "html.parser")
-            vs = soup.find("input", {"name": "__VIEWSTATE"})
-            vsg = soup.find("input", {"name": "__VIEWSTATEGENERATOR"})
-            ev = soup.find("input", {"name": "__EVENTVALIDATION"})
-            if not vs or not ev:
-                print(f"[{meter}] failed to get VIEWSTATE attempt {attempt+1}", file=sys.stderr)
-                time.sleep(1)
-                continue
-            vs = vs["value"]; vsg = vsg["value"] if vsg else ""; ev = ev["value"]
-            # GET captcha
-            img = soup.find("img", src=re.compile(r"captcha\.ashx"))
-            if not img:
-                print(f"[{meter}] no captcha img", file=sys.stderr)
-                time.sleep(1)
-                continue
-            src = img.get("src")
-            captcha_url = src if src.startswith("http") else "https://service.taipower.com.tw/nds/ndsWeb/" + src.lstrip("./")
-            cap_r = s.get(captcha_url, timeout=30)
-            if cap_r.status_code != 200 or len(cap_r.content) < 100:
-                print(f"[{meter}] captcha download failed", file=sys.stderr)
-                time.sleep(1)
-                continue
-            # OCR
-            if use_ocr:
-                try:
-                    captcha_text = ocr.classification(cap_r.content).strip()
-                    captcha_text = re.sub(r"[^0-9A-Za-z]", "", captcha_text)
-                except Exception as e:
-                    print(f"[{meter}] OCR failed: {e}", file=sys.stderr)
-                    time.sleep(1)
-                    continue
-            else:
-                captcha_text = ""
-            if not captcha_text or len(captcha_text) < 3:
-                print(f"[{meter}] OCR empty: '{captcha_text}'", file=sys.stderr)
-                time.sleep(0.5)
-                continue
-            # POST
-            data = {
-                "__VIEWSTATE": vs,
-                "__VIEWSTATEGENERATOR": vsg,
-                "__EVENTVALIDATION": ev,
-                "ctl00$ContentMain$HiddenField_ReportType": "1",
-                "ctl00$ContentMain$TextBox_CustNo": meter,
-                "ctl00$ContentMain$TextBox_Captcha": captcha_text,
-                "__EVENTTARGET": "ctl00$ContentMain$Button_Inquiry",
-                "__EVENTARGUMENT": ""
-            }
-            r2 = s.post(BASE, data=data, timeout=30)
-            r2.encoding = "utf-8"
-            text = BeautifulSoup(r2.text, "html.parser").get_text()
-            if "驗證碼有誤" in text or "驗證碼錯誤" in text:
-                print(f"[{meter}] captcha '{captcha_text}' incorrect, retry {attempt+1}", file=sys.stderr)
-                time.sleep(0.8)
-                continue
-            if "請輸入驗證碼" in text and "暫停供電" not in text and "查無" not in text:
-                print(f"[{meter}] need captcha, retry", file=sys.stderr)
-                time.sleep(0.8)
-                continue
-            # Success: parse result
-            if "暫停供電" in text:
-                m = re.search(r"(\d{4}/\d{2}/\d{2} \d{2}:\d{2})[^\d]+(\d{4}/\d{2}/\d{2} \d{2}:\d{2})", text)
-                reason = "停電"
-                if "桿線遷移" in text:
-                    reason = "桿線遷移工程"
-                for line in text.splitlines():
-                    if "暫停供電" in line:
-                        reason = line.strip()[:120]
-                        break
+            # 首次 GET
+            r=s.get(BASE, timeout=30); r.encoding="utf-8"
+            soup=BeautifulSoup(r.text,"html.parser")
+            vs=soup.find("input",{"name":"__VIEWSTATE"})["value"]
+            vsg=soup.find("input",{"name":"__VIEWSTATEGENERATOR"})["value"] if soup.find("input",{"name":"__VIEWSTATEGENERATOR"}) else ""
+            ev=soup.find("input",{"name":"__EVENTVALIDATION"})["value"]
+            # 首次驗證碼（依使用者回報此輪必失敗，仍需走一次以取得新 VIEWSTATE）
+            img=soup.find("img", src=re.compile(r"captcha\.ashx"))
+            src=img.get("src"); url=src if src.startswith("http") else "https://service.taipower.com.tw/nds/ndsWeb/"+src.lstrip("./")
+            cap1=s.get(url, timeout=30)
+            captcha1=ocr.classification(cap1.content).strip()
+            captcha1=re.sub(r"[^0-9A-Za-z]","",captcha1)
+            data1={"__VIEWSTATE":vs,"__VIEWSTATEGENERATOR":vsg,"__EVENTVALIDATION":ev,
+                   "ctl00$ContentMain$HiddenField_ReportType":"1",
+                   "ctl00$ContentMain$TextBox_CustNo":meter,
+                   "ctl00$ContentMain$TextBox_Captcha":captcha1,
+                   "__EVENTTARGET":"ctl00$ContentMain$Button_Inquiry","__EVENTARGUMENT":""}
+            r1=s.post(BASE, data=data1, timeout=30); r1.encoding="utf-8"
+            # 不論成功與否，取得第二次的 VIEWSTATE 與驗證碼
+            soup1=BeautifulSoup(r1.text,"html.parser")
+            # 若首次即有 暫停供電，代表意外通過，直接回傳
+            if "暫停供電" in r1.text:
+                m=re.search(r"(\d{4}/\d{2}/\d{2} \d{2}:\d{2})[^\d]+(\d{4}/\d{2}/\d{2} \d{2}:\d{2})", r1.text)
+                reason="停電"
+                for line in r1.text.splitlines():
+                    if "暫停供電" in line: reason=line.strip()[:120]; break
                 if m:
-                    start = m.group(1).replace("/", "-").replace(" ", "T") + ":00"
-                    end = m.group(2).replace("/", "-").replace(" ", "T") + ":00"
-                    return {"found": True, "start": start, "end": end, "reason": reason, "raw": text[text.find("暫停供電")-80:text.find("暫停供電")+120].strip()}
-                else:
-                    return {"found": True, "reason": reason}
+                    return {"found":True,"start":m.group(1).replace("/","-").replace(" ","T")+":00","end":m.group(2).replace("/","-").replace(" ","T")+":00","reason":reason}
+                return {"found":True,"reason":reason}
+            # 第二次驗證碼
+            vs1=soup1.find("input",{"name":"__VIEWSTATE"})
+            ev1=soup1.find("input",{"name":"__EVENTVALIDATION"})
+            if vs1: vs=vs1["value"]
+            if ev1: ev=ev1["value"]
+            vsg1=soup1.find("input",{"name":"__VIEWSTATEGENERATOR"})
+            if vsg1: vsg=vsg1["value"]
+            img1=soup1.find("img", src=re.compile(r"captcha\.ashx"))
+            if not img1:
+                continue
+            src1=img1.get("src"); url1=src1 if src1.startswith("http") else "https://service.taipower.com.tw/nds/ndsWeb/"+src1.lstrip("./")
+            cap2=s.get(url1, timeout=30)
+            captcha2=ocr.classification(cap2.content).strip()
+            captcha2=re.sub(r"[^0-9A-Za-z]","",captcha2)
+            data2={"__VIEWSTATE":vs,"__VIEWSTATEGENERATOR":vsg,"__EVENTVALIDATION":ev,
+                   "ctl00$ContentMain$HiddenField_ReportType":"1",
+                   "ctl00$ContentMain$TextBox_CustNo":meter,
+                   "ctl00$ContentMain$TextBox_Captcha":captcha2,
+                   "__EVENTTARGET":"ctl00$ContentMain$Button_Inquiry","__EVENTARGUMENT":""}
+            r2=s.post(BASE, data=data2, timeout=30); r2.encoding="utf-8"
+            text=BeautifulSoup(r2.text,"html.parser").get_text()
+            if "暫停供電" in text:
+                m=re.search(r"(\d{4}/\d{2}/\d{2} \d{2}:\d{2})[^\d]+(\d{4}/\d{2}/\d{2} \d{2}:\d{2})", text)
+                reason="停電"
+                for line in text.splitlines():
+                    if "暫停供電" in line: reason=line.strip()[:120]; break
+                if m:
+                    return {"found":True,"start":m.group(1).replace("/","-").replace(" ","T")+":00","end":m.group(2).replace("/","-").replace(" ","T")+":00","reason":reason}
+                return {"found":True,"reason":reason}
             if "查無" in text or "無停電" in text or "目前無" in text:
-                return {"found": False}
-            return {"found": False}
-        except requests.exceptions.RequestException as e:
-            print(f"[{meter}] network error attempt {attempt+1}: {e}", file=sys.stderr)
-            time.sleep(2)
-            continue
+                return {"found":False}
+            # 若仍驗證碼錯誤，重試
+            if "驗證碼" in text:
+                continue
+            return {"found":False}
         except Exception as e:
-            print(f"[{meter}] unexpected error attempt {attempt+1}: {e}", file=sys.stderr)
+            print(f"[{meter}] err {e} retry {attempt+1}", file=sys.stderr)
             time.sleep(1)
             continue
-    # retries exhausted - don't fail whole job, just return no outage
-    print(f"[{meter}] all retries exhausted, treating as no outage", file=sys.stderr)
-    return {"found": False, "error": "retries exhausted"}
+    return {"found":False, "error":"二次驗證碼皆失敗"}
 
 def main():
-    meters = get_4g_meters()
-    print(f"4G distinct meters to check: {len(meters)}")
-    # For Actions, limit to avoid long runtime/timeout (e.g., 380 meters * ~2s = 760s > 10min)
-    # We process in batches, with delay
-    result = {}
-    # Optional: limit for testing via env, with daily rotation to cover all meters
-    limit = int(os.environ.get("OUTAGE_LIMIT", "0"))
-    if limit and limit < len(meters):
-        import datetime
-        day_of_year = datetime.datetime.utcnow().timetuple().tm_yday
-        offset = (day_of_year * limit) % len(meters)
-        meters = (meters[offset:] + meters[:offset])[:limit]
-        print(f"Limited to {limit} (rotated offset {offset} for day {day_of_year})")
-    for idx, m in enumerate(meters, 1):
-        print(f"[{idx}/{len(meters)}] querying {m}...")
+    meters=get_4g_meters()
+    print(f"4G distinct {len(meters)} 筆，全部查詢（無 OUTAGE_LIMIT）")
+    result={}
+    for idx,m in enumerate(meters,1):
+        print(f"[{idx}/{len(meters)}] {m} ...")
         try:
-            info = query_single(m)
+            info=query_single(m)
         except Exception as e:
-            print(f"  -> error {e}, treating as no outage", file=sys.stderr)
-            info = {"found": False, "error": str(e)}
+            info={"found":False,"error":str(e)}
         if info.get("found"):
-            result[m] = info
-            print(f"  -> OUTAGE {info.get('start')} to {info.get('end')}")
-        else:
-            # not storing normal to keep file small
-            pass
-        # Be nice to Taipower
-        time.sleep(1.2)
-        # Early exit for test
-        if idx % 50 == 0:
-            print(f"  ...{idx} done, saving interim")
-            with open(OUT_JSON, "w", encoding="utf-8") as f:
-                json.dump(result, f, ensure_ascii=False, indent=2)
-    # Final write
-    with open(OUT_JSON, "w", encoding="utf-8") as f:
-        json.dump(result, f, ensure_ascii=False, indent=2)
-    print(f"Done, outages found: {len(result)}, written to {OUT_JSON}")
+            result[m]=info
+            print(f"  -> {info.get('start')}~{info.get('end')}")
+        time.sleep(0.8)
+        if idx%50==0:
+            with open(OUT_JSON,"w",encoding="utf-8") as f: json.dump(result,f,ensure_ascii=False,indent=2)
+    with open(OUT_JSON,"w",encoding="utf-8") as f: json.dump(result,f,ensure_ascii=False,indent=2)
+    print(f"Done {len(result)} outages")
 
-if __name__ == "__main__":
+if __name__=="__main__":
     main()
