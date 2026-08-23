@@ -141,11 +141,14 @@ def main():
     # For Actions, limit to avoid long runtime/timeout (e.g., 380 meters * ~2s = 760s > 10min)
     # We process in batches, with delay
     result = {}
-    # Optional: limit for testing via env
+    # Optional: limit for testing via env, with daily rotation to cover all meters
     limit = int(os.environ.get("OUTAGE_LIMIT", "0"))
     if limit and limit < len(meters):
-        meters = meters[:limit]
-        print(f"Limited to {limit} for testing")
+        import datetime
+        day_of_year = datetime.datetime.utcnow().timetuple().tm_yday
+        offset = (day_of_year * limit) % len(meters)
+        meters = (meters[offset:] + meters[:offset])[:limit]
+        print(f"Limited to {limit} (rotated offset {offset} for day {day_of_year})")
     for idx, m in enumerate(meters, 1):
         print(f"[{idx}/{len(meters)}] querying {m}...")
         try:
