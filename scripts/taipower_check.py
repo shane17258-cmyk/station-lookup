@@ -97,8 +97,8 @@ def query_single(meter):
                 if m:
                     return {"found":True,"start":m.group(1).replace("/","-").replace(" ","T")+":00","end":m.group(2).replace("/","-").replace(" ","T")+":00","reason":reason}
                 return {"found":True,"reason":reason}
-            if "查無" in text or "無停電" in text or "目前無" in text:
-                return {"found":False}
+            if "尚未接獲通報停電或已完成復電" in text or "查無" in text or "無停電" in text or "目前無" in text:
+                return {"found":False, "normal":True}
             # 若仍驗證碼錯誤，重試
             if "驗證碼" in text:
                 continue

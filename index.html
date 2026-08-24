@@ -745,7 +745,7 @@
     function outageBadge(meter){
       const norm = meter.replace(/[^0-9]/g,"");
       const info = outageData[norm] || outageData[meter];
-      if(!info || !info.found) return '<span class="meter">電號 '+meter+' 正常</span>';
+      if(!info || !info.found) return '<span class="meter normal">電號 '+meter+' 正常供電中</span>';
       const now = new Date();
       const s = new Date(info.start);
       const e = new Date(info.end);
@@ -753,7 +753,7 @@
       const reason = info.reason ? ' '+info.reason : '';
       if(now >= s && now <= e) return '<span class="meter outage">電號 '+meter+' 停電中（預計至 '+endStr+reason+'）</span>';
       if(now < s) return '<span class="meter">電號 '+meter+' 預定停電 '+info.start.slice(0,16).replace("T"," ")+' 至 '+endStr+'</span>';
-      return '<span class="meter normal">電號 '+meter+' 正常</span>';
+      return '<span class="meter normal">電號 '+meter+' 正常供電中</span>';
     }
 
     function photoApi(station, path) {
