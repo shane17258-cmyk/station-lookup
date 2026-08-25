@@ -1261,8 +1261,8 @@
 
       const LABEL_ZOOM = 13;
       const PCI_ZOOM = 16;
-      let btsLabels = null;
-      let pciLabels = null;
+      let btsLabelsByTown = {};
+      let pciLabelsByTown = {};
 
       // 依 cell 名稱解析射向（4G: cell = bts + 射向 + 頻段，如 41778611 => 射向1）
       const sectorOf = (cell) => {
@@ -1298,21 +1298,23 @@
       };
 
       // 4G：每個站台位置放台號、每個射向放 PCI 標籤（以位置+射向去重，INDOOR 不顯示）
-      // 台號與 PCI 分屬兩個圖層：台號 zoom>=LABEL_ZOOM 顯示，PCI zoom>=PCI_ZOOM 才顯示
+      // 台號與 PCI 按鄉鎮分組：台號 zoom>=LABEL_ZOOM 顯示，PCI zoom>=PCI_ZOOM 才顯示，皆受鄉鎮篩選控制
       const build4gLabels = (features) => {
         const sites = {};
         const pcis = {};
-        const btsMk = [];
-        const pciMk = [];
+        const btsByTown = {};
+        const pciByTown = {};
         features.forEach(f => {
           const p = f.properties;
+          const town = p.town || '其他';
           const ring = f.geometry.coordinates[0];
           const center = ringCenter(ring);
           const centerKey = center[0].toFixed(5) + ',' + center[1].toFixed(5);
           const siteKey = p.bts + '|' + centerKey;
           if (!sites[siteKey]) {
             sites[siteKey] = true;
-            btsMk.push(L.marker(center, {
+            if (!btsByTown[town]) btsByTown[town] = [];
+            btsByTown[town].push(L.marker(center, {
               icon: L.divIcon({
                 className: 'cov-bts-label',
                 html: escapeHtml(p.bts),
@@ -1326,8 +1328,9 @@
             const key = p.bts + '|' + centerKey + '|' + sec;
             if (!pcis[key]) {
               pcis[key] = true;
+              if (!pciByTown[town]) pciByTown[town] = [];
               const pos = tipPos(ring, center, parseFloat(p.az) || 0);
-              pciMk.push(L.marker(pos, {
+              pciByTown[town].push(L.marker(pos, {
                 icon: L.divIcon({
                   className: 'cov-pci-label',
                   html: escapeHtml(p.pci),
@@ -1338,25 +1341,30 @@
             }
           }
         });
-        btsLabels = L.layerGroup(btsMk);
-        pciLabels = L.layerGroup(pciMk);
-        return btsLabels;
+        btsLabelsByTown = {};
+        pciLabelsByTown = {};
+        Object.keys(btsByTown).forEach(t => { btsLabelsByTown[t] = L.layerGroup(btsByTown[t]); });
+        Object.keys(pciByTown).forEach(t => { pciLabelsByTown[t] = L.layerGroup(pciByTown[t]); });
+        return btsLabelsByTown;
       };
 
-      // 依縮放級別顯示/隱藏台號與 PCI 標籤
+      // 依縮放級別 + 鄉鎮顯示/隱藏台號與 PCI 標籤
       function applyLabelVisibility() {
         const z = covMap.getZoom();
         const chk = document.getElementById('chk4g').checked;
-        if (btsLabels) {
-          const showBts = chk && z >= LABEL_ZOOM;
-          if (showBts && !covMap.hasLayer(btsLabels)) btsLabels.addTo(covMap);
-          if (!showBts && covMap.hasLayer(btsLabels)) covMap.removeLayer(btsLabels);
-        }
-        if (pciLabels) {
-          const showPci = chk && z >= PCI_ZOOM;
-          if (showPci && !covMap.hasLayer(pciLabels)) pciLabels.addTo(covMap);
-          if (!showPci && covMap.hasLayer(pciLabels)) pciLabels.removeFrom(covMap);
-        }
+        const town = document.getElementById('selTown').value;
+        Object.keys(btsLabelsByTown).forEach(t => {
+          const layer = btsLabelsByTown[t];
+          const show = chk && z >= LABEL_ZOOM && (town === 'all' || t === town);
+          if (show && !covMap.hasLayer(layer)) layer.addTo(covMap);
+          if (!show && covMap.hasLayer(layer)) covMap.removeLayer(layer);
+        });
+        Object.keys(pciLabelsByTown).forEach(t => {
+          const layer = pciLabelsByTown[t];
+          const show = chk && z >= PCI_ZOOM && (town === 'all' || t === town);
+          if (show && !covMap.hasLayer(layer)) layer.addTo(covMap);
+          if (!show && covMap.hasLayer(layer)) covMap.removeLayer(layer);
+        });
       }
       covMap.on('zoomend', applyLabelVisibility);
 
@@ -1533,11 +1541,16 @@
               if (covMap.hasLayer(layer)) covMap.removeLayer(layer);
             });
           });
-          if (old.labels && covMap.hasLayer(old.labels)) covMap.removeLayer(old.labels);
-          if (pciLabels && covMap.hasLayer(pciLabels)) covMap.removeLayer(pciLabels);
-          if (btsLabels && covMap.hasLayer(btsLabels)) covMap.removeLayer(btsLabels);
-          btsLabels = null;
-          pciLabels = null;
+          Object.keys(btsLabelsByTown).forEach(t => {
+            const l = btsLabelsByTown[t];
+            if (covMap.hasLayer(l)) covMap.removeLayer(l);
+          });
+          Object.keys(pciLabelsByTown).forEach(t => {
+            const l = pciLabelsByTown[t];
+            if (covMap.hasLayer(l)) covMap.removeLayer(l);
+          });
+          btsLabelsByTown = {};
+          pciLabelsByTown = {};
           delete covLayers['4g'];
         }
         const st = (old && old.style) || style4g;
