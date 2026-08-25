@@ -20,6 +20,20 @@ def find_file(pattern):
         raise FileNotFoundError(f"找不到 {pattern}，請確認檔案已放在本資料夾")
     return sorted(files)[-1]
 
+def clean_old_files(pattern, keep_latest=True):
+    """刪除舊日期檔案，僅保留最新一個（依檔名排序，日期前綴 YYYYMMDD）"""
+    files = glob.glob(os.path.join(BASE, pattern))
+    if len(files) <= 1:
+        return
+    files_sorted = sorted(files)
+    latest = files_sorted[-1]
+    for f in files_sorted[:-1]:
+        try:
+            os.remove(f)
+            print(f"  已刪除舊檔: {os.path.basename(f)} (保留 {os.path.basename(latest)})")
+        except Exception as e:
+            print(f"  無法刪除 {os.path.basename(f)}: {e}")
+
 def load_rows(path, sheet):
     wb = openpyxl.load_workbook(path, read_only=True)
     if sheet not in wb.sheetnames:
@@ -606,5 +620,10 @@ js5 = "const STATION_DATA_5G = " + json.dumps(items5, ensure_ascii=False, indent
 with open(os.path.join(BASE, "data5g.js"), "w", encoding="utf-8") as f:
     f.write(js5)
 print(f"  寫入 data5g.js: {len(items5)} 筆, {os.path.getsize(os.path.join(BASE,'data5g.js'))} bytes")
+
+# 清理舊日期檔案（僅保留最新，依檔名排序日期前綴）
+print("\n清理舊檔...")
+for pat in ["*LTE_CoBTS_CHT.xlsx", "*LTE_CoCell_CHT.xlsx", "*nrBts_DB_CHT.xlsx", "*nrCell_DB_CHT.xlsx", "*LTE_RMOD_EAC_CHT.xlsx", "*LTE_SMOD_EAC_CHT.xlsx", "*NR_RMOD_EAC_CHT.xlsx", "*NR_SMOD_EAC_CHT.xlsx"]:
+    clean_old_files(pat)
 
 print("\n完成！")
