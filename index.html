@@ -749,9 +749,33 @@
     // 照片透過 Cloudflare Worker 存取 Google Drive，電腦關機也能看。
     const PHOTO_SERVER = window.PHOTO_SERVER || 'https://station-photo.shane17258.workers.dev';
 
-    // ============ 停電資訊（台電每日 07:00 更新，僅 4G） ============
+    // ============ 停電資訊（台電每日 00:00 全量更新，僅 4G，去重） ============
     let outageData = {};
-    fetch('outage.json', {cache: 'no-store'}).then(r=>r.json()).then(j=>{outageData=j;}).catch(()=>{});
+    let lastOutageItem = null;
+    let lastOutageCfg = null;
+    function loadOutage(){
+      return fetch('outage.json', {cache: 'no-store'}).then(r=>r.json()).then(j=>{
+        outageData=j;
+        if(lastOutageItem && lastOutageCfg){
+          const { outStations } = lastOutageCfg;
+          if(outStations) outStations.querySelectorAll('.meter').forEach(el=>{
+            const m = el.textContent.match(/電號\s*([0-9\-]+)/);
+            if(m) el.outerHTML = outageBadge(m[1]);
+          });
+        }
+      }).catch(()=>{});
+    }
+    loadOutage();
+    setInterval(loadOutage, 5*60*1000);
+    setInterval(()=>{
+      if(lastOutageItem && lastOutageCfg){
+        const { outStations } = lastOutageCfg;
+        if(outStations) outStations.querySelectorAll('.meter').forEach(el=>{
+          const m = el.textContent.match(/電號\s*([0-9\-]+)/);
+          if(m) el.outerHTML = outageBadge(m[1]);
+        });
+      }
+    }, 60*1000);
     function outageBadge(meter){
       const norm = meter.replace(/[^0-9]/g,"");
       const info = outageData[norm] || outageData[meter];
@@ -1060,6 +1084,8 @@
           (item.sec ? '　｜　扇區全貌：' + item.sec : '');
 
         result.classList.add('show');
+        lastOutageItem = item;
+        lastOutageCfg = cfg;
       }
 
       function findItem() {
