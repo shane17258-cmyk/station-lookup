@@ -717,7 +717,17 @@
         <div class="mt-group" style="margin-left:auto;">
           <button type="button" id="btnLocate" class="locate-btn" title="回到我的位置">📌 我的位置</button>
         </div>
+        <div class="mt-group" style="flex:1 1 100%;">
+          <input id="covSearchInput" placeholder="輸入 4G/5G 台名關鍵字，如 三角公園、家樂福" autocomplete="off" style="flex:1; min-width:160px;">
+          <select id="covSearchNet" style="width:92px; flex:0 0 92px;">
+            <option value="all">4G+5G</option>
+            <option value="4g">4G</option>
+            <option value="5g">5G</option>
+          </select>
+        </div>
       </div>
+      <div id="covSearchCount" class="search-count"></div>
+      <div id="covSearchResults" class="search-results" style="position:relative; z-index:400; margin-bottom:6px;"></div>
       <div id="locateStatus" class="locate-status"></div>
       <div id="mapLoading" class="map-loading">資料載入中…</div>
       <div id="coverageMap"></div>
@@ -1367,6 +1377,105 @@
         });
       }
       covMap.on('zoomend', applyLabelVisibility);
+
+      // ============ 台名關鍵字搜尋（子站台，4G/5G） ============
+      const covStationIndex = [];
+      (typeof STATION_DATA !== 'undefined' ? STATION_DATA : []).forEach(item => {
+        (item.stations || []).forEach((s, i) => {
+          covStationIndex.push({
+            name: s,
+            id: item.id,
+            net: '4g',
+            town: (item.towns && item.towns[i]) || item.town || '',
+            siteNameCV: item.siteNameCV || '',
+            sec: (item.sec && item.sec.split('_')[i]) || '',
+            coord: (item.coords && item.coords[i]) || null
+          });
+        });
+      });
+      (typeof STATION_DATA_5G !== 'undefined' ? STATION_DATA_5G : []).forEach(item => {
+        (item.stations || []).forEach((s, i) => {
+          covStationIndex.push({
+            name: s,
+            id: item.id,
+            net: '5g',
+            town: (item.towns && item.towns[i]) || item.town || '',
+            siteNameCV: item.siteNameCV || '',
+            sec: (item.sec && item.sec.split('_')[i]) || '',
+            coord: (item.coords && item.coords[i]) || null
+          });
+        });
+      });
+      function selectCovStation(m) {
+        if (!m.coord) return;
+        const resEl = document.getElementById('covSearchResults');
+        const cntEl = document.getElementById('covSearchCount');
+        if (resEl) resEl.style.display = 'none';
+        if (cntEl) cntEl.textContent = '已選：' + m.name + ' (' + m.id + ' ' + m.net.toUpperCase() + ')';
+        const selTown = document.getElementById('selTown');
+        if (selTown && m.town) {
+          const hasOpt = Array.from(selTown.options).some(o => o.value === m.town);
+          if (hasOpt && selTown.value !== 'all' && selTown.value !== m.town) {
+            // 切到該鄉鎮，確保扇形可見；若已是全部則不動
+            selTown.value = m.town;
+          } else if (selTown.value === 'all') {
+            // 維持全部，不強制切換
+          } else if (hasOpt) {
+            selTown.value = m.town;
+          }
+        }
+        if (m.net === '4g') document.getElementById('chk4g').checked = true;
+        if (m.net === '5g') document.getElementById('chk5g').checked = true;
+        applySectorVisibility();
+        covMap.setView([m.coord.lat, m.coord.lon], 16, { animate: true });
+        if (window._covHighlight) covMap.removeLayer(window._covHighlight);
+        window._covHighlight = L.circleMarker([m.coord.lat, m.coord.lon], { radius: 14, color: '#ff9800', weight: 3, fillOpacity: 0, interactive: false }).addTo(covMap);
+        setTimeout(() => { if (window._covHighlight) { covMap.removeLayer(window._covHighlight); window._covHighlight = null; } }, 4000);
+        setTimeout(() => applyLabelVisibility(), 600);
+      }
+      function renderCovSearch(q) {
+        const input = document.getElementById('covSearchInput');
+        const netSel = document.getElementById('covSearchNet');
+        const resEl = document.getElementById('covSearchResults');
+        const cntEl = document.getElementById('covSearchCount');
+        if (!resEl || !cntEl) return;
+        const keyword = (q || '').trim();
+        if (!keyword) { resEl.style.display = 'none'; resEl.innerHTML = ''; cntEl.textContent = ''; return; }
+        const kw = keyword.toLowerCase();
+        const net = netSel ? netSel.value : 'all';
+        const matches = covStationIndex.filter(s => {
+          if (net !== 'all' && s.net !== net) return false;
+          return s.name.toLowerCase().indexOf(kw) !== -1 || (s.siteNameCV && s.siteNameCV.toLowerCase().indexOf(kw) !== -1) || s.id.indexOf(kw) !== -1;
+        });
+        const shown = matches.slice(0, 50);
+        cntEl.textContent = '找到 ' + matches.length + ' 筆' + (matches.length > 50 ? '（顯示前50）' : '');
+        if (!shown.length) { resEl.innerHTML = '<div class="center-hint">找不到符合的站台</div>'; resEl.style.display = 'block'; return; }
+        resEl.innerHTML = '';
+        shown.forEach(m => {
+          const div = document.createElement('div');
+          div.className = 'search-item';
+          div.innerHTML = '<span class="s-arrow">›</span><div class="s-name">' + escapeHtml(m.name) + ' <small style="color:#6b8aa8;">' + m.net.toUpperCase() + ' ' + m.id + '</small></div><div class="s-meta">' + (m.sec ? '扇區 ' + m.sec + ' ｜ ' : '') + escapeHtml(m.town || '') + ' ｜ ' + escapeHtml(m.siteNameCV || '') + '</div>';
+          div.addEventListener('click', () => selectCovStation(m));
+          resEl.appendChild(div);
+        });
+        resEl.style.display = 'block';
+      }
+      const covSearchInput = document.getElementById('covSearchInput');
+      const covSearchNet = document.getElementById('covSearchNet');
+      if (covSearchInput) {
+        covSearchInput.addEventListener('input', e => renderCovSearch(e.target.value));
+        covSearchInput.addEventListener('keydown', e => { if (e.key === 'Enter') { const first = document.querySelector('#covSearchResults .search-item'); if (first) first.click(); }});
+        covSearchInput.addEventListener('focus', e => { if (e.target.value) renderCovSearch(e.target.value); });
+      }
+      if (covSearchNet) covSearchNet.addEventListener('change', () => renderCovSearch(covSearchInput ? covSearchInput.value : ''));
+      document.addEventListener('click', e => {
+        const resEl = document.getElementById('covSearchResults');
+        if (!resEl) return;
+        if (!e.target.closest('#covSearchResults') && e.target.id !== 'covSearchInput' && e.target.id !== 'covSearchNet') {
+          // 點擊外部時不自動隱藏，保留結果供參考；若需隱藏可取消註解
+          // resEl.style.display = 'none';
+        }
+      });
 
       const loadSectors = (kind, url, style, name) => new Promise((resolve) => {
         fetch(url).then(r => r.json()).then(geo => {
