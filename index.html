@@ -728,6 +728,12 @@
       </div>
       <div id="covSearchCount" class="search-count"></div>
       <div id="covSearchResults" class="search-results" style="position:relative; z-index:400; margin-bottom:6px;"></div>
+      <div class="mt-group" style="flex:1 1 100%;">
+        <input id="covPlaceInput" placeholder="搜尋地點 (如 苗栗火車站、國華路600巷)" autocomplete="off" style="flex:1; min-width:160px;">
+        <button type="button" id="btnPlaceSearch" class="locate-btn" style="padding:6px 12px;">搜尋</button>
+      </div>
+      <div id="covPlaceCount" class="search-count"></div>
+      <div id="covPlaceResults" class="search-results" style="position:relative; z-index:400; margin-bottom:6px;"></div>
       <div id="locateStatus" class="locate-status"></div>
       <div id="mapLoading" class="map-loading">資料載入中…</div>
       <div id="coverageMap"></div>
@@ -1502,6 +1508,57 @@
           // resEl.style.display = 'none';
         }
       });
+
+      // ============ 地點關鍵字搜尋（類似 Google Maps，Nominatim） ============
+      const covPlaceInput = document.getElementById('covPlaceInput');
+      const covPlaceResults = document.getElementById('covPlaceResults');
+      const covPlaceCount = document.getElementById('covPlaceCount');
+      const btnPlaceSearch = document.getElementById('btnPlaceSearch');
+      function selectPlaceItem(item) {
+        const lat = parseFloat(item.lat), lon = parseFloat(item.lon);
+        if (isNaN(lat) || isNaN(lon)) return;
+        if (covPlaceResults) covPlaceResults.style.display = 'none';
+        if (covPlaceCount) covPlaceCount.textContent = '已選：' + item.display_name;
+        covMap.setView([lat, lon], 17, { animate: true });
+        if (window._placeHighlight) covMap.removeLayer(window._placeHighlight);
+        window._placeHighlight = L.marker([lat, lon], { icon: L.divIcon({ className: 'cov-bts-label', html: '📍', iconSize: null }) }).addTo(covMap);
+        setTimeout(() => { if (window._placeHighlight) { covMap.removeLayer(window._placeHighlight); window._placeHighlight = null; } }, 5000);
+      }
+      async function doPlaceSearch() {
+        const q = covPlaceInput ? covPlaceInput.value.trim() : '';
+        if (!q) { if (covPlaceResults) { covPlaceResults.style.display='none'; covPlaceResults.innerHTML=''; } if (covPlaceCount) covPlaceCount.textContent=''; return; }
+        if (covPlaceCount) covPlaceCount.textContent='搜尋中…';
+        if (covPlaceResults) { covPlaceResults.innerHTML='<div class="center-hint">搜尋中…</div>'; covPlaceResults.style.display='block'; }
+        try {
+          const url = 'https://nominatim.openstreetmap.org/search?format=json&q=' + encodeURIComponent(q) + '&countrycodes=tw&limit=5&addressdetails=1&accept-language=zh-TW';
+          const res = await fetch(url, { headers: { 'Accept': 'application/json' } });
+          if (!res.ok) throw new Error('HTTP '+res.status);
+          const data = await res.json();
+          if (!data.length) {
+            if (covPlaceCount) covPlaceCount.textContent='找不到地點';
+            if (covPlaceResults) covPlaceResults.innerHTML='<div class="center-hint">找不到符合的地點，請試其他關鍵字</div>';
+            return;
+          }
+          if (covPlaceCount) covPlaceCount.textContent='找到 '+data.length+' 筆地點';
+          if (covPlaceResults) {
+            covPlaceResults.innerHTML='';
+            data.forEach(item => {
+              const div=document.createElement('div');
+              div.className='search-item';
+              div.innerHTML='<span class="s-arrow">›</span><div class="s-name">' + escapeHtml(item.display_name.split(',').slice(0,3).join(',')) + '</div><div class="s-meta">' + escapeHtml(item.display_name) + ' ｜ ' + escapeHtml(item.type||'') + '</div>';
+              div.addEventListener('click', ()=> selectPlaceItem(item));
+              covPlaceResults.appendChild(div);
+            });
+          }
+        } catch(e) {
+          if (covPlaceCount) covPlaceCount.textContent='搜尋失敗';
+          if (covPlaceResults) covPlaceResults.innerHTML='<div class="center-hint">搜尋失敗：' + escapeHtml(e.message) + '</div>';
+        }
+      }
+      if (covPlaceInput) {
+        covPlaceInput.addEventListener('keydown', e => { if (e.key==='Enter') doPlaceSearch(); });
+      }
+      if (btnPlaceSearch) btnPlaceSearch.addEventListener('click', doPlaceSearch);
 
       const loadSectors = (kind, url, style, name) => new Promise((resolve) => {
         fetch(url).then(r => r.json()).then(geo => {
