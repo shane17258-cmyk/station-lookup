@@ -729,7 +729,7 @@
       <div id="covSearchCount" class="search-count"></div>
       <div id="covSearchResults" class="search-results" style="position:relative; z-index:400; margin-bottom:6px;"></div>
       <div class="mt-group" style="flex:1 1 100%;">
-        <input id="covPlaceInput" placeholder="搜尋地點 (如 苗栗火車站、國華路600巷)" autocomplete="off" style="flex:1; min-width:160px;">
+        <input id="covPlaceInput" placeholder="搜尋苗栗縣內地點 (如 火車站、國華路600巷)" autocomplete="off" style="flex:1; min-width:160px;">
         <button type="button" id="btnPlaceSearch" class="locate-btn" style="padding:6px 12px;">搜尋</button>
       </div>
       <div id="covPlaceCount" class="search-count"></div>
@@ -1530,13 +1530,19 @@
         if (covPlaceCount) covPlaceCount.textContent='搜尋中…';
         if (covPlaceResults) { covPlaceResults.innerHTML='<div class="center-hint">搜尋中…</div>'; covPlaceResults.style.display='block'; }
         try {
-          const url = 'https://nominatim.openstreetmap.org/search?format=json&q=' + encodeURIComponent(q) + '&countrycodes=tw&limit=5&addressdetails=1&accept-language=zh-TW';
+          const miaoliQ = q.includes('苗栗') ? q : '苗栗縣 ' + q;
+          const url = 'https://nominatim.openstreetmap.org/search?format=json&q=' + encodeURIComponent(miaoliQ) + '&countrycodes=tw&limit=8&addressdetails=1&accept-language=zh-TW&viewbox=120.63,24.73,121.08,24.29&bounded=1';
           const res = await fetch(url, { headers: { 'Accept': 'application/json' } });
           if (!res.ok) throw new Error('HTTP '+res.status);
-          const data = await res.json();
+          let data = await res.json();
+          // 限縮至苗栗縣：僅保留 address.county 含苗栗或 display_name 含苗栗縣（viewbox 已限縮，二次過濾避免邊界外結果）
+          data = data.filter(d => {
+            const a = d.address || {};
+            return (a.county && a.county.includes('苗栗')) || (a.state && a.state.includes('苗栗')) || d.display_name.includes('苗栗縣') || d.display_name.includes('Miaoli');
+          });
           if (!data.length) {
-            if (covPlaceCount) covPlaceCount.textContent='找不到地點';
-            if (covPlaceResults) covPlaceResults.innerHTML='<div class="center-hint">找不到符合的地點，請試其他關鍵字</div>';
+            if (covPlaceCount) covPlaceCount.textContent='在苗栗縣內找不到地點';
+            if (covPlaceResults) covPlaceResults.innerHTML='<div class="center-hint">在苗栗縣內找不到符合的地點，請試其他關鍵字</div>';
             return;
           }
           if (covPlaceCount) covPlaceCount.textContent='找到 '+data.length+' 筆地點';
