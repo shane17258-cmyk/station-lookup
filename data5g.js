@@ -141,8 +141,8 @@ const STATION_DATA_5G = [
     "lon": 120.86283
    },
    {
-    "lat": 24.63079,
-    "lon": 120.85528
+    "lat": 24.63066,
+    "lon": 120.85523
    }
   ],
   "cells": {
@@ -470,10 +470,10 @@ const STATION_DATA_5G = [
   "ranType": "D-RAN",
   "smod": {
    "頭份信德": [
-    "Temperature",
-    "Door",
     "Fire",
-    "ACPower"
+    "ACPower",
+    "Door",
+    "Temperature"
    ]
   }
  },
@@ -1156,7 +1156,7 @@ const STATION_DATA_5G = [
    "s5/6"
   ],
   "stations": [
-   "竹南大埔N18竹南群聯停車塔",
+   "竹南大埔N18群聯停車塔",
    "竹南大埔N18竹南羅門哈斯"
   ],
   "coords": [
@@ -1170,16 +1170,16 @@ const STATION_DATA_5G = [
    }
   ],
   "cells": {
-   "竹南大埔N18竹南群聯停車塔": [
+   "竹南大埔N18群聯停車塔": [
     {
      "sec": 1,
      "cells": [
       {
-       "cel": "111",
-       "rmod": "AQQY",
-       "az": "80",
-       "mt": "6",
-       "et": "7.5",
+       "cel": "106",
+       "rmod": "AHEGG",
+       "az": "90",
+       "mt": "0",
+       "et": "11",
        "toff": "",
        "cov": "Outdoor",
        "lat": 24.7185,
@@ -1191,11 +1191,11 @@ const STATION_DATA_5G = [
      "sec": 2,
      "cells": [
       {
-       "cel": "211",
-       "rmod": "AQQY",
-       "az": "170",
-       "mt": "4",
-       "et": "7.5",
+       "cel": "206",
+       "rmod": "AHEGG",
+       "az": "160",
+       "mt": "0",
+       "et": "10",
        "toff": "",
        "cov": "Outdoor",
        "lat": 24.7185,
@@ -1207,12 +1207,12 @@ const STATION_DATA_5G = [
      "sec": 3,
      "cells": [
       {
-       "cel": "311",
-       "rmod": "AQQY",
-       "az": "260",
-       "mt": "2",
-       "et": "7.5",
-       "toff": "3",
+       "cel": "306",
+       "rmod": "AHEGG",
+       "az": "240",
+       "mt": "0",
+       "et": "9",
+       "toff": "",
        "cov": "Outdoor",
        "lat": 24.7185,
        "lon": 120.90834
@@ -1255,23 +1255,7 @@ const STATION_DATA_5G = [
     }
    ]
   },
-  "ranType": "C-RAN",
-  "eac": {
-   "竹南大埔N18竹南群聯停車塔": {
-    "rmod": {
-     "111": [
-      "Fire",
-      "AC Power",
-      "Temperature"
-     ]
-    }
-   }
-  },
-  "lid": {
-   "竹南大埔N18竹南群聯停車塔": [
-    "L2605"
-   ]
-  }
+  "ranType": "C-RAN"
  },
  {
   "id": "4612606",
@@ -1908,7 +1892,7 @@ const STATION_DATA_5G = [
   "eac": {
    "竹南頭份N36頭份斗煥": {
     "rmod": {
-     "106": [
+     "406": [
       "Door",
       "Fire",
       "Temperature",
@@ -5750,8 +5734,8 @@ const STATION_DATA_5G = [
     "lon": 120.664871
    },
    {
-    "lat": 24.46678,
-    "lon": 120.68031
+    "lat": 24.466865,
+    "lon": 120.680268
    }
   ],
   "cells": {
@@ -5796,24 +5780,24 @@ const STATION_DATA_5G = [
       {
        "cel": "406",
        "rmod": "AHEGG",
-       "az": "40",
+       "az": "20",
        "mt": "0",
        "et": "5",
        "toff": "",
        "cov": "Outdoor",
-       "lat": 24.46678,
-       "lon": 120.68031
+       "lat": 24.466865,
+       "lon": 120.680268
       },
       {
        "cel": "411",
        "rmod": "AQQA",
-       "az": "40",
+       "az": "20",
        "mt": "-1",
        "et": "6",
        "toff": "",
        "cov": "Outdoor",
-       "lat": 24.46678,
-       "lon": 120.68031
+       "lat": 24.466865,
+       "lon": 120.680268
       }
      ]
     },
@@ -5828,8 +5812,8 @@ const STATION_DATA_5G = [
        "et": "8",
        "toff": "",
        "cov": "Outdoor",
-       "lat": 24.46678,
-       "lon": 120.68031
+       "lat": 24.466865,
+       "lon": 120.680268
       },
       {
        "cel": "511",
@@ -5839,8 +5823,8 @@ const STATION_DATA_5G = [
        "et": "6",
        "toff": "",
        "cov": "Outdoor",
-       "lat": 24.46678,
-       "lon": 120.68031
+       "lat": 24.466865,
+       "lon": 120.680268
       }
      ]
     },
@@ -5855,8 +5839,8 @@ const STATION_DATA_5G = [
        "et": "8",
        "toff": "",
        "cov": "Outdoor",
-       "lat": 24.46678,
-       "lon": 120.68031
+       "lat": 24.466865,
+       "lon": 120.680268
       },
       {
        "cel": "611",
@@ -5866,8 +5850,8 @@ const STATION_DATA_5G = [
        "et": "6",
        "toff": "",
        "cov": "Outdoor",
-       "lat": 24.46678,
-       "lon": 120.68031
+       "lat": 24.466865,
+       "lon": 120.680268
       }
      ]
     }
@@ -7892,7 +7876,7 @@ const STATION_DATA_5G = [
     "lon": 120.8818
    },
    {
-    "lat": 24.70097,
+    "lat": 24.70092,
     "lon": 120.87969
    }
   ],
@@ -8790,10 +8774,10 @@ const STATION_DATA_5G = [
   "ranType": "D-RAN",
   "smod": {
    "通霄坪頂": [
-    "Temperature",
-    "Door",
+    "Fire",
     "AC Power",
-    "Fire"
+    "Door",
+    "Temperature"
    ]
   }
  },
@@ -9019,10 +9003,10 @@ const STATION_DATA_5G = [
   "ranType": "D-RAN",
   "smod": {
    "頭份珊瑚": [
-    "Temperature",
-    "Door",
     "Fire",
-    "ACPower"
+    "ACPower",
+    "Door",
+    "Temperature"
    ]
   }
  },
@@ -9466,14 +9450,14 @@ const STATION_DATA_5G = [
   "ranType": "C-RAN",
   "smod": {
    "苗栗公館N01公館公館": [
-    "Temperature",
+    "Fire",
     "AC Power",
-    "Fire"
+    "Temperature"
    ],
    "苗栗公館N01公館館南一": [
-    "Temperature",
+    "Fire",
     "AC Power",
-    "Fire"
+    "Temperature"
    ]
   },
   "eac": {
@@ -10032,8 +10016,8 @@ const STATION_DATA_5G = [
     "lon": 120.83486
    },
    {
-    "lat": 24.57189,
-    "lon": 120.83019
+    "lat": 24.57193,
+    "lon": 120.83016
    }
   ],
   "cells": {
@@ -11046,16 +11030,16 @@ const STATION_DATA_5G = [
   "ranType": "C-RAN",
   "smod": {
    "苗栗大山N01後龍大山": [
-    "Temperature",
-    "Door",
+    "Fire",
     "AC Power",
-    "Fire"
+    "Door",
+    "Temperature"
    ],
    "苗栗大山N01後龍東明": [
-    "Temperature",
-    "Door",
+    "Fire",
     "AC Power",
-    "Fire"
+    "Door",
+    "Temperature"
    ]
   },
   "eac": {
@@ -11080,21 +11064,28 @@ const STATION_DATA_5G = [
   "town": "後龍鎮",
   "towns": [
    "後龍鎮",
+   "後龍鎮",
    "後龍鎮"
   ],
-  "sec": "s1/2/3_s4/5/6",
+  "sec": "s1/2/3_s4/5_s6",
   "secs": [
    "s1/2/3",
-   "s4/5/6"
+   "s4/5",
+   "s6"
   ],
   "stations": [
    "苗栗後龍N02後龍大庄",
+   "苗栗後龍N02後龍十班坑",
    "苗栗後龍N02後龍十班坑"
   ],
   "coords": [
    {
     "lat": 24.61287,
     "lon": 120.79342
+   },
+   {
+    "lat": 24.598081,
+    "lon": 120.783899
    },
    {
     "lat": 24.598081,
@@ -12288,8 +12279,8 @@ const STATION_DATA_5G = [
     "lon": 120.86667
    },
    {
-    "lat": 24.63577,
-    "lon": 120.88677
+    "lat": 24.63576,
+    "lon": 120.8868
    }
   ],
   "cells": {
@@ -12355,8 +12346,8 @@ const STATION_DATA_5G = [
        "et": "6",
        "toff": "",
        "cov": "Outdoor",
-       "lat": 24.63577,
-       "lon": 120.88677
+       "lat": 24.63576,
+       "lon": 120.8868
       },
       {
        "cel": "511",
@@ -12366,8 +12357,8 @@ const STATION_DATA_5G = [
        "et": "7",
        "toff": "-1",
        "cov": "Outdoor",
-       "lat": 24.63577,
-       "lon": 120.88677
+       "lat": 24.63576,
+       "lon": 120.8868
       }
      ]
     },
@@ -12382,8 +12373,8 @@ const STATION_DATA_5G = [
        "et": "4",
        "toff": "",
        "cov": "Outdoor",
-       "lat": 24.63577,
-       "lon": 120.88677
+       "lat": 24.63576,
+       "lon": 120.8868
       },
       {
        "cel": "611",
@@ -12393,8 +12384,8 @@ const STATION_DATA_5G = [
        "et": "7",
        "toff": "",
        "cov": "Outdoor",
-       "lat": 24.63577,
-       "lon": 120.88677
+       "lat": 24.63576,
+       "lon": 120.8868
       }
      ]
     }
@@ -12586,13 +12577,13 @@ const STATION_DATA_5G = [
    "s4/5/6"
   ],
   "stations": [
-   "竹南竹南N15頭份中港溪",
+   "竹南竹南N03頭份中港溪",
    "竹南竹南N03頭份尖下"
   ],
   "coords": [
    {
-    "lat": 24.6654,
-    "lon": 120.88351
+    "lat": 24.66538,
+    "lon": 120.8834
    },
    {
     "lat": 24.64345,
@@ -12600,20 +12591,20 @@ const STATION_DATA_5G = [
    }
   ],
   "cells": {
-   "竹南竹南N15頭份中港溪": [
+   "竹南竹南N03頭份中港溪": [
     {
      "sec": 1,
      "cells": [
       {
-       "cel": "106",
-       "rmod": "AHEGB",
+       "cel": "111",
+       "rmod": "AVQC",
        "az": "50",
-       "mt": "0",
-       "et": "5",
-       "toff": "",
+       "mt": "-4",
+       "et": "6",
+       "toff": "3",
        "cov": "Outdoor",
-       "lat": 24.6654,
-       "lon": 120.88351
+       "lat": 24.66538,
+       "lon": 120.8834
       }
      ]
     },
@@ -12621,15 +12612,15 @@ const STATION_DATA_5G = [
      "sec": 2,
      "cells": [
       {
-       "cel": "206",
-       "rmod": "AHEGB",
+       "cel": "211",
+       "rmod": "AVQC",
        "az": "190",
-       "mt": "0",
-       "et": "5",
-       "toff": "",
+       "mt": "-3",
+       "et": "6",
+       "toff": "1",
        "cov": "Outdoor",
-       "lat": 24.6654,
-       "lon": 120.88351
+       "lat": 24.66538,
+       "lon": 120.8834
       }
      ]
     },
@@ -12637,15 +12628,15 @@ const STATION_DATA_5G = [
      "sec": 3,
      "cells": [
       {
-       "cel": "306",
-       "rmod": "AHEGB",
+       "cel": "311",
+       "rmod": "AVQC",
        "az": "280",
        "mt": "0",
-       "et": "9",
-       "toff": "",
+       "et": "6",
+       "toff": "1",
        "cov": "Outdoor",
-       "lat": 24.6654,
-       "lon": 120.88351
+       "lat": 24.66538,
+       "lon": 120.8834
       }
      ]
     }
@@ -12703,7 +12694,7 @@ const STATION_DATA_5G = [
   },
   "ranType": "C-RAN",
   "eac": {
-   "竹南竹南N15頭份中港溪": {
+   "竹南竹南N03頭份中港溪": {
     "rmod": {
      "111": [
       "Door",
@@ -12725,7 +12716,7 @@ const STATION_DATA_5G = [
    }
   },
   "lid": {
-   "竹南竹南N15頭份中港溪": [
+   "竹南竹南N03頭份中港溪": [
     "L3762"
    ],
    "竹南竹南N03頭份尖下": [
@@ -14193,7 +14184,7 @@ const STATION_DATA_5G = [
    "s4/5/6"
   ],
   "stations": [
-   "苗栗通霄N05",
+   "苗栗通霄N05通霄通霄",
    "苗栗通霄N05通霄通利"
   ],
   "coords": [
@@ -14207,7 +14198,7 @@ const STATION_DATA_5G = [
    }
   ],
   "cells": {
-   "苗栗通霄N05": [
+   "苗栗通霄N05通霄通霄": [
     {
      "sec": 1,
      "cells": [
@@ -14343,7 +14334,7 @@ const STATION_DATA_5G = [
   },
   "ranType": "C-RAN",
   "eac": {
-   "苗栗通霄N05": {
+   "苗栗通霄N05通霄通霄": {
     "rmod": {
      "311": [
       "AC Power",
@@ -14365,7 +14356,7 @@ const STATION_DATA_5G = [
    }
   },
   "lid": {
-   "苗栗通霄N05": [
+   "苗栗通霄N05通霄通霄": [
     "L3782"
    ],
    "苗栗通霄N05通霄通利": [
@@ -14549,10 +14540,10 @@ const STATION_DATA_5G = [
   "ranType": "D-RAN",
   "smod": {
    "銅鑼新隆": [
-    "Temperature",
-    "Door",
+    "Fire",
     "AC Power",
-    "Fire"
+    "Door",
+    "Temperature"
    ]
   }
  },
@@ -14571,7 +14562,7 @@ const STATION_DATA_5G = [
    "s4/5/6"
   ],
   "stations": [
-   "苗栗三義N01",
+   "苗栗三義N01三義三義",
    "苗栗三義N01三義伯公坑"
   ],
   "coords": [
@@ -14585,7 +14576,7 @@ const STATION_DATA_5G = [
    }
   ],
   "cells": {
-   "苗栗三義N01": [
+   "苗栗三義N01三義三義": [
     {
      "sec": 1,
      "cells": [
@@ -14721,7 +14712,7 @@ const STATION_DATA_5G = [
   },
   "ranType": "C-RAN",
   "eac": {
-   "苗栗三義N01": {
+   "苗栗三義N01三義三義": {
     "rmod": {
      "111": [
       "AC Power"
@@ -14740,7 +14731,7 @@ const STATION_DATA_5G = [
    }
   },
   "lid": {
-   "苗栗三義N01": [
+   "苗栗三義N01三義三義": [
     "L3786"
    ],
    "苗栗三義N01三義伯公坑": [
@@ -15384,8 +15375,8 @@ const STATION_DATA_5G = [
        "et": "6",
        "toff": "-1",
        "cov": "Outdoor",
-       "lat": 24.45631,
-       "lon": 120.8773
+       "lat": 24.45661,
+       "lon": 120.8772
       }
      ]
     }
@@ -15527,10 +15518,10 @@ const STATION_DATA_5G = [
   "ranType": "D-RAN",
   "smod": {
    "大湖新開": [
-    "Temperature",
-    "Door",
+    "Fire",
     "AC Power",
-    "Fire"
+    "Door",
+    "Temperature"
    ]
   }
  },
@@ -16444,7 +16435,7 @@ const STATION_DATA_5G = [
        "az": "90",
        "mt": "0",
        "et": "7",
-       "toff": "",
+       "toff": "1",
        "cov": "Outdoor",
        "lat": 24.60925,
        "lon": 120.76009
@@ -16456,16 +16447,16 @@ const STATION_DATA_5G = [
   "ranType": "D-RAN",
   "smod": {
    "後龍公司寮": [
-    "Temperature",
-    "AC Power",
     "Fire",
-    "Door"
+    "AC Power",
+    "Door",
+    "Temperature"
    ],
    "後龍海巡署RH2": [
-    "Temperature",
-    "AC Power",
     "Fire",
-    "Door"
+    "AC Power",
+    "Door",
+    "Temperature"
    ]
   }
  },
@@ -16729,18 +16720,25 @@ const STATION_DATA_5G = [
   "town": "後龍鎮",
   "towns": [
    "後龍鎮",
+   "後龍鎮",
    "後龍鎮"
   ],
-  "sec": "s1/2_s4/5/6",
+  "sec": "s1_s2_s4/5/6",
   "secs": [
-   "s1/2",
+   "s1",
+   "s2",
    "s4/5/6"
   ],
   "stations": [
    "苗栗後龍N06後龍恩德",
+   "苗栗後龍N06後龍恩德",
    "苗栗後龍N06後龍新港一路"
   ],
   "coords": [
+   {
+    "lat": 24.62585,
+    "lon": 120.81715
+   },
    {
     "lat": 24.62585,
     "lon": 120.81715
@@ -17271,11 +17269,6 @@ const STATION_DATA_5G = [
    "竹南復興N05竹南崎頂天祥": [
     "L7695"
    ]
-  },
-  "meters": {
-   "竹南復興N05竹南崎頂天祥": [
-    "21-14-2608-47-4"
-   ]
   }
  },
  {
@@ -17575,17 +17568,6 @@ const STATION_DATA_5G = [
        "az": "260",
        "mt": "2",
        "et": "4",
-       "toff": "",
-       "cov": "Outdoor",
-       "lat": 24.60925,
-       "lon": 120.83451
-      },
-      {
-       "cel": "611",
-       "rmod": "AEQZ",
-       "az": "260",
-       "mt": "0",
-       "et": "6",
        "toff": "",
        "cov": "Outdoor",
        "lat": 24.60925,
@@ -18401,15 +18383,15 @@ const STATION_DATA_5G = [
  },
  {
   "id": "4613973",
-  "siteName": "苗栗通霄N17通霄沙雕臨時台",
-  "siteNameCV": "苗栗通霄N17通霄沙雕臨時台",
+  "siteName": "苗栗通霄N17中南磚廠",
+  "siteNameCV": "苗栗通霄N17中南磚廠",
   "town": "通霄鎮",
   "towns": [
    "通霄鎮"
   ],
-  "sec": "s1/8/9",
+  "sec": "s1",
   "secs": [
-   "s1/8/9"
+   "s1"
   ],
   "stations": [
    "苗栗通霄N17中南磚廠"
@@ -18604,23 +18586,30 @@ const STATION_DATA_5G = [
  },
  {
   "id": "4613983",
-  "siteName": "竹南復興N03竹南大厝開元",
-  "siteNameCV": "竹南復興N03竹南大厝開元",
+  "siteName": "竹南復興N03竹南中正",
+  "siteNameCV": "竹南復興N03竹南中正",
   "town": "竹南鎮",
   "towns": [
+   "竹南鎮",
    "竹南鎮"
   ],
-  "sec": "s1/2/3",
+  "sec": "s1/2/3_s4/5/6",
   "secs": [
-   "s1/2/3"
+   "s1/2/3",
+   "s4/5/6"
   ],
   "stations": [
-   "竹南復興N03竹南大厝開元"
+   "竹南復興N03竹南大厝開元",
+   "竹南復興N03竹南中正"
   ],
   "coords": [
    {
     "lat": 24.6802,
     "lon": 120.8713
+   },
+   {
+    "lat": 24.68343,
+    "lon": 120.87282
    }
   ],
   "cells": {
@@ -18670,6 +18659,56 @@ const STATION_DATA_5G = [
        "cov": "Outdoor",
        "lat": 24.6802,
        "lon": 120.8713
+      }
+     ]
+    }
+   ],
+   "竹南復興N03竹南中正": [
+    {
+     "sec": 4,
+     "cells": [
+      {
+       "cel": "411",
+       "rmod": "AEQZ",
+       "az": "70",
+       "mt": "0",
+       "et": "6",
+       "toff": "",
+       "cov": "Outdoor",
+       "lat": 24.68343,
+       "lon": 120.87282
+      }
+     ]
+    },
+    {
+     "sec": 5,
+     "cells": [
+      {
+       "cel": "511",
+       "rmod": "AEQZ",
+       "az": "190",
+       "mt": "",
+       "et": "6",
+       "toff": "",
+       "cov": "Outdoor",
+       "lat": 24.68343,
+       "lon": 120.87282
+      }
+     ]
+    },
+    {
+     "sec": 6,
+     "cells": [
+      {
+       "cel": "611",
+       "rmod": "AEQZ",
+       "az": "280",
+       "mt": "1",
+       "et": "6",
+       "toff": "",
+       "cov": "Outdoor",
+       "lat": 24.68343,
+       "lon": 120.87282
       }
      ]
     }
@@ -19992,10 +20031,10 @@ const STATION_DATA_5G = [
   "ranType": "D-RAN",
   "smod": {
    "後龍龍港": [
-    "Temperature",
-    "Door",
+    "Fire",
     "AC Power",
-    "Fire"
+    "Door",
+    "Temperature"
    ]
   }
  },
@@ -20075,9 +20114,9 @@ const STATION_DATA_5G = [
   "ranType": "D-RAN",
   "smod": {
    "泰安雪見": [
-    "Temperature",
+    "Fire",
     "AC Power",
-    "Fire"
+    "Temperature"
    ]
   }
  },
@@ -22011,10 +22050,10 @@ const STATION_DATA_5G = [
   "ranType": "D-RAN",
   "smod": {
    "竹南龍鳳": [
-    "Temperature",
-    "Door",
+    "Fire",
     "AC Power",
-    "Fire"
+    "Door",
+    "Temperature"
    ]
   }
  },
@@ -22280,10 +22319,10 @@ const STATION_DATA_5G = [
   "ranType": "D-RAN",
   "smod": {
    "後龍清海宮": [
-    "Temperature",
-    "Door",
+    "Fire",
     "AC Power",
-    "Fire"
+    "Door",
+    "Temperature"
    ]
   }
  },
@@ -23066,10 +23105,10 @@ const STATION_DATA_5G = [
   "ranType": "D-RAN",
   "smod": {
    "泰安大安": [
-    "Temperature",
-    "Door",
+    "Fire",
     "AC Power",
-    "Fire"
+    "Door",
+    "Temperature"
    ]
   }
  },
@@ -23090,8 +23129,8 @@ const STATION_DATA_5G = [
   ],
   "coords": [
    {
-    "lat": 24.47841,
-    "lon": 120.69479
+    "lat": 24.47832,
+    "lon": 120.69474
    }
   ],
   "cells": {
@@ -24451,21 +24490,28 @@ const STATION_DATA_5G = [
   "town": "南庄鄉",
   "towns": [
    "南庄鄉",
+   "南庄鄉",
    "南庄鄉"
   ],
-  "sec": "s1/2_s4/5/6",
+  "sec": "s1/2_s4_s5/6",
   "secs": [
    "s1/2",
-   "s4/5/6"
+   "s4",
+   "s5/6"
   ],
   "stations": [
    "竹南南庄N01南庄七星宮",
+   "竹南南庄N01南庄北獅",
    "竹南南庄N01南庄北獅"
   ],
   "coords": [
    {
     "lat": 24.5438,
     "lon": 120.97049
+   },
+   {
+    "lat": 24.56998,
+    "lon": 120.98393
    },
    {
     "lat": 24.57001,
@@ -24972,8 +25018,8 @@ const STATION_DATA_5G = [
   ],
   "coords": [
    {
-    "lat": 24.64627,
-    "lon": 120.8721
+    "lat": 24.646248,
+    "lon": 120.872114
    },
    {
     "lat": 24.64984,
@@ -25608,21 +25654,28 @@ const STATION_DATA_5G = [
   "town": "苗栗市",
   "towns": [
    "苗栗市",
+   "苗栗市",
    "苗栗市"
   ],
-  "sec": "s1_s4/5/6",
+  "sec": "s1_s4/5_s6",
   "secs": [
    "s1",
-   "s4/5/6"
+   "s4/5",
+   "s6"
   ],
   "stations": [
    "苗栗嘉盛N09苗栗香榭",
+   "苗栗嘉盛N09苗栗福安",
    "苗栗嘉盛N09苗栗福安"
   ],
   "coords": [
    {
     "lat": 24.5754,
     "lon": 120.82542
+   },
+   {
+    "lat": 24.582734,
+    "lon": 120.826465
    },
    {
     "lat": 24.582734,
@@ -26314,7 +26367,7 @@ const STATION_DATA_5G = [
        "az": "50",
        "mt": "10",
        "et": "7",
-       "toff": "",
+       "toff": "1",
        "cov": "Outdoor",
        "lat": 24.55607,
        "lon": 120.84615
@@ -26582,21 +26635,28 @@ const STATION_DATA_5G = [
   "town": "苗栗市",
   "towns": [
    "苗栗市",
+   "苗栗市",
    "苗栗市"
   ],
-  "sec": "s1/2/3_s4/5/6",
+  "sec": "s1/2/3_s4/5_s6",
   "secs": [
    "s1/2/3",
-   "s4/5/6"
+   "s4/5",
+   "s6"
   ],
   "stations": [
    "苗栗嘉盛N02苗栗衛署醫院",
+   "苗栗嘉盛N02苗栗五谷",
    "苗栗嘉盛N02苗栗五谷"
   ],
   "coords": [
    {
     "lat": 24.57591,
     "lon": 120.84023
+   },
+   {
+    "lat": 24.582623,
+    "lon": 120.835581
    },
    {
     "lat": 24.582623,
@@ -28224,30 +28284,30 @@ const STATION_DATA_5G = [
  },
  {
   "id": "4615448",
-  "siteName": "苗栗嘉盛N03苗栗上苗",
-  "siteNameCV": "苗栗嘉盛N03苗栗上苗",
+  "siteName": "苗栗嘉盛N03苗栗忠貞",
+  "siteNameCV": "苗栗嘉盛N03苗栗忠貞",
   "town": "苗栗市",
   "towns": [
    "苗栗市",
    "苗栗市"
   ],
-  "sec": "s2_s3",
+  "sec": "s2/3_s4/5/6",
   "secs": [
-   "s2",
-   "s3"
+   "s2/3",
+   "s4/5/6"
   ],
   "stations": [
    "苗栗嘉盛N03苗栗上苗",
-   "苗栗嘉盛N03苗栗上苗"
+   "苗栗嘉盛N03苗栗忠貞"
   ],
   "coords": [
    {
-    "lat": 24.56798,
-    "lon": 120.823122
+    "lat": 24.56788,
+    "lon": 120.82317
    },
    {
-    "lat": 24.56798,
-    "lon": 120.823122
+    "lat": 24.57447,
+    "lon": 120.84116
    }
   ],
   "cells": {
@@ -28303,6 +28363,56 @@ const STATION_DATA_5G = [
        "cov": "Outdoor",
        "lat": 24.56798,
        "lon": 120.823122
+      }
+     ]
+    }
+   ],
+   "苗栗嘉盛N03苗栗忠貞": [
+    {
+     "sec": 4,
+     "cells": [
+      {
+       "cel": "406",
+       "rmod": "AHEGG",
+       "az": "30",
+       "mt": "",
+       "et": "",
+       "toff": "",
+       "cov": "Outdoor",
+       "lat": 24.57447,
+       "lon": 120.84116
+      }
+     ]
+    },
+    {
+     "sec": 5,
+     "cells": [
+      {
+       "cel": "506",
+       "rmod": "AHEGG",
+       "az": "120",
+       "mt": "",
+       "et": "",
+       "toff": "",
+       "cov": "Outdoor",
+       "lat": 24.57447,
+       "lon": 120.84116
+      }
+     ]
+    },
+    {
+     "sec": 6,
+     "cells": [
+      {
+       "cel": "606",
+       "rmod": "AHEGG",
+       "az": "260",
+       "mt": "",
+       "et": "",
+       "toff": "",
+       "cov": "Outdoor",
+       "lat": 24.57447,
+       "lon": 120.84116
       }
      ]
     }
@@ -29233,28 +29343,21 @@ const STATION_DATA_5G = [
   "town": "苗栗市",
   "towns": [
    "苗栗市",
-   "苗栗市",
    "苗栗市"
   ],
-  "sec": "s1/2/3_s4/5_s6",
+  "sec": "s1/2/3_s4/5/6",
   "secs": [
    "s1/2/3",
-   "s4/5",
-   "s6"
+   "s4/5/6"
   ],
   "stations": [
    "苗栗中央N07苗栗西勢美北",
-   "苗栗中央N07苗栗維祥",
    "苗栗中央N07苗栗維祥"
   ],
   "coords": [
    {
     "lat": 24.55685,
     "lon": 120.81626
-   },
-   {
-    "lat": 24.555363,
-    "lon": 120.824234
    },
    {
     "lat": 24.555363,
@@ -29505,10 +29608,10 @@ const STATION_DATA_5G = [
   "ranType": "D-RAN",
   "smod": {
    "後龍坤龍紡織": [
-    "Temperature",
-    "Door",
+    "Fire",
     "AC Power",
-    "Fire"
+    "Door",
+    "Temperature"
    ]
   }
  },
@@ -29887,15 +29990,15 @@ const STATION_DATA_5G = [
    "s7"
   ],
   "stations": [
-   "苗栗中央N22苗栗杜石地",
+   "苗栗中央N22苗栗心衛中心",
    "苗栗中央N22苗栗南勢台鐵",
    "苗栗中央N22苗栗南勢忠愛",
    "苗栗中央N22苗龍幹32-1"
   ],
   "coords": [
    {
-    "lat": 24.561426,
-    "lon": 120.788115
+    "lat": 24.55947,
+    "lon": 120.81368
    },
    {
     "lat": 24.52757,
@@ -29911,20 +30014,20 @@ const STATION_DATA_5G = [
    }
   ],
   "cells": {
-   "苗栗中央N22苗栗杜石地": [
+   "苗栗中央N22苗栗心衛中心": [
     {
      "sec": 1,
      "cells": [
       {
-       "cel": "106",
-       "rmod": "AHEGG",
-       "az": "40",
-       "mt": "3",
-       "et": "5",
-       "toff": "",
+       "cel": "111",
+       "rmod": "AQQA",
+       "az": "300",
+       "mt": "",
+       "et": "7",
+       "toff": "1",
        "cov": "Outdoor",
-       "lat": 24.561426,
-       "lon": 120.788115
+       "lat": 24.55947,
+       "lon": 120.81368
       }
      ]
     }
@@ -29957,7 +30060,7 @@ const STATION_DATA_5G = [
        "az": "0",
        "mt": "0",
        "et": "7",
-       "toff": "-1",
+       "toff": "1",
        "cov": "Outdoor",
        "lat": 24.53439,
        "lon": 120.79605
@@ -31708,8 +31811,8 @@ const STATION_DATA_5G = [
     "lon": 120.8781
    },
    {
-    "lat": 24.6755,
-    "lon": 120.87407
+    "lat": 24.6754,
+    "lon": 120.8741
    }
   ],
   "cells": {
@@ -31985,7 +32088,7 @@ const STATION_DATA_5G = [
        "cel": "606",
        "rmod": "AHEGG",
        "az": "60",
-       "mt": "1",
+       "mt": "0",
        "et": "4",
        "toff": "",
        "cov": "Outdoor",
@@ -33739,7 +33842,7 @@ const STATION_DATA_5G = [
        "rmod": "AQQA",
        "az": "180",
        "mt": "1",
-       "et": "6",
+       "et": "7",
        "toff": "",
        "cov": "Outdoor",
        "lat": 24.69414,
@@ -34097,10 +34200,10 @@ const STATION_DATA_5G = [
    "卓蘭鎮",
    "卓蘭鎮"
   ],
-  "sec": "s2/3_s4",
+  "sec": "s2/3_s4/5",
   "secs": [
    "s2/3",
-   "s4"
+   "s4/5"
   ],
   "stations": [
    "東勢卓蘭N02卓蘭苗豐",
@@ -34165,6 +34268,22 @@ const STATION_DATA_5G = [
        "cov": "Outdoor",
        "lat": 24.335172,
        "lon": 120.806085
+      }
+     ]
+    },
+    {
+     "sec": 5,
+     "cells": [
+      {
+       "cel": "511",
+       "rmod": "AQQA",
+       "az": "170",
+       "mt": "2",
+       "et": "7",
+       "toff": "",
+       "cov": "Outdoor",
+       "lat": 24.335192,
+       "lon": 120.806117
       }
      ]
     }
@@ -35327,10 +35446,10 @@ const STATION_DATA_5G = [
   "ranType": "D-RAN",
   "smod": {
    "泰安士林": [
-    "Door",
-    "AC Power",
     "Fire",
-    "Temp"
+    "AC Power",
+    "Temp",
+    "Door"
    ]
   }
  },
@@ -36185,88 +36304,6 @@ const STATION_DATA_5G = [
   }
  },
  {
-  "id": "4617647",
-  "siteName": "後龍高鐵站",
-  "siteNameCV": "後龍高鐵站",
-  "town": "後龍鎮",
-  "towns": [
-   "後龍鎮"
-  ],
-  "sec": "s1/2/3",
-  "secs": [
-   "s1/2/3"
-  ],
-  "stations": [
-   "後龍高鐵站"
-  ],
-  "coords": [
-   {
-    "lat": 24.6048,
-    "lon": 120.82517
-   }
-  ],
-  "cells": {
-   "後龍高鐵站": [
-    {
-     "sec": 1,
-     "cells": [
-      {
-       "cel": "106",
-       "rmod": "AHEGB",
-       "az": "0",
-       "mt": "0",
-       "et": "0",
-       "toff": "",
-       "cov": "Indoor",
-       "lat": 24.6048,
-       "lon": 120.82517
-      }
-     ]
-    },
-    {
-     "sec": 2,
-     "cells": [
-      {
-       "cel": "206",
-       "rmod": "AHEGB",
-       "az": "0",
-       "mt": "0",
-       "et": "0",
-       "toff": "",
-       "cov": "Indoor",
-       "lat": 24.6048,
-       "lon": 120.82517
-      }
-     ]
-    },
-    {
-     "sec": 3,
-     "cells": [
-      {
-       "cel": "306",
-       "rmod": "AHEGB",
-       "az": "270",
-       "mt": "0",
-       "et": "0",
-       "toff": "",
-       "cov": "Indoor",
-       "lat": 24.6048,
-       "lon": 120.82517
-      }
-     ]
-    }
-   ]
-  },
-  "ranType": "D-RAN",
-  "smod": {
-   "後龍高鐵站": [
-    "Temperature",
-    "AC Power",
-    "Fire"
-   ]
-  }
- },
- {
   "id": "4617657",
   "siteName": "苗栗公館N08公館福基",
   "siteNameCV": "苗栗公館N08公館福基",
@@ -36448,8 +36485,8 @@ const STATION_DATA_5G = [
   ],
   "coords": [
    {
-    "lat": 24.577288,
-    "lon": 120.848888
+    "lat": 24.57688,
+    "lon": 120.84902
    },
    {
     "lat": 24.56336,
@@ -37208,8 +37245,8 @@ const STATION_DATA_5G = [
   "smod": {
    "通霄南和": [
     "AC Power",
-    "Fire",
-    "Door"
+    "Door",
+    "Fire"
    ]
   }
  },
@@ -41106,95 +41143,6 @@ const STATION_DATA_5G = [
    "苗栗中央N21苗栗麻園坑41": [
     "L4079"
    ]
-  },
-  "meters": {
-   "苗栗中央N21苗栗天祥": [
-    "21-14-2608-47-4"
-   ]
-  }
- },
- {
-  "id": "4617785",
-  "siteName": "苗栗正發",
-  "siteNameCV": "苗栗正發",
-  "town": "苗栗市",
-  "towns": [
-   "苗栗市"
-  ],
-  "sec": "s1/2/3",
-  "secs": [
-   "s1/2/3"
-  ],
-  "stations": [
-   "苗栗正發"
-  ],
-  "coords": [
-   {
-    "lat": 24.56939,
-    "lon": 120.81606
-   }
-  ],
-  "cells": {
-   "苗栗正發": [
-    {
-     "sec": 1,
-     "cells": [
-      {
-       "cel": "111",
-       "rmod": "AEQZ",
-       "az": "0",
-       "mt": "2",
-       "et": "6",
-       "toff": "",
-       "cov": "Outdoor",
-       "lat": 24.56939,
-       "lon": 120.81606
-      }
-     ]
-    },
-    {
-     "sec": 2,
-     "cells": [
-      {
-       "cel": "211",
-       "rmod": "AEQZ",
-       "az": "130",
-       "mt": "0",
-       "et": "6",
-       "toff": "",
-       "cov": "Outdoor",
-       "lat": 24.56939,
-       "lon": 120.81606
-      }
-     ]
-    },
-    {
-     "sec": 3,
-     "cells": [
-      {
-       "cel": "311",
-       "rmod": "AEQZ",
-       "az": "230",
-       "mt": "0",
-       "et": "6",
-       "toff": "",
-       "cov": "Outdoor",
-       "lat": 24.56939,
-       "lon": 120.81606
-      }
-     ]
-    }
-   ]
-  },
-  "ranType": "D-RAN",
-  "address": "苗栗市文山里正發路196號5樓",
-  "addr": {
-   "苗栗正發": "苗栗市文山里正發路196號5樓"
-  },
-  "smod": {
-   "苗栗正發": [
-    "AC Power"
-   ]
   }
  },
  {
@@ -42990,7 +42938,7 @@ const STATION_DATA_5G = [
        "az": "350",
        "mt": "-3",
        "et": "6",
-       "toff": "1",
+       "toff": "-1",
        "cov": "Outdoor",
        "lat": 24.40526,
        "lon": 120.67556
@@ -43148,49 +43096,6 @@ const STATION_DATA_5G = [
     "L7776"
    ]
   }
- },
- {
-  "id": "4617969",
-  "siteName": "苗栗縣府一RH1",
-  "siteNameCV": "苗栗縣府一RH1",
-  "town": "苗栗市",
-  "towns": [
-   "苗栗市"
-  ],
-  "sec": "s1",
-  "secs": [
-   "s1"
-  ],
-  "stations": [
-   "苗栗縣府一RH1"
-  ],
-  "coords": [
-   {
-    "lat": 24.564704,
-    "lon": 120.820785
-   }
-  ],
-  "cells": {
-   "苗栗縣府一RH1": [
-    {
-     "sec": 1,
-     "cells": [
-      {
-       "cel": "106",
-       "rmod": "AHEGB",
-       "az": "0",
-       "mt": "0",
-       "et": "0",
-       "toff": "",
-       "cov": "Indoor",
-       "lat": 24.564704,
-       "lon": 120.820785
-      }
-     ]
-    }
-   ]
-  },
-  "ranType": "D-RAN"
  },
  {
   "id": "4617972",
@@ -46896,7 +46801,7 @@ const STATION_DATA_5G = [
       "AC Power",
       "Temperature",
       "Fire",
-      "Door"
+      "SMR"
      ]
     }
    }
@@ -48368,7 +48273,7 @@ const STATION_DATA_5G = [
        "cel": "506",
        "rmod": "AHEGG",
        "az": "220",
-       "mt": "1",
+       "mt": "2",
        "et": "6",
        "toff": "",
        "cov": "Outdoor",
@@ -48644,30 +48549,23 @@ const STATION_DATA_5G = [
  },
  {
   "id": "4623768",
-  "siteName": "竹南復興N23竹南中正",
-  "siteNameCV": "竹南復興N23竹南中正",
+  "siteName": "竹南復興N23竹南民權",
+  "siteNameCV": "竹南復興N23竹南民權",
   "town": "竹南鎮",
   "towns": [
-   "竹南鎮",
    "竹南鎮"
   ],
-  "sec": "s1/2/3_s4/5/6",
+  "sec": "s1/2/3",
   "secs": [
-   "s1/2/3",
-   "s4/5/6"
+   "s1/2/3"
   ],
   "stations": [
-   "竹南復興N23竹南民權",
-   "竹南復興N23竹南中正"
+   "竹南復興N23竹南民權"
   ],
   "coords": [
    {
     "lat": 24.6857,
     "lon": 120.87794
-   },
-   {
-    "lat": 24.68343,
-    "lon": 120.87282
    }
   ],
   "cells": {
@@ -48720,56 +48618,6 @@ const STATION_DATA_5G = [
       }
      ]
     }
-   ],
-   "竹南復興N23竹南中正": [
-    {
-     "sec": 4,
-     "cells": [
-      {
-       "cel": "411",
-       "rmod": "AEQZ",
-       "az": "70",
-       "mt": "0",
-       "et": "6",
-       "toff": "",
-       "cov": "Outdoor",
-       "lat": 24.68343,
-       "lon": 120.87282
-      }
-     ]
-    },
-    {
-     "sec": 5,
-     "cells": [
-      {
-       "cel": "511",
-       "rmod": "AEQZ",
-       "az": "190",
-       "mt": "",
-       "et": "6",
-       "toff": "",
-       "cov": "Outdoor",
-       "lat": 24.68343,
-       "lon": 120.87282
-      }
-     ]
-    },
-    {
-     "sec": 6,
-     "cells": [
-      {
-       "cel": "611",
-       "rmod": "AEQZ",
-       "az": "280",
-       "mt": "1",
-       "et": "6",
-       "toff": "",
-       "cov": "Outdoor",
-       "lat": 24.68343,
-       "lon": 120.87282
-      }
-     ]
-    }
    ]
   },
   "ranType": "C-RAN",
@@ -48783,21 +48631,11 @@ const STATION_DATA_5G = [
       "AC Power"
      ]
     }
-   },
-   "竹南復興N23竹南中正": {
-    "rmod": {
-     "411": [
-      "AC Power"
-     ]
-    }
    }
   },
   "lid": {
    "竹南復興N23竹南民權": [
     "L3768"
-   ],
-   "竹南復興N23竹南中正": [
-    "L5417"
    ]
   }
  },
@@ -49574,16 +49412,16 @@ const STATION_DATA_5G = [
   "ranType": "C-RAN",
   "smod": {
    "竹南南庄N09南庄南庄": [
-    "Temperature",
-    "AC Power",
     "Fire",
-    "Door"
+    "AC Power",
+    "Door",
+    "Temperature"
    ],
    "竹南南庄N09南庄西村": [
-    "Temperature",
-    "AC Power",
     "Fire",
-    "Door"
+    "AC Power",
+    "Door",
+    "Temperature"
    ]
   },
   "eac": {
@@ -51029,7 +50867,7 @@ const STATION_DATA_5G = [
        "az": "160",
        "mt": "10",
        "et": "6",
-       "toff": "1",
+       "toff": "-1",
        "cov": "Outdoor",
        "lat": 24.56432,
        "lon": 120.81673
@@ -51276,8 +51114,8 @@ const STATION_DATA_5G = [
     "lon": 120.82874
    },
    {
-    "lat": 24.60186,
-    "lon": 120.81877
+    "lat": 24.60181,
+    "lon": 120.81876
    }
   ],
   "cells": {
@@ -51361,7 +51199,7 @@ const STATION_DATA_5G = [
        "cel": "406",
        "rmod": "AHEGB",
        "az": "40",
-       "mt": "1",
+       "mt": "0",
        "et": "0",
        "toff": "",
        "cov": "Outdoor",
@@ -52156,7 +51994,7 @@ const STATION_DATA_5G = [
     "lon": 120.82029
    },
    {
-    "lat": 24.56536,
+    "lat": 24.56537,
     "lon": 120.82397
    }
   ],
@@ -56151,6 +55989,98 @@ const STATION_DATA_5G = [
   }
  },
  {
+  "id": "4627647",
+  "siteName": "苗栗後龍N19後龍高鐵站",
+  "siteNameCV": "苗栗後龍N19後龍高鐵站",
+  "town": "後龍鎮",
+  "towns": [
+   "後龍鎮"
+  ],
+  "sec": "s1/2/3",
+  "secs": [
+   "s1/2/3"
+  ],
+  "stations": [
+   "苗栗後龍N19後龍高鐵站"
+  ],
+  "coords": [
+   {
+    "lat": 24.6048,
+    "lon": 120.82517
+   }
+  ],
+  "cells": {
+   "苗栗後龍N19後龍高鐵站": [
+    {
+     "sec": 1,
+     "cells": [
+      {
+       "cel": "106",
+       "rmod": "AHEGB",
+       "az": "0",
+       "mt": "0",
+       "et": "0",
+       "toff": "",
+       "cov": "Indoor",
+       "lat": 24.6048,
+       "lon": 120.82517
+      }
+     ]
+    },
+    {
+     "sec": 2,
+     "cells": [
+      {
+       "cel": "206",
+       "rmod": "AHEGB",
+       "az": "90",
+       "mt": "0",
+       "et": "0",
+       "toff": "",
+       "cov": "Indoor",
+       "lat": 24.6048,
+       "lon": 120.82517
+      }
+     ]
+    },
+    {
+     "sec": 3,
+     "cells": [
+      {
+       "cel": "306",
+       "rmod": "AHEGB",
+       "az": "270",
+       "mt": "0",
+       "et": "0",
+       "toff": "",
+       "cov": "Indoor",
+       "lat": 24.6048,
+       "lon": 120.82517
+      }
+     ]
+    }
+   ]
+  },
+  "ranType": "C-RAN",
+  "eac": {
+   "苗栗後龍N19後龍高鐵站": {
+    "rmod": {
+     "106": [
+      "Door",
+      "Fire",
+      "Temperature",
+      "AC Power"
+     ]
+    }
+   }
+  },
+  "lid": {
+   "苗栗後龍N19後龍高鐵站": [
+    "L7647"
+   ]
+  }
+ },
+ {
   "id": "4627671",
   "siteName": "苗栗銅鑼N24銅鑼東應化",
   "siteNameCV": "苗栗銅鑼N24銅鑼東應化",
@@ -56480,6 +56410,95 @@ const STATION_DATA_5G = [
   }
  },
  {
+  "id": "4627679",
+  "siteName": "東勢卓蘭N10卓蘭水廠段",
+  "siteNameCV": "東勢卓蘭N10卓蘭水廠段",
+  "town": "卓蘭鎮",
+  "towns": [
+   "卓蘭鎮"
+  ],
+  "sec": "s1/2/3",
+  "secs": [
+   "s1/2/3"
+  ],
+  "stations": [
+   "東勢卓蘭N10卓蘭水廠段"
+  ],
+  "coords": [
+   {
+    "lat": 24.30667,
+    "lon": 120.82757
+   }
+  ],
+  "cells": {
+   "東勢卓蘭N10卓蘭水廠段": [
+    {
+     "sec": 1,
+     "cells": [
+      {
+       "cel": "106",
+       "rmod": "AHEGG",
+       "az": "10",
+       "mt": "0",
+       "et": "6",
+       "toff": "",
+       "cov": "Outdoor",
+       "lat": 24.30667,
+       "lon": 120.82757
+      }
+     ]
+    },
+    {
+     "sec": 2,
+     "cells": [
+      {
+       "cel": "206",
+       "rmod": "AHEGG",
+       "az": "130",
+       "mt": "0",
+       "et": "4",
+       "toff": "",
+       "cov": "Outdoor",
+       "lat": 24.30667,
+       "lon": 120.82757
+      }
+     ]
+    },
+    {
+     "sec": 3,
+     "cells": [
+      {
+       "cel": "306",
+       "rmod": "AHEGG",
+       "az": "250",
+       "mt": "0",
+       "et": "4",
+       "toff": "",
+       "cov": "Outdoor",
+       "lat": 24.30667,
+       "lon": 120.82757
+      }
+     ]
+    }
+   ]
+  },
+  "ranType": "C-RAN",
+  "eac": {
+   "東勢卓蘭N10卓蘭水廠段": {
+    "rmod": {
+     "106": [
+      "AC Power"
+     ]
+    }
+   }
+  },
+  "lid": {
+   "東勢卓蘭N10卓蘭水廠段": [
+    "L7679"
+   ]
+  }
+ },
+ {
   "id": "4627681",
   "siteName": "竹南復興N31竹南和平",
   "siteNameCV": "竹南復興N31竹南和平",
@@ -56546,8 +56565,8 @@ const STATION_DATA_5G = [
     "lon": 120.94051
    },
    {
-    "lat": 24.59097,
-    "lon": 120.938178
+    "lat": 24.509702,
+    "lon": 120.938182
    }
   ],
   "cells": {
@@ -56581,8 +56600,8 @@ const STATION_DATA_5G = [
        "et": "7",
        "toff": "1",
        "cov": "Outdoor",
-       "lat": 24.59097,
-       "lon": 120.938178
+       "lat": 24.509702,
+       "lon": 120.938182
       }
      ]
     },
@@ -56598,7 +56617,7 @@ const STATION_DATA_5G = [
        "toff": "1",
        "cov": "Outdoor",
        "lat": 24.59097,
-       "lon": 120.938178
+       "lon": 120.938182
       }
      ]
     },
@@ -56613,8 +56632,8 @@ const STATION_DATA_5G = [
        "et": "7",
        "toff": "1",
        "cov": "Outdoor",
-       "lat": 24.590968,
-       "lon": 120.93818
+       "lat": 24.59097,
+       "lon": 120.938182
       }
      ]
     }
@@ -56980,8 +56999,8 @@ const STATION_DATA_5G = [
        "et": "7",
        "toff": "1",
        "cov": "Outdoor",
-       "lat": 24.50554,
-       "lon": 120.9234
+       "lat": 24.505595,
+       "lon": 120.923457
       }
      ]
     }
@@ -57740,8 +57759,8 @@ const STATION_DATA_5G = [
        "cel": "306",
        "rmod": "AHEGG",
        "az": "0",
-       "mt": "4",
-       "et": "5",
+       "mt": "0",
+       "et": "3",
        "toff": "",
        "cov": "Outdoor",
        "lat": 24.6948,
