@@ -941,6 +941,7 @@
           stationIndex.push({
             name: s,
             id: item.id,
+            siteName: item.siteName || '',
             siteNameCV: item.siteNameCV,
             town: (item.towns && item.towns[i]) || item.town || '',
             sec: (item.sec && item.sec.split('_')[i]) || '',
@@ -1129,7 +1130,8 @@
         }
         const matches = stationIndex.filter(s =>
           (s.name.toLowerCase().indexOf(keyword.toLowerCase()) !== -1 ||
-           s.siteNameCV.toLowerCase().indexOf(keyword.toLowerCase()) !== -1) &&
+           (s.siteName || '').toLowerCase().indexOf(keyword.toLowerCase()) !== -1 ||
+           (s.siteNameCV || '').toLowerCase().indexOf(keyword.toLowerCase()) !== -1) &&
           (!town || s.town === town)
         );
         if (matches.length === 0) {
