@@ -1025,8 +1025,15 @@
         const secs = item.sec ? item.sec.split('_') : [];
         if (item.stations && item.stations.length) {
           item.stations.forEach((s, i) => {
-            const coord = (item.coords && item.coords[i]) ? item.coords[i] : null;
             const cells = (item.cells && item.cells[s]) ? item.cells[s] : [];
+            let coord = (item.coords && item.coords[i]) ? item.coords[i] : null;
+            if (!coord || !coord.lat || !coord.lon) {
+              outer: for (const g of cells) {
+                for (const c of (g.cells || [])) {
+                  if (c.lat && c.lon) { coord = { lat: c.lat, lon: c.lon }; break outer; }
+                }
+              }
+            }
             const meters = (item.meters && item.meters[s]) ? item.meters[s] : [];
             const stationTown = (item.towns && item.towns[i]) ? item.towns[i] : (item.town || '');
 
