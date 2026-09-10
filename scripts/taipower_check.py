@@ -7,6 +7,8 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 BASE="https://service.taipower.com.tw/nds/ndsWeb/ndft112.aspx"
 DATA_JS=os.path.join(os.path.dirname(__file__),"..","data.js")
 OUT_JSON=os.path.join(os.path.dirname(__file__),"..","outage.json")
+REQ_TIMEOUT = 45
+RETRY_BACKOFF = [5, 15, 30, 60, 120]
 
 def get_4g_meters():
     t=open(DATA_JS,encoding="utf-8").read()
@@ -42,7 +44,7 @@ def query_single(meter):
         s=requests.Session()
         s.headers.update({"User-Agent":"Mozilla/5.0","Referer":BASE})
         try:
-            r=s.get(BASE, timeout=30); r.encoding="utf-8"
+            r=s.get(BASE, timeout=REQ_TIMEOUT); r.encoding="utf-8"
             soup=BeautifulSoup(r.text,"html.parser")
             vs_elm=soup.find("input",{"name":"__VIEWSTATE"})
             ev_elm=soup.find("input",{"name":"__EVENTVALIDATION"})
@@ -59,7 +61,7 @@ def query_single(meter):
                    "ctl00$ContentMain$HiddenField_ReportType":"1",
                    "ctl00$ContentMain$TextBox_CustNo":meter,
                    "__EVENTTARGET":"ctl00$ContentMain$Button_Captcha","__EVENTARGUMENT":""}
-            r1=s.post(BASE, data=data1, timeout=30); r1.encoding="utf-8"
+            r1=s.post(BASE, data=data1, timeout=REQ_TIMEOUT); r1.encoding="utf-8"
             soup1=BeautifulSoup(r1.text,"html.parser")
             vs1=soup1.find("input",{"name":"__VIEWSTATE"})
             ev1=soup1.find("input",{"name":"__EVENTVALIDATION"})
@@ -81,7 +83,7 @@ def query_single(meter):
             captcha1=""
             for ocr_try in range(5):
                 try:
-                    cap1=s.get(url1, timeout=30)
+                    cap1=s.get(url1, timeout=REQ_TIMEOUT)
                     if cap1.status_code!=200 or len(cap1.content)<100:
                         time.sleep(0.5)
                         continue
@@ -101,7 +103,7 @@ def query_single(meter):
                   "ctl00$ContentMain$TextBox_CustNo":meter,
                   "ctl00$ContentMain$TextBox_Captcha":captcha1,
                   "__EVENTTARGET":"ctl00$ContentMain$Button_Inquiry","__EVENTARGUMENT":""}
-            r2=s.post(BASE, data=data, timeout=30); r2.encoding="utf-8"
+            r2=s.post(BASE, data=data, timeout=REQ_TIMEOUT); r2.encoding="utf-8"
             text=BeautifulSoup(r2.text,"html.parser").get_text()
             if "暫停供電" in text:
                 m=re.search(r"(\d{4}/\d{2}/\d{2} \d{2}:\d{2})[^\d]+(\d{4}/\d{2}/\d{2} \d{2}:\d{2})", text)
@@ -119,8 +121,9 @@ def query_single(meter):
                 continue
             return {"found":False}
         except Exception as e:
-            print(f"[{meter}] err {e}", file=sys.stderr)
-            time.sleep(1)
+            wait = RETRY_BACKOFF[min(attempt, len(RETRY_BACKOFF)-1)]
+            print(f"[{meter}] err {e}, backoff {wait}s (attempt {attempt+1})", file=sys.stderr)
+            time.sleep(wait)
             continue
     print(f"[{meter}] all retries exhausted", file=sys.stderr)
     return {"found":False}
@@ -143,8 +146,8 @@ def main():
             if end and time.mktime(time.strptime(end, "%Y-%m-%dT%H:%M:%S")) < now:
                 del result[k]
         except: pass
-    # Concurrent
-    max_workers=5
+    # Concurrent (3 workers to avoid Taipower throttling)
+    max_workers=3
     print(f"Concurrent {max_workers} workers")
     with ThreadPoolExecutor(max_workers=max_workers) as ex:
         futures={ex.submit(query_single, m): m for m in meters}
