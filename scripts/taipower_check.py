@@ -36,6 +36,31 @@ def ocr_captcha(ocr, content):
     except Exception:
         return ""
 
+def ocr_captcha_variants(ocr, content):
+    # 多版本辨識:原圖/綠色遮罩/放大2倍,取4位數字候選
+    cands = []
+    try:
+        cands.append(re.sub(r"[^0-9]", "", ocr.classification(content).strip()))
+    except Exception:
+        pass
+    try:
+        from PIL import Image
+        import io
+        import numpy as np
+        img = Image.open(io.BytesIO(content)).convert("RGB")
+        arr = np.array(img).astype(int)
+        R, G, B = arr[:, :, 0], arr[:, :, 1], arr[:, :, 2]
+        mask = (G > R + 20) & (G > B + 20)
+        white = np.ones_like(arr) * 255
+        gm = Image.fromarray(np.where(mask[:, :, None], arr, white).astype("uint8"))
+        buf = io.BytesIO(); gm.save(buf, format="PNG")
+        cands.append(re.sub(r"[^0-9]", "", ocr.classification(buf.getvalue()).strip()))
+        buf2 = io.BytesIO(); img.resize((img.width * 2, img.height * 2), Image.LANCZOS).save(buf2, format="PNG")
+        cands.append(re.sub(r"[^0-9]", "", ocr.classification(buf2.getvalue()).strip()))
+    except Exception:
+        pass
+    return [c for c in cands if re.fullmatch(r"[0-9]{4}", c or "")]
+
 def query_single(meter):
     ocr=get_ocr()
     # 台電流程:驗證碼欄預設灰底 disabled,必須先填電號再按「重產驗證碼」,
@@ -72,8 +97,9 @@ def query_single(meter):
             vs=vs1["value"]; ev=ev1["value"]
             vsg1=soup1.find("input",{"name":"__VIEWSTATEGENERATOR"})
             if vsg1: vsg=vsg1["value"]
-            # 步驟2:對刷新後的第二次驗證碼加強重試,必須為4位數字
-            # 注意:不可重打GET首頁,否則VIEWSTATE失效;同session重抓同captcha圖即可
+            # 步驟2:第二次驗證碼加強重試,必須為4位數字
+            # 策略:同session下載驗證碼圖→3版本OCR投票;讀不出4碼就按「重產驗證碼」
+            # 換一張新圖(實測約2/3新圖可讀),最多換8張
             img1=soup1.find("img", src=re.compile(r"captcha\.ashx"))
             if not img1:
                 print(f"[{meter}] no captcha after refresh attempt {attempt+1}", file=sys.stderr)
@@ -81,22 +107,39 @@ def query_single(meter):
                 continue
             src1=img1.get("src"); url1=src1 if src1.startswith("http") else "https://service.taipower.com.tw/nds/ndsWeb/"+src1.lstrip("./")
             captcha1=""
-            for ocr_try in range(5):
+            for fresh_try in range(8):
                 try:
                     cap1=s.get(url1, timeout=REQ_TIMEOUT)
                     if cap1.status_code!=200 or len(cap1.content)<100:
                         time.sleep(0.5)
                         continue
-                    captcha1=ocr_captcha(ocr, cap1.content)
+                    hit=ocr_captcha_variants(ocr, cap1.content)
                 except Exception:
                     time.sleep(0.5)
                     continue
-                if re.fullmatch(r"[0-9]{4}", captcha1 or ""):
+                if hit:
+                    captcha1=hit[0]
                     break
-                print(f"[{meter}] OCR invalid '{captcha1}' retry {ocr_try+1}", file=sys.stderr)
+                print(f"[{meter}] OCR no 4-digit, refresh captcha {fresh_try+1}", file=sys.stderr)
+                # 換一張新驗證碼圖(帶電號按重產驗證碼,更新VIEWSTATE)
+                try:
+                    data_r={"__VIEWSTATE":vs,"__VIEWSTATEGENERATOR":vsg,"__EVENTVALIDATION":ev,
+                           "ctl00$ContentMain$HiddenField_ReportType":"1",
+                           "ctl00$ContentMain$TextBox_CustNo":meter,
+                           "__EVENTTARGET":"ctl00$ContentMain$Button_Captcha","__EVENTARGUMENT":""}
+                    rr=s.post(BASE, data=data_r, timeout=REQ_TIMEOUT); rr.encoding="utf-8"
+                    soups=BeautifulSoup(rr.text,"html.parser")
+                    vsn=soups.find("input",{"name":"__VIEWSTATE"})
+                    evn=soups.find("input",{"name":"__EVENTVALIDATION"})
+                    if vsn: vs=vsn["value"]
+                    if evn: ev=evn["value"]
+                    vsgn=soups.find("input",{"name":"__VIEWSTATEGENERATOR"})
+                    if vsgn: vsg=vsgn["value"]
+                except Exception:
+                    pass
                 time.sleep(0.5)
             if not re.fullmatch(r"[0-9]{4}", captcha1 or ""):
-                # 5次皆非4碼則整輪重試(換新session+重產驗證碼)
+                # 8張皆讀不出則整輪重試(換新session)
                 continue
             data={"__VIEWSTATE":vs,"__VIEWSTATEGENERATOR":vsg,"__EVENTVALIDATION":ev,
                   "ctl00$ContentMain$HiddenField_ReportType":"1",
