@@ -188,29 +188,6 @@
     font-weight: 700;
     flex-shrink: 0;
   }
-  .station-bar .meter {
-    display: inline-block;
-    background: #fff8e6;
-    color: #b7791f;
-    border: 1px solid #ecd7a0;
-    border-radius: 12px;
-    padding: 1px 10px;
-    font-size: 12px;
-    font-weight: 700;
-    flex-shrink: 0;
-    max-width: 100%;
-    overflow-wrap: anywhere;
-  }
-  .station-bar .meter.outage {
-    background: #fdecea;
-    color: #b0301c;
-    border-color: #efc1b8;
-  }
-  .station-bar .meter.normal {
-    background: #eaf7ee;
-    color: #2e7d32;
-    border-color: #b8dcc0;
-  }
   .station-bar .addr {
     display: inline-block;
     background: #eef4fb;
@@ -755,47 +732,6 @@
     // 照片透過 Cloudflare Worker 存取 Google Drive，電腦關機也能看。
     const PHOTO_SERVER = window.PHOTO_SERVER || 'https://station-photo.shane17258.workers.dev';
 
-    // ============ 停電資訊（台電每日 00:00 全量更新，僅 4G，去重） ============
-    let outageData = {};
-    let lastOutageItem = null;
-    let lastOutageCfg = null;
-    function loadOutage(){
-      return fetch('outage.json', {cache: 'no-store'}).then(r=>r.json()).then(j=>{
-        outageData=j;
-        if(lastOutageItem && lastOutageCfg){
-          const { outStations } = lastOutageCfg;
-          if(outStations) outStations.querySelectorAll('.meter').forEach(el=>{
-            const m = el.textContent.match(/電號\s*([0-9\-]+)/);
-            if(m) el.outerHTML = outageBadge(m[1]);
-          });
-        }
-      }).catch(()=>{});
-    }
-    loadOutage();
-    setInterval(loadOutage, 5*60*1000);
-    setInterval(()=>{
-      if(lastOutageItem && lastOutageCfg){
-        const { outStations } = lastOutageCfg;
-        if(outStations) outStations.querySelectorAll('.meter').forEach(el=>{
-          const m = el.textContent.match(/電號\s*([0-9\-]+)/);
-          if(m) el.outerHTML = outageBadge(m[1]);
-        });
-      }
-    }, 60*1000);
-    function outageBadge(meter){
-      const norm = meter.replace(/[^0-9]/g,"");
-      const info = outageData[norm] || outageData[meter];
-      if(!info || !info.found) return '<span class="meter normal">電號 '+meter+' 正常供電中</span>';
-      const now = new Date();
-      const s = new Date(info.start);
-      const e = new Date(info.end);
-      const fmt = d => d.slice(0,16).replace("T"," ").replaceAll("-","/");
-      const endTime = info.end.slice(11,16);
-      if(now >= s && now <= e) return '<span class="meter outage">電號 '+meter+' 停電中，預計至 '+endTime+'</span>';
-      if(now < s) return '<span class="meter normal">電號 '+meter+' 正常供電中，預計於 '+fmt(info.start)+' 至 '+fmt(info.end)+' 暫停供電</span>';
-      return '<span class="meter normal">電號 '+meter+' 正常供電中</span>';
-    }
-
     function photoApi(station, path) {
       return PHOTO_SERVER + path + '?station=' + encodeURIComponent(station);
     }
@@ -1034,7 +970,6 @@
                 }
               }
             }
-            const meters = (item.meters && item.meters[s]) ? item.meters[s] : [];
             const stationTown = (item.towns && item.towns[i]) ? item.towns[i] : (item.town || '');
 
             const wrap = document.createElement('div');
@@ -1052,7 +987,6 @@
               (lids.length ? '<span class="lid">LID ' + lids.join('、') + '</span>' : '') +
               (addr ? '<span class="addr">' + addr + '</span>' : '') +
               (smodAlarms.length ? '<span class="eac-smod">SMOD 外部告警：' + smodAlarms.join('、') + '</span>' : '') +
-              (meters.length ? meters.map(m=>outageBadge(m)).join('') : '') +
               (secs[i] ? '<span class="sec">' + secs[i] + '</span>' : '') +
               (coord ? '<span class="coord2">' + coord.lat + ', ' + coord.lon + '</span>' : '') +
               (cells.length ? '<span class="toggle" data-idx="' + i + '">檢視細胞詳情 ▸</span>' : '') +
@@ -1098,8 +1032,6 @@
           (item.sec ? '　｜　扇區全貌：' + item.sec : '');
 
         result.classList.add('show');
-        lastOutageItem = item;
-        lastOutageCfg = cfg;
       }
 
       function findItem() {

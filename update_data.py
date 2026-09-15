@@ -438,15 +438,7 @@ for r in cell_rows:
         continue
     cell_map.setdefault(lnbts, {}).setdefault(st, []).append(r)
 
-# 電號檔（可選，找不到就跳過）
-meter_rows = []
-meter_files = glob.glob(os.path.join(BASE, "*電號*.xlsx"))
-if meter_files:
-    mf = sorted(meter_files)[-1]
-    _, meter_rows = load_rows(mf, "工作表1")
-    print(f"  電號檔: {os.path.basename(mf)} ({len(meter_rows)} 筆)")
-else:
-    print("  電號檔: 未找到，略過")
+# 電號已移除：不再配對與輸出 meters（2026-09-15）
 
 lat_cols, lon_cols = latlon_pairs(hdr_bts, "Lat", "Lon")
 items4 = []
@@ -499,17 +491,7 @@ for r in bts:
         "ranType": get(r, hdr_bts, "RANtype"),
     })
 
-# 電號比對（僅 4G）
-if meter_rows:
-    id2x = {x["id"]: x for x in items4}
-    meter_map = build_meter_map(meter_rows, id2x)
-    matched = 0
-    for it in items4:
-        m = meter_map.get(it["id"])
-        if m:
-            it["meters"] = m
-            matched += 1
-    print(f"  電號比對完成: {matched} 個站台有電號")
+# 電號已移除：不再配對與輸出（2026-09-15 已移除網頁電號顯示）
 
 # 站台.xlsx（地址）
 site_info = None
