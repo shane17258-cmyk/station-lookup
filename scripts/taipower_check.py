@@ -155,46 +155,53 @@ def query_single(meter):
                 m=re.search(r"(\d{4}/\d{2}/\d{2} \d{2}:\d{2})[^\d]+(\d{4}/\d{2}/\d{2} \d{2}:\d{2})", text)
                 reason="停電"
                 for line in text.splitlines():
-                    if "暫停供電" in line: reason=line.strip()[:120]; break
+                    if "暫停供電" in line: reason=line.strip()[:300]; break
                 if m:
-                    return {"found":True,"start":m.group(1).replace("/","-").replace(" ","T")+":00","end":m.group(2).replace("/","-").replace(" ","T")+":00","reason":reason}
-                return {"found":True,"reason":reason}
+                    return {"found":True,"start":m.group(1).replace("/","-").replace(" ","T")+":00","end":m.group(2).replace("/","-").replace(" ","T")+":00","reason":reason,"result":reason}
+                return {"found":True,"reason":reason,"result":reason}
             if "尚未接獲通報停電或已完成復電" in text or "查無" in text or "無停電" in text:
-                return {"found":False}
+                result_text=""
+                for sel in soup2_selects(r2):
+                    if "尚未接獲通報" in sel or "查無" in sel or "無停電" in sel:
+                        result_text=sel.strip()[:300]; break
+                if not result_text:
+                    result_text="本公司尚未接獲通報停電或已完成復電"
+                return {"found":False,"result":result_text}
             if "驗證碼" in text:
                 print(f"[{meter}] captcha '{captcha1}' rejected, retry {attempt+1}", file=sys.stderr)
                 time.sleep(0.8)
                 continue
-            return {"found":False}
+            return {"found":False,"result":"查無停電資訊"}
         except Exception as e:
             wait = RETRY_BACKOFF[min(attempt, len(RETRY_BACKOFF)-1)]
             print(f"[{meter}] err {e}, backoff {wait}s (attempt {attempt+1})", file=sys.stderr)
             time.sleep(wait)
             continue
     print(f"[{meter}] all retries exhausted", file=sys.stderr)
-    return {"found":False}
+    return None
+
+def soup2_selects(r2):
+    soup=BeautifulSoup(r2.text,"html.parser")
+    out=[]
+    for div in soup.find_all("div", class_="Result"):
+        out.append(div.get_text(" ", strip=True))
+    for p in soup.find_all(["p","span"]):
+        t=p.get_text(" ", strip=True)
+        if t: out.append(t)
+    return out
 
 def main():
     meters=get_4g_meters()
     print(f"4G distinct {len(meters)}")
-    # Load old for merge
     old={}
     if os.path.exists(OUT_JSON):
         try:
             old=json.load(open(OUT_JSON,encoding="utf-8"))
         except: pass
     result=dict(old)
-    # Clean expired
-    now=time.time()
-    for k in list(result.keys()):
-        try:
-            end=result[k].get("end","")
-            if end and time.mktime(time.strptime(end, "%Y-%m-%dT%H:%M:%S")) < now:
-                del result[k]
-        except: pass
-    # Concurrent (3 workers to avoid Taipower throttling)
     max_workers=3
     print(f"Concurrent {max_workers} workers")
+    ok=fail=0
     with ThreadPoolExecutor(max_workers=max_workers) as ex:
         futures={ex.submit(query_single, m): m for m in meters}
         for idx, fut in enumerate(as_completed(futures), 1):
@@ -202,19 +209,26 @@ def main():
             try:
                 info=fut.result()
             except Exception as e:
-                info={"found":False, "error":str(e)}
-            if info.get("found"):
-                result[m]=info
-                print(f"[{idx}/{len(meters)}] {m} -> {info.get('start')}~{info.get('end')}")
-            elif m in result:
-                del result[m]
-                print(f"[{idx}/{len(meters)}] {m} -> cleared")
-            else:
-                print(f"[{idx}/{len(meters)}] {m} -> normal")
-            if idx%50==0:
+                info=None
+                print(f"[{m}] error {e}", file=sys.stderr)
+            if info is None:
+                fail+=1
+                print(f"[{idx}/{len(meters)}] {m} -> FAILED (kept old)")
+                continue
+            info["checked"]=time.strftime("%Y-%m-%dT%H:%M:%S")
+            result[m]=info
+            ok+=1
+            status="停電" if info.get("found") else "正常"
+            print(f"[{idx}/{len(meters)}] {m} -> {status}")
+            if idx%20==0:
                 with open(OUT_JSON,"w",encoding="utf-8") as f: json.dump(result,f,ensure_ascii=False,indent=2)
+    # remove meters no longer present
+    meterset=set(meters)
+    for k in list(result.keys()):
+        if k not in meterset:
+            del result[k]
     with open(OUT_JSON,"w",encoding="utf-8") as f: json.dump(result,f,ensure_ascii=False,indent=2)
-    print(f"Done {len(result)} outages")
+    print(f"Done ok={ok} fail={fail} total={len(result)}")
 
 if __name__=="__main__":
     main()
