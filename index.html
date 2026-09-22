@@ -215,6 +215,18 @@
     overflow-wrap: anywhere;
   }
   .station-bar .coord2 { font-size: 11px; color: #6b8aa8; margin-left: 4px; }
+  .station-bar .meter {
+    display: inline-block;
+    background: #fff3e0;
+    color: #e65100;
+    border: 1px solid #f3c894;
+    border-radius: 12px;
+    padding: 1px 10px;
+    font-size: 12px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
   .station-bar .toggle {
     cursor: pointer;
     color: var(--primary);
@@ -985,6 +997,7 @@
               '<span class="num">' + (i + 1) + '</span>' +
               '<span class="s-name-inline">' + s + '</span>' +
               (lids.length ? '<span class="lid">LID ' + lids.join('、') + '</span>' : '') +
+               (item.meters && item.meters[s] ? '<span class="meter">' + item.meters[s] + '</span>' : '') +
               (addr ? '<span class="addr">' + addr + '</span>' : '') +
               (smodAlarms.length ? '<span class="eac-smod">SMOD 外部告警：' + smodAlarms.join('、') + '</span>' : '') +
               (secs[i] ? '<span class="sec">' + secs[i] + '</span>' : '') +
@@ -1735,6 +1748,27 @@
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('sw.js').catch(err => {
           console.log('SW registration failed:', err);
+        });
+
+        // 新 Service Worker 接管時自動重新載入（避免手動 Ctrl+F5）
+        let hadController = !!navigator.serviceWorker.controller;
+        let refreshing = false;
+        navigator.serviceWorker.addEventListener('controllerchange', () => {
+          if (!hadController) { hadController = true; return; }
+          if (refreshing) return;
+          refreshing = true;
+          window.location.reload();
+        });
+
+        // 定期與頁面回到前景時檢查新版
+        const checkUpdate = () => {
+          navigator.serviceWorker.getRegistration().then(reg => {
+            if (reg) reg.update().catch(() => {});
+          });
+        };
+        setInterval(checkUpdate, 60000);
+        document.addEventListener('visibilitychange', () => {
+          if (!document.hidden) checkUpdate();
         });
       });
     }
