@@ -225,6 +225,18 @@
     font-size: 12px;
     font-weight: 700;
     flex-shrink: 0;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+  .station-bar .meter.outage {
+    background: #fdecea;
+    color: #b0301c;
+    border-color: #efc1b8;
+  }
+  .station-bar .meter.normal {
+    background: #eaf7ee;
+    color: #2e7d32;
+    border-color: #b8dcc0;
   }
 
   .station-bar .toggle {
@@ -748,6 +760,57 @@
       return PHOTO_SERVER + path + '?station=' + encodeURIComponent(station);
     }
 
+    // ============ 台電查詢結果（outage.json，旁掛電號） ============
+    let outageData = {};
+    let lastOutageItem = null;
+    let lastOutageCfg = null;
+    function refreshMeterBadges() {
+      if (!lastOutageItem || !lastOutageCfg) return;
+      const { outStations } = lastOutageCfg;
+      if (!outStations) return;
+      outStations.querySelectorAll('.meter[data-meter]').forEach(el => {
+        el.outerHTML = outageBadge(el.getAttribute('data-meter'));
+      });
+    }
+    function loadOutage() {
+      return fetch('outage.json', { cache: 'no-store' }).then(r => r.json()).then(j => {
+        outageData = j || {};
+        refreshMeterBadges();
+      }).catch(() => {});
+    }
+    loadOutage();
+    setInterval(loadOutage, 5 * 60 * 1000);
+    setInterval(refreshMeterBadges, 60 * 1000);
+    function outageBadge(meter) {
+      const norm = String(meter).replace(/[^0-9]/g, '');
+      const info = outageData[norm] || outageData[meter];
+      const base = '<span class="meter" data-meter="' + escapeHtml(meter) + '">';
+      if (!info) return base + escapeHtml(meter) + '</span>';
+      const title = escapeHtml(info.result || info.reason || '');
+      const titleAttr = title ? ' title="' + title + '"' : '';
+      if (!info.found) {
+        return '<span class="meter normal" data-meter="' + escapeHtml(meter) + '"' + titleAttr + '>' +
+          '電號 ' + escapeHtml(meter) + ' 正常供電</span>';
+      }
+      if (info.start && info.end) {
+        const now = Date.now();
+        const s = new Date(info.start).getTime();
+        const e = new Date(info.end).getTime();
+        const fmt = d => String(d).slice(0, 16).replace('T', ' ').replace(/-/g, '/');
+        const endTime = String(info.end).slice(11, 16);
+        if (now >= s && now <= e) {
+          return '<span class="meter outage" data-meter="' + escapeHtml(meter) + '"' + titleAttr + '>' +
+            '電號 ' + escapeHtml(meter) + ' 停電中…至 ' + endTime + '</span>';
+        }
+        if (now < s) {
+          return '<span class="meter normal" data-meter="' + escapeHtml(meter) + '"' + titleAttr + '>' +
+            '電號 ' + escapeHtml(meter) + ' 計畫停電 ' + fmt(info.start) + '–' + fmt(info.end) + '</span>';
+        }
+      }
+      return '<span class="meter normal" data-meter="' + escapeHtml(meter) + '"' + titleAttr + '>' +
+        '電號 ' + escapeHtml(meter) + ' 正常供電</span>';
+    }
+
     const photoCache = new Map();
     async function loadPhotos(station, gridEl, statusEl) {
       try {
@@ -998,7 +1061,7 @@
               '<span class="num">' + (i + 1) + '</span>' +
               '<span class="s-name-inline">' + s + '</span>' +
               (lids.length ? '<span class="lid">LID ' + lids.join('、') + '</span>' : '') +
-               (item.meters && item.meters[s] ? '<span class="meter">' + item.meters[s] + '</span>' : '') +
+              ((item.meters && item.meters[s]) ? outageBadge(item.meters[s]) : '') +
               (addr ? '<span class="addr">' + addr + '</span>' : '') +
               (smodAlarms.length ? '<span class="eac-smod">SMOD 外部告警：' + smodAlarms.join('、') + '</span>' : '') +
               (secs[i] ? '<span class="sec">' + secs[i] + '</span>' : '') +
@@ -1046,6 +1109,8 @@
           (item.sec ? '　｜　扇區全貌：' + item.sec : '');
 
         result.classList.add('show');
+        lastOutageItem = item;
+        lastOutageCfg = cfg;
       }
 
       function findItem() {

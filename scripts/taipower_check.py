@@ -15,8 +15,11 @@ def get_4g_meters():
     arr=json.loads(t[t.find("["):t.rfind("]")+1])
     meters=set()
     for it in arr:
-        for ms in it.get("meters",{}).values():
-            for m in ms:
+        for m in it.get("meters",{}).values():
+            if isinstance(m, list):
+                for x in m:
+                    meters.add(re.sub(r"[^0-9]","",str(x)))
+            elif isinstance(m, str):
                 meters.add(re.sub(r"[^0-9]","",m))
     return sorted([m for m in meters if len(m)>=10])
 
