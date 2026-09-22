@@ -950,6 +950,7 @@
               '<div class="c-cov ' + covClass + '">' + cov + '</div>' +
               '<div class="c-meta">' +
               '方位角：' + (c.az || '-') + '°　上傾角：' + (c.mt || '-') + '°　下傾角：' + (c.et || '-') + '°' +
+              (c.ant && idLabel === 'lnCelId' ? '<br>AntType：' + c.ant : '') +
               (c.toff ? '<br>傾斜補償：' + c.toff + '°' : '') +
               (hasCellCoord ? '<br>座標：' + c.lat + ', ' + c.lon : '') +
               '</div>';
