@@ -56,11 +56,27 @@ if errorlevel 1 (
 
 echo.
 echo [4/4] 推送至 GitHub...
-git push origin master
+git pull --rebase origin master
 if errorlevel 1 (
-    echo [錯誤] git push 失敗
+    echo [錯誤] git pull --rebase 失敗
     pause
     exit /b 1
+)
+git push origin master
+if errorlevel 1 (
+    echo 第一次推送失敗，重試中...
+    git pull --rebase origin master
+    if errorlevel 1 (
+        echo [錯誤] git pull --rebase 失敗
+        pause
+        exit /b 1
+    )
+    git push origin master
+    if errorlevel 1 (
+        echo [錯誤] git push 失敗
+        pause
+        exit /b 1
+    )
 )
 
 echo.
