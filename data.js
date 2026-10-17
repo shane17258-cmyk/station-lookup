@@ -1420,6 +1420,9 @@ const STATION_DATA = [
   },
   "nrBtsId": "4611480",
   "ranType": "C-RAN",
+  "meters": {
+   "苗栗中央L17苗栗三角公園": "21-05-0672-26-3"
+  },
   "address": "苗栗市新苗里中正路855號5樓頂",
   "addr": {
    "苗栗中央L17苗栗三角公園": "苗栗市新苗里中正路855號5樓頂"
@@ -1747,13 +1750,13 @@ const STATION_DATA = [
   "ranType": "C-RAN",
   "smod": {
    "竹南造橋L01造橋老庄": [
-    "AC Power",
     "Temperature",
+    "AC Power",
     "Fire"
    ],
    "竹南造橋L01造橋亞東外環": [
-    "AC Power",
     "Temperature",
+    "AC Power",
     "Fire"
    ]
   },
@@ -2284,10 +2287,10 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "頭份信德": [
-    "AC Power",
-    "Fire",
     "Door",
-    "Temperature"
+    "Temperature",
+    "Fire",
+    "AC Power"
    ]
   }
  },
@@ -2933,48 +2936,48 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "公館同善寺RH1": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "公館北寮枝RH2": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "公館大坑支RH3": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "公館玉谷村RH4": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -3632,14 +3635,14 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "卓蘭象山": [
-    "Air con",
-    "Fire",
     "AC Power",
-    "SMR Alarm",
     "Door",
-    "Low DC Voltage",
+    "Power Generator",
+    "SMR Alarm",
     "Temperature",
-    "Power Generator"
+    "Fire",
+    "Low DC Voltage",
+    "Air con"
    ]
   }
  },
@@ -4355,6 +4358,10 @@ const STATION_DATA = [
   },
   "nrBtsId": "4612606",
   "ranType": "C-RAN",
+  "meters": {
+   "苗栗中央L27苗栗國馨": "21-07-7911-35-0",
+   "苗栗中央L27苗栗南勢揚升": "21-07-7224-93-9"
+  },
   "address": "苗栗市南勢里坪頂東55巷2號2樓頂",
   "addr": {
    "苗栗中央L27苗栗南勢揚升": "苗栗市南勢里坪頂東55巷2號2樓頂",
@@ -5013,15 +5020,15 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "竹南群創T3FAB": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -5661,15 +5668,15 @@ const STATION_DATA = [
   "ranType": "C-RAN",
   "smod": {
    "苗栗消防局OneWeb": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -6642,24 +6649,24 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "南庄高山青": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
+    "Power module failure",
+    "SMR Alarm",
     "Temperature",
-    "Power module failure"
+    "Fire",
+    "Low DC Voltage"
    ],
    "南庄高山青露營區RH2": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
+    "Power module failure",
+    "SMR Alarm",
     "Temperature",
-    "Power module failure"
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -6914,48 +6921,48 @@ const STATION_DATA = [
   "ranType": "C-RAN",
   "smod": {
    "苗栗後龍L18後龍民族": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "苗栗後龍L18後龍柳樹灣RH1": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "苗栗後龍L18後龍柳樹灣RH2": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "苗栗後龍L18後龍柳樹灣RH3": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   },
   "eac": {
@@ -7568,6 +7575,9 @@ const STATION_DATA = [
   },
   "nrBtsId": "4612760",
   "ranType": "C-RAN",
+  "meters": {
+   "苗栗中央L26苗栗聯合學院": "21-06-4126-28-2"
+  },
   "address": "苗栗市水源里中正路1297巷1號5樓",
   "addr": {
    "苗栗中央L26苗栗台糖宿舍": "苗栗市水源里中正路1297巷1號5樓",
@@ -7796,15 +7806,15 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "銅科力積電CUP-A": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -7924,15 +7934,15 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "銅科力積電FAB-A": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -7997,15 +8007,15 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "銅科力積電FAB-B": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -8092,15 +8102,15 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "銅科力積電OFF-A": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -8379,26 +8389,26 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "公館五穀國小RH1": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "公館德善堂RH3": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -8580,59 +8590,59 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "竹南漢民科技RH1": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "竹南佳邦科技RH2": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "竹南京鼎科技RH3": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "竹南微矽電子RH4": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "竹南迪恩士RH6": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -8862,6 +8872,9 @@ const STATION_DATA = [
   },
   "nrBtsId": "4612782",
   "ranType": "C-RAN",
+  "meters": {
+   "苗栗中央L14苗栗民族": "21-14-0735-95-3"
+  },
   "address": "苗栗市文山里至公路640巷7號2樓",
   "addr": {
    "苗栗中央L14苗栗魚市場": "苗栗市文山里至公路640巷7號2樓"
@@ -12358,6 +12371,9 @@ const STATION_DATA = [
   },
   "nrBtsId": "4613009",
   "ranType": "C-RAN",
+  "meters": {
+   "苗栗中央L28苗栗三山社區": "21-05-3229-92-2"
+  },
   "address": "苗栗市高苗里三山151號5樓",
   "addr": {
    "苗栗中央L28苗栗三山社區": "苗栗市高苗里三山151號5樓",
@@ -12643,6 +12659,9 @@ const STATION_DATA = [
   },
   "nrBtsId": "4613010",
   "ranType": "C-RAN",
+  "meters": {
+   "苗栗中央L29苗栗山海樂活": "21-17-2409-41-0"
+  },
   "eac": {
    "苗栗中央L29後龍禽宰場": {
     "rmod": {
@@ -13267,26 +13286,26 @@ const STATION_DATA = [
   "ranType": "C-RAN",
   "smod": {
    "苗栗中央L36苗栗文峰": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "苗栗中央L36苗栗府前至公": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   },
   "eac": {
@@ -17394,15 +17413,15 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "三灣北埔": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -17671,37 +17690,37 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "苑裡中正RH1": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "苑裡客庄RH2": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "苑裡漁港RH3": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -18211,15 +18230,15 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "竹南聖福": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -18625,37 +18644,37 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "南庄BBU5南庄九武RH1": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "南庄BBU5南庄悅園民宿RH2": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "南庄BBU5南庄南富口RH3": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -19768,6 +19787,10 @@ const STATION_DATA = [
   },
   "nrBtsId": "4613487",
   "ranType": "C-RAN",
+  "meters": {
+   "苗栗嘉盛L08苗栗嘉惠新村": "21-11-5108-10-0",
+   "苗栗嘉盛L08苗栗嘉福": "21-12-5299-29-3"
+  },
   "address": "苗栗市嘉新里嘉福街275號3樓",
   "addr": {
    "苗栗嘉盛L08苗栗嘉福": "苗栗市嘉新里嘉福街275號3樓",
@@ -19857,15 +19880,15 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "通霄福興社區RH1": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -20139,37 +20162,37 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "西湖五湖": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "西湖五湖火燒坪R4": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "西湖五湖五台山RH5": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -20666,10 +20689,10 @@ const STATION_DATA = [
   "ranType": "C-RAN",
   "smod": {
    "苗栗苑裡L01苑裡線路": [
-    "AC Power",
-    "Fire",
     "Door",
-    "Temperature"
+    "Temperature",
+    "Fire",
+    "AC Power"
    ]
   },
   "eac": {
@@ -21101,15 +21124,15 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "通霄坪頂": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -21553,9 +21576,9 @@ const STATION_DATA = [
   "smod": {
    "頭份珊瑚": [
     "ACPower",
-    "Fire",
     "Door",
-    "Temperature"
+    "Temperature",
+    "Fire"
    ]
   }
  },
@@ -22477,28 +22500,28 @@ const STATION_DATA = [
   "ranType": "C-RAN",
   "smod": {
    "苗栗公館L01公館公館": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
-    "water",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage",
+    "water"
    ],
    "苗栗公館L01公館館南一": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
-    "water",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage",
+    "water"
    ]
   },
   "eac": {
@@ -24014,6 +24037,9 @@ const STATION_DATA = [
   },
   "nrBtsId": "4613731",
   "ranType": "C-RAN",
+  "meters": {
+   "苗栗嘉盛L01苗栗為公": "21-12-5488-45-2"
+  },
   "address": "苗栗市嘉盛里復興路5段233號",
   "addr": {
    "苗栗嘉盛L01苗栗嘉盛": "苗栗市嘉盛里復興路5段233號",
@@ -24021,26 +24047,26 @@ const STATION_DATA = [
   },
   "smod": {
    "苗栗嘉盛L01苗栗嘉盛": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "苗栗嘉盛L01苗栗為公": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   },
   "eac": {
@@ -24700,6 +24726,10 @@ const STATION_DATA = [
   },
   "nrBtsId": "4613736",
   "ranType": "C-RAN",
+  "meters": {
+   "苗栗中央L04苗栗南苗": "21-04-0974-99-5",
+   "苗栗中央L04苗栗新東": "21-05-7530-58-5"
+  },
   "address": "苗栗市博愛街103號9樓頂",
   "addr": {
    "苗栗中央L04苗栗南苗": "苗栗市博愛街103號9樓頂",
@@ -24998,6 +25028,9 @@ const STATION_DATA = [
   },
   "nrBtsId": "4613738",
   "ranType": "C-RAN",
+  "meters": {
+   "苗栗中央L10苗栗西山": "21-15-1675-08-8"
+  },
   "address": "苗栗市新川里大坑12之4號3樓",
   "addr": {
    "苗栗中央L10苗栗龍岡": "苗栗市新川里大坑12之4號3樓",
@@ -25128,15 +25161,15 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "南庄田美": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -25587,13 +25620,13 @@ const STATION_DATA = [
   "ranType": "C-RAN",
   "smod": {
    "苗栗後龍L01後龍後龍": [
-    "AC Power",
     "Temperature",
+    "AC Power",
     "Fire"
    ],
    "苗栗後龍L01後龍仁德": [
-    "AC Power",
     "Temperature",
+    "AC Power",
     "Fire"
    ]
   },
@@ -25930,26 +25963,26 @@ const STATION_DATA = [
   "ranType": "C-RAN",
   "smod": {
    "苗栗大山L01後龍大山": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "苗栗大山L01後龍東明": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   },
   "eac": {
@@ -26612,15 +26645,15 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "三義裕隆車裝": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Temperature",
-    "Low DC Voltage",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -31213,26 +31246,26 @@ const STATION_DATA = [
   "ranType": "C-RAN",
   "smod": {
    "苗栗山腳L01苑裡山腳": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "苗栗山腳L01苑裡享沐": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   },
   "eac": {
@@ -31590,19 +31623,19 @@ const STATION_DATA = [
   "ranType": "C-RAN",
   "smod": {
    "苗栗通霄L01通霄內湖北": [
+    "Temperature",
     "AC Power",
-    "Fire",
-    "Temperature"
+    "Fire"
    ],
    "苗栗通霄L01通霄內湖": [
+    "Temperature",
     "AC Power",
-    "Fire",
-    "Temperature"
+    "Fire"
    ],
    "苗栗通霄L01通霄烏眉路RH": [
+    "Temperature",
     "AC Power",
-    "Fire",
-    "Temperature"
+    "Fire"
    ]
   },
   "eac": {
@@ -32403,14 +32436,14 @@ const STATION_DATA = [
   "ranType": "C-RAN",
   "smod": {
    "竹南三灣L01三灣三灣": [
+    "Temperature",
     "AC Power",
-    "Firer",
-    "Temperature"
+    "Firer"
    ],
    "竹南三灣L01三灣大河": [
+    "Temperature",
     "AC Power",
-    "Firer",
-    "Temperature"
+    "Firer"
    ]
   },
   "eac": {
@@ -33244,24 +33277,24 @@ const STATION_DATA = [
   "ranType": "C-RAN",
   "smod": {
    "苗栗白沙L01通霄白沙": [
-    "Fire",
-    "Mains power break",
     "AC Power",
+    "Mains power break",
+    "Power Generator",
+    "Power module failure",
     "SMR Alarm",
     "Temperature",
-    "Low DC Voltage",
-    "Power module failure",
-    "Power Generator"
+    "Fire",
+    "Low DC Voltage"
    ],
    "苗栗白沙L01通霄福泰": [
-    "Fire",
-    "Mains power break",
     "AC Power",
+    "Mains power break",
+    "Power Generator",
+    "Power module failure",
     "SMR Alarm",
     "Temperature",
-    "Low DC Voltage",
-    "Power module failure",
-    "Power Generator"
+    "Fire",
+    "Low DC Voltage"
    ]
   },
   "eac": {
@@ -33455,15 +33488,15 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "銅鑼新隆": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -33810,18 +33843,18 @@ const STATION_DATA = [
   "ranType": "C-RAN",
   "smod": {
    "苗栗三義L01": [
-    "Fire",
     "AC Power",
     "SMR Alarm",
-    "Low DC Voltage",
-    "Temperature"
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "苗栗三義L01三義伯公坑": [
-    "Fire",
     "AC Power",
     "SMR Alarm",
-    "Low DC Voltage",
-    "Temperature"
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   },
   "eac": {
@@ -34567,26 +34600,26 @@ const STATION_DATA = [
   "ranType": "C-RAN",
   "smod": {
    "苗栗西湖L01西湖西湖": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "苗栗西湖L01西湖交控機房": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   },
   "eac": {
@@ -35058,20 +35091,20 @@ const STATION_DATA = [
   "ranType": "C-RAN",
   "smod": {
    "苗栗大湖L01大湖大湖": [
-    "Fire",
     "AC Power",
-    "SMR Alarm",
     "Door",
-    "Low DC Voltage",
-    "Temperature"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "苗栗大湖L01大湖分局": [
-    "Fire",
     "AC Power",
-    "SMR Alarm",
     "Door",
-    "Low DC Voltage",
-    "Temperature"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   },
   "eac": {
@@ -35520,15 +35553,15 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "大湖新開": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -35843,6 +35876,9 @@ const STATION_DATA = [
   },
   "nrBtsId": "4613799",
   "ranType": "C-RAN",
+  "meters": {
+   "苗栗嘉盛L10苗栗栗華": "21-09-3213-11-0"
+  },
   "address": "苗栗市北苗里中華路83號",
   "addr": {
    "苗栗嘉盛L10苗栗栗華": "苗栗市北苗里中華路83號"
@@ -36194,6 +36230,10 @@ const STATION_DATA = [
   },
   "nrBtsId": "4613802",
   "ranType": "C-RAN",
+  "meters": {
+   "苗栗中央L20苗栗坪頂西": "21-06-7051-06-4",
+   "苗栗中央L20苗栗新勝": "21-07-7765-05-7"
+  },
   "address": "苗栗市南勢里坪頂西7號3樓",
   "addr": {
    "苗栗中央L20苗栗坪頂西": "苗栗市南勢里坪頂西7號3樓",
@@ -36495,37 +36535,37 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "大克山莊RH1": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "卓蘭豐田RH2": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "卓蘭白布帆RH3": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -36635,36 +36675,36 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "苑裡140線RH1": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Temperature",
     "Low DC Voltage",
     "Power module failure",
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
     "Power Generator"
    ],
    "苑裡社苓RH": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Temperature",
     "Low DC Voltage",
     "Power module failure",
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
     "Power Generator"
    ],
    "苑裡泰田支135RH3": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Temperature",
     "Low DC Voltage",
     "Power module failure",
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
     "Power Generator"
    ]
   }
@@ -37699,26 +37739,26 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "後龍公司寮": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "後龍海巡署RH2": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -37899,6 +37939,9 @@ const STATION_DATA = [
   },
   "nrBtsId": "4613820",
   "ranType": "C-RAN",
+  "meters": {
+   "苗栗中央L13苗栗鳳形": "21-14-0803-51-4"
+  },
   "address": "苗栗市福麗里鳳形3之2號2樓",
   "addr": {
    "苗栗中央L13苗栗鳳形": "苗栗市福麗里鳳形3之2號2樓"
@@ -38289,6 +38332,10 @@ const STATION_DATA = [
   },
   "nrBtsId": "4613821",
   "ranType": "C-RAN",
+  "meters": {
+   "苗栗中央L05苗栗金華": "21-04-5693-46-2",
+   "苗栗中央L05苗栗新東橋": "21-05-6109-12-7"
+  },
   "address": "苗栗市勝利里新東街452巷11號3樓",
   "addr": {
    "苗栗中央L05苗栗新東橋": "苗栗市勝利里新東街452巷11號3樓",
@@ -39751,6 +39798,9 @@ const STATION_DATA = [
   },
   "nrBtsId": "4613840",
   "ranType": "C-RAN",
+  "meters": {
+   "苗栗嘉盛L06苗栗嘉新福樂": "21-12-5296-71-3"
+  },
   "address": "苗栗市嘉新里福樂76號3樓",
   "addr": {
    "苗栗嘉盛L06苗栗嘉新福樂": "苗栗市嘉新里福樂76號3樓",
@@ -39884,15 +39934,15 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "通霄福興二": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -39991,37 +40041,37 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "苑裡海岸RH1": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "苑裡北房RH2": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "苑裡南房幼獅RH3": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -40817,14 +40867,14 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "三義裕隆機械": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Temperature",
     "Low DC Voltage",
     "Power module failure",
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
     "Power Generator"
    ]
   }
@@ -41378,37 +41428,37 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "苑裡新復RH1": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "苑裡新復RH2": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "苑裡新復RH3": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -41613,26 +41663,26 @@ const STATION_DATA = [
   "ranType": "C-RAN",
   "smod": {
    "苗栗三義L19三義西湖渡假": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "苗栗三義L19三義上湖RH": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   },
   "eac": {
@@ -42252,6 +42302,10 @@ const STATION_DATA = [
   },
   "nrBtsId": "4613970",
   "ranType": "C-RAN",
+  "meters": {
+   "苗栗嘉盛L05苗栗社寮": "21-02-0150-06-5",
+   "苗栗嘉盛L05苗栗中華": "21-10-3615-09-5"
+  },
   "address": "苗栗市上苗里社寮街9號4樓",
   "addr": {
    "苗栗嘉盛L05苗栗社寮": "苗栗市上苗里社寮街9號4樓",
@@ -42358,26 +42412,26 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "通霄木棉道RH1": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "通霄木棉道RH3": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -43145,48 +43199,48 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "通霄飛牛原墅RH1": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "通霄飛牛原墅RH2": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "通霄飛牛原墅RH3": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "通霄飛牛食品加工廠": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -44812,6 +44866,10 @@ const STATION_DATA = [
   },
   "nrBtsId": "4614006",
   "ranType": "C-RAN",
+  "meters": {
+   "苗栗中央L06苗栗松園": "21-06-5972-40-6",
+   "苗栗中央L06苗栗南勢坑": "21-14-2565-95-2"
+  },
   "address": "苗栗市新英里南勢坑段上南勢坑小段1112地號",
   "addr": {
    "苗栗中央L06苗栗南勢坑": "苗栗市新英里南勢坑段上南勢坑小段1112地號",
@@ -45606,15 +45664,15 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "後龍龍港": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -45728,15 +45786,15 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "頭屋曲洞": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -45850,12 +45908,12 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "泰安雪見": [
-    "Fire",
     "AC Power",
-    "SMR Alarm",
     "Door",
-    "Low DC Voltage",
-    "Temperature"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -47200,26 +47258,26 @@ const STATION_DATA = [
   "ranType": "C-RAN",
   "smod": {
    "苗栗三義L09三義八股": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "苗栗三義L09銅鑼新隆國小": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   },
   "eac": {
@@ -49551,15 +49609,15 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "竹南龍鳳": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -49673,15 +49731,15 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "西湖金獅": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -50231,15 +50289,15 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "後龍清海宮": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -51632,15 +51690,15 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "泰安大安": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -51957,14 +52015,14 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "三義崩山": [
-    "Air con",
-    "Fire",
     "AC Power",
-    "SMR Alarm",
     "Door",
-    "Low DC Voltage",
+    "Power Generator",
+    "SMR Alarm",
     "Temperature",
-    "Power Generator"
+    "Fire",
+    "Low DC Voltage",
+    "Air con"
    ]
   }
  },
@@ -52913,10 +52971,10 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "泰安象鼻": [
-    "AC Power",
-    "Fire",
     "Door",
-    "Temperature"
+    "Temperature",
+    "Fire",
+    "AC Power"
    ]
   }
  },
@@ -53085,8 +53143,8 @@ const STATION_DATA = [
   "ranType": "C-RAN",
   "smod": {
    "銅鑼老雞隆": [
-    "AC Power",
     "Temperature",
+    "AC Power",
     "AC POWER",
     "FIre"
    ]
@@ -53260,10 +53318,10 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "頭份親民段": [
-    "AC Power",
-    "Fire",
     "Door",
-    "Temperature"
+    "Temperature",
+    "Fire",
+    "AC Power"
    ]
   }
  },
@@ -53482,15 +53540,15 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "公館大坑": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -53932,15 +53990,15 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "泰安梅園": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -55038,15 +55096,15 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "卓蘭景山": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -55283,14 +55341,14 @@ const STATION_DATA = [
   "ranType": "C-RAN",
   "smod": {
    "東勢卓蘭L01卓蘭內灣二": [
+    "Temperature",
     "AC Power",
-    "Fire",
-    "Temperature"
+    "Fire"
    ],
    "東勢卓蘭L01卓蘭內灣金櫃": [
+    "Temperature",
     "AC Power",
-    "Fire",
-    "Temperature"
+    "Fire"
    ]
   },
   "eac": {
@@ -55663,56 +55721,56 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "頭份斗煥RH1": [
-    "Low Temperature",
     "Air Con.",
-    "SMR Alarm",
-    "Device Abnormal",
-    "Fire Alarm",
-    "Generator",
-    "Door Alarm",
     "Electricity Supply Abnormality",
+    "Generator",
+    "SMR Alarm",
     "Temperature",
+    "Fire Alarm",
     "Low DC Voltage",
-    "AC Power Alarm"
+    "Low Temperature",
+    "Device Abnormal",
+    "AC Power Alarm",
+    "Door Alarm"
    ],
    "頭份牛欄窩RH2": [
-    "Low Temperature",
     "Air Con.",
-    "SMR Alarm",
-    "Device Abnormal",
-    "Fire Alarm",
-    "Generator",
-    "Door Alarm",
     "Electricity Supply Abnormality",
+    "Generator",
+    "SMR Alarm",
     "Temperature",
+    "Fire Alarm",
     "Low DC Voltage",
-    "AC Power Alarm"
+    "Low Temperature",
+    "Device Abnormal",
+    "AC Power Alarm",
+    "Door Alarm"
    ],
    "頭份陽明RH3": [
-    "Low Temperature",
     "Air Con.",
-    "SMR Alarm",
-    "Device Abnormal",
-    "Fire Alarm",
-    "Generator",
-    "Door Alarm",
     "Electricity Supply Abnormality",
+    "Generator",
+    "SMR Alarm",
     "Temperature",
+    "Fire Alarm",
     "Low DC Voltage",
-    "AC Power Alarm"
+    "Low Temperature",
+    "Device Abnormal",
+    "AC Power Alarm",
+    "Door Alarm"
    ],
    "頭份民族RH4": [
-    "Low Temperature",
     "Air Con.",
-    "SMR Alarm",
-    "Device Abnormal",
-    "Fire Alarm",
-    "Generator",
-    "Door Alarm",
     "Electricity Supply Abnormality",
+    "Generator",
+    "SMR Alarm",
     "Temperature",
+    "Fire Alarm",
     "Low DC Voltage",
-    "AC Power Alarm"
+    "Low Temperature",
+    "Device Abnormal",
+    "AC Power Alarm",
+    "Door Alarm"
    ]
   }
  },
@@ -56016,37 +56074,37 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "通霄北勢窩RRH1": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "通霄福源二-RRH2": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "通霄交流道-RRH3": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -56160,14 +56218,14 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "大湖樹殼寮": [
-    "Air con",
-    "Fire",
     "AC Power",
-    "SMR Alarm",
     "Door",
-    "Low DC Voltage",
+    "Power Generator",
+    "SMR Alarm",
     "Temperature",
-    "Power Generator"
+    "Fire",
+    "Low DC Voltage",
+    "Air con"
    ]
   }
  },
@@ -56252,26 +56310,26 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "三義大坑RH1": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "三義大坑民宿RH2": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -56370,37 +56428,37 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "福龍RH1": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "通霄福隆宮RH2": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "西湖船底窩RH": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -56485,26 +56543,26 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "苑裡水坡RH1": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "苑裡水坡RH3": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -57029,15 +57087,15 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "大湖栗林": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -57296,16 +57354,16 @@ const STATION_DATA = [
   "ranType": "C-RAN",
   "smod": {
    "苗栗頭屋L02頭屋機房": [
-    "AC Power",
-    "Fire",
     "Door",
-    "Temperature"
+    "Temperature",
+    "Fire",
+    "AC Power"
    ],
    "苗栗頭屋L02頭屋象山": [
-    "AC Power",
-    "Fire",
     "Door",
-    "Temperature"
+    "Temperature",
+    "Fire",
+    "AC Power"
    ]
   },
   "eac": {
@@ -57704,17 +57762,17 @@ const STATION_DATA = [
   "ranType": "C-RAN",
   "smod": {
    "竹南大西L02造橋大地南": [
-    "Fire",
     "AC Power",
     "SMR Alarm",
     "Temperature",
+    "Fire",
     "Low DC Voltage"
    ],
    "竹南大西L02造橋平興鐵塔": [
-    "Fire",
     "AC Power",
     "SMR Alarm",
     "Temperature",
+    "Fire",
     "Low DC Voltage"
    ]
   },
@@ -58032,6 +58090,10 @@ const STATION_DATA = [
   },
   "nrBtsId": "4615411",
   "ranType": "C-RAN",
+  "meters": {
+   "苗栗嘉盛L09苗栗香榭": "21-08-2691-81-1",
+   "苗栗嘉盛L09苗栗福安": "21-10-3716-94-1"
+  },
   "address": "苗栗市福星里國華路301號17樓之2",
   "addr": {
    "苗栗嘉盛L09苗栗香榭": "苗栗市福星里國華路301號17樓之2"
@@ -59645,15 +59707,15 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "南庄福美": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -60267,6 +60329,9 @@ const STATION_DATA = [
   },
   "nrBtsId": "4615427",
   "ranType": "C-RAN",
+  "meters": {
+   "苗栗中央L40苗栗新亞拌合": "21-16-1780-41-8"
+  },
   "address": "苗栗市福星段997地號",
   "addr": {
    "苗栗中央L40苗栗長春": "苗栗市福星段997地號",
@@ -60483,6 +60548,9 @@ const STATION_DATA = [
   },
   "nrBtsId": "4615428",
   "ranType": "C-RAN",
+  "meters": {
+   "苗栗嘉盛L04苗栗福星": "21-10-4079-18-9"
+  },
   "address": "苗栗市福安里中華路642之1號3樓",
   "addr": {
    "苗栗嘉盛L04苗栗福星": "苗栗市福安里中華路642之1號3樓"
@@ -60780,6 +60848,9 @@ const STATION_DATA = [
   },
   "nrBtsId": "4615429",
   "ranType": "C-RAN",
+  "meters": {
+   "苗栗中央L18苗栗龍岡二": "21-15-1479-65-0"
+  },
   "address": "苗栗市福麗里國華路1121號2樓",
   "addr": {
    "苗栗中央L18苗栗巨蛋": "苗栗市福麗里國華路1121號2樓",
@@ -61946,15 +62017,15 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "南庄杉林松境": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -63355,6 +63426,9 @@ const STATION_DATA = [
   },
   "nrBtsId": "4615448",
   "ranType": "C-RAN",
+  "meters": {
+   "苗栗嘉盛L03苗栗上苗": "21-01-0132-30-1"
+  },
   "address": "苗栗市上苗里中山路82號3樓",
   "addr": {
    "苗栗嘉盛L03苗栗上苗": "苗栗市上苗里中山路82號3樓"
@@ -63681,26 +63755,26 @@ const STATION_DATA = [
   "ranType": "C-RAN",
   "smod": {
    "苗栗鯉魚L03三義火炎山下": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "苗栗鯉魚L03鯉魚口": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   },
   "eac": {
@@ -63892,26 +63966,26 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "卓蘭坪林機房": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "卓蘭發電廠RH3": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -64025,17 +64099,17 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "卓蘭內灣國小": [
-    "Low Temperature",
     "Air Con.",
-    "SMR Alarm",
-    "Device Abnormal",
-    "Fire Alarm",
-    "Generator",
-    "Door Alarm",
     "Electricity Supply Abnormality",
+    "Generator",
+    "SMR Alarm",
     "Temperature",
+    "Fire Alarm",
     "Low DC Voltage",
-    "AC Power Alarm"
+    "Low Temperature",
+    "Device Abnormal",
+    "AC Power Alarm",
+    "Door Alarm"
    ]
   }
  },
@@ -64149,15 +64223,15 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "銅鑼九天玄武": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -64217,17 +64291,17 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "卓蘭食水坑二RH1": [
-    "Low Temperature",
     "Air Con.",
-    "SMR Alarm",
-    "Device Abnormal",
-    "Fire Alarm",
-    "Generator",
-    "Door Alarm",
     "Electricity Supply Abnormality",
+    "Generator",
+    "SMR Alarm",
     "Temperature",
+    "Fire Alarm",
     "Low DC Voltage",
-    "AC Power Alarm"
+    "Low Temperature",
+    "Device Abnormal",
+    "AC Power Alarm",
+    "Door Alarm"
    ]
   },
   "eac": {
@@ -64694,37 +64768,37 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "大湖酒莊RH1": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "大湖和興RH2": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "大湖南湖國小RH3": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -65104,14 +65178,14 @@ const STATION_DATA = [
   "ranType": "C-RAN",
   "smod": {
    "竹南竹南L01頭份尖豐RH1": [
+    "Temperature",
     "AC Power",
-    "Fire",
-    "Temperature"
+    "Fire"
    ],
    "竹南竹南L01竹南新南五谷": [
+    "Temperature",
     "AC Power",
-    "Fire",
-    "Temperature"
+    "Fire"
    ]
   },
   "eac": {
@@ -65235,43 +65309,43 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "獅潭協雲宮RH1": [
-    "Low Temperature",
     "Air Con.",
-    "SMR Alarm",
-    "Device Abnormal",
-    "Fire Alarm",
-    "Generator",
-    "Door Alarm",
     "Electricity Supply Abnormality",
+    "Generator",
+    "SMR Alarm",
     "Temperature",
+    "Fire Alarm",
     "Low DC Voltage",
-    "AC Power Alarm"
+    "Low Temperature",
+    "Device Abnormal",
+    "AC Power Alarm",
+    "Door Alarm"
    ],
    "公館金滿山RH2": [
-    "Low Temperature",
     "Air Con.",
-    "SMR Alarm",
-    "Device Abnormal",
-    "Fire Alarm",
-    "Generator",
-    "Door Alarm",
     "Electricity Supply Abnormality",
+    "Generator",
+    "SMR Alarm",
     "Temperature",
+    "Fire Alarm",
     "Low DC Voltage",
-    "AC Power Alarm"
+    "Low Temperature",
+    "Device Abnormal",
+    "AC Power Alarm",
+    "Door Alarm"
    ],
    "獅潭東坑RH3": [
-    "Low Temperature",
     "Air Con.",
-    "SMR Alarm",
-    "Device Abnormal",
-    "Fire Alarm",
-    "Generator",
-    "Door Alarm",
     "Electricity Supply Abnormality",
+    "Generator",
+    "SMR Alarm",
     "Temperature",
+    "Fire Alarm",
     "Low DC Voltage",
-    "AC Power Alarm"
+    "Low Temperature",
+    "Device Abnormal",
+    "AC Power Alarm",
+    "Door Alarm"
    ]
   }
  },
@@ -65414,43 +65488,43 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "銅鑼哈比丘RH1": [
-    "Low Temperature",
     "Air Con.",
-    "SMR Alarm",
-    "Device Abnormal",
-    "Fire Alarm",
-    "Generator",
-    "Door Alarm",
     "Electricity Supply Abnormality",
+    "Generator",
+    "SMR Alarm",
     "Temperature",
+    "Fire Alarm",
     "Low DC Voltage",
-    "AC Power Alarm"
+    "Low Temperature",
+    "Device Abnormal",
+    "AC Power Alarm",
+    "Door Alarm"
    ],
    "銅鑼苗119-1RH2": [
-    "Low Temperature",
     "Air Con.",
-    "SMR Alarm",
-    "Device Abnormal",
-    "Fire Alarm",
-    "Generator",
-    "Door Alarm",
     "Electricity Supply Abnormality",
+    "Generator",
+    "SMR Alarm",
     "Temperature",
+    "Fire Alarm",
     "Low DC Voltage",
-    "AC Power Alarm"
+    "Low Temperature",
+    "Device Abnormal",
+    "AC Power Alarm",
+    "Door Alarm"
    ],
    "銅鑼苗119-3RH3": [
-    "Low Temperature",
     "Air Con.",
-    "SMR Alarm",
-    "Device Abnormal",
-    "Fire Alarm",
-    "Generator",
-    "Door Alarm",
     "Electricity Supply Abnormality",
+    "Generator",
+    "SMR Alarm",
     "Temperature",
+    "Fire Alarm",
     "Low DC Voltage",
-    "AC Power Alarm"
+    "Low Temperature",
+    "Device Abnormal",
+    "AC Power Alarm",
+    "Door Alarm"
    ]
   }
  },
@@ -65615,37 +65689,37 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "銅鑼樟樹RH1": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "銅鑼茶廠RH2": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "銅鑼九華山RH3": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -65777,37 +65851,37 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "泰安苗62線RH1": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "大湖香林RH2": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "大湖東興RH3": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -66054,30 +66128,30 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "三義春田窯RH1": [
-    "Low Temperature",
     "Air Con.",
-    "SMR Alarm",
-    "Device Abnormal",
-    "Fire Alarm",
-    "Generator",
-    "Door Alarm",
     "Electricity Supply Abnormality",
+    "Generator",
+    "SMR Alarm",
     "Temperature",
+    "Fire Alarm",
     "Low DC Voltage",
-    "AC Power Alarm"
+    "Low Temperature",
+    "Device Abnormal",
+    "AC Power Alarm",
+    "Door Alarm"
    ],
    "三義龍騰RH3": [
-    "Low Temperature",
     "Air Con.",
-    "SMR Alarm",
-    "Device Abnormal",
-    "Fire Alarm",
-    "Generator",
-    "Door Alarm",
     "Electricity Supply Abnormality",
+    "Generator",
+    "SMR Alarm",
     "Temperature",
+    "Fire Alarm",
     "Low DC Voltage",
-    "AC Power Alarm"
+    "Low Temperature",
+    "Device Abnormal",
+    "AC Power Alarm",
+    "Door Alarm"
    ]
   }
  },
@@ -66207,45 +66281,48 @@ const STATION_DATA = [
   },
   "nrBtsId": "",
   "ranType": "D-RAN",
+  "meters": {
+   "苗栗育民RH1": "21-06-4820-94-4"
+  },
   "smod": {
    "苗栗育民RH1": [
-    "Low Temperature",
     "Air Con.",
-    "SMR Alarm",
-    "Device Abnormal",
-    "Fire Alarm",
-    "Generator",
-    "Door Alarm",
     "Electricity Supply Abnormality",
+    "Generator",
+    "SMR Alarm",
     "Temperature",
+    "Fire Alarm",
     "Low DC Voltage",
-    "AC Power Alarm"
+    "Low Temperature",
+    "Device Abnormal",
+    "AC Power Alarm",
+    "Door Alarm"
    ],
    "苗栗育民RH2": [
-    "Low Temperature",
     "Air Con.",
-    "SMR Alarm",
-    "Device Abnormal",
-    "Fire Alarm",
-    "Generator",
-    "Door Alarm",
     "Electricity Supply Abnormality",
+    "Generator",
+    "SMR Alarm",
     "Temperature",
+    "Fire Alarm",
     "Low DC Voltage",
-    "AC Power Alarm"
+    "Low Temperature",
+    "Device Abnormal",
+    "AC Power Alarm",
+    "Door Alarm"
    ],
    "輝生加油站RH3": [
-    "Low Temperature",
     "Air Con.",
-    "SMR Alarm",
-    "Device Abnormal",
-    "Fire Alarm",
-    "Generator",
-    "Door Alarm",
     "Electricity Supply Abnormality",
+    "Generator",
+    "SMR Alarm",
     "Temperature",
+    "Fire Alarm",
     "Low DC Voltage",
-    "AC Power Alarm"
+    "Low Temperature",
+    "Device Abnormal",
+    "AC Power Alarm",
+    "Door Alarm"
    ]
   }
  },
@@ -66544,15 +66621,15 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "後龍水尾RH3": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -66673,37 +66750,37 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "頭屋明德路RH1": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "頭屋湳坑RH2": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "頭屋孔廟RH3": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -66993,6 +67070,10 @@ const STATION_DATA = [
   },
   "nrBtsId": "4616922",
   "ranType": "C-RAN",
+  "meters": {
+   "苗栗中央L07苗栗西勢美北": "21-02-6156-22-4",
+   "苗栗中央L07苗栗維祥": "21-08-0171-12-4"
+  },
   "address": "苗栗市玉苗里西勢美北68號4樓頂",
   "addr": {
    "苗栗中央L07苗栗西勢美北": "苗栗市玉苗里西勢美北68號4樓頂",
@@ -67169,12 +67250,12 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "後龍坤龍紡織": [
-    "Fire",
     "AC Power",
-    "SMR Alarm",
     "Door",
-    "Low DC Voltage",
-    "Temperature"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -68497,6 +68578,10 @@ const STATION_DATA = [
   },
   "nrBtsId": "4616935",
   "ranType": "C-RAN",
+  "meters": {
+   "苗栗中央L22苗栗杜石地": "21-07-7962-60-4",
+   "苗栗中央L22苗龍幹32-1": "21-17-2115-35-7"
+  },
   "eac": {
    "苗栗中央L22苗栗心衛中心": {
     "rmod": {
@@ -68909,15 +68994,15 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "竹南鉅晶": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -70288,6 +70373,9 @@ const STATION_DATA = [
   },
   "nrBtsId": "4617122",
   "ranType": "C-RAN",
+  "meters": {
+   "苗栗中央L24苗栗雲水瑤": "21-16-2052-38-4"
+  },
   "address": "苗栗市玉華里玉維街285號2樓頂",
   "addr": {
    "苗栗中央L24苗栗玉維": "苗栗市玉華里玉維街285號2樓頂"
@@ -70606,13 +70694,13 @@ const STATION_DATA = [
   "ranType": "C-RAN",
   "smod": {
    "竹南大埔L01竹南大埔機房": [
-    "AC Power",
     "Temperature",
+    "AC Power",
     "Fire"
    ],
    "竹南大埔L01竹南仁愛二": [
-    "AC Power",
     "Temperature",
+    "AC Power",
     "Fire"
    ]
   },
@@ -70776,10 +70864,10 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "大湖聖衡宮": [
-    "AC Power",
-    "Fire",
     "Door",
-    "Temperature"
+    "Temperature",
+    "Fire",
+    "AC Power"
    ]
   }
  },
@@ -71049,26 +71137,26 @@ const STATION_DATA = [
   "ranType": "C-RAN",
   "smod": {
    "苗栗泰安L01泰安洗水": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "苗栗泰安L01泰安大興": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   },
   "eac": {
@@ -71190,16 +71278,16 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "泰安永安": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Fan Alarm",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -72093,13 +72181,13 @@ const STATION_DATA = [
   "ranType": "C-RAN",
   "smod": {
    "竹南復興L01竹南福德": [
-    "AC Power",
     "Temperature",
+    "AC Power",
     "Fire"
    ],
    "竹南復興L01竹南獅山": [
-    "AC Power",
     "Temperature",
+    "AC Power",
     "Fire"
    ]
   },
@@ -72210,14 +72298,14 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "銅鑼雙峰": [
-    "Mains power break",
-    "Fire",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Temperature",
     "Low DC Voltage",
     "Power module failure",
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
     "Power Generator"
    ]
   }
@@ -72986,6 +73074,10 @@ const STATION_DATA = [
   },
   "nrBtsId": "4617146",
   "ranType": "C-RAN",
+  "meters": {
+   "苗栗中央L02苗栗水源": "21-06-4535-64-2",
+   "苗栗中央L02苗栗吉祥": "21-14-2623-17-7"
+  },
   "address": "苗栗市水源里陽明138號3樓",
   "addr": {
    "苗栗中央L02苗栗水源": "苗栗市水源里陽明138號3樓",
@@ -74376,36 +74468,36 @@ const STATION_DATA = [
   "ranType": "C-RAN",
   "smod": {
    "竹南頭份L01頭份長榮RH1": [
-    "Fire",
     "AC Power",
-    "SMR Alarm",
     "Door",
-    "Low DC Voltage",
-    "Temperature"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "竹南頭份L01頭份水管站RH2": [
-    "Fire",
     "AC Power",
-    "SMR Alarm",
     "Door",
-    "Low DC Voltage",
-    "Temperature"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "竹南頭份L01頭份豁然RH3": [
-    "Fire",
     "AC Power",
-    "SMR Alarm",
     "Door",
-    "Low DC Voltage",
-    "Temperature"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "竹南頭份L01頭份新光": [
-    "Fire",
     "AC Power",
-    "SMR Alarm",
     "Door",
-    "Low DC Voltage",
-    "Temperature"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   },
   "eac": {
@@ -75180,18 +75272,18 @@ const STATION_DATA = [
   "ranType": "C-RAN",
   "smod": {
    "苗栗三義L03三義裕隆A宿舍": [
-    "Fire",
     "AC Power",
-    "SMR Alarm",
     "Door",
-    "Temperature"
+    "SMR Alarm",
+    "Temperature",
+    "Fire"
    ],
    "苗栗三義L03三義內草湖": [
-    "Fire",
     "AC Power",
-    "SMR Alarm",
     "Door",
-    "Temperature"
+    "SMR Alarm",
+    "Temperature",
+    "Fire"
    ]
   }
  },
@@ -75470,14 +75562,14 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "頭份高隧一北": [
-    "Air con",
-    "Fire",
     "AC Power",
-    "SMR Alarm",
     "Door",
-    "Low DC Voltage",
+    "Power Generator",
+    "SMR Alarm",
     "Temperature",
-    "Power Generator"
+    "Fire",
+    "Low DC Voltage",
+    "Air con"
    ]
   }
  },
@@ -75784,6 +75876,9 @@ const STATION_DATA = [
   },
   "nrBtsId": "4617221",
   "ranType": "C-RAN",
+  "meters": {
+   "苗栗中央L08苗栗玉華玉清": "21-11-1096-27-6"
+  },
   "address": "苗栗市玉華里玉清路162巷3號2樓",
   "addr": {
    "苗栗中央L08苗栗玉華玉清": "苗栗市玉華里玉清路162巷3號2樓"
@@ -76243,14 +76338,14 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "公館三聖宮": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
     "Low DC Voltage",
-    "Temperature",
     "Power module failure",
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
     "Power Generator"
    ]
   }
@@ -76552,15 +76647,15 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "銅鑼京元電": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -76656,26 +76751,26 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "苑裡大埔RH1": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "苑裡福田RH3": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -77139,15 +77234,15 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "苑裡上館140RH3": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -77268,37 +77363,37 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "大湖水尾坪RH1": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "大湖大窩55RH": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "大湖大湖BBU2大湖天恩農莊": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -77412,15 +77507,15 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "南庄松伯山莊": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -77529,15 +77624,15 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "三義崑陽": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -80074,15 +80169,15 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "泰安士林": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -80288,7 +80383,10 @@ const STATION_DATA = [
    ]
   },
   "nrBtsId": "4617630",
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "meters": {
+   "苗栗中央L31苗栗維新里S": "21-05-7162-60-4"
+  }
  },
  {
   "id": "417636",
@@ -80578,26 +80676,26 @@ const STATION_DATA = [
   "ranType": "C-RAN",
   "smod": {
    "苗栗公館L19銅鑼中平": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "苗栗公館L19銅鑼青欣牧場": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   },
   "eac": {
@@ -81206,15 +81304,15 @@ const STATION_DATA = [
   "ranType": "C-RAN",
   "smod": {
    "苗栗通霄L13通霄五北": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   },
   "eac": {
@@ -81342,13 +81440,13 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "大湖32份": [
-    "Fire",
     "AC Power",
-    "SMR Alarm",
     "Door",
-    "Low DC Voltage",
+    "Power Generator",
+    "SMR Alarm",
     "Temperature",
-    "Power Generator"
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -81873,15 +81971,15 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "西湖下埔": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -81966,30 +82064,30 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "三義佛頂山RH1": [
-    "Low Temperature",
     "Air Con.",
-    "SMR Alarm",
-    "Device Abnormal",
-    "Fire Alarm",
-    "Generator",
-    "Door Alarm",
     "Electricity Supply Abnormality",
+    "Generator",
+    "SMR Alarm",
     "Temperature",
+    "Fire Alarm",
     "Low DC Voltage",
-    "AC Power Alarm"
+    "Low Temperature",
+    "Device Abnormal",
+    "AC Power Alarm",
+    "Door Alarm"
    ],
    "三義慈濟RH2": [
-    "Low Temperature",
     "Air Con.",
-    "SMR Alarm",
-    "Device Abnormal",
-    "Fire Alarm",
-    "Generator",
-    "Door Alarm",
     "Electricity Supply Abnormality",
+    "Generator",
+    "SMR Alarm",
     "Temperature",
+    "Fire Alarm",
     "Low DC Voltage",
-    "AC Power Alarm"
+    "Low Temperature",
+    "Device Abnormal",
+    "AC Power Alarm",
+    "Door Alarm"
    ]
   }
  },
@@ -82776,15 +82874,15 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "通霄坪頂國小": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -82898,17 +82996,17 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "後龍秀水新": [
-    "Low Temperature",
     "Air Con.",
-    "SMR Alarm",
-    "Device Abnormal",
-    "Fire Alarm",
-    "Generator",
-    "Door Alarm",
     "Electricity Supply Abnormality",
+    "Generator",
+    "SMR Alarm",
     "Temperature",
+    "Fire Alarm",
     "Low DC Voltage",
-    "AC Power Alarm"
+    "Low Temperature",
+    "Device Abnormal",
+    "AC Power Alarm",
+    "Door Alarm"
    ]
   }
  },
@@ -83861,9 +83959,9 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "卓蘭大坪林段": [
+    "Door",
     "AC Power",
-    "Fire",
-    "Door"
+    "Fire"
    ]
   }
  },
@@ -83977,12 +84075,12 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "通霄南和": [
-    "Fire",
     "AC Power",
-    "SMR Alarm",
     "Door",
-    "Low DC Voltage",
-    "Temperature"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -85307,15 +85405,15 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "卓蘭景山二": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -87547,48 +87645,48 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "銅鑼富格蘭RH1": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "銅鑼九湖RH": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "銅鑼森林之歌RH": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "銅鑼納骨塔RH": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -87731,37 +87829,37 @@ const STATION_DATA = [
   "ranType": "C-RAN",
   "smod": {
    "苗栗銅鑼L15銅鑼台隧南口": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "苗栗銅鑼L15銅鑼朝陽村S": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "苗栗銅鑼L15朝陽村108S": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -88155,6 +88253,10 @@ const STATION_DATA = [
   },
   "nrBtsId": "4617735",
   "ranType": "C-RAN",
+  "meters": {
+   "苗栗中央L12苗栗英明": "21-14-3135-56-6",
+   "苗栗中央L12苗栗文發": "21-15-1419-05-4"
+  },
   "address": "苗栗市文山里文發路47號6樓",
   "addr": {
    "苗栗中央L12苗栗文發": "苗栗市文山里文發路47號6樓",
@@ -90108,17 +90210,17 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "銅鑼茂林光電": [
-    "Low Temperature",
     "Air Con.",
-    "SMR Alarm",
-    "Device Abnormal",
-    "Fire Alarm",
-    "Generator",
-    "Door Alarm",
     "Electricity Supply Abnormality",
+    "Generator",
+    "SMR Alarm",
     "Temperature",
+    "Fire Alarm",
     "Low DC Voltage",
-    "AC Power Alarm"
+    "Low Temperature",
+    "Device Abnormal",
+    "AC Power Alarm",
+    "Door Alarm"
    ]
   }
  },
@@ -90528,15 +90630,15 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "頭屋傳家堡": [
-    "Mains power break",
-    "Fire",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -90728,16 +90830,16 @@ const STATION_DATA = [
   "smod": {
    "大湖龍天宮": [
     "Air Con.",
-    "Low Temperature",
-    "SMR Alarm",
-    "Device Abnormal",
-    "Fire Alarm",
     "Generator",
-    "Door Alarm",
-    "Low DC Voltage",
-    "Temperature",
     "Electricity Supply Abnormality",
-    "AC Power Alarm"
+    "SMR Alarm",
+    "Temperature",
+    "Fire Alarm",
+    "Low DC Voltage",
+    "Low Temperature",
+    "Device Abnormal",
+    "AC Power Alarm",
+    "Door Alarm"
    ]
   }
  },
@@ -91052,15 +91154,15 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "三灣彌陀寺": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -91257,6 +91359,10 @@ const STATION_DATA = [
   },
   "nrBtsId": "4617773",
   "ranType": "C-RAN",
+  "meters": {
+   "苗栗中央L37苗栗大明寺": "21-11-1026-20-4",
+   "苗栗中央L37苗栗僑育": "21-05-8090-01-7"
+  },
   "address": "苗栗市經國路二段485號5樓",
   "addr": {
    "苗栗中央L37苗栗大明寺": "苗栗市經國路二段485號5樓",
@@ -91399,32 +91505,35 @@ const STATION_DATA = [
   },
   "nrBtsId": "4617777",
   "ranType": "C-RAN",
+  "meters": {
+   "苗栗中央L32苗栗台隧苗南": "21-14-2490-60-1"
+  },
   "address": "苗栗市南勢里聯大段180、181地號",
   "addr": {
    "苗栗中央L32苗栗台隧苗南": "苗栗市南勢里聯大段180、181地號"
   },
   "smod": {
    "苗栗中央L32苗栗台隧苗南": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "苗栗中央L32南勢車站": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   },
   "eac": {
@@ -91947,6 +92056,9 @@ const STATION_DATA = [
   },
   "nrBtsId": "4617783",
   "ranType": "C-RAN",
+  "meters": {
+   "苗栗中央L21苗栗天祥": "21-17-2385-15-0"
+  },
   "address": "苗栗市新英里天祥100號4樓頂",
   "addr": {
    "苗栗中央L21苗栗天祥": "苗栗市新英里天祥100號4樓頂"
@@ -92286,6 +92398,9 @@ const STATION_DATA = [
   },
   "nrBtsId": "4617786",
   "ranType": "C-RAN",
+  "meters": {
+   "苗栗中央L11苗栗國華": "21-15-5391-47-1"
+  },
   "address": "苗栗市文山里國華路889號5樓",
   "addr": {
    "苗栗中央L11苗栗國華": "苗栗市文山里國華路889號5樓",
@@ -93210,43 +93325,43 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "獅潭新莊隧道RH1": [
-    "Low Temperature",
     "Air Con.",
-    "SMR Alarm",
-    "Device Abnormal",
-    "Fire Alarm",
-    "Generator",
-    "Door Alarm",
     "Electricity Supply Abnormality",
+    "Generator",
+    "SMR Alarm",
     "Temperature",
+    "Fire Alarm",
     "Low DC Voltage",
-    "AC Power Alarm"
+    "Low Temperature",
+    "Device Abnormal",
+    "AC Power Alarm",
+    "Door Alarm"
    ],
    "獅潭北幹RH2": [
-    "Low Temperature",
     "Air Con.",
-    "SMR Alarm",
-    "Device Abnormal",
-    "Fire Alarm",
-    "Generator",
-    "Door Alarm",
     "Electricity Supply Abnormality",
+    "Generator",
+    "SMR Alarm",
     "Temperature",
+    "Fire Alarm",
     "Low DC Voltage",
-    "AC Power Alarm"
+    "Low Temperature",
+    "Device Abnormal",
+    "AC Power Alarm",
+    "Door Alarm"
    ],
    "獅潭華佑RH3": [
-    "Low Temperature",
     "Air Con.",
-    "SMR Alarm",
-    "Device Abnormal",
-    "Fire Alarm",
-    "Generator",
-    "Door Alarm",
     "Electricity Supply Abnormality",
+    "Generator",
+    "SMR Alarm",
     "Temperature",
+    "Fire Alarm",
     "Low DC Voltage",
-    "AC Power Alarm"
+    "Low Temperature",
+    "Device Abnormal",
+    "AC Power Alarm",
+    "Door Alarm"
    ]
   }
  },
@@ -93498,26 +93613,26 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "通宵坪頂中油RH1": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "通霄福龍枝RH": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -93627,37 +93742,37 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "苑裡玉田RH1": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "苑裡立德RH2": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "苑裡田心RH3": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -93778,37 +93893,37 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "大湖大湖BBU7泰安高熊枝": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "大湖大湖BBU7泰安新興枝59RH2": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "大湖大湖BBU7泰安大份田枝": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -94130,30 +94245,30 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "大湖四份RH1": [
-    "Low Temperature",
     "Air Con.",
-    "SMR Alarm",
-    "Device Abnormal",
-    "Fire Alarm",
-    "Generator",
-    "Door Alarm",
     "Electricity Supply Abnormality",
+    "Generator",
+    "SMR Alarm",
     "Temperature",
+    "Fire Alarm",
     "Low DC Voltage",
-    "AC Power Alarm"
+    "Low Temperature",
+    "Device Abnormal",
+    "AC Power Alarm",
+    "Door Alarm"
    ],
    "大湖大窩RH2": [
-    "Low Temperature",
     "Air Con.",
-    "SMR Alarm",
-    "Device Abnormal",
-    "Fire Alarm",
-    "Generator",
-    "Door Alarm",
     "Electricity Supply Abnormality",
+    "Generator",
+    "SMR Alarm",
     "Temperature",
+    "Fire Alarm",
     "Low DC Voltage",
-    "AC Power Alarm"
+    "Low Temperature",
+    "Device Abnormal",
+    "AC Power Alarm",
+    "Door Alarm"
    ]
   }
  },
@@ -95025,43 +95140,43 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "南庄春谷餐廳RH1": [
-    "Low Temperature",
     "Air Con.",
-    "SMR Alarm",
-    "Device Abnormal",
-    "Fire Alarm",
-    "Generator",
-    "Door Alarm",
     "Electricity Supply Abnormality",
+    "Generator",
+    "SMR Alarm",
     "Temperature",
+    "Fire Alarm",
     "Low DC Voltage",
-    "AC Power Alarm"
+    "Low Temperature",
+    "Device Abnormal",
+    "AC Power Alarm",
+    "Door Alarm"
    ],
    "南庄蘇維拉莊園RH2": [
-    "Low Temperature",
     "Air Con.",
-    "SMR Alarm",
-    "Device Abnormal",
-    "Fire Alarm",
-    "Generator",
-    "Door Alarm",
     "Electricity Supply Abnormality",
+    "Generator",
+    "SMR Alarm",
     "Temperature",
+    "Fire Alarm",
     "Low DC Voltage",
-    "AC Power Alarm"
+    "Low Temperature",
+    "Device Abnormal",
+    "AC Power Alarm",
+    "Door Alarm"
    ],
    "南庄松濤意境RH3": [
-    "Low Temperature",
     "Air Con.",
-    "SMR Alarm",
-    "Device Abnormal",
-    "Fire Alarm",
-    "Generator",
-    "Door Alarm",
     "Electricity Supply Abnormality",
+    "Generator",
+    "SMR Alarm",
     "Temperature",
+    "Fire Alarm",
     "Low DC Voltage",
-    "AC Power Alarm"
+    "Low Temperature",
+    "Device Abnormal",
+    "AC Power Alarm",
+    "Door Alarm"
    ]
   }
  },
@@ -95122,18 +95237,18 @@ const STATION_DATA = [
   "smod": {
    "頭份鹿橋山莊": [
     "Mains power break",
-    "Low Temperature",
     "Air Con.",
-    "SMR Alarm",
-    "Device Abnormal",
-    "Fire Alarm",
-    "Generator",
-    "Door Alarm",
     "Electricity Supply Abnormality",
+    "Generator",
+    "SMR Alarm",
     "Temperature",
+    "Power module failure",
+    "Fire Alarm",
     "Low DC Voltage",
+    "Low Temperature",
+    "Device Abnormal",
     "AC Power Alarm",
-    "Power module failure"
+    "Door Alarm"
    ]
   }
  },
@@ -96405,30 +96520,30 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "通霄普羅RH1": [
-    "Low Temperature",
     "Air Con.",
-    "SMR Alarm",
-    "Device Abnormal",
-    "Fire Alarm",
-    "Generator",
-    "Door Alarm",
     "Electricity Supply Abnormality",
+    "Generator",
+    "SMR Alarm",
     "Temperature",
+    "Fire Alarm",
     "Low DC Voltage",
-    "AC Power Alarm"
+    "Low Temperature",
+    "Device Abnormal",
+    "AC Power Alarm",
+    "Door Alarm"
    ],
    "通霄楓樹窩RH3": [
-    "Low Temperature",
     "Air Con.",
-    "SMR Alarm",
-    "Device Abnormal",
-    "Fire Alarm",
-    "Generator",
-    "Door Alarm",
     "Electricity Supply Abnormality",
+    "Generator",
+    "SMR Alarm",
     "Temperature",
+    "Fire Alarm",
     "Low DC Voltage",
-    "AC Power Alarm"
+    "Low Temperature",
+    "Device Abnormal",
+    "AC Power Alarm",
+    "Door Alarm"
    ]
   }
  },
@@ -96525,33 +96640,33 @@ const STATION_DATA = [
   "smod": {
    "頭份下興一RH1": [
     "Mains power break",
-    "Low Temperature",
     "Air Con.",
-    "SMR Alarm",
-    "Device Abnormal",
-    "Fire Alarm",
-    "Generator",
-    "Door Alarm",
     "Electricity Supply Abnormality",
+    "Generator",
+    "SMR Alarm",
     "Temperature",
+    "Power module failure",
+    "Fire Alarm",
     "Low DC Voltage",
+    "Low Temperature",
+    "Device Abnormal",
     "AC Power Alarm",
-    "Power module failure"
+    "Door Alarm"
    ],
    "竹南京元五RH2": [
     "Mains power break",
-    "Low Temperature",
     "Air Con.",
-    "SMR Alarm",
-    "Device Abnormal",
-    "Fire Alarm",
-    "Generator",
-    "Door Alarm",
     "Electricity Supply Abnormality",
+    "Generator",
+    "SMR Alarm",
     "Temperature",
+    "Power module failure",
+    "Fire Alarm",
     "Low DC Voltage",
+    "Low Temperature",
+    "Device Abnormal",
     "AC Power Alarm",
-    "Power module failure"
+    "Door Alarm"
    ]
   }
  },
@@ -96684,27 +96799,27 @@ const STATION_DATA = [
   "smod": {
    "頭屋雙龍社區RH1": [
     "SMR Alarm",
-    "Fire Alarm",
-    "Door Alarm",
-    "Low DC Voltage",
     "Temperature",
-    "AC Power Alarm"
+    "Fire Alarm",
+    "Low DC Voltage",
+    "AC Power Alarm",
+    "Door Alarm"
    ],
    "頭屋奮萁窩社區RH2": [
     "SMR Alarm",
-    "Fire Alarm",
-    "Door Alarm",
-    "Low DC Voltage",
     "Temperature",
-    "AC Power Alarm"
+    "Fire Alarm",
+    "Low DC Voltage",
+    "AC Power Alarm",
+    "Door Alarm"
    ],
    "頭屋永春宮RH3": [
     "SMR Alarm",
-    "Fire Alarm",
-    "Door Alarm",
-    "Low DC Voltage",
     "Temperature",
-    "AC Power Alarm"
+    "Fire Alarm",
+    "Low DC Voltage",
+    "AC Power Alarm",
+    "Door Alarm"
    ]
   }
  },
@@ -96779,33 +96894,33 @@ const STATION_DATA = [
   "smod": {
    "頭份味全RH3": [
     "Mains power break",
-    "Low Temperature",
     "Air Con.",
-    "SMR Alarm",
-    "Device Abnormal",
-    "Fire Alarm",
-    "Generator",
-    "Door Alarm",
     "Electricity Supply Abnormality",
+    "Generator",
+    "SMR Alarm",
     "Temperature",
+    "Power module failure",
+    "Fire Alarm",
     "Low DC Voltage",
+    "Low Temperature",
+    "Device Abnormal",
     "AC Power Alarm",
-    "Power module failure"
+    "Door Alarm"
    ],
    "頭份福梅露營RH4": [
     "Mains power break",
-    "Low Temperature",
     "Air Con.",
-    "SMR Alarm",
-    "Device Abnormal",
-    "Fire Alarm",
-    "Generator",
-    "Door Alarm",
     "Electricity Supply Abnormality",
+    "Generator",
+    "SMR Alarm",
     "Temperature",
+    "Power module failure",
+    "Fire Alarm",
     "Low DC Voltage",
+    "Low Temperature",
+    "Device Abnormal",
     "AC Power Alarm",
-    "Power module failure"
+    "Door Alarm"
    ]
   }
  },
@@ -96901,26 +97016,26 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "三義崩山RH1": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "三義德興池RH2": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -97041,37 +97156,37 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "銅科達邁科技RH2": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "國全精密RH1": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "銅鑼客家大院RH3": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -97167,30 +97282,30 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "後龍南北坑RH1": [
-    "Low Temperature",
     "Air Con.",
-    "SMR Alarm",
-    "Device Abnormal",
-    "Fire Alarm",
-    "Generator",
-    "Door Alarm",
     "Electricity Supply Abnormality",
+    "Generator",
+    "SMR Alarm",
     "Temperature",
+    "Fire Alarm",
     "Low DC Voltage",
-    "AC Power Alarm"
+    "Low Temperature",
+    "Device Abnormal",
+    "AC Power Alarm",
+    "Door Alarm"
    ],
    "後龍南北坑RH2": [
-    "Low Temperature",
     "Air Con.",
-    "SMR Alarm",
-    "Device Abnormal",
-    "Fire Alarm",
-    "Generator",
-    "Door Alarm",
     "Electricity Supply Abnormality",
+    "Generator",
+    "SMR Alarm",
     "Temperature",
+    "Fire Alarm",
     "Low DC Voltage",
-    "AC Power Alarm"
+    "Low Temperature",
+    "Device Abnormal",
+    "AC Power Alarm",
+    "Door Alarm"
    ]
   }
  },
@@ -97594,26 +97709,26 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "造橋車站RH1": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "造橋陽明山莊RH3": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -97754,17 +97869,17 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "竹南群創內CS棟": [
-    "Low Temperature",
     "Air Con.",
-    "SMR Alarm",
-    "Device Abnormal",
-    "Fire Alarm",
-    "Generator",
-    "Door Alarm",
     "Electricity Supply Abnormality",
+    "Generator",
+    "SMR Alarm",
     "Temperature",
+    "Fire Alarm",
     "Low DC Voltage",
-    "AC Power Alarm"
+    "Low Temperature",
+    "Device Abnormal",
+    "AC Power Alarm",
+    "Door Alarm"
    ]
   }
  },
@@ -98043,6 +98158,9 @@ const STATION_DATA = [
   },
   "nrBtsId": "4617966",
   "ranType": "C-RAN",
+  "meters": {
+   "苗栗中央L19苗栗玉清台銀": "21-11-1151-14-9"
+  },
   "address": "苗栗市玉清里玉清街73號",
   "addr": {
    "苗栗中央L19苗栗玉清台銀": "苗栗市玉清里玉清街73號",
@@ -98542,13 +98660,13 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "泰安九九山莊": [
-    "Fire",
     "AC Power",
-    "SMR Alarm",
     "Door",
-    "Low DC Voltage",
+    "Power Generator",
+    "SMR Alarm",
     "Temperature",
-    "Power Generator"
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -98691,37 +98809,37 @@ const STATION_DATA = [
   "ranType": "D-RAN",
   "smod": {
    "苑裡營業B8苑港R1": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "苑裡營業B8縣高R2": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "苑裡營業B8鬼門關夜市RH": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -100872,37 +100990,37 @@ const STATION_DATA = [
   "ranType": "C-RAN",
   "smod": {
    "苗栗三義L15西湖村S": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "苗栗三義L15勝興停車場RH": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "苗栗三義L15三義水美藝術RH": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -100962,15 +101080,15 @@ const STATION_DATA = [
   "ranType": "C-RAN",
   "smod": {
    "苗栗鯉魚L15龍騰村S": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -101030,15 +101148,15 @@ const STATION_DATA = [
   "ranType": "C-RAN",
   "smod": {
    "苗栗獅潭L15新豐村S": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -101599,15 +101717,15 @@ const STATION_DATA = [
   "ranType": "C-RAN",
   "smod": {
    "苗栗泰安L15泰安錦水村S": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -101990,37 +102108,37 @@ const STATION_DATA = [
   "ranType": "C-RAN",
   "smod": {
    "苗栗銅鑼L16西湖下埔村S": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "苗栗銅鑼L16西湖格林": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "苗栗銅鑼L16西湖高埔RH2": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -102211,61 +102329,65 @@ const STATION_DATA = [
   },
   "nrBtsId": "4618965",
   "ranType": "C-RAN",
+  "meters": {
+   "苗栗嘉盛L15苗栗宜春路": "21-11-4209-25-6",
+   "苗栗嘉盛L15苗栗坡塘巷": "21-12-1493-60-0"
+  },
   "smod": {
    "苗栗嘉盛L15苗栗玉清里S": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "苗栗嘉盛L15苗栗福星里S": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "苗栗嘉盛L15苗栗坡塘巷": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "苗栗嘉盛L15苗栗信邦電子": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "苗栗嘉盛L15苗栗宜春路": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -103601,6 +103723,9 @@ const STATION_DATA = [
   },
   "nrBtsId": "4619548",
   "ranType": "C-RAN",
+  "meters": {
+   "苗栗嘉盛L07苗栗台肥": "21-10-4112-00-0"
+  },
   "address": "苗栗市福星里福星段252-7地號",
   "addr": {
    "苗栗嘉盛L07苗栗台肥": "苗栗市福星里福星段252-7地號",
@@ -106469,14 +106594,14 @@ const STATION_DATA = [
   "ranType": "C-RAN",
   "smod": {
    "竹南豐湖L01造橋龍昇": [
+    "Temperature",
     "AC Power",
-    "Fire",
-    "Temperature"
+    "Fire"
    ],
    "竹南豐湖L01造橋後龍收費": [
+    "Temperature",
     "AC Power",
-    "Fire",
-    "Temperature"
+    "Fire"
    ]
   },
   "eac": {
@@ -107806,20 +107931,20 @@ const STATION_DATA = [
   },
   "smod": {
    "苗栗中央L25苗栗苗栗": [
-    "Temperture",
-    "Fire",
     "AC Power",
-    "SMR Alarm",
     "Door",
-    "Low DC Voltage"
+    "SMR Alarm",
+    "Fire",
+    "Low DC Voltage",
+    "Temperture"
    ],
    "苗栗中央L25線路中心內": [
-    "Temperture",
-    "Fire",
     "AC Power",
-    "SMR Alarm",
     "Door",
-    "Low DC Voltage"
+    "SMR Alarm",
+    "Fire",
+    "Low DC Voltage",
+    "Temperture"
    ]
   },
   "eac": {
@@ -111060,14 +111185,14 @@ const STATION_DATA = [
   "ranType": "C-RAN",
   "smod": {
    "竹南南庄L09南庄南庄": [
+    "Temperature",
     "AC Power",
-    "Fire",
-    "Temperature"
+    "Fire"
    ],
    "竹南南庄L09南庄西村": [
+    "Temperature",
     "AC Power",
-    "Fire",
-    "Temperature"
+    "Fire"
    ]
   },
   "eac": {
@@ -112643,92 +112768,92 @@ const STATION_DATA = [
   "ranType": "C-RAN",
   "smod": {
    "苗栗山腳L15山柑里108S": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "苗栗山腳L15石鎮里108S": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "苗栗山腳L15苑裡錦山RH": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "苗栗山腳L15苑裡社苓RH1": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "苗栗山腳L15苑裡社苓RH2": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "苗栗山腳L15苑裡社苓RH3": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "苗栗山腳L15苑裡南勢59RH": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "苗栗山腳L15苑裡上館83RH": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -114505,6 +114630,9 @@ const STATION_DATA = [
   },
   "nrBtsId": "4624000",
   "ranType": "C-RAN",
+  "meters": {
+   "苗栗中央L34苗栗福麗": "21-16-6577-98-0"
+  },
   "address": "苗栗市福麗里北安街150號12樓",
   "addr": {
    "苗栗中央L34苗栗福麗": "苗栗市福麗里北安街150號12樓",
@@ -115544,103 +115672,103 @@ const STATION_DATA = [
   "ranType": "C-RAN",
   "smod": {
    "苗栗苑裡L16西平里108S": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "苗栗苑裡L16新復里108S": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "苗栗苑裡L16五南里R3": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "苗栗苑裡L16健康R4": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "苗栗苑裡L16苑港里R5": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "苗栗苑裡L16苑裡水波36": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "苗栗苑裡L16通霄334巷R7": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "苗栗苑裡L16苑裡中山門市": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "苗栗苑裡L16消防分隊RH": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -115725,26 +115853,26 @@ const STATION_DATA = [
   "ranType": "C-RAN",
   "smod": {
    "苗栗銅鑼L13樟樹村108S": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "苗栗銅鑼L13竹圍鍾RH": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   }
  },
@@ -117187,6 +117315,9 @@ const STATION_DATA = [
   },
   "nrBtsId": "4617630_4624060",
   "ranType": "C-RAN",
+  "meters": {
+   "苗栗中央L33苗栗建功": "21-03-0182-99-6"
+  },
   "address": "苗栗市中苗里中正路560號4樓",
   "addr": {
    "苗栗中央L33苗栗營業中心": "苗栗市中苗里中正路560號4樓",
@@ -123221,6 +123352,9 @@ const STATION_DATA = [
   },
   "nrBtsId": "4627202",
   "ranType": "C-RAN",
+  "meters": {
+   "苗栗中央L39苗栗電台": "21-14-2633-39-5"
+  },
   "address": "苗栗市福麗里電台79號3樓",
   "addr": {
    "苗栗中央L39苗栗電台": "苗栗市福麗里電台79號3樓",
@@ -125366,32 +125500,35 @@ const STATION_DATA = [
   },
   "nrBtsId": "4627678",
   "ranType": "C-RAN",
+  "meters": {
+   "苗栗中央L35苗栗國稅局": "21-11-1057-99-6"
+  },
   "address": "苗栗市玉華里玉清路386號4樓",
   "addr": {
    "苗栗中央L35苗栗國稅局": "苗栗市玉華里玉清路386號4樓"
   },
   "smod": {
    "苗栗中央L35苗栗國稅局": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ],
    "苗栗中央L35苗栗皇家豪門": [
-    "Fire",
-    "Mains power break",
     "AC Power",
-    "SMR Alarm",
+    "Mains power break",
     "Door",
-    "Low DC Voltage",
-    "Temperature",
+    "Power Generator",
     "Power module failure",
-    "Power Generator"
+    "SMR Alarm",
+    "Temperature",
+    "Fire",
+    "Low DC Voltage"
    ]
   },
   "eac": {
@@ -125799,28 +125936,28 @@ const STATION_DATA = [
   "ranType": "C-RAN",
   "smod": {
    "苗栗獅潭L01大東勢RH1": [
-    "AC Power",
-    "Temperature",
     "Door",
-    "Fire"
+    "Temperature",
+    "Fire",
+    "AC Power"
    ],
    "苗栗獅潭L01百壽村RH2": [
-    "AC Power",
-    "Temperature",
     "Door",
-    "Fire"
+    "Temperature",
+    "Fire",
+    "AC Power"
    ],
    "苗栗獅潭L01北窩RH3": [
-    "AC Power",
-    "Temperature",
     "Door",
-    "Fire"
+    "Temperature",
+    "Fire",
+    "AC Power"
    ],
    "苗栗獅潭L01獅潭吉山": [
-    "AC Power",
-    "Temperature",
     "Door",
-    "Fire"
+    "Temperature",
+    "Fire",
+    "AC Power"
    ]
   },
   "eac": {
@@ -126883,6 +127020,9 @@ const STATION_DATA = [
   },
   "nrBtsId": "4627785",
   "ranType": "C-RAN",
+  "meters": {
+   "苗栗中央L43苗栗正發": "21-15-5440-87-9"
+  },
   "eac": {
    "苗栗中央L43苗栗正發": {
     "rmod": {}

@@ -239,6 +239,37 @@
     border-color: #b8dcc0;
   }
 
+  .pwr-list { display: flex; flex-direction: column; gap: 8px; margin-top: 8px; }
+  .pwr-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    background: #f7fafc;
+    border: 1px solid #dfe7ef;
+    border-radius: 10px;
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+  .pwr-row.p-outage { background: #fdecea; border-color: #efc1b8; }
+  .pwr-row.p-planned { background: #fff3e0; border-color: #f3c894; }
+  .pwr-row .p-meter { font-weight: 800; color: #1a3a5c; font-variant-numeric: tabular-nums; }
+  .pwr-row .p-status {
+    font-weight: 700;
+    font-size: 12px;
+    padding: 2px 10px;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    flex-shrink: 0;
+  }
+  .pwr-row .p-status.bad { background: #fdecea; color: #b0301c; border-color: #efc1b8; }
+  .pwr-row .p-status.warn { background: #fff3e0; color: #e65100; border-color: #f3c894; }
+  .pwr-row .p-status.good { background: #eaf7ee; color: #2e7d32; border-color: #b8dcc0; }
+  .pwr-row .p-status.none { background: #eceff1; color: #607d8b; border-color: #cfd8dc; }
+  .pwr-row .p-sites { color: #37474f; flex: 1; min-width: 120px; overflow-wrap: anywhere; }
+  .pwr-row .p-result { color: #455a64; flex-basis: 100%; }
+  .pwr-row .p-time { color: #8aa4bd; font-size: 12px; margin-left: auto; }
+
   .station-bar .toggle {
     cursor: pointer;
     color: var(--primary);
@@ -609,6 +640,7 @@
     <div class="tab active" data-net="4g" id="tab4g">4G</div>
     <div class="tab" data-net="5g" id="tab5g">5G</div>
     <div class="tab" data-net="map" id="tabmap">涵蓋地圖</div>
+    <div class="tab" data-net="pwr" id="tabpwr">台電查詢</div>
   </div>
 
   <div class="panel active" id="panel-4g">
@@ -748,6 +780,14 @@
     </div>
   </div>
 
+  <div class="panel" id="panel-pwr">
+    <div class="card">
+      <label>台電每日電號查詢結果</label>
+      <div class="hint" id="pwrUpdated">每日 06:00 自動查詢</div>
+      <div id="pwrList" class="pwr-list"></div>
+    </div>
+  </div>
+
   <script src="data.js"></script>
   <script src="data5g.js"></script>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -776,6 +816,7 @@
       return fetch('outage.json', { cache: 'no-store' }).then(r => r.json()).then(j => {
         outageData = j || {};
         refreshMeterBadges();
+        renderPwrPage();
       }).catch(() => {});
     }
     loadOutage();
@@ -809,6 +850,70 @@
       }
       return '<span class="meter normal" data-meter="' + escapeHtml(meter) + '"' + titleAttr + '>' +
         '電號 ' + escapeHtml(meter) + ' 正常供電</span>';
+    }
+
+    // ============ 台電查詢結果頁面（panel-pwr） ============
+    function pwrFmt(t) { return String(t).slice(0, 16).replace('T', ' ').replace(/-/g, '/'); }
+    function pwrStatus(info) {
+      if (info && info.found) {
+        if (info.start && info.end) {
+          const now = Date.now();
+          const s = new Date(info.start).getTime();
+          const e = new Date(info.end).getTime();
+          if (now < s) {
+            return { rank: 2, cls: 'p-planned', label: '計畫停電 ' + pwrFmt(info.start) + '–' + pwrFmt(info.end), result: info.result || '' };
+          }
+          if (now <= e) {
+            return { rank: 0, cls: 'p-outage', label: '停電中…至 ' + String(info.end).slice(11, 16), result: info.result || '' };
+          }
+          return { rank: 3, cls: '', label: '正常供電（已復電）', result: '' };
+        }
+        return { rank: 1, cls: 'p-outage', label: '停電／故障', result: info.result || '' };
+      }
+      if (info && !info.found) return { rank: 3, cls: '', label: '正常供電', result: info.result || '' };
+      return { rank: 4, cls: '', label: '尚無查詢資料', result: '' };
+    }
+    function renderPwrPage() {
+      const list = document.getElementById('pwrList');
+      if (!list) return;
+      const seen = new Map();
+      (typeof STATION_DATA !== 'undefined' ? STATION_DATA : []).forEach(it => {
+        Object.keys(it.meters || {}).forEach(s => {
+          const m = String(it.meters[s]);
+          const norm = m.replace(/[^0-9]/g, '');
+          if (!seen.has(norm)) seen.set(norm, { meter: m, sites: [] });
+          const e = seen.get(norm);
+          if (e.sites.indexOf(s) < 0) e.sites.push(s);
+        });
+      });
+      Object.keys(outageData).forEach(k => {
+        if (!seen.has(k)) seen.set(k, { meter: String(k), sites: [] });
+      });
+      const rows = [];
+      seen.forEach((v, k) => {
+        const info = outageData[k] || outageData[v.meter] || null;
+        rows.push({ st: pwrStatus(info), v: v, info: info });
+      });
+      rows.sort((a, b) => a.st.rank - b.st.rank || a.v.meter.localeCompare(b.v.meter));
+      list.innerHTML = rows.map(r => {
+        const checked = r.info && r.info.checked ? '<span class="p-time">查詢 ' + pwrFmt(r.info.checked) + '</span>' : '';
+        const result = r.st.result ? '<span class="p-result">' + escapeHtml(r.st.result) + '</span>' : '';
+        const sites = r.v.sites.length ? r.v.sites.join('、') : '（無對應站台）';
+        const chip = r.st.rank <= 1 ? 'bad' : r.st.rank === 2 ? 'warn' : r.st.rank === 3 ? 'good' : 'none';
+        return '<div class="pwr-row ' + r.st.cls + '">' +
+          '<span class="p-meter">' + escapeHtml(r.v.meter) + '</span>' +
+          '<span class="p-status ' + chip + '">' + escapeHtml(r.st.label) + '</span>' +
+          '<span class="p-sites">' + escapeHtml(sites) + '</span>' +
+          result + checked +
+          '</div>';
+      }).join('');
+      const checks = rows.map(r => r.info && r.info.checked ? r.info.checked : '').filter(Boolean).sort();
+      const el = document.getElementById('pwrUpdated');
+      if (el) {
+        el.textContent = checks.length
+          ? '最新查詢：' + pwrFmt(checks[checks.length - 1]) + ' · 每日 06:00 自動查詢 · 停電、計畫停電排序在最上方'
+          : '每日 06:00 自動查詢（尚無結果）';
+      }
     }
 
     const photoCache = new Map();
