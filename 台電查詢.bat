@@ -28,34 +28,11 @@ if errorlevel 1 (
 
 echo.
 echo [上傳結果至 GitHub...]
-git add outage.json
-git diff --cached --quiet
+python push_outage.py
 if errorlevel 1 (
-    git commit -m "chore: 本機台電查詢結果"
-)
-
-git pull --rebase origin master
-if errorlevel 1 (
-    echo [錯誤] git pull --rebase 失敗
+    echo [錯誤] 上傳失敗
     pause
     exit /b 1
-)
-
-git push origin master
-if errorlevel 1 (
-    echo 第一次推送失敗，重試中...
-    git pull --rebase origin master
-    if errorlevel 1 (
-        echo [錯誤] git pull --rebase 失敗
-        pause
-        exit /b 1
-    )
-    git push origin master
-    if errorlevel 1 (
-        echo [錯誤] git push 失敗
-        pause
-        exit /b 1
-    )
 )
 
 echo.
