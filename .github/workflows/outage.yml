@@ -1,8 +1,10 @@
 name: Daily Taipower Meter Check
 
 on:
-  schedule:
-    - cron: '0 22 * * *' # 06:00 Taipei (22:00 UTC previous day)
+  # 台電會擋國外機房 IP（GitHub Actions 連線逾時），暫停每日排程。
+  # 改由台灣網路環境執行「台電查詢.bat」。
+  # schedule:
+  #   - cron: '0 22 * * *' # 06:00 Taipei (22:00 UTC previous day)
   workflow_dispatch:
 
 permissions:
