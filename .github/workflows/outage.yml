@@ -23,6 +23,8 @@ jobs:
         run: |
           pip install requests beautifulsoup4 ddddocr pillow numpy
       - name: Run meter check (4G meters only)
+        env:
+          TAIPOWER_PROXY: https://taipower-proxy.shane17258.workers.dev
         run: |
           python scripts/taipower_check.py
       - name: Commit outage.json if changed

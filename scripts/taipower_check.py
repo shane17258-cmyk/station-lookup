@@ -4,7 +4,11 @@ import requests
 from bs4 import BeautifulSoup
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-BASE="https://service.taipower.com.tw/nds/ndsWeb/ndft112.aspx"
+TAIPOWER_ORIGIN="https://service.taipower.com.tw"
+PROXY=os.environ.get("TAIPOWER_PROXY","").rstrip("/")
+# 有設 TAIPOWER_PROXY 時，全部請求改走 Cloudflare Worker 代理（台電擋國外機房 IP）
+BASE=(PROXY+"/nds/ndsWeb/ndft112.aspx") if PROXY else TAIPOWER_ORIGIN+"/nds/ndsWeb/ndft112.aspx"
+CAPTCHA_BASE=(PROXY+"/nds/ndsWeb/") if PROXY else TAIPOWER_ORIGIN+"/nds/ndsWeb/"
 DATA_JS=os.path.join(os.path.dirname(__file__),"..","data.js")
 OUT_JSON=os.path.join(os.path.dirname(__file__),"..","outage.json")
 REQ_TIMEOUT = 45
@@ -108,7 +112,7 @@ def query_single(meter):
                 print(f"[{meter}] no captcha after refresh attempt {attempt+1}", file=sys.stderr)
                 time.sleep(1)
                 continue
-            src1=img1.get("src"); url1=src1 if src1.startswith("http") else "https://service.taipower.com.tw/nds/ndsWeb/"+src1.lstrip("./")
+            src1=img1.get("src"); url1=src1 if src1.startswith("http") else CAPTCHA_BASE+src1.lstrip("./")
             captcha1=""
             for fresh_try in range(8):
                 try:
