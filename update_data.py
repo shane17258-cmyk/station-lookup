@@ -6,7 +6,7 @@
 檔名會自動以 *LTE_CoBTS_CHT.xlsx / *LTE_CoCell_CHT.xlsx / *nrBts_DB_CHT.xlsx / *nrCell_DB_CHT.xlsx 匹配，
 未來新 dump 直接放進來即可（支援不同日期前綴）。
 """
-import openpyxl, json, os, glob, sys, io
+import openpyxl, json, os, glob, sys, io, re
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 
@@ -400,6 +400,16 @@ def build_meter_map(meter_rows, id2x):
                         if tn and (normalize(tn) in normalize(st) or normalize(st) in normalize(tn)):
                             station_hit = st
                             break
+                # 去掉「苗栗」與尾綴(RH1/BTS…) 再比對，例如
+                # 「苗栗經國河濱RH1」對上「苗栗嘉盛L06經國河濱」
+                if station_hit is None and tn:
+                    tn2 = re.sub(r"(rh|bts|repeater)\d*$", "", normalize(tn).lower()).replace("苗栗", "")
+                    if len(tn2) >= 2:
+                        for st in cands:
+                            st2 = normalize(st).lower().replace("苗栗", "")
+                            if tn2 in st2 or st2 in tn2:
+                                station_hit = st
+                                break
             # 找不到具體站台 → 掛到第一個站台
             if station_hit is None:
                 station_hit = cands[0] if cands else ""
@@ -507,7 +517,7 @@ if meter_rows:
     for it in items4:
         m = meter_map.get(it["id"])
         if m:
-            it["meters"] = {s: (v[0] if isinstance(v, list) and v else v) for s, v in m.items()}
+            it["meters"] = {s: (v[0] if isinstance(v, list) and len(v) == 1 else v) for s, v in m.items()}
             matched += 1
     print(f"  電號比對完成: {matched} 個站台有電號")
 

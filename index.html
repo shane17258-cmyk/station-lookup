@@ -823,6 +823,7 @@
     setInterval(loadOutage, 5 * 60 * 1000);
     setInterval(refreshMeterBadges, 60 * 1000);
     function outageBadge(meter) {
+      if (Array.isArray(meter)) return meter.map(outageBadge).join(' ');
       const norm = String(meter).replace(/[^0-9]/g, '');
       const info = outageData[norm] || outageData[meter];
       const base = '<span class="meter" data-meter="' + escapeHtml(meter) + '">';
@@ -879,11 +880,14 @@
       const seen = new Map();
       (typeof STATION_DATA !== 'undefined' ? STATION_DATA : []).forEach(it => {
         Object.keys(it.meters || {}).forEach(s => {
-          const m = String(it.meters[s]);
-          const norm = m.replace(/[^0-9]/g, '');
-          if (!seen.has(norm)) seen.set(norm, { meter: m, sites: [] });
-          const e = seen.get(norm);
-          if (e.sites.indexOf(s) < 0) e.sites.push(s);
+          const raw = it.meters[s];
+          (Array.isArray(raw) ? raw : [raw]).forEach(mv => {
+            const m = String(mv);
+            const norm = m.replace(/[^0-9]/g, '');
+            if (!seen.has(norm)) seen.set(norm, { meter: m, sites: [] });
+            const e = seen.get(norm);
+            if (e.sites.indexOf(s) < 0) e.sites.push(s);
+          });
         });
       });
       Object.keys(outageData).forEach(k => {
