@@ -349,13 +349,83 @@ def enrich_items(items, site_info, id_key):
             matched += 1
     return matched
 
+def _norm_name(s):
+    t = normalize(s).lower().replace("崗", "岡").replace("苗栗", "")
+    t = re.sub(r"(rh|bts|repeater|bbu|rru)\d*", "", t)
+    return t
+
+
+def _core_name(s):
+    return "".join(re.findall(r"[\u4e00-\u9fff]", _norm_name(s)))
+
+
+def _match_station(tn, cands):
+    if not tn:
+        return None
+    for st in cands:
+        if st == tn:
+            return st
+    n_tn = normalize(tn)
+    for st in cands:
+        if normalize(st) == n_tn:
+            return st
+    for st in cands:
+        if n_tn in normalize(st) or normalize(st) in n_tn:
+            return st
+    tn2 = re.sub(r"(rh|bts|repeater)\d*$", "", _norm_name(tn))
+    if len(tn2) >= 2:
+        for st in cands:
+            st2 = _norm_name(st)
+            if tn2 in st2 or st2 in tn2:
+                return st
+    c = _core_name(tn)
+    if len(c) >= 2:
+        variants = [c]
+        if len(c) >= 3 and c[-1] in "里村":
+            variants.append(c[:-1])
+        for v in variants:
+            for st in cands:
+                sc = _core_name(st)
+                if sc and (v in sc or sc in v):
+                    return st
+    return None
+
+
+def _resolve_exact_id(th, ids4):
+    if not th:
+        return None
+    if th in ids4:
+        return th
+    for suf in ["L", "U", "S", "l"]:
+        if th.endswith(suf) and th[:-1] in ids4:
+            return th[:-1]
+    return None
+
+
+def _resolve_guess_id(th, ids4):
+    digits = re.sub(r"[^0-9]", "", th or "")
+    if not digits:
+        return None
+    if digits in ids4:
+        return digits
+    m = re.match(r"^(\d{6})", digits)
+    if m and m.group(1) in ids4:
+        return m.group(1)
+    if len(digits) >= 4:
+        cand = [i for i in ids4 if i.endswith(digits)]
+        if len(cand) == 1:
+            return cand[0]
+    return None
+
+
 def build_meter_map(meter_rows, id2x):
     """
     電號檔：欄位 電號▲/台號/台名（dict 形式，key 為欄位名）
     回傳 { lnBtsId: { 站台名: [電號, ...] } }
     比對順序：
-      1. 台號去尾綴(L/U/S/l)後精確等於 lnBtsId → 命中該基地台
-      2. 否則以台名對站台名做模糊(雙向包含)比對
+      1. 台號 → lnBtsId（支援 413840L / 3738U / 416935L013 等尾綴）
+      2. 台名 → 該基地台站台名（精確 / 去符號 / 雙向包含 / 去尾綴 / 中文核心）
+      3. 台號對不到時，以台名全域比對（核心字串需唯一）
     """
     ids4 = set(id2x.keys())
     meter_map = {}
@@ -365,64 +435,66 @@ def build_meter_map(meter_rows, id2x):
         meter_no = g("電號▲") or g("電號")
         th = g("台號")
         tn = g("台名")
-        if not meter_no or not th:
+        if not meter_no:
             continue
 
-        hit_id = None
-        # 台號精確比對（去尾綴）
-        if th in ids4:
-            hit_id = th
-        else:
-            for suf in ["L", "U", "S", "l"]:
-                base = th[:-1] if th.endswith(suf) else th
-                if base in ids4:
-                    hit_id = base
-                    break
-
+        exact_id = _resolve_exact_id(th, ids4)
+        hit_id = exact_id
+        name_matched = False
         station_hit = None
-        if hit_id:
-            x = id2x[hit_id]
-            cands = x["stations"] or []
-            # 台名精確匹配站台
-            if tn:
-                for st in cands:
-                    if st == tn:
-                        station_hit = st
-                        break
-                if station_hit is None:
-                    for st in cands:
-                        if normalize(st) == normalize(tn):
-                            station_hit = st
-                            break
-                # 台名模糊匹配站台
-                if station_hit is None:
-                    for st in cands:
-                        if tn and (normalize(tn) in normalize(st) or normalize(st) in normalize(tn)):
-                            station_hit = st
-                            break
-                # 去掉「苗栗」與尾綴(RH1/BTS…) 再比對，例如
-                # 「苗栗經國河濱RH1」對上「苗栗嘉盛L06經國河濱」
-                if station_hit is None and tn:
-                    tn2 = re.sub(r"(rh|bts|repeater)\d*$", "", normalize(tn).lower()).replace("苗栗", "")
-                    if len(tn2) >= 2:
-                        for st in cands:
-                            st2 = normalize(st).lower().replace("苗栗", "")
-                            if tn2 in st2 or st2 in tn2:
-                                station_hit = st
-                                break
-            # 找不到具體站台 → 掛到第一個站台
-            if station_hit is None:
-                station_hit = cands[0] if cands else ""
-        else:
-            # 台名全域模糊比對
+
+        # A. 台號精確命中 → 該基地台站台比對，找不到先掛第一個站台（與原本行為相同）
+        if exact_id:
+            cands = id2x[exact_id]["stations"] or []
+            station_hit = _match_station(tn, cands)
+            if station_hit is not None:
+                name_matched = True
+            elif cands:
+                station_hit = cands[0]
+
+        # B. 台號無精確命中 → 全域名稱比對（原本的模糊比對）
+        if not name_matched and not exact_id:
             for x in id2x.values():
                 for st in x["stations"] or []:
                     if tn and (normalize(tn) in normalize(st) or normalize(st) in normalize(tn)):
-                        hit_id = x["id"]
-                        station_hit = st
+                        hit_id, station_hit = x["id"], st
+                        name_matched = True
                         break
-                if hit_id:
+                if name_matched:
                     break
+
+        # C. 用台號數字猜基地台（只接受名稱比對成功，避免掛錯）
+        if not name_matched:
+            guess = _resolve_guess_id(th, ids4)
+            if guess:
+                cands = id2x[guess]["stations"] or []
+                st_hit = _match_station(tn, cands)
+                if st_hit is not None:
+                    hit_id, station_hit = guess, st_hit
+                    name_matched = True
+
+        # D. 全域名稱核心比對（結果需唯一）
+        if not name_matched:
+            c = _core_name(tn)
+            if len(c) >= 3:
+                variants = [c]
+                if c[-1] in "里村":
+                    variants.append(c[:-1])
+                hits = []
+                for x in id2x.values():
+                    for st in x["stations"] or []:
+                        sc = _core_name(st)
+                        if sc and any(v in sc or sc in v for v in variants if len(v) >= 2):
+                            hits.append((x["id"], st))
+                uniq = {h[1] for h in hits}
+                if len(uniq) == 1:
+                    hit_id, station_hit = hits[0]
+                    name_matched = True
+                elif len(uniq) > 1:
+                    exact = [h for h in hits if _core_name(h[1]) == c]
+                    if len({h[1] for h in exact}) == 1:
+                        hit_id, station_hit = exact[0]
+                        name_matched = True
 
         if hit_id and station_hit is not None:
             meter_map.setdefault(hit_id, {}).setdefault(station_hit, []).append(meter_no)
