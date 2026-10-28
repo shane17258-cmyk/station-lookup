@@ -202,6 +202,19 @@
     max-width: 100%;
     overflow-wrap: anywhere;
   }
+  .station-bar .addr2 {
+    display: inline-block;
+    background: #fff4e5;
+    color: #8a5a13;
+    border: 1px dashed #e8c48e;
+    border-radius: 12px;
+    padding: 1px 10px;
+    font-size: 12px;
+    font-weight: 600;
+    flex-shrink: 0;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
   .station-bar .eac-smod {
     display: inline-block;
     background: #fdecea;
@@ -1164,6 +1177,7 @@
             wrap.style.marginBottom = '6px';
 
             const addr = (item.addr && item.addr[s]) || '';
+            const addr2 = (item.addr2 && item.addr2[s]) || '';
             const smodAlarms = (item.smod && item.smod[s]) ? item.smod[s] : [];
             const lids = (item.lid && item.lid[s]) ? item.lid[s] : [];
 
@@ -1175,6 +1189,7 @@
               (lids.length ? '<span class="lid">LID ' + lids.join('、') + '</span>' : '') +
               ((item.meters && item.meters[s]) ? outageBadge(item.meters[s]) : '') +
               (addr ? '<span class="addr">' + addr + '</span>' : '') +
+              (addr2 ? '<span class="addr2" title="站台位置檔（細胞地址）">細胞地址：' + addr2 + '</span>' : '') +
               (smodAlarms.length ? '<span class="eac-smod">SMOD 外部告警：' + smodAlarms.join('、') + '</span>' : '') +
               (secs[i] ? '<span class="sec">' + secs[i] + '</span>' : '') +
               (coord ? '<span class="coord2">' + coord.lat + ', ' + coord.lon + '</span>' : '') +

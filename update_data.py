@@ -349,13 +349,31 @@ def enrich_items(items, site_info, id_key):
             matched += 1
     return matched
 
+_CN_NUM = {"一": 1, "二": 2, "三": 3, "四": 4, "五": 5, "六": 6,
+           "七": 7, "八": 8, "九": 9, "十": 10}
+
 def _norm_addr(s):
-    """地址正規化（僅供比對用）：去空白、台/臺統一、樓頂/樓/頂、之/-、全形數字"""
-    t = str(s or "")
-    t = t.replace("台", "臺")
-    for a, b in [("　", ""), (" ", ""), ("之", "-"), ("-", ""), ("F", "樓"), ("頂", "")]:
-        t = t.replace(a, b)
+    """
+    地址正規化（僅供比對用）。
+    把「只是寫法不同」的部分抹平：縣市/鄉鎮市/村里/鄰、空白標點、全形數字、
+    台/臺、之/-、地號前導零、中文段號、F/樓/樓頂/頂/屋突。
+    正規化後仍不同 → 內容真的不同（會另外保留 xlsx 地址）。
+    """
+    t = str(s or "").replace("台", "臺")
+    t = re.sub(r"[\s　、]", "", t)
     t = re.sub(r"[０-９]", lambda m: str(ord(m.group(0)) - 0xFEE0), t)
+    t = re.sub(r"^苗栗縣", "", t)
+    t = re.sub(r"^苗栗市", "", t)
+    t = re.sub(r"\d+鄰", "", t)
+    t = re.sub(r"^[^\d]{1,4}?[村里]", "", t)
+    # 地號：0252-0007 -> 2527、1112-0000 -> 1112
+    t = re.sub(r"(?<!\d)(\d+)[-－之](\d+)(?!\d)",
+               lambda m: str(int(m.group(1))) + ("" if set(m.group(2)) == {"0"} else str(int(m.group(2)))), t)
+    for k, v in _CN_NUM.items():
+        t = t.replace(k + "段", str(v) + "段")
+    t = t.replace("F", "樓")
+    t = re.sub(r"樓頂|樓|頂|屋[突凸]", "", t)
+    t = re.sub(r"號\d+$", "號", t)   # 結尾只有樓層數字
     return t
 
 
@@ -412,27 +430,37 @@ def build_cell_addr_map():
 
 def enrich_cell_addr(items, cell_addr):
     """
-    把細胞層級地址補進 items["addr"]。
-    只補「目前沒有地址」的站台；已有地址（站台.xlsx）不覆蓋。
+    把細胞層級地址補進 items。
+    - 站台目前沒有地址 → 直接補進 items["addr"][站台]
+    - 站台已有地址且與 xlsx 內容「真的不同」 → 保留原值，另存 items["addr2"][站台]（兩筆都顯示）
+    只差寫法（縣市/鄰/樓頂/地號補零…）則不處理。
     """
     filled = 0
+    dual = 0
     for it in items:
         bucket = it.get("addr") or {}
+        extra = it.get("addr2") or {}
         touched = False
         for st in (it.get("stations") or []):
-            if bucket.get(st):
-                continue
             a = cell_addr.get(st)
             if not a:
                 continue
-            bucket[st] = a
-            filled += 1
-            touched = True
-            if not it.get("address"):
-                it["address"] = a
+            cur = bucket.get(st)
+            if not cur:
+                bucket[st] = a
+                filled += 1
+                touched = True
+                if not it.get("address"):
+                    it["address"] = a
+            elif _norm_addr(cur) != _norm_addr(a):
+                extra[st] = a
+                dual += 1
+                touched = True
         if touched:
             it["addr"] = bucket
-    return filled
+            if extra:
+                it["addr2"] = extra
+    return filled, dual
 
 
 def _norm_name(s):
@@ -691,8 +719,8 @@ if site_files:
 # 站台位置檔（細胞層級地址，只補缺）
 cell_addr = build_cell_addr_map()
 if cell_addr:
-    f4 = enrich_cell_addr(items4, cell_addr)
-    print(f"  站台位置檔 細胞地址(4G): 補 {f4} 筆")
+    f4, d4 = enrich_cell_addr(items4, cell_addr)
+    print(f"  站台位置檔 細胞地址(4G): 補 {f4} 筆、差異並存 {d4} 筆")
 
 # RMOD/SMOD 外部告警
 eac_maps = None
@@ -787,8 +815,8 @@ if site_info:
     print(f"  站台.xlsx 地址比對(5G): {m5} 個站台")
 
 if cell_addr:
-    f5 = enrich_cell_addr(items5, cell_addr)
-    print(f"  站台位置檔 細胞地址(5G): 補 {f5} 筆")
+    f5, d5 = enrich_cell_addr(items5, cell_addr)
+    print(f"  站台位置檔 細胞地址(5G): 補 {f5} 筆、差異並存 {d5} 筆")
 
 if eac_maps:
     c5, s5 = apply_eac(items5, eac_maps, "rmod5", "smod5")
