@@ -1950,7 +1950,7 @@
           Object.keys(firstTown).forEach(t => {
             if (!first && firstTown[t]['L900']) first = firstTown[t]['L900'];
           });
-          if (first) covMap.fitBounds(first.getBounds().pad(0.05));
+          if (first && !placeFocus) covMap.fitBounds(first.getBounds().pad(0.05));
         }
       });
 
