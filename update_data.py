@@ -827,6 +827,27 @@ with open(os.path.join(BASE, "data5g.js"), "w", encoding="utf-8") as f:
     f.write(js5)
 print(f"  寫入 data5g.js: {len(items5)} 筆, {os.path.getsize(os.path.join(BASE,'data5g.js'))} bytes")
 
+# 更新 index.html 的 data.js / data5g.js 版本參數，避免瀏覽器/GitHub Pages 快取舊資料
+def bump_asset_version():
+    import datetime
+    ver = datetime.datetime.now().strftime("%Y%m%d%H%M")
+    p = os.path.join(BASE, "index.html")
+    try:
+        with open(p, encoding="utf-8", newline="") as f:
+            html = f.read()
+    except FileNotFoundError:
+        return
+    new = re.sub(r"data\.js\?v=\d+", f"data.js?v={ver}", html)
+    new = re.sub(r"data5g\.js\?v=\d+", f"data5g.js?v={ver}", new)
+    new = re.sub(r'(<script src="data\.js)"', r'\1?v=' + ver + '"', new)
+    new = re.sub(r'(<script src="data5g\.js)"', r'\1?v=' + ver + '"', new)
+    if new != html:
+        with open(p, "w", encoding="utf-8", newline="") as f:
+            f.write(new)
+        print(f"  index.html 資料版本: {ver}")
+
+bump_asset_version()
+
 # 清理舊日期檔案（僅保留最新，依檔名排序日期前綴）
 print("\n清理舊檔...")
 for pat in ["*LTE_CoBTS_CHT.xlsx", "*LTE_CoCell_CHT.xlsx", "*nrBts_DB_CHT.xlsx", "*nrCell_DB_CHT.xlsx", "*LTE_RMOD_EAC_CHT.xlsx", "*LTE_SMOD_EAC_CHT.xlsx", "*NR_RMOD_EAC_CHT.xlsx", "*NR_SMOD_EAC_CHT.xlsx"]:
