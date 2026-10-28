@@ -349,6 +349,92 @@ def enrich_items(items, site_info, id_key):
             matched += 1
     return matched
 
+def _norm_addr(s):
+    """地址正規化（僅供比對用）：去空白、台/臺統一、樓頂/樓/頂、之/-、全形數字"""
+    t = str(s or "")
+    t = t.replace("台", "臺")
+    for a, b in [("　", ""), (" ", ""), ("之", "-"), ("-", ""), ("F", "樓"), ("頂", "")]:
+        t = t.replace(a, b)
+    t = re.sub(r"[０-９]", lambda m: str(ord(m.group(0)) - 0xFEE0), t)
+    return t
+
+
+def build_cell_addr_map():
+    """
+    站台位置檔（*站台位置*.xlsx，細胞層級）→ { 細胞名稱: 細胞地址 }
+    只取苗栗縣；同一細胞名稱有多筆地址時，取字元最多（最完整）的一筆。
+    """
+    files = glob.glob(os.path.join(BASE, "*站台位置*.xlsx"))
+    if not files:
+        return {}
+    path = sorted(files)[-1]
+    try:
+        wb = openpyxl.load_workbook(path, read_only=True, data_only=True)
+    except PermissionError:
+        # Excel/OneDrive 鎖檔時先複製再讀
+        import tempfile, shutil
+        tmp = os.path.join(tempfile.gettempdir(), "station_tmp", os.path.basename(path))
+        os.makedirs(os.path.dirname(tmp), exist_ok=True)
+        shutil.copy2(path, tmp)
+        wb = openpyxl.load_workbook(tmp, read_only=True, data_only=True)
+
+    ws = wb.active
+    it = ws.iter_rows(values_only=True)
+    hdr = [str(c).strip() if c is not None else "" for c in next(it)]
+    if "細胞名稱" not in hdr or "細胞地址" not in hdr:
+        wb.close()
+        print("  站台位置檔: 缺少 細胞名稱/細胞地址 欄位，略過")
+        return {}
+    i_n, i_a = hdr.index("細胞名稱"), hdr.index("細胞地址")
+    i_c = hdr.index("細胞縣市") if "細胞縣市" in hdr else None
+
+    best = {}
+    for r in it:
+        if i_c is not None:
+            c = r[i_c]
+            if not c or "苗栗" not in str(c):
+                continue
+        n = str(r[i_n] or "").strip()
+        a = str(r[i_a] or "").strip()
+        if not n or not a:
+            continue
+        key = n.replace(" ", "")
+        if key not in best or len(a) > len(best[key][1]):
+            best[key] = (n, a)
+    wb.close()
+
+    out = {}
+    for n, a in best.values():
+        out[n] = a
+    print(f"  站台位置檔: {os.path.basename(path)} 取得 {len(out)} 個細胞地址")
+    return out
+
+
+def enrich_cell_addr(items, cell_addr):
+    """
+    把細胞層級地址補進 items["addr"]。
+    只補「目前沒有地址」的站台；已有地址（站台.xlsx）不覆蓋。
+    """
+    filled = 0
+    for it in items:
+        bucket = it.get("addr") or {}
+        touched = False
+        for st in (it.get("stations") or []):
+            if bucket.get(st):
+                continue
+            a = cell_addr.get(st)
+            if not a:
+                continue
+            bucket[st] = a
+            filled += 1
+            touched = True
+            if not it.get("address"):
+                it["address"] = a
+        if touched:
+            it["addr"] = bucket
+    return filled
+
+
 def _norm_name(s):
     t = normalize(s).lower().replace("崗", "岡").replace("苗栗", "")
     t = re.sub(r"(rh|bts|repeater|bbu|rru)\d*", "", t)
@@ -602,6 +688,12 @@ if site_files:
     m4 = enrich_items(items4, site_info, "4g")
     print(f"  站台.xlsx 地址比對(4G): {m4} 個站台")
 
+# 站台位置檔（細胞層級地址，只補缺）
+cell_addr = build_cell_addr_map()
+if cell_addr:
+    f4 = enrich_cell_addr(items4, cell_addr)
+    print(f"  站台位置檔 細胞地址(4G): 補 {f4} 筆")
+
 # RMOD/SMOD 外部告警
 eac_maps = None
 try:
@@ -693,6 +785,10 @@ for r in bts5:
 if site_info:
     m5 = enrich_items(items5, site_info, "5g")
     print(f"  站台.xlsx 地址比對(5G): {m5} 個站台")
+
+if cell_addr:
+    f5 = enrich_cell_addr(items5, cell_addr)
+    print(f"  站台位置檔 細胞地址(5G): 補 {f5} 筆")
 
 if eac_maps:
     c5, s5 = apply_eac(items5, eac_maps, "rmod5", "smod5")
