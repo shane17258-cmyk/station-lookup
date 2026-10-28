@@ -121,6 +121,7 @@
   }
   .search-item:last-child { border-bottom: none; }
   .search-item:hover, .search-item:active { background: #e8f1fa; }
+  .search-item.sel { background: #dcecfb; box-shadow: inset 3px 0 0 var(--primary); }
   .search-item .s-name { font-size: 14px; color: var(--primary-dark); font-weight: 700; }
   .search-item .s-meta { font-size: 12px; color: #6b8aa8; margin-top: 2px; }
   .search-item .s-arrow { float: right; color: var(--primary); font-weight: 700; }
@@ -762,7 +763,7 @@
       <div id="covSearchCount" class="search-count"></div>
       <div id="covSearchResults" class="search-results" style="position:relative; z-index:400; margin-bottom:6px;"></div>
       <div class="mt-group" style="flex:1 1 100%;">
-        <input id="covPlaceInput" placeholder="搜尋苗栗縣內地點 (如 火車站、國華路600巷)" autocomplete="off" style="flex:1; min-width:160px;">
+        <input id="covPlaceInput" placeholder="搜尋苗栗縣內地址或地點 (如 國華路600號、三角公園)" autocomplete="off" style="flex:1; min-width:160px;">
         <button type="button" id="btnPlaceSearch" class="locate-btn" style="padding:6px 12px;">搜尋</button>
       </div>
       <div id="covPlaceCount" class="search-count"></div>
@@ -795,6 +796,8 @@
     // ============ 站台照片（Cloudflare Worker） ============
     // 照片透過 Cloudflare Worker 存取 Google Drive，電腦關機也能看。
     const PHOTO_SERVER = window.PHOTO_SERVER || 'https://station-photo.shane17258.workers.dev';
+    // 國土測繪圖資服務雲（NLSC）地址定位代理，見 nlsc-proxy-worker.js
+    const NLSC_PROXY = window.NLSC_PROXY || 'https://nlsc-proxy.shane17258.workers.dev';
 
     function photoApi(station, path) {
       return PHOTO_SERVER + path + '?station=' + encodeURIComponent(station);
@@ -1327,6 +1330,7 @@
 
       // ============ GPS 定位 ============
       let locateMarker = null, locateCircle = null, hasLocated = false;
+      let placeFocus = false; // 使用者已用地址/地點搜尋定位（避免 GPS 自動定位搶走畫面）
       const locBtn = document.getElementById('btnLocate');
       const locStatus = document.getElementById('locateStatus');
 
@@ -1334,7 +1338,7 @@
         locStatus.textContent = msg || '';
         locStatus.className = 'locate-status' + (cls ? ' ' + cls : '');
       }
-      function placeLocate(lat, lng, acc) {
+      function placeLocate(lat, lng, acc, manual) {
         if (locateMarker) covMap.removeLayer(locateMarker);
         if (locateCircle) covMap.removeLayer(locateCircle);
         locateCircle = L.circle([lat, lng], {
@@ -1348,6 +1352,8 @@
           color: '#fff', weight: 2,
           fillColor: '#c0392b', fillOpacity: 1
         }).addTo(covMap);
+        if (placeFocus && !manual) return; // 使用者已用地址搜尋定位，GPS 不再搶畫面
+        if (manual) placeFocus = false;
         if (!hasLocated) {
           covMap.setView([lat, lng], Math.max(14, covMap.getZoom()), { animate: false });
           hasLocated = true;
@@ -1355,7 +1361,7 @@
           covMap.setView([lat, lng], Math.max(14, covMap.getZoom()), { animate: true });
         }
       }
-      function requestLocate(autofit) {
+      function requestLocate(manual) {
         if (!('geolocation' in navigator)) {
           setLocStatus('此裝置不支援 GPS 定位', 'err');
           return;
@@ -1366,7 +1372,7 @@
           (pos) => {
             locBtn.disabled = false;
             const lat = pos.coords.latitude, lng = pos.coords.longitude;
-            placeLocate(lat, lng, pos.coords.accuracy);
+            placeLocate(lat, lng, pos.coords.accuracy, manual);
             setLocStatus('📍 已定位：' + lat.toFixed(5) + ', ' + lng.toFixed(5) +
               '（誤差約 ' + Math.round(pos.coords.accuracy) + ' 公尺）', 'ok');
           },
@@ -1382,7 +1388,7 @@
           { enableHighAccuracy: true, timeout: 10000, maximumAge: 30000 }
         );
       }
-      locBtn.addEventListener('click', () => requestLocate());
+      locBtn.addEventListener('click', () => requestLocate(true));
       requestLocateRef = requestLocate;
       requestLocate(); // 進入地圖時自動定位
 
@@ -1643,52 +1649,167 @@
       const covPlaceResults = document.getElementById('covPlaceResults');
       const covPlaceCount = document.getElementById('covPlaceCount');
       const btnPlaceSearch = document.getElementById('btnPlaceSearch');
-      function selectPlaceItem(item) {
+
+      // 捲到地圖位置（僅在看不到地圖時才捲動）
+      function revealMap() {
+        const el = document.getElementById('coverageMap');
+        if (!el) return;
+        const r = el.getBoundingClientRect();
+        const vh = window.innerHeight || document.documentElement.clientHeight;
+        if (r.bottom < 80 || r.top > vh - 80) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+      function markSelectedPlace(idx) {
+        if (!covPlaceResults) return;
+        covPlaceResults.querySelectorAll('.search-item').forEach(el => {
+          el.classList.toggle('sel', parseInt(el.dataset.idx, 10) === idx);
+        });
+      }
+      function selectPlaceItem(item, opt) {
+        opt = opt || {};
         const lat = parseFloat(item.lat), lon = parseFloat(item.lon);
         if (isNaN(lat) || isNaN(lon)) return;
-        if (covPlaceResults) covPlaceResults.style.display = 'none';
-        if (covPlaceCount) covPlaceCount.textContent = '已選：' + item.display_name;
-        covMap.setView([lat, lon], 17, { animate: true });
+        placeFocus = true;
+        if (!opt.keepList && covPlaceResults) covPlaceResults.style.display = 'none';
+        if (!opt.keepList && covPlaceCount) covPlaceCount.textContent = '已定位：' + item.display_name;
+        covMap.setView([lat, lon], opt.zoom || 17, { animate: true });
         if (window._placeHighlight) covMap.removeLayer(window._placeHighlight);
-        window._placeHighlight = L.marker([lat, lon], { icon: L.divIcon({ className: 'cov-bts-label', html: '📍', iconSize: null }) }).addTo(covMap);
-        setTimeout(() => { if (window._placeHighlight) { covMap.removeLayer(window._placeHighlight); window._placeHighlight = null; } }, 5000);
+        window._placeHighlight = L.marker([lat, lon], {
+          icon: L.divIcon({ className: 'cov-bts-label', html: '📍', iconSize: null }),
+          zIndexOffset: 1000
+        }).addTo(covMap);
+        const gmap = 'https://www.google.com/maps/search/?api=1&query=' + lat + ',' + lon;
+        window._placeHighlight.bindPopup(
+          '<div style="font-size:13px; line-height:1.6;">' +
+          '<b>📍 搜尋位置</b><br>' + escapeHtml(item.display_name) +
+          '<br><a href="' + gmap + '" target="_blank" rel="noopener">在 Google 地圖開啟</a></div>'
+        );
+        // 標記保留到下一次搜尋，方便對照涵蓋範圍
+        revealMap();
+      }
+
+      // ---- 國土測繪圖資服務雲（NLSC）地址定位，經 Cloudflare Worker 代理 ----
+      const NLSC_KIND = { ADDRESS: '門牌', CROSSROAD: '路口', LANDGOAL: '地標', ROAD: '道路' };
+      function toHalfWidth(s) {
+        return String(s).replace(/[０-９]/g, c => String.fromCharCode(c.charCodeAt(0) - 0xFEE0));
+      }
+      // NLSC 只回全縣前 10 筆且排序不精準，依「路名 > 鄉鎮 > 門牌號」重新加權
+      function nlscScore(name, q) {
+        const n = name.replace(/\s/g, '');
+        const qq = q.replace(/\s/g, '').replace(/^苗栗縣/, '');
+        let s = 0;
+        const road = (qq.match(/([^\d０-９]{2,6}?(?:路|街|大道|巷|弄))/) || [])[1];
+        if (road && n.indexOf(road) > -1) s += 6;
+        const town = (qq.match(/[^\d]{1,3}(?:市|鎮|鄉)/g) || []).pop();
+        if (town && n.indexOf('苗栗縣' + town) === 0) s += 5;
+        const num = (qq.match(/(\d{1,5})\s*號/) || [])[1];
+        if (num && new RegExp('(^|[^0-9])' + num + '號').test(n)) s += 3;
+        if (qq && n.indexOf(qq) > -1) s += 2;
+        return s;
+      }
+      function searchNlsc(addr) {
+        const ctrl = new AbortController();
+        const timer = setTimeout(() => ctrl.abort(), 4000);
+        return fetch(NLSC_PROXY + '/q?addr=' + encodeURIComponent(addr), { signal: ctrl.signal })
+          .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.text(); })
+          .then(xml => {
+            const doc = new DOMParser().parseFromString(xml, 'text/xml');
+            const items = [...doc.querySelectorAll('ITEM')].map(it => {
+              const content = toHalfWidth((it.querySelector('CONTENT') || {}).textContent || '').trim();
+              const key = ((it.querySelector('KEY') || {}).textContent || '').split(',');
+              const loc = ((it.querySelector('LOCATION') || {}).textContent || '').split(',');
+              const lon = parseFloat(loc[0]), lat = parseFloat(loc[1]);
+              if (!content || isNaN(lat) || isNaN(lon)) return null;
+              return {
+                display_name: content,
+                lat, lon,
+                type: NLSC_KIND[key[1]] || key[1] || '',
+                source: 'nlsc',
+                score: nlscScore(content, addr)
+              };
+            }).filter(Boolean).filter(x => x.display_name.indexOf('苗栗') > -1 || x.display_name.indexOf('Miaoli') > -1);
+            // 分數高的排前面；同分維持 NLSC 原順序
+            items.sort((a, b) => b.score - a.score);
+            return items;
+          })
+          .catch(() => null)
+          .finally(() => clearTimeout(timer));
+      }
+
+      // ---- OpenStreetMap Nominatim（備援） ----
+      async function searchNominatim(query) {
+        const base = 'https://nominatim.openstreetmap.org/search?format=json&q=' + encodeURIComponent(query) +
+          '&countrycodes=tw&limit=8&addressdetails=1&accept-language=zh-TW';
+        try {
+          const raw = await (await fetch(base + '&viewbox=120.55,24.80,121.15,24.20&bounded=1', { headers: { 'Accept': 'application/json' } })).json();
+          let data = raw.filter(d => {
+            const a = d.address || {};
+            return (a.county && a.county.includes('苗栗')) || (a.state && a.state.includes('苗栗')) || d.display_name.includes('苗栗縣') || d.display_name.includes('Miaoli');
+          });
+          if (!data.length) data = await (await fetch(base, { headers: { 'Accept': 'application/json' } })).json();
+          return data.map(d => ({
+            display_name: d.display_name,
+            lat: parseFloat(d.lat),
+            lon: parseFloat(d.lon),
+            type: d.type || '',
+            source: 'osm'
+          })).filter(x => !isNaN(x.lat) && !isNaN(x.lon));
+        } catch (e) {
+          return null;
+        }
       }
       async function doPlaceSearch() {
         const q = covPlaceInput ? covPlaceInput.value.trim() : '';
         if (!q) { if (covPlaceResults) { covPlaceResults.style.display='none'; covPlaceResults.innerHTML=''; } if (covPlaceCount) covPlaceCount.textContent=''; return; }
         if (covPlaceCount) covPlaceCount.textContent='搜尋中…';
         if (covPlaceResults) { covPlaceResults.innerHTML='<div class="center-hint">搜尋中…</div>'; covPlaceResults.style.display='block'; }
-        try {
-          const miaoliQ = q.includes('苗栗') ? q : '苗栗縣 ' + q;
-          const url = 'https://nominatim.openstreetmap.org/search?format=json&q=' + encodeURIComponent(miaoliQ) + '&countrycodes=tw&limit=8&addressdetails=1&accept-language=zh-TW&viewbox=120.63,24.73,121.08,24.29&bounded=1';
-          const res = await fetch(url, { headers: { 'Accept': 'application/json' } });
-          if (!res.ok) throw new Error('HTTP '+res.status);
-          let data = await res.json();
-          // 限縮至苗栗縣：僅保留 address.county 含苗栗或 display_name 含苗栗縣（viewbox 已限縮，二次過濾避免邊界外結果）
-          data = data.filter(d => {
-            const a = d.address || {};
-            return (a.county && a.county.includes('苗栗')) || (a.state && a.state.includes('苗栗')) || d.display_name.includes('苗栗縣') || d.display_name.includes('Miaoli');
-          });
-          if (!data.length) {
-            if (covPlaceCount) covPlaceCount.textContent='在苗栗縣內找不到地點';
-            if (covPlaceResults) covPlaceResults.innerHTML='<div class="center-hint">在苗栗縣內找不到符合的地點，請試其他關鍵字</div>';
-            return;
-          }
-          if (covPlaceCount) covPlaceCount.textContent='找到 '+data.length+' 筆地點';
-          if (covPlaceResults) {
-            covPlaceResults.innerHTML='';
-            data.forEach(item => {
-              const div=document.createElement('div');
-              div.className='search-item';
-              div.innerHTML='<span class="s-arrow">›</span><div class="s-name">' + escapeHtml(item.display_name.split(',').slice(0,3).join(',')) + '</div><div class="s-meta">' + escapeHtml(item.display_name) + ' ｜ ' + escapeHtml(item.type||'') + '</div>';
-              div.addEventListener('click', ()=> selectPlaceItem(item));
-              covPlaceResults.appendChild(div);
-            });
-          }
-        } catch(e) {
-          if (covPlaceCount) covPlaceCount.textContent='搜尋失敗';
-          if (covPlaceResults) covPlaceResults.innerHTML='<div class="center-hint">搜尋失敗：' + escapeHtml(e.message) + '</div>';
+        const miaoliQ = q.includes('苗栗') ? q : '苗栗縣 ' + q;
+        const nlscQ = q.includes('苗栗') ? q : '苗栗縣' + q;
+
+        // ===== 1) 國土測繪圖資服務雲（官方門牌，透過 Worker 代理） =====
+        let list = await searchNlsc(nlscQ);
+        let sourceLabel = '國土測繪雲';
+
+        // 地標類關鍵字（如「三角公園」「火車站」）NLSC 門牌庫比對不到時，改用 OSM 的 POI
+        if (list && list.length && list[0].score === 0) {
+          const osm = await searchNominatim(miaoliQ);
+          if (osm && osm.length) { list = osm; sourceLabel = 'OpenStreetMap'; }
         }
+
+        // 有指定路名但 NLSC 前幾筆都沒有該路名 → 改用 OSM 找真正的路段
+        const roadToken = (q.replace(/\s/g, '').match(/([^\d０-９]{2,6}?(?:路|街|大道|巷|弄))/) || [])[1];
+        if (list && list.length && roadToken && list[0].display_name.replace(/\s/g, '').indexOf(roadToken) === -1) {
+          const osm = await searchNominatim(miaoliQ);
+          const hit = (osm || []).filter(x => x.display_name.indexOf(roadToken) > -1);
+          if (hit.length) { list = hit; sourceLabel = 'OpenStreetMap'; }
+        }
+
+        // ===== 2) 查無結果或代理不通 → 退回 OpenStreetMap Nominatim =====
+        if (!list || !list.length) {
+          list = await searchNominatim(miaoliQ);
+          sourceLabel = 'OpenStreetMap';
+        }
+
+        if (!list || !list.length) {
+          if (covPlaceCount) covPlaceCount.textContent='在苗栗縣內找不到地點';
+          if (covPlaceResults) covPlaceResults.innerHTML='<div class="center-hint">在苗栗縣內找不到符合的地點，請輸入更完整的地址（如 苗栗市國華路600號）</div>';
+          return;
+        }
+
+        if (covPlaceCount) covPlaceCount.textContent = '找到 ' + list.length + ' 筆（' + sourceLabel + '），已定位第 1 筆';
+        if (covPlaceResults) {
+          covPlaceResults.innerHTML='';
+          list.forEach((item, idx) => {
+            const div=document.createElement('div');
+            div.className='search-item';
+            div.dataset.idx = String(idx);
+            div.innerHTML='<span class="s-arrow">›</span><div class="s-name">' + escapeHtml(item.display_name) + '</div><div class="s-meta">' + escapeHtml(item.type || '') + (item.type ? ' ｜ ' : '') + escapeHtml(sourceLabel) + '</div>';
+            div.addEventListener('click', ()=> { selectPlaceItem(item); markSelectedPlace(idx); });
+            covPlaceResults.appendChild(div);
+          });
+        }
+        // 自動 zoom in 到最佳（第一筆）結果，清單保留可改選其他位置
+        selectPlaceItem(list[0], { keepList: true });
+        markSelectedPlace(0);
       }
       if (covPlaceInput) {
         covPlaceInput.addEventListener('keydown', e => { if (e.key==='Enter') doPlaceSearch(); });
