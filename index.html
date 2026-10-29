@@ -986,10 +986,10 @@
       if (rest > 0) {
         const a = document.createElement('a');
         a.className = 'photo-more';
-        a.href = PHOTO_SERVER + '/api/photos?station=' + encodeURIComponent(station);
-        a.target = '_blank';
-        a.rel = 'noopener';
+        a.href = '#';
+        a.title = '顯示全部 ' + photos.length + ' 張照片';
         a.textContent = '+' + rest;
+        a.addEventListener('click', (e) => { e.preventDefault(); openLightbox(photos, shown.length); });
         gridEl.appendChild(a);
       }
     }
