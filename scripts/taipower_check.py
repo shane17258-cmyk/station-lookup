@@ -206,6 +206,7 @@ def main():
     max_workers=3
     print(f"Concurrent {max_workers} workers")
     ok=fail=0
+    failed=[]
     with ThreadPoolExecutor(max_workers=max_workers) as ex:
         futures={ex.submit(query_single, m): m for m in meters}
         for idx, fut in enumerate(as_completed(futures), 1):
@@ -217,6 +218,7 @@ def main():
                 print(f"[{m}] error {e}", file=sys.stderr)
             if info is None:
                 fail+=1
+                failed.append(m)
                 print(f"[{idx}/{len(meters)}] {m} -> FAILED (kept old)")
                 continue
             info["checked"]=time.strftime("%Y-%m-%dT%H:%M:%S")
@@ -233,6 +235,8 @@ def main():
             del result[k]
     with open(OUT_JSON,"w",encoding="utf-8") as f: json.dump(result,f,ensure_ascii=False,indent=2)
     print(f"Done ok={ok} fail={fail} total={len(result)}")
+    if failed:
+        print(f"未取得（保留上次結果）：{'、'.join(failed)}")
 
 if __name__=="__main__":
     main()

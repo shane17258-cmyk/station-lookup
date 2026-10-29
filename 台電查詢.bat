@@ -30,7 +30,10 @@ echo.
 echo [上傳結果至 GitHub...]
 python push_outage.py
 if errorlevel 1 (
-    echo [錯誤] 上傳失敗
+    echo.
+    echo [錯誤] 上傳失敗。
+    echo 若訊息是「找不到 GitHub 登入資訊」，請先執行同資料夾的
+    echo 「設定GitHub登入.bat」（每台電腦只需做一次），再執行本檔案。
     pause
     exit /b 1
 )

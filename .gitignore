@@ -5,3 +5,5 @@ __pycache__/
 .env
 .gdrive_tokens.json
 .cf_creds.json
+github_token.txt
+.github_token

@@ -5,16 +5,20 @@
 
 Token 來源（依序尋找）：
   1. 環境變數 GITHUB_TOKEN
-  2. 同資料夾的 github_token.txt（內容放 token 即可）
-  3. .git/config 內 origin 的 remote URL（本機/OneDrive 已同步 .git 時）
+  2. 使用者家目錄的 .github_token（建議放這裡，不會同步到 OneDrive）
+  3. 同資料夾的 github_token.txt
+  4. 這台電腦 Git 已登入的憑證（開啟終端機跑過一次 git push 就會有）
+  5. .git/config 內 origin 的 remote URL（舊版寫法）
 """
-import os, sys, re, json, base64, time
+import os, sys, re, json, base64, time, shutil, subprocess
 import requests
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(BASE_DIR, "outage.json")
 GIT_CONFIG = os.path.join(BASE_DIR, ".git", "config")
 TOKEN_FILE = os.path.join(BASE_DIR, "github_token.txt")
+USER_TOKEN_FILE = os.path.join(os.path.expanduser("~"), ".github_token")
+DEFAULT_REPO = "shane17258-cmyk/station-lookup"
 BRANCH = "master"
 
 
@@ -32,24 +36,67 @@ def parse_remote(url):
     return tok, repo
 
 
+def find_git():
+    """找出這台電腦的 git（Windows 不一定在 PATH）"""
+    p = shutil.which("git")
+    if p:
+        return p
+    for c in (r"C:\Program Files\Git\cmd\git.exe",
+              r"C:\Program Files (x86)\Git\cmd\git.exe",
+              os.path.expandvars(r"%LOCALAPPDATA%\Programs\Git\cmd\git.exe")):
+        if os.path.exists(c):
+            return c
+    return ""
+
+
+def token_from_git_credential():
+    """向 Git 憑證管理員（GCM）要 GitHub 憑證，取回 OAuth token"""
+    git = find_git()
+    if not git:
+        return ""
+    try:
+        env = dict(os.environ, GCM_INTERACTIVE="Never")
+        r = subprocess.run([git, "credential", "fill"], input="protocol=https\nhost=github.com\n\n",
+                           capture_output=True, text=True, timeout=20, env=env)
+    except Exception:
+        return ""
+    if r.returncode != 0:
+        return ""
+    for line in r.stdout.splitlines():
+        if line.startswith("password="):
+            tok = line[9:].strip()
+            if re.match(r"^(gho_|ghp_|ghu_|ghs_|github_pat_)", tok):
+                return tok
+    return ""
+
+
+def read_text(path):
+    try:
+        with open(path, encoding="utf-8", errors="ignore") as f:
+            return f.read().strip()
+    except OSError:
+        return ""
+
+
 def find_credentials():
     tok = os.environ.get("GITHUB_TOKEN", "").strip()
     repo = os.environ.get("GITHUB_REPO", "").strip()
-    if os.path.exists(TOKEN_FILE):
-        t = open(TOKEN_FILE, encoding="utf-8", errors="ignore").read().strip()
-        if t and not tok:
-            tok = t
+    if not tok:
+        tok = read_text(USER_TOKEN_FILE)
+    if not tok:
+        tok = read_text(TOKEN_FILE)
     url = ""
     if os.path.exists(GIT_CONFIG):
-        txt = open(GIT_CONFIG, encoding="utf-8", errors="ignore").read()
-        m = re.search(r"url\s*=\s*(\S+)", txt)
+        m = re.search(r"url\s*=\s*(\S+)", read_text(GIT_CONFIG))
         if m:
             url = m.group(1)
     t2, r2 = parse_remote(url)
     if not tok:
         tok = t2
+    if not tok:
+        tok = token_from_git_credential()
     if not repo:
-        repo = r2
+        repo = r2 or DEFAULT_REPO
     return tok, repo
 
 
@@ -59,8 +106,13 @@ def main():
         return 1
     tok, repo = find_credentials()
     if not tok or not repo:
-        print("[錯誤] 找不到 GitHub token 或 repo。", file=sys.stderr)
-        print("請在同資料夾建立 github_token.txt，內容放你的 GitHub token。", file=sys.stderr)
+        print("[錯誤] 找不到 GitHub 登入資訊。", file=sys.stderr)
+        print("請任選一種方式（只需做一次）：", file=sys.stderr)
+        print("  1) 這台電腦用 Git 登入一次：開「命令提示字元」執行", file=sys.stderr)
+        print("     在本資料夾執行 git push → 會跳出登入視窗，登入後即可", file=sys.stderr)
+        print("  2) 建立 %USERPROFILE%\\.github_token，內容放 GitHub token", file=sys.stderr)
+        print("     （Fine-grained token，只給 station-lookup 的 Contents: Read and write）", file=sys.stderr)
+        print("  3) 在本資料夾建立 github_token.txt，內容放同一個 token", file=sys.stderr)
         return 1
 
     api = "https://api.github.com/repos/" + repo + "/contents/outage.json"
@@ -87,6 +139,10 @@ def main():
                 remote = base64.b64decode(j.get("content", ""))
             except Exception:
                 remote = None
+        elif r.status_code in (401, 403):
+            print(f"[錯誤] GitHub 拒絕登入（{r.status_code}），憑證可能過期或權限不足。", file=sys.stderr)
+            print("       請重新執行 git push 登入一次，或更新 token（需 Contents: Read and write）。", file=sys.stderr)
+            return 1
         elif r.status_code != 404:
             print(f"[{attempt}/5] GitHub 回應 {r.status_code}：{r.text[:200]}", file=sys.stderr)
             time.sleep(3)
@@ -112,6 +168,10 @@ def main():
         if p.status_code in (200, 201):
             print("已上傳 outage.json 到 GitHub")
             return 0
+        if p.status_code in (401, 403):
+            print(f"[錯誤] 上傳被拒絕（{p.status_code}）：{p.text[:200]}", file=sys.stderr)
+            print("       憑證權限不足或已過期，請重新登入 git 或更新 token。", file=sys.stderr)
+            return 1
         print(f"[{attempt}/5] 上傳失敗 {p.status_code}：{p.text[:200]}", file=sys.stderr)
         time.sleep(3)
 
