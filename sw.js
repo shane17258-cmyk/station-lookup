@@ -1,9 +1,10 @@
-const CACHE_NAME = 'station-lookup-v4';
+const CACHE_NAME = 'station-lookup-v5';
 const CORE_ASSETS = [
   './',
   './index.html',
   './data.js',
   './data5g.js',
+  './topo.js',
   './manifest.json',
   './icon-192.png',
   './icon-512.png'

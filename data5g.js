@@ -471,9 +471,9 @@ const STATION_DATA_5G = [
   "smod": {
    "頭份信德": [
     "ACPower",
-    "Fire",
+    "Temperature",
     "Door",
-    "Temperature"
+    "Fire"
    ]
   }
  },
@@ -8920,9 +8920,9 @@ const STATION_DATA_5G = [
   "smod": {
    "通霄坪頂": [
     "AC Power",
-    "Fire",
+    "Temperature",
     "Door",
-    "Temperature"
+    "Fire"
    ]
   }
  },
@@ -9149,9 +9149,9 @@ const STATION_DATA_5G = [
   "smod": {
    "頭份珊瑚": [
     "ACPower",
-    "Fire",
     "Temperature",
-    "Door"
+    "Door",
+    "Fire"
    ]
   }
  },
@@ -9596,13 +9596,13 @@ const STATION_DATA_5G = [
   "smod": {
    "苗栗公館N01公館公館": [
     "AC Power",
-    "Fire",
-    "Temperature"
+    "Temperature",
+    "Fire"
    ],
    "苗栗公館N01公館館南一": [
     "AC Power",
-    "Fire",
-    "Temperature"
+    "Temperature",
+    "Fire"
    ]
   },
   "eac": {
@@ -11176,15 +11176,15 @@ const STATION_DATA_5G = [
   "smod": {
    "苗栗大山N01後龍大山": [
     "AC Power",
-    "Fire",
+    "Temperature",
     "Door",
-    "Temperature"
+    "Fire"
    ],
    "苗栗大山N01後龍東明": [
     "AC Power",
-    "Fire",
+    "Temperature",
     "Door",
-    "Temperature"
+    "Fire"
    ]
   },
   "eac": {
@@ -14715,9 +14715,9 @@ const STATION_DATA_5G = [
   "smod": {
    "銅鑼新隆": [
     "AC Power",
-    "Fire",
+    "Temperature",
     "Door",
-    "Temperature"
+    "Fire"
    ]
   }
  },
@@ -15694,9 +15694,9 @@ const STATION_DATA_5G = [
   "smod": {
    "大湖新開": [
     "AC Power",
-    "Fire",
+    "Temperature",
     "Door",
-    "Temperature"
+    "Fire"
    ]
   }
  },
@@ -16623,15 +16623,15 @@ const STATION_DATA_5G = [
   "smod": {
    "後龍公司寮": [
     "AC Power",
-    "Fire",
+    "Temperature",
     "Door",
-    "Temperature"
+    "Fire"
    ],
    "後龍海巡署RH2": [
     "AC Power",
-    "Fire",
+    "Temperature",
     "Door",
-    "Temperature"
+    "Fire"
    ]
   }
  },
@@ -20144,9 +20144,9 @@ const STATION_DATA_5G = [
   "smod": {
    "後龍龍港": [
     "AC Power",
-    "Fire",
+    "Temperature",
     "Door",
-    "Temperature"
+    "Fire"
    ]
   }
  },
@@ -20227,8 +20227,8 @@ const STATION_DATA_5G = [
   "smod": {
    "泰安雪見": [
     "AC Power",
-    "Fire",
-    "Temperature"
+    "Temperature",
+    "Fire"
    ]
   }
  },
@@ -22166,9 +22166,9 @@ const STATION_DATA_5G = [
   "smod": {
    "竹南龍鳳": [
     "AC Power",
-    "Fire",
+    "Temperature",
     "Door",
-    "Temperature"
+    "Fire"
    ]
   }
  },
@@ -22435,9 +22435,9 @@ const STATION_DATA_5G = [
   "smod": {
    "後龍清海宮": [
     "AC Power",
-    "Fire",
+    "Temperature",
     "Door",
-    "Temperature"
+    "Fire"
    ]
   }
  },
@@ -23221,9 +23221,9 @@ const STATION_DATA_5G = [
   "smod": {
    "泰安大安": [
     "AC Power",
-    "Fire",
+    "Temperature",
     "Door",
-    "Temperature"
+    "Fire"
    ]
   }
  },
@@ -23958,9 +23958,9 @@ const STATION_DATA_5G = [
   "smod": {
    "頭份親民段": [
     "AC Power",
-    "Fire",
+    "Temperature",
     "Door",
-    "Temperature"
+    "Fire"
    ]
   }
  },
@@ -29703,9 +29703,9 @@ const STATION_DATA_5G = [
   "smod": {
    "後龍坤龍紡織": [
     "AC Power",
-    "Fire",
+    "Temperature",
     "Door",
-    "Temperature"
+    "Fire"
    ]
   }
  },
@@ -35484,8 +35484,8 @@ const STATION_DATA_5G = [
    "泰安士林": [
     "AC Power",
     "Temp",
-    "Fire",
-    "Door"
+    "Door",
+    "Fire"
    ]
   }
  },
@@ -37361,8 +37361,8 @@ const STATION_DATA_5G = [
   "smod": {
    "通霄南和": [
     "AC Power",
-    "Fire",
-    "Door"
+    "Door",
+    "Fire"
    ]
   }
  },
@@ -49555,15 +49555,15 @@ const STATION_DATA_5G = [
   "smod": {
    "竹南南庄N09南庄南庄": [
     "AC Power",
-    "Fire",
+    "Temperature",
     "Door",
-    "Temperature"
+    "Fire"
    ],
    "竹南南庄N09南庄西村": [
     "AC Power",
-    "Fire",
+    "Temperature",
     "Door",
-    "Temperature"
+    "Fire"
    ]
   },
   "eac": {

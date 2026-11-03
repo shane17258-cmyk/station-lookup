@@ -827,7 +827,47 @@ with open(os.path.join(BASE, "data5g.js"), "w", encoding="utf-8") as f:
     f.write(js5)
 print(f"  寫入 data5g.js: {len(items5)} 筆, {os.path.getsize(os.path.join(BASE,'data5g.js'))} bytes")
 
-# 更新 index.html 的 data.js / data5g.js 版本參數，避免瀏覽器/GitHub Pages 快取舊資料
+# ============ 架構圖資料（topo.js） ============
+print("== 架構圖 ==")
+try:
+    import topology
+
+    def _eac_rows(pattern, sheet):
+        p = find_file(pattern)
+        _, rows = load_rows_safe(p, sheet)
+        return rows, os.path.basename(p)
+
+    reac4, f_re4 = _eac_rows("*LTE_RMOD_EAC_CHT.xlsx", "LTE_RMOD_EAC_CHT")
+    seac4, f_se4 = _eac_rows("*LTE_SMOD_EAC_CHT.xlsx", "LTE_SMOD_EAC_CHT")
+    reac5, f_re5 = _eac_rows("*NR_RMOD_EAC_CHT.xlsx", "NR_RMOD_EAC_CHT")
+    seac5, f_se5 = _eac_rows("*NR_SMOD_EAC_CHT.xlsx", "NR_SMOD_EAC_CHT")
+
+    topo4 = topology.build(
+        cell_rows, CENTER, is_nr=False,
+        rmod_eac={"rows": reac4, "id": "mrbtsId", "cel": "lnCelId"},
+        smod_eac={"rows": seac4, "id": "mrbtsId", "sid": "sModId"},
+    )
+    topo5 = topology.build(
+        cell5_rows, CENTER, is_nr=True,
+        rmod_eac={"rows": reac5, "id": "mrbtsId", "cel": "nrCellId"},
+        smod_eac={"rows": seac5, "id": "mrbtsId", "sid": "sModId"},
+    )
+    import datetime as _dt
+    stamp = _dt.datetime.now().strftime("%Y%m%d%H%M")
+    topology.write_js(os.path.join(BASE, "topo.js"), topo4, topo5, stamp=stamp)
+    no_topo4 = [it["id"] for it in items4 if it["id"] not in topo4]
+    no_topo5 = [it["id"] for it in items5 if it["id"] not in topo5]
+    print(f"  寫入 topo.js: 4G {len(topo4)} 站、5G {len(topo5)} 站, "
+          f"{os.path.getsize(os.path.join(BASE, 'topo.js'))} bytes")
+    if no_topo4:
+        print(f"  注意: {len(no_topo4)} 個 4G 站台沒有細胞/RMOD 架構資料（例: {no_topo4[:5]}）")
+    if no_topo5:
+        print(f"  注意: {len(no_topo5)} 個 5G 站台沒有細胞/RMOD 架構資料（例: {no_topo5[:5]}）")
+    print(f"  告警來源: {f_re4} / {f_se4} / {f_re5} / {f_se5}")
+except Exception as e:
+    print("  架構圖產生失敗（不影響其他資料）:", e)
+
+# 更新 index.html 的 data.js / data5g.js / topo.js 版本參數，避免瀏覽器/GitHub Pages 快取舊資料
 def bump_asset_version():
     import datetime
     ver = datetime.datetime.now().strftime("%Y%m%d%H%M")
@@ -839,8 +879,10 @@ def bump_asset_version():
         return
     new = re.sub(r"data\.js\?v=\d+", f"data.js?v={ver}", html)
     new = re.sub(r"data5g\.js\?v=\d+", f"data5g.js?v={ver}", new)
+    new = re.sub(r"topo\.js\?v=\d+", f"topo.js?v={ver}", new)
     new = re.sub(r'(<script src="data\.js)"', r'\1?v=' + ver + '"', new)
     new = re.sub(r'(<script src="data5g\.js)"', r'\1?v=' + ver + '"', new)
+    new = re.sub(r'(<script src="topo\.js)"', r'\1?v=' + ver + '"', new)
     if new != html:
         with open(p, "w", encoding="utf-8", newline="") as f:
             f.write(new)

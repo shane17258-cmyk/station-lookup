@@ -61,7 +61,7 @@
   .tab:hover { color: var(--primary); }
   .tab.active { color: var(--primary-dark); border-bottom-color: var(--primary); background: #f7fafc; }
 
-  .panel { display: none; }
+  .panel { display: none; width: 100%; }
   .panel.active { display: block; }
 
   .card {
@@ -505,6 +505,157 @@
     .station-bar { gap: 4px; }
   }
 
+  /* ============ 站台架構圖（參考 Nokia NetAct） ============ */
+  .card.topo-card {
+    max-width: 1120px;
+    border-radius: 12px;
+  }
+  .topo-toolbar {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .topo-net { display: flex; background: #e9f0f7; border-radius: 8px; padding: 3px; }
+  .topo-net-btn {
+    border: 0;
+    background: transparent;
+    padding: 9px 18px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #5a7a9a;
+    cursor: pointer;
+    font-family: inherit;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .topo-net-btn.active { background: #fff; color: var(--primary-dark); box-shadow: 0 1px 3px rgba(26,58,92,.18); }
+  .topo-toolbar input { flex: 1 1 220px; min-width: 150px; }
+  .topo-btn {
+    padding: 12px 20px;
+    border: 0;
+    border-radius: 8px;
+    background: var(--primary);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+  }
+  .topo-btn:hover { background: var(--primary-dark); }
+
+  .topo-out { margin-top: 18px; }
+  .topo-site {
+    border: 1px solid #dbe6f1;
+    border-left: 5px solid var(--primary);
+    border-radius: 10px;
+    background: #f7fafd;
+    padding: 14px 16px;
+  }
+  .topo-site-top { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+  .topo-site-top h2 { font-size: clamp(17px, 3.4vw, 21px); color: var(--primary-dark); }
+  .topo-site-id { font-size: 13px; font-weight: 700; color: #5a7a9a; background: #e9f0f7; border-radius: 20px; padding: 3px 10px; }
+  .topo-net-badge {
+    font-size: 12px; font-weight: 700; color: #fff; background: var(--primary);
+    border-radius: 5px; padding: 2px 8px; letter-spacing: .5px;
+  }
+  .topo-net-badge.n5 { background: #e65100; }
+  .topo-site-meta { font-size: 13px; color: #6b8aa8; line-height: 1.7; margin-top: 6px; word-break: break-all; }
+  .topo-stats { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+  .topo-stat {
+    font-size: 12px; color: #33587d; background: #fff; border: 1px solid #dbe6f1;
+    border-radius: 6px; padding: 4px 9px;
+  }
+  .topo-stat b { font-size: 14px; color: var(--primary-dark); }
+  .topo-stat.alm { color: #b3261e; border-color: #f0c2bb; background: #fff7f6; }
+  .topo-site-alarms {
+    margin-top: 10px; padding: 8px 10px; border-radius: 6px;
+    background: #fff7f6; border: 1px solid #f0c2bb; font-size: 12px; color: #b3261e;
+  }
+
+  .topo-scroll { overflow-x: auto; margin-top: 16px; padding-bottom: 4px; -webkit-overflow-scrolling: touch; }
+  .topo-diagram { min-width: 880px; }
+  .topo-head, .tgroup {
+    display: grid;
+    grid-template-columns: 190px 200px minmax(0, 0.9fr) minmax(0, 1.25fr);
+    gap: 6px 12px;
+    align-items: start;
+  }
+  .topo-head {
+    font-size: 12px; font-weight: 700; color: #5a7a9a; letter-spacing: .4px;
+    padding: 0 0 8px; border-bottom: 2px solid #dbe6f1;
+  }
+  .topo-head > div:not(:first-child) { border-left: 1px dashed #e3ecf5; padding-left: 10px; }
+  .tgroup { padding: 12px 0; border-bottom: 1px dashed #e3ecf5; }
+  .tgroup > .tmod, .tgroup > .trmod { border-left: 0; }
+  .tgroup > .tret, .tgroup > .tcell { border-left: 1px dashed #eef3f8; padding-left: 10px; }
+
+  .tmod { display: flex; flex-direction: column; gap: 6px; }
+  .modchip {
+    border: 1px solid #cfdded; border-left: 4px solid var(--primary);
+    border-radius: 6px; background: #fff; padding: 6px 8px;
+    font-size: 12px; color: #33587d; line-height: 1.45;
+  }
+  .modchip .mt { font-weight: 700; color: var(--primary-dark); font-size: 13px; }
+  .modchip .ms { color: #7b98b5; }
+  .modchip.smod { border-left-color: #7e57c2; }
+  .modchip.none { border-left-color: #c8d6e4; color: #9ab0c4; border-style: dashed; }
+  .modrepeat { font-size: 11px; color: #9ab0c4; padding: 3px 0 0 4px; }
+
+  .rmod-card {
+    border: 1px solid #cfdded; border-radius: 8px; background: #fff;
+    padding: 8px 10px; box-shadow: 0 1px 2px rgba(26,58,92,.06);
+  }
+  .rmod-card.has-alm { border-color: #f0c2bb; background: #fffafa; }
+  .rmod-card .rid { font-size: 11px; font-weight: 700; color: #8aa4bd; letter-spacing: .5px; }
+  .rmod-card .rname { font-size: 15px; font-weight: 700; color: var(--primary-dark); }
+  .rmod-card .rdesc { font-size: 10.5px; color: #8aa4bd; margin-top: 2px; line-height: 1.4; }
+  .rmod-card .rline { font-size: 11px; color: #5a7a9a; margin-top: 4px; }
+
+  .tret {
+    padding: 5px 8px; border-radius: 6px; background: #f4f8fc;
+    border: 1px solid #dbe6f1; font-size: 11.5px; color: #33587d; line-height: 1.45;
+  }
+  .tret .tilt { font-weight: 700; font-size: 13px; color: var(--primary-dark); }
+  .tret .trange { color: #7b98b5; }
+  .tret .tsn { color: #8aa4bd; font-size: 10.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .tret.none { background: #fbfdff; border-style: dashed; color: #a9bccd; }
+
+  .tcell {
+    border: 1px solid #dbe6f1; border-radius: 6px; background: #fff;
+    padding: 5px 8px; font-size: 11.5px; color: #33587d; line-height: 1.45;
+  }
+  .tcell.has-alm { border-color: #f0c2bb; background: #fff7f6; }
+  .tcell .cid { font-weight: 700; color: var(--primary-dark); font-size: 13px; }
+  .tcell .cpci { font-size: 11px; color: #5a7a9a; font-weight: 400; }
+  .tcell .cname { font-size: 10.5px; color: #8aa4bd; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .tcell .cmeta { font-size: 10.5px; color: #6b8aa8; }
+
+  .alarm-chip {
+    display: inline-block; font-size: 10px; font-weight: 700;
+    border-radius: 4px; padding: 1px 5px; margin: 3px 3px 0 0; white-space: nowrap;
+  }
+  .alarm-chip.critical { background: #fdecea; color: #b3261e; border: 1px solid #f5c6c0; }
+  .alarm-chip.major { background: #fff4e5; color: #ad5f00; border: 1px solid #f3d19c; }
+  .alarm-chip.minor, .alarm-chip.warning { background: #fffbe0; color: #827000; border: 1px solid #ece08a; }
+  .sdot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #2e9e55; margin-right: 4px; }
+  .sdot.major { background: #e0a100; }
+  .sdot.critical { background: #c0392b; }
+  .sdot.minor, .sdot.warning { background: #d4c200; }
+
+  .topo-legend { display: flex; flex-wrap: wrap; gap: 14px; font-size: 12px; color: #6b8aa8; margin-top: 10px; }
+  .topo-legend .lg { display: inline-flex; align-items: center; gap: 5px; }
+  .topo-foot { font-size: 11.5px; color: #9ab0c4; margin-top: 10px; line-height: 1.7; }
+
+  @media (max-width: 520px) {
+    .tab { padding: 12px 2px; font-size: 13px; }
+  }
+
+  @media (max-width: 760px) {
+    .card.topo-card { border-radius: 0 0 12px 12px; }
+    .topo-site { padding: 12px; }
+  }
+
   /* ============ 涵蓋地圖 ============ */
   .map-card {
     background: var(--card-bg);
@@ -653,6 +804,7 @@
   <div class="tabs">
     <div class="tab active" data-net="4g" id="tab4g">4G</div>
     <div class="tab" data-net="5g" id="tab5g">5G</div>
+    <div class="tab" data-net="topo" id="tabtopo">架構圖</div>
     <div class="tab" data-net="map" id="tabmap">涵蓋地圖</div>
     <div class="tab" data-net="pwr" id="tabpwr">台電查詢</div>
   </div>
@@ -718,6 +870,22 @@
       <div class="search-count" id="searchCount5g"></div>
       <div class="search-results" id="searchResults5g"></div>
       <div class="hint">先選擇鄉鎮（或全部），再輸入站台名稱關鍵字，點擊結果即顯示該站台詳情</div>
+    </div>
+  </div>
+
+  <div class="panel" id="panel-topo">
+    <div class="card topo-card">
+      <div class="topo-toolbar">
+        <div class="topo-net">
+          <button type="button" class="topo-net-btn active" data-topo-net="4g">4G</button>
+          <button type="button" class="topo-net-btn" data-topo-net="5g">5G</button>
+        </div>
+        <input id="topoInput" list="topoList" placeholder="輸入台號（或站名關鍵字），例：411480" autocomplete="off">
+        <datalist id="topoList"></datalist>
+        <button type="button" id="topoBtn" class="topo-btn">查詢</button>
+      </div>
+      <div class="hint" id="topoHint">依 Nokia NetAct 檢視方式，顯示 SMODs/BBMODs → RMODs → RETs → 細胞 的站台架構。</div>
+      <div id="topoOut" class="topo-out"></div>
     </div>
   </div>
 
@@ -802,8 +970,9 @@
     </div>
   </div>
 
-  <script src="data.js?v=202611031137"></script>
-  <script src="data5g.js?v=202611031137"></script>
+  <script src="data.js?v=202611031211"></script>
+  <script src="data5g.js?v=202611031211"></script>
+  <script src="topo.js?v=202611031211"></script>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
     // ============ 站台照片（Cloudflare Worker） ============
@@ -1308,6 +1477,279 @@
       searchTown.addEventListener('change', () => renderSearch(searchInput.value));
     }
 
+    // ============ 站台架構圖（topo.js，參考 Nokia NetAct） ============
+    let topoNet = '4g';
+    let topoInited = false;
+    let topoLastId = '';
+
+    function topoAll() {
+      return (typeof TOPO !== 'undefined' && TOPO && TOPO[topoNet]) ? TOPO[topoNet] : {};
+    }
+    function topoSites() {
+      if (topoNet === '4g') return (typeof STATION_DATA !== 'undefined') ? STATION_DATA : [];
+      return (typeof STATION_DATA_5G !== 'undefined') ? STATION_DATA_5G : [];
+    }
+    function topoWorst(list) {
+      const rank = { critical: 3, major: 2, minor: 1, warning: 1 };
+      let w = '';
+      (list || []).forEach(a => {
+        if (!w || (rank[a.s] || 0) > (rank[w] || 0)) w = a.s;
+      });
+      return w;
+    }
+    function topoAlarmChips(list) {
+      if (!list || !list.length) return '';
+      return list.map(a => '<span class="alarm-chip ' + a.s + '" title="' + escapeHtml(a.t) + '">' +
+        escapeHtml(a.t) + '</span>').join('');
+    }
+    function topoInitList() {
+      const list = document.getElementById('topoList');
+      if (!list || list.childElementCount) return;
+      const add = (items, tag) => (items || []).forEach(it => {
+        const o = document.createElement('option');
+        o.value = it.id;
+        o.label = tag + ' ' + (it.siteName || '');
+        list.appendChild(o);
+      });
+      add(typeof STATION_DATA !== 'undefined' ? STATION_DATA : [], '4G');
+      add(typeof STATION_DATA_5G !== 'undefined' ? STATION_DATA_5G : [], '5G');
+    }
+
+    function renderTopo(id) {
+      const out = document.getElementById('topoOut');
+      if (!out) return;
+      topoLastId = id;
+      const item = topoSites().find(d => d.id === id);
+      const t = topoAll()[id];
+      const netLabel = (topoNet === '4g') ? '4G' : '5G';
+      const celLabel = (topoNet === '4g') ? 'lnCelId' : 'nrCellId';
+
+      if (!item && !t) {
+        out.innerHTML = '<div class="placeholder">查無台號 ' + escapeHtml(id) + ' 的 ' + netLabel + ' 架構資料</div>';
+        return;
+      }
+
+      const stations = (item && item.stations) || [];
+      const towns = item ? ((item.towns || []).filter((v, i, a) => v && a.indexOf(v) === i).join('、') || item.town || '') : '';
+      const addr = (item && item.addr && item.addr[stations[0]]) || '';
+      const addr2 = (item && item.addr2 && item.addr2[stations[0]]) || '';
+      const cellsCount = t ? t.rmods.reduce((n, rm) => n + (rm.cells || []).length, 0) : 0;
+      let almCount = 0;
+      if (t) {
+        (t.alarms || []).forEach(() => almCount++);
+        (t.smods || []).forEach(sm => { almCount += (sm.alarms || []).length; });
+        (t.rmods || []).forEach(rm => {
+          almCount += (rm.alarms || []).length;
+          (rm.cells || []).forEach(c => { almCount += (c.alarms || []).length; });
+        });
+      }
+      const stat = (k, v) => '<span class="topo-stat">' + k + ' <b>' + v + '</b></span>';
+
+      let html = '<div class="topo-site">';
+      const dispName = (item && item.siteName) ||
+        (t && t.rmods && t.rmods[0] && t.rmods[0].cells && t.rmods[0].cells[0] && t.rmods[0].cells[0].n) || id;
+      const dispCv = (item && item.siteNameCV) || '';
+      html += '<div class="topo-site-top">' +
+        '<span class="topo-net-badge' + (topoNet === '5g' ? ' n5' : '') + '">' + netLabel + '</span>' +
+        '<h2>' + escapeHtml(dispName) +
+        (dispCv && dispCv !== dispName ? ' <small style="font-size:13px;font-weight:400;color:#7893ad;">(' + escapeHtml(dispCv) + ')</small>' : '') +
+        '</h2>' +
+        '<span class="topo-site-id">台號 ' + escapeHtml(id) + '</span></div>';
+      const meta = [];
+      if (towns) meta.push(towns);
+      if (stations.length) meta.push('台名：' + stations.join('、'));
+      if (addr) meta.push('地址：' + addr + (addr2 ? '（細胞地址：' + addr2 + '）' : ''));
+      html += '<div class="topo-site-meta">' + escapeHtml(meta.join('　｜　')) + '</div>';
+      if (t) {
+        html += '<div class="topo-stats">' +
+          stat('SMOD', (t.smods || []).length) +
+          stat(topoNet === '4g' ? 'BBMOD' : 'Baseband', (t.bbs || []).length) +
+          stat('RMOD', (t.rmods || []).length) +
+          stat('細胞', cellsCount) +
+          (almCount ? '<span class="topo-stat alm">告警 <b>' + almCount + '</b></span>' : '') +
+          '</div>';
+      }
+      if (t && t.alarms && t.alarms.length) {
+        html += '<div class="topo-site-alarms">站台層級告警：' + topoAlarmChips(t.alarms) + '</div>';
+      }
+      html += '</div>';
+
+      if (!t) {
+        out.innerHTML = html + '<div class="placeholder" style="margin-top:16px;line-height:1.8;">' +
+          '這個站台在細胞資料檔中沒有 RMOD／細胞紀錄，因此無法畫出架構圖。<br>' +
+          '（資料來源：' + escapeHtml(netLabel) + ' 細胞檔＋ RMOD/SMOD 外部告警檔）</div>';
+        return;
+      }
+
+      const bbById = {};
+      (t.bbs || []).forEach(b => { bbById[b.id] = b; });
+      const smodById = {};
+      (t.smods || []).forEach(s => { smodById[s.id] = s; });
+
+      html += '<div class="topo-scroll"><div class="topo-diagram">';
+      html += '<div class="topo-head"><div>SMODs / BBMODs</div><div>RMODs / ASIRMODs</div>' +
+        '<div>RETs (RETUs)</div><div>' + (topoNet === '4g' ? 'LTE cells' : 'NR cells') + '</div></div>';
+
+      let prevSig = { bb: '', smod: '' };
+      (t.rmods || []).forEach(rm => {
+        const cells = rm.cells || [];
+        const n = Math.max(cells.length, 1);
+        html += '<div class="tgroup">';
+
+        // ---- 模組（SMOD / BBMOD）：相同模組只在第一列完整顯示 ----
+        const bb = rm.bb ? bbById[rm.bb] : null;
+        const sm = rm.smod ? smodById[rm.smod] : null;
+        const bbSig = bb ? (bb.id + '|' + (rm.port || '') + '|' + (rm.link || '')) : 'none';
+        const sameBb = bbSig === prevSig.bb;
+        const sameSmod = sm && sm.id === prevSig.smod;
+        const bbLabel = bb ? ((topoNet === '4g') ? 'BBMOD-' + bb.id : 'Baseband ' + bb.id) : '';
+        const bbExtra = (rm.port ? ' · 埠 ' + escapeHtml(rm.port) : '') +
+          (rm.link ? ' · ' + escapeHtml(rm.link) : '');
+
+        html += '<div class="tmod" style="grid-row: span ' + n + '">';
+        if (bb) {
+          if (sameBb) {
+            html += '<div class="modrepeat">↳ ' + escapeHtml(bbLabel) + bbExtra + '</div>';
+          } else {
+            html += '<div class="modchip"><div class="mt"><span class="sdot"></span>' +
+              escapeHtml(bbLabel) + ' · ' + escapeHtml(bb.name || '-') + '</div>' +
+              (rm.port ? '<div class="ms">埠 ' + escapeHtml(rm.port) + '</div>' : '') +
+              (rm.link ? '<div class="ms">' + escapeHtml(rm.link) + '</div>' : '') +
+              '</div>';
+          }
+        } else if (!sameBb) {
+          html += '<div class="modchip none"><div class="mt">無 BBMOD 對應</div></div>';
+        }
+        if (sm && !sameSmod) {
+          html += '<div class="modchip smod"><div class="mt"><span class="sdot ' + topoWorst(sm.alarms) + '"></span>' +
+            'SMOD-' + escapeHtml(sm.id) + ' · ' + escapeHtml(sm.name || '-') + '</div>' +
+            topoAlarmChips(sm.alarms) + '</div>';
+        }
+        html += '</div>';
+        prevSig = { bb: bbSig, smod: sm ? sm.id : '' };
+
+        // ---- RMOD ----
+        html += '<div class="trmod" style="grid-row: span ' + n + '">' +
+          '<div class="rmod-card' + (rm.alarms && rm.alarms.length ? ' has-alm' : '') + '">' +
+          '<div class="rid">RMOD-' + escapeHtml(rm.id) + '</div>' +
+          '<div class="rname"><span class="sdot ' + topoWorst(rm.alarms) + '"></span>' +
+          escapeHtml(rm.name || '（未命名）') + '</div>' +
+          (rm.desc ? '<div class="rdesc" title="' + escapeHtml(rm.desc) + '">' + escapeHtml(rm.desc) + '</div>' : '') +
+          (rm.alarms && rm.alarms.length ? '<div class="rline">' + topoAlarmChips(rm.alarms) + '</div>' : '') +
+          '</div></div>';
+
+        // ---- RET / 細胞 ----
+        if (!cells.length) {
+          html += '<div class="tret none">—</div><div class="tcell">此 RMOD 無細胞資料</div>';
+        }
+        cells.forEach(c => {
+          const ret = c.ret;
+          html += '<div class="tret' + (ret ? '' : ' none') + '">' + (ret
+            ? '<span class="tilt">' + ret.tilt + '°</span> ' +
+              '<span class="trange">(' + (ret.min !== undefined ? ret.min : '-') + '~' +
+              (ret.max !== undefined ? ret.max : '-') + '°)</span>' +
+              (ret.sn ? '<div class="tsn" title="' + escapeHtml(ret.sn) + '">' + escapeHtml(ret.sn) + '</div>' : '')
+            : '無 RET 資料') + '</div>';
+
+          const cm = [];
+          if (c.band) cm.push(c.band);
+          if (c.bw !== undefined && c.bw !== null) cm.push(c.bw + 'MHz');
+          if (c.az !== undefined) cm.push('方位 ' + c.az + '°');
+          if (c.mt !== undefined) cm.push('上傾 ' + c.mt + '°');
+          if (c.et !== undefined) cm.push('下傾 ' + c.et + '°');
+          if (c.cov) cm.push(c.cov);
+          html += '<div class="tcell' + (c.alarms && c.alarms.length ? ' has-alm' : '') + '">' +
+            '<div class="cid">' + celLabel + ' ' + escapeHtml(c.cel) +
+            (c.pci !== undefined ? ' <span class="cpci">PCI ' + c.pci + '</span>' : '') + '</div>' +
+            (c.n ? '<div class="cname" title="' + escapeHtml(c.n) + '">' + escapeHtml(c.n) + '</div>' : '') +
+            (cm.length ? '<div class="cmeta">' + escapeHtml(cm.join(' · ')) + '</div>' : '') +
+            topoAlarmChips(c.alarms) + '</div>';
+        });
+
+        html += '</div>';
+      });
+
+      html += '</div></div>';
+      html += '<div class="topo-legend">' +
+        '<span class="lg"><span class="sdot"></span>正常</span>' +
+        '<span class="lg"><span class="sdot minor"></span>次要告警</span>' +
+        '<span class="lg"><span class="sdot major"></span>主要告警</span>' +
+        '<span class="lg"><span class="sdot critical"></span>嚴重告警</span>' +
+        '</div>';
+      html += '<div class="topo-foot">資料來源：' + escapeHtml(netLabel) +
+        ' 細胞設定檔（RMOD／BBMOD／RET）＋ RMOD/SMOD 外部告警檔' +
+        (typeof TOPO !== 'undefined' && TOPO.updated ? '，資料時間 ' + escapeHtml(TOPO.updated) : '') + '。' +
+        '「無 RET 資料」表示資料檔內沒有該細胞的 RET 回報，不是連線異常。</div>';
+
+      out.innerHTML = html;
+    }
+
+    function topoQuery() {
+      const input = document.getElementById('topoInput');
+      const out = document.getElementById('topoOut');
+      if (!input || !out) return;
+      const q = input.value.trim();
+      if (!q) { out.innerHTML = ''; return; }
+      const sites = topoSites();
+      const lower = q.toLowerCase();
+      let hit = sites.find(d => d.id === q);
+      if (!hit) {
+        hit = sites.find(d => (d.stations || []).some(n => n.toLowerCase() === lower)) ||
+              sites.find(d => (d.siteName || '').toLowerCase() === lower) ||
+              sites.find(d => (d.stations || []).some(n => n.toLowerCase().indexOf(lower) !== -1)) ||
+              sites.find(d => (d.siteName || '').toLowerCase().indexOf(lower) !== -1);
+      }
+      if (hit) {
+        input.value = hit.id;
+        renderTopo(hit.id);
+        return;
+      }
+      const other = (topoNet === '4g'
+        ? (typeof STATION_DATA_5G !== 'undefined' ? STATION_DATA_5G : [])
+        : (typeof STATION_DATA !== 'undefined' ? STATION_DATA : []));
+      if (other.some(d => d.id === q)) {
+        out.innerHTML = '<div class="placeholder">台號 ' + escapeHtml(q) + ' 是 ' +
+          (topoNet === '4g' ? '5G' : '4G') + ' 站台，請切換上方網路後再查詢。</div>';
+        return;
+      }
+      renderTopo(q);
+    }
+
+    function topoSetNet(net) {
+      if (net === topoNet) return;
+      topoNet = net;
+      document.querySelectorAll('.topo-net-btn').forEach(b => {
+        b.classList.toggle('active', b.getAttribute('data-topo-net') === net);
+      });
+      const input = document.getElementById('topoInput');
+      const out = document.getElementById('topoOut');
+      if (!input || !out) return;
+      const id = input.value.trim();
+      if (id && topoAll()[id]) renderTopo(id);
+      else out.innerHTML = '';
+    }
+
+    function initTopoTab() {
+      topoInitList();
+      if (topoInited) return;
+      topoInited = true;
+      const panel = document.getElementById('panel-topo');
+      if (!panel) return;
+      const btn = document.getElementById('topoBtn');
+      const input = document.getElementById('topoInput');
+      if (btn) btn.addEventListener('click', topoQuery);
+      if (input) {
+        input.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); topoQuery(); } });
+        input.addEventListener('change', () => {
+          const v = input.value.trim();
+          if (v && topoAll()[v]) renderTopo(v);
+        });
+      }
+      panel.querySelectorAll('.topo-net-btn').forEach(b => {
+        b.addEventListener('click', () => topoSetNet(b.getAttribute('data-topo-net')));
+      });
+    }
+
     // 頁籤切換
     const tabs = document.querySelectorAll('.tab');
     tabs.forEach(tab => {
@@ -1317,6 +1759,7 @@
         document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
         document.getElementById('panel-' + tab.dataset.net).classList.add('active');
         if (tab.dataset.net === 'map') { initCoverageMap(); }
+        if (tab.dataset.net === 'topo') { initTopoTab(); }
       });
     });
 
