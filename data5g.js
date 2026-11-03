@@ -470,10 +470,10 @@ const STATION_DATA_5G = [
   "ranType": "D-RAN",
   "smod": {
    "頭份信德": [
-    "ACPower",
-    "Temperature",
     "Door",
-    "Fire"
+    "Fire",
+    "Temperature",
+    "ACPower"
    ]
   }
  },
@@ -8919,10 +8919,10 @@ const STATION_DATA_5G = [
   "ranType": "D-RAN",
   "smod": {
    "通霄坪頂": [
-    "AC Power",
-    "Temperature",
     "Door",
-    "Fire"
+    "Fire",
+    "Temperature",
+    "AC Power"
    ]
   }
  },
@@ -9148,8 +9148,8 @@ const STATION_DATA_5G = [
   "ranType": "D-RAN",
   "smod": {
    "頭份珊瑚": [
-    "ACPower",
     "Temperature",
+    "ACPower",
     "Door",
     "Fire"
    ]
@@ -9595,14 +9595,14 @@ const STATION_DATA_5G = [
   "ranType": "C-RAN",
   "smod": {
    "苗栗公館N01公館公館": [
-    "AC Power",
+    "Fire",
     "Temperature",
-    "Fire"
+    "AC Power"
    ],
    "苗栗公館N01公館館南一": [
-    "AC Power",
+    "Fire",
     "Temperature",
-    "Fire"
+    "AC Power"
    ]
   },
   "eac": {
@@ -11175,16 +11175,16 @@ const STATION_DATA_5G = [
   "ranType": "C-RAN",
   "smod": {
    "苗栗大山N01後龍大山": [
-    "AC Power",
-    "Temperature",
     "Door",
-    "Fire"
+    "Fire",
+    "Temperature",
+    "AC Power"
    ],
    "苗栗大山N01後龍東明": [
-    "AC Power",
-    "Temperature",
     "Door",
-    "Fire"
+    "Fire",
+    "Temperature",
+    "AC Power"
    ]
   },
   "eac": {
@@ -14714,10 +14714,10 @@ const STATION_DATA_5G = [
   "ranType": "D-RAN",
   "smod": {
    "銅鑼新隆": [
-    "AC Power",
-    "Temperature",
     "Door",
-    "Fire"
+    "Fire",
+    "Temperature",
+    "AC Power"
    ]
   }
  },
@@ -15693,10 +15693,10 @@ const STATION_DATA_5G = [
   "ranType": "D-RAN",
   "smod": {
    "大湖新開": [
-    "AC Power",
-    "Temperature",
     "Door",
-    "Fire"
+    "Fire",
+    "Temperature",
+    "AC Power"
    ]
   }
  },
@@ -16622,16 +16622,16 @@ const STATION_DATA_5G = [
   "ranType": "D-RAN",
   "smod": {
    "後龍公司寮": [
-    "AC Power",
+    "Fire",
     "Temperature",
-    "Door",
-    "Fire"
+    "AC Power",
+    "Door"
    ],
    "後龍海巡署RH2": [
-    "AC Power",
+    "Fire",
     "Temperature",
-    "Door",
-    "Fire"
+    "AC Power",
+    "Door"
    ]
   }
  },
@@ -20143,10 +20143,10 @@ const STATION_DATA_5G = [
   "ranType": "D-RAN",
   "smod": {
    "後龍龍港": [
-    "AC Power",
-    "Temperature",
     "Door",
-    "Fire"
+    "Fire",
+    "Temperature",
+    "AC Power"
    ]
   }
  },
@@ -20226,9 +20226,9 @@ const STATION_DATA_5G = [
   "ranType": "D-RAN",
   "smod": {
    "泰安雪見": [
-    "AC Power",
+    "Fire",
     "Temperature",
-    "Fire"
+    "AC Power"
    ]
   }
  },
@@ -22165,10 +22165,10 @@ const STATION_DATA_5G = [
   "ranType": "D-RAN",
   "smod": {
    "竹南龍鳳": [
-    "AC Power",
-    "Temperature",
     "Door",
-    "Fire"
+    "Fire",
+    "Temperature",
+    "AC Power"
    ]
   }
  },
@@ -22434,10 +22434,10 @@ const STATION_DATA_5G = [
   "ranType": "D-RAN",
   "smod": {
    "後龍清海宮": [
-    "AC Power",
-    "Temperature",
     "Door",
-    "Fire"
+    "Fire",
+    "Temperature",
+    "AC Power"
    ]
   }
  },
@@ -23220,10 +23220,10 @@ const STATION_DATA_5G = [
   "ranType": "D-RAN",
   "smod": {
    "泰安大安": [
-    "AC Power",
-    "Temperature",
     "Door",
-    "Fire"
+    "Fire",
+    "Temperature",
+    "AC Power"
    ]
   }
  },
@@ -23958,9 +23958,9 @@ const STATION_DATA_5G = [
   "smod": {
    "頭份親民段": [
     "AC Power",
-    "Temperature",
     "Door",
-    "Fire"
+    "Fire",
+    "Temperature"
    ]
   }
  },
@@ -29702,10 +29702,10 @@ const STATION_DATA_5G = [
   "ranType": "D-RAN",
   "smod": {
    "後龍坤龍紡織": [
-    "AC Power",
-    "Temperature",
     "Door",
-    "Fire"
+    "Fire",
+    "Temperature",
+    "AC Power"
    ]
   }
  },
@@ -35482,10 +35482,10 @@ const STATION_DATA_5G = [
   "ranType": "D-RAN",
   "smod": {
    "泰安士林": [
-    "AC Power",
-    "Temp",
     "Door",
-    "Fire"
+    "Fire",
+    "Temp",
+    "AC Power"
    ]
   }
  },
@@ -37361,8 +37361,8 @@ const STATION_DATA_5G = [
   "smod": {
    "通霄南和": [
     "AC Power",
-    "Door",
-    "Fire"
+    "Fire",
+    "Door"
    ]
   }
  },
@@ -49554,16 +49554,16 @@ const STATION_DATA_5G = [
   "ranType": "C-RAN",
   "smod": {
    "竹南南庄N09南庄南庄": [
-    "AC Power",
+    "Fire",
     "Temperature",
-    "Door",
-    "Fire"
+    "AC Power",
+    "Door"
    ],
    "竹南南庄N09南庄西村": [
-    "AC Power",
+    "Fire",
     "Temperature",
-    "Door",
-    "Fire"
+    "AC Power",
+    "Door"
    ]
   },
   "eac": {

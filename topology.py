@@ -6,14 +6,19 @@
 輸出結構（topo.js）：
 {
   "updated": "20261103",
+  "meta": {"4g": {"cell": "20261021", "sfp": "20260821"}, "5g": {...}},
   "4g": {
     "411480": {
       "smods": [{"id": "1", "name": "ASIB", "alarms": [{"t": "Door", "s": "major"}]}],
       "bbs":   [{"id": "1", "name": "ABIA", "smod": "1"}],
       "rmods": [{
         "id": "1", "name": "FXDB", "desc": "FXDB_RFM_3T6R_L900 - 3x80W",
-        "bb": "1", "port": "3", "smod": "1",
-        "alarms": [{"t": "AC Power", "s": "major"}],       # RMOD 層級
+        "smod": "1", "ants": "1, 2",
+        "links": [                                     # RF/OPT 埠連線
+          {"t": "bb", "bb": "1", "p": "RF3", "o": "1"},      # BBMOD RF3 → RMOD OPT1
+          {"t": "rmod", "up": "13", "p": "OPT2", "o": "1"}   # 上游 RMOD-13 OPT2 → RMOD OPT1
+        ],
+        "alarms": [{"t": "AC Power", "s": "major"}],   # RMOD 層級
         "cells": [{
           "cel": "11", "n": "苗栗中央L17苗栗三角公園",
           "pci": 319, "band": "L09-10", "bw": 10, "freq": 3650,
@@ -30,8 +35,10 @@
 }
 
 資料來源：
-  4G: LTE_CoCell（RMOD/BBMOD/SMOD/RET/細胞） + LTE_RMOD_EAC / LTE_SMOD_EAC（告警）
-  5G: nrCell（RMOD/SMOD/RET/細胞/Baseband） + NR_RMOD_EAC / NR_SMOD_EAC（告警）
+  4G: LTE_CoCell（RMOD/BBMOD/SMOD/RET/細胞） + LTE_RMOD_SFP（RF/OPT 埠）
+      + LTE_RMOD_EAC / LTE_SMOD_EAC（告警）
+  5G: nrCell（RMOD/SMOD/RET/細胞/Baseband） + NR_RMOD_SFP（RF/OPT 埠）
+      + NR_RMOD_EAC / NR_SMOD_EAC（告警）
 """
 import json
 import re
@@ -44,6 +51,7 @@ _RE_BB = re.compile(r"bbMod[-_ ]?(\d+)", re.I)
 # EAC Description：Cell_013_Door / " Cell_013_AC Power" / AC Power
 _RE_CELL_ALARM = re.compile(r"^[Cc]ell[_ ]*(\d+)[_ ]+(.+)$")
 _RE_BASEBAND = re.compile(r"(\d+)\s*\*\s*([A-Za-z0-9]+)")
+_RE_TAIL_NUM = re.compile(r"(\d+)\s*$")
 
 
 def _s(v):
@@ -77,6 +85,27 @@ def _port(raw):
     s = _s(raw)
     m = re.match(r"^\d+", s)
     return m.group(0) if m else s
+
+
+def _tail_no(raw):
+    """'OPT_IF2' / '2' / 'OPT_IF1' → '2' / '2' / '1'"""
+    s = _s(raw)
+    m = _RE_TAIL_NUM.search(s)
+    return m.group(1) if m else s
+
+
+def _ants(raw, rid):
+    """rMod_antPortId → 該 RMOD 使用的天線埠（'1, 2' / 複合值取本 RMOD 段）"""
+    s = _s(raw)
+    if not s:
+        return ""
+    if "RMOD" not in s.upper():
+        return s
+    out = []
+    for m in re.finditer(r"RMOD[-_ ]?(\d+)/[^_]*\[([^\]]*)\]", s):
+        if m.group(1) == rid:
+            out.append(m.group(2).strip())
+    return ", ".join(v for v in out if v)
 
 
 def _clean_alarm_text(desc):
@@ -120,7 +149,8 @@ def _rmod(site, rid):
     r = site["rmods"].get(rid)
     if r is None:
         r = {"id": rid, "name": "", "desc": "", "bb": "", "port": "",
-             "smod": "", "alarms": [], "cells": {}}
+             "smod": "", "ants": "", "bbn": "", "links": [],
+             "alarms": [], "cells": {}}
         site["rmods"][rid] = r
     return r
 
@@ -131,6 +161,30 @@ def _cell(rmod, cel):
         c = {"cel": cel, "alarms": []}
         rmod["cells"][cel] = c
     return c
+
+
+def _add_link(rmod, link):
+    """同一 RMOD 相同連線只留一筆（SFP 檔每個細胞會重複列）"""
+    for l in rmod["links"]:
+        if (l.get("t"), l.get("bb"), l.get("up"), l.get("p"), l.get("o")) == \
+           (link.get("t"), link.get("bb"), link.get("up"), link.get("p"), link.get("o")):
+            return
+    rmod["links"].append(link)
+
+
+def _bb(site, bbid, name, smod):
+    key = bbid or (name and ("n:" + name)) or ""
+    if not key:
+        return ""
+    b = site["bbs"].get(key)
+    if b is None:
+        b = {"id": bbid or name, "name": name, "smod": smod}
+        site["bbs"][key] = b
+    elif name and not b["name"]:
+        b["name"] = name
+    if not b.get("smod") and smod:
+        b["smod"] = smod
+    return key
 
 
 def _smod_name(raw, fallback_rmod=""):
@@ -162,12 +216,14 @@ def _smod_key(site, name):
     return key
 
 
-def build(cell_rows, center="", is_nr=False, rmod_eac=None, smod_eac=None):
+def build(cell_rows, center="", is_nr=False, rmod_eac=None, smod_eac=None,
+          sfp_rows=None):
     """
     cell_rows : CoCell / nrCell 的資料列（dict）
     center    : 只取這個營運中心（空字串＝全部）
     rmod_eac  : {"rows", "id", "cel", "desc", "sev"}  細胞/RMOD 外部告警
     smod_eac  : {"rows", "id", "sid", "desc", "sev"}  SMOD 外部告警
+    sfp_rows  : SFP 檔資料列（提供 BBMOD RF 埠 ↔ RMOD OPT 埠連線）
     """
     sites = {}
 
@@ -198,6 +254,7 @@ def build(cell_rows, center="", is_nr=False, rmod_eac=None, smod_eac=None):
             baseband = _s(r.get("Baseband"))
             baseband_mix = _s(r.get("Baseband_nrbts"))
             link = _s(r.get("SFP_CPRI"))
+            ants_raw = ""
         else:
             bid, cel = _s(r.get("lnBtsId")), _s(r.get("lnCelId"))
             rmod_raw = _s(r.get("rModId_rModRId"))
@@ -221,6 +278,7 @@ def build(cell_rows, center="", is_nr=False, rmod_eac=None, smod_eac=None):
             baseband = ""
             baseband_mix = ""
             link = ""
+            ants_raw = _s(r.get("rMod_antPortId"))
 
         if not bid or not cel:
             continue
@@ -234,6 +292,10 @@ def build(cell_rows, center="", is_nr=False, rmod_eac=None, smod_eac=None):
             rmod["name"] = rmod_name
         if rmod_desc and not rmod["desc"]:
             rmod["desc"] = rmod_desc
+        if not rmod["ants"]:
+            rmod["ants"] = _ants(ants_raw, rid)
+        if baseband and not rmod["bbn"]:
+            rmod["bbn"] = baseband
 
         # ---- SMOD ----
         smod_name = _smod_name(smod_raw, rmod_name)
@@ -243,35 +305,22 @@ def build(cell_rows, center="", is_nr=False, rmod_eac=None, smod_eac=None):
 
         # ---- BBMOD / Baseband ----
         if is_nr:
-            if baseband_mix:
-                for cnt, name in _RE_BASEBAND.findall(baseband_mix):
-                    for b in site["bbs"].values():
-                        if b["name"] == name:
-                            break
-                    else:
-                        key = str(len(site["bbs"]) + 1)
-                        site["bbs"][key] = {"id": key, "name": name, "smod": rmod.get("smod", "")}
-            if baseband:
-                bkey = ""
-                for k, b in site["bbs"].items():
-                    if b["name"] == baseband:
-                        bkey = k
-                        break
-                if not bkey:
-                    bkey = str(len(site["bbs"]) + 1)
-                    site["bbs"][bkey] = {"id": bkey, "name": baseband, "smod": rmod.get("smod", "")}
-                rmod["bb"] = bkey
+            if baseband_mix and not site.get("mix"):
+                site["mix"] = baseband_mix
             if link:
                 rmod["link"] = link
         else:
             bb = _bb_no(_s(r.get("bbModId_bbModRId")))
             bname = _s(r.get("bbMod_R"))
+            # 'SmallCell' / '接到_sMod-1_portId-1' 不是容量卡板型號（一體式或無 BB 資料）
+            if bname.lower() == "smallcell" or bname.startswith("接到_"):
+                if not rmod["bbn"]:
+                    rmod["bbn"] = "SmallCell" if bname.lower() == "smallcell" else bname.replace("接到_", "")
+                bname = ""
             if bb or bname:
                 if not bb:
                     bb = "?"
-                b = site["bbs"].setdefault(bb, {"id": bb, "name": bname or "", "smod": rmod.get("smod", "")})
-                if bname and not b["name"]:
-                    b["name"] = bname
+                _bb(site, bb, bname, rmod.get("smod", ""))
                 if not rmod["bb"]:
                     rmod["bb"] = bb
                 if not rmod["port"]:
@@ -289,6 +338,106 @@ def build(cell_rows, center="", is_nr=False, rmod_eac=None, smod_eac=None):
         if ret_tilt is not None or ret_sn:
             ret = {"tilt": ret_tilt, "min": ret_min, "max": ret_max, "sn": ret_sn}
             cell["ret"] = {k: v for k, v in ret.items() if v not in (None, "")}
+
+    # ---- SFP：BBMOD RF 埠 ↔ RMOD OPT 埠 ----
+    if sfp_rows:
+        sid_col = "nrBtsId" if is_nr else "lnBtsId"
+        for r in sfp_rows:
+            if center and _s(r.get("營運中心")) != center:
+                continue
+            bid = _s(r.get(sid_col))
+            rid = _s(r.get("rModId"))
+            if not bid or not rid:
+                continue
+            site = sites.get(bid)
+            if site is None:
+                continue
+            rmod = site["rmods"].get(rid)
+            if rmod is None:
+                # SFP 檔較舊，該 RMOD 已不在現行細胞檔 → 略過
+                continue
+
+            bbphy = _s(r.get("bbMod_physicalPort"))
+            bbid = _s(r.get("bbModId"))
+            bname = _s(r.get("bbModName"))
+            up = _s(r.get("rModId2"))
+            linked = _s(r.get("linked_Object")).upper()
+            opt_no = _tail_no(r.get("rMod_portId"))
+            opt = ("OPT" + opt_no) if opt_no else ""
+            upper_phy = bbphy.upper()
+
+            if (linked == "RMOD" or (not bbid and up and upper_phy.startswith("OPT"))) and up:
+                # RMOD → RMOD 級聯：本站的 OPT 接到上游 RMOD 的 OPT
+                link = {"t": "rmod", "up": up, "p": "OPT" + _tail_no(bbphy), "o": opt}
+            elif upper_phy.startswith("RF") or upper_phy.startswith("S_RF"):
+                key = _bb(site, bbid, bname, rmod.get("smod", "")) if (bbid or bname) else ""
+                link = {"t": "bb", "p": bbphy, "o": opt}
+                if key:
+                    link["bb"] = site["bbs"][key]["id"]
+                    if not rmod["bb"]:
+                        rmod["bb"] = site["bbs"][key]["id"]
+            elif bbid:
+                key = _bb(site, bbid, bname, rmod.get("smod", ""))
+                link = {"t": "bb", "bb": site["bbs"][key]["id"], "p": bbphy or "OPT", "o": opt}
+                if not rmod["bb"]:
+                    rmod["bb"] = site["bbs"][key]["id"]
+            else:
+                link = {"t": "?", "p": bbphy, "o": opt}
+            _add_link(rmod, link)
+
+    # ---- 沒有 SFP 連線的 RMOD：用細胞檔的 BBMOD/RF 埠補 ----
+    for site in sites.values():
+        # 5G：若整站都沒有 SFP 的 BBMOD 資料，用細胞檔 Baseband_nrbts 建立容量卡板
+        if not site["bbs"] and site.get("mix"):
+            smod = next(iter(site["smods"].values()), {}).get("id", "")
+            n = 0
+            for cnt, name in _RE_BASEBAND.findall(site["mix"]):
+                for _ in range(int(cnt)):
+                    n += 1
+                    _bb(site, str(n), name, smod)
+        for rmod in site["rmods"].values():
+            if rmod["links"]:
+                continue
+            if rmod["bb"] and rmod["bb"] != "?":
+                port = ("RF" + rmod["port"]) if rmod["port"] else ""
+                _add_link(rmod, {"t": "bb", "bb": rmod["bb"], "p": port, "o": "", "x": 1})
+
+    # ---- 級聯方向正規化 ----
+    # SFP 的 linked_Object=RMOD 只記錄「兩台 RMOD 相接」，rModId2 是對端。
+    # 有接 BBMOD RF 埠的那一台視為上游，另一台掛在它下面。
+    for site in sites.values():
+        has_bb = {rid: any(l.get("t") == "bb" and l.get("bb") for l in rm["links"])
+                  for rid, rm in site["rmods"].items()}
+        moved = []
+        seen_pairs = set()
+        for rm in site["rmods"].values():
+            keep = []
+            for l in rm["links"]:
+                if l.get("t") != "rmod":
+                    keep.append(l)
+                    continue
+                peer = l.get("up") or ""
+                if not peer or peer not in site["rmods"]:
+                    keep.append(l)                     # 上游不在現行資料，保留提示
+                    continue
+                if not has_bb.get(rm["id"]) and has_bb.get(peer):
+                    down, up = rm["id"], peer
+                    up_port, down_port = l.get("p", ""), l.get("o", "")
+                else:
+                    down, up = peer, rm["id"]
+                    up_port, down_port = l.get("o", ""), l.get("p", "")
+                pair = (up, down)
+                if pair in seen_pairs:
+                    continue
+                seen_pairs.add(pair)
+                nl = {"t": "rmod", "up": up, "p": up_port, "o": down_port}
+                if down == rm["id"]:
+                    keep.append(nl)
+                else:
+                    moved.append((down, nl))
+            rm["links"] = keep
+        for rid, l in moved:
+            _add_link(site["rmods"][rid], l)
 
     # ---- 外部告警 ----
     if rmod_eac:
@@ -361,12 +510,16 @@ def _clean(sites):
             if sm["alarms"]:
                 d["alarms"] = sm["alarms"]
             smods.append(d)
+
         bbs = []
         for b in sorted(s["bbs"].values(), key=lambda x: _sort_key(x["id"])):
             d = {"id": b["id"], "name": b["name"]}
             if b.get("smod"):
                 d["smod"] = b["smod"]
+            # 沒有被任何 RMOD 連到的 BBMOD（例如 5G 只有 Baseband 欄位）仍保留，
+            # 讓前端可以提示「此容量卡板無連線資料」
             bbs.append(d)
+
         rmods = []
         for rm in sorted(s["rmods"].values(), key=lambda x: _sort_key(x["id"])):
             cells = []
@@ -381,9 +534,11 @@ def _clean(sites):
                     d["alarms"] = c["alarms"]
                 cells.append(d)
             d = {"id": rm["id"], "cells": cells}
-            for k in ("name", "desc", "bb", "port", "smod", "link"):
+            for k in ("name", "desc", "bb", "smod", "link", "bbn", "ants"):
                 if rm.get(k):
                     d[k] = rm[k]
+            if rm.get("links"):
+                d["links"] = rm["links"]
             if rm.get("alarms"):
                 d["alarms"] = rm["alarms"]
             rmods.append(d)
@@ -399,8 +554,8 @@ def _clean(sites):
     return out
 
 
-def write_js(path, topo4, topo5, stamp=""):
-    body = json.dumps({"updated": stamp, "4g": topo4, "5g": topo5},
+def write_js(path, topo4, topo5, stamp="", meta=None):
+    body = json.dumps({"updated": stamp, "meta": meta or {}, "4g": topo4, "5g": topo5},
                       ensure_ascii=False, separators=(",", ":"))
     with open(path, "w", encoding="utf-8", newline="\n") as f:
         f.write("const TOPO = " + body + ";\n")

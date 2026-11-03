@@ -574,33 +574,91 @@
   }
 
   .topo-scroll { overflow-x: auto; margin-top: 16px; padding-bottom: 4px; -webkit-overflow-scrolling: touch; }
-  .topo-diagram { min-width: 880px; }
-  .topo-head, .tgroup {
-    display: grid;
-    grid-template-columns: 190px 200px minmax(0, 0.9fr) minmax(0, 1.25fr);
-    gap: 6px 12px;
-    align-items: start;
-  }
+  .topo-diagram { min-width: 920px; }
   .topo-head {
+    display: grid;
+    grid-template-columns: 150px minmax(180px, 215px) minmax(0, .85fr) minmax(0, 1.35fr);
+    gap: 6px 12px; align-items: start;
     font-size: 12px; font-weight: 700; color: #5a7a9a; letter-spacing: .4px;
     padding: 0 0 8px; border-bottom: 2px solid #dbe6f1;
   }
   .topo-head > div:not(:first-child) { border-left: 1px dashed #e3ecf5; padding-left: 10px; }
-  .tgroup { padding: 12px 0; border-bottom: 1px dashed #e3ecf5; }
-  .tgroup > .tmod, .tgroup > .trmod { border-left: 0; }
-  .tgroup > .tret, .tgroup > .tcell { border-left: 1px dashed #eef3f8; padding-left: 10px; }
 
-  .tmod { display: flex; flex-direction: column; gap: 6px; }
-  .modchip {
-    border: 1px solid #cfdded; border-left: 4px solid var(--primary);
-    border-radius: 6px; background: #fff; padding: 6px 8px;
-    font-size: 12px; color: #33587d; line-height: 1.45;
+  /* ---- 系統卡板（SMOD）總覽 ---- */
+  .tsmod-wrap { margin-top: 16px; display: flex; flex-direction: column; gap: 8px; }
+  .tsmod-card {
+    border: 1px solid #d8d0ec; border-left: 5px solid #7e57c2;
+    border-radius: 9px; background: #faf8ff; padding: 10px 12px;
   }
-  .modchip .mt { font-weight: 700; color: var(--primary-dark); font-size: 13px; }
-  .modchip .ms { color: #7b98b5; }
-  .modchip.smod { border-left-color: #7e57c2; }
-  .modchip.none { border-left-color: #c8d6e4; color: #9ab0c4; border-style: dashed; }
-  .modrepeat { font-size: 11px; color: #9ab0c4; padding: 3px 0 0 4px; }
+  .tsmod-top { display: flex; flex-wrap: wrap; align-items: baseline; gap: 9px; }
+  .tsmod-title { font-size: 15px; font-weight: 800; color: #4a3b7a; }
+  .tsmod-type {
+    font-size: 11.5px; font-weight: 800; color: #fff; background: #7e57c2;
+    border-radius: 4px; padding: 1px 7px;
+  }
+  .tsmod-use { font-size: 11.5px; color: #8a7bb0; }
+  .tsmod-bbs { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+  .tbb-pill {
+    border: 1px solid #cfc4e8; background: #fff; border-radius: 6px;
+    padding: 4px 8px; font-size: 11.5px; color: #4a3b7a; line-height: 1.55;
+  }
+  .tbb-pill b { font-size: 12.5px; }
+  .tbb-pill .pill-type { color: #fff; background: #9b7fd4; border-radius: 3px; padding: 0 5px; font-size: 10.5px; font-weight: 800; }
+  .tbb-pill .pill-ports { color: #5b3f8f; font-weight: 700; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .tbb-pill.none { border-style: dashed; color: #9a8fb8; }
+
+  /* ---- 容量卡板（BBMOD）區塊 ---- */
+  .tbb-block {
+    border: 1px solid #dbe6f1; border-radius: 9px; background: #fff;
+    margin-top: 14px; overflow: hidden;
+  }
+  .tbb-block.orphan { border-style: dashed; border-color: #cfdded; background: #fcfdff; }
+  .tbb-head {
+    display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px;
+    padding: 9px 12px; background: linear-gradient(180deg, #f2f8fd, #eaf3fa);
+    border-bottom: 1px solid #dbe6f1;
+  }
+  .tbb-block.orphan .tbb-head { background: #f7fafd; }
+  .bbdot {
+    display: inline-block; width: 10px; height: 10px; border-radius: 2px;
+    background: #1f6fb2; flex: 0 0 auto;
+  }
+  .bbdot.orphan { background: #b9c9d8; }
+  .tbb-id { font-size: 14px; font-weight: 800; color: #12456f; }
+  .tbb-type {
+    font-size: 11.5px; font-weight: 800; color: #fff; background: #1f6fb2;
+    border-radius: 4px; padding: 1px 7px;
+  }
+  .tbb-where { font-size: 11.5px; color: #6b8aa8; }
+  .tbb-ports { margin-left: auto; font-size: 11.5px; color: #5a7a9a; min-width: 0; flex: 0 1 auto; text-align: right; }
+  .tbb-ports b { color: #1f6fb2; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .tbb-note { font-size: 11px; color: #9ab0c4; }
+  .tbb-empty { padding: 10px 12px; font-size: 11.5px; color: #9ab0c4; }
+
+  .tbb-row {
+    display: grid;
+    grid-template-columns: 150px minmax(180px, 215px) minmax(0, .85fr) minmax(0, 1.35fr);
+    gap: 6px 12px; padding: 10px 12px;
+    border-top: 1px dashed #eaf1f8; align-items: start;
+  }
+  .tbb-row:first-of-type { border-top: 0; }
+  .tbb-row.casc { background: #fbfaff; border-top: 1px dotted #d8d0ec; }
+  .tbb-row > .tret, .tbb-row > .tcell { border-left: 1px dashed #eef3f8; padding-left: 10px; }
+  .tbb-row > .tret { border-left: 0; padding-left: 0; }
+
+  .tport { display: flex; flex-direction: column; gap: 5px; align-items: flex-start; }
+  .plink { display: inline-flex; align-items: center; gap: 4px; white-space: nowrap; }
+  .rfchip {
+    display: inline-block; font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 11.5px; font-weight: 800; color: #0e4f86; background: #e3f0fb;
+    border: 1px solid #b9d7ef; border-radius: 5px; padding: 2px 6px; white-space: nowrap;
+  }
+  .rfchip.opt { color: #5b3f8f; background: #f0eafc; border-color: #d5c8ef; }
+  .rfchip.none { color: #94a9bd; background: #f6f9fc; border-color: #e2ebf4; font-weight: 600; }
+  .tarrow { color: #a9bfd4; font-size: 12px; }
+  .tcasc { font-size: 10.5px; color: #7e57c2; line-height: 1.45; }
+  .tport .tcasc { display: block; }
+  .tindent { color: #b7a8d6; font-weight: 800; }
 
   .rmod-card {
     border: 1px solid #cfdded; border-radius: 8px; background: #fff;
@@ -611,6 +669,12 @@
   .rmod-card .rname { font-size: 15px; font-weight: 700; color: var(--primary-dark); }
   .rmod-card .rdesc { font-size: 10.5px; color: #8aa4bd; margin-top: 2px; line-height: 1.4; }
   .rmod-card .rline { font-size: 11px; color: #5a7a9a; margin-top: 4px; }
+  .rmod-card .rports { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+  .rmod-card .rparent { font-size: 10.5px; color: #7e57c2; margin-top: 5px; line-height: 1.4; }
+  .antchip {
+    display: inline-block; font-size: 10px; font-weight: 700; color: #2c6b45;
+    background: #ecf7f0; border: 1px solid #c8e6d4; border-radius: 4px; padding: 1px 5px;
+  }
 
   .tret {
     padding: 5px 8px; border-radius: 6px; background: #f4f8fc;
@@ -884,7 +948,7 @@
         <datalist id="topoList"></datalist>
         <button type="button" id="topoBtn" class="topo-btn">查詢</button>
       </div>
-      <div class="hint" id="topoHint">依 Nokia NetAct 檢視方式，顯示 SMODs/BBMODs → RMODs → RETs → 細胞 的站台架構。</div>
+      <div class="hint" id="topoHint">依 Nokia NetAct 檢視方式：SMOD（系統卡板）→ BBMOD（容量卡板，RF 埠）→ RMOD（射頻設備，OPT 埠）→ RET → 細胞。</div>
       <div id="topoOut" class="topo-out"></div>
     </div>
   </div>
@@ -970,9 +1034,9 @@
     </div>
   </div>
 
-  <script src="data.js?v=202611031211"></script>
-  <script src="data5g.js?v=202611031211"></script>
-  <script src="topo.js?v=202611031211"></script>
+  <script src="data.js?v=202611031808"></script>
+  <script src="data5g.js?v=202611031808"></script>
+  <script src="topo.js?v=202611031808"></script>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
     // ============ 站台照片（Cloudflare Worker） ============
@@ -1515,6 +1579,19 @@
       add(typeof STATION_DATA_5G !== 'undefined' ? STATION_DATA_5G : [], '5G');
     }
 
+    function topoPortNo(p) {
+      const m = String(p || '').match(/(\d+)\s*$/);
+      return m ? parseInt(m[1], 10) : 999;
+    }
+    function topoUniqPorts(list) {
+      const seen = {};
+      const out = [];
+      (list || []).forEach(p => {
+        if (p && !seen[p]) { seen[p] = 1; out.push(p); }
+      });
+      return out.sort((a, b) => topoPortNo(a) - topoPortNo(b));
+    }
+
     function renderTopo(id) {
       const out = document.getElementById('topoOut');
       if (!out) return;
@@ -1563,7 +1640,7 @@
       if (t) {
         html += '<div class="topo-stats">' +
           stat('SMOD', (t.smods || []).length) +
-          stat(topoNet === '4g' ? 'BBMOD' : 'Baseband', (t.bbs || []).length) +
+          stat('容量卡板', (t.bbs || []).length) +
           stat('RMOD', (t.rmods || []).length) +
           stat('細胞', cellsCount) +
           (almCount ? '<span class="topo-stat alm">告警 <b>' + almCount + '</b></span>' : '') +
@@ -1581,71 +1658,139 @@
         return;
       }
 
-      const bbById = {};
-      (t.bbs || []).forEach(b => { bbById[b.id] = b; });
+      // ---- 索引：BBMOD 連線、級聯父子、孤立 RMOD ----
       const smodById = {};
       (t.smods || []).forEach(s => { smodById[s.id] = s; });
-
-      html += '<div class="topo-scroll"><div class="topo-diagram">';
-      html += '<div class="topo-head"><div>SMODs / BBMODs</div><div>RMODs / ASIRMODs</div>' +
-        '<div>RETs (RETUs)</div><div>' + (topoNet === '4g' ? 'LTE cells' : 'NR cells') + '</div></div>';
-
-      let prevSig = { bb: '', smod: '' };
+      const rmById = {};
+      (t.rmods || []).forEach(rm => { rmById[rm.id] = rm; });
+      const hasBb = {};
       (t.rmods || []).forEach(rm => {
+        hasBb[rm.id] = (rm.links || []).some(l => l.t === 'bb' && l.bb);
+      });
+      const bbRows = {};
+      const kids = {};
+      const orphans = [];
+      (t.rmods || []).forEach(rm => {
+        const links = rm.links || [];
+        const byBb = {};
+        links.forEach(l => {
+          if (l.t === 'bb' && l.bb) (byBb[l.bb] = byBb[l.bb] || []).push(l);
+        });
+        const bbIds = Object.keys(byBb);
+        bbIds.forEach(bid => {
+          (bbRows[bid] = bbRows[bid] || []).push({ rm: rm, links: byBb[bid] });
+        });
+        const ups = links.filter(l => l.t === 'rmod' && l.up && rmById[l.up]);
+        ups.forEach(l => {
+          if (!hasBb[rm.id]) (kids[l.up] = kids[l.up] || []).push({ rm: rm, link: l });
+        });
+        if (!bbIds.length && !ups.length) orphans.push({ rm: rm, link: null });
+      });
+
+      const portMin = e => Math.min.apply(null, e.links.map(l => topoPortNo(l.p)));
+      const entriesOf = bid => (bbRows[bid] || []).slice().sort((a, b) => portMin(a) - portMin(b));
+
+      // ---- 系統卡板（SMOD）：站台層級，列出配置的容量卡板 ----
+      const smodList = t.smods || [];
+      if (smodList.length) {
+        html += '<div class="tsmod-wrap">';
+        smodList.forEach(sm => {
+          const myBbs = (t.bbs || []).filter(b => b.smod === sm.id || smodList.length === 1);
+          html += '<div class="tsmod-card">' +
+            '<div class="tsmod-top">' +
+            '<span class="sdot ' + topoWorst(sm.alarms) + '"></span>' +
+            '<span class="tsmod-title">SMOD-' + escapeHtml(sm.id) + '</span>' +
+            '<span class="tsmod-type">' + escapeHtml(sm.name || '—') + '</span>' +
+            '<span class="tsmod-use">配置 ' + myBbs.length + ' 片容量卡板</span>' +
+            '</div>' + topoAlarmChips(sm.alarms);
+          if (myBbs.length) {
+            html += '<div class="tsmod-bbs">';
+            myBbs.forEach(bb => {
+              const used = topoUniqPorts(entriesOf(bb.id).reduce(
+                (a, e) => a.concat(e.links.map(l => l.p)), []));
+              html += '<span class="tbb-pill' + (used.length ? '' : ' none') + '">' +
+                '<b>BBMOD-' + escapeHtml(bb.id) + '</b> ' +
+                '<span class="pill-type">' + escapeHtml(bb.name || '—') + '</span>' +
+                (used.length
+                  ? ' <span class="pill-ports">' + used.map(p => escapeHtml(p)).join(' · ') + '</span>'
+                  : ' 無 RF 連線') +
+                '</span>';
+            });
+            html += '</div>';
+          }
+          html += '</div>';
+        });
+        html += '</div>';
+      }
+
+      // ---- 射頻設備列（含 RET／細胞，保持欄位對齊） ----
+      const rmodRow = (entry, kind, depth, seen) => {
+        const rm = entry.rm;
         const cells = rm.cells || [];
         const n = Math.max(cells.length, 1);
-        html += '<div class="tgroup">';
+        let h = '<div class="tbb-row' + (kind === 'casc' ? ' casc' : '') + '">';
 
-        // ---- 模組（SMOD / BBMOD）：相同模組只在第一列完整顯示 ----
-        const bb = rm.bb ? bbById[rm.bb] : null;
-        const sm = rm.smod ? smodById[rm.smod] : null;
-        const bbSig = bb ? (bb.id + '|' + (rm.port || '') + '|' + (rm.link || '')) : 'none';
-        const sameBb = bbSig === prevSig.bb;
-        const sameSmod = sm && sm.id === prevSig.smod;
-        const bbLabel = bb ? ((topoNet === '4g') ? 'BBMOD-' + bb.id : 'Baseband ' + bb.id) : '';
-        const bbExtra = (rm.port ? ' · 埠 ' + escapeHtml(rm.port) : '') +
-          (rm.link ? ' · ' + escapeHtml(rm.link) : '');
-
-        html += '<div class="tmod" style="grid-row: span ' + n + '">';
-        if (bb) {
-          if (sameBb) {
-            html += '<div class="modrepeat">↳ ' + escapeHtml(bbLabel) + bbExtra + '</div>';
+        // 第 1 欄：RF / OPT 埠位連線
+        h += '<div class="tport" style="grid-row: span ' + n + '">';
+        if (kind === 'bb') {
+          entry.links.forEach(l => {
+            h += '<span class="plink"><span class="rfchip">' + escapeHtml(l.p || 'RF?') + '</span>' +
+              '<span class="tarrow">→</span>' +
+              '<span class="rfchip opt" title="射頻設備光埠">' + escapeHtml(l.o || 'OPT?') + '</span></span>';
+          });
+        } else if (kind === 'casc') {
+          const l = entry.link;
+          h += '<span class="tcasc">' + (depth > 1 ? '<span class="tindent">└</span> ' : '└ ') +
+            'RMOD-' + escapeHtml(l.up) + (l.p ? ' · ' + escapeHtml(l.p) : '') + '</span>' +
+            '<span class="plink"><span class="tarrow">→</span>' +
+            '<span class="rfchip opt" title="本機光埠">' + escapeHtml(l.o || 'OPT?') + '</span></span>' +
+            '<span class="tcasc">經上游級聯</span>';
+        } else {
+          const unk = (rm.links || []).filter(l => l.t === '?' && l.o);
+          if (unk.length) {
+            unk.forEach(l => {
+              h += '<span class="rfchip opt" title="光埠（上游未取得）">' + escapeHtml(l.o) + '</span>';
+            });
+            h += '<span class="tcasc">光埠（上游未取得）</span>';
           } else {
-            html += '<div class="modchip"><div class="mt"><span class="sdot"></span>' +
-              escapeHtml(bbLabel) + ' · ' + escapeHtml(bb.name || '-') + '</div>' +
-              (rm.port ? '<div class="ms">埠 ' + escapeHtml(rm.port) + '</div>' : '') +
-              (rm.link ? '<div class="ms">' + escapeHtml(rm.link) + '</div>' : '') +
-              '</div>';
+            h += '<span class="rfchip none">無 RF 連線</span>';
           }
-        } else if (!sameBb) {
-          html += '<div class="modchip none"><div class="mt">無 BBMOD 對應</div></div>';
+          if (rm.bbn) h += '<span class="tcasc">細胞檔：' + escapeHtml(rm.bbn) + '</span>';
         }
-        if (sm && !sameSmod) {
-          html += '<div class="modchip smod"><div class="mt"><span class="sdot ' + topoWorst(sm.alarms) + '"></span>' +
-            'SMOD-' + escapeHtml(sm.id) + ' · ' + escapeHtml(sm.name || '-') + '</div>' +
-            topoAlarmChips(sm.alarms) + '</div>';
-        }
-        html += '</div>';
-        prevSig = { bb: bbSig, smod: sm ? sm.id : '' };
+        h += '</div>';
 
-        // ---- RMOD ----
-        html += '<div class="trmod" style="grid-row: span ' + n + '">' +
-          '<div class="rmod-card' + (rm.alarms && rm.alarms.length ? ' has-alm' : '') + '">' +
+        // 第 2 欄：射頻設備
+        const optPorts = topoUniqPorts((rm.links || []).map(l => l.o));
+        h += '<div style="grid-row: span ' + n + '"><div class="rmod-card' +
+          ((rm.alarms || []).length ? ' has-alm' : '') + '">' +
           '<div class="rid">RMOD-' + escapeHtml(rm.id) + '</div>' +
           '<div class="rname"><span class="sdot ' + topoWorst(rm.alarms) + '"></span>' +
           escapeHtml(rm.name || '（未命名）') + '</div>' +
-          (rm.desc ? '<div class="rdesc" title="' + escapeHtml(rm.desc) + '">' + escapeHtml(rm.desc) + '</div>' : '') +
-          (rm.alarms && rm.alarms.length ? '<div class="rline">' + topoAlarmChips(rm.alarms) + '</div>' : '') +
-          '</div></div>';
+          (rm.desc ? '<div class="rdesc" title="' + escapeHtml(rm.desc) + '">' + escapeHtml(rm.desc) + '</div>' : '');
+        let pc = '';
+        optPorts.forEach(p => {
+          pc += '<span class="rfchip opt" title="射頻設備光埠">' + escapeHtml(p) + '</span>';
+        });
+        if (rm.ants) {
+          pc += '<span class="antchip" title="天線埠">ANT ' + escapeHtml(rm.ants) + '</span>';
+        }
+        if (pc) h += '<div class="rports">' + pc + '</div>';
+        (rm.links || []).filter(l => l.t === 'rmod' && l.up).forEach(l => {
+          h += '<div class="rparent">└ 級聯自 RMOD-' + escapeHtml(l.up) +
+            (l.p ? ' · ' + escapeHtml(l.p) : '') + '</div>';
+        });
+        if ((rm.alarms || []).length) h += '<div class="rline">' + topoAlarmChips(rm.alarms) + '</div>';
+        h += '</div></div>';
 
-        // ---- RET / 細胞 ----
+        // 第 3、4 欄：RET／細胞（每個細胞一列）
         if (!cells.length) {
-          html += '<div class="tret none">—</div><div class="tcell">此 RMOD 無細胞資料</div>';
+          h += '<div class="tret none">—</div><div class="tcell">此 RMOD 無細胞資料</div>';
         }
         cells.forEach(c => {
           const ret = c.ret;
-          html += '<div class="tret' + (ret ? '' : ' none') + '">' + (ret
-            ? '<span class="tilt">' + ret.tilt + '°</span> ' +
+          const tilt = (ret && ret.tilt !== undefined && ret.tilt !== null) ? ret.tilt + '°' : '—';
+          h += '<div class="tret' + (ret ? '' : ' none') + '">' + (ret
+            ? '<span class="tilt">' + tilt + '</span> ' +
               '<span class="trange">(' + (ret.min !== undefined ? ret.min : '-') + '~' +
               (ret.max !== undefined ? ret.max : '-') + '°)</span>' +
               (ret.sn ? '<div class="tsn" title="' + escapeHtml(ret.sn) + '">' + escapeHtml(ret.sn) + '</div>' : '')
@@ -1658,7 +1803,7 @@
           if (c.mt !== undefined) cm.push('上傾 ' + c.mt + '°');
           if (c.et !== undefined) cm.push('下傾 ' + c.et + '°');
           if (c.cov) cm.push(c.cov);
-          html += '<div class="tcell' + (c.alarms && c.alarms.length ? ' has-alm' : '') + '">' +
+          h += '<div class="tcell' + (c.alarms && c.alarms.length ? ' has-alm' : '') + '">' +
             '<div class="cid">' + celLabel + ' ' + escapeHtml(c.cel) +
             (c.pci !== undefined ? ' <span class="cpci">PCI ' + c.pci + '</span>' : '') + '</div>' +
             (c.n ? '<div class="cname" title="' + escapeHtml(c.n) + '">' + escapeHtml(c.n) + '</div>' : '') +
@@ -1666,19 +1811,69 @@
             topoAlarmChips(c.alarms) + '</div>';
         });
 
+        h += '</div>';
+
+        // 級聯下游（掛在上游 RMOD 的列後面）
+        if (kids[rm.id] && kids[rm.id].length && !seen[rm.id]) {
+          seen[rm.id] = 1;
+          kids[rm.id].forEach(ch => { h += rmodRow(ch, 'casc', depth + 1, seen); });
+          delete seen[rm.id];
+        }
+        return h;
+      };
+
+      html += '<div class="topo-scroll"><div class="topo-diagram">';
+      html += '<div class="topo-head"><div>BBMOD RF 埠 → RMOD OPT 埠</div><div>射頻設備 RMODs</div>' +
+        '<div>RETs (RETU)</div><div>' + (topoNet === '4g' ? 'LTE cells' : 'NR cells') + '</div></div>';
+
+      // ---- 每片容量卡板一個區塊 ----
+      (t.bbs || []).forEach(bb => {
+        const entries = entriesOf(bb.id);
+        const sm = bb.smod ? smodById[bb.smod] : null;
+        const used = topoUniqPorts(entries.reduce((a, e) => a.concat(e.links.map(l => l.p)), []));
+        html += '<div class="tbb-block">' +
+          '<div class="tbb-head"><span class="bbdot"></span>' +
+          '<span class="tbb-id">BBMOD-' + escapeHtml(bb.id) + '</span>' +
+          '<span class="tbb-type">' + escapeHtml(bb.name || '—') + '</span>' +
+          (sm ? '<span class="tbb-where">配置於 SMOD-' + escapeHtml(sm.id) +
+            (sm.name ? ' · ' + escapeHtml(sm.name) : '') + '</span>' : '') +
+          '<span class="tbb-ports">' + (used.length
+            ? '使用 <b>' + used.map(p => escapeHtml(p)).join(' · ') + '</b>'
+            : '無 RF 連線') + '</span></div>';
+        if (!entries.length) {
+          html += '<div class="tbb-empty">此容量卡板在 SFP 檔中沒有 RF 埠連線資料。</div>';
+        } else {
+          entries.forEach(e => { html += rmodRow(e, 'bb', 0, {}); });
+        }
         html += '</div>';
       });
 
+      // ---- 沒有 BBMOD／RF 連線的射頻設備 ----
+      if (orphans.length) {
+        html += '<div class="tbb-block orphan">' +
+          '<div class="tbb-head"><span class="bbdot orphan"></span>' +
+          '<span class="tbb-id">無 BBMOD 連線的射頻設備</span>' +
+          '<span class="tbb-where">一體式設備，或細胞檔／SFP 檔沒有 RF 埠對應</span>' +
+          '<span class="tbb-ports">' + orphans.length + ' 台</span></div>';
+        orphans.forEach(o => { html += rmodRow(o, 'orphan', 0, {}); });
+        html += '</div>';
+      }
+
       html += '</div></div>';
       html += '<div class="topo-legend">' +
+        '<span class="lg"><span class="rfchip">RF1</span>容量卡板射頻埠</span>' +
+        '<span class="lg"><span class="rfchip opt">OPT1</span>射頻設備光埠</span>' +
         '<span class="lg"><span class="sdot"></span>正常</span>' +
         '<span class="lg"><span class="sdot minor"></span>次要告警</span>' +
         '<span class="lg"><span class="sdot major"></span>主要告警</span>' +
         '<span class="lg"><span class="sdot critical"></span>嚴重告警</span>' +
         '</div>';
+      const srcMeta = (typeof TOPO !== 'undefined' && TOPO.meta && TOPO.meta[topoNet]) || {};
       html += '<div class="topo-foot">資料來源：' + escapeHtml(netLabel) +
-        ' 細胞設定檔（RMOD／BBMOD／RET）＋ RMOD/SMOD 外部告警檔' +
-        (typeof TOPO !== 'undefined' && TOPO.updated ? '，資料時間 ' + escapeHtml(TOPO.updated) : '') + '。' +
+        ' 細胞設定檔（RMOD／BBMOD／RET）＋ RMOD/SMOD 外部告警檔＋ SFP 連線檔' +
+        (srcMeta.cell ? '（細胞檔 ' + escapeHtml(srcMeta.cell) + '、SFP 檔 ' + escapeHtml(srcMeta.sfp || '-') + '）' : '') +
+        (typeof TOPO !== 'undefined' && TOPO.updated ? '，產生時間 ' + escapeHtml(TOPO.updated) : '') + '。' +
+        'RF／OPT 埠取自 SFP 檔；SFP 檔較舊時，實際接續可能已調整。' +
         '「無 RET 資料」表示資料檔內沒有該細胞的 RET 回報，不是連線異常。</div>';
 
       out.innerHTML = html;

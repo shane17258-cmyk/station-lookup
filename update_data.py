@@ -250,11 +250,12 @@ def apply_eac(items, eac_maps, key_rmod, key_smod):
                     site_hit = True
                 else:
                     hit_all.add(target)
-            site_alarms = set()
-            site_lids = set()
+            site_alarms = []
+            site_lids = []
             for name_key, listed in smod_bucket.items():
-                site_alarms.update(listed.get("smod", []))
-                site_lids.update(listed.get("lids", []))
+                site_alarms.extend(listed.get("smod", []))
+                site_lids.extend(listed.get("lids", []))
+            # 保留檔案中的出現順序（不用 set，避免每次執行排序不同造成 data.js 大幅變動）
             site_alarms = list(dict.fromkeys(site_alarms))
             site_lids = list(dict.fromkeys(site_lids))
             # SMOD 站台層級：套用至 item 的所有 station
@@ -842,19 +843,35 @@ try:
     reac5, f_re5 = _eac_rows("*NR_RMOD_EAC_CHT.xlsx", "NR_RMOD_EAC_CHT")
     seac5, f_se5 = _eac_rows("*NR_SMOD_EAC_CHT.xlsx", "NR_SMOD_EAC_CHT")
 
+    sfp4, f_sfp4 = _eac_rows("*LTE_RMOD_SFP.xlsx", "LTE_RMOD_SFP")
+    sfp5, f_sfp5 = _eac_rows("*NR_RMOD_SFP.xlsx", "nr_RMOD_SFP")
+
     topo4 = topology.build(
         cell_rows, CENTER, is_nr=False,
         rmod_eac={"rows": reac4, "id": "mrbtsId", "cel": "lnCelId"},
         smod_eac={"rows": seac4, "id": "mrbtsId", "sid": "sModId"},
+        sfp_rows=sfp4,
     )
     topo5 = topology.build(
         cell5_rows, CENTER, is_nr=True,
         rmod_eac={"rows": reac5, "id": "mrbtsId", "cel": "nrCellId"},
         smod_eac={"rows": seac5, "id": "mrbtsId", "sid": "sModId"},
+        sfp_rows=sfp5,
     )
     import datetime as _dt
     stamp = _dt.datetime.now().strftime("%Y%m%d%H%M")
-    topology.write_js(os.path.join(BASE, "topo.js"), topo4, topo5, stamp=stamp)
+
+    def _dt_of(name):
+        m = re.match(r"^(\d{8})", name or "")
+        return m.group(1) if m else ""
+
+    meta = {
+        "4g": {"cell": _dt_of(os.path.basename(find_file("*LTE_CoCell_CHT.xlsx"))),
+               "sfp": _dt_of(f_sfp4)},
+        "5g": {"cell": _dt_of(os.path.basename(find_file("*nrCell_DB_CHT.xlsx"))),
+               "sfp": _dt_of(f_sfp5)},
+    }
+    topology.write_js(os.path.join(BASE, "topo.js"), topo4, topo5, stamp=stamp, meta=meta)
     no_topo4 = [it["id"] for it in items4 if it["id"] not in topo4]
     no_topo5 = [it["id"] for it in items5 if it["id"] not in topo5]
     print(f"  寫入 topo.js: 4G {len(topo4)} 站、5G {len(topo5)} 站, "
@@ -864,6 +881,7 @@ try:
     if no_topo5:
         print(f"  注意: {len(no_topo5)} 個 5G 站台沒有細胞/RMOD 架構資料（例: {no_topo5[:5]}）")
     print(f"  告警來源: {f_re4} / {f_se4} / {f_re5} / {f_se5}")
+    print(f"  連線來源: {f_sfp4} / {f_sfp5}")
 except Exception as e:
     print("  架構圖產生失敗（不影響其他資料）:", e)
 
