@@ -910,7 +910,11 @@ bump_asset_version()
 
 # 清理舊日期檔案（僅保留最新，依檔名排序日期前綴）
 print("\n清理舊檔...")
-for pat in ["*LTE_CoBTS_CHT.xlsx", "*LTE_CoCell_CHT.xlsx", "*nrBts_DB_CHT.xlsx", "*nrCell_DB_CHT.xlsx", "*LTE_RMOD_EAC_CHT.xlsx", "*LTE_SMOD_EAC_CHT.xlsx", "*NR_RMOD_EAC_CHT.xlsx", "*NR_SMOD_EAC_CHT.xlsx"]:
+for pat in ["*LTE_CoBTS_CHT.xlsx", "*LTE_CoCell_CHT.xlsx",
+            "*nrBts_DB_CHT.xlsx", "*nrCell_DB_CHT.xlsx",
+            "*LTE_RMOD_EAC_CHT.xlsx", "*LTE_SMOD_EAC_CHT.xlsx",
+            "*NR_RMOD_EAC_CHT.xlsx", "*NR_SMOD_EAC_CHT.xlsx",
+            "*LTE_RMOD_SFP.xlsx", "*NR_RMOD_SFP.xlsx"]:
     clean_old_files(pat)
 
 print("\n完成！")

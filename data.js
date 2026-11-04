@@ -1225,7 +1225,7 @@ const STATION_DATA = [
  {
   "id": "411480",
   "siteName": "苗栗三角公園",
-  "siteNameCV": "苗栗中央L17苗栗三角公園",
+  "siteNameCV": "苗栗中央L17苗栗忠孝龍岡",
   "town": "苗栗市",
   "towns": [
    "苗栗市",
@@ -2545,7 +2545,7 @@ const STATION_DATA = [
  {
   "id": "411662",
   "siteName": "公館蘭庭",
-  "siteNameCV": "苗栗公館L25公館無界創新",
+  "siteNameCV": "苗栗公館L25公館蘭庭餐廳",
   "town": "公館鄉",
   "towns": [
    "公館鄉",
@@ -3846,7 +3846,7 @@ const STATION_DATA = [
  {
   "id": "412605",
   "siteName": "竹南群聯停車塔",
-  "siteNameCV": "竹南大埔L18竹南羅門哈斯",
+  "siteNameCV": "竹南大埔L18竹南群聯停車塔",
   "town": "竹南鎮",
   "towns": [
    "竹南鎮",
@@ -5194,7 +5194,7 @@ const STATION_DATA = [
  {
   "id": "412623",
   "siteName": "頭份文化八德",
-  "siteNameCV": "竹南頭份L10頭份文化八德",
+  "siteNameCV": "竹南頭份L10頭份復興",
   "town": "頭份市",
   "towns": [
    "頭份市",
@@ -5690,7 +5690,7 @@ const STATION_DATA = [
  {
   "id": "412639",
   "siteName": "苗栗公館L16",
-  "siteNameCV": "苗栗公館L16公館轉溝水RH4",
+  "siteNameCV": "苗栗公館L16公館出礦枝RH9",
   "town": "公館鄉",
   "towns": [
    "公館鄉",
@@ -6134,7 +6134,7 @@ const STATION_DATA = [
  {
   "id": "412648",
   "siteName": "竹南農科院",
-  "siteNameCV": "竹南大埔L15竹南群聯五",
+  "siteNameCV": "竹南大埔L15竹南農科院",
   "town": "竹南鎮",
   "towns": [
    "竹南鎮",
@@ -6991,7 +6991,7 @@ const STATION_DATA = [
   "id": "412657",
   "siteName": "大湖雪管處",
   "siteNameCV": "苗栗大湖L07獅潭桂竹林",
-  "town": "大湖鄉",
+  "town": "獅潭鄉",
   "towns": [
    "大湖鄉",
    "獅潭鄉",
@@ -7689,7 +7689,7 @@ const STATION_DATA = [
        "ant": "3X-V65A-3XR",
        "az": "190",
        "mt": "0",
-       "et": "8",
+       "et": "6",
        "lat": 24.46639,
        "lon": 120.75283
       },
@@ -7700,7 +7700,7 @@ const STATION_DATA = [
        "ant": "3X-V65A-3XR",
        "az": "190",
        "mt": "0",
-       "et": "8",
+       "et": "6",
        "lat": 24.46639,
        "lon": 120.75283
       }
@@ -8329,7 +8329,7 @@ const STATION_DATA = [
  {
   "id": "412778",
   "siteName": "公館B4",
-  "siteNameCV": "公館五穀國小RH1",
+  "siteNameCV": "公館德善堂RH3",
   "town": "公館鄉",
   "towns": [
    "公館鄉",
@@ -8422,7 +8422,7 @@ const STATION_DATA = [
  {
   "id": "412779",
   "siteName": "竹南大埔機房BBU3",
-  "siteNameCV": "竹南迪恩士RH6",
+  "siteNameCV": "竹南京鼎科技RH3",
   "town": "竹南鎮",
   "towns": [
    "竹南鎮",
@@ -8782,7 +8782,7 @@ const STATION_DATA = [
        "ant": "RVV-65A-R3",
        "az": "130",
        "mt": "2",
-       "et": "7",
+       "et": "8",
        "lat": 24.564634,
        "lon": 120.811988
       },
@@ -8793,7 +8793,7 @@ const STATION_DATA = [
        "ant": "RVV-65A-R3",
        "az": "130",
        "mt": "2",
-       "et": "7",
+       "et": "8",
        "lat": 24.564634,
        "lon": 120.811988
       }
@@ -9695,7 +9695,7 @@ const STATION_DATA = [
  {
   "id": "412938",
   "siteName": "竹南中美升藝達",
-  "siteNameCV": "竹南復興L18竹南中美升藝達",
+  "siteNameCV": "竹南復興L18竹南新生",
   "town": "竹南鎮",
   "towns": [
    "竹南鎮",
@@ -9974,7 +9974,7 @@ const STATION_DATA = [
  {
   "id": "412939",
   "siteName": "竹南聖福成功",
-  "siteNameCV": "竹南復興L19竹南龍山龍昇",
+  "siteNameCV": "竹南復興L19竹南聖福成功",
   "town": "竹南鎮",
   "towns": [
    "竹南鎮",
@@ -10290,7 +10290,7 @@ const STATION_DATA = [
  {
   "id": "412953",
   "siteName": "通霄城北高鐵",
-  "siteNameCV": "苗栗通霄L14通霄高隧二北2",
+  "siteNameCV": "苗栗通霄L14通霄城北高鐵",
   "town": "通霄鎮",
   "towns": [
    "通霄鎮",
@@ -11274,7 +11274,7 @@ const STATION_DATA = [
   "id": "413003",
   "siteName": "竹南佳興永貞",
   "siteNameCV": "竹南竹南L18竹南佳興永貞",
-  "town": "頭份市",
+  "town": "竹南鎮",
   "towns": [
    "竹南鎮",
    "頭份市"
@@ -11544,8 +11544,11 @@ const STATION_DATA = [
    },
    "竹南竹南L18頭份東庄八德": {
     "rmod": {
-     "44": [
-      "AC Power"
+     "54": [
+      "AC Power",
+      "Door",
+      "Fire",
+      "Temperature"
      ]
     }
    }
@@ -12104,7 +12107,7 @@ const STATION_DATA = [
  {
   "id": "413009",
   "siteName": "苗栗三山社區",
-  "siteNameCV": "苗栗中央L28苗栗大千碧英",
+  "siteNameCV": "苗栗中央L28苗栗三山社區",
   "town": "苗栗市",
   "towns": [
    "苗栗市",
@@ -12416,8 +12419,8 @@ const STATION_DATA = [
  {
   "id": "413010",
   "siteName": "後龍禽宰場",
-  "siteNameCV": "苗栗中央L29苗栗樂活山莊",
-  "town": "後龍鎮",
+  "siteNameCV": "苗栗中央L29苗栗經國至公",
+  "town": "苗栗市",
   "towns": [
    "後龍鎮",
    "苗栗市",
@@ -13554,7 +13557,10 @@ const STATION_DATA = [
    "竹南頭份L29頭份上坪": {
     "rmod": {
      "53": [
-      "AC Power"
+      "AC Power",
+      "Door",
+      "Fire",
+      "Temperature"
      ]
     }
    }
@@ -13571,7 +13577,7 @@ const STATION_DATA = [
  {
   "id": "413019",
   "siteName": "頭份勝懋RH1",
-  "siteNameCV": "竹南頭份L16頭份勝懋RH1",
+  "siteNameCV": "竹南頭份L16榮豐茶廠",
   "town": "頭份市",
   "towns": [
    "頭份市",
@@ -13690,7 +13696,7 @@ const STATION_DATA = [
  {
   "id": "413031",
   "siteName": "銅鑼朝北南枝14RH",
-  "siteNameCV": "苗栗銅鑼L22樟樹枝31RH",
+  "siteNameCV": "苗栗銅鑼L22雙峰枝7RH",
   "town": "銅鑼鄉",
   "towns": [
    "銅鑼鄉",
@@ -13740,8 +13746,8 @@ const STATION_DATA = [
        "rmod": "FHDB",
        "ant": "80010761",
        "az": "270",
-       "mt": "1",
-       "et": "2",
+       "mt": "0",
+       "et": "3",
        "lat": 24.509554,
        "lon": 120.785092
       },
@@ -13886,7 +13892,7 @@ const STATION_DATA = [
  {
   "id": "413039",
   "siteName": "通霄御和園",
-  "siteNameCV": "苗栗通霄L21通霄五里",
+  "siteNameCV": "苗栗通霄L21通霄御和園",
   "town": "通霄鎮",
   "towns": [
    "通霄鎮",
@@ -15474,7 +15480,7 @@ const STATION_DATA = [
        "ant": "RVV-65A-R3",
        "az": "210",
        "mt": "0",
-       "et": "9",
+       "et": "8",
        "lat": 24.69064,
        "lon": 120.87286
       }
@@ -17118,7 +17124,7 @@ const STATION_DATA = [
  {
   "id": "413465",
   "siteName": "後龍溪洲東",
-  "siteNameCV": "苗栗後龍L09後龍武德",
+  "siteNameCV": "苗栗後龍L09後龍溪洲東",
   "town": "後龍鎮",
   "towns": [
    "後龍鎮",
@@ -17360,6 +17366,8 @@ const STATION_DATA = [
    "苗栗後龍L09後龍武德": {
     "rmod": {
      "43": [
+      "Temperature",
+      "Firer",
       "AC Power"
      ]
     }
@@ -17669,7 +17677,7 @@ const STATION_DATA = [
  {
   "id": "413470",
   "siteName": "苑裡營業BBU1",
-  "siteNameCV": "苑裡中正RH1",
+  "siteNameCV": "苑裡漁港RH3",
   "town": "苑裡鎮",
   "towns": [
    "苑裡鎮",
@@ -17809,7 +17817,7 @@ const STATION_DATA = [
  {
   "id": "413474",
   "siteName": "銅鑼文園新",
-  "siteNameCV": "苗栗銅鑼L07文園新",
+  "siteNameCV": "苗栗銅鑼L07銅科公五",
   "town": "銅鑼鄉",
   "towns": [
    "銅鑼鄉",
@@ -18327,7 +18335,7 @@ const STATION_DATA = [
  {
   "id": "413481",
   "siteName": "竹南和仁新",
-  "siteNameCV": "竹南大埔L19四方牧場RH3",
+  "siteNameCV": "竹南大埔L19竹南山頂RH",
   "town": "竹南鎮",
   "towns": [
    "竹南鎮",
@@ -18763,7 +18771,7 @@ const STATION_DATA = [
  {
   "id": "413485",
   "siteName": "後龍埔頂",
-  "siteNameCV": "苗栗後龍L07後龍埔頂",
+  "siteNameCV": "苗栗後龍L07後龍北龍",
   "town": "後龍鎮",
   "towns": [
    "後龍鎮",
@@ -19641,7 +19649,7 @@ const STATION_DATA = [
  {
   "id": "413487",
   "siteName": "苗栗嘉福",
-  "siteNameCV": "苗栗嘉盛L08苗栗嘉福",
+  "siteNameCV": "苗栗嘉盛L08苗栗嘉惠新村",
   "town": "苗栗市",
   "towns": [
    "苗栗市",
@@ -19892,7 +19900,9 @@ const STATION_DATA = [
    "苗栗嘉盛L08苗栗嘉惠新村": {
     "rmod": {
      "43": [
-      "AC Power"
+      "AC Power",
+      "Fire",
+      "Temperature"
      ]
     }
    }
@@ -19977,7 +19987,7 @@ const STATION_DATA = [
  {
   "id": "413703",
   "siteName": "西湖五湖",
-  "siteNameCV": "西湖五湖",
+  "siteNameCV": "西湖五湖五台山RH5",
   "town": "西湖鄉",
   "towns": [
    "西湖鄉",
@@ -21519,7 +21529,9 @@ const STATION_DATA = [
    "苗栗西湖L04後龍中和": {
     "rmod": {
      "13": [
-      "AC Power"
+      "AC Power",
+      "Firer",
+      "Temperature"
      ]
     }
    }
@@ -21803,7 +21815,7 @@ const STATION_DATA = [
        "rmod": "AHHB",
        "ant": "80010682",
        "az": "100",
-       "mt": "1",
+       "mt": "0",
        "et": "4",
        "lat": 24.53892,
        "lon": 120.81748
@@ -22412,7 +22424,7 @@ const STATION_DATA = [
        "ant": "80010864",
        "az": "240",
        "mt": "2",
-       "et": "7",
+       "et": "10",
        "lat": 24.501514,
        "lon": 120.822977
       },
@@ -22423,7 +22435,7 @@ const STATION_DATA = [
        "ant": "80010864",
        "az": "240",
        "mt": "2",
-       "et": "2.5",
+       "et": "6",
        "lat": 24.501514,
        "lon": 120.822977
       },
@@ -22434,7 +22446,7 @@ const STATION_DATA = [
        "ant": "80010864",
        "az": "240",
        "mt": "2",
-       "et": "2.5",
+       "et": "6",
        "lat": 24.501514,
        "lon": 120.822977
       }
@@ -23785,7 +23797,7 @@ const STATION_DATA = [
        "ant": "80010864",
        "az": "150",
        "mt": "5",
-       "et": "3",
+       "et": "5",
        "lat": 24.57225,
        "lon": 120.83486
       },
@@ -23796,7 +23808,7 @@ const STATION_DATA = [
        "ant": "80010864",
        "az": "150",
        "mt": "5",
-       "et": "3",
+       "et": "5",
        "lat": 24.57225,
        "lon": 120.83486
       },
@@ -23807,7 +23819,7 @@ const STATION_DATA = [
        "ant": "80010864",
        "az": "150",
        "mt": "5",
-       "et": "3",
+       "et": "5",
        "lat": 24.57225,
        "lon": 120.83486
       }
@@ -24043,7 +24055,7 @@ const STATION_DATA = [
        "ant": "80010864",
        "az": "230",
        "mt": "4",
-       "et": "4",
+       "et": "5",
        "lat": 24.57193,
        "lon": 120.83016
       },
@@ -24054,7 +24066,7 @@ const STATION_DATA = [
        "ant": "80010864",
        "az": "230",
        "mt": "4",
-       "et": "4",
+       "et": "5",
        "lat": 24.57193,
        "lon": 120.83016
       },
@@ -25151,131 +25163,9 @@ const STATION_DATA = [
   }
  },
  {
-  "id": "413739",
-  "siteName": "南庄田美",
-  "siteNameCV": "南庄田美",
-  "town": "南庄鄉",
-  "towns": [
-   "南庄鄉"
-  ],
-  "sec": "s1/2/3",
-  "secs": [
-   "s1/2/3"
-  ],
-  "stations": [
-   "南庄田美"
-  ],
-  "coords": [
-   {
-    "lat": 24.633667,
-    "lon": 121.00953
-   }
-  ],
-  "cells": {
-   "南庄田美": [
-    {
-     "sec": 1,
-     "cells": [
-      {
-       "cel": "11",
-       "cov": "Outdoor",
-       "rmod": "AHDB",
-       "ant": "C2D0510X6",
-       "az": "100",
-       "mt": "0",
-       "et": "3",
-       "lat": 24.633667,
-       "lon": 121.00953
-      },
-      {
-       "cel": "13",
-       "cov": "Outdoor",
-       "rmod": "FHEB",
-       "ant": "C2D0510X6",
-       "az": "100",
-       "mt": "0",
-       "et": "3",
-       "lat": 24.633667,
-       "lon": 121.00953
-      }
-     ]
-    },
-    {
-     "sec": 2,
-     "cells": [
-      {
-       "cel": "21",
-       "cov": "Outdoor",
-       "rmod": "AHDB",
-       "ant": "C2D0510X6",
-       "az": "190",
-       "mt": "0",
-       "et": "3",
-       "lat": 24.633667,
-       "lon": 121.00953
-      },
-      {
-       "cel": "23",
-       "cov": "Outdoor",
-       "rmod": "FHEB",
-       "ant": "C2D0510X6",
-       "az": "190",
-       "mt": "0",
-       "et": "3",
-       "lat": 24.633667,
-       "lon": 121.00953
-      }
-     ]
-    },
-    {
-     "sec": 3,
-     "cells": [
-      {
-       "cel": "31",
-       "cov": "Outdoor",
-       "rmod": "AHDB",
-       "ant": "C2D0510X6",
-       "az": "300",
-       "mt": "0",
-       "et": "3",
-       "lat": 24.633667,
-       "lon": 121.00953
-      },
-      {
-       "cel": "33",
-       "cov": "Outdoor",
-       "rmod": "FHEB",
-       "ant": "C2D0510X6",
-       "az": "300",
-       "mt": "0",
-       "et": "3",
-       "lat": 24.633667,
-       "lon": 121.00953
-      }
-     ]
-    }
-   ]
-  },
-  "nrBtsId": "",
-  "ranType": "D-RAN",
-  "smod": {
-   "南庄田美": [
-    "Low DC Voltage",
-    "Door",
-    "Fire",
-    "Temperature",
-    "AC Power",
-    "SMR Alarm",
-    "Power Generator",
-    "Mains power break",
-    "Power module failure"
-   ]
-  }
- },
- {
   "id": "413740",
   "siteName": "後龍後龍",
-  "siteNameCV": "苗栗後龍L01後龍後龍",
+  "siteNameCV": "苗栗後龍L01後龍仁德",
   "town": "後龍鎮",
   "towns": [
    "後龍鎮",
@@ -26253,7 +26143,7 @@ const STATION_DATA = [
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "140",
-       "mt": "0",
+       "mt": "3",
        "et": "6",
        "lat": 24.61287,
        "lon": 120.79342
@@ -26759,7 +26649,7 @@ const STATION_DATA = [
  {
   "id": "413747",
   "siteName": "三義裕隆宿舍",
-  "siteNameCV": "苗栗三義N06三義裕隆宿舍",
+  "siteNameCV": "苗栗三義N06三義基維股",
   "town": "三義鄉",
   "towns": [
    "三義鄉",
@@ -27030,7 +26920,7 @@ const STATION_DATA = [
  {
   "id": "413748",
   "siteName": "三義勝興",
-  "siteNameCV": "苗栗三義L02三義行德宮",
+  "siteNameCV": "苗栗三義L02三義勝興",
   "town": "三義鄉",
   "towns": [
    "三義鄉",
@@ -27297,7 +27187,7 @@ const STATION_DATA = [
  {
   "id": "413749",
   "siteName": "三義鯉魚",
-  "siteNameCV": "苗栗鯉魚L01三義上山下RH",
+  "siteNameCV": "苗栗鯉魚L01",
   "town": "三義鄉",
   "towns": [
    "三義鄉",
@@ -27827,7 +27717,7 @@ const STATION_DATA = [
   "id": "413755",
   "siteName": "造橋大西",
   "siteNameCV": "竹南大西L01造橋大西",
-  "town": "造橋鄉",
+  "town": "頭份市",
   "towns": [
    "造橋鄉",
    "頭份市"
@@ -28555,8 +28445,8 @@ const STATION_DATA = [
  {
   "id": "413757",
   "siteName": "造橋平興",
-  "siteNameCV": "竹南大西L03頭份高隧五南",
-  "town": "造橋鄉",
+  "siteNameCV": "竹南大西L03造橋平興",
+  "town": "頭份市",
   "towns": [
    "造橋鄉",
    "頭份市"
@@ -28663,7 +28553,7 @@ const STATION_DATA = [
        "ant": "80010864",
        "az": "220",
        "mt": "0",
-       "et": "4",
+       "et": "3",
        "lat": 24.62017,
        "lon": 120.866665
       }
@@ -28792,7 +28682,10 @@ const STATION_DATA = [
    "竹南大西L03頭份高隧五南": {
     "rmod": {
      "61": [
-      "AC Power"
+      "AC Power",
+      "Fire",
+      "Temperature",
+      "Door"
      ]
     }
    }
@@ -29427,14 +29320,20 @@ const STATION_DATA = [
    "竹南竹南L03頭份中港溪": {
     "rmod": {
      "23": [
-      "AC Power"
+      "AC Power",
+      "Door",
+      "Fire",
+      "Temperature"
      ]
     }
    },
    "竹南竹南L03頭份尖下": {
     "rmod": {
      "53": [
-      "AC Power"
+      "AC Power",
+      "Door",
+      "Fire",
+      "Temperature"
      ]
     }
    }
@@ -29451,7 +29350,7 @@ const STATION_DATA = [
  {
   "id": "413763",
   "siteName": "頭份興隆",
-  "siteNameCV": "竹南頭份L24頭份興隆",
+  "siteNameCV": "竹南頭份L24頭份億家具",
   "town": "頭份市",
   "towns": [
    "頭份市",
@@ -29776,7 +29675,7 @@ const STATION_DATA = [
  {
   "id": "413765",
   "siteName": "泰安虎山溫泉",
-  "siteNameCV": "苗栗泰安L03泰安武嵐",
+  "siteNameCV": "苗栗泰安L03泰安虎山溫泉",
   "town": "泰安鄉",
   "towns": [
    "泰安鄉",
@@ -30752,7 +30651,7 @@ const STATION_DATA = [
  {
   "id": "413770",
   "siteName": "苑裡營業中心",
-  "siteNameCV": "苗栗苑裡L06苑裡營業",
+  "siteNameCV": "苗栗苑裡L06苑裡神腦門市",
   "town": "苑裡鎮",
   "towns": [
    "苑裡鎮",
@@ -31396,7 +31295,7 @@ const STATION_DATA = [
  {
   "id": "413772",
   "siteName": "通霄內湖北",
-  "siteNameCV": "苗栗通霄L01通霄烏眉路RH",
+  "siteNameCV": "苗栗通霄L01通霄內湖",
   "town": "通霄鎮",
   "towns": [
    "通霄鎮",
@@ -31770,7 +31669,7 @@ const STATION_DATA = [
  {
   "id": "413774",
   "siteName": "通霄城北",
-  "siteNameCV": "苗栗通霄L06通霄城北",
+  "siteNameCV": "苗栗通霄L06城北聖吉",
   "town": "通霄鎮",
   "towns": [
    "通霄鎮",
@@ -31994,7 +31893,10 @@ const STATION_DATA = [
    "苗栗通霄L06通霄城北": {
     "rmod": {
      "13": [
-      "AC Power"
+      "AC Power",
+      "Door",
+      "Fire",
+      "Temperature"
      ]
     }
    },
@@ -32207,7 +32109,7 @@ const STATION_DATA = [
  {
   "id": "413780",
   "siteName": "三灣三灣",
-  "siteNameCV": "竹南三灣L01三灣三灣",
+  "siteNameCV": "竹南三灣L01三灣大河",
   "town": "三灣鄉",
   "towns": [
    "三灣鄉",
@@ -32536,11 +32438,13 @@ const STATION_DATA = [
   "ranType": "C-RAN",
   "smod": {
    "竹南三灣L01三灣三灣": [
+    "SMR",
     "Firer",
     "Temperature",
     "AC Power"
    ],
    "竹南三灣L01三灣大河": [
+    "SMR",
     "Firer",
     "Temperature",
     "AC Power"
@@ -32550,7 +32454,9 @@ const STATION_DATA = [
    "竹南三灣L01三灣大河": {
     "rmod": {
      "53": [
-      "AC Power"
+      "AC Power",
+      "Temperature",
+      "Fire"
      ]
     }
    }
@@ -33081,7 +32987,7 @@ const STATION_DATA = [
  {
   "id": "413783",
   "siteName": "通霄白沙",
-  "siteNameCV": "苗栗白沙L01通霄福泰",
+  "siteNameCV": "苗栗白沙L01通霄白沙",
   "town": "通霄鎮",
   "towns": [
    "通霄鎮",
@@ -34743,7 +34649,7 @@ const STATION_DATA = [
  {
   "id": "413792",
   "siteName": "大湖大湖",
-  "siteNameCV": "苗栗大湖L01大湖分局",
+  "siteNameCV": "苗栗大湖L01大湖大湖",
   "town": "大湖鄉",
   "towns": [
    "大湖鄉",
@@ -35214,6 +35120,10 @@ const STATION_DATA = [
      "53": [
       "Door",
       "AC Power"
+     ],
+     "63": [
+      "Door",
+      "AC Power"
      ]
     }
    }
@@ -35228,7 +35138,7 @@ const STATION_DATA = [
   "id": "413793",
   "siteName": "獅潭汶水",
   "siteNameCV": "苗栗大湖L02獅潭汶水",
-  "town": "大湖鄉",
+  "town": "獅潭鄉",
   "towns": [
    "獅潭鄉",
    "大湖鄉"
@@ -35509,7 +35419,8 @@ const STATION_DATA = [
    "苗栗大湖L02獅潭汶水": {
     "rmod": {
      "14": [
-      "AC Power"
+      "AC Power",
+      "SMR"
      ]
     }
    },
@@ -35699,7 +35610,7 @@ const STATION_DATA = [
        "ant": "80010864",
        "az": "30",
        "mt": "",
-       "et": "12",
+       "et": "13",
        "lat": 24.57223,
        "lon": 120.82444
       },
@@ -35710,7 +35621,7 @@ const STATION_DATA = [
        "ant": "80010864",
        "az": "30",
        "mt": "",
-       "et": "12",
+       "et": "9",
        "lat": 24.57223,
        "lon": 120.82444
       },
@@ -35721,7 +35632,7 @@ const STATION_DATA = [
        "ant": "80010864",
        "az": "30",
        "mt": "",
-       "et": "12",
+       "et": "9",
        "lat": 24.57223,
        "lon": 120.82444
       },
@@ -35732,7 +35643,7 @@ const STATION_DATA = [
        "ant": "80010864",
        "az": "30",
        "mt": "",
-       "et": "12",
+       "et": "9",
        "lat": 24.57223,
        "lon": 120.82444
       },
@@ -35743,7 +35654,7 @@ const STATION_DATA = [
        "ant": "80010864",
        "az": "30",
        "mt": "",
-       "et": "12",
+       "et": "8",
        "lat": 24.57223,
        "lon": 120.82444
       },
@@ -35754,7 +35665,7 @@ const STATION_DATA = [
        "ant": "80010864",
        "az": "30",
        "mt": "",
-       "et": "12",
+       "et": "13",
        "lat": 24.57223,
        "lon": 120.82444
       }
@@ -35923,7 +35834,7 @@ const STATION_DATA = [
        "ant": "RVVPX303.6F12R2",
        "az": "300",
        "mt": "",
-       "et": "12",
+       "et": "7",
        "lat": 24.57223,
        "lon": 120.82444
       },
@@ -35934,7 +35845,7 @@ const STATION_DATA = [
        "ant": "RVVPX303.6F12R2",
        "az": "300",
        "mt": "",
-       "et": "12",
+       "et": "7",
        "lat": 24.57223,
        "lon": 120.82444
       },
@@ -35945,7 +35856,7 @@ const STATION_DATA = [
        "ant": "RVVPX303.6F12R2",
        "az": "300",
        "mt": "",
-       "et": "12",
+       "et": "7",
        "lat": 24.57223,
        "lon": 120.82444
       },
@@ -35956,7 +35867,7 @@ const STATION_DATA = [
        "ant": "RVVPX303.6F12R2",
        "az": "300",
        "mt": "",
-       "et": "12",
+       "et": "7",
        "lat": 24.57223,
        "lon": 120.82444
       },
@@ -36547,7 +36458,7 @@ const STATION_DATA = [
  {
   "id": "413806",
   "siteName": "卓蘭卓蘭BBU1",
-  "siteNameCV": "大克山莊RH1",
+  "siteNameCV": "卓蘭白布帆RH3",
   "town": "卓蘭鎮",
   "towns": [
    "卓蘭鎮",
@@ -37222,7 +37133,7 @@ const STATION_DATA = [
      "cells": [
       {
        "cel": "41",
-       "cov": "Outdoor",
+       "cov": "Indoor",
        "rmod": "AHDB",
        "ant": "SLI2-06360",
        "az": "0",
@@ -37244,7 +37155,7 @@ const STATION_DATA = [
       },
       {
        "cel": "43",
-       "cov": "Outdoor",
+       "cov": "Indoor",
        "rmod": "AHEB",
        "ant": "SLI2-06360",
        "az": "0",
@@ -37266,7 +37177,7 @@ const STATION_DATA = [
       },
       {
        "cel": "45",
-       "cov": "Indoor",
+       "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "SLI2-06360",
        "az": "0",
@@ -37623,7 +37534,10 @@ const STATION_DATA = [
    "竹南頭份L05頭份文化翠亨": {
     "rmod": {
      "31": [
-      "AC Power"
+      "AC Power",
+      "Door",
+      "Fire",
+      "Temperature"
      ]
     }
    },
@@ -37650,7 +37564,7 @@ const STATION_DATA = [
  {
   "id": "413818",
   "siteName": "後龍公司寮",
-  "siteNameCV": "後龍公司寮",
+  "siteNameCV": "後龍海巡署RH2",
   "town": "後龍鎮",
   "towns": [
    "後龍鎮",
@@ -37869,8 +37783,8 @@ const STATION_DATA = [
  {
   "id": "413820",
   "siteName": "苗栗鳳形",
-  "siteNameCV": "苗栗中央L13苗栗鳳形",
-  "town": "苗栗市",
+  "siteNameCV": "苗栗中央L13西湖半天寮RH1",
+  "town": "西湖鄉",
   "towns": [
    "苗栗市",
    "西湖鄉"
@@ -38119,7 +38033,7 @@ const STATION_DATA = [
        "ant": "742237",
        "az": "10",
        "mt": "0",
-       "et": "5",
+       "et": "6",
        "lat": 24.546745,
        "lon": 120.827233
       },
@@ -38130,7 +38044,7 @@ const STATION_DATA = [
        "ant": "742237",
        "az": "10",
        "mt": "0",
-       "et": "5",
+       "et": "6",
        "lat": 24.546745,
        "lon": 120.827233
       }
@@ -38479,7 +38393,7 @@ const STATION_DATA = [
  {
   "id": "413827",
   "siteName": "後龍恩德",
-  "siteNameCV": "苗栗後龍L06後龍新港一路",
+  "siteNameCV": "苗栗後龍L06後龍恩德",
   "town": "後龍鎮",
   "towns": [
    "後龍鎮",
@@ -39367,7 +39281,7 @@ const STATION_DATA = [
  {
   "id": "413837",
   "siteName": "竹南竹興鍵豪",
-  "siteNameCV": "竹南復興L05竹南崎頂天祥",
+  "siteNameCV": "竹南復興L05竹南竹興鍵豪",
   "town": "竹南鎮",
   "towns": [
    "竹南鎮",
@@ -39728,7 +39642,7 @@ const STATION_DATA = [
  {
   "id": "413840",
   "siteName": "苗栗嘉新福樂",
-  "siteNameCV": "苗栗嘉盛L06經國河濱",
+  "siteNameCV": "苗栗嘉盛L06苗栗嘉新福樂",
   "town": "苗栗市",
   "towns": [
    "苗栗市",
@@ -40290,7 +40204,7 @@ const STATION_DATA = [
        "rmod": "FXDB",
        "ant": "80010864",
        "az": "130",
-       "mt": "1",
+       "mt": "0",
        "et": "9",
        "lat": 24.61431,
        "lon": 120.84028
@@ -40312,7 +40226,7 @@ const STATION_DATA = [
        "rmod": "FXEB",
        "ant": "80010864",
        "az": "130",
-       "mt": "1",
+       "mt": "0",
        "et": "4",
        "lat": 24.61431,
        "lon": 120.84028
@@ -40345,7 +40259,7 @@ const STATION_DATA = [
        "rmod": "FXDB",
        "ant": "80010864",
        "az": "130",
-       "mt": "0",
+       "mt": "1",
        "et": "8",
        "lat": 24.61431,
        "lon": 120.84028
@@ -40960,7 +40874,7 @@ const STATION_DATA = [
        "ant": "80010864",
        "az": "200",
        "mt": "2",
-       "et": "3",
+       "et": "5",
        "lat": 24.38944,
        "lon": 120.75248
       }
@@ -41570,7 +41484,7 @@ const STATION_DATA = [
  {
   "id": "413968",
   "siteName": "三義西湖渡假",
-  "siteNameCV": "苗栗三義L19三義上湖RH",
+  "siteNameCV": "苗栗三義L19三義西湖渡假",
   "town": "三義鄉",
   "towns": [
    "三義鄉",
@@ -42152,7 +42066,7 @@ const STATION_DATA = [
  {
   "id": "413970",
   "siteName": "苗栗社寮",
-  "siteNameCV": "苗栗嘉盛L05苗栗中華",
+  "siteNameCV": "苗栗嘉盛L05苗栗社寮",
   "town": "苗栗市",
   "towns": [
    "苗栗市",
@@ -42199,7 +42113,7 @@ const STATION_DATA = [
        "rmod": "FHEB",
        "ant": "80010864",
        "az": "100",
-       "mt": "2",
+       "mt": "0",
        "et": "2.5",
        "lat": 24.569925,
        "lon": 120.825059
@@ -42440,7 +42354,7 @@ const STATION_DATA = [
  {
   "id": "413971",
   "siteName": "通霄木棉道",
-  "siteNameCV": "通霄木棉道RH1",
+  "siteNameCV": "通霄木棉道RH3",
   "town": "通霄鎮",
   "towns": [
    "通霄鎮",
@@ -42807,7 +42721,7 @@ const STATION_DATA = [
  {
   "id": "413983",
   "siteName": "竹南大厝開元",
-  "siteNameCV": "竹南復興L03竹南大厝開元",
+  "siteNameCV": "竹南復興L03竹南中正",
   "town": "竹南鎮",
   "towns": [
    "竹南鎮",
@@ -43144,7 +43058,7 @@ const STATION_DATA = [
  {
   "id": "413984",
   "siteName": "通霄飛牛原墅",
-  "siteNameCV": "通霄飛牛原墅RH3",
+  "siteNameCV": "通霄飛牛原墅RH2",
   "town": "通霄鎮",
   "towns": [
    "通霄鎮",
@@ -44010,7 +43924,7 @@ const STATION_DATA = [
  {
   "id": "413995",
   "siteName": "頭屋印天宮",
-  "siteNameCV": "苗栗頭屋L05頭屋印天宮",
+  "siteNameCV": "苗栗頭屋L05頭屋中華",
   "town": "頭屋鄉",
   "towns": [
    "頭屋鄉",
@@ -44315,7 +44229,7 @@ const STATION_DATA = [
  {
   "id": "413996",
   "siteName": "後龍灣寶庄",
-  "siteNameCV": "苗栗大山L06後龍百變影城",
+  "siteNameCV": "苗栗大山L06後龍灣寶庄",
   "town": "後龍鎮",
   "towns": [
    "後龍鎮",
@@ -44763,7 +44677,7 @@ const STATION_DATA = [
  {
   "id": "414006",
   "siteName": "苗栗南勢坑",
-  "siteNameCV": "苗栗中央L06苗栗南勢坑",
+  "siteNameCV": "苗栗中央L06苗栗松園",
   "town": "苗栗市",
   "towns": [
    "苗栗市",
@@ -45007,7 +44921,7 @@ const STATION_DATA = [
  {
   "id": "414008",
   "siteName": "西湖三湖",
-  "siteNameCV": "苗栗西湖L03西湖中央",
+  "siteNameCV": "苗栗西湖L03西湖三湖",
   "town": "西湖鄉",
   "towns": [
    "西湖鄉",
@@ -46005,8 +45919,8 @@ const STATION_DATA = [
  {
   "id": "414017",
   "siteName": "苑裡西平",
-  "siteNameCV": "苗栗苑裡L03苑裡苑港",
-  "town": "通霄鎮",
+  "siteNameCV": "苗栗苑裡L03苑裡西平",
+  "town": "苑裡鎮",
   "towns": [
    "苑裡鎮",
    "苑裡鎮",
@@ -47075,7 +46989,7 @@ const STATION_DATA = [
   "id": "414026",
   "siteName": "三義八股",
   "siteNameCV": "苗栗三義L09三義八股",
-  "town": "銅鑼鄉",
+  "town": "三義鄉",
   "towns": [
    "三義鄉",
    "銅鑼鄉"
@@ -47122,7 +47036,7 @@ const STATION_DATA = [
        "ant": "RVVPX303.6F12R2",
        "az": "40",
        "mt": "0",
-       "et": "9",
+       "et": "6",
        "lat": 24.41061,
        "lon": 120.76713
       },
@@ -47133,7 +47047,7 @@ const STATION_DATA = [
        "ant": "RVVPX303.6F12R2",
        "az": "40",
        "mt": "0",
-       "et": "9",
+       "et": "6",
        "lat": 24.41061,
        "lon": 120.76713
       },
@@ -47144,7 +47058,7 @@ const STATION_DATA = [
        "ant": "RVVPX303.6F12R2",
        "az": "40",
        "mt": "0",
-       "et": "9",
+       "et": "6",
        "lat": 24.41061,
        "lon": 120.76713
       },
@@ -47155,7 +47069,7 @@ const STATION_DATA = [
        "ant": "RVVPX303.6F12R2",
        "az": "40",
        "mt": "0",
-       "et": "9",
+       "et": "6",
        "lat": 24.41061,
        "lon": 120.76713
       }
@@ -47182,7 +47096,7 @@ const STATION_DATA = [
        "ant": "RVVPX303.6F12R2",
        "az": "130",
        "mt": "0",
-       "et": "8",
+       "et": "7",
        "lat": 24.41061,
        "lon": 120.76713
       },
@@ -47193,7 +47107,7 @@ const STATION_DATA = [
        "ant": "RVVPX303.6F12R2",
        "az": "130",
        "mt": "0",
-       "et": "8",
+       "et": "7",
        "lat": 24.41061,
        "lon": 120.76713
       },
@@ -47204,7 +47118,7 @@ const STATION_DATA = [
        "ant": "RVVPX303.6F12R2",
        "az": "130",
        "mt": "0",
-       "et": "8",
+       "et": "7",
        "lat": 24.41061,
        "lon": 120.76713
       },
@@ -47215,7 +47129,7 @@ const STATION_DATA = [
        "ant": "RVVPX303.6F12R2",
        "az": "130",
        "mt": "0",
-       "et": "8",
+       "et": "7",
        "lat": 24.41061,
        "lon": 120.76713
       }
@@ -47722,7 +47636,9 @@ const STATION_DATA = [
    "竹南三灣L05三灣大河底": {
     "rmod": {
      "23": [
-      "AC Power"
+      "AC Power",
+      "Fire",
+      "Temperature"
      ]
     }
    }
@@ -49233,7 +49149,7 @@ const STATION_DATA = [
  {
   "id": "414051",
   "siteName": "竹南煙波",
-  "siteNameCV": "竹南大埔L04竹南仁愛",
+  "siteNameCV": "竹南大埔L04竹南煙波",
   "town": "竹南鎮",
   "towns": [
    "竹南鎮",
@@ -50121,6 +50037,11 @@ const STATION_DATA = [
      ]
     }
    }
+  },
+  "lid": {
+   "苗栗西湖L06西湖南勢山": [
+    "L4055"
+   ]
   }
  },
  {
@@ -50402,7 +50323,7 @@ const STATION_DATA = [
  {
   "id": "414064",
   "siteName": "西湖鴨母坑",
-  "siteNameCV": "苗栗西湖L02西湖鴨母坑",
+  "siteNameCV": "苗栗西湖L02西湖三湖口",
   "town": "西湖鄉",
   "towns": [
    "西湖鄉",
@@ -50724,7 +50645,7 @@ const STATION_DATA = [
  {
   "id": "414065",
   "siteName": "苑裡海岸台",
-  "siteNameCV": "苗栗苑裡L08南房120RH4",
+  "siteNameCV": "苗栗苑裡L08苑裡海岸",
   "town": "苑裡鎮",
   "towns": [
    "苑裡鎮",
@@ -51111,7 +51032,7 @@ const STATION_DATA = [
  {
   "id": "414067",
   "siteName": "泰安中興",
-  "siteNameCV": "苗栗大湖L06大湖靜湖",
+  "siteNameCV": "苗栗大湖L06泰安中興",
   "town": "泰安鄉",
   "towns": [
    "泰安鄉",
@@ -51248,7 +51169,7 @@ const STATION_DATA = [
        "rmod": "AHEGG",
        "ant": "DBXLH-6565A-VTM",
        "az": "270",
-       "mt": "2",
+       "mt": "3",
        "et": "4",
        "lat": 24.42938,
        "lon": 120.88676
@@ -52587,7 +52508,7 @@ const STATION_DATA = [
  {
   "id": "414078",
   "siteName": "通霄福龍",
-  "siteNameCV": "苗栗通霄L02通霄北勢窩",
+  "siteNameCV": "苗栗通霄L02通霄福龍",
   "town": "通霄鎮",
   "towns": [
    "通霄鎮",
@@ -54103,7 +54024,7 @@ const STATION_DATA = [
  {
   "id": "414096",
   "siteName": "銅鑼億光",
-  "siteNameCV": "苗栗公館L03公館南河",
+  "siteNameCV": "苗栗公館L03銅鑼億光",
   "town": "公館鄉",
   "towns": [
    "銅鑼鄉",
@@ -55498,8 +55419,8 @@ const STATION_DATA = [
  {
   "id": "415362",
   "siteName": "竹南大西L04",
-  "siteNameCV": "竹南大西L04頭份福樂新村RH",
-  "town": "造橋鄉",
+  "siteNameCV": "竹南大西L04造橋平興鶴巢RH",
+  "town": "頭份市",
   "towns": [
    "造橋鄉",
    "造橋鄉",
@@ -55697,7 +55618,7 @@ const STATION_DATA = [
  {
   "id": "415368",
   "siteName": "頭份頭份BBU3",
-  "siteNameCV": "頭份陽明RH3",
+  "siteNameCV": "頭份民族RH4",
   "town": "頭份市",
   "towns": [
    "頭份市",
@@ -55777,7 +55698,7 @@ const STATION_DATA = [
        "ant": "DBXLH-6565A-VTM",
        "az": "0",
        "mt": "0",
-       "et": "9",
+       "et": "10",
        "lat": 24.6636,
        "lon": 120.92177
       },
@@ -56086,7 +56007,7 @@ const STATION_DATA = [
  {
   "id": "415378",
   "siteName": "通霄通霄BBU3",
-  "siteNameCV": "通霄交流道-RRH3",
+  "siteNameCV": "通霄福源二-RRH2",
   "town": "通霄鎮",
   "towns": [
    "通霄鎮",
@@ -56452,7 +56373,7 @@ const STATION_DATA = [
   "id": "415388",
   "siteName": "西湖西湖BBU3",
   "siteNameCV": "福龍RH1",
-  "town": "通霄鎮",
+  "town": "後龍鎮",
   "towns": [
    "後龍鎮",
    "通霄鎮",
@@ -56580,7 +56501,7 @@ const STATION_DATA = [
  {
   "id": "415389",
   "siteName": "苑裡營業BBU4",
-  "siteNameCV": "苑裡水坡RH3",
+  "siteNameCV": "苑裡水坡RH1",
   "town": "苑裡鎮",
   "towns": [
    "苑裡鎮",
@@ -57217,7 +57138,7 @@ const STATION_DATA = [
  {
   "id": "415408",
   "siteName": "頭屋機房",
-  "siteNameCV": "苗栗頭屋L02頭屋機房",
+  "siteNameCV": "苗栗頭屋L02頭屋象山",
   "town": "頭屋鄉",
   "towns": [
    "頭屋鄉",
@@ -57330,7 +57251,7 @@ const STATION_DATA = [
        "ant": "80010864",
        "az": "300",
        "mt": "2",
-       "et": "10",
+       "et": "14",
        "lat": 24.573464,
        "lon": 120.850229
       },
@@ -57341,7 +57262,7 @@ const STATION_DATA = [
        "ant": "80010864",
        "az": "300",
        "mt": "2",
-       "et": "2.5",
+       "et": "7",
        "lat": 24.573464,
        "lon": 120.850229
       },
@@ -57352,7 +57273,7 @@ const STATION_DATA = [
        "ant": "80010864",
        "az": "300",
        "mt": "2",
-       "et": "2.5",
+       "et": "7",
        "lat": 24.573464,
        "lon": 120.850229
       }
@@ -58244,7 +58165,7 @@ const STATION_DATA = [
  {
   "id": "415412",
   "siteName": "銅鑼納姆內",
-  "siteNameCV": "苗栗銅鑼L21銅鑼納姆內",
+  "siteNameCV": "苗栗銅鑼L21銅鑼永樂",
   "town": "銅鑼鄉",
   "towns": [
    "銅鑼鄉",
@@ -58368,7 +58289,7 @@ const STATION_DATA = [
        "ant": "80010864",
        "az": "300",
        "mt": "0",
-       "et": "5",
+       "et": "7",
        "lat": 24.480167,
        "lon": 120.79444
       },
@@ -58379,7 +58300,7 @@ const STATION_DATA = [
        "ant": "80010864",
        "az": "300",
        "mt": "0",
-       "et": "5",
+       "et": "7",
        "lat": 24.480167,
        "lon": 120.79444
       },
@@ -58390,7 +58311,7 @@ const STATION_DATA = [
        "ant": "80010864",
        "az": "300",
        "mt": "0",
-       "et": "3",
+       "et": "5",
        "lat": 24.480167,
        "lon": 120.79444
       },
@@ -58401,7 +58322,7 @@ const STATION_DATA = [
        "ant": "80010864",
        "az": "300",
        "mt": "0",
-       "et": "3",
+       "et": "5",
        "lat": 24.480167,
        "lon": 120.79444
       }
@@ -58412,6 +58333,17 @@ const STATION_DATA = [
     {
      "sec": 4,
      "cells": [
+      {
+       "cel": "42",
+       "cov": "Outdoor",
+       "rmod": "AHEGG",
+       "ant": "80010664",
+       "az": "100",
+       "mt": "0",
+       "et": "6",
+       "lat": 24.48319,
+       "lon": 120.787586
+      },
       {
        "cel": "43",
        "cov": "Outdoor",
@@ -58445,6 +58377,17 @@ const STATION_DATA = [
      "sec": 6,
      "cells": [
       {
+       "cel": "62",
+       "cov": "Outdoor",
+       "rmod": "AHEGG",
+       "ant": "80010664",
+       "az": "330",
+       "mt": "0",
+       "et": "8",
+       "lat": 24.48319,
+       "lon": 120.787586
+      },
+      {
        "cel": "63",
        "cov": "Outdoor",
        "rmod": "AHEGG",
@@ -58465,8 +58408,8 @@ const STATION_DATA = [
  {
   "id": "415415",
   "siteName": "通霄隘口寮",
-  "siteNameCV": "苗栗苑裡L09通霄隘口寮",
-  "town": "通霄鎮",
+  "siteNameCV": "苑裡漁香園mRRH",
+  "town": "苑裡鎮",
   "towns": [
    "通霄鎮",
    "苑裡鎮",
@@ -58695,7 +58638,7 @@ const STATION_DATA = [
        "rmod": "FHDB",
        "ant": "80010864",
        "az": "180",
-       "mt": "1",
+       "mt": "0",
        "et": "11",
        "lat": 24.438248,
        "lon": 120.681796
@@ -58717,7 +58660,7 @@ const STATION_DATA = [
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "180",
-       "mt": "3",
+       "mt": "0",
        "et": "6",
        "lat": 24.438248,
        "lon": 120.681796
@@ -58852,6 +58795,17 @@ const STATION_DATA = [
        "lon": 120.849288
       },
       {
+       "cel": "12",
+       "cov": "Outdoor",
+       "rmod": "FHEL",
+       "ant": "80010864",
+       "az": "20",
+       "mt": "2",
+       "et": "5",
+       "lat": 24.643003,
+       "lon": 120.849288
+      },
+      {
        "cel": "13",
        "cov": "Outdoor",
        "rmod": "FHEL",
@@ -58859,6 +58813,28 @@ const STATION_DATA = [
        "az": "20",
        "mt": "2",
        "et": "5",
+       "lat": 24.643003,
+       "lon": 120.849288
+      },
+      {
+       "cel": "14",
+       "cov": "Outdoor",
+       "rmod": "FRHG",
+       "ant": "80010864",
+       "az": "20",
+       "mt": "2",
+       "et": "5",
+       "lat": 24.643003,
+       "lon": 120.849288
+      },
+      {
+       "cel": "15",
+       "cov": "Outdoor",
+       "rmod": "FRHG",
+       "ant": "80010864",
+       "az": "20",
+       "mt": "2",
+       "et": "2.5",
        "lat": 24.643003,
        "lon": 120.849288
       }
@@ -58942,7 +58918,7 @@ const STATION_DATA = [
  {
   "id": "415419",
   "siteName": "竹南京元三",
-  "siteNameCV": "竹南頭份L15竹南京元",
+  "siteNameCV": "竹南頭份L15竹南京元三廠",
   "town": "竹南鎮",
   "towns": [
    "竹南鎮",
@@ -59101,7 +59077,7 @@ const STATION_DATA = [
  {
   "id": "415420",
   "siteName": "頭屋飛鳳",
-  "siteNameCV": "苗栗頭屋L04公館墨硯山",
+  "siteNameCV": "苗栗頭屋L04頭屋飛鳳",
   "town": "公館鄉",
   "towns": [
    "頭屋鄉",
@@ -59243,7 +59219,7 @@ const STATION_DATA = [
        "ant": "80010864",
        "az": "50",
        "mt": "4",
-       "et": "9",
+       "et": "12",
        "lat": 24.55608,
        "lon": 120.84615
       }
@@ -59934,7 +59910,7 @@ const STATION_DATA = [
        "ant": "80010864",
        "az": "140",
        "mt": "0",
-       "et": "13",
+       "et": "14",
        "lat": 24.57591,
        "lon": 120.84023
       },
@@ -59945,7 +59921,7 @@ const STATION_DATA = [
        "ant": "80010864",
        "az": "140",
        "mt": "0",
-       "et": "9",
+       "et": "11",
        "lat": 24.57591,
        "lon": 120.84023
       },
@@ -59956,7 +59932,7 @@ const STATION_DATA = [
        "ant": "80010864",
        "az": "140",
        "mt": "0",
-       "et": "9",
+       "et": "11",
        "lat": 24.57591,
        "lon": 120.84023
       },
@@ -59967,7 +59943,7 @@ const STATION_DATA = [
        "ant": "80010864",
        "az": "140",
        "mt": "0",
-       "et": "9",
+       "et": "11",
        "lat": 24.57591,
        "lon": 120.84023
       },
@@ -59978,7 +59954,7 @@ const STATION_DATA = [
        "ant": "80010864",
        "az": "140",
        "mt": "0",
-       "et": "9",
+       "et": "11",
        "lat": 24.57591,
        "lon": 120.84023
       }
@@ -60067,7 +60043,7 @@ const STATION_DATA = [
        "ant": "80010864",
        "az": "120",
        "mt": "0",
-       "et": "5",
+       "et": "7",
        "lat": 24.582623,
        "lon": 120.835581
       },
@@ -60078,7 +60054,7 @@ const STATION_DATA = [
        "ant": "80010864",
        "az": "120",
        "mt": "0",
-       "et": "5",
+       "et": "7",
        "lat": 24.582623,
        "lon": 120.835581
       }
@@ -60094,7 +60070,7 @@ const STATION_DATA = [
        "ant": "80010864",
        "az": "210",
        "mt": "3",
-       "et": "8",
+       "et": "9",
        "lat": 24.582623,
        "lon": 120.835581
       },
@@ -60105,7 +60081,7 @@ const STATION_DATA = [
        "ant": "80010864",
        "az": "210",
        "mt": "3",
-       "et": "3",
+       "et": "5",
        "lat": 24.582623,
        "lon": 120.835581
       },
@@ -60116,7 +60092,7 @@ const STATION_DATA = [
        "ant": "80010864",
        "az": "210",
        "mt": "3",
-       "et": "3",
+       "et": "5",
        "lat": 24.582623,
        "lon": 120.835581
       }
@@ -60678,7 +60654,7 @@ const STATION_DATA = [
  {
   "id": "415429",
   "siteName": "苗栗巨蛋",
-  "siteNameCV": "苗栗中央L18苗栗龍岡二",
+  "siteNameCV": "苗栗中央L18苗栗巨蛋",
   "town": "苗栗市",
   "towns": [
    "苗栗市",
@@ -61008,7 +60984,7 @@ const STATION_DATA = [
  {
   "id": "415430",
   "siteName": "公館玉泉",
-  "siteNameCV": "苗栗公館L02公館玉泉",
+  "siteNameCV": "苗栗公館L02公館中義二",
   "town": "公館鄉",
   "towns": [
    "公館鄉",
@@ -61747,14 +61723,20 @@ const STATION_DATA = [
    "竹南頭份L19頭份土牛新": {
     "rmod": {
      "34": [
-      "AC Power"
+      "AC Power",
+      "Fire",
+      "Temperature",
+      "Door"
      ]
     }
    },
    "竹南頭份L19頭份為恭東興": {
     "rmod": {
      "43": [
-      "AC Power"
+      "AC Power",
+      "Door",
+      "Fire",
+      "Temperature"
      ]
     }
    }
@@ -61771,7 +61753,7 @@ const STATION_DATA = [
  {
   "id": "415437",
   "siteName": "南庄八卦力",
-  "siteNameCV": "竹南南庄L06南庄蓬萊幹RH2",
+  "siteNameCV": "竹南南庄L06南庄大湳支RH1",
   "town": "南庄鄉",
   "towns": [
    "南庄鄉",
@@ -62960,7 +62942,7 @@ const STATION_DATA = [
  {
   "id": "415446",
   "siteName": "造橋談文北",
-  "siteNameCV": "竹南竹南L06造橋談文北RH2",
+  "siteNameCV": "竹南竹南L06造橋潭內",
   "town": "造橋鄉",
   "towns": [
    "造橋鄉",
@@ -63215,7 +63197,7 @@ const STATION_DATA = [
        "ant": "80010864",
        "az": "260",
        "mt": "3",
-       "et": "5",
+       "et": "3",
        "lat": 24.6562,
        "lon": 120.84079
       },
@@ -63226,7 +63208,7 @@ const STATION_DATA = [
        "ant": "80010864",
        "az": "260",
        "mt": "3",
-       "et": "5",
+       "et": "3",
        "lat": 24.6562,
        "lon": 120.84079
       },
@@ -63237,7 +63219,7 @@ const STATION_DATA = [
        "ant": "80010864",
        "az": "260",
        "mt": "3",
-       "et": "5",
+       "et": "4",
        "lat": 24.6562,
        "lon": 120.84079
       }
@@ -63448,7 +63430,7 @@ const STATION_DATA = [
        "ant": "RVV-65A-R3",
        "az": "30",
        "mt": "3",
-       "et": "5",
+       "et": "4",
        "lat": 24.57447,
        "lon": 120.84116
       },
@@ -63459,7 +63441,7 @@ const STATION_DATA = [
        "ant": "RVV-65A-R3",
        "az": "30",
        "mt": "3",
-       "et": "5",
+       "et": "4",
        "lat": 24.57447,
        "lon": 120.84116
       }
@@ -63473,9 +63455,9 @@ const STATION_DATA = [
        "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "RVV-65A-R3",
-       "az": "120",
+       "az": "150",
        "mt": "2",
-       "et": "9",
+       "et": "10",
        "lat": 24.57447,
        "lon": 120.84116
       },
@@ -63484,9 +63466,9 @@ const STATION_DATA = [
        "cov": "Outdoor",
        "rmod": "AHEGG",
        "ant": "RVV-65A-R3",
-       "az": "120",
+       "az": "150",
        "mt": "2",
-       "et": "4",
+       "et": "5",
        "lat": 24.57447,
        "lon": 120.84116
       },
@@ -63495,9 +63477,9 @@ const STATION_DATA = [
        "cov": "Outdoor",
        "rmod": "AHEGG",
        "ant": "RVV-65A-R3",
-       "az": "120",
+       "az": "150",
        "mt": "2",
-       "et": "4",
+       "et": "5",
        "lat": 24.57447,
        "lon": 120.84116
       }
@@ -63511,9 +63493,9 @@ const STATION_DATA = [
        "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "RVV-65A-R3",
-       "az": "260",
+       "az": "220",
        "mt": "2",
-       "et": "9",
+       "et": "10",
        "lat": 24.57447,
        "lon": 120.84116
       },
@@ -63522,9 +63504,9 @@ const STATION_DATA = [
        "cov": "Outdoor",
        "rmod": "AHEGG",
        "ant": "RVV-65A-R3",
-       "az": "260",
+       "az": "220",
        "mt": "2",
-       "et": "5",
+       "et": "7",
        "lat": 24.57447,
        "lon": 120.84116
       },
@@ -63533,9 +63515,9 @@ const STATION_DATA = [
        "cov": "Outdoor",
        "rmod": "AHEGG",
        "ant": "RVV-65A-R3",
-       "az": "260",
+       "az": "220",
        "mt": "2",
-       "et": "5",
+       "et": "7",
        "lat": 24.57447,
        "lon": 120.84116
       }
@@ -63557,7 +63539,7 @@ const STATION_DATA = [
  {
   "id": "415449",
   "siteName": "三義火焱山下",
-  "siteNameCV": "苗栗鯉魚L03三義火炎山下",
+  "siteNameCV": "苗栗鯉魚L03鯉魚口",
   "town": "三義鄉",
   "towns": [
    "三義鄉",
@@ -64265,7 +64247,7 @@ const STATION_DATA = [
        "rmod": "AHDB",
        "ant": "RRV4-65A-R6N43",
        "az": "0",
-       "mt": "1",
+       "mt": "10",
        "et": "8",
        "lat": 24.42401,
        "lon": 120.83458
@@ -64276,7 +64258,7 @@ const STATION_DATA = [
        "rmod": "FHEB",
        "ant": "RRV4-65A-R6N43",
        "az": "0",
-       "mt": "1",
+       "mt": "10",
        "et": "6",
        "lat": 24.42401,
        "lon": 120.83458
@@ -64764,7 +64746,7 @@ const STATION_DATA = [
  {
   "id": "416291",
   "siteName": "大湖大湖BBU4",
-  "siteNameCV": "大湖南湖國小RH3",
+  "siteNameCV": "大湖酒莊RH1",
   "town": "大湖鄉",
   "towns": [
    "大湖鄉",
@@ -64808,7 +64790,7 @@ const STATION_DATA = [
        "ant": "80010864",
        "az": "70",
        "mt": "0",
-       "et": "2.5",
+       "et": "0",
        "lat": 24.430492,
        "lon": 120.86571
       },
@@ -64819,7 +64801,7 @@ const STATION_DATA = [
        "ant": "80010864",
        "az": "70",
        "mt": "0",
-       "et": "2.5",
+       "et": "0",
        "lat": 24.430492,
        "lon": 120.86571
       },
@@ -64841,7 +64823,7 @@ const STATION_DATA = [
        "ant": "80010864",
        "az": "70",
        "mt": "0",
-       "et": "2.5",
+       "et": "0",
        "lat": 24.430492,
        "lon": 120.86571
       }
@@ -65122,8 +65104,8 @@ const STATION_DATA = [
  {
   "id": "416303",
   "siteName": "竹南營業BBU2",
-  "siteNameCV": "竹南竹南L01頭份尖豐RH1",
-  "town": "頭份市",
+  "siteNameCV": "竹南竹南L01竹南新南五谷",
+  "town": "竹南鎮",
   "towns": [
    "頭份市",
    "竹南鎮"
@@ -65341,8 +65323,8 @@ const STATION_DATA = [
  {
   "id": "416901",
   "siteName": "公館公館BBU1",
-  "siteNameCV": "公館山河硯RH1",
-  "town": "公館鄉",
+  "siteNameCV": "獅潭協雲宮RH1",
+  "town": "獅潭鄉",
   "towns": [
    "獅潭鄉",
    "公館鄉",
@@ -65384,7 +65366,7 @@ const STATION_DATA = [
        "rmod": "FHEB",
        "ant": "742215",
        "az": "50",
-       "mt": "2",
+       "mt": "4",
        "et": "3",
        "lat": 24.495922,
        "lon": 120.876173
@@ -65431,7 +65413,7 @@ const STATION_DATA = [
        "rmod": "FHEB",
        "ant": "80010761",
        "az": "220",
-       "mt": "2",
+       "mt": "-2",
        "et": "3",
        "lat": 24.473179,
        "lon": 120.869862
@@ -65771,7 +65753,7 @@ const STATION_DATA = [
        "rmod": "FHDB",
        "ant": "DBXLH-6565A-VTM",
        "az": "0",
-       "mt": "2",
+       "mt": "0",
        "et": "7",
        "lat": 24.46027,
        "lon": 120.77552
@@ -65782,7 +65764,7 @@ const STATION_DATA = [
        "rmod": "FHEB",
        "ant": "DBXLH-6565A-VTM",
        "az": "0",
-       "mt": "2",
+       "mt": "0",
        "et": "3",
        "lat": 24.46027,
        "lon": 120.77552
@@ -65800,8 +65782,8 @@ const STATION_DATA = [
        "rmod": "FHDB",
        "ant": "DBXLH-6565A-VTM",
        "az": "40",
-       "mt": "1",
-       "et": "7",
+       "mt": "0",
+       "et": "6",
        "lat": 24.45388,
        "lon": 120.76557
       },
@@ -65861,7 +65843,7 @@ const STATION_DATA = [
  {
   "id": "416906",
   "siteName": "大湖大湖BBU5",
-  "siteNameCV": "泰安苗62線RH1",
+  "siteNameCV": "大湖香林RH2",
   "town": "大湖鄉",
   "towns": [
    "大湖鄉",
@@ -66171,6 +66153,7 @@ const STATION_DATA = [
    "苗栗通霄L12通灣一品": {
     "rmod": {
      "13": [
+      "SMR",
       "AC Power"
      ]
     }
@@ -66185,7 +66168,7 @@ const STATION_DATA = [
  {
   "id": "416911",
   "siteName": "三義三義BBU6",
-  "siteNameCV": "三義龍騰RH3",
+  "siteNameCV": "三義春田窯RH1",
   "town": "三義鄉",
   "towns": [
    "三義鄉",
@@ -66222,7 +66205,7 @@ const STATION_DATA = [
        "ant": "DBXLH-6565A-VTM",
        "az": "80",
        "mt": "4",
-       "et": "6",
+       "et": "3",
        "lat": 24.409516,
        "lon": 120.799298
       },
@@ -66233,7 +66216,7 @@ const STATION_DATA = [
        "ant": "DBXLH-6565A-VTM",
        "az": "80",
        "mt": "4",
-       "et": "3",
+       "et": "6",
        "lat": 24.409516,
        "lon": 120.799298
       }
@@ -66250,7 +66233,7 @@ const STATION_DATA = [
        "rmod": "FHEB",
        "ant": "742215",
        "az": "50",
-       "mt": "2",
+       "mt": "0",
        "et": "0",
        "lat": 24.377689,
        "lon": 120.782369
@@ -66293,7 +66276,7 @@ const STATION_DATA = [
  {
   "id": "416914",
   "siteName": "苗栗苗栗BBU7",
-  "siteNameCV": "苗栗育民RH2",
+  "siteNameCV": "輝生加油站RH3",
   "town": "苗栗市",
   "towns": [
    "苗栗市",
@@ -66470,7 +66453,7 @@ const STATION_DATA = [
  {
   "id": "416915",
   "siteName": "三灣內灣",
-  "siteNameCV": "竹南三灣L02三灣內灣",
+  "siteNameCV": "竹南三灣L02三灣銅鏡",
   "town": "三灣鄉",
   "towns": [
    "三灣鄉",
@@ -66777,7 +66760,7 @@ const STATION_DATA = [
  {
   "id": "416920",
   "siteName": "頭屋機房BBU1",
-  "siteNameCV": "頭屋湳坑RH2",
+  "siteNameCV": "頭屋孔廟RH3",
   "town": "頭屋鄉",
   "towns": [
    "頭屋鄉",
@@ -67403,7 +67386,7 @@ const STATION_DATA = [
  {
   "id": "416926",
   "siteName": "後龍大山BBU1",
-  "siteNameCV": "苗栗大山L05後龍海口",
+  "siteNameCV": "苗栗大山L05後龍海寶RH2",
   "town": "後龍鎮",
   "towns": [
    "後龍鎮",
@@ -67656,7 +67639,7 @@ const STATION_DATA = [
  {
   "id": "416930",
   "siteName": "造橋大西BBU3",
-  "siteNameCV": "竹南造橋L07造橋北苑RH3",
+  "siteNameCV": "竹南造橋L07造橋桃仔窩RH2",
   "town": "造橋鄉",
   "towns": [
    "造橋鄉",
@@ -68424,6 +68407,7 @@ const STATION_DATA = [
      "63": [
       "AC Power",
       "Temperature",
+      "Fire",
       "Door"
      ]
     }
@@ -68441,7 +68425,7 @@ const STATION_DATA = [
  {
   "id": "416935",
   "siteName": "苗栗苗栗BBU6",
-  "siteNameCV": "苗栗中央L22晉陞太空",
+  "siteNameCV": "苗栗中央L22苗栗南勢台鐵",
   "town": "苗栗市",
   "towns": [
    "苗栗市",
@@ -68757,7 +68741,7 @@ const STATION_DATA = [
  {
   "id": "416936",
   "siteName": "頭份斗煥新訓",
-  "siteNameCV": "竹南頭份L28頭份雙喜新",
+  "siteNameCV": "竹南頭份L28頭份斗煥新訓",
   "town": "頭份市",
   "towns": [
    "頭份市",
@@ -69335,7 +69319,7 @@ const STATION_DATA = [
        "ant": "84510864",
        "az": "240",
        "mt": "6",
-       "et": "4",
+       "et": "6",
        "lat": 24.55651,
        "lon": 120.82014
       },
@@ -69346,7 +69330,7 @@ const STATION_DATA = [
        "ant": "84510864",
        "az": "240",
        "mt": "6",
-       "et": "4",
+       "et": "6",
        "lat": 24.55651,
        "lon": 120.82014
       },
@@ -69357,7 +69341,7 @@ const STATION_DATA = [
        "ant": "84510864",
        "az": "240",
        "mt": "6",
-       "et": "4",
+       "et": "6",
        "lat": 24.55651,
        "lon": 120.82014
       },
@@ -69368,7 +69352,7 @@ const STATION_DATA = [
        "ant": "84510864",
        "az": "240",
        "mt": "6",
-       "et": "4",
+       "et": "6",
        "lat": 24.55651,
        "lon": 120.82014
       }
@@ -69737,7 +69721,7 @@ const STATION_DATA = [
  {
   "id": "417112",
   "siteName": "竹南康華",
-  "siteNameCV": "竹南大埔L07竹南冠軍",
+  "siteNameCV": "竹南大埔L07竹南康華",
   "town": "竹南鎮",
   "towns": [
    "竹南鎮",
@@ -70302,7 +70286,10 @@ const STATION_DATA = [
    "竹南頭份L06頭份崎仔頭": {
     "rmod": {
      "31": [
-      "AC Power"
+      "AC Power",
+      "Door",
+      "Fire",
+      "Temperature"
      ]
     }
    }
@@ -70316,7 +70303,7 @@ const STATION_DATA = [
  {
   "id": "417122",
   "siteName": "苗栗玉維",
-  "siteNameCV": "苗栗中央L24苗栗雲水瑤",
+  "siteNameCV": "苗栗中央L24苗栗玉維",
   "town": "苗栗市",
   "towns": [
    "苗栗市",
@@ -71053,7 +71040,7 @@ const STATION_DATA = [
  {
   "id": "417133",
   "siteName": "泰安洗水",
-  "siteNameCV": "苗栗泰安L01泰安大興",
+  "siteNameCV": "苗栗泰安L01泰安洗水",
   "town": "泰安鄉",
   "towns": [
    "泰安鄉",
@@ -71473,7 +71460,7 @@ const STATION_DATA = [
  {
   "id": "417135",
   "siteName": "頭份自強",
-  "siteNameCV": "竹南頭份L07頭份愛伊堡",
+  "siteNameCV": "竹南頭份L07頭份自強",
   "town": "頭份市",
   "towns": [
    "頭份市",
@@ -71752,7 +71739,7 @@ const STATION_DATA = [
  {
   "id": "417136",
   "siteName": "竹南東崎頂",
-  "siteNameCV": "竹南大埔L23竹南東崎頂",
+  "siteNameCV": "竹南大埔L23竹南和仁",
   "town": "竹南鎮",
   "towns": [
    "竹南鎮",
@@ -72492,7 +72479,7 @@ const STATION_DATA = [
  {
   "id": "417143",
   "siteName": "造橋談文西",
-  "siteNameCV": "竹南豐湖L03造橋談文西",
+  "siteNameCV": "竹南豐湖L03造橋天賜RH3",
   "town": "造橋鄉",
   "towns": [
    "造橋鄉",
@@ -72760,8 +72747,8 @@ const STATION_DATA = [
        "rmod": "AHDB",
        "ant": "RRV4-65A-R6N43",
        "az": "60",
-       "mt": "0",
-       "et": "2",
+       "mt": "1",
+       "et": "4",
        "lat": 24.622,
        "lon": 120.83342
       },
@@ -72771,8 +72758,8 @@ const STATION_DATA = [
        "rmod": "AHEGG",
        "ant": "RRV4-65A-R6N43",
        "az": "60",
-       "mt": "1",
-       "et": "4",
+       "mt": "0",
+       "et": "2",
        "lat": 24.622,
        "lon": 120.83342
       }
@@ -73014,7 +73001,7 @@ const STATION_DATA = [
  {
   "id": "417146",
   "siteName": "苗栗水源",
-  "siteNameCV": "苗栗中央L02苗栗吉祥",
+  "siteNameCV": "苗栗中央L02苗栗水源",
   "town": "苗栗市",
   "towns": [
    "苗栗市",
@@ -73722,7 +73709,7 @@ const STATION_DATA = [
  {
   "id": "417201",
   "siteName": "造橋朝陽新",
-  "siteNameCV": "竹南造橋L03造橋朝陽新",
+  "siteNameCV": "竹南造橋L03造橋隧道口",
   "town": "造橋鄉",
   "towns": [
    "造橋鄉",
@@ -73951,7 +73938,7 @@ const STATION_DATA = [
  {
   "id": "417203",
   "siteName": "竹南頂埔天仁",
-  "siteNameCV": "竹南頭份L22竹南頂埔天仁",
+  "siteNameCV": "竹南頭份L22竹南京元外",
   "town": "竹南鎮",
   "towns": [
    "竹南鎮",
@@ -74232,7 +74219,7 @@ const STATION_DATA = [
  {
   "id": "417204",
   "siteName": "頭份頭份BBU2",
-  "siteNameCV": "竹南頭份L01頭份豁然RH3",
+  "siteNameCV": "竹南頭份L01頭份水管站RH2",
   "town": "頭份市",
   "towns": [
    "頭份市",
@@ -75158,7 +75145,7 @@ const STATION_DATA = [
  {
   "id": "417210",
   "siteName": "三義裕隆A宿舍",
-  "siteNameCV": "苗栗三義L03三義內草湖",
+  "siteNameCV": "苗栗三義L03三義裕隆A宿舍",
   "town": "三義鄉",
   "towns": [
    "三義鄉",
@@ -76069,7 +76056,7 @@ const STATION_DATA = [
  {
   "id": "417224",
   "siteName": "頭份山下八德",
-  "siteNameCV": "竹南頭份L04頭份大勇",
+  "siteNameCV": "竹南頭份L04頭份山下八德",
   "town": "頭份市",
   "towns": [
    "頭份市",
@@ -76422,14 +76409,20 @@ const STATION_DATA = [
    "竹南頭份L04頭份山下八德": {
     "rmod": {
      "24": [
-      "AC Power"
+      "AC Power",
+      "Door",
+      "Fire",
+      "Temperature"
      ]
     }
    },
    "竹南頭份L04頭份大勇": {
     "rmod": {
      "54": [
-      "AC Power"
+      "AC Power",
+      "Door",
+      "Fire",
+      "Temperature"
      ]
     }
    }
@@ -77350,6 +77343,7 @@ const STATION_DATA = [
    "東勢卓蘭L02卓蘭苗豐": {
     "rmod": {
      "13": [
+      "SMR",
       "AC Power"
      ]
     }
@@ -77357,7 +77351,8 @@ const STATION_DATA = [
    "東勢卓蘭L02卓蘭酸柑湖": {
     "rmod": {
      "43": [
-      "AC Power"
+      "AC Power",
+      "SMR"
      ]
     }
    }
@@ -77431,7 +77426,7 @@ const STATION_DATA = [
  {
   "id": "417243",
   "siteName": "大湖大湖BBU2",
-  "siteNameCV": "大湖水尾坪RH1",
+  "siteNameCV": "大湖大湖BBU2大湖天恩農莊",
   "town": "大湖鄉",
   "towns": [
    "大湖鄉",
@@ -77821,7 +77816,7 @@ const STATION_DATA = [
  {
   "id": "417246",
   "siteName": "三義八櫃",
-  "siteNameCV": "苗栗三義L07三義八櫃",
+  "siteNameCV": "苗栗三義L07三義西湖",
   "town": "三義鄉",
   "towns": [
    "三義鄉",
@@ -78236,7 +78231,9 @@ const STATION_DATA = [
    "竹南三灣L03三灣坡頭背": {
     "rmod": {
      "23": [
-      "AC Power"
+      "AC Power",
+      "Firer",
+      "Temperature"
      ]
     }
    }
@@ -78409,7 +78406,7 @@ const STATION_DATA = [
  {
   "id": "417603",
   "siteName": "苑裡山腳BBU4",
-  "siteNameCV": "苗栗山腳L04石鎮支1R1",
+  "siteNameCV": "苗栗山腳L04苑裡山柑",
   "town": "苑裡鎮",
   "towns": [
    "苑裡鎮",
@@ -78739,7 +78736,7 @@ const STATION_DATA = [
  {
   "id": "417606",
   "siteName": "竹南龍富",
-  "siteNameCV": "竹南復興L11竹南博愛",
+  "siteNameCV": "竹南復興L11竹南龍富",
   "town": "竹南鎮",
   "towns": [
    "竹南鎮",
@@ -79636,7 +79633,7 @@ const STATION_DATA = [
  {
   "id": "417612",
   "siteName": "竹南龍山",
-  "siteNameCV": "竹南復興L20竹南開元明勝",
+  "siteNameCV": "竹南復興L20竹南龍山",
   "town": "竹南鎮",
   "towns": [
    "竹南鎮",
@@ -80905,7 +80902,7 @@ const STATION_DATA = [
  {
   "id": "417638",
   "siteName": "通霄礦場新",
-  "siteNameCV": "苗栗通霄L11下坪支RH",
+  "siteNameCV": "苗栗通霄L11通霄礦場新",
   "town": "通霄鎮",
   "towns": [
    "通霄鎮",
@@ -81130,7 +81127,7 @@ const STATION_DATA = [
  {
   "id": "417640",
   "siteName": "通霄烏眉",
-  "siteNameCV": "苗栗通霄L09通霄楓樹窩",
+  "siteNameCV": "苗栗通霄L09通霄烏眉",
   "town": "通霄鎮",
   "towns": [
    "通霄鎮",
@@ -81491,19 +81488,6 @@ const STATION_DATA = [
   },
   "nrBtsId": "4617641",
   "ranType": "C-RAN",
-  "smod": {
-   "苗栗通霄L13通霄五北": [
-    "Door",
-    "Fire",
-    "Temperature",
-    "AC Power",
-    "Low DC Voltage",
-    "SMR Alarm",
-    "Power Generator",
-    "Mains power break",
-    "Power module failure"
-   ]
-  },
   "eac": {
    "苗栗通霄L13通霄五北": {
     "rmod": {
@@ -81642,7 +81626,7 @@ const STATION_DATA = [
  {
   "id": "417646",
   "siteName": "苑裡苑南",
-  "siteNameCV": "苗栗苑裡L12苑裡忠義",
+  "siteNameCV": "苗栗苑裡L12苑裡苑南",
   "town": "苑裡鎮",
   "towns": [
    "苑裡鎮",
@@ -82177,7 +82161,7 @@ const STATION_DATA = [
  {
   "id": "417653",
   "siteName": "三義三義BBU2",
-  "siteNameCV": "三義佛頂山RH1",
+  "siteNameCV": "三義慈濟RH2",
   "town": "三義鄉",
   "towns": [
    "三義鄉",
@@ -82243,7 +82227,7 @@ const STATION_DATA = [
        "ant": "DBXLH-6565A-VTM",
        "az": "80",
        "mt": "1",
-       "et": "10",
+       "et": "9",
        "lat": 24.40326,
        "lon": 120.74886
       }
@@ -82285,7 +82269,7 @@ const STATION_DATA = [
  {
   "id": "417657",
   "siteName": "公館開礦",
-  "siteNameCV": "苗栗公館L08公館開礦",
+  "siteNameCV": "苗栗公館L08公館福基",
   "town": "公館鄉",
   "towns": [
    "公館鄉",
@@ -82442,7 +82426,7 @@ const STATION_DATA = [
        "ant": "80010864",
        "az": "320",
        "mt": "2",
-       "et": "4",
+       "et": "5",
        "lat": 24.459655,
        "lon": 120.861017
       }
@@ -82591,7 +82575,7 @@ const STATION_DATA = [
  {
   "id": "417658",
   "siteName": "頭屋文德宮",
-  "siteNameCV": "苗栗頭屋L03頭屋二崗坪",
+  "siteNameCV": "苗栗頭屋L03頭屋文德宮",
   "town": "頭屋鄉",
   "towns": [
    "頭屋鄉",
@@ -82688,7 +82672,7 @@ const STATION_DATA = [
        "ant": "80010864",
        "az": "170",
        "mt": "2",
-       "et": "16",
+       "et": "15",
        "lat": 24.577288,
        "lon": 120.848888
       },
@@ -82699,7 +82683,7 @@ const STATION_DATA = [
        "ant": "80010864",
        "az": "170",
        "mt": "2",
-       "et": "12",
+       "et": "11",
        "lat": 24.577288,
        "lon": 120.848888
       },
@@ -82710,7 +82694,7 @@ const STATION_DATA = [
        "ant": "80010864",
        "az": "170",
        "mt": "2",
-       "et": "12",
+       "et": "11",
        "lat": 24.577288,
        "lon": 120.848888
       },
@@ -82721,7 +82705,7 @@ const STATION_DATA = [
        "ant": "80010864",
        "az": "170",
        "mt": "2",
-       "et": "12",
+       "et": "11",
        "lat": 24.577288,
        "lon": 120.848888
       }
@@ -82737,7 +82721,7 @@ const STATION_DATA = [
        "ant": "C2D0510X6",
        "az": "320",
        "mt": "1",
-       "et": "15",
+       "et": "11",
        "lat": 24.577288,
        "lon": 120.848888
       },
@@ -82759,7 +82743,7 @@ const STATION_DATA = [
        "ant": "C2D0510X6",
        "az": "320",
        "mt": "1",
-       "et": "11",
+       "et": "7",
        "lat": 24.577288,
        "lon": 120.848888
       }
@@ -82788,7 +82772,7 @@ const STATION_DATA = [
        "ant": "80010864",
        "az": "0",
        "mt": "1",
-       "et": "6",
+       "et": "5",
        "lat": 24.563365,
        "lon": 120.844147
       },
@@ -82799,7 +82783,7 @@ const STATION_DATA = [
        "ant": "80010864",
        "az": "0",
        "mt": "1",
-       "et": "6",
+       "et": "5",
        "lat": 24.563365,
        "lon": 120.844147
       },
@@ -82810,7 +82794,7 @@ const STATION_DATA = [
        "ant": "80010864",
        "az": "0",
        "mt": "1",
-       "et": "6",
+       "et": "4",
        "lat": 24.563365,
        "lon": 120.844147
       }
@@ -83204,7 +83188,7 @@ const STATION_DATA = [
  {
   "id": "417667",
   "siteName": "南庄南江",
-  "siteNameCV": "竹南南庄L04栗田庄RH1",
+  "siteNameCV": "竹南南庄L04南庄南江",
   "town": "南庄鄉",
   "towns": [
    "南庄鄉",
@@ -83646,7 +83630,7 @@ const STATION_DATA = [
        "cel": "61",
        "cov": "Outdoor",
        "rmod": "FHDB",
-       "ant": "742 265",
+       "ant": "",
        "az": "330",
        "mt": "2",
        "et": "7",
@@ -83657,7 +83641,7 @@ const STATION_DATA = [
        "cel": "63",
        "cov": "Outdoor",
        "rmod": "FHEB",
-       "ant": "742 265",
+       "ant": "",
        "az": "330",
        "mt": "2",
        "et": "4",
@@ -84040,7 +84024,7 @@ const STATION_DATA = [
        "ant": "RRV4-65A-R6N43",
        "az": "90",
        "mt": "4",
-       "et": "2",
+       "et": "7",
        "lat": 24.33989,
        "lon": 120.87073
       },
@@ -84094,7 +84078,7 @@ const STATION_DATA = [
        "ant": "RRV4-65A-R6N43",
        "az": "350",
        "mt": "4",
-       "et": "2",
+       "et": "6",
        "lat": 24.33989,
        "lon": 120.87073
       },
@@ -84278,7 +84262,7 @@ const STATION_DATA = [
  {
   "id": "417696",
   "siteName": "竹南交流道",
-  "siteNameCV": "竹南復興L07竹南交流道",
+  "siteNameCV": "竹南復興L07竹南大厝鹽館",
   "town": "竹南鎮",
   "towns": [
    "竹南鎮",
@@ -84587,7 +84571,7 @@ const STATION_DATA = [
  {
   "id": "417698",
   "siteName": "通霄通霄BBU2",
-  "siteNameCV": "苗栗通霄L20南窩謝宗祠RH1",
+  "siteNameCV": "苗栗通霄L20通霄烏眉養雞場",
   "town": "通霄鎮",
   "towns": [
    "通霄鎮",
@@ -84793,7 +84777,7 @@ const STATION_DATA = [
  {
   "id": "417706",
   "siteName": "頭份新華中一",
-  "siteNameCV": "竹南頭份L08頭份興隆觀音",
+  "siteNameCV": "竹南頭份L08頭份新華中一",
   "town": "頭份市",
   "towns": [
    "頭份市",
@@ -85053,7 +85037,7 @@ const STATION_DATA = [
  {
   "id": "417707",
   "siteName": "竹南奇美車塔二",
-  "siteNameCV": "竹南大埔L13竹南群創內",
+  "siteNameCV": "竹南大埔L13竹南奇美車塔內",
   "town": "竹南鎮",
   "towns": [
    "竹南鎮"
@@ -85220,7 +85204,7 @@ const STATION_DATA = [
  {
   "id": "417708",
   "siteName": "三義台隧南口",
-  "siteNameCV": "苗栗鯉魚L04三義台隧三泰",
+  "siteNameCV": "苗栗鯉魚L04三義台隧南口",
   "town": "三義鄉",
   "towns": [
    "三義鄉",
@@ -86104,7 +86088,7 @@ const STATION_DATA = [
  {
   "id": "417721",
   "siteName": "頭份後庄信義",
-  "siteNameCV": "竹南頭份L17頭份後庄信義",
+  "siteNameCV": "竹南頭份L17頭份為恭信義",
   "town": "頭份市",
   "towns": [
    "頭份市",
@@ -86439,7 +86423,10 @@ const STATION_DATA = [
    "竹南頭份L17頭份為恭信義": {
     "rmod": {
      "51": [
-      "AC Power"
+      "AC Power",
+      "Door",
+      "Fire",
+      "Temperature"
      ]
     }
    }
@@ -86456,7 +86443,7 @@ const STATION_DATA = [
  {
   "id": "417723",
   "siteName": "頭份芝山莊",
-  "siteNameCV": "竹南竹南L15頭份妙德寺RH3",
+  "siteNameCV": "竹南竹南L15頭份良安宮",
   "town": "頭份市",
   "towns": [
    "頭份市",
@@ -87140,7 +87127,7 @@ const STATION_DATA = [
  {
   "id": "417726",
   "siteName": "公館玉谷",
-  "siteNameCV": "苗栗公館L10公館玉谷",
+  "siteNameCV": "苗栗公館L10公館中義社區",
   "town": "公館鄉",
   "towns": [
    "公館鄉",
@@ -87366,7 +87353,7 @@ const STATION_DATA = [
  {
   "id": "417728",
   "siteName": "三義台隧北口",
-  "siteNameCV": "三義台隧北口",
+  "siteNameCV": "苗栗三義L17三義勝興RH",
   "town": "三義鄉",
   "towns": [
    "三義鄉",
@@ -87507,7 +87494,7 @@ const STATION_DATA = [
    "三義台隧北口": {
     "rmod": {
      "13": [
-      "Fire"
+      "Temperature"
      ]
     }
    },
@@ -87527,7 +87514,7 @@ const STATION_DATA = [
  {
   "id": "417731",
   "siteName": "通霄內湖牧場",
-  "siteNameCV": "苗栗通霄L07通霄南窩",
+  "siteNameCV": "苗栗通霄L07通霄內湖牧場",
   "town": "通霄鎮",
   "towns": [
    "通霄鎮",
@@ -87723,7 +87710,7 @@ const STATION_DATA = [
  {
   "id": "417733",
   "siteName": "銅鑼銅鑼BBU3",
-  "siteNameCV": "銅鑼納骨塔RH",
+  "siteNameCV": "銅鑼森林之歌RH",
   "town": "銅鑼鄉",
   "towns": [
    "銅鑼鄉",
@@ -87888,7 +87875,7 @@ const STATION_DATA = [
  {
   "id": "417734",
   "siteName": "銅鑼台隧南口",
-  "siteNameCV": "苗栗銅鑼L15朝陽村108S",
+  "siteNameCV": "苗栗銅鑼L15銅鑼朝陽村S",
   "town": "銅鑼鄉",
   "towns": [
    "銅鑼鄉",
@@ -89573,7 +89560,7 @@ const STATION_DATA = [
  {
   "id": "417743",
   "siteName": "獅潭獅潭BBU3",
-  "siteNameCV": "苗栗獅潭L16獅潭香圓窩RH3",
+  "siteNameCV": "苗栗獅潭L16獅潭小東勢RH1",
   "town": "獅潭鄉",
   "towns": [
    "獅潭鄉",
@@ -89677,7 +89664,7 @@ const STATION_DATA = [
        "rmod": "AHEGG",
        "ant": "DBXLH-6565A-VTM",
        "az": "60",
-       "mt": "0",
+       "mt": "2",
        "et": "0",
        "lat": 24.519938,
        "lon": 120.93713
@@ -91245,7 +91232,9 @@ const STATION_DATA = [
    "苗栗後龍L10後龍溪洲": {
     "rmod": {
      "61": [
-      "AC Power"
+      "AC Power",
+      "Firer",
+      "Temperature"
      ]
     }
    }
@@ -91384,7 +91373,7 @@ const STATION_DATA = [
  {
   "id": "417773",
   "siteName": "苗栗大明寺",
-  "siteNameCV": "苗栗中央L37苗栗僑育",
+  "siteNameCV": "苗栗中央L37苗栗大明寺",
   "town": "苗栗市",
   "towns": [
    "苗栗市",
@@ -92299,6 +92288,8 @@ const STATION_DATA = [
    "苗栗中央L21苗栗天祥": {
     "rmod": {
      "23": [
+      "Fire",
+      "Temperature",
       "AC Power"
      ]
     }
@@ -92456,9 +92447,7 @@ const STATION_DATA = [
        "lon": 120.81432
       }
      ]
-    }
-   ],
-   "苗栗中央L11苗栗家樂福": [
+    },
     {
      "sec": 4,
      "cells": [
@@ -92467,12 +92456,19 @@ const STATION_DATA = [
        "cov": "Outdoor",
        "rmod": "FHDB",
        "ant": "DBXLH-6565A-VTM",
-       "az": "0",
+       "az": "110",
        "mt": "0",
        "et": "8",
-       "lat": 24.57374,
-       "lon": 120.81744
-      },
+       "lat": 24.56811,
+       "lon": 120.81432
+      }
+     ]
+    }
+   ],
+   "苗栗中央L11苗栗家樂福": [
+    {
+     "sec": 4,
+     "cells": [
       {
        "cel": "43",
        "cov": "Outdoor",
@@ -92651,7 +92647,7 @@ const STATION_DATA = [
  {
   "id": "417788",
   "siteName": "公館渡船頭",
-  "siteNameCV": "苗栗公館L20公館高公局",
+  "siteNameCV": "苗栗公館L20公館渡船頭",
   "town": "公館鄉",
   "towns": [
    "公館鄉",
@@ -93075,7 +93071,7 @@ const STATION_DATA = [
  {
   "id": "417793",
   "siteName": "後龍年興B",
-  "siteNameCV": "苗栗後龍L08後龍年興",
+  "siteNameCV": "苗栗後龍L08後龍年興B",
   "town": "後龍鎮",
   "towns": [
    "後龍鎮",
@@ -93739,113 +93735,9 @@ const STATION_DATA = [
   }
  },
  {
-  "id": "417811",
-  "siteName": "通霄通霄BBU5",
-  "siteNameCV": "通霄福龍枝RH",
-  "town": "通霄鎮",
-  "towns": [
-   "通霄鎮",
-   "通霄鎮"
-  ],
-  "sec": "s1_s2",
-  "secs": [
-   "s1",
-   "s2"
-  ],
-  "stations": [
-   "通宵坪頂中油RH1",
-   "通霄福龍枝RH"
-  ],
-  "coords": [
-   {
-    "lat": 24.449708,
-    "lon": 120.707994
-   },
-   {
-    "lat": 24.51336,
-    "lon": 120.71133
-   }
-  ],
-  "cells": {
-   "通宵坪頂中油RH1": [
-    {
-     "sec": 1,
-     "cells": [
-      {
-       "cel": "11",
-       "cov": "Outdoor",
-       "rmod": "FHDB",
-       "ant": "DBXLH-6565A-VTM",
-       "az": "300",
-       "mt": "2",
-       "et": "6",
-       "lat": 24.449708,
-       "lon": 120.707994
-      }
-     ]
-    }
-   ],
-   "通霄福龍枝RH": [
-    {
-     "sec": 2,
-     "cells": [
-      {
-       "cel": "22",
-       "cov": "Outdoor",
-       "rmod": "FHEL",
-       "ant": "DBXLH-6565A-VTM",
-       "az": "20",
-       "mt": "0",
-       "et": "3",
-       "lat": 24.51336,
-       "lon": 120.71133
-      },
-      {
-       "cel": "23",
-       "cov": "Outdoor",
-       "rmod": "FHEL",
-       "ant": "DBXLH-6565A-VTM",
-       "az": "20",
-       "mt": "0",
-       "et": "3",
-       "lat": 24.51336,
-       "lon": 120.71133
-      }
-     ]
-    }
-   ]
-  },
-  "nrBtsId": "",
-  "ranType": "D-RAN",
-  "smod": {
-   "通宵坪頂中油RH1": [
-    "Low DC Voltage",
-    "Door",
-    "Fire",
-    "Temperature",
-    "AC Power",
-    "SMR Alarm",
-    "Power Generator",
-    "Mains power break",
-    "Power module failure"
-   ],
-   "通霄福龍枝RH": [
-    "Low DC Voltage",
-    "Door",
-    "Fire",
-    "Temperature",
-    "AC Power",
-    "SMR Alarm",
-    "Power Generator",
-    "Mains power break",
-    "Power module failure"
-   ]
-  }
- },
- {
   "id": "417813",
   "siteName": "苑裡營業BBU7",
-  "siteNameCV": "苑裡田心RH3",
+  "siteNameCV": "苑裡立德RH2",
   "town": "苑裡鎮",
   "towns": [
    "苑裡鎮",
@@ -93985,7 +93877,7 @@ const STATION_DATA = [
  {
   "id": "417814",
   "siteName": "大湖大湖BBU7",
-  "siteNameCV": "大湖大湖BBU7泰安高熊枝",
+  "siteNameCV": "大湖大湖BBU7泰安新興枝59RH2",
   "town": "泰安鄉",
   "towns": [
    "泰安鄉",
@@ -94136,7 +94028,7 @@ const STATION_DATA = [
  {
   "id": "417815",
   "siteName": "公館公館BBU2",
-  "siteNameCV": "苗栗公館L21錫隘隧道",
+  "siteNameCV": "苗栗公館L21銅鑼慶興",
   "town": "獅潭鄉",
   "towns": [
    "銅鑼鄉",
@@ -94481,7 +94373,7 @@ const STATION_DATA = [
  {
   "id": "417817",
   "siteName": "銅鑼銅鑼BBU6",
-  "siteNameCV": "銅科警察隊RH3",
+  "siteNameCV": "銅鑼新興RH2",
   "town": "銅鑼鄉",
   "towns": [
    "銅鑼鄉",
@@ -94529,7 +94421,7 @@ const STATION_DATA = [
        "cel": "11",
        "cov": "Outdoor",
        "rmod": "FHDB",
-       "ant": "CH360QS-DG-F2M",
+       "ant": "",
        "az": "0",
        "mt": "0",
        "et": "2",
@@ -95418,7 +95310,7 @@ const STATION_DATA = [
        "rmod": "FHDB",
        "ant": "DBXLH-6565A-VTM",
        "az": "240",
-       "mt": "3",
+       "mt": "4",
        "et": "9",
        "lat": 24.64767,
        "lon": 120.88635
@@ -95461,7 +95353,7 @@ const STATION_DATA = [
  {
   "id": "417823",
   "siteName": "苗栗苗栗BBU8",
-  "siteNameCV": "苗栗中央L09苗栗中油探採",
+  "siteNameCV": "苗栗中央L09苗栗長春二廠",
   "town": "苗栗市",
   "towns": [
    "苗栗市",
@@ -95993,7 +95885,9 @@ const STATION_DATA = [
    "苗栗大山L04後龍大山交流道": {
     "rmod": {
      "43": [
-      "AC Power"
+      "AC Power",
+      "Firer",
+      "Temperature"
      ]
     }
    }
@@ -96007,7 +95901,7 @@ const STATION_DATA = [
  {
   "id": "417828",
   "siteName": "公館福星一",
-  "siteNameCV": "苗栗公館L12公館福星一",
+  "siteNameCV": "苗栗公館L12公館棗莊南",
   "town": "公館鄉",
   "towns": [
    "公館鄉",
@@ -96227,7 +96121,7 @@ const STATION_DATA = [
  {
   "id": "417829",
   "siteName": "竹南復興BBU1",
-  "siteNameCV": "竹南復興L12竹南育才RH5",
+  "siteNameCV": "竹南復興L竹南安檢所",
   "town": "竹南鎮",
   "towns": [
    "竹南鎮",
@@ -96663,107 +96557,10 @@ const STATION_DATA = [
   }
  },
  {
-  "id": "417891",
-  "siteName": "通霄通霄BBU6",
-  "siteNameCV": "通霄普羅RH1",
-  "town": "通霄鎮",
-  "towns": [
-   "通霄鎮",
-   "通霄鎮"
-  ],
-  "sec": "s1_s3",
-  "secs": [
-   "s1",
-   "s3"
-  ],
-  "stations": [
-   "通霄普羅RH1",
-   "通霄楓樹窩RH3"
-  ],
-  "coords": [
-   {
-    "lat": 24.50545,
-    "lon": 120.70109
-   },
-   {
-    "lat": 24.484643,
-    "lon": 120.740199
-   }
-  ],
-  "cells": {
-   "通霄普羅RH1": [
-    {
-     "sec": 1,
-     "cells": [
-      {
-       "cel": "13",
-       "cov": "Outdoor",
-       "rmod": "FHEB",
-       "ant": "80010761",
-       "az": "60",
-       "mt": "0",
-       "et": "3",
-       "lat": 24.50545,
-       "lon": 120.70109
-      }
-     ]
-    }
-   ],
-   "通霄楓樹窩RH3": [
-    {
-     "sec": 3,
-     "cells": [
-      {
-       "cel": "31",
-       "cov": "Outdoor",
-       "rmod": "FHDB",
-       "ant": "DBXLH-6565A-VTM",
-       "az": "150",
-       "mt": "0",
-       "et": "6",
-       "lat": 24.484643,
-       "lon": 120.740199
-      }
-     ]
-    }
-   ]
-  },
-  "nrBtsId": "",
-  "ranType": "D-RAN",
-  "smod": {
-   "通霄普羅RH1": [
-    "Generator",
-    "Door Alarm",
-    "Device Abnormal",
-    "Low Temperature",
-    "Electricity Supply Abnormality",
-    "Fire Alarm",
-    "Temperature",
-    "AC Power Alarm",
-    "Low DC Voltage",
-    "SMR Alarm",
-    "Air Con."
-   ],
-   "通霄楓樹窩RH3": [
-    "Generator",
-    "Door Alarm",
-    "Device Abnormal",
-    "Low Temperature",
-    "Electricity Supply Abnormality",
-    "Fire Alarm",
-    "Temperature",
-    "AC Power Alarm",
-    "Low DC Voltage",
-    "SMR Alarm",
-    "Air Con."
-   ]
-  }
- },
- {
   "id": "417893",
   "siteName": "頭份頭份BBU6",
   "siteNameCV": "竹南京元五RH2",
-  "town": "竹南鎮",
+  "town": "頭份市",
   "towns": [
    "頭份市",
    "竹南鎮"
@@ -96885,7 +96682,7 @@ const STATION_DATA = [
  {
   "id": "417897",
   "siteName": "頭屋機房BBU3",
-  "siteNameCV": "頭屋雙龍社區RH1",
+  "siteNameCV": "頭屋奮萁窩社區RH2",
   "town": "頭屋鄉",
   "towns": [
    "頭屋鄉",
@@ -97175,7 +96972,7 @@ const STATION_DATA = [
        "rmod": "AHDB",
        "ant": "DBXLH-6565A-VTM",
        "az": "190",
-       "mt": "3",
+       "mt": "2",
        "et": "0",
        "lat": 24.38941,
        "lon": 120.79647
@@ -97524,7 +97321,7 @@ const STATION_DATA = [
  {
   "id": "417928",
   "siteName": "苑裡上館",
-  "siteNameCV": "苗栗山腳L02社苓RH5",
+  "siteNameCV": "苗栗苑裡L02苑裡上館",
   "town": "苑裡鎮",
   "towns": [
    "苑裡鎮",
@@ -98412,7 +98209,7 @@ const STATION_DATA = [
  {
   "id": "417968",
   "siteName": "公館公館BBU3",
-  "siteNameCV": "公館釋迦山RH3",
+  "siteNameCV": "公館北河支RH2",
   "town": "公館鄉",
   "towns": [
    "公館鄉",
@@ -98436,8 +98233,8 @@ const STATION_DATA = [
     "lon": 120.848383
    },
    {
-    "lat": 24.518716,
-    "lon": 120.813461
+    "lat": 24.533816,
+    "lon": 120.867443
    },
    {
     "lat": 24.527944,
@@ -98497,8 +98294,8 @@ const STATION_DATA = [
        "az": "40",
        "mt": "0",
        "et": "4",
-       "lat": 24.518716,
-       "lon": 120.813461
+       "lat": 24.533816,
+       "lon": 120.867443
       }
      ]
     }
@@ -98539,7 +98336,7 @@ const STATION_DATA = [
  {
   "id": "417972",
   "siteName": "苑裡客庄三發",
-  "siteNameCV": "苗栗苑裡L07苑裡客庄三發",
+  "siteNameCV": "苗栗苑裡L07苑裡金樂神",
   "town": "苑裡鎮",
   "towns": [
    "苑裡鎮",
@@ -98814,7 +98611,10 @@ const STATION_DATA = [
    "苗栗苑裡L07苑裡金樂神": {
     "rmod": {
      "63": [
-      "AC Power"
+      "AC Power",
+      "Door",
+      "Fire",
+      "Temperature"
      ]
     }
    }
@@ -99059,8 +98859,8 @@ const STATION_DATA = [
  {
   "id": "418903",
   "siteName": "竹南竹南L13",
-  "siteNameCV": "竹南竹南L13竹南佳北RH9",
-  "town": "頭份市",
+  "siteNameCV": "竹南竹南L13竹南營業BBU1",
+  "town": "竹南鎮",
   "towns": [
    "頭份市",
    "頭份市",
@@ -99344,7 +99144,7 @@ const STATION_DATA = [
  {
   "id": "418915",
   "siteName": "竹南大埔L16",
-  "siteNameCV": "竹南大埔L16竹南公義里S",
+  "siteNameCV": "竹南大埔L16竹南保興RH",
   "town": "竹南鎮",
   "towns": [
    "竹南鎮",
@@ -99435,7 +99235,7 @@ const STATION_DATA = [
  {
   "id": "418920",
   "siteName": "後龍大山里S",
-  "siteNameCV": "苗栗大山L15後龍大山里S",
+  "siteNameCV": "苗栗大山L15後龍外埔里S",
   "town": "後龍鎮",
   "towns": [
    "後龍鎮",
@@ -99670,7 +99470,7 @@ const STATION_DATA = [
  {
   "id": "418923",
   "siteName": "後龍福寧里S",
-  "siteNameCV": "苗栗後龍L13後龍好望角RH3",
+  "siteNameCV": "苗栗後龍L13後龍南幹線RH",
   "town": "後龍鎮",
   "towns": [
    "後龍鎮",
@@ -99891,23 +99691,26 @@ const STATION_DATA = [
  {
   "id": "418928",
   "siteName": "竹南南庄L15",
-  "siteNameCV": "竹南南庄L15南庄田美村S",
+  "siteNameCV": "竹南南庄L15南庄獅山村MR",
   "town": "南庄鄉",
   "towns": [
    "南庄鄉",
    "南庄鄉",
+   "南庄鄉",
    "南庄鄉"
   ],
-  "sec": "s1_s2_s3",
+  "sec": "s1_s2_s3_s4/5/6",
   "secs": [
    "s1",
    "s2",
-   "s3"
+   "s3",
+   "s4/5/6"
   ],
   "stations": [
    "竹南南庄L15南庄田美村S",
    "竹南南庄L15南庄獅山村S",
-   "竹南南庄L15南庄獅山村MR"
+   "竹南南庄L15南庄獅山村MR",
+   "竹南南庄L15南庄田美"
   ],
   "coords": [
    {
@@ -99921,6 +99724,10 @@ const STATION_DATA = [
    {
     "lat": 24.639501,
     "lon": 121.000285
+   },
+   {
+    "lat": 24.633667,
+    "lon": 121.00953
    }
   ],
   "cells": {
@@ -100010,10 +99817,107 @@ const STATION_DATA = [
       }
      ]
     }
+   ],
+   "竹南南庄L15南庄田美": [
+    {
+     "sec": 4,
+     "cells": [
+      {
+       "cel": "41",
+       "cov": "Outdoor",
+       "rmod": "AHDB",
+       "ant": "80010864",
+       "az": "100",
+       "mt": "0",
+       "et": "3",
+       "lat": 24.633667,
+       "lon": 121.00953
+      },
+      {
+       "cel": "43",
+       "cov": "Outdoor",
+       "rmod": "AHEGG",
+       "ant": "80010864",
+       "az": "100",
+       "mt": "0",
+       "et": "3",
+       "lat": 24.633667,
+       "lon": 121.00953
+      }
+     ]
+    },
+    {
+     "sec": 5,
+     "cells": [
+      {
+       "cel": "51",
+       "cov": "Outdoor",
+       "rmod": "AHDB",
+       "ant": "80010864",
+       "az": "190",
+       "mt": "0",
+       "et": "3",
+       "lat": 24.633667,
+       "lon": 121.00953
+      },
+      {
+       "cel": "53",
+       "cov": "Outdoor",
+       "rmod": "AHEGG",
+       "ant": "80010864",
+       "az": "190",
+       "mt": "0",
+       "et": "3",
+       "lat": 24.633667,
+       "lon": 121.00953
+      }
+     ]
+    },
+    {
+     "sec": 6,
+     "cells": [
+      {
+       "cel": "61",
+       "cov": "Outdoor",
+       "rmod": "AHDB",
+       "ant": "80010864",
+       "az": "300",
+       "mt": "0",
+       "et": "3",
+       "lat": 24.633667,
+       "lon": 121.00953
+      },
+      {
+       "cel": "63",
+       "cov": "Outdoor",
+       "rmod": "AHEGG",
+       "ant": "80010864",
+       "az": "300",
+       "mt": "0",
+       "et": "3",
+       "lat": 24.633667,
+       "lon": 121.00953
+      }
+     ]
+    }
    ]
   },
   "nrBtsId": "4618928",
-  "ranType": "C-RAN"
+  "ranType": "C-RAN",
+  "eac": {
+   "竹南南庄L15南庄田美": {
+    "rmod": {
+     "43": [
+      "AC Power"
+     ]
+    }
+   }
+  },
+  "lid": {
+   "竹南南庄L15南庄田美": [
+    "L3739"
+   ]
+  }
  },
  {
   "id": "418932",
@@ -100170,7 +100074,7 @@ const STATION_DATA = [
  {
   "id": "418935",
   "siteName": "西湖金獅村S",
-  "siteNameCV": "西湖羊寮崎RH2",
+  "siteNameCV": "苗栗西湖L15西湖四湖",
   "town": "西湖鄉",
   "towns": [
    "西湖鄉",
@@ -100560,7 +100464,7 @@ const STATION_DATA = [
   "id": "418938",
   "siteName": "竹南三灣L15",
   "siteNameCV": "竹南三灣L15三灣棠春休閒莊園",
-  "town": "三灣鄉",
+  "town": "南庄鄉",
   "towns": [
    "三灣鄉",
    "三灣鄉",
@@ -100784,7 +100688,7 @@ const STATION_DATA = [
   "id": "418940",
   "siteName": "竹南大西L15",
   "siteNameCV": "竹南大西L15造橋大龍",
-  "town": "造橋鄉",
+  "town": "三灣鄉",
   "towns": [
    "三灣鄉",
    "造橋鄉",
@@ -101068,7 +100972,7 @@ const STATION_DATA = [
  {
   "id": "418941",
   "siteName": "苗栗三義L15",
-  "siteNameCV": "苗栗三義L15勝興停車場RH",
+  "siteNameCV": "苗栗三義L15三義水美藝術RH",
   "town": "三義鄉",
   "towns": [
    "三義鄉",
@@ -101377,7 +101281,7 @@ const STATION_DATA = [
  {
   "id": "418947",
   "siteName": "東勢卓蘭L15",
-  "siteNameCV": "東勢卓蘭L15卓蘭沙尾枝RH",
+  "siteNameCV": "東勢卓蘭L15卓蘭中山南枝RH",
   "town": "卓蘭鎮",
   "towns": [
    "卓蘭鎮",
@@ -101673,7 +101577,7 @@ const STATION_DATA = [
  {
   "id": "418949",
   "siteName": "大湖武榮村S",
-  "siteNameCV": "苗栗大湖L15大湖菊園",
+  "siteNameCV": "苗栗大湖L15大湖夢之谷RH",
   "town": "獅潭鄉",
   "towns": [
    "大湖鄉",
@@ -101845,8 +101749,8 @@ const STATION_DATA = [
        "rmod": "FHDB",
        "ant": "DBXLH-6565A-VTM",
        "az": "20",
-       "mt": "0",
-       "et": "0",
+       "mt": "1",
+       "et": "1",
        "lat": 24.46375,
        "lon": 120.892212
       }
@@ -101946,7 +101850,7 @@ const STATION_DATA = [
  {
   "id": "418953",
   "siteName": "苗栗通霄L15",
-  "siteNameCV": "苗栗通霄L15通霄平原S",
+  "siteNameCV": "苗栗通霄L15慈后宮RRH",
   "town": "通霄鎮",
   "towns": [
    "通霄鎮",
@@ -102175,7 +102079,7 @@ const STATION_DATA = [
  {
   "id": "418963",
   "siteName": "苗栗銅鑼L16",
-  "siteNameCV": "苗栗銅鑼L16西湖高埔RH2",
+  "siteNameCV": "苗栗銅鑼L16西湖格林",
   "town": "西湖鄉",
   "towns": [
    "西湖鄉",
@@ -102616,7 +102520,7 @@ const STATION_DATA = [
  {
   "id": "418966",
   "siteName": "苗栗公館L15",
-  "siteNameCV": "苗栗公館L15公館全聯RH6",
+  "siteNameCV": "苗栗公館L15公館福基村S",
   "town": "公館鄉",
   "towns": [
    "公館鄉",
@@ -102768,7 +102672,7 @@ const STATION_DATA = [
  {
   "id": "419543",
   "siteName": "竹南大厝",
-  "siteNameCV": "竹南竹南L09竹南公館大埔頂",
+  "siteNameCV": "竹南竹南L09竹南大厝",
   "town": "竹南鎮",
   "towns": [
    "竹南鎮",
@@ -102816,7 +102720,7 @@ const STATION_DATA = [
        "ant": "RV4S4-65A-R6",
        "az": "40",
        "mt": "0",
-       "et": "8",
+       "et": "9",
        "lat": 24.67674,
        "lon": 120.88036
       },
@@ -102827,7 +102731,7 @@ const STATION_DATA = [
        "ant": "RV4S4-65A-R6",
        "az": "40",
        "mt": "0",
-       "et": "8",
+       "et": "9",
        "lat": 24.67674,
        "lon": 120.88036
       },
@@ -102876,7 +102780,7 @@ const STATION_DATA = [
        "ant": "RV4S4-65A-R6",
        "az": "170",
        "mt": "0",
-       "et": "5",
+       "et": "4",
        "lat": 24.67674,
        "lon": 120.88036
       },
@@ -103575,7 +103479,7 @@ const STATION_DATA = [
  {
   "id": "419548",
   "siteName": "苗栗台肥",
-  "siteNameCV": "苗栗嘉盛L07苗栗台肥",
+  "siteNameCV": "苗栗嘉盛L07苗栗消防局",
   "town": "苗栗市",
   "towns": [
    "苗栗市",
@@ -103792,9 +103696,9 @@ const STATION_DATA = [
        "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "RVV-65A-R3",
-       "az": "30",
+       "az": "0",
        "mt": "2",
-       "et": "6",
+       "et": "8",
        "lat": 24.58195,
        "lon": 120.84264
       },
@@ -103803,9 +103707,9 @@ const STATION_DATA = [
        "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "RVV-65A-R3",
-       "az": "30",
+       "az": "0",
        "mt": "2",
-       "et": "2",
+       "et": "3",
        "lat": 24.58195,
        "lon": 120.84264
       },
@@ -103814,9 +103718,9 @@ const STATION_DATA = [
        "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "RVV-65A-R3",
-       "az": "30",
+       "az": "0",
        "mt": "2",
-       "et": "2",
+       "et": "3",
        "lat": 24.58195,
        "lon": 120.84264
       },
@@ -103825,9 +103729,9 @@ const STATION_DATA = [
        "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "RVV-65A-R3",
-       "az": "30",
+       "az": "0",
        "mt": "4",
-       "et": "2",
+       "et": "3",
        "lat": 24.58195,
        "lon": 120.84264
       },
@@ -103836,9 +103740,9 @@ const STATION_DATA = [
        "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "RVV-65A-R3",
-       "az": "30",
+       "az": "0",
        "mt": "4",
-       "et": "2",
+       "et": "3",
        "lat": 24.58195,
        "lon": 120.84264
       }
@@ -103852,7 +103756,7 @@ const STATION_DATA = [
        "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "RVV-65A-R3",
-       "az": "130",
+       "az": "90",
        "mt": "2",
        "et": "6",
        "lat": 24.58195,
@@ -103863,9 +103767,9 @@ const STATION_DATA = [
        "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "RVV-65A-R3",
-       "az": "130",
+       "az": "90",
        "mt": "2",
-       "et": "2",
+       "et": "4",
        "lat": 24.58195,
        "lon": 120.84264
       },
@@ -103874,9 +103778,9 @@ const STATION_DATA = [
        "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "RVV-65A-R3",
-       "az": "130",
+       "az": "90",
        "mt": "2",
-       "et": "2",
+       "et": "4",
        "lat": 24.58195,
        "lon": 120.84264
       },
@@ -103885,9 +103789,9 @@ const STATION_DATA = [
        "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "RVV-65A-R3",
-       "az": "130",
+       "az": "90",
        "mt": "4",
-       "et": "2",
+       "et": "4",
        "lat": 24.58195,
        "lon": 120.84264
       },
@@ -103896,9 +103800,9 @@ const STATION_DATA = [
        "cov": "Outdoor",
        "rmod": "AHHB",
        "ant": "RVV-65A-R3",
-       "az": "130",
+       "az": "90",
        "mt": "4",
-       "et": "2",
+       "et": "4",
        "lat": 24.58195,
        "lon": 120.84264
       }
@@ -103912,7 +103816,7 @@ const STATION_DATA = [
        "cov": "Outdoor",
        "rmod": "AHDB",
        "ant": "RVV-65A-R3",
-       "az": "295",
+       "az": "280",
        "mt": "3",
        "et": "11",
        "lat": 24.58195,
@@ -103923,9 +103827,9 @@ const STATION_DATA = [
        "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "RVV-65A-R3",
-       "az": "295",
+       "az": "280",
        "mt": "3",
-       "et": "5",
+       "et": "7",
        "lat": 24.58195,
        "lon": 120.84264
       },
@@ -103934,9 +103838,9 @@ const STATION_DATA = [
        "cov": "Outdoor",
        "rmod": "AHEB",
        "ant": "RVV-65A-R3",
-       "az": "295",
+       "az": "280",
        "mt": "3",
-       "et": "5",
+       "et": "7",
        "lat": 24.58195,
        "lon": 120.84264
       }
@@ -103985,8 +103889,8 @@ const STATION_DATA = [
  {
   "id": "419552",
   "siteName": "銅鑼中興",
-  "siteNameCV": "苗栗公館L04銅鑼中興",
-  "town": "銅鑼鄉",
+  "siteNameCV": "苗栗公館L04公館皇家",
+  "town": "公館鄉",
   "towns": [
    "銅鑼鄉",
    "公館鄉"
@@ -104307,7 +104211,7 @@ const STATION_DATA = [
  {
   "id": "419553",
   "siteName": "公館中義",
-  "siteNameCV": "苗栗公館L07公館中義",
+  "siteNameCV": "苗栗公館L07公館民生",
   "town": "公館鄉",
   "towns": [
    "公館鄉",
@@ -104599,7 +104503,7 @@ const STATION_DATA = [
  {
   "id": "419555",
   "siteName": "銅鑼新雞隆",
-  "siteNameCV": "苗栗三義L10銅鑼新雞隆",
+  "siteNameCV": "苗栗三義L10三義雙連新",
   "town": "三義鄉",
   "towns": [
    "銅鑼鄉",
@@ -104820,7 +104724,7 @@ const STATION_DATA = [
  {
   "id": "419557",
   "siteName": "大湖大寮",
-  "siteNameCV": "苗栗大湖L08大湖大順醫院",
+  "siteNameCV": "苗栗大湖L08大湖南湖坑RH",
   "town": "大湖鄉",
   "towns": [
    "大湖鄉",
@@ -105612,7 +105516,7 @@ const STATION_DATA = [
  {
   "id": "423041",
   "siteName": "苗栗白沙L14",
-  "siteNameCV": "苗栗白沙L14拱天宮香客RH",
+  "siteNameCV": "苗栗白沙L14拱天宮戲台RH",
   "town": "通霄鎮",
   "towns": [
    "通霄鎮",
@@ -105807,7 +105711,7 @@ const STATION_DATA = [
  {
   "id": "423043",
   "siteName": "苗栗通霄L31",
-  "siteNameCV": "苗栗通霄L31中山路RH",
+  "siteNameCV": "苗栗通霄L31通霄虎頭山",
   "town": "通霄鎮",
   "towns": [
    "通霄鎮",
@@ -106208,192 +106112,6 @@ const STATION_DATA = [
   "ranType": "C-RAN"
  },
  {
-  "id": "423048",
-  "siteName": "苗栗苑裡L32",
-  "siteNameCV": "苗栗苑裡L32苑裡高中",
-  "town": "苑裡鎮",
-  "towns": [
-   "苑裡鎮"
-  ],
-  "sec": "s1/2/3",
-  "secs": [
-   "s1/2/3"
-  ],
-  "stations": [
-   "苗栗苑裡L32苑裡高中"
-  ],
-  "coords": [
-   {
-    "lat": 24.448239,
-    "lon": 120.656194
-   }
-  ],
-  "cells": {
-   "苗栗苑裡L32苑裡高中": [
-    {
-     "sec": 1,
-     "cells": [
-      {
-       "cel": "11",
-       "cov": "Outdoor",
-       "rmod": "FHDB",
-       "ant": "80010864",
-       "az": "50",
-       "mt": "0",
-       "et": "8",
-       "lat": 24.448239,
-       "lon": 120.656194
-      },
-      {
-       "cel": "13",
-       "cov": "Outdoor",
-       "rmod": "FHEB",
-       "ant": "80010864",
-       "az": "50",
-       "mt": "0",
-       "et": "4",
-       "lat": 24.448239,
-       "lon": 120.656194
-      },
-      {
-       "cel": "14",
-       "cov": "Outdoor",
-       "rmod": "FRHG",
-       "ant": "80010864",
-       "az": "50",
-       "mt": "0",
-       "et": "4",
-       "lat": 24.448239,
-       "lon": 120.656194
-      },
-      {
-       "cel": "15",
-       "cov": "Outdoor",
-       "rmod": "FRHG",
-       "ant": "80010864",
-       "az": "50",
-       "mt": "0",
-       "et": "4",
-       "lat": 24.448239,
-       "lon": 120.656194
-      }
-     ]
-    },
-    {
-     "sec": 2,
-     "cells": [
-      {
-       "cel": "21",
-       "cov": "Outdoor",
-       "rmod": "FHDB",
-       "ant": "80010864",
-       "az": "160",
-       "mt": "0",
-       "et": "6",
-       "lat": 24.448239,
-       "lon": 120.656194
-      },
-      {
-       "cel": "23",
-       "cov": "Outdoor",
-       "rmod": "FHEB",
-       "ant": "80010864",
-       "az": "160",
-       "mt": "0",
-       "et": "5",
-       "lat": 24.448239,
-       "lon": 120.656194
-      },
-      {
-       "cel": "24",
-       "cov": "Outdoor",
-       "rmod": "FRHG",
-       "ant": "80010864",
-       "az": "160",
-       "mt": "0",
-       "et": "5",
-       "lat": 24.448239,
-       "lon": 120.656194
-      },
-      {
-       "cel": "25",
-       "cov": "Outdoor",
-       "rmod": "FRHG",
-       "ant": "80010864",
-       "az": "160",
-       "mt": "0",
-       "et": "2.5",
-       "lat": 24.448239,
-       "lon": 120.656194
-      }
-     ]
-    },
-    {
-     "sec": 3,
-     "cells": [
-      {
-       "cel": "31",
-       "cov": "Outdoor",
-       "rmod": "FHDB",
-       "ant": "80010864",
-       "az": "260",
-       "mt": "0",
-       "et": "10",
-       "lat": 24.448239,
-       "lon": 120.656194
-      },
-      {
-       "cel": "32",
-       "cov": "Outdoor",
-       "rmod": "FHEL",
-       "ant": "80010864",
-       "az": "260",
-       "mt": "0",
-       "et": "5",
-       "lat": 24.448239,
-       "lon": 120.656194
-      },
-      {
-       "cel": "33",
-       "cov": "Outdoor",
-       "rmod": "FHEL",
-       "ant": "80010864",
-       "az": "260",
-       "mt": "0",
-       "et": "5",
-       "lat": 24.448239,
-       "lon": 120.656194
-      },
-      {
-       "cel": "34",
-       "cov": "Outdoor",
-       "rmod": "FRHG",
-       "ant": "80010864",
-       "az": "260",
-       "mt": "0",
-       "et": "5",
-       "lat": 24.448239,
-       "lon": 120.656194
-      },
-      {
-       "cel": "35",
-       "cov": "Outdoor",
-       "rmod": "FRHG",
-       "ant": "80010864",
-       "az": "260",
-       "mt": "0",
-       "et": "5",
-       "lat": 24.448239,
-       "lon": 120.656194
-      }
-     ]
-    }
-   ]
-  },
-  "nrBtsId": "4623048",
-  "ranType": "C-RAN"
- },
- {
   "id": "423471",
   "siteName": "苗栗銅鑼L11",
   "siteNameCV": "苗栗銅鑼L11銅鑼太醫",
@@ -106443,7 +106161,7 @@ const STATION_DATA = [
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "90",
-       "mt": "1",
+       "mt": "2",
        "et": "3",
        "lat": 24.475199,
        "lon": 120.792734
@@ -106465,7 +106183,7 @@ const STATION_DATA = [
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "90",
-       "mt": "2",
+       "mt": "1",
        "et": "3",
        "lat": 24.475199,
        "lon": 120.792734
@@ -106476,7 +106194,7 @@ const STATION_DATA = [
        "rmod": "FRHG",
        "ant": "80010864",
        "az": "90",
-       "mt": "2",
+       "mt": "1",
        "et": "3",
        "lat": 24.475199,
        "lon": 120.792734
@@ -107463,7 +107181,8 @@ const STATION_DATA = [
    "苗栗銅鑼L12銅鑼樟樹": {
     "rmod": {
      "33": [
-      "AC Power"
+      "AC Power",
+      "SMR Alarm"
      ]
     }
    },
@@ -108037,7 +107756,7 @@ const STATION_DATA = [
  {
   "id": "423730",
   "siteName": "苗栗中央L25",
-  "siteNameCV": "苗栗中央L25苗栗苗栗",
+  "siteNameCV": "苗栗中央L25設備測試台",
   "town": "苗栗市",
   "towns": [
    "苗栗市",
@@ -108405,7 +108124,7 @@ const STATION_DATA = [
   "id": "423750",
   "siteName": "竹南竹南L11",
   "siteNameCV": "竹南竹南L11竹南松茂米粉",
-  "town": "竹南鎮",
+  "town": "頭份市",
   "towns": [
    "頭份市",
    "竹南鎮"
@@ -108828,7 +108547,7 @@ const STATION_DATA = [
  {
   "id": "423751",
   "siteName": "竹南復興L17",
-  "siteNameCV": "竹南復興L17竹南復興",
+  "siteNameCV": "竹南復興L17竹南大千",
   "town": "竹南鎮",
   "towns": [
    "竹南鎮",
@@ -109524,7 +109243,10 @@ const STATION_DATA = [
    "竹南頭份L34頭份幼英": {
     "rmod": {
      "43": [
-      "AC Power"
+      "AC Power",
+      "Door",
+      "Temperature",
+      "Fire"
      ]
     }
    }
@@ -109906,7 +109628,7 @@ const STATION_DATA = [
  {
   "id": "423764",
   "siteName": "竹南頭份L12",
-  "siteNameCV": "竹南頭份L12頭份上埔",
+  "siteNameCV": "竹南頭份L12頭份新華",
   "town": "頭份市",
   "towns": [
    "頭份市",
@@ -110440,6 +110162,17 @@ const STATION_DATA = [
        "et": "12",
        "lat": 24.685773,
        "lon": 120.877784
+      },
+      {
+       "cel": "17",
+       "cov": "Outdoor",
+       "rmod": "AHDB",
+       "ant": "80010864",
+       "az": "120",
+       "mt": "6",
+       "et": "12",
+       "lat": 24.685773,
+       "lon": 120.877784
       }
      ]
     },
@@ -110569,6 +110302,17 @@ const STATION_DATA = [
        "az": "340",
        "mt": "3",
        "et": "10",
+       "lat": 24.685773,
+       "lon": 120.877784
+      },
+      {
+       "cel": "37",
+       "cov": "Outdoor",
+       "rmod": "AHDB",
+       "ant": "80010864",
+       "az": "340",
+       "mt": "3",
+       "et": "14",
        "lat": 24.685773,
        "lon": 120.877784
       }
@@ -110840,7 +110584,7 @@ const STATION_DATA = [
  {
   "id": "423781",
   "siteName": "竹南大埔L17",
-  "siteNameCV": "竹南大埔L17竹南昱晶",
+  "siteNameCV": "竹南大埔L17竹南晶電新",
   "town": "竹南鎮",
   "towns": [
    "竹南鎮",
@@ -112031,7 +111775,7 @@ const STATION_DATA = [
  {
   "id": "423795",
   "siteName": "東勢卓蘭L04",
-  "siteNameCV": "東勢卓蘭L03卓蘭食水坑",
+  "siteNameCV": "東勢卓蘭L03卓蘭卓蘭",
   "town": "卓蘭鎮",
   "towns": [
    "卓蘭鎮",
@@ -113542,7 +113286,7 @@ const STATION_DATA = [
  {
   "id": "423819",
   "siteName": "苗栗苑裡L13",
-  "siteNameCV": "苑裡四季紅RH3",
+  "siteNameCV": "苑裡興隆RH1",
   "town": "苑裡鎮",
   "towns": [
    "苑裡鎮",
@@ -113984,7 +113728,7 @@ const STATION_DATA = [
  {
   "id": "423839",
   "siteName": "竹南南庄L07",
-  "siteNameCV": "竹南南庄L07南庄石壁RH1",
+  "siteNameCV": "竹南南庄L07南庄和平橋RH3",
   "town": "南庄鄉",
   "towns": [
    "南庄鄉",
@@ -114619,7 +114363,7 @@ const STATION_DATA = [
  {
   "id": "423975",
   "siteName": "竹南大埔機房BBU1",
-  "siteNameCV": "竹南大埔L27竹南中美晶R3",
+  "siteNameCV": "竹南大埔L27竹南中美晶R2",
   "town": "竹南鎮",
   "towns": [
    "竹南鎮",
@@ -115036,7 +114780,7 @@ const STATION_DATA = [
        "ant": "RVV-65A-R3",
        "az": "310",
        "mt": "5",
-       "et": "9",
+       "et": "12",
        "lat": 24.55982,
        "lon": 120.82146
       },
@@ -115126,7 +114870,7 @@ const STATION_DATA = [
        "ant": "RVV-65A-R3",
        "az": "50",
        "mt": "5",
-       "et": "4",
+       "et": "8",
        "lat": 24.410658,
        "lon": 120.791253
       },
@@ -115137,7 +114881,7 @@ const STATION_DATA = [
        "ant": "RVV-65A-R3",
        "az": "50",
        "mt": "5",
-       "et": "2",
+       "et": "5",
        "lat": 24.410658,
        "lon": 120.791253
       }
@@ -115180,7 +114924,7 @@ const STATION_DATA = [
        "ant": "RVV-65A-R3",
        "az": "260",
        "mt": "5",
-       "et": "2",
+       "et": "8",
        "lat": 24.410658,
        "lon": 120.791253
       },
@@ -115191,7 +114935,7 @@ const STATION_DATA = [
        "ant": "RVV-65A-R3",
        "az": "260",
        "mt": "5",
-       "et": "2",
+       "et": "5",
        "lat": 24.410658,
        "lon": 120.791253
       },
@@ -115202,7 +114946,7 @@ const STATION_DATA = [
        "ant": "RVV-65A-R3",
        "az": "260",
        "mt": "5",
-       "et": "2",
+       "et": "5",
        "lat": 24.410658,
        "lon": 120.791253
       }
@@ -115849,7 +115593,8 @@ const STATION_DATA = [
      "33": [
       "Door",
       "Temperature",
-      "AC Power"
+      "AC Power",
+      "Firer"
      ]
     }
    },
@@ -116342,7 +116087,7 @@ const STATION_DATA = [
  {
   "id": "424019",
   "siteName": "苗栗銅鑼L13",
-  "siteNameCV": "苗栗銅鑼L13竹圍鍾RH",
+  "siteNameCV": "苗栗銅鑼L13樟樹村108S",
   "town": "銅鑼鄉",
   "towns": [
    "銅鑼鄉",
@@ -117061,7 +116806,7 @@ const STATION_DATA = [
  {
   "id": "424043",
   "siteName": "竹南三灣L04",
-  "siteNameCV": "竹南三灣L04三灣永和幹RH",
+  "siteNameCV": "竹南三灣L04三灣楠樹窩RH",
   "town": "三灣鄉",
   "towns": [
    "三灣鄉",
@@ -117451,7 +117196,7 @@ const STATION_DATA = [
  {
   "id": "424060",
   "siteName": "苗栗中央L33",
-  "siteNameCV": "苗栗中央L33苗栗營業中心",
+  "siteNameCV": "苗栗中央L33苗栗建功",
   "town": "苗栗市",
   "towns": [
    "苗栗市",
@@ -117741,7 +117486,7 @@ const STATION_DATA = [
        "ant": "80010864",
        "az": "140",
        "mt": "4",
-       "et": "9",
+       "et": "10",
        "lat": 24.56537,
        "lon": 120.82397
       },
@@ -117752,7 +117497,7 @@ const STATION_DATA = [
        "ant": "80010864",
        "az": "140",
        "mt": "4",
-       "et": "9",
+       "et": "10",
        "lat": 24.56537,
        "lon": 120.82397
       },
@@ -117763,7 +117508,7 @@ const STATION_DATA = [
        "ant": "80010864",
        "az": "140",
        "mt": "4",
-       "et": "9",
+       "et": "10",
        "lat": 24.56537,
        "lon": 120.82397
       },
@@ -117927,19 +117672,26 @@ const STATION_DATA = [
   "siteNameCV": "苗栗通霄L22通霄福興",
   "town": "通霄鎮",
   "towns": [
+   "通霄鎮",
    "通霄鎮"
   ],
-  "sec": "s1/2/3",
+  "sec": "s1/2/3_s4",
   "secs": [
-   "s1/2/3"
+   "s1/2/3",
+   "s4"
   ],
   "stations": [
-   "苗栗通霄L22通霄福興"
+   "苗栗通霄L22通霄福興",
+   "苗栗通霄L22通霄內湖3鄰RH"
   ],
   "coords": [
    {
     "lat": 24.425222,
     "lon": 120.7205
+   },
+   {
+    "lat": 24.4957,
+    "lon": 120.7127
    }
   ],
   "cells": {
@@ -118055,6 +117807,24 @@ const STATION_DATA = [
        "et": "5",
        "lat": 24.425222,
        "lon": 120.7205
+      }
+     ]
+    }
+   ],
+   "苗栗通霄L22通霄內湖3鄰RH": [
+    {
+     "sec": 4,
+     "cells": [
+      {
+       "cel": "41",
+       "cov": "Outdoor",
+       "rmod": "FHDB",
+       "ant": "DBXLH-6565A-VTM",
+       "az": "70",
+       "mt": "0",
+       "et": "0",
+       "lat": 24.4957,
+       "lon": 120.7127
       }
      ]
     }
@@ -118986,7 +118756,7 @@ const STATION_DATA = [
  {
   "id": "425363",
   "siteName": "竹南頭份L40",
-  "siteNameCV": "竹南頭份L40頭份高隧一北內",
+  "siteNameCV": "竹南頭份L40頭份高隧新苗南內",
   "town": "頭份市",
   "towns": [
    "頭份市",
@@ -119307,7 +119077,10 @@ const STATION_DATA = [
    "竹南頭份L40頭份高隧新苗南內": {
     "rmod": {
      "14": [
-      "AC Power"
+      "AC Power",
+      "Door",
+      "Fire",
+      "Temperature"
      ]
     }
    },
@@ -119360,8 +119133,8 @@ const STATION_DATA = [
        "rmod": "FHDB",
        "ant": "SLI2-06360",
        "az": "40",
-       "mt": "2",
-       "et": "2",
+       "mt": "0",
+       "et": "0",
        "lat": 24.61955,
        "lon": 120.85747
       },
@@ -119623,7 +119396,7 @@ const STATION_DATA = [
  {
   "id": "425384",
   "siteName": "苗栗苑裡L17",
-  "siteNameCV": "苗栗苑裡L17苑裡高隧MU5",
+  "siteNameCV": "苗栗苑裡L17苑裡高隧MU4",
   "town": "苑裡鎮",
   "towns": [
    "苑裡鎮"
@@ -120004,7 +119777,7 @@ const STATION_DATA = [
  {
   "id": "425409",
   "siteName": "竹南大埔L12",
-  "siteNameCV": "竹南大埔L12竹南奇美外",
+  "siteNameCV": "竹南大埔L12竹南奇美車塔外",
   "town": "竹南鎮",
   "towns": [
    "竹南鎮",
@@ -120538,7 +120311,7 @@ const STATION_DATA = [
  {
   "id": "425421",
   "siteName": "苗栗聯合大學",
-  "siteNameCV": "苗栗中央L49苗栗聯大餐廳",
+  "siteNameCV": "苗栗中央L49苗栗聯合大學",
   "town": "苗栗市",
   "towns": [
    "苗栗市",
@@ -121112,7 +120885,7 @@ const STATION_DATA = [
  {
   "id": "426905",
   "siteName": "苗栗泰安L07",
-  "siteNameCV": "苗栗泰安L07泰安八卦力",
+  "siteNameCV": "苗栗泰安L07泰安汶水國小RH",
   "town": "泰安鄉",
   "towns": [
    "泰安鄉",
@@ -121481,7 +121254,7 @@ const STATION_DATA = [
  {
   "id": "426916",
   "siteName": "苗栗後龍L15",
-  "siteNameCV": "苗栗後龍L15後龍服務中心",
+  "siteNameCV": "苗栗後龍L15後龍東明里S",
   "town": "後龍鎮",
   "towns": [
    "後龍鎮",
@@ -121681,7 +121454,7 @@ const STATION_DATA = [
   "id": "426920",
   "siteName": "苗栗頭屋L16",
   "siteNameCV": "苗栗頭屋L16頭屋枋寮坑",
-  "town": "後龍鎮",
+  "town": "頭屋鄉",
   "towns": [
    "後龍鎮",
    "頭屋鄉",
@@ -122459,7 +122232,7 @@ const STATION_DATA = [
  {
   "id": "427111",
   "siteName": "竹南大埔L14",
-  "siteNameCV": "竹南大埔L14竹南國衛院",
+  "siteNameCV": "竹南大埔L14竹南奇美內",
   "town": "竹南鎮",
   "towns": [
    "竹南鎮",
@@ -122594,7 +122367,7 @@ const STATION_DATA = [
        "rmod": "AHDB",
        "ant": "I-ATP1-698/2700",
        "az": "140",
-       "mt": "3",
+       "mt": "5",
        "et": "2",
        "lat": 24.705857,
        "lon": 120.913104
@@ -122643,7 +122416,7 @@ const STATION_DATA = [
        "rmod": "AHEGG",
        "ant": "I-ATP1-698/2700",
        "az": "290",
-       "mt": "2",
+       "mt": "0",
        "et": "0",
        "lat": 24.705857,
        "lon": 120.913104
@@ -122654,7 +122427,7 @@ const STATION_DATA = [
        "rmod": "AHDB",
        "ant": "I-ATP1-698/2700",
        "az": "290",
-       "mt": "2",
+       "mt": "0",
        "et": "0",
        "lat": 24.705857,
        "lon": 120.913104
@@ -122701,7 +122474,7 @@ const STATION_DATA = [
  {
   "id": "427125",
   "siteName": "竹南大埔L11",
-  "siteNameCV": "竹南大埔L11竹南晶電",
+  "siteNameCV": "竹南大埔L11竹南國衛院新",
   "town": "竹南鎮",
   "towns": [
    "竹南鎮",
@@ -122919,7 +122692,7 @@ const STATION_DATA = [
        "ant": "C2D0510X6",
        "az": "120",
        "mt": "6",
-       "et": "8",
+       "et": "10",
        "lat": 24.703954,
        "lon": 120.910825
       },
@@ -123001,7 +122774,7 @@ const STATION_DATA = [
  {
   "id": "427126",
   "siteName": "苗栗南勢聯大",
-  "siteNameCV": "苗栗中央L50苗栗聯大綜合大樓",
+  "siteNameCV": "苗栗中央L50苗栗南勢聯大",
   "town": "苗栗市",
   "towns": [
    "苗栗市",
@@ -123105,7 +122878,7 @@ const STATION_DATA = [
        "ant": "80010864",
        "az": "170",
        "mt": "3",
-       "et": "10",
+       "et": "8",
        "lat": 24.5372,
        "lon": 120.7907
       },
@@ -123116,7 +122889,7 @@ const STATION_DATA = [
        "ant": "80010864",
        "az": "170",
        "mt": "3",
-       "et": "6",
+       "et": "4",
        "lat": 24.5372,
        "lon": 120.7907
       },
@@ -123127,7 +122900,7 @@ const STATION_DATA = [
        "ant": "80010864",
        "az": "170",
        "mt": "3",
-       "et": "6",
+       "et": "4",
        "lat": 24.5372,
        "lon": 120.7907
       },
@@ -123138,7 +122911,7 @@ const STATION_DATA = [
        "ant": "80010864",
        "az": "170",
        "mt": "4",
-       "et": "6",
+       "et": "4",
        "lat": 24.5372,
        "lon": 120.7907
       },
@@ -123297,7 +123070,7 @@ const STATION_DATA = [
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "160",
-       "mt": "0",
+       "mt": "5",
        "et": "5",
        "lat": 24.54456,
        "lon": 120.81361
@@ -123308,7 +123081,7 @@ const STATION_DATA = [
        "rmod": "FHEL",
        "ant": "80010864",
        "az": "160",
-       "mt": "5",
+       "mt": "0",
        "et": "5",
        "lat": 24.54456,
        "lon": 120.81361
@@ -123438,7 +123211,7 @@ const STATION_DATA = [
  {
   "id": "427144",
   "siteName": "竹南頭份L37",
-  "siteNameCV": "竹南頭份L37頭份民族",
+  "siteNameCV": "竹南頭份L37頭份民生",
   "town": "頭份市",
   "towns": [
    "頭份市",
@@ -124078,7 +123851,7 @@ const STATION_DATA = [
        "cov": "Outdoor",
        "rmod": "FXDB",
        "ant": "RVV-65A-R3",
-       "az": "60",
+       "az": "50",
        "mt": "0",
        "et": "13",
        "lat": 24.70967,
@@ -124089,7 +123862,7 @@ const STATION_DATA = [
        "cov": "Outdoor",
        "rmod": "AHEGG",
        "ant": "RVV-65A-R3",
-       "az": "60",
+       "az": "50",
        "mt": "0",
        "et": "10",
        "lat": 24.70967,
@@ -124100,7 +123873,7 @@ const STATION_DATA = [
        "cov": "Outdoor",
        "rmod": "AHEGG",
        "ant": "RVV-65A-R3",
-       "az": "60",
+       "az": "50",
        "mt": "0",
        "et": "10",
        "lat": 24.70967,
@@ -124116,7 +123889,7 @@ const STATION_DATA = [
        "cov": "Outdoor",
        "rmod": "FXDB",
        "ant": "RVV-65A-R3",
-       "az": "210",
+       "az": "180",
        "mt": "0",
        "et": "9",
        "lat": 24.70967,
@@ -124127,7 +123900,7 @@ const STATION_DATA = [
        "cov": "Outdoor",
        "rmod": "AHEGG",
        "ant": "RVV-65A-R3",
-       "az": "210",
+       "az": "180",
        "mt": "0",
        "et": "6",
        "lat": 24.70967,
@@ -124138,7 +123911,7 @@ const STATION_DATA = [
        "cov": "Outdoor",
        "rmod": "AHEGG",
        "ant": "RVV-65A-R3",
-       "az": "210",
+       "az": "180",
        "mt": "0",
        "et": "6",
        "lat": 24.70967,
@@ -124154,7 +123927,7 @@ const STATION_DATA = [
        "cov": "Outdoor",
        "rmod": "FXDB",
        "ant": "RVV-65A-R3",
-       "az": "300",
+       "az": "270",
        "mt": "0",
        "et": "9",
        "lat": 24.70967,
@@ -124165,7 +123938,7 @@ const STATION_DATA = [
        "cov": "Outdoor",
        "rmod": "AHEGG",
        "ant": "RVV-65A-R3",
-       "az": "300",
+       "az": "270",
        "mt": "0",
        "et": "6",
        "lat": 24.70967,
@@ -124176,7 +123949,7 @@ const STATION_DATA = [
        "cov": "Outdoor",
        "rmod": "AHEGG",
        "ant": "RVV-65A-R3",
-       "az": "300",
+       "az": "270",
        "mt": "0",
        "et": "6",
        "lat": 24.70967,
@@ -124332,7 +124105,7 @@ const STATION_DATA = [
  {
   "id": "427602",
   "siteName": "苗栗獅潭L03",
-  "siteNameCV": "苗栗獅潭L03獅潭永興",
+  "siteNameCV": "苗栗獅潭L03獅潭淨慈寺",
   "town": "獅潭鄉",
   "towns": [
    "獅潭鄉",
@@ -124588,7 +124361,7 @@ const STATION_DATA = [
  {
   "id": "427632",
   "siteName": "苗栗山腳L07",
-  "siteNameCV": "苗栗山腳L07苑裡泰田一",
+  "siteNameCV": "苗栗山腳L07苑裡高鐵",
   "town": "苑裡鎮",
   "towns": [
    "苑裡鎮",
@@ -124986,7 +124759,7 @@ const STATION_DATA = [
        "ant": "80010622",
        "az": "60",
        "mt": "4",
-       "et": "8",
+       "et": "9",
        "lat": 24.68797,
        "lon": 120.90409
       },
@@ -124997,7 +124770,7 @@ const STATION_DATA = [
        "ant": "80010622",
        "az": "60",
        "mt": "4",
-       "et": "8",
+       "et": "9",
        "lat": 24.68797,
        "lon": 120.90409
       },
@@ -125008,7 +124781,7 @@ const STATION_DATA = [
        "ant": "80010622",
        "az": "60",
        "mt": "4",
-       "et": "8",
+       "et": "9",
        "lat": 24.68797,
        "lon": 120.90409
       },
@@ -125019,7 +124792,7 @@ const STATION_DATA = [
        "ant": "80010622",
        "az": "60",
        "mt": "4",
-       "et": "8",
+       "et": "7",
        "lat": 24.68797,
        "lon": 120.90409
       }
@@ -125035,7 +124808,7 @@ const STATION_DATA = [
        "ant": "80010622",
        "az": "170",
        "mt": "6",
-       "et": "8",
+       "et": "7",
        "lat": 24.68797,
        "lon": 120.90409
       },
@@ -125046,7 +124819,7 @@ const STATION_DATA = [
        "ant": "80010622",
        "az": "170",
        "mt": "6",
-       "et": "8",
+       "et": "7",
        "lat": 24.68797,
        "lon": 120.90409
       },
@@ -125057,7 +124830,7 @@ const STATION_DATA = [
        "ant": "80010622",
        "az": "170",
        "mt": "6",
-       "et": "8",
+       "et": "7",
        "lat": 24.68797,
        "lon": 120.90409
       },
@@ -125068,7 +124841,7 @@ const STATION_DATA = [
        "ant": "80010622",
        "az": "170",
        "mt": "6",
-       "et": "8",
+       "et": "7",
        "lat": 24.68797,
        "lon": 120.90409
       }
@@ -125084,7 +124857,7 @@ const STATION_DATA = [
        "ant": "80010622",
        "az": "270",
        "mt": "3",
-       "et": "8",
+       "et": "7",
        "lat": 24.68797,
        "lon": 120.90409
       },
@@ -125095,7 +124868,7 @@ const STATION_DATA = [
        "ant": "80010622",
        "az": "270",
        "mt": "3",
-       "et": "8",
+       "et": "7",
        "lat": 24.68797,
        "lon": 120.90409
       },
@@ -125106,7 +124879,7 @@ const STATION_DATA = [
        "ant": "80010622",
        "az": "270",
        "mt": "3",
-       "et": "8",
+       "et": "7",
        "lat": 24.68797,
        "lon": 120.90409
       },
@@ -125117,7 +124890,7 @@ const STATION_DATA = [
        "ant": "80010622",
        "az": "270",
        "mt": "3",
-       "et": "8",
+       "et": "7",
        "lat": 24.68797,
        "lon": 120.90409
       }
@@ -125235,7 +125008,10 @@ const STATION_DATA = [
    "竹南頭份L30頭份信東": {
     "rmod": {
      "43": [
-      "AC Power"
+      "AC Power",
+      "Door",
+      "Fire",
+      "Temperature"
      ]
     }
    }
@@ -125310,6 +125086,17 @@ const STATION_DATA = [
       },
       {
        "cel": "14",
+       "cov": "Outdoor",
+       "rmod": "FRHG",
+       "ant": "CELLMAX-O-25",
+       "az": "0",
+       "mt": "0",
+       "et": "0",
+       "lat": 24.6048,
+       "lon": 120.82517
+      },
+      {
+       "cel": "15",
        "cov": "Outdoor",
        "rmod": "FRHG",
        "ant": "CELLMAX-O-25",
@@ -125542,7 +125329,7 @@ const STATION_DATA = [
        "ant": "80010864",
        "az": "300",
        "mt": "0",
-       "et": "6",
+       "et": "10",
        "lat": 24.467617,
        "lon": 120.76472
       },
@@ -125553,7 +125340,7 @@ const STATION_DATA = [
        "ant": "80010864",
        "az": "300",
        "mt": "0",
-       "et": "6",
+       "et": "10",
        "lat": 24.467617,
        "lon": 120.76472
       }
@@ -125826,7 +125613,7 @@ const STATION_DATA = [
  {
   "id": "427678",
   "siteName": "苗栗中央L35",
-  "siteNameCV": "苗栗中央L35苗栗皇家豪門",
+  "siteNameCV": "苗栗中央L35苗栗國稅局",
   "town": "苗栗市",
   "towns": [
    "苗栗市",
@@ -126326,7 +126113,7 @@ const STATION_DATA = [
  {
   "id": "427689",
   "siteName": "苗栗獅潭L01",
-  "siteNameCV": "苗栗獅潭L01百壽村RH2",
+  "siteNameCV": "苗栗獅潭L01北窩RH3",
   "town": "獅潭鄉",
   "towns": [
    "獅潭鄉",
@@ -126978,7 +126765,7 @@ const STATION_DATA = [
  {
   "id": "427750",
   "siteName": "苗栗獅潭L02",
-  "siteNameCV": "苗栗獅潭L02興陽農場",
+  "siteNameCV": "苗栗獅潭L02獅潭福興",
   "town": "獅潭鄉",
   "towns": [
    "獅潭鄉",
@@ -128154,7 +127941,7 @@ const STATION_DATA = [
        "ant": "RRV4-65A-R6N43",
        "az": "310",
        "mt": "0",
-       "et": "9",
+       "et": "7",
        "lat": 24.46293,
        "lon": 120.7612
       },
@@ -128165,7 +127952,7 @@ const STATION_DATA = [
        "ant": "RRV4-65A-R6N43",
        "az": "310",
        "mt": "0",
-       "et": "5",
+       "et": "4",
        "lat": 24.46293,
        "lon": 120.7612
       },
@@ -128176,7 +127963,7 @@ const STATION_DATA = [
        "ant": "RRV4-65A-R6N43",
        "az": "310",
        "mt": "0",
-       "et": "5",
+       "et": "4",
        "lat": 24.46293,
        "lon": 120.7612
       }
@@ -128298,7 +128085,7 @@ const STATION_DATA = [
  {
   "id": "427810",
   "siteName": "苗栗山腳L16",
-  "siteNameCV": "苗栗山腳L16南勢里RH2",
+  "siteNameCV": "苗栗山腳L16福田里RH1",
   "town": "苑裡鎮",
   "towns": [
    "苑裡鎮",
@@ -128775,7 +128562,7 @@ const STATION_DATA = [
  {
   "id": "427896",
   "siteName": "竹南頭份L31",
-  "siteNameCV": "竹南頭份L31頭份興隆里S",
+  "siteNameCV": "竹南頭份L31興隆抽水RH1",
   "town": "頭份市",
   "towns": [
    "頭份市",
@@ -128904,8 +128691,8 @@ const STATION_DATA = [
        "rmod": "FHDB",
        "ant": "DBXLH-6565A-VTM",
        "az": "0",
-       "mt": "0",
-       "et": "6",
+       "mt": "4",
+       "et": "9",
        "lat": 24.6948,
        "lon": 120.9492
       },
@@ -128915,7 +128702,7 @@ const STATION_DATA = [
        "rmod": "AHEGG",
        "ant": "DBXLH-6565A-VTM",
        "az": "0",
-       "mt": "4",
+       "mt": "0",
        "et": "5",
        "lat": 24.6948,
        "lon": 120.9492
@@ -129063,7 +128850,7 @@ const STATION_DATA = [
  {
   "id": "427969",
   "siteName": "苗栗苗栗BBU9",
-  "siteNameCV": "苗栗中央L44苗栗府前一RH1",
+  "siteNameCV": "苗栗中央L44苗栗府前三RH",
   "town": "苗栗市",
   "towns": [
    "苗栗市",
