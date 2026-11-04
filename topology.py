@@ -15,7 +15,8 @@
         "id": "1", "name": "FXDB", "desc": "FXDB_RFM_3T6R_L900 - 3x80W",
         "smod": "1", "ants": "1, 2",
         "links": [                                     # RF/OPT 埠連線
-          {"t": "bb", "bb": "1", "p": "RF3", "o": "1"},      # BBMOD RF3 → RMOD OPT1
+          {"t": "bb", "bb": "1", "p": "RF3", "o": "1",
+           "bw": "1534", "bm": "AOZNG", "w": "1531", "m": "AOYCO"}, # SFP 波長／型號
           {"t": "rmod", "up": "13", "p": "OPT2", "o": "1"}   # 上游 RMOD-13 OPT2 → RMOD OPT1
         ],
         "alarms": [{"t": "AC Power", "s": "major"}],   # RMOD 層級
@@ -45,6 +46,31 @@ import re
 
 # 已知的模組名稱（用來從 rmod_name_cell 之類的長字串取前綴時做校正）
 KNOWN_SMOD = ("FSMF", "ASIA", "ASIB", "ASIK", "ASIL", "ABIO", "ABIL")
+
+# SFP 波長 → 型號對照表（未列出的波長只顯示波長、型號空白）
+# 一般 waveLength（CWDM）
+SFP_WAVE_MODEL = {
+    "1271": "AOYCA", "1291": "AOYCB", "1311": "AOYCC", "1331": "AOYCD",
+    "1351": "AOYCE", "1371": "AOYCF", "1511": "AOYCN", "1531": "AOYCO",
+    "1551": "AOYCP", "1571": "AOYCQ", "1591": "AOYCR", "1611": "AOYCS",
+}
+# rMod_waveLength（射頻設備／OPT 側）
+SFP_RMOD_WAVE_MODEL = {
+    "1533": "AOZNF", "1535": "AOZNH", "1536": "AOZNK", "1538": "AOZNH",
+    "1539": "AOZNO", "1541": "AOZNQ", "1542": "AOZNS", "1544": "AOZNU",
+    "1546": "AOZNW", "1547": "AOZLZ", "1549": "AOZMB", "1550": "AOZMD",
+    "1552": "AOZOE", "1554": "AOZOG", "1555": "AOZOI", "1557": "AOZOL",
+    "1558": "AOZON", "1560": "AOZOP",
+}
+# bbMod_waveLength（容量卡板／RF 側）
+SFP_BBMOD_WAVE_MODEL = {
+    "1534": "AOZNG", "1535": "AOZNI", "1537": "AOZNL", "1538": "AOZNN",
+    "1540": "AOZNP", "1542": "AOZNR", "1543": "AOZNT", "1545": "AOZNV",
+    "1546": "AOZNX", "1548": "AOZMA", "1550": "AOZMC", "1551": "AOZME",
+    "1553": "AOZOF", "1554": "AOZOH", "1556": "AOZOK", "1558": "AOZOM",
+    "1559": "AOZOO", "1561": "AOZOQ",
+}
+
 
 _RE_RMOD = re.compile(r"RMOD[-_ ]?(\d+)")
 _RE_BB = re.compile(r"bbMod[-_ ]?(\d+)", re.I)
@@ -106,6 +132,35 @@ def _ants(raw, rid):
         if m.group(1) == rid:
             out.append(m.group(2).strip())
     return ", ".join(v for v in out if v)
+
+
+def _wave(raw):
+    """'1534' / '1534nm' / '1534 nm' → '1534'"""
+    s = _s(raw).upper().replace("NM", "").strip()
+    m = re.match(r"^(\d{3,4})", s)
+    return m.group(1) if m else ""
+
+
+def _sfp_info(raw, table):
+    """波長 → (波長, 型號)。型號依指定表查，查不到再查一般 CWDM 表。"""
+    wl = _wave(raw)
+    if not wl:
+        return "", ""
+    return wl, (table.get(wl) or SFP_WAVE_MODEL.get(wl, ""))
+
+
+def _set_sfp(link, rmod_wl, peer_wl, peer_table=SFP_RMOD_WAVE_MODEL):
+    """把本機 OPT 側與對端埠的 SFP 波長／型號寫進 link"""
+    w, m = _sfp_info(rmod_wl, SFP_RMOD_WAVE_MODEL)
+    if w:
+        link["w"] = w
+        if m:
+            link["m"] = m
+    bw, bm = _sfp_info(peer_wl, peer_table)
+    if bw:
+        link["bw"] = bw
+        if bm:
+            link["bm"] = bm
 
 
 def _clean_alarm_text(desc):
@@ -383,6 +438,8 @@ def build(cell_rows, center="", is_nr=False, rmod_eac=None, smod_eac=None,
                     rmod["bb"] = site["bbs"][key]["id"]
             else:
                 link = {"t": "?", "p": bbphy, "o": opt}
+            _set_sfp(link, r.get("rMod_waveLength"), r.get("bbMod_waveLength"),
+                     SFP_RMOD_WAVE_MODEL if upper_phy.startswith("OPT") else SFP_BBMOD_WAVE_MODEL)
             _add_link(rmod, link)
 
     # ---- 沒有 SFP 連線的 RMOD：用細胞檔的 BBMOD/RF 埠補 ----
@@ -432,8 +489,15 @@ def build(cell_rows, center="", is_nr=False, rmod_eac=None, smod_eac=None,
                 seen_pairs.add(pair)
                 nl = {"t": "rmod", "up": up, "p": up_port, "o": down_port}
                 if down == rm["id"]:
+                    for k in ("w", "m", "bw", "bm"):
+                        if k in l:
+                            nl[k] = l[k]
                     keep.append(nl)
                 else:
+                    # 這筆在原 RMOD 是上游；移到下游後「本機／對端」互換
+                    for src, dst in (("bw", "w"), ("bm", "m"), ("w", "bw"), ("m", "bm")):
+                        if src in l:
+                            nl[dst] = l[src]
                     moved.append((down, nl))
             rm["links"] = keep
         for rid, l in moved:

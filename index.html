@@ -657,6 +657,14 @@
   }
   .rfchip.opt { color: #5b3f8f; background: #f0eafc; border-color: #d5c8ef; }
   .rfchip.none { color: #94a9bd; background: #f6f9fc; border-color: #e2ebf4; font-weight: 600; }
+  .rfchip .sfpw, .rfchip .sfpm {
+    display: block; font-size: 9.5px; line-height: 1.25; font-weight: 600;
+    letter-spacing: 0; margin-top: 2px; white-space: nowrap;
+  }
+  .rfchip .sfpw { color: #5a7a9a; }
+  .rfchip .sfpm { color: #12456f; font-weight: 800; }
+  .rfchip.opt .sfpw { color: #8a7bb0; }
+  .rfchip.opt .sfpm { color: #5b3f8f; }
   .tarrow { color: #a9bfd4; font-size: 12px; }
   .tcasc { font-size: 10.5px; color: #7e57c2; line-height: 1.45; }
   .tport .tcasc { display: block; }
@@ -1038,9 +1046,9 @@
     </div>
   </div>
 
-  <script src="data.js?v=202611041757"></script>
-  <script src="data5g.js?v=202611041757"></script>
-  <script src="topo.js?v=202611041757"></script>
+  <script src="data.js?v=202611042258"></script>
+  <script src="data5g.js?v=202611042258"></script>
+  <script src="topo.js?v=202611042258"></script>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
     // ============ 站台照片（Cloudflare Worker） ============
@@ -1596,6 +1604,19 @@
       return out.sort((a, b) => topoPortNo(a) - topoPortNo(b));
     }
 
+    // SFP 埠卡：埠號 + 波長 + 型號（沒有 SFP 資料時只顯示埠號）
+    function topoPortChip(port, opt, wl, model, tip) {
+      let extra = '';
+      let title = tip || (opt ? '射頻設備光埠' : '容量卡板射頻埠');
+      if (wl) {
+        extra = '<span class="sfpw">' + escapeHtml(wl) + 'nm</span>';
+        if (model) extra += '<span class="sfpm">' + escapeHtml(model) + '</span>';
+        title += '　SFP ' + wl + 'nm' + (model ? '／' + model : '（型號未對照）');
+      }
+      return '<span class="rfchip' + (opt ? ' opt' : '') + '" title="' + escapeHtml(title) + '">' +
+        escapeHtml(port) + extra + '</span>';
+    }
+
     function renderTopo(id) {
       const out = document.getElementById('topoOut');
       if (!out) return;
@@ -1738,22 +1759,24 @@
         h += '<div class="tport" style="grid-row: span ' + n + '">';
         if (kind === 'bb') {
           entry.links.forEach(l => {
-            h += '<span class="plink"><span class="rfchip">' + escapeHtml(l.p || 'RF?') + '</span>' +
+            h += '<span class="plink">' + topoPortChip(l.p || 'RF?', false, l.bw, l.bm) +
               '<span class="tarrow">→</span>' +
-              '<span class="rfchip opt" title="射頻設備光埠">' + escapeHtml(l.o || 'OPT?') + '</span></span>';
+              topoPortChip(l.o || 'OPT?', true, l.w, l.m) + '</span>';
           });
         } else if (kind === 'casc') {
           const l = entry.link;
           h += '<span class="tcasc">' + (depth > 1 ? '<span class="tindent">└</span> ' : '└ ') +
-            'RMOD-' + escapeHtml(l.up) + (l.p ? ' · ' + escapeHtml(l.p) : '') + '</span>' +
+            'RMOD-' + escapeHtml(l.up) + (l.p ? ' · ' + escapeHtml(l.p) : '') +
+            (l.bw ? ' ' + escapeHtml(l.bw) + 'nm' : '') +
+            (l.bm ? ' ' + escapeHtml(l.bm) : '') + '</span>' +
             '<span class="plink"><span class="tarrow">→</span>' +
-            '<span class="rfchip opt" title="本機光埠">' + escapeHtml(l.o || 'OPT?') + '</span></span>' +
+            topoPortChip(l.o || 'OPT?', true, l.w, l.m, '本機光埠') + '</span>' +
             '<span class="tcasc">經上游級聯</span>';
         } else {
           const unk = (rm.links || []).filter(l => l.t === '?' && l.o);
           if (unk.length) {
             unk.forEach(l => {
-              h += '<span class="rfchip opt" title="光埠（上游未取得）">' + escapeHtml(l.o) + '</span>';
+              h += topoPortChip(l.o, true, l.w, l.m, '光埠（上游未取得）');
             });
             h += '<span class="tcasc">光埠（上游未取得）</span>';
           } else {
@@ -1765,6 +1788,8 @@
 
         // 第 2 欄：射頻設備
         const optPorts = topoUniqPorts((rm.links || []).map(l => l.o));
+        const optInfo = {};
+        (rm.links || []).forEach(l => { if (l.o && !optInfo[l.o]) optInfo[l.o] = l; });
         h += '<div style="grid-row: span ' + n + '"><div class="rmod-card' +
           ((rm.alarms || []).length ? ' has-alm' : '') + '">' +
           '<div class="rid">RMOD-' + escapeHtml(rm.id) + '</div>' +
@@ -1773,7 +1798,8 @@
           (rm.desc ? '<div class="rdesc" title="' + escapeHtml(rm.desc) + '">' + escapeHtml(rm.desc) + '</div>' : '');
         let pc = '';
         optPorts.forEach(p => {
-          pc += '<span class="rfchip opt" title="射頻設備光埠">' + escapeHtml(p) + '</span>';
+          const info = optInfo[p] || {};
+          pc += topoPortChip(p, true, info.w, info.m);
         });
         if (rm.ants) {
           pc += '<span class="antchip" title="天線埠">ANT ' + escapeHtml(rm.ants) + '</span>';
@@ -1877,7 +1903,8 @@
         ' 細胞設定檔（RMOD／BBMOD／RET）＋ RMOD/SMOD 外部告警檔＋ SFP 連線檔' +
         (srcMeta.cell ? '（細胞檔 ' + escapeHtml(srcMeta.cell) + '、SFP 檔 ' + escapeHtml(srcMeta.sfp || '-') + '）' : '') +
         (typeof TOPO !== 'undefined' && TOPO.updated ? '，產生時間 ' + escapeHtml(TOPO.updated) : '') + '。' +
-        'RF／OPT 埠取自 SFP 檔；SFP 檔較舊時，實際接續可能已調整。' +
+        'RF／OPT 埠取自 SFP 檔；埠下方顯示 SFP 波長與型號，未在對照表的波長只顯示波長。' +
+        'SFP 檔較舊時，實際接續可能已調整。' +
         '「無 RET 資料」表示資料檔內沒有該細胞的 RET 回報，不是連線異常。</div>';
 
       out.innerHTML = html;
