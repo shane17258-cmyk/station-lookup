@@ -56,7 +56,7 @@ SFP_WAVE_MODEL = {
 }
 # rMod_waveLength（射頻設備／OPT 側）
 SFP_RMOD_WAVE_MODEL = {
-    "1533": "AOZNF", "1535": "AOZNH", "1536": "AOZNK", "1538": "AOZNH",
+    "1533": "AOZNF", "1535": "AOZNH", "1536": "AOZNK", "1538": "AOZNM",
     "1539": "AOZNO", "1541": "AOZNQ", "1542": "AOZNS", "1544": "AOZNU",
     "1546": "AOZNW", "1547": "AOZLZ", "1549": "AOZMB", "1550": "AOZMD",
     "1552": "AOZOE", "1554": "AOZOG", "1555": "AOZOI", "1557": "AOZOL",
