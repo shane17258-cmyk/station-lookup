@@ -1046,9 +1046,9 @@
     </div>
   </div>
 
-  <script src="data.js?v=202611042311"></script>
-  <script src="data5g.js?v=202611042311"></script>
-  <script src="topo.js?v=202611042311"></script>
+  <script src="data.js?v=202611042350"></script>
+  <script src="data5g.js?v=202611042350"></script>
+  <script src="topo.js?v=202611042350"></script>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
     // ============ 站台照片（Cloudflare Worker） ============
@@ -1605,7 +1605,7 @@
     }
 
     // SFP 埠卡：埠號 + 波長 + 型號（沒有 SFP 資料時只顯示埠號）
-    function topoPortChip(port, opt, wl, model, tip) {
+    function topoPortChip(port, opt, wl, model, tip, inferred) {
       let extra = '';
       let title = tip || (opt ? '射頻設備光埠' : '容量卡板射頻埠');
       if (wl) {
@@ -1613,6 +1613,7 @@
         if (model) extra += '<span class="sfpm">' + escapeHtml(model) + '</span>';
         title += '　SFP ' + wl + 'nm' + (model ? '／' + model : '（型號未對照）');
       }
+      if (inferred) title += '（由 OPT↔RF 配對推得）';
       return '<span class="rfchip' + (opt ? ' opt' : '') + '" title="' + escapeHtml(title) + '">' +
         escapeHtml(port) + extra + '</span>';
     }
@@ -1759,9 +1760,9 @@
         h += '<div class="tport" style="grid-row: span ' + n + '">';
         if (kind === 'bb') {
           entry.links.forEach(l => {
-            h += '<span class="plink">' + topoPortChip(l.p || 'RF?', false, l.bw, l.bm) +
+            h += '<span class="plink">' + topoPortChip(l.p || 'RF?', false, l.bw, l.bm, null, l.ib) +
               '<span class="tarrow">→</span>' +
-              topoPortChip(l.o || 'OPT?', true, l.w, l.m) + '</span>';
+              topoPortChip(l.o || 'OPT?', true, l.w, l.m, null, l.iw) + '</span>';
           });
         } else if (kind === 'casc') {
           const l = entry.link;
@@ -1770,13 +1771,13 @@
             (l.bw ? ' ' + escapeHtml(l.bw) + 'nm' : '') +
             (l.bm ? ' ' + escapeHtml(l.bm) : '') + '</span>' +
             '<span class="plink"><span class="tarrow">→</span>' +
-            topoPortChip(l.o || 'OPT?', true, l.w, l.m, '本機光埠') + '</span>' +
+            topoPortChip(l.o || 'OPT?', true, l.w, l.m, '本機光埠', l.iw) + '</span>' +
             '<span class="tcasc">經上游級聯</span>';
         } else {
           const unk = (rm.links || []).filter(l => l.t === '?' && l.o);
           if (unk.length) {
             unk.forEach(l => {
-              h += topoPortChip(l.o, true, l.w, l.m, '光埠（上游未取得）');
+              h += topoPortChip(l.o, true, l.w, l.m, '光埠（上游未取得）', l.iw);
             });
             h += '<span class="tcasc">光埠（上游未取得）</span>';
           } else {
@@ -1799,7 +1800,7 @@
         let pc = '';
         optPorts.forEach(p => {
           const info = optInfo[p] || {};
-          pc += topoPortChip(p, true, info.w, info.m);
+          pc += topoPortChip(p, true, info.w, info.m, null, info.iw);
         });
         if (rm.ants) {
           pc += '<span class="antchip" title="天線埠">ANT ' + escapeHtml(rm.ants) + '</span>';
@@ -1904,6 +1905,7 @@
         (srcMeta.cell ? '（細胞檔 ' + escapeHtml(srcMeta.cell) + '、SFP 檔 ' + escapeHtml(srcMeta.sfp || '-') + '）' : '') +
         (typeof TOPO !== 'undefined' && TOPO.updated ? '，產生時間 ' + escapeHtml(TOPO.updated) : '') + '。' +
         'RF／OPT 埠取自 SFP 檔；埠下方顯示 SFP 波長與型號，未在對照表的波長只顯示波長。' +
+        '缺少單邊資料時，依 OPT↔RF 型號配對推得（滑鼠停留會標示）。' +
         'SFP 檔較舊時，實際接續可能已調整。' +
         '「無 RET 資料」表示資料檔內沒有該細胞的 RET 回報，不是連線異常。</div>';
 

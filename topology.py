@@ -71,6 +71,37 @@ SFP_BBMOD_WAVE_MODEL = {
     "1559": "AOZOO", "1561": "AOZOQ",
 }
 
+# OPT 側型號 ↔ RF 側型號（成對，方向不固定；缺少單邊資料時用來反推）
+SFP_MODEL_PAIRS = [
+    ("AOZNF", "AOZNG"), ("AOZNH", "AOZNI"), ("AOZNK", "AOZNL"),
+    ("AOZNM", "AOZNN"), ("AOZNO", "AOZNP"), ("AOZNQ", "AOZNR"),
+    ("AOZNS", "AOZNT"), ("AOZNU", "AOZNV"), ("AOZNW", "AOZNX"),
+    ("AOZLZ", "AOZMA"), ("AOZMB", "AOZNC"), ("AOZMD", "AOZNE"),
+    ("AOZOE", "AOZOF"), ("AOZOG", "AOZOH"), ("AOZOI", "AOZOK"),
+    ("AOZOL", "AOZOM"), ("AOZON", "AOZOO"), ("AOZOP", "AOZOQ"),
+    ("AOYCA", "AOYCB"), ("AOYCC", "AOYCD"), ("AOYCE", "AOYCF"),
+    ("AOYCN", "AOYCO"), ("AOYCP", "AOYCQ"), ("AOYCR", "AOYCS"),
+]
+SFP_MODEL_PARTNER = {}
+for _a, _b in SFP_MODEL_PAIRS:
+    SFP_MODEL_PARTNER[_a] = _b
+    SFP_MODEL_PARTNER[_b] = _a
+# 直接波長表仍可能產生、但配對表未列的 RF 型號，補上反查
+SFP_MODEL_PARTNER.setdefault("AOZMC", "AOZMB")
+SFP_MODEL_PARTNER.setdefault("AOZME", "AOZMD")
+
+# 型號 → 波長（反查；兩側合併）
+SFP_RMOD_MODEL_WL = {v: k for k, v in SFP_RMOD_WAVE_MODEL.items()}
+SFP_BBMOD_MODEL_WL = {v: k for k, v in SFP_BBMOD_WAVE_MODEL.items()}
+for _wl, _m in SFP_WAVE_MODEL.items():
+    SFP_RMOD_MODEL_WL.setdefault(_m, _wl)
+    SFP_BBMOD_MODEL_WL.setdefault(_m, _wl)
+SFP_BBMOD_MODEL_WL.update({"AOZNC": "1550", "AOZNE": "1551"})
+SFP_MODEL_WL = dict(SFP_BBMOD_MODEL_WL)
+SFP_MODEL_WL.update(SFP_RMOD_MODEL_WL)
+SFP_MODEL_WL.update({"AOZNC": "1550", "AOZNE": "1551"})
+
+
 
 _RE_RMOD = re.compile(r"RMOD[-_ ]?(\d+)")
 _RE_BB = re.compile(r"bbMod[-_ ]?(\d+)", re.I)
@@ -150,17 +181,41 @@ def _sfp_info(raw, table):
 
 
 def _set_sfp(link, rmod_wl, peer_wl, peer_table=SFP_RMOD_WAVE_MODEL):
-    """把本機 OPT 側與對端埠的 SFP 波長／型號寫進 link"""
+    """把本機 OPT 側與對端埠的 SFP 波長／型號寫進 link。
+
+    RF ↔ OPT 成對：只有一邊有資料時，用型號配對反推另一邊。
+    link["ib"]=1 表示 RF 側為推得、link["iw"]=1 表示 OPT 側為推得。
+    """
     w, m = _sfp_info(rmod_wl, SFP_RMOD_WAVE_MODEL)
+    bw, bm = _sfp_info(peer_wl, peer_table)
+    iw = ib = False
+    if peer_table is SFP_BBMOD_WAVE_MODEL:
+        if m and not bm:
+            pm = SFP_MODEL_PARTNER.get(m)
+            if pm:
+                bm = pm
+                ib = True
+                if not bw:
+                    bw = SFP_MODEL_WL.get(pm, "")
+        elif bm and not m:
+            po = SFP_MODEL_PARTNER.get(bm)
+            if po:
+                m = po
+                iw = True
+                if not w:
+                    w = SFP_MODEL_WL.get(po, "")
     if w:
         link["w"] = w
         if m:
             link["m"] = m
-    bw, bm = _sfp_info(peer_wl, peer_table)
     if bw:
         link["bw"] = bw
         if bm:
             link["bm"] = bm
+    if iw:
+        link["iw"] = 1
+    if ib:
+        link["ib"] = 1
 
 
 def _clean_alarm_text(desc):
