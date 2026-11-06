@@ -51,8 +51,8 @@ KNOWN_SMOD = ("FSMF", "ASIA", "ASIB", "ASIK", "ASIL", "ABIO", "ABIL")
 # 一般 waveLength（CWDM）
 SFP_WAVE_MODEL = {
     "1271": "AOYCA", "1291": "AOYCB", "1311": "AOYCC", "1331": "AOYCD",
-    "1351": "AOYCE", "1371": "AOYCF", "1511": "AOYCN", "1531": "AOYCO",
-    "1551": "AOYCP", "1571": "AOYCQ", "1591": "AOYCR", "1611": "AOYCS",
+    "1351": "AOYCE", "1371": "AOYCF", "1511": "AOYCO", "1531": "AOYCN",
+    "1551": "AOYCQ", "1571": "AOYCP", "1591": "AOYCS", "1611": "AOYCR",
 }
 # rMod_waveLength（射頻設備／OPT 側）
 SFP_RMOD_WAVE_MODEL = {
@@ -76,7 +76,7 @@ SFP_MODEL_PAIRS = [
     ("AOZNF", "AOZNG"), ("AOZNH", "AOZNI"), ("AOZNK", "AOZNL"),
     ("AOZNM", "AOZNN"), ("AOZNO", "AOZNP"), ("AOZNQ", "AOZNR"),
     ("AOZNS", "AOZNT"), ("AOZNU", "AOZNV"), ("AOZNW", "AOZNX"),
-    ("AOZLZ", "AOZMA"), ("AOZMB", "AOZNC"), ("AOZMD", "AOZNE"),
+    ("AOZLZ", "AOZMA"), ("AOZMB", "AOZMC"), ("AOZMD", "AOZME"),
     ("AOZOE", "AOZOF"), ("AOZOG", "AOZOH"), ("AOZOI", "AOZOK"),
     ("AOZOL", "AOZOM"), ("AOZON", "AOZOO"), ("AOZOP", "AOZOQ"),
     ("AOYCA", "AOYCB"), ("AOYCC", "AOYCD"), ("AOYCE", "AOYCF"),
@@ -86,9 +86,6 @@ SFP_MODEL_PARTNER = {}
 for _a, _b in SFP_MODEL_PAIRS:
     SFP_MODEL_PARTNER[_a] = _b
     SFP_MODEL_PARTNER[_b] = _a
-# 直接波長表仍可能產生、但配對表未列的 RF 型號，補上反查
-SFP_MODEL_PARTNER.setdefault("AOZMC", "AOZMB")
-SFP_MODEL_PARTNER.setdefault("AOZME", "AOZMD")
 
 # 型號 → 波長（反查；兩側合併）
 SFP_RMOD_MODEL_WL = {v: k for k, v in SFP_RMOD_WAVE_MODEL.items()}
@@ -96,10 +93,8 @@ SFP_BBMOD_MODEL_WL = {v: k for k, v in SFP_BBMOD_WAVE_MODEL.items()}
 for _wl, _m in SFP_WAVE_MODEL.items():
     SFP_RMOD_MODEL_WL.setdefault(_m, _wl)
     SFP_BBMOD_MODEL_WL.setdefault(_m, _wl)
-SFP_BBMOD_MODEL_WL.update({"AOZNC": "1550", "AOZNE": "1551"})
 SFP_MODEL_WL = dict(SFP_BBMOD_MODEL_WL)
 SFP_MODEL_WL.update(SFP_RMOD_MODEL_WL)
-SFP_MODEL_WL.update({"AOZNC": "1550", "AOZNE": "1551"})
 
 
 
@@ -172,11 +167,17 @@ def _wave(raw):
     return m.group(1) if m else ""
 
 
-def _sfp_info(raw, table):
-    """波長 → (波長, 型號)。型號依指定表查，查不到再查一般 CWDM 表。"""
+def _sfp_info(raw, table, general=False):
+    """波長 → (波長, 型號)。型號依指定表查，查不到再查一般 CWDM 表。
+
+    general=True 表示確定是 AOYC/CWDM 這條鏈路，直接查一般表，
+    避免 1551nm 同時存在 AOZME（DWDM）與 AOYCQ（CWDM）時抓錯型號。
+    """
     wl = _wave(raw)
     if not wl:
         return "", ""
+    if general:
+        return wl, SFP_WAVE_MODEL.get(wl, "")
     return wl, (table.get(wl) or SFP_WAVE_MODEL.get(wl, ""))
 
 
@@ -188,6 +189,15 @@ def _set_sfp(link, rmod_wl, peer_wl, peer_table=SFP_RMOD_WAVE_MODEL):
     """
     w, m = _sfp_info(rmod_wl, SFP_RMOD_WAVE_MODEL)
     bw, bm = _sfp_info(peer_wl, peer_table)
+    # 同一波長可能分屬 AOZ（DWDM）與 AOYC（CWDM）：兩端都有值時，
+    # 只有「OPT 波長在 RMOD 表、RF 波長在 BBMOD 表」才算 AOZ 鏈路，
+    # 否則改用一般表（例如 1571/1551 屬 AOYC P/Q）。
+    general = False
+    if peer_table is SFP_BBMOD_WAVE_MODEL and w and bw:
+        general = not (w in SFP_RMOD_WAVE_MODEL and bw in SFP_BBMOD_WAVE_MODEL)
+    if general:
+        m = SFP_WAVE_MODEL.get(w, "")
+        bm = SFP_WAVE_MODEL.get(bw, "")
     iw = ib = False
     if peer_table is SFP_BBMOD_WAVE_MODEL:
         if m and not bm:
