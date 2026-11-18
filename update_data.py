@@ -6,7 +6,7 @@
 檔名會自動以 *LTE_CoBTS_CHT.xlsx / *LTE_CoCell_CHT.xlsx / *nrBts_DB_CHT.xlsx / *nrCell_DB_CHT.xlsx 匹配，
 未來新 dump 直接放進來即可（支援不同日期前綴）。
 """
-import openpyxl, json, os, glob, sys, io, re
+import openpyxl, json, os, glob, sys, io, re, collections
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 
@@ -95,6 +95,80 @@ def group_cells(cells, key_fn, field_map):
         sec_cells = [field_map(c) for c in cells if key_fn(c) == sec]
         out.append({"sec": sec, "cells": sec_cells})
     return out
+
+
+def collect_station_cells(stations, secs, cell_rows_by_name, hdr, id_field, div):
+    """建立「子站台 -> 細胞列」對照，並補回 BTS 子站台清單漏掉的細胞。
+
+    - 細胞檔的站名不在 BTS 清單：新增為子站台（例：苗栗中央L25設備測試台）
+    - 細胞檔站名空白：併入扇區涵蓋該細胞的子站台；找不到就併入扇區最接近者
+    回傳 (子站台 -> 細胞列 的 OrderedDict, 與子站台對齊的扇區字串清單)
+    """
+    cnt = collections.Counter(stations)
+    orig_sec = {}
+    for i, s in enumerate(stations):
+        # 同名子站台重複出現時（來源資料重複），改用實際細胞扇區推算標籤
+        if cnt[s] == 1:
+            orig_sec[s] = secs[i] if i < len(secs) else ""
+    rows_by_st = collections.OrderedDict((s, []) for s in stations)
+    sec_nums = {s: set(int(x) for x in re.findall(r"\d+", sp or ""))
+                for s, sp in orig_sec.items()}
+
+    # 先放入站名可對應的細胞
+    for name, rows_ in cell_rows_by_name.items():
+        if name and name in rows_by_st:
+            rows_by_st[name].extend(rows_)
+
+    # 再處理站名對不到 / 名稱為空白的細胞
+    for name, rows_ in cell_rows_by_name.items():
+        if name and name in rows_by_st:
+            continue
+        for c in rows_:
+            try:
+                secno = int(get(c, hdr, id_field)) // div
+            except (ValueError, TypeError):
+                secno = None
+            nm = (name or "").strip()
+            if nm:
+                rows_by_st.setdefault(nm, []).append(c)
+                nums = sec_nums.setdefault(nm, set())
+                if secno is not None:
+                    nums.add(secno)
+                continue
+            tgt = None
+            for s2 in rows_by_st:
+                if secno is not None and secno in sec_nums.get(s2, set()):
+                    tgt = s2
+                    break
+            if tgt is None:
+                if not rows_by_st:
+                    rows_by_st["(未命名)"] = []
+                    sec_nums["(未命名)"] = set()
+                    tgt = "(未命名)"
+                else:
+                    best, bestd = None, None
+                    for s2 in rows_by_st:
+                        nums = sec_nums.get(s2, set())
+                        d = (min((abs(secno - n) for n in nums), default=99)
+                             if secno is not None else 99)
+                        if bestd is None or d < bestd:
+                            best, bestd = s2, d
+                    tgt = best
+            rows_by_st[tgt].append(c)
+
+    out_secs = []
+    for s, rows_ in rows_by_st.items():
+        sp = orig_sec.get(s)
+        if not sp:
+            nums = set()
+            for c in rows_:
+                try:
+                    nums.add(int(get(c, hdr, id_field)) // div)
+                except (ValueError, TypeError):
+                    pass
+            sp = "s" + "/".join(str(n) for n in sorted(nums))
+        out_secs.append(sp)
+    return rows_by_st, out_secs
 
 
 def station_town(cell_rows, hdr_cell, fallback):
@@ -630,9 +704,9 @@ print(f"  過濾後站台數: {len(bts)}")
 cell_map = {}
 for r in cell_rows:
     lnbts = get(r, hdr_cell, "lnBtsId")
-    st = get(r, hdr_cell, "CellName_CHS")
-    if not lnbts or not st:
+    if not lnbts:
         continue
+    st = (get(r, hdr_cell, "CellName_CHS") or "").strip()
     cell_map.setdefault(lnbts, {}).setdefault(st, []).append(r)
 
 # 電號檔（可選，找不到就跳過）
@@ -653,10 +727,15 @@ for r in bts:
     stations = [s.strip() for s in stations if s.strip()]
     secs = get(r, hdr_bts, "lnBtsIdLL_Sec").split("_") if get(r, hdr_bts, "lnBtsIdLL_Sec") else []
     coords = build_coords(r, hdr_bts, lat_cols, lon_cols, len(stations))
+    station_rows, station_secs = collect_station_cells(
+        stations, secs, cell_map.get(lnbts, {}), hdr_cell, "lnCelId", 10)
+    stations = list(station_rows.keys())
+    while len(coords) < len(stations):
+        coords.append(None)
     cells_by_station = {}
     towns = []
     for s in stations:
-        cell_rows_s = cell_map.get(lnbts, {}).get(s, [])
+        cell_rows_s = station_rows[s]
         towns.append(station_town(cell_rows_s, hdr_cell, get(r, hdr_bts, "鄉鎮")))
         def key_fn(c):
             try:
@@ -687,8 +766,8 @@ for r in bts:
         "siteNameCV": get(r, hdr_bts, "SiteNameCV"),
         "town": get(r, hdr_bts, "鄉鎮"),
         "towns": towns,
-        "sec": get(r, hdr_bts, "lnBtsIdLL_Sec"),
-        "secs": secs,
+        "sec": "_".join(station_secs),
+        "secs": station_secs,
         "stations": stations,
         "coords": coords,
         "cells": cells_by_station,
@@ -756,9 +835,9 @@ print(f"  過濾後站台數: {len(bts5)}")
 cell5_map = {}
 for r in cell5_rows:
     nrbts = get(r, hdr5c, "nrBtsId")
-    st = get(r, hdr5c, "nrCellName_chs")
-    if not nrbts or not st:
+    if not nrbts:
         continue
+    st = (get(r, hdr5c, "nrCellName_chs") or "").strip()
     cell5_map.setdefault(nrbts, {}).setdefault(st, []).append(r)
 
 lat5_cols, lon5_cols = latlon_pairs(hdr5, "Lat", "Lon")
@@ -769,10 +848,15 @@ for r in bts5:
     stations = [s.strip() for s in stations if s.strip()]
     secs = get(r, hdr5, "nrBtsIdNN_Sec").split("_") if get(r, hdr5, "nrBtsIdNN_Sec") else []
     coords = build_coords(r, hdr5, lat5_cols, lon5_cols, len(stations))
+    station_rows, station_secs = collect_station_cells(
+        stations, secs, cell5_map.get(nrbts, {}), hdr5c, "nrCellId", 100)
+    stations = list(station_rows.keys())
+    while len(coords) < len(stations):
+        coords.append(None)
     cells_by_station = {}
     towns = []
     for s in stations:
-        cell_rows_s = cell5_map.get(nrbts, {}).get(s, [])
+        cell_rows_s = station_rows[s]
         towns.append(station_town(cell_rows_s, hdr5c, get(r, hdr5, "鄉鎮")))
         def key_fn5(c):
             try:
@@ -803,8 +887,8 @@ for r in bts5:
         "siteNameCV": get(r, hdr5, "SiteName"),
         "town": get(r, hdr5, "鄉鎮"),
         "towns": towns,
-        "sec": get(r, hdr5, "nrBtsIdNN_Sec"),
-        "secs": secs,
+        "sec": "_".join(station_secs),
+        "secs": station_secs,
         "stations": stations,
         "coords": coords,
         "cells": cells_by_station,
