@@ -1046,9 +1046,9 @@
     </div>
   </div>
 
-  <script src="data.js?v=202611182131"></script>
-  <script src="data5g.js?v=202611182131"></script>
-  <script src="topo.js?v=202611182131"></script>
+  <script src="data.js?v=202611182252"></script>
+  <script src="data5g.js?v=202611182252"></script>
+  <script src="topo.js?v=202611182252"></script>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
     // ============ 站台照片（Cloudflare Worker） ============
@@ -1450,7 +1450,6 @@
             if (cells.length) {
               const detail = document.createElement('div');
               detail.className = 'detail';
-              detail.id = 'detail-' + i;
               detail.innerHTML = buildCellDetail(item, s, coord);
               wrap.appendChild(detail);
             }
@@ -1465,7 +1464,10 @@
 
           outStations.querySelectorAll('.toggle').forEach(tgl => {
             tgl.addEventListener('click', () => {
-              const d = document.getElementById('detail-' + tgl.dataset.idx);
+              // 只用同一個子站台區塊內的 detail，避免 4G／5G 兩邊的 detail 互相蓋到
+              const bar = tgl.closest('.station-bar');
+              const d = bar && bar.parentElement
+                ? bar.parentElement.querySelector('.detail') : null;
               if (d) {
                 const shown = d.classList.toggle('show');
                 tgl.textContent = shown ? '收合細胞詳情 ▾' : '檢視細胞詳情 ▸';
