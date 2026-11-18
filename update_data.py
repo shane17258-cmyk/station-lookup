@@ -158,15 +158,17 @@ def collect_station_cells(stations, secs, cell_rows_by_name, hdr, id_field, div)
 
     out_secs = []
     for s, rows_ in rows_by_st.items():
-        sp = orig_sec.get(s)
-        if not sp:
-            nums = set()
-            for c in rows_:
-                try:
-                    nums.add(int(get(c, hdr, id_field)) // div)
-                except (ValueError, TypeError):
-                    pass
+        nums = set()
+        for c in rows_:
+            try:
+                nums.add(int(get(c, hdr, id_field)) // div)
+            except (ValueError, TypeError):
+                pass
+        if nums:
+            # 以實際細胞扇區為準（BTS 的 lnSec 標籤常與細胞檔不一致）
             sp = "s" + "/".join(str(n) for n in sorted(nums))
+        else:
+            sp = orig_sec.get(s) or ""
         out_secs.append(sp)
     return rows_by_st, out_secs
 
