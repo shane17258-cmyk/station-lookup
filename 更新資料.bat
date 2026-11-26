@@ -69,8 +69,10 @@ if exist outage.json (
 )
 REM 其他未提交的變更先暫存起來，pull 完再還原
 set "STASHED="
-git stash push -u -m "更新資料前自動暫存" >nul 2>&1
-git stash list | findstr /c:"更新資料前自動暫存" >nul && set "STASHED=1"
+for /f %%C in ('git stash list ^| find /c /v ""') do set "STASH_BEFORE=%%C"
+git stash push -u -m "autostash-before-pull" >nul 2>&1
+for /f %%C in ('git stash list ^| find /c /v ""') do set "STASH_AFTER=%%C"
+if not "%STASH_BEFORE%"=="%STASH_AFTER%" set "STASHED=1"
 
 git pull --rebase origin master
 if errorlevel 1 (
