@@ -474,8 +474,12 @@ def build(cell_rows, center="", is_nr=False, rmod_eac=None, smod_eac=None,
                 continue
             rmod = site["rmods"].get(rid)
             if rmod is None:
-                # SFP 檔較舊，該 RMOD 已不在現行細胞檔 → 略過
-                continue
+                # SFP 檔有這台 RMOD、細胞檔沒有（未開細胞／細胞已移除）。
+                # 仍建立節點，讓 BBMOD 的 RF 埠（例如 RF5）與連線完整呈現，
+                # 前端會標示「不在細胞檔中」，避免誤以為該埠沒在用。
+                rmod = _rmod(site, rid)
+                rmod["sfponly"] = 1
+                rmod["name"] = _s(r.get("rModName"))
 
             bbphy = _s(r.get("bbMod_physicalPort"))
             bbid = _s(r.get("bbModId"))
@@ -663,7 +667,7 @@ def _clean(sites):
                     d["alarms"] = c["alarms"]
                 cells.append(d)
             d = {"id": rm["id"], "cells": cells}
-            for k in ("name", "desc", "bb", "smod", "link", "bbn", "ants"):
+            for k in ("name", "desc", "bb", "smod", "link", "bbn", "ants", "sfponly"):
                 if rm.get(k):
                     d[k] = rm[k]
             if rm.get("links"):

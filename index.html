@@ -675,6 +675,8 @@
     padding: 8px 10px; box-shadow: 0 1px 2px rgba(26,58,92,.06);
   }
   .rmod-card.has-alm { border-color: #f0c2bb; background: #fffafa; }
+  .rmod-card.sfponly { border-style: dashed; background: #fbfcfe; }
+  .rmod-card.sfponly .rname { color: #6b8299; }
   .rmod-card .rid { font-size: 11px; font-weight: 700; color: #8aa4bd; letter-spacing: .5px; }
   .rmod-card .rname { font-size: 15px; font-weight: 700; color: var(--primary-dark); }
   .rmod-card .rdesc { font-size: 10.5px; color: #8aa4bd; margin-top: 2px; line-height: 1.4; }
@@ -719,6 +721,7 @@
 
   .topo-legend { display: flex; flex-wrap: wrap; gap: 14px; font-size: 12px; color: #6b8aa8; margin-top: 10px; }
   .topo-legend .lg { display: inline-flex; align-items: center; gap: 5px; }
+  .dashchip { display: inline-block; width: 15px; height: 11px; border: 1px dashed #9fb6cc; border-radius: 3px; background: #fbfcfe; }
   .topo-foot { font-size: 11.5px; color: #9ab0c4; margin-top: 10px; line-height: 1.7; }
 
   @media (max-width: 520px) {
@@ -1046,9 +1049,9 @@
     </div>
   </div>
 
-  <script src="data.js?v=202611270008"></script>
-  <script src="data5g.js?v=202611270008"></script>
-  <script src="topo.js?v=202611270008"></script>
+  <script src="data.js?v=202611270039"></script>
+  <script src="data5g.js?v=202611270039"></script>
+  <script src="topo.js?v=202611270039"></script>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
     // ============ 站台照片（Cloudflare Worker） ============
@@ -1794,7 +1797,7 @@
         const optInfo = {};
         (rm.links || []).forEach(l => { if (l.o && !optInfo[l.o]) optInfo[l.o] = l; });
         h += '<div style="grid-row: span ' + n + '"><div class="rmod-card' +
-          ((rm.alarms || []).length ? ' has-alm' : '') + '">' +
+          ((rm.alarms || []).length ? ' has-alm' : '') + (rm.sfponly ? ' sfponly' : '') + '">' +
           '<div class="rid">RMOD-' + escapeHtml(rm.id) + '</div>' +
           '<div class="rname"><span class="sdot ' + topoWorst(rm.alarms) + '"></span>' +
           escapeHtml(rm.name || '（未命名）') + '</div>' +
@@ -1817,7 +1820,9 @@
 
         // 第 3、4 欄：RET／細胞（每個細胞一列）
         if (!cells.length) {
-          h += '<div class="tret none">—</div><div class="tcell">此 RMOD 無細胞資料</div>';
+          h += '<div class="tret none">—</div><div class="tcell">' +
+            (rm.sfponly ? '此 RMOD 不在細胞檔中（僅 SFP 檔有 RF 連線）' : '此 RMOD 無細胞資料') +
+            '</div>';
         }
         cells.forEach(c => {
           const ret = c.ret;
@@ -1900,6 +1905,7 @@
         '<span class="lg"><span class="sdot minor"></span>次要告警</span>' +
         '<span class="lg"><span class="sdot major"></span>主要告警</span>' +
         '<span class="lg"><span class="sdot critical"></span>嚴重告警</span>' +
+        '<span class="lg"><span class="dashchip"></span>細胞檔無此 RMOD（僅 SFP 檔有 RF 連線）</span>' +
         '</div>';
       const srcMeta = (typeof TOPO !== 'undefined' && TOPO.meta && TOPO.meta[topoNet]) || {};
       html += '<div class="topo-foot">資料來源：' + escapeHtml(netLabel) +
@@ -1909,6 +1915,7 @@
         'RF／OPT 埠取自 SFP 檔；埠下方顯示 SFP 波長與型號，未在對照表的波長只顯示波長。' +
         '缺少單邊資料時，依 OPT↔RF 型號配對推得（滑鼠停留會標示）。' +
         'SFP 檔較舊時，實際接續可能已調整。' +
+        '虛線框的 RMOD 表示 SFP 檔有 RF 連線、但細胞檔沒有這台 RMOD（未開細胞或已移除），故沒有細胞／RET 資料。' +
         '「無 RET 資料」表示資料檔內沒有該細胞的 RET 回報，不是連線異常。</div>';
 
       out.innerHTML = html;
